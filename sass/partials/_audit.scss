@@ -1,0 +1,577 @@
+.audit{
+	
+	.content{
+	     h1, h2, hr, h3, .pros, .service_item, .logos li, .gallery img{
+	    	@include opacity (1);
+	    }
+	}
+
+	.case_item{
+		h3, ul, p, a{
+			@include opacity (1);	
+		}
+	}
+
+
+
+	h2{
+		font-weight: 600;
+		font-size:24px;
+		text-transform: uppercase;
+		color:$dark_font_color;
+	}
+
+	p{
+		color:$dark_font_color;
+		font-size:20px;
+		line-height: 32px;
+		font-weight: 300;
+	}
+
+	hr{
+		background:#f9671e;
+	}
+
+	hr.separator{
+		background:#e5e5e5;
+		margin:90px 0;
+	}
+
+	.content{
+		padding:0px 25px;
+	}
+
+	nav{
+	    .logo{
+	        float:left;
+
+	        a{
+	            width:auto;;
+	            height:35px;
+	            display: block;
+	            overflow: hidden;   
+	            @include opacity (.9);
+	            background:none;
+	            text-indent:0;
+
+	            .back{
+	                height:12px;
+	                width:16px;
+	                display: inline-block;
+	                margin:12px 10px 11px 0;
+	                @include transition(all 0.3s ease-out);
+	            }
+
+	            .logo_image{
+	                display: inline-block;
+	                width:235px;
+	                height:35px;
+	            }
+
+	            &:hover{
+	                @include opacity (1);
+	                @include translateY(2px);
+
+	                .back{
+	                	@include translateY(-2px);	
+	                }
+	            }
+	        }
+	    }
+	}
+
+	nav .content{
+		padding:0 25px;	
+	}
+
+	.loading-screen{
+		margin:0;
+		top:0;
+		left:0;
+
+		.content{
+			height:100%;
+			padding:150px 25px 60px 25px;
+		}
+
+		h2{
+			font-weight: 600;
+			font-size:40px;
+			color:#fff;
+			text-align:center;
+		}
+
+
+		img.intro_icon{
+			height:150px;
+			width:200px;
+			display: block;
+			margin:0 auto;
+		}
+
+	}
+
+	.case_intro{
+		height:600px;
+		margin-top: 90px;
+
+		.content{
+			padding:60px 25px 60px 25px;
+		}
+
+		img.intro_icon{
+			height:150px;
+			width:200px;
+			display: block;
+			margin:0 auto;
+		}
+
+
+		p{
+			color:#fff;
+			text-align:center;
+			font-size:30px;
+			line-height: 40px;
+			padding:0 230px;
+			font-weight: 300;
+			letter-spacing: 1px;
+		}
+
+		h2{
+			font-weight: 600;
+			font-size:40px;
+			color:#fff;
+			text-align:center;
+		}
+
+		hr{
+			background:#ffffff;
+			display: inline-block;
+		}
+		
+	    .bg_case{
+	        background:url('../img/audit/bg_audit.jpg') center top no-repeat;
+	        background-attachment: fixed;
+	        background-size: cover;
+	        width: 100%;
+	        height: 600px;
+	        overflow: hidden;
+	        text-align: center;
+	        top:0;
+	    }
+	}
+
+	.case_info{
+		background:#2b2f33;
+
+		.content{
+			padding:90px 25px;
+		}
+
+		h2{
+			color:$white_font_color;
+			text-transform: inherit;
+			letter-spacing: 1px;
+		}
+
+		p{
+			color:#abacad;
+		}
+
+		.left{
+			width:55%;
+			float:left;
+			padding:0 80px 0 0;
+
+		}
+
+		.right{
+			width:45%;
+			float:right;
+			padding:10px 0 0 10px;
+
+			p{
+				margin:10px 0 20px 0;
+				font-size:18px;
+				line-height:28px;
+			}
+			
+			span{
+				font-weight: 600;
+				color:$white_font_color;
+			}
+
+			a{
+				float:left;
+				margin-top:10px;
+				position:relative;
+				width: 200px;
+				text-align:left;
+				padding: 15px 26px;
+				z-index: 2;
+
+				svg{
+					@include transition(all 1s ease-out);
+					fill:#ffffff;
+					width: 16px;
+					height:16px;
+					position: absolute;
+					right: 22px;
+					top: 16px;	
+				}
+
+				&:hover{
+					color:$dark_font_color;
+				}
+
+				&:hover svg{
+					fill:$dark_font_color;
+				}
+			}
+
+		}	
+	}
+
+	.case_details{
+		background:#373b40;
+
+		.content{
+			padding:70px 25px;
+		}
+
+		h3{
+			color:$white_font_color;
+			padding:0 0 20px 0;
+		}
+
+		p{
+			margin:10px 0 20px 0;
+			font-size:18px;
+			line-height:28px;
+			color:#aeafb1;
+		}
+
+		.left{
+			width:55%;
+			float:left;
+			padding:0 60px 0 0;			
+		}
+
+		.right{
+			width:45%;
+			float:right;
+			padding:0px 0 0 10px;	
+		}
+	}
+
+	.case_about{
+		text-align:center;
+
+		.content{
+			padding:90px 25px 0 25px;
+		}
+
+		h2{
+			font-size:40px;
+			text-align:center;
+		}	
+
+		hr{
+			display: inline-block;	
+
+		}
+
+		p{
+			text-align:center;
+			padding:0 180px;
+			font-size:24px;
+			line-height: 36px;
+		}
+
+	}
+
+	.case_logotype{
+
+		.content>div{
+			@include clearfix;		
+		}
+		
+
+		.title{
+			float:left;
+			width:50%;
+			padding:0 130px 0 0;
+
+			p{
+				margin:0;
+			}
+		}
+
+		.image{
+			@include clearfix;	
+
+			float:right;
+			width:50%;
+
+			div{
+				float:left;
+				width:50%;
+				text-align:center;
+
+				h4{
+					text-transform: uppercase;
+					color:#cfcfd0;
+					font-size:16px;
+					margin:10px 0;
+				}
+			}
+		}
+	}
+
+	.case_colors{
+		@extend .case_logotype;	
+
+		.title{
+			float:right;
+			padding:0 110px 0 25px;
+		}
+
+		.image{
+			float:left;	
+
+			li{
+				width:70px;
+				height:70px;
+				display: inline-block;
+				margin:5px;
+				text-align:center;
+				padding-top:20px;
+				@include border-radius(35px);
+
+				span{
+					font-size:12px;
+					color:#ffffff;
+					font-weight: 400;
+					text-transform: uppercase;
+					opacity: 0;
+					@include transition(all 0.3s ease-out);
+				}
+
+				&:hover span{
+					opacity: 1;	
+				}
+
+				&.color1{ background:#ff5e3a; }
+				&.color2{ background:#f9671e; }
+				&.color3{ background:#ffa800; }
+				&.color4{ background:#ffcd02; }
+				&.color5{ background:#222c34; }
+				&.color6{ background:#6b767f; }
+				&.color7{ background:#929fa8; }
+				&.color8{ background:#b0b9c0; }
+				&.color9{ background:#dddedf; }
+				&.color10{ background:#33bc00; }
+				&.color11{ background:#94cd26; }
+				&.color12{ background:#ff1a38; }
+
+
+			}
+		}
+	}
+
+
+	.case_typo{
+		@extend .case_logotype;
+
+		.image{
+			margin:40px 0 -3px 0;
+		}
+
+		hr.separator{
+			margin:0 0 90px 0;
+		}	
+	}
+
+	.case_notification{
+		@extend .case_colors;	
+
+		.image{
+			text-align: center;
+			padding-top:50px;
+		}
+	}
+
+
+	.case_icons{
+		@extend .case_logotype;	
+	}
+
+
+	.case_controls{
+		@extend .case_colors;
+
+		 .image{
+		 	margin-bottom: -3px;
+		 }
+			
+	}
+
+	.case_dev_title{
+		@extend .case_about;
+		
+		 background:url('../img/audit/bg_dev.jpg') center top no-repeat;
+		 background-size:cover;
+		 height:500px;
+
+		 h2,p{
+		 	color:$white_font_color;
+		 }
+
+		
+
+		 .content{
+		 	padding:160px 80px 0 80px;
+		 }
+	}
+
+	.case_sprint{
+		@extend .case_colors;	
+
+		.content{
+			padding:90px 25px 0 25px;
+		}
+	}
+
+
+	.case_stats{
+		@extend .case_logotype;	
+
+		.content{
+			padding:0 25px 90px 25px;
+		}
+
+		.image{
+			@include clearfix;
+		}
+		
+		.image>div{
+			width:33%;
+			float:left;
+			text-align: center;
+			padding:70px 30px 0 30px;
+
+			p{
+				color:$dark_font_color;
+				font-size:16px;
+				line-height: 18px;
+				text-transform: uppercase;
+				font-weight: 600;
+			}
+
+			p.number{
+				color:#f9671e;
+				font-size: 40px;
+				margin:20px 0;
+				display: block;
+				line-height: 40px;
+				font-weight: 400;
+			}
+		}	
+	}
+
+
+	.case_backend{
+		background:url('../img/audit/bg_code.jpg') center top no-repeat #2b2f33;
+		background-size:contain;
+		
+
+		.content{
+			padding:140px 25px;
+		}	
+
+		h2{
+			color:$white_font_color;	
+			font-size: 40px;
+			line-height: 50px;
+		}
+
+		.pros{
+			float:left;
+			display: block;
+			width:33%;
+			padding:20px 20px 60px 0;
+
+			.number{
+				color:#808285;
+				font-weight: 500;
+				padding:0 0 15px 0;
+				font-style: italic;
+			}
+
+			h4{
+				letter-spacing: 0;
+				margin: 0 0 10px 0;
+				color:$white_font_color;
+			}
+
+			p{
+				color:#aeafb1;
+				font-size:18px;
+			}
+		}
+
+		.image{
+			@include clearfix;
+
+			width:1120px;
+			margin:0 auto;
+			
+			img{
+				float:left;
+				display: block;
+
+				&.app{
+					margin:80px 0 0 0;
+				}
+
+				&.arrows{
+					margin:185px -30px 0 40px;
+				}
+			}
+		}
+	}
+
+
+
+
+
+
+
+	
+	.case_contact{
+		background:#373b40;
+		text-align:center;
+
+		.content{
+			padding: 50px 25px;
+		}
+
+		a{
+			font-size: 28px;
+			text-transform: uppercase;
+			padding:25px 65px;
+			z-index: 2;
+
+			&:hover{
+				color:$dark_font_color;
+			}
+		}
+	}
+
+
+
+	footer .content{
+		padding:50px 25px;
+	}
+
+}

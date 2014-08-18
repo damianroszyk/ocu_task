@@ -1,0 +1,488 @@
+@include keyframes ('fadeInLeft') {
+  0% {
+    @include opacity (0);
+    @include translateX(-15px);
+    @include translateX(-15px);
+  }
+
+  100% {
+    @include opacity (1);
+    @include translateX(0);
+    @include translateX(0);
+  }
+}
+
+.fadeInLeft {
+  @include animation('fadeInLeft ease-out .7s both');
+}
+
+/************* MORE ICON *****************/
+
+.more_arrow {
+	@include animation('more_bounce ease 2s infinite');
+}
+
+@include keyframes ('more_bounce') {
+  0% { @include translate(0,0); }
+  50% { @include translate(0,-6px); }
+  100% { @include translate(0,0); }
+}
+
+/************* ICON1 *****************/
+
+
+.section1 {
+  @include opacity (0);
+	@include animation('setblue ease 6s 5s infinite, fadeInLeft both 1s 0.4s');
+}
+
+.section2 {
+  @include opacity (0);
+	fill:#cccccc;
+	@include animation('setblue ease 6s 1s infinite, fadeInLeft both 1s 0.6s');
+}
+.section3 {
+	@include opacity (0);
+	@include animation('setblue ease 6s 3.2s infinite, fadeInLeft both 1s 0.8s');
+}
+
+@include keyframes('setblue') {
+	0% {fill:#cccccc;}
+	15% {fill:#007AFF;}
+	30% {fill:#cccccc;}
+}
+
+.stick{
+	@include animation('fadeInLeft both 1s 0.4s, stick ease 6s 2s infinite');
+  @include transition('all 1s cubic-bezier(.1,.8,.2,1');
+}
+
+@include keyframes('stick') {
+  0% { @include translate(0,0); }
+  15% { @include translate(0,0); }
+  30% { @include translate(40px,0); }
+  45% { @include translate(40px,0);  }
+  60% { @include translate(0,-20px);  }
+  75% { @include translate(0,-20px);  }
+  100% { @include translate(0,0);  }
+}
+
+/************* ICON2 *****************/
+
+.ratio_line {
+	stroke-dasharray: 320;
+	stroke-dashoffset: 320;
+  @include animation('ratio-line ease 6s 4s infinite');
+}
+
+.ratio_box {
+	@include opacity (0);
+	@include animation ('ratio-box ease 6s 4s infinite');
+}
+
+.ratio_frame {
+	@include opacity (0);
+	@include animation ('fadeInLeft both 1s 0.8s, low ease 6s 4s infinite');
+}
+
+.ratio_head {
+	@include opacity (0);
+	@include animation ('fadeInLeft both 1s 1.2s, low ease 6s 4s infinite');
+}
+
+.ratio_image {
+	@include opacity (0);
+	@include animation ('fadeInLeft both 1s 1.6s, low ease 6s 4s infinite');
+}
+
+.ratio_text {
+	@include opacity (0);
+	@include animation ('fadeInLeft both 1s 2s, low ease 6s 4s infinite');
+}
+
+@include keyframes ('ratio-line')  {
+	0% { stroke-dashoffset: 320; @include opacity (1); }
+	20% { stroke-dashoffset: 320; }
+	70% { stroke-dashoffset: 0; @include opacity (1); }
+	80%{ @include opacity (0); }
+	100% { stroke-dashoffset: 0; @include opacity (0); }
+}
+
+@include keyframes ('ratio-box')  {
+	0% { @include opacity (0); }
+	50% { @include opacity (0); }
+	70% { @include opacity (1); }
+	80% { @include opacity (.4); }
+	100% { @include opacity (0); }
+}
+
+@include keyframes ('low')  {
+	0% { @include opacity (1); }
+	50% { @include opacity (1); }
+	70% { @include opacity (.4); }
+	80% { @include opacity (.4); }
+	100% { @include opacity (1); }
+}
+
+
+
+/************* ICON3 *****************/
+
+
+.line1 {
+	@include opacity (0);
+	@include animation ('fadeInLeft both 1s 1.4s, coding1 ease 6s 5s infinite');
+}
+
+.line2 {
+	@include opacity (0);
+	@include animation ('fadeInLeft both 1s 1.6s, coding2 ease 6s 5s infinite');
+}
+
+.line3 {
+	@include opacity (0);
+	@include animation ('fadeInLeft both 1s 1.8s, coding3 ease 6s 5s infinite');
+}
+
+.line4 {
+	@include opacity (0);
+	@include animation ('fadeInLeft both 1s 2.0s, coding4 ease 6s 5s infinite');
+}
+
+.line5 {
+	@include opacity (0);
+	@include animation ('fadeInLeft both 1s 2.2s, coding5 ease 6s 5s infinite');
+}
+
+.line6 {
+	@include opacity (0);
+	@include animation ('fadeInLeft both 1s 2.4s, coding6 ease 6s 5s infinite');
+}
+
+.line7 {
+	@include opacity (0);
+	@include animation ('fadeInLeft both 1s 2.6s, coding6 ease 6s 5s infinite'); 
+}
+
+@include keyframes ('coding1') {
+  0% { @include translate(0,0); @include opacity (1); }
+  10% { @include translate(0,-5px); @include opacity (0); }
+  15% { @include translate(0,50px); @include opacity (0); }
+  20% { @include translate(0,45px); @include opacity (1); }
+  40% { @include translate(0,35px); @include opacity (1); }
+  60% { @include translate(0,25px); @include opacity (1); }
+  80% { @include translate(0,15px); @include opacity (1); }
+  100% { @include translate(0,0); @include opacity (1); }
+}
+
+@include keyframes ('coding2') {
+  0% { @include translate(0,0); @include opacity (1); }
+  20% { @include translate(0,-10px); @include opacity (1); }
+  30% { @include translate(0,-15px); @include opacity (0); }
+  35% { @include translate(0,40px); @include opacity (0); }
+  40% { @include translate(0,35px); @include opacity (1); }
+  60% { @include translate(0,25px); @include opacity (1); }
+  80% { @include translate(0,15px); @include opacity (1); }
+  100% { @include translate(0,0); @include opacity (1); }
+}
+
+@include keyframes ('coding3') {
+  0% { @include translate(0,0); @include opacity (1); }
+  20% { @include translate(0,-10px); @include opacity (1); }
+  40% { @include translate(0,-20px); @include opacity (1); }
+  50% { @include translate(0,-25px); @include opacity (0); }
+  55% { @include translate(0,30px); @include opacity (0); }
+  60% { @include translate(0,25px); @include opacity (1); }
+  80% { @include translate(0,15px); @include opacity (1); }
+  100% { @include translate(0,0); @include opacity (1); }
+}
+
+@include keyframes ('coding4') {
+  0% { @include translate(0,0); @include opacity (1); }
+  20% { @include translate(0,-10px); @include opacity (1); }
+  40% { @include translate(0,-20px); @include opacity (1); }
+  60% { @include translate(0,-30px); @include opacity (1); }
+  70% { @include translate(0,-35px); @include opacity (0); }
+  75% { @include translate(0,20px); @include opacity (0); }
+  80% { @include translate(0,15px); @include opacity (1); }
+  100% { @include translate(0,0); @include opacity (1); }
+}
+
+@include keyframes ('coding5') {
+  0% { @include translate(0,0); @include opacity (1); }
+  20% { @include translate(0,-10px); @include opacity (1); }
+  40% { @include translate(0,-20px); @include opacity (1); }
+  60% { @include translate(0,-30px); @include opacity (1); }
+  80% { @include translate(0,-40px); @include opacity (1); }
+  90% { @include translate(0,-45px); @include opacity (0); }
+  95% { @include translate(0,5px); @include opacity (0); }
+  100% { @include translate(0,0); @include opacity (1); }
+}
+
+@include keyframes ('coding6') {
+  0% { @include translate(0,0); @include opacity (1); }
+  20% { @include translate(0,-10px); @include opacity (1); }
+  40% { @include translate(0,-20px); @include opacity (1); }
+  60% { @include translate(0,-30px); @include opacity (1); }
+  80% { @include translate(0,-40px); @include opacity (1); }
+  90% { @include translate(0,-45px); @include opacity (0); }
+  95% { @include translate(0,5px); @include opacity (0); }
+  100% { @include translate(0,0); @include opacity (1); }
+}
+
+// @include keyframes ('coding1') {
+//   0% { @include translate(0,0); @include opacity (1); }
+//   14% { @include translate(0,-10px); @include opacity (0); }
+//   15% { @include translate(0,45px);  }
+//   30% { @include translate(0,40px);  @include opacity (1); }
+//   45% { @include translate(0,30px);  }
+//   60% { @include translate(0,20px); }
+//   75% { @include translate(0,10px); }
+//   90% { @include translate(0,5px); }
+//   100% { @include translate(0,0); @include opacity (1); }
+// }
+
+// @include keyframes ('coding2') {
+//   0% { @include translate(0,0);@include opacity (1); }
+//   15% { @include translate(0,-5px); @include opacity (1); }
+//   29% { @include translate(0,-10px); @include opacity (0); }
+//   30% { @include translate(0,40px);  }
+//   45% { @include translate(0,30px); @include opacity (1); }
+//   60% { @include translate(0,20px); }
+//   75% { @include translate(0,10px); }
+//   90% { @include translate(0,5px); }
+//   100% { @include translate(0,0); @include opacity (1); }
+// }
+
+// @include keyframes ('coding3') {
+//   0% { @include translate(0,0);@include opacity (1); }
+//   15% { @include translate(0,-5px);  }
+//   30% { @include translate(0,-10px); @include opacity (1);  }
+//   44% { @include translate(0,-20px); @include opacity (0);  }
+//   45% { @include translate(0,30px);  }
+//   60% { @include translate(0,20px); @include opacity (1); }
+//   75% { @include translate(0,10px); }
+//   90% { @include translate(0,5px); }
+//   100% { @include translate(0,0); @include opacity (1); }
+// }
+
+// @include keyframes ('coding4') {
+//   0% { @include translate(0,0);@include opacity (1); }
+//   15% { @include translate(0,-5px);  }
+//   30% { @include translate(0,-10px);  }
+//   45% { @include translate(0,-20px); @include opacity (1); }
+//   59% { @include translate(0,-30px); @include opacity (0); }
+//   60% { @include translate(0,20px); }
+//   75% { @include translate(0,10px); @include opacity (1); }
+//   90% { @include translate(0,5px); }
+//   100% { @include translate(0,0); @include opacity (1); }
+// }
+
+// @include keyframes ('coding5') {
+//   0% { @include translate(0,0);@include opacity (1); }
+//   15% { @include translate(0,-5px);  }
+//   30% { @include translate(0,-10px);  }
+//   45% { @include translate(0,-20px);  }
+//   60% { @include translate(0,-30px);@include opacity (1); }
+//   74% { @include translate(0,-40px);@include opacity (0); }
+//   75% { @include translate(0,10px); }
+//   90% { @include translate(0,5px);@include opacity (1); }
+//   100% { @include translate(0,0); @include opacity (1); }
+// }
+
+// @include keyframes ('coding6') {
+//   0% { @include translate(0,0);@include opacity (1); }
+//   15% { @include translate(0,-5px); }
+//   30% { @include translate(0,-10px); }
+//   45% { @include translate(0,-20px); }
+//   60% { @include translate(0,-30px); }
+//   75% { @include translate(0,-40px);@include opacity (1); }
+//   89% { @include translate(0,-50px); @include opacity (0); }
+//   90% { @include translate(0,10px); }
+//   100% { @include translate(0,0); @include opacity (1); }
+// }
+
+
+
+/************* ICON4 *****************/
+
+.circle{
+  @include animation ('circ ease 6s 2s infinite');
+  @include transform-origin(50%, 50%);
+}
+
+@include keyframes ('circ') {
+  0% { @include translate(0,0); }
+  15% { @include translate(-15px,0); }
+  30% {  }
+  45% {  }
+  60% { @include translate(-15px,0);  }
+  75% { @include translate(0,0);  }
+  100% { @include translate(0,0);  }
+}
+
+.top_l_move{
+  @include translate(50px,63px);     
+}
+
+.top_line{
+  @include animation ('top_l ease 6s 2s infinite');
+  @include transform-origin(0, 0);
+}
+
+@include keyframes ('top_l') {
+  0% { @include translate(0,0); }
+  15% { @include transform (translate(13px,-6px) scale(.5,1)); }
+  30% {  }
+  45% {  }
+  60% { @include transform (translate(13px,-6px) scale(.5,1));  }
+  75% { @include translate(0,0);  }
+  100% { @include translate(0,0);  }
+}
+
+.bottom_line{
+  @include animation ('bottom_l ease 6s 2s infinite');
+  @include transform-origin(50%, 50%);
+}
+
+@include keyframes ('bottom_l') {
+  0% { @include translate(0,0); }
+  15% { @include translate(5px,-14px)  }
+  30% {  }
+  45% {  }
+  60% { @include translate(5px,-14px)   }
+  75% { @include translate(0,0);  }
+  100% { @include translate(0,0);  }
+}
+
+.rec1{
+  @include animation ('rec1 ease 6s 2s infinite');
+  @include transform-origin(50%, 50%);
+}
+
+@include keyframes ('rec1') {
+  0% { @include translate(0,0); }
+  15% { @include translate(1px,-6px);  }
+  30% {  }
+  45% {  }
+  60% { @include translate(1px,-6px);   }
+  75% { @include translate(0,0);  }
+  100% { @include translate(0,0);  }
+}
+
+.rec2{
+  @include animation ('rec2 ease 6s 2s infinite');
+  @include transform-origin(50%, 50%);
+}
+
+@include keyframes ('rec2') {
+  0% { @include translate(0,0); }
+  15% { @include translate(-15px,11px);  }
+  30% {  }
+  45% {  }
+  60% { @include translate(-15px,11px);   }
+  75% { @include translate(0,0);  }
+  100% { @include translate(0,0);  }
+}
+
+.rec3{
+  @include animation ('rec3 ease 6s 2s infinite');
+  @include transform-origin(50%, 50%);
+}
+
+@include keyframes ('rec3') {
+  0% { @include translate(0,0); opacity:1; }
+  15% { @include translate(-31px,20px); opacity:0;  }
+  60% { @include translate(-31px,20px); opacity:0;   }
+  75% { @include translate(0,0); opacity:1;  }
+  100% { @include translate(0,0);  }
+}
+
+.rec4_move{
+  @include translate(44px,86px);   
+}
+
+.rec4{
+  @include animation ('rec4 ease 6s 2s infinite');
+  @include transform-origin(0, 0);
+}
+
+@include keyframes ('rec4') {
+  0% { @include translate(0,0) ; fill:#ffffff; }
+  15% { @include transform (translate(21px,-20px) scale(1.8,.15)); fill:#cccccc;  }
+  60% { @include transform (translate(21px,-20px) scale(1.8,.15)); fill:#cccccc;   }
+  75% { @include translate(0,0); fill:#ffffff;  }
+  100% { @include translate(0,0);  }
+}
+
+.rec5_move{
+  @include translate(60px,86px);   
+}
+
+.rec5{
+  @include animation ('rec5 ease 6s 2s infinite');
+  @include transform-origin(0, 0);
+}
+
+@include keyframes ('rec5') {
+  0% { @include translate(0,0) ; fill:#ffffff; }
+  15% { @include transform (translate(5px,-16px) scale(1.8,.15)); fill:#cccccc;  }
+  60% { @include transform (translate(5px,-16px) scale(1.8,.15)); fill:#cccccc;   }
+  75% { @include translate(0,0); fill:#ffffff;  }
+  100% { @include translate(0,0);  }
+}
+
+.rec6_move{
+  @include translate(76px,86px);   
+}
+
+.rec6{
+  @include animation ('rec6 ease 6s 2s infinite');
+  @include transform-origin(0, 0);
+}
+
+@include keyframes ('rec6') {
+  0% { @include translate(0,0) ; fill:#ffffff; }
+  15% { @include transform (translate(-11px,-12px) scale(1.8,.15)); fill:#cccccc;  }
+  60% { @include transform (translate(-11px,-12px) scale(1.8,.15)); fill:#cccccc;   }
+  75% { @include translate(0,0); fill:#ffffff;  }
+  100% { @include translate(0,0);  }
+}
+
+.new_line1, .new_line2, .new_line3{
+  @include opacity (0);
+  @include animation ('new_line1 ease 6s 2s infinite');
+  @include transform-origin(50%, 50%);
+}
+
+@include keyframes ('new_line1') {
+  0% { @include translate(0,0) ; @include opacity (0); }
+  15% { @include translate(0,-8px); @include opacity (1); }
+  60% { @include translate(0,-8px); @include opacity (1); }
+  75% { @include translate(0,0); @include opacity (0); }
+  100% { @include translate(0,0); @include opacity (0); }
+}
+
+.cog_fix{
+  @include translate(-93.5px,-96.5px); 
+}
+
+.cog{ 
+  @include animation ('cog linear 4s infinite');
+  @include transform-origin(0, 0);
+}
+
+.cog_move{
+  @include translate(93.5px,96.5px); 
+}
+
+
+
+// .cog circle, .cog path {
+//   @include transform-origin(center, center); 
+// }
+
+@include keyframes ('cog') {
+  0%  { @include rotate(0deg); }
+  100%{ @include rotate(360deg); }
+}

@@ -1,0 +1,562 @@
+.plexicon{
+	
+	.content{
+	     h1, h2, hr, h3, .pros, .service_item, .logos li, .gallery img{
+	    	@include opacity (1);
+	    }
+	}
+
+	.case_item{
+		h3, ul, p, a{
+			@include opacity (1);	
+		}
+	}
+
+	h2{
+		font-weight: 600;
+		font-size:40px;
+		text-transform: uppercase;
+		color:$white_font_color;
+	}
+
+	p{
+		color:$white_font_color;
+		font-size:24px;
+		line-height: 36px;
+		font-weight: 300;
+	}
+
+	hr{
+		background:$white_font_color;
+	}
+
+	.content{
+		padding:120px 25px;
+	}
+
+	nav{
+	    .logo{
+	        float:left;
+
+	        a{
+	            width:auto;;
+	            height:35px;
+	            display: block;
+	            overflow: hidden;   
+	            @include opacity (.9);
+	            background:none;
+	            text-indent:0;
+
+	            .back{
+	                height:12px;
+	                width:16px;
+	                display: inline-block;
+	                margin:12px 10px 11px 0;
+	                @include transition(all 0.3s ease-out);
+	            }
+
+	            .logo_image{
+	                display: inline-block;
+	                width:235px;
+	                height:35px;
+	            }
+
+	            &:hover{
+	                @include opacity (1);
+	                @include translateY(2px);
+
+	                .back{
+	                	@include translateY(-2px);	
+	                }
+	            }
+	        }
+	    }
+	}
+
+	nav .content{
+		padding:0 25px;	
+	}
+
+	img.case_logo{
+		width:350px;
+		height:180px;
+		margin:110px auto 100px auto;	
+		display: block;
+	}
+
+	.plexicon_intro{
+		@include clearfix;
+
+		.content{
+			padding:120px 25px 60px 25px;
+		}
+
+		h2, p{
+			color:#fff;
+			text-align:left;
+		}
+
+		h2{
+			font-size:24px;
+			text-transform: inherit;
+			letter-spacing: 1px;
+		}
+
+		hr{
+			background:#ffd562;
+		}
+
+		.left{
+			width:55%;
+			float:left;
+			padding:0 60px 0 0;
+
+		}
+
+		.right{
+			width:45%;
+			float:right;
+			padding:10px 0 0 60px;
+
+			p{
+				margin:10px 0 20px 0;
+				font-size:18px;
+				line-height:28px;
+			}
+			
+			span{
+				font-weight: 600;
+			}
+
+			a{
+				float:left;
+				margin-top:10px;
+				position:relative;
+				width: 200px;
+				text-align:left;
+				padding: 15px 26px;
+
+				svg{
+					@include transition(all 1s ease-out);
+					fill:#ffffff;
+					width: 16px;
+					height:16px;
+					position: absolute;
+					right: 22px;
+					top: 16px;	
+				}
+
+				&:hover{
+					color:$dark_font_color;
+				}
+
+				&:hover svg{
+					fill:$dark_font_color;
+				}
+			}
+
+		}
+		
+	    .bg_case{
+	        background:url('../img/plexicon/bg_plexicon.jpg') center top no-repeat;
+	        background-attachment: fixed;
+	        background-size: cover;
+	        width: 100%;
+	        overflow: hidden;
+	        text-align: center;
+	        top:0;
+	    }
+	}
+
+	.case_details{
+		background:#242225;
+
+		.content{
+			padding:70px 25px;
+		}
+
+		h3{
+			color:$white_font_color;
+			padding:0 0 20px 0;
+		}
+
+		p{
+			margin:10px 0 20px 0;
+			font-size:18px;
+			line-height:28px;
+			color:#aaa9aa;
+		}
+
+		.left{
+			width:55%;
+			float:left;
+			padding:0 60px 0 0;			
+		}
+
+		.right{
+			width:45%;
+			float:right;
+			padding:10px 0 0 60px;	
+		}
+	}
+
+	.line{
+		@include clearfix;
+
+		div{
+			float:left;
+			width:33.33%;
+			height:8px;
+
+			&.yellow{
+				background:#ffd562;
+			}
+			&.red{
+				background:#ec798f;
+			}
+			&.blue{
+				background:#59afbc;
+			}
+		}
+	}
+
+	.case_about{
+		background:#312e33;
+		
+
+		h2, p{
+			text-align:center;
+			padding:10px;
+		}
+
+		hr{
+			margin:30px auto;
+		}
+
+		.images{
+			@include clearfix;	
+			width:940px;
+			margin:40px auto 0 auto;
+		}
+
+		.left{
+			@include clearfix;	
+			float:left;
+			width:627px;
+
+			img{
+				float:left;
+			}
+		}
+
+		.right{
+			float:left;
+			width:313px;
+		}
+	}
+
+	.case_concept{
+		background:#59afbc;	
+		@include clearfix;	
+
+		.title{
+			width:360px;
+			float:left;
+		}
+
+		.sketch{
+			float:left;
+			margin-left:60px;
+			background: url('../img/plexicon/sketch.png') 0 0 no-repeat;
+			width:700px;
+			height:461px;
+			text-align:center;
+
+			img{
+				display: inline-block;
+				margin-top:120px;
+			}
+		}
+	}
+
+	.case_flowmap{
+		background: #ffd562;
+
+		h2{
+			color:$dark_font_color;
+		}
+
+		hr{
+			background:$dark_font_color;
+		}
+
+		.flow{
+			margin:-130px auto 0 auto;
+			display: block;
+
+		}
+	}
+
+	.case_ux{
+		background:#ec798f;
+		position: relative;
+		height: 770px;
+
+		.content{
+			position:relative;
+			z-index: 2;
+		}
+
+		h2{
+			color:$dark_font_color;	
+		}
+
+		hr{
+			background:$dark_font_color;
+		}
+
+		p{
+			color:$dark_font_color;	
+			width:360px;
+		}
+
+		.bg_grey{
+			position:absolute;
+			bottom:0;
+			height:70px;
+			background:#dfdfdf;
+			width:100%;
+			z-index:0;
+		}
+
+		.bg_ux{
+			position:absolute;
+			top:0;
+			left:50px;
+			width:100%;
+			height:770px;
+			z-index:1;
+			background: url('../img/plexicon/bg_ux.jpg') center top no-repeat;
+		}
+	}
+
+	.case_design{
+		background:#dfdfdf;
+
+		.content{
+			position:relative;	
+			padding:50px 25px 120px 25px;
+		}
+		
+
+		h2,p,h4{
+			color:$dark_font_color;		
+		}
+
+		.title{
+			width:410px;
+			float:left;
+			margin:0 0 100px 0;
+		}
+
+		.phone_1{
+			position:absolute;
+			right:100px;
+			top:81px;
+		}
+
+		.phone_2{
+			position:absolute;
+			right:320px;
+			top:116px;
+		}
+
+		hr{
+			background:$dark_font_color;
+		}
+
+		hr.separator{
+			clear:both;
+			margin:0;
+			background:#b5b4b9;
+			display: block;
+		}
+
+		.icon_box{
+			@include clearfix;
+
+			margin-top:100px;
+
+			h4{
+				font-size:22px;
+				font-weight: 600;
+				text-transform: uppercase;
+				line-height:24px;
+				margin:40px 0 0 0;
+
+				&.typo_text{
+					margin:40px 0 0 20px;	
+				}
+			}
+		}
+
+		.design_icon{
+			width:25%;
+			float:left;
+		}
+
+	}
+	
+	.case_tech_space{
+		background: url('../img/plexicon/bg_tech.jpg') center top no-repeat #323032;
+		background-size:cover;
+
+		h2{
+			padding:20px 0;
+		}
+	}
+
+	.case_tech{
+		background:#ffd562;
+
+		.icon_box{
+			@include clearfix;
+
+			.tech_icon{
+				float:left;
+				width:33.33%;
+				padding:0 60px 0 0 ;
+
+				&:last-child{
+					padding:0;
+				}
+			}
+		}
+
+		hr{
+			background:$dark_font_color;
+		}
+
+		h3{
+			font-size:28px;
+			font-weight: 600;
+			line-height: 36px;
+			color:$dark_font_color;
+			width:auto;
+			padding:60px 0 0 0;
+		}
+
+		p{
+			color:#726444;
+			font-size:20px;
+			line-height: 32px;
+		}
+
+	}
+
+	.case_frame{
+		position:relative;
+		background:#59afbc;
+
+		.content{
+			@include clearfix;
+			position:relative;
+			z-index: 1;
+
+			.title{
+				width:400px;
+				float:right;
+			}
+		}
+
+		.bg_frame_left{
+			position:absolute;
+			left:0;
+			top:0;
+			bottom:0;
+			width:55%;
+			background:#dfdfdf;
+			z-index: 0;
+		}
+
+		.img_frame{
+			@include vertical-align;
+			position:absolute;
+			
+			right:0;
+		}
+	}
+
+	.case_pack{
+		position:relative;
+		height:600px;
+		background:#242225;
+
+		.content{
+			@include clearfix;
+			position:relative;
+			z-index: 1;
+
+			.title{
+				width:400px;
+				float:left;
+
+				h2,p{
+					color:$white_font_color;
+				}
+			}
+		}
+
+		.bg_frame_left{
+			position:absolute;
+			left:0;
+			top:0;
+			width:45%;
+			height:600px;
+			background:#242225;
+			z-index: 0;
+		}
+
+		.bg_frame_right{
+			position:absolute;
+			right:0;
+			top:0;
+			width:55%;
+			height:600px;
+			background: url('../img/plexicon/bg_pack.jpg') 0 0 no-repeat;
+			background-size:cover;
+			z-index: 0;
+		}
+
+		.image_wrapper{
+			position:absolute;
+			top:0;
+			right:0;
+		}
+	}
+
+	.case_contact{
+		background:#312e33;
+		text-align:center;
+
+		.content{
+			padding: 50px 25px;
+		}
+
+		a{
+			font-size: 28px;
+			text-transform: uppercase;
+			padding:25px 65px;
+			z-index: 2;
+
+			&:hover{
+				color:$dark_font_color;
+			}
+		}
+	}
+
+	footer .content{
+		padding:50px 25px;
+	}
+
+}

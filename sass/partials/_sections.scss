@@ -1,0 +1,784 @@
+
+.content{
+     h1, h2, hr, h3, .pros, .service_item, .logos li, .gallery img{
+    	@include opacity (0);
+    }
+}
+
+.case_item{
+	h3, ul, p, a{
+		@include opacity (0);	
+	}
+}
+
+.services{
+    position:relative;
+    z-index: 10;
+    background:#fff;
+    width:100%;
+
+    .content{
+	    padding:90px 25px 0 25px;
+	}
+}
+
+.services_wrapper{
+	@include clearfix;
+	
+	.service_item{
+		@include clearfix;
+		float:left;
+		width:50%;
+		height:220px;
+		margin:0 0 60px 0;
+
+		iframe, svg{
+			float:left;
+			width:140px;
+			height:140px;
+			margin:20px;
+		}
+
+		p{
+			padding:0 10px 0 0;
+		}
+	}
+}
+
+.work{
+	position: relative;
+
+	.case_study{
+		position:absolute;
+		width:100%;
+		height:1px;
+		display: block;
+	}
+
+	.bg_work{
+		background:$darker_color;
+		position:relative;
+		overflow: hidden;
+
+		h2, h3{
+			color:$light_font_color;
+			width:650px;
+			position:relative;
+			z-index: 10;	
+		}
+
+		hr{
+			background:$light_font_color;	
+		}
+
+		.bg_diagonal{
+			position:absolute;
+			right:-97px;
+			top:0;
+			width:37%;
+			height:100%;
+			background:$dark_color;
+			z-index: 0;
+			@include skew(-25deg,0deg);
+		}	
+	}
+
+	.content{
+	    padding:90px 25px 0 25px;
+	}
+
+	a.main_btn{
+		position:relative;
+		width: 190px;
+
+		svg{
+			@include transition(all 1s ease-out);
+			fill:#ffffff;
+			width: 16px;
+			height:16px;
+			position: absolute;
+			right: 22px;
+			top: 16px;	
+		}
+
+		&:hover svg{
+			fill:$primary_color;
+		}
+	}
+
+
+	.plexicon_box{
+		a.main_btn:hover{
+		
+		color:$dark_color;
+
+			svg{
+				fill:$dark_color;
+			}
+		}	
+	}
+
+	.audit_box{
+		a.main_btn:hover{
+		
+		color:#f9671e;
+
+			svg{
+				fill:#f9671e;
+			}
+		}	
+	}
+
+	.case_item{
+		position: relative;
+
+		.desc{
+			@include vertical-align;
+			position:absolute;
+			width:430px;
+			left:50%;
+			margin-left:-575px;
+
+			h3{
+				color:#fff;
+				text-align: left;
+				padding:0;
+			}
+
+			li{
+				display: inline-block;
+				text-transform: uppercase;
+				font-style: italic;
+				font-size:16px;
+				font-weight: 400;
+				@include opacity (.5);
+				color:#ffffff;
+				padding:0 5px 0 0;
+				line-height: 20px;
+			}
+
+			p{
+				color:#ffffff;
+				margin:10px 0 70px 0;
+			}
+
+			&.sara{
+				margin-left:100px;	
+			}
+
+			&.byod{
+				top:120px;
+			}
+
+			&.plexicon_box{
+				margin-left:100px;
+			}
+		}
+
+		img{
+			width:100%;
+			margin:0;
+			display: block;
+			padding:0;
+		}
+	}
+	
+}
+
+
+.clients{
+
+	.bg_clients{
+		background:$darker_color;
+		position:relative;	
+	}
+
+	.content{
+	    padding:90px 25px 0 25px;
+
+		h2{
+			color:$light_font_color;
+		}
+
+		h3{
+			color:$light_font_color;
+			width:700px;	
+			padding:0 0 60px 0;	
+		}
+
+		hr{
+			background:$light_font_color;	
+		}
+	}
+
+	ul.logos{
+		margin:0 0 60px -40px;
+		width:1200px;
+		
+		li{
+			display: inline-block;
+			width:19%;
+		}
+	}
+
+}
+
+.r100{
+	width:100%;
+	float:left;
+}
+
+.r70{
+	width:70%;
+	float:left;
+}
+
+.r50{
+	width:50%;
+	float:left;
+}
+
+.r30{
+	width:30%;
+	float:left;
+}
+
+
+.about{
+	background:#eeeeee;
+
+	.content{
+	    padding:90px 25px;
+	}
+
+	.about_text{
+		@include clearfix();
+		padding:60px 0;
+		width:1170px;
+
+		p{
+			width:50%;
+			float:left;
+			padding:0 0 0 25px;
+
+			&.first{
+				padding:0 25px 0 0;
+			}
+		}
+	}
+
+	.gallery{
+		@include clearfix();
+		margin:0 -5px;
+
+		img{
+			width:100%;
+			border:5px solid #eeeeee;
+		}
+	}
+
+	.r50{
+		position:relative;
+		.text{
+			position:absolute;
+			top:170px;
+			left:10px;
+			color:#eeeeee;
+			font-size: 34px;
+			font-style: italic;
+			font-weight: 300;
+			padding:30px;
+			z-index: 10;
+		}
+	}
+}
+
+
+.careers{
+
+	.content{
+	    padding:90px 25px 0 25px;
+	}
+
+	.pros{
+		float:left;
+		display: block;
+		width:33%;
+		padding:20px 20px 60px 0;
+
+		.number{
+			color:#808285;
+			font-weight: 500;
+			padding:0 0 15px 0;
+			font-style: italic;
+		}
+
+		h4{
+			letter-spacing: 0;
+			margin: 0 0 10px 0;
+		}
+	}
+
+	ul.careers_list>li>a{
+		width:100%;
+		display: block;
+		border-top:1px solid $line_color;
+		@include clearfix;
+
+	
+		.careers_icon{
+			float:left;
+			width:48px;
+			height:48px;
+			margin:5px 60px 0 0;
+		}
+
+		.details{
+			float:left;
+		}
+
+		.careers_arrow{
+			float:right;
+			width:16px;
+			height:16px;
+			margin:20px 0 0 0;
+			@include transition(all 0.3s ease-in-out);
+		}
+	
+
+		h4, p{
+			margin:0;
+		}
+
+		&:hover{
+			background: $primary_color;
+			border-top:1px solid $primary_color;
+
+			h4, p{
+				color:#ffffff;
+			}
+
+			.careers_icon path {
+				fill:#ffffff;
+			}
+
+			.careers_arrow{
+				 @include rotate(90deg);
+
+				
+				path{
+					fill:#ffffff;	
+				}	
+			}
+		}
+
+		.content{
+			padding:60px 30px;
+		}
+
+
+	}
+
+	.careers_item.st-open>a{
+
+		.content{
+			padding: 60px 30px 30px 30px;
+		}
+
+		.careers_arrow{
+			@include rotate(90deg);	
+			
+			path{
+				fill:$dark_color;
+				
+			}	
+		}
+	}
+
+
+	.careers_item.st-open>a:hover{
+		background: #fff;
+		border-top:1px solid $line_color;
+		h4, p{
+			color:$dark_color;
+		}
+
+		.careers_icon path {
+			fill:$dark_color;
+		}
+
+		.careers_arrow{
+			@include rotate(-90deg);	
+			
+			path{
+				fill:$dark_color;
+				
+			}	
+		}
+	}
+
+
+	.careers_info{
+		@extend .content;
+		@include clearfix;
+
+		padding:0 25px 20px 140px;
+
+		h3{
+			padding: 10px 0 20px 0;
+			color:$primary_color;
+			text-transform: uppercase;
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 20px;
+			@include opacity (1);
+		}
+
+		p{
+			font-size:16px;
+			margin: 0 0 20px 0;
+		}
+
+		ul{
+			margin: 0 0 20px 0;
+		}
+
+		li{
+			font-size:16px;
+			padding:0 0 5px 20px;
+			text-indent: -18px;
+
+			&:before{
+				content: " ";
+				width:4px;
+				height:4px;
+				border-radius:2px;
+				display: inline-block;
+				margin:0 10px 3px 3px;
+    			background: $secondary_color;
+			}
+		}
+
+		.col_left{
+			float:left;
+			width:45%;
+			padding:0 50px 0 0;
+		}
+
+		.col_right{
+			float:left;
+			width:55%;	
+		}
+
+		a.careers_print, a.careers_apply{
+			@extend .dark_btn;
+
+			float:left;
+			width:130px;
+			margin:10px 20px 0 0;
+
+			svg{
+				width:22px;
+				height:22px;
+				position:absolute;
+				right:22px;
+				top:13px;
+				@include transition(all 1s ease-out);
+			}
+
+			&:hover{
+				svg path{
+					fill:$white_font_color;
+				}
+			}
+		}
+
+		a.careers_apply svg{
+			width:16px;
+			top:16px;
+		}
+	}
+
+}
+
+.contact{
+
+	a.gmaps{
+		@extend .dark_btn;
+		width: 140px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		z-index: 10;
+		margin: 100px 0 0 -70px;
+		text-align: center;
+		font-size: 14px;
+		line-height: 14px;
+		padding: 12px;
+		background: #f4f4f4;
+	}
+
+	.bg_contact{
+		background:$dark_color;
+		position:relative;	
+	}
+
+	.content{
+	    padding:90px 25px 0 25px;
+
+		h2{
+			color:$light_font_color;
+		}
+
+		h3{
+			color:$light_font_color;
+			width:700px;	
+			padding:0 0 90px 0;	
+		}
+
+		hr{
+			background:$light_font_color;	
+		}
+	}
+
+	.contact_details{
+		background:$darker_color;
+		position:relative;
+		height:223px;
+
+		.content{
+			padding:40px 25px;	
+		}
+
+
+		.city{
+			@include clearfix;
+			width:800px;
+
+
+			div{
+				float:left;
+				width:33%;
+
+				h4{
+					color:$light_font_color;
+					margin:0 0 10px 0;
+				}
+
+				p{
+					color:$light_font_color;
+				}
+
+				span{
+					color:#737980;
+					font-weight: 500;
+					font-size:16px;
+					margin:42px 0 8px 0;
+					display: block;
+
+				}
+
+				a{
+					color:$light_font_color;
+					padding:0 0 3px 0;
+					border-bottom:2px solid #505255;	
+
+					&:hover{
+						color:$white_font_color;
+						border-bottom:2px solid $primary_color;	
+					}
+				}
+			}
+		}
+	}
+
+	a.switch_map{
+		background:$primary_color;	
+		display: block;
+		padding:85px 0 84px 60px;
+		color:#fff;
+		position:absolute;
+		left:70%;
+		top:0;
+		right:0;
+		font-weight: 300;
+		font-size:18px;
+
+		.bold{
+			font-weight: 400;
+			font-size:24px;
+			padding:5px 0 0 0;
+			display: block;
+		}
+
+		.map_arrow{
+			width:16px;
+			height:16px;
+			position:absolute;
+			left:280px;
+			top:48%;
+			@include transition(all 0.3s ease-in-out);
+			@include rotate(0deg);	
+
+			path{
+				fill:#ffffff;
+			}
+		}
+
+		&:hover{
+			background:darken($primary_color, 10%);
+
+			.map_arrow{
+				@include rotate(90deg);	
+			}
+			
+		}
+	}
+
+	a.switch_map.red{
+		background:$secondary_color;	
+		
+		&:hover{
+			background:darken($secondary_color, 10%);
+		}	
+	}
+
+}
+
+footer{
+
+	.content{
+		padding:50px 25px;
+		position:relative;
+
+		p.copyright{
+			text-align:center;
+			color:#c6cbd0;
+			margin:0;
+			font-weight:300;
+			font-size:16px;
+			padding:5px 0 0 0;
+		}
+
+		a.mma{
+			position:absolute;
+			top:50px;
+			right:25px;
+			display:block;
+			background:url('../img/ic_mma.png') 0 0 no-repeat;
+			width:88px;
+			height:37px;
+			background-size:88px;
+
+			&:hover{
+				background:url('../img/ic_mma_hover.png') 0 0 no-repeat;
+				background-size:88px;
+			}
+		}
+
+		.social{
+			position:absolute;
+			top:50px;
+			left:25px;
+			@include clearfix;
+
+			a{
+				float:left;
+				display: block;
+				margin:0 10px 0 0;
+				width:34px;
+				height: 34px;
+				border-radius:16px;
+				border:2px solid #c0c6cc;
+				padding-top:7px;
+				text-align: center;
+				@include transition(all 0s ease-in-out);
+
+				svg{
+					width:16px;
+					height:16px;
+					
+
+					path{
+						@include transition(all 0s ease-in-out);
+						fill:#c0c6cc;
+					}
+				}
+
+				&:hover{
+					border-color:$primary_color;
+
+					path{
+						fill:$primary_color;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+/******************** MAP *************************/
+
+
+
+.address .city {
+	display: none;
+	overflow: hidden;
+}
+
+#maps {
+	width: 100%;
+	height: 350px;
+	position: relative;
+	overflow: hidden;
+}
+
+#maps .wrapper {
+	width: 100%;
+	height: 1050px;
+	position: absolute;
+	left: 0;
+	top: -350px;
+}
+#maps .wrapper > div {
+	width: 100%;
+	height: 1050px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+#maps .wrapper .overlay {
+	z-index: 2;
+	background-image: url(../img/map-overlay-bg.png);
+	background-repeat: repeat-x;
+	display: none;
+}
+
+#maps .wrapper .overlay.rotated {
+	background-position: left bottom;
+}
+
+#maps .wrapper .map .gm-style > div:nth-child(2) {
+	top: 675px;
+}
+
+#maps .wrapper .map .gm-style > .gmnoprint {
+	top: 685px;
+	height: 12px;
+}
+
+
+
+
+
+
+.blog_body header{
+	display:block;
+	@include opacity (1);
+}
+

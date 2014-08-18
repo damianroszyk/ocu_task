@@ -1,0 +1,938 @@
+
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+	.content{
+		width:100%;
+	}
+
+	.headerImg h1, .loading-screen h1, .headerImg .header_2 h2{
+		width:100%;
+		left:0;
+		margin:0;
+		letter-spacing: 2px;
+		font-size: 64px;
+		line-height: 76px;
+	}
+
+	.headerImg .header_2{
+		width:100%;
+		margin:0;
+		left:0;
+	}
+
+	.services_wrapper .service_item svg{
+		margin: 40px 20px;
+	}
+
+
+	.work {
+		.case_item .audit_box{
+			width:340px;
+			left:50px;
+			margin:0;
+
+			p{
+				margin: 10px 0 30px 0;
+			}
+		}
+
+		.case_item .plexicon_box{
+			width:360px;
+			right:50px;
+			margin:0;
+			left: auto;
+
+			p{
+				margin: 10px 0 30px 0;
+			}
+		}
+	}
+
+	.clients ul.logos{
+		width:100%;
+		margin: 0 0 60px 0;
+
+		img{
+			width:100%;
+			display: block;
+		}
+	}
+
+	.about .about_text{
+		width:100%;
+	}
+
+	.about .r50 .text{
+		font-size: 30px;
+		padding: 20px;	
+		left: 0;
+		top:130px;
+
+	}
+
+	.contact .contact_details .city{
+		width:670px;
+	}
+
+	.contact a.switch_map .map_arrow{
+		left: 240px;
+	}
+
+	.audit{
+		.case_intro p{
+			padding: 0 80px;
+		}
+
+		.case_about p, .case_dev_title p{
+			padding: 0 60px;		
+		}
+
+		.case_logotype .title{
+			padding: 0 20px 0 0;
+		}
+
+		.case_notification .title{
+			padding: 0 40px 0 25px;
+		}
+
+		.case_typo .title, .case_controls .image, .case_sprint .image{
+			padding:0 40px 0 0;
+		}
+
+		.case_typo img, .case_controls img, .case_sprint img{
+			width:100%;
+		}
+
+		.case_stats .image > div{
+			padding: 70px 20px 0 20px;
+		}
+	}
+
+	.plexicon{
+
+		.case_details .left{
+			padding:0;
+		}
+
+		.case_about .content{
+			padding: 120px 0px;
+		}
+
+		.case_concept .sketch{
+			margin:-30px 0 0 0;
+			position: absolute;
+			right: -140px;
+
+			img{
+				margin-left:-120px;
+			}
+		}
+
+		.case_ux .bg_ux{
+			top:auto;
+			bottom:0;
+			background-size:1100px;
+			height:620px;
+			left:30px;
+		}
+
+		.case_design .phone_1{
+			right:25px;
+		}
+
+		.case_design .phone_2{
+			right: 190px;
+		}
+
+		.icon_box h4{
+			font-size:20px;
+			line-height: 20px;
+		}
+
+		.case_tech .icon_box .tech_icon{
+			padding:0 20px 0 0;
+
+			&::last-child{
+				padding:0;
+			}
+		}
+
+		.case_frame{
+			height:auto;
+
+			.content .title{
+				width:50%;
+				padding: 0 20px 0 50px;
+			}
+
+			.bg_frame_left{
+				width:50%;
+				height: 100%;
+			}
+
+			.img_frame{
+				width: 110%;
+			}
+		} 
+
+		.case_pack .bg_frame_right{
+			background-position:-100px 0;
+		}
+
+		
+	} 
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+	.headerImg h1, .loading-screen h1, .headerImg .header_2 h2{
+		font-size:70px;
+		top:30%;
+	}
+
+	.headerImg .header_2 h2{
+		font-size:60px;
+		line-height: 60px;
+	}
+
+	.headerImg .header_2 hr{
+		margin:30px 0;
+	}
+
+	.services .content{
+		padding:50px 25px 0 25px;
+	}
+
+	h2{
+		font-size:32px;
+	}
+
+	hr{
+		margin:24px 0;
+	}
+
+	h3{
+		font-size:20px;
+		line-height: 30px;
+		font-weight: 400;
+		padding: 0 0 50px 0;
+	}
+
+	h4{
+		font-size:20px;
+		margin: 0 0 10px;
+	}
+
+	p{
+		margin: 0 0 10px;
+		font-size: 16px;
+		line-height: 26px;
+		font-weight: 400;
+	}
+
+	a.main_btn{
+		padding: 13px 20px;
+
+	 	svg{
+	 		right: 16px;
+			top: 14px;	
+	 	}
+	 }
+
+	.services_wrapper{
+		.service_item{
+			float: inherit;
+			width: 100%;
+			height: auto;
+			margin: 0 0 40px 0;
+
+			&.design svg, &.delivery svg{
+				float:right;
+			} 
+		}
+
+		.service_item svg{
+			margin: 0px 60px;
+		}
+
+		h4{
+			margin: 10px 0 10px;
+		}
+
+		p{
+			padding:0 50px 0 0;
+		}
+	} 
+
+	.work{
+
+		.content{
+			padding: 60px 25px 0 25px;
+		}
+
+		.bg_work .bg_diagonal{
+			right: -68px;
+		}
+
+		.case_item {
+
+			img{
+				height:420px;
+				width:auto;
+
+				&.plexicon_box_image{
+					margin-left:-70px;
+				}
+			}
+
+			.audit_box{
+				left:25px;
+			}
+
+			.plexicon_box{
+				right:25px;
+				width:320px;
+
+				
+			}
+
+		}
+
+		.bg_work .bg_diagonal{
+			right:0;
+			left:652px;
+		}
+
+		 a.main_btn{
+		 	width:170px;
+
+		 	svg{
+		 		right: 16px;
+				top: 14px;	
+		 	}
+		 }
+
+	} 
+
+	.clients{
+
+		.content{
+			padding: 50px 25px 0 25px;
+		}
+
+		h3{
+			padding: 0 0 40px 0;
+		}
+
+		ul.logos{
+			margin: 0 0 40px 0;
+		}
+
+	} 
+
+	.about{
+		.content{
+			padding: 50px 25px;
+		}
+
+		h3{
+			padding: 0 0 30px 0;
+		}
+
+		.about_text{
+			padding:30px 0;
+		}
+		.r50 .text{
+			font-size: 25px;
+			top: 80px;	
+		}
+	} 
+
+	.careers{
+
+		.content{
+			padding: 50px 25px 0 25px;;
+		}
+
+		.pros{
+			padding:20px 20px 40px 0;
+		}
+
+		ul.careers_list > li > a .content{
+			padding: 30px 20px;
+		}
+
+		.careers_item.st-open > a .content{
+			padding: 30px 20px 20px 20px;	
+		}
+
+		ul.careers_list > li > a .careers_icon{
+			margin:5px 30px 0 0;
+		}
+
+		.careers_info{
+			padding: 20px 25px 0 25px;
+		}
+
+		.careers_info a.careers_print, .careers_info a.careers_apply{
+			width:160px;
+		}
+
+	} 
+
+	.contact{
+
+		.content{
+			padding:50px 25px 0 25px;
+		}
+
+		.content h3{
+			padding:0 0 50px 0;
+		}
+
+		.contact_details{
+			height:auto;
+		}
+
+		.contact_details .city{
+			width:480px;
+		}
+
+		.contact_details .city div span{
+			margin: 36px 0 8px 0;
+		}
+
+		a.switch_map{
+			padding: 79px 0 67px 30px;
+			bottom: 0;
+
+			.bold{
+				padding:0;
+			}
+
+			.map_arrow{
+				left: 190px;
+			}
+		}
+
+	}
+
+
+	.audit{
+
+		p{
+			font-size: 18px;
+			line-height: 26px;
+		}
+
+		hr.separator{
+			margin:50px 0;
+		}
+
+		.case_intro{
+			height:500px;
+
+			.content{
+				padding: 60px 25px 60px 25px;
+			}
+
+			.bg_case{
+				height:500px;
+			}
+
+			p{
+				font-size: 24px;
+				line-height: 32px;
+			}
+		}
+
+		.case_info {
+
+			.content{
+				padding: 50px 25px;
+			}
+
+			.right p{
+				font-size:16px;
+				margin: 5px 0 10px 0;
+			}
+
+			.right{
+				padding:0;
+			}
+
+			.left{
+				padding: 0 40px 0 0;
+			}
+		}
+
+		.case_details{
+			.content{
+				padding: 40px 25px;
+			}
+
+			p{
+				margin: 0px 0 20px 0;
+			}
+		}
+		
+		.case_about{
+			.content{
+				padding: 50px 25px 0 25px;
+			}
+
+			h2{
+				font-size:32px;
+				line-height: 40px;
+			}
+
+			p{
+				font-size: 20px;
+				line-height: 30px;
+			}
+
+		}
+
+		.case_logotype .image img{
+			width:100%;
+			margin-top: 30px;
+		}
+
+		.case_colors .image{
+			margin-top:10px;
+		}
+
+		.case_colors .image li{
+			width:50px;
+			height:50px;
+
+			&:hover span{
+				opacity:0;
+			}
+		}
+
+		.case_typo hr.separator{
+			margin: 0 0 50px 0;
+		}
+
+		.case_notification .image img{
+			width:80%;
+		}
+
+		.case_icons .image img{
+			width:80%;
+		}
+
+		.case_dev_title{
+			height:auto;
+
+			.content{
+				padding: 50px 25px 50px 25px;
+			}
+		}
+
+		.case_sprint .content{
+			padding: 50px 25px 0 25px;
+		}
+
+		.case_stats .image > div{
+			padding: 10px 10px 0 10px;
+
+			img{
+				width:70%;
+			}
+		}
+
+
+		.case_backend .content{
+			padding:100px 25px;
+		}
+
+		.case_backend .pros{
+			padding: 10px 10px 40px 0;
+
+			p{
+				font-size:16px;
+			}
+		} 
+
+		.case_backend .image{
+			width:100%;
+
+			img.arrows {
+				margin: 185px -30px 0 30px;
+			}
+
+			img.app{
+				margin-left: -50px;
+			}
+
+			img.backend{
+				margin-right: -400px;
+			}
+		}
+
+
+		.case_contact a{
+			font-size: 20px;
+			padding: 20px 50px;
+		}
+	} 
+
+
+	.plexicon {
+
+		p{
+			font-size: 18px;
+			line-height: 26px;
+		}
+
+		hr{
+			margin:20px 0;
+		}
+
+		h2 {
+			font-size: 28px;
+			line-height: 30px;
+		}
+
+		img.case_logo {
+			width: 230px;
+			height: 115px;
+			margin: 80px auto;
+			display: block;
+		}
+
+		.plexicon_intro{
+
+			.right p{
+				font-size:16px;
+				margin: 5px 0 10px 0;
+			}
+
+			.right{
+				padding:10px 0 0 0;
+			}
+
+			.left{
+				padding: 0 40px 0 0;
+			}
+		}
+
+
+		.case_details{
+			.content{
+				padding: 40px 25px;
+			}
+
+			p{
+				margin: 0px 0 20px 0;
+				font-size: 16px;
+				line-height: 24px;
+			}
+		}
+
+		.case_about{
+
+			.content{
+				padding: 60px 0px;
+			}
+
+			hr{
+				margin:20px auto;
+			}
+
+			.images{
+				width:100%;
+				padding:0 25px;
+
+				.left{
+					width:66%;
+
+					img{
+						width:50%;
+
+						&:first-child{
+							width:100%;
+						}
+					}
+				}
+
+				.right{
+					width:33%;
+
+					img{
+						width:100%;
+					}
+				}
+			}
+
+		} 
+
+		.case_concept{
+
+
+			.content{
+				padding:80px 25px 20px 25px;
+			}
+
+			.title{
+				width:40%;
+				padding-right: 30px;
+			}
+
+			.sketch{
+				width:60%;
+				float:left;
+				position:relative;
+				margin:0;
+				right:inherit;
+				background-size:100%;
+				height: 370px;
+
+				img{
+					width:65%;
+					margin:75px 0 0 0;
+				}
+			}
+		}
+
+		.case_flowmap{
+			.content{
+				padding:80px 25px;
+			}
+
+			img{
+				width:90%;
+				margin: -90px auto 0 auto;
+			}
+		}
+
+		.case_ux{
+			.content{
+				padding:80px 25px;
+			}
+			height:560px;
+
+			.bg_ux {
+				background-size: 850px;
+				height: 494px;
+			}
+		}
+
+
+		.case_design{
+			.content{
+				padding:0 25px 60px 25px;
+			}
+
+			.title{
+				margin:0 0 59px 0;
+				width: 350px;
+			}
+
+			.phone_1{
+				width: 235px;
+				top:0px;
+			}
+
+			.phone_2{
+				width: 220px;
+				top: 35px;
+				right:160px;
+			}
+
+			.icon_box{
+				margin-top: 60px;
+			}
+
+			.icon_box h4{
+				font-size: 18px;
+				line-height: 20px;
+				margin: 20px 0 0 0;
+
+				&.typo_text{
+					margin: 20px 0 0 20px;
+				}
+
+			}
+
+			.design_icon img{
+				width:90%;
+			}
+		}
+
+		.case_tech{
+			.content{
+				padding:60px 25px 60px 25px;
+			}
+
+			.icon_box .tech_icon{
+				width:100%;
+				float: inherit;
+				@include clearfix;
+				
+				
+				img{
+					float:left;
+					margin: 50px 60px 50px 20px;
+				}
+
+				h3{
+					padding: 40px 0 0 0;
+					line-height: 30px;
+				}
+
+				p{
+					font-size: 18px;
+					line-height: 26px;
+				}	
+			}
+		}
+
+		.case_frame{
+
+			.content{
+				padding:60px 25px;
+			}
+
+		}
+
+		.case_pack{
+			height:auto;
+
+			.content{
+				padding:60px 25px;
+			}
+
+			.title{
+				width:50%;
+				padding: 0 50px 0 20px;
+
+			}
+
+			.bg_frame_right{
+				background-position:0;
+				bottom:0;
+				height:auto;
+				width:50%;
+			}
+
+		}
+
+		.case_contact a{
+			font-size: 20px;
+			padding: 20px 50px;
+		}
+
+
+	}
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+	h3{
+		width:100%;
+		font-size: 22px;
+		line-height: 32px;
+		font-weight: 400;
+	}
+
+	nav .logo{
+		float:inherit;
+
+		a{
+			margin:40px auto 20px auto;
+		}
+	}
+
+	nav.nav_box .logo a{
+		margin: 10px auto;
+	}
+
+	nav.nav_box li a{
+		padding:0 0 10px 0;
+	}
+
+	nav ul{
+		float: inherit;
+		text-align:center;
+	}
+
+	nav ul li {
+		float: inherit;
+		margin: 5px 13px;
+		display: inline-block;
+	}
+
+	nav ul li a{
+		padding: 10px 0;
+		margin: 0 5px 0 0;
+	}
+
+	.headerImg, .loading-screen{
+		height:100%;
+
+		h1{
+			font-size: 58px;
+			letter-spacing: 1px;
+			line-height: 60px;
+			position:inherit !important;
+			top:inherit;
+			margin-top:180px;
+		}
+
+		.bg2{
+
+		}
+
+		.header_2{
+			position: absolute !important;
+			opacity: 1;
+			top: 54%;
+			left:25px;
+			right:25px;
+			width:100%;
+			
+
+			h2{
+				font-size: 54px;
+				line-height: 54px;
+
+			}
+
+			hr, h3{
+				display: none;
+			}
+		}
+	}
+
+	.services_wrapper{
+
+		.service_item{
+			margin: 0 0 10px 0;
+		}
+
+	} 
+
+	.services_wrapper .service_item svg{
+		margin:30px 20px 50px 20px;
+	}
+
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+	
+}
