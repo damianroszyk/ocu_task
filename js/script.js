@@ -360,11 +360,18 @@
 } )( jQuery );
 
 
-// $(document).ready(
-//   function() { 
-//     $("html").niceScroll();
-//   }
-// );
+$(document).ready(
+  function() { 
+    $("html").niceScroll({
+        horizrailenabled:false,
+        cursorborder: '0 solid #000',
+        cursoropacitymax: '.3',
+        cursorwidth: '10px',      
+        cursorcolor: '#24272b'     
+
+    });
+  }
+);
 
 
 

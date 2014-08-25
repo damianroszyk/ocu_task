@@ -93,6 +93,13 @@
 
     });
 
+    var mySwiper = new Swiper('.sketch',{
+        pagination: '.pagination',
+        loop:true,
+        grabCursor: true,
+        paginationClickable: true
+      })
+
 
 } )( jQuery );
 
