@@ -16,9 +16,12 @@
               
               // Fade in sections
               $body.removeClass('loading').addClass('loaded');
+
+              $(window).scrollTop(0);
               
         }, 1000);
     });
+
 
     function adjustWindow(){
 
@@ -41,10 +44,10 @@
 
             skrollr.menu.init(s, {
                 animate: true,
-                easing: 'sqrt',
+                easing: 'outCubic',
                 scale: 2,
                 duration: function(currentTop, targetTop) {
-                    return 500;
+                    return 1400;
                 },
             });
 
@@ -61,12 +64,12 @@
         // }
     
         // Check for touch
-        if(Modernizr.touch) {
+        // if(Modernizr.touch) {
 
-            // Init Skrollr
-            var s = skrollr.init();
-            s.destroy();
-        }
+        //     // Init Skrollr
+        //     var s = skrollr.init();
+        //     s.destroy();
+        // }
 
     }
     
@@ -265,15 +268,14 @@
 
 
     $(window).scroll(function() {
-
-       
-        
+ 
         var winH = $(window).height();
+        var win2H = (winH * 2) - 130;
 
         $('.content').each(function(){
             var box = $(this);
-             var imagePos = $(this).offset().top;
-        var topOfWindow = $(window).scrollTop();
+            var imagePos = $(this).offset().top;
+            var topOfWindow = $(window).scrollTop();
             if (imagePos < topOfWindow+winH-100) {
                 $(box).find('h1').addClass("fadeInLeft");
                 $(box).find('h2').addClass("fadeInLeft");
@@ -339,6 +341,20 @@
             };
         });
 
+
+        //menu
+
+         if ($("nav").offset().top < winH) {
+            $("nav").removeClass("nav_box");
+            $("nav").removeClass("nav_dark");
+        } else if ($("nav").offset().top >= winH && $("nav").offset().top < win2H){
+            $("nav").addClass("nav_dark");
+            $("nav").removeClass("nav_box");
+        } else if ($("nav").offset().top >= win2H) {
+            $("nav").addClass("nav_box");
+            $("nav").removeClass("nav_dark");
+        }
+
     });
 
 } )( jQuery );
@@ -350,24 +366,6 @@
 //   }
 // );
 
-
-$(window).scroll(function() {
-
-    winH = $window.height();
-    win2H = (winH * 2) - 130;
-
-    if ($("nav").offset().top < winH) {
-        $("nav").removeClass("nav_box");
-        $("nav").removeClass("nav_dark");
-    } else if ($("nav").offset().top >= winH && $("nav").offset().top < win2H){
-        $("nav").addClass("nav_dark");
-        $("nav").removeClass("nav_box");
-    } else if ($("nav").offset().top >= win2H) {
-        $("nav").addClass("nav_box");
-        $("nav").removeClass("nav_dark");
-    }
-
-});
 
 
 

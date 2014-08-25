@@ -14,6 +14,8 @@
               // Fade in sections
               $body.removeClass('loading').addClass('loaded');
 
+              $(window).scrollTop(0);
+
                 
         }, 400);
     });
@@ -73,28 +75,29 @@
             .listen(100);
 
 
+    $(window).scroll(function() {
+
+        var imageH = 400;
+
+        if ( $("body").is(".audit") ) {
+           imageH = 400;
+        } else{
+           imageH = 720; 
+        }
+
+        if ($("nav").offset().top > imageH) {
+            $("nav").addClass("nav_box");
+        } else {
+            $("nav").removeClass("nav_box");
+        }
+
+    });
+
+
 } )( jQuery );
 
 
-$(window).scroll(function() {
 
-
-    var imageH = 420;
-
-    if ( $("body").is(".audit") ) {
-       imageH = 420;
-    } else{
-       imageH = 720; 
-    }
-
-
-    if ($("nav").offset().top > imageH) {
-        $("nav").addClass("nav_box");
-    } else {
-        $("nav").removeClass("nav_box");
-    }
-
-});
 
 
 
