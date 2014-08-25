@@ -14,9 +14,8 @@
               // Fade in sections
               $body.removeClass('loading').addClass('loaded');
 
-              
-              
-        }, 1000);
+                
+        }, 400);
     });
 
 
@@ -74,10 +73,29 @@
             .listen(100);
 
 
-
-  
-
 } )( jQuery );
+
+
+$(window).scroll(function() {
+
+
+    var imageH = 420;
+
+    if ( $("body").is(".audit") ) {
+       imageH = 420;
+    } else{
+       imageH = 720; 
+    }
+
+
+    if ($("nav").offset().top > imageH) {
+        $("nav").addClass("nav_box");
+    } else {
+        $("nav").removeClass("nav_box");
+    }
+
+});
+
 
 
 

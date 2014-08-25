@@ -25,12 +25,11 @@
         </div>
     </div>
 
-    <nav class="nav_box">
+    <nav>
         <div class="content">
             <div class="logo">
                 <a href="index.html">
                     <img class="back" src="img/svg/ic_back.svg" alt="back icon">
-                    <img class="logo_image" src="img/svg/logo_dark.svg" alt="inFullMobile logo">
                 </a>
             </div>
             <ul>
@@ -44,16 +43,12 @@
    
 
     <section id="case_intro" class="plexicon_intro window headerImg">
-        <div class="bg_case" 
-            data-center="background-position: 50% 0px; opacity:1;" 
-            data-top-bottom="background-position: 50% -200px; opacity:.1;"
-            data-anchor-target="#case_intro"
-        >
-            <div class="content">
-                <div 
-                    data-10="opacity: 1" 
-                    data-200="opacity: 0; display:block;"
-                >
+            <div class="content"
+                data-200="opacity: 1" 
+                data-400="opacity: 0; display:block;"
+                data-500="display:none;"
+            >
+                <div>
                     <img src="img/svg/plexicon.svg" class="case_logo" alt="plexicon logo">
                 </div>
 
@@ -72,7 +67,13 @@
                     </div>
                 </div>
             </div>
-        </div>
+
+            <div class="bg_case" 
+                data-center="background-position: 50% 0px; opacity:1; display:block;" 
+                data-top-bottom="background-position: 50% -200px; opacity:.1; display:none;"
+                data-anchor-target="#case_intro"
+            ></div>
+
     </section>
 
     <section id="case_details" class="case_details">

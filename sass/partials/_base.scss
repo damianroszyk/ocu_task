@@ -10,7 +10,7 @@
 body, html {
     height: 100%;
     min-height: 100%;
-    background-color: #fff;
+    background-color: #000;
 
 }
 
@@ -26,6 +26,14 @@ body {
     font-weight: 300;
     margin:0;
     padding:0;
+}
+
+section{
+    background:#ffffff;
+}
+
+footer{
+   background:#ffffff; 
 }
 
 
@@ -61,13 +69,13 @@ hr{
 }
 
 .plexicon .loading-screen {
-    background: url('../img/bg_loading_plexicon.jpg') no-repeat center center #000 ;
+    background: url('../img/bg_loading_plexicon.jpg') no-repeat center top #000 ;
     background-attachment: fixed;
     background-size: cover;
 }
 
 .audit .loading-screen {
-    background: url('../img/bg_loading_audit.jpg') no-repeat center center #000 ;
+    background: url('../img/bg_loading_audit.jpg') no-repeat center top #000 ;
     background-attachment: fixed;
     background-size: cover;
 }
@@ -81,6 +89,8 @@ hr{
     height:100%;
     background-attachment: fixed;
     background-size: cover;
+    top:0;
+    left:0;
 
 
     h1{ 
@@ -115,7 +125,7 @@ section, nav, footer {
 .loaded .loading-screen{
     @include opacity (0);
     display: none;
-    @include transition(opacity 1.2s ease-out);
+    @include transition(opacity .6s ease-out);
 }
 
 .loaded section,
@@ -123,7 +133,7 @@ section, nav, footer {
 .loaded nav,
 .loaded footer {
     @include opacity (1);
-    @include transition(opacity 1.2s ease-out);
+    @include transition(opacity .6s ease-out);
 }
 
 .loading nav{

@@ -46,13 +46,9 @@
 	        float:left;
 
 	        a{
-	            width:auto;;
-	            height:35px;
-	            display: block;
-	            overflow: hidden;   
-	            @include opacity (.9);
-	            background:none;
-	            text-indent:0;
+	        	text-indent: 0;
+	        	width:265px;
+	        	background-position:right 0;
 
 	            .back{
 	                height:12px;
@@ -62,11 +58,6 @@
 	                @include transition(all 0.3s ease-out);
 	            }
 
-	            .logo_image{
-	                display: inline-block;
-	                width:235px;
-	                height:35px;
-	            }
 
 	            &:hover{
 	                @include opacity (1);
@@ -91,7 +82,7 @@
 
 		.content{
 			height:100%;
-			padding:150px 25px 60px 25px;
+			padding:120px 25px 20px 25px;
 		}
 
 		h2{
@@ -112,11 +103,14 @@
 	}
 
 	.case_intro{
-		height:600px;
-		margin-top: 90px;
+		height:520px;
+		background:#000;
 
 		.content{
-			padding:60px 25px 60px 25px;
+			padding:120px 25px 20px 25px;
+			position:relative;
+			z-index: 1;
+			text-align: center;
 		}
 
 		img.intro_icon{
@@ -130,8 +124,8 @@
 		p{
 			color:#fff;
 			text-align:center;
-			font-size:30px;
-			line-height: 40px;
+			font-size:24px;
+			line-height: 32px;
 			padding:0 230px;
 			font-weight: 300;
 			letter-spacing: 1px;
@@ -147,22 +141,28 @@
 		hr{
 			background:#ffffff;
 			display: inline-block;
+			margin:20px 0;
 		}
 		
 	    .bg_case{
-	        background:url('../img/audit/bg_audit.jpg') center top no-repeat;
+	        background:url('../img/audit/bg_audit.jpg') center top no-repeat #000;
 	        background-attachment: fixed;
 	        background-size: cover;
 	        width: 100%;
-	        height: 600px;
-	        overflow: hidden;
-	        text-align: center;
+	        position:fixed;
 	        top:0;
+	        left:0;
+	        height:100%;
+	        z-index: 0;
+	        overflow: hidden;
 	    }
 	}
 
+
 	.case_info{
 		background:#2b2f33;
+		z-index: 5;
+		position: relative;
 
 		.content{
 			padding:90px 25px;
@@ -234,6 +234,8 @@
 
 	.case_details{
 		background:#373b40;
+		z-index: 5;
+		position: relative;
 
 		.content{
 			padding:70px 25px;
@@ -309,6 +311,7 @@
 
 		.image{
 			@include clearfix;	
+			margin-top:20px;
 
 			float:right;
 			width:50%;
@@ -320,8 +323,9 @@
 
 				h4{
 					text-transform: uppercase;
-					color:#cfcfd0;
-					font-size:16px;
+					color:$dark_font_color;
+					font-size:18px;
+					font-weight: 600;
 					margin:10px 0;
 				}
 			}
@@ -338,6 +342,7 @@
 
 		.image{
 			float:left;	
+			margin-top:0;
 
 			li{
 				width:70px;
