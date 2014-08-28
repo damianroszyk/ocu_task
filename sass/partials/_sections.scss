@@ -254,7 +254,7 @@
 	.about_text{
 		@include clearfix();
 		padding:60px 0;
-		width:1170px;
+		width:100%;
 
 		p{
 			width:50%;
@@ -646,7 +646,6 @@
 }
 
 footer{
-
 	.content{
 		padding:50px 25px;
 		position:relative;

@@ -93,12 +93,18 @@
 
     });
 
-    var mySwiper = new Swiper('.sketch',{
+
+
+    if ( $("body").is(".plexicon") ) {
+       var mySwiper = new Swiper('.sketch',{
         pagination: '.pagination',
         loop:true,
         grabCursor: true,
         paginationClickable: true
-      })
+      });
+    }
+
+    
 
 
 } )( jQuery );
