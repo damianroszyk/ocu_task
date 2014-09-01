@@ -12,6 +12,18 @@
 		}
 	}
 
+	.case_logotype .image>div,
+	.case_colors .image>ul,
+	.case_typo img,
+	.case_notification img,
+	.case_icons img,
+	.case_controls img,
+	.case_sprint img,
+	.case_stats .image>div
+	{
+		@include opacity (0);	
+	}
+
 
 
 	h2{

@@ -74,40 +74,20 @@
     enquire.register("screen and (min-width : 768px)", initAdjustWindow(), false)
             .listen(100);
 
+} )( jQuery );
 
-    $(window).scroll(function() {
-
-        var imageH = 400;
-
-        if ( $("body").is(".audit") ) {
-           imageH = 400;
-        } else{
-           imageH = 720; 
-        }
-
-        if ($("nav").offset().top > imageH) {
-            $("nav").addClass("nav_box");
-        } else {
-            $("nav").removeClass("nav_box");
-        }
+$(document).ready(
+  function() { 
+    $("html").niceScroll({
+        horizrailenabled:false,
+        cursorborder: '0 solid #000',
+        cursoropacitymax: '.3',
+        cursorwidth: '10px',      
+        cursorcolor: '#24272b'     
 
     });
-
-
-
-    if ( $("body").is(".plexicon") ) {
-       var mySwiper = new Swiper('.sketch',{
-        pagination: '.pagination',
-        loop:true,
-        grabCursor: true,
-        paginationClickable: true
-      });
-    }
-
-    
-
-
-} )( jQuery );
+  }
+);
 
 
 

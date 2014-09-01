@@ -12,6 +12,18 @@
 		}
 	}
 
+	.case_about .images img, 
+	.sketch, 
+	.case_flowmap img,
+	.case_ux .bg_ux,
+	.case_design>.content>img,
+	.icon_box .design_icon,
+	.icon_box .tech_icon,
+	.case_frame .title,
+	.case_pack .title{
+		@include opacity (0);	
+	}
+
 	h2{
 		font-weight: 600;
 		font-size:40px;
@@ -366,13 +378,14 @@
 
 		.bg_ux{
 			position:absolute;
-			top:0;
-			left:50px;
-			width:100%;
-			height:770px;
+			bottom:0;
+			left:50%;
+			margin-left:-260px;
+			width:900px;
+			height:628px;
 			z-index:1;
-			background: url('../img/plexicon/bg_ux.jpg') center top no-repeat;
-			background-size: contain;
+			background: url('../img/plexicon/bg_ux2.jpg') center bottom no-repeat;
+			background-size: 900px 628px;
 		}
 	}
 
@@ -396,6 +409,7 @@
 		}
 
 		.phone_1{
+			z-index: 1;
 			position:absolute;
 			right:100px;
 			top:81px;

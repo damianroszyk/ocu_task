@@ -1,8 +1,8 @@
 @include keyframes ('fadeInLeft') {
   0% {
     @include opacity (0);
-    @include translateX(-15px);
-    @include translateX(-15px);
+    @include translateX(-20px);
+    @include translateX(-20px);
   }
 
   100% {
@@ -13,7 +13,7 @@
 }
 
 .fadeInLeft {
-  @include animation('fadeInLeft ease-out .7s both');
+  @include animation('fadeInLeft ease-out 1s both');
 }
 
 /************* MORE ICON *****************/

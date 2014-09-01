@@ -35,7 +35,7 @@
         }
 
         // Init Skrollr for 768 and up
-        // if( winW >= 768) {  ****************************** HIDE
+        if( winW >= 768) {  
 
             // Init Skrollr
             var s = skrollr.init({
@@ -56,20 +56,20 @@
 
             s.refresh($('.headerImg'));
 
-        // } else { ****************************** HIDE
+        } else { 
 
-        //     // Init Skrollr
-        //     var s = skrollr.init();
-        //     s.destroy();
-        // }
+            // Init Skrollr
+            var s = skrollr.init();
+            s.destroy();
+        }
     
         // Check for touch
-        // if(Modernizr.touch) {
+        if(Modernizr.touch) {
 
-        //     // Init Skrollr
-        //     var s = skrollr.init();
-        //     s.destroy();
-        // }
+            // Init Skrollr
+            var s = skrollr.init();
+            s.destroy();
+        }
 
     }
     
@@ -89,12 +89,12 @@
 
 
 
-    $(document).scrollsnap({
-        snaps: '.snap',
-        proximity: 400,
-        latency: 1000,
-        duration: 600,
-    });
+    // $(document).scrollsnap({
+    //     snaps: '.snap',
+    //     proximity: 400,
+    //     latency: 1000,
+    //     duration: 600,
+    // });
 
 
     $(function() {     
@@ -287,7 +287,7 @@
         $('#careers').each(function(){
             var box = $(this);
              var imagePos = $(this).offset().top;
-        var topOfWindow = $(window).scrollTop();
+            var topOfWindow = $(window).scrollTop();
             if (imagePos < topOfWindow+winH-100) {
                 setTimeout(function () { $(box).find('.pro1').addClass("fadeInLeft"); }, 400);
                 setTimeout(function () { $(box).find('.pro2').addClass("fadeInLeft"); }, 700);
@@ -298,7 +298,7 @@
          $('.case_item ').each(function(){
             var box = $(this);
              var imagePos = $(this).offset().top;
-        var topOfWindow = $(window).scrollTop();
+            var topOfWindow = $(window).scrollTop();
             if (imagePos < topOfWindow+winH-100) {
                 setTimeout(function () { $(box).find('h3').addClass("fadeInLeft"); }, 100);
                 setTimeout(function () { $(box).find('ul').addClass("fadeInLeft"); }, 400);
@@ -310,7 +310,7 @@
         $('#services').each(function(){
              var box = $(this);
              var imagePos = $(this).offset().top;
-        var topOfWindow = $(window).scrollTop();
+            var topOfWindow = $(window).scrollTop();
             if (imagePos < topOfWindow+winH-100) {
                 setTimeout(function () { $(box).find('.consulting').addClass("fadeInLeft"); }, 600);
                 setTimeout(function () { $(box).find('.design').addClass("fadeInLeft"); }, 900);
@@ -321,7 +321,7 @@
 
         $('.logos').each(function(){
              var imagePos = $(this).offset().top;
-        var topOfWindow = $(window).scrollTop();
+            var topOfWindow = $(window).scrollTop();
             if (imagePos < topOfWindow+winH-100) {
                 $('.logos li').each(function(i) {
                     var me = $(this);
@@ -332,7 +332,7 @@
 
         $('.gallery').each(function(){
              var imagePos = $(this).offset().top;
-        var topOfWindow = $(window).scrollTop();
+            var topOfWindow = $(window).scrollTop();
             if (imagePos < topOfWindow+winH-100) {
                 $('.gallery img').each(function(i) {
                     var me = $(this);
