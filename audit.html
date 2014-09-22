@@ -3,10 +3,10 @@
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="description" content="inFullMobile - Plexicon Case Study">
+    <meta name="description" content="inFullMobile - Audit Case Study">
     <meta name="author" content="kalin">
 
-    <title>inFullMobile - Plexicon Case Study</title>
+    <title>inFullMobile - Audit Case Study</title>
 
     <link rel="shortcut icon" href="img/favicon.ico" />
 
@@ -26,14 +26,24 @@
         </div>
     </div>
 
-    <nav>
+    <nav class="mobile_menu">
+        <div class="menu_box">
+            <div class="logo"><a href="index.html">inFullMobile</a></div>
+            <a class="toggle_menu">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 13" fill="#ffffff"><path d="M0,0v3h20V0H0z M0,8h20V5H0V8z M0,13h20v-3H0V13z"/></svg>
+            </a>
+        </div>
+        <ul>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#case_study">Work</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>    
+    </nav>
+
+    <nav class="desktop_menu">
         <div class="content">
-            <div class="logo">
-                <a href="index.html">
-                    <img class="back" src="img/svg/ic_back.svg" alt="back icon">
-                    
-                </a>
-            </div>
+            <div class="logo"><a href="index.html">inFullMobile</a></div>
             <ul>
                 <li><a href="index.html#services">Services</a></li>
                 <li><a href="index.html#case_study">Work</a></li>
@@ -41,10 +51,9 @@
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </div>
-    </nav>
-   
+    </nav>  
 
-    <section id="case_intro" class="case_intro window headerImg">
+    <section id="case_intro" class="case_intro">
             <div class="content"
                 data-20="opacity: 1" 
                 data-200="opacity: 0; display:block;"
@@ -56,9 +65,8 @@
                 <p>A "mobile first" approach to FFA.</br>Fully offline operational. Highly ergonomic.</p>
             </div>
         <div class="bg_case" 
-            data-center="background-position: 50% 0px; opacity:1; display:block;" 
-            data-top-bottom="background-position: 50% -200px; opacity:.1; display:none;"
-            data-anchor-target="#case_intro"
+            data-0="transform:translate(0%,0%); opacity:1; display:block;" 
+            data-100p="transform:translate(0%,-40%); opacity:.1; display:none;"
         ></div>
     </section>
 

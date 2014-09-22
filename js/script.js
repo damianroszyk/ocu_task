@@ -3,11 +3,16 @@
 
     // Setup variables
     $window = $(window);
-    $headerImg = $('.headerImg');
+    $headerImg = $('.header_list');
+    $headerBox = $('#intro');
     $body = $('body');
 
+    winH = $window.height();
+    winW = $window.width();
 
-    //FadeIn all sections   
+
+    // FadeIn all sections   
+
     $body.imagesLoaded( function() {
         setTimeout(function() {
               
@@ -17,16 +22,29 @@
               // Fade in sections
               $body.removeClass('loading').addClass('loaded');
 
-              $(window).scrollTop(0);
-              
-        }, 1000);
-    });
+              $(function scroller(){
+                    var defaultAnchorOffset = 0;
 
+                    var anchor = window.location.hash;
+
+                    var anchorOffset = $(anchor).attr('data-menu-offset') * -1;
+
+                    if (!anchorOffset)
+                        anchorOffset = defaultAnchorOffset; 
+
+                    $('html,body').animate({ 
+                        scrollTop: $(anchor).offset().top - anchorOffset
+                    }, 500);     
+              });
+     
+        }, 200);
+    });
 
     function adjustWindow(){
 
         // Get window size
         winH = $window.height();
+        win_doubleH = 2 * winH;
         winW = $window.width();
 
         // Keep minimum height 550
@@ -35,42 +53,58 @@
         }
 
         // Init Skrollr for 768 and up
-        if( winW >= 768) {  
+        if(( winW >= 768) && (!Modernizr.touch)) {  
 
             // Init Skrollr
             var s = skrollr.init({
-                forceHeight: false
+                forceHeight: false,
+                scale: 2,
+                easing: 'sqrt'
             });
 
             skrollr.menu.init(s, {
                 animate: true,
-                easing: 'outCubic',
-                scale: 2,
+                easing: 'sqrt',
+                scale: 5,
                 duration: function(currentTop, targetTop) {
-                    return 1400;
+                    return 600;
                 },
             });
-
-            // Resize our slides
-            $headerImg.height(winH);
-
-            s.refresh($('.headerImg'));
 
         } else { 
 
             // Init Skrollr
             var s = skrollr.init();
             s.destroy();
+
+            $(".mobile_menu > .menu_box > .logo > a, .mobile_menu > ul > li > a, a.more").click(function(event) {
+               // event.preventDefault(); 
+
+                var defaultAnchorOffset = 0;
+
+                var anchor = $(this).attr('href');
+
+                var anchorOffset = $(anchor).attr('data-menu-offset') * -1;
+                if (!anchorOffset)
+                    anchorOffset = defaultAnchorOffset; 
+
+                $('html,body').animate({ 
+                    scrollTop: $(anchor).offset().top - anchorOffset
+                }, 500);        
+            });
+
+            // Resize our slides
+            $headerImg.height(win_doubleH);
+            $headerBox.height(win_doubleH);
         }
     
-        // Check for touch
-        if(Modernizr.touch) {
+        // // Check for touch
+        // if(Modernizr.touch) {
 
-            // Init Skrollr
-            var s = skrollr.init();
-            s.destroy();
-        }
-
+        //     // Init Skrollr
+        //     var s = skrollr.init();
+        //     s.destroy();
+        // }
     }
     
     function initAdjustWindow() {
@@ -270,7 +304,8 @@
     $(window).scroll(function() {
  
         var winH = $(window).height();
-        var win2H = (winH * 2) - 130;
+        var winH_fix = winH - 100;
+        var win2H = (winH * 2) - 90;
 
         $('.content').each(function(){
             var box = $(this);
@@ -344,34 +379,55 @@
 
         //menu
 
-         if ($("nav").offset().top < winH) {
-            $("nav").removeClass("nav_box");
-            $("nav").removeClass("nav_dark");
-        } else if ($("nav").offset().top >= winH && $("nav").offset().top < win2H){
-            $("nav").addClass("nav_dark");
-            $("nav").removeClass("nav_box");
+        if ($("nav.desktop_menu").offset().top < winH_fix) {
+            $("nav.desktop_menu").removeClass("nav_box");
+            $("nav.desktop_menu").removeClass("nav_dark");
+            // $(".mobile_menu").removeClass("nav_box");
+            // $(".mobile_menu").removeClass("nav_dark");
+        } else if ($("nav").offset().top >= winH_fix && $("nav").offset().top < win2H){
+            $("nav.desktop_menu").addClass("nav_dark");
+            $("nav.desktop_menu").removeClass("nav_box");
+            // $(".mobile_menu").addClass("nav_dark");
+            // $(".mobile_menu").removeClass("nav_box");
         } else if ($("nav").offset().top >= win2H) {
-            $("nav").addClass("nav_box");
-            $("nav").removeClass("nav_dark");
+            $("nav.desktop_menu").addClass("nav_box");
+            $("nav.desktop_menu").removeClass("nav_dark");
+            // $(".mobile_menu").addClass("nav_box");
+            // $(".mobile_menu").removeClass("nav_dark");
         }
 
     });
 
+    // Mobile menu
+
+    $(".toggle_menu").click(function(){
+        $(this).parents().eq(1).toggleClass('active');
+    });
+
+    $(".mobile_menu ul li a").click(function(){
+        $(this).parents().eq(2).removeClass('active');   
+    });
+
+    $(".mobile_menu .logo a").click(function(){
+        $(this).parents().eq(2).removeClass('active');   
+    });
+
+
+
 } )( jQuery );
 
 
-$(document).ready(
-  function() { 
-    $("html").niceScroll({
-        horizrailenabled:false,
-        cursorborder: '0 solid #000',
-        cursoropacitymax: '.3',
-        cursorwidth: '10px',      
-        cursorcolor: '#24272b'     
-
-    });
-  }
-);
+// $(document).ready(
+//   function() { 
+//     $("html").niceScroll({
+//         horizrailenabled:false,
+//         cursorborder: '0 solid #000',
+//         cursoropacitymax: '.3',
+//         cursorwidth: '10px',      
+//         cursorcolor: '#24272b'     
+//     });
+//   }
+// );
 
 
 

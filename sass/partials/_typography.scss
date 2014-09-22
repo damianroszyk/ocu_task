@@ -3,7 +3,12 @@
 
 
 body{
-    font-family: $font-main;    
+    font-family: $font-main;   
+    font-weight: 400; 
+}
+
+body, h1, h2, h3, h4, h5, h6, p, a, input, td, th, div, label, span, li {
+    @include font_norm;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -58,13 +63,14 @@ p, li {
     margin: 0 0 20px;
     font-size: 18px;
     line-height: 28px;
-    font-weight: 300;
+    font-weight: 400;
     color:$dark_font_color;
     font-family: $font-main;
 }
 
 a {
     color: $primary_color;
+    font-weight: 400;
     cursor: pointer;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;

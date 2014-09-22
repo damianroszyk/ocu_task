@@ -4,7 +4,7 @@
 
     $(window).scroll(function() {
 
-        var imageH = 400;
+        var imageH = 500;
 
         if ($("nav").offset().top > imageH) {
             $("nav").addClass("nav_box");
@@ -92,13 +92,7 @@
                 });    
             };
         });
-
-
-
-        
-
-    });
-    
+    });    
 
 } )( jQuery );
 

@@ -16,6 +16,19 @@
     }
 }
 
+@mixin bs($bs-type: border-box) {
+  -webkit-box-sizing: $bs-type;
+  -moz-box-sizing: $bs-type;
+  box-sizing: $bs-type;
+}
+
+@mixin font_norm() {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -o-font-smoothing: antialiased;
+}
+
 @mixin animation($value) {
   -webkit-animation: unquote($value);
      -moz-animation: unquote($value);

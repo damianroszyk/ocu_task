@@ -42,43 +42,29 @@
 		background:$white_font_color;
 	}
 
+	.loading-screen{
+	    background: url('../img/bg_loading_plexicon.jpg') center top no-repeat #000;
+	    background-size: cover;
+	    background-attachment: fixed;   
+	}
+
+	.loading-screen{
+		margin:0;
+		top:0;
+		left:0;
+
+		.content{
+			height:100%;
+			padding:120px 25px 20px 25px;
+		}
+	}
+
 	.content{
 		padding:120px 25px;
 	}
 
-
-	nav{
-	    .logo{
-	        float:left;
-
-	        a{
-	        	text-indent: 0;
-	        	width:265px;
-	        	background-position:right 0;
-
-	            .back{
-	                height:12px;
-	                width:16px;
-	                display: inline-block;
-	                margin:12px 10px 11px 0;
-	                @include transition(all 0.3s ease-out);
-	            }
-
-
-	            &:hover{
-	                @include opacity (1);
-	                @include translateY(2px);
-
-	                .back{
-	                	@include translateY(-2px);	
-	                }
-	            }
-	        }
-	    }
-	}
-
 	nav .content{
-		padding:0 25px;	
+		padding: 0 25px;
 	}
 
 	img.case_logo{
@@ -215,6 +201,8 @@
 
 	.line{
 		@include clearfix;
+		position:relative;
+		z-index: 10;
 
 		div{
 			float:left;
@@ -242,6 +230,10 @@
 		h2, p{
 			text-align:center;
 			padding:10px;
+		}
+
+		p{
+			padding:10px 140px;
 		}
 
 		hr{

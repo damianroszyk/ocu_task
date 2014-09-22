@@ -5,9 +5,10 @@
 @import "partials/modules";
 
 /* Authored Dependencies */
+@import "partials/mixins";
 @import "partials/variables";
 @import "partials/typography";
-@import "partials/mixins";
+
 
 /* Sections */
 @import "partials/base";
@@ -19,6 +20,8 @@
 @import "partials/audit";
 
 @import "partials/responsive";
+@import "partials/responsive_plexicon";
+@import "partials/responsive_audit";
 
 
 

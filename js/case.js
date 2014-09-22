@@ -20,8 +20,6 @@
         }, 400);
     });
 
-
-
     function adjustWindow(){
 
         // Get window size
@@ -41,8 +39,6 @@
                 forceHeight: false
             });
 
-        
-
         } else {
 
             // Init Skrollr
@@ -57,7 +53,6 @@
             var s = skrollr.init();
             s.destroy();
         }
-
     }
     
     function initAdjustWindow() {
@@ -74,20 +69,35 @@
     enquire.register("screen and (min-width : 768px)", initAdjustWindow(), false)
             .listen(100);
 
+
+    // Mobile menu
+
+    $(".toggle_menu").click(function(){
+        $(this).parents().eq(1).toggleClass('active');
+    });
+
+    $(".mobile_menu ul li a").click(function(){
+        $(this).parents().eq(2).removeClass('active');   
+    });
+
+    $(".mobile_menu .logo a").click(function(){
+        $(this).parents().eq(2).removeClass('active');   
+    });
+
 } )( jQuery );
 
-$(document).ready(
-  function() { 
-    $("html").niceScroll({
-        horizrailenabled:false,
-        cursorborder: '0 solid #000',
-        cursoropacitymax: '.3',
-        cursorwidth: '10px',      
-        cursorcolor: '#24272b'     
+// $(document).ready(
+//   function() { 
+//     $("html").niceScroll({
+//         horizrailenabled:false,
+//         cursorborder: '0 solid #000',
+//         cursoropacitymax: '.3',
+//         cursorwidth: '10px',      
+//         cursorcolor: '#24272b'     
 
-    });
-  }
-);
+//     });
+//   }
+// );
 
 
 

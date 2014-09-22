@@ -12,7 +12,14 @@
 
     $(window).scroll(function() {
 
-        var imageH = 720;
+        imageH = 720;
+
+        winW = $(window).width();
+
+
+        if (winW < 992){
+            imageH = 550;
+        }
 
         if ($("nav").offset().top > imageH) {
             $("nav").addClass("nav_box");

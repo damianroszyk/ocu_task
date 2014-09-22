@@ -24,14 +24,26 @@
             <img src="img/svg/plexicon.svg" class="case_logo" alt="plexicon logo">
         </div>
     </div>
+    
 
-    <nav>
+    <nav class="mobile_menu">
+        <div class="menu_box">
+            <div class="logo"><a href="index.html">inFullMobile</a></div>
+            <a class="toggle_menu">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 13" fill="#ffffff"><path d="M0,0v3h20V0H0z M0,8h20V5H0V8z M0,13h20v-3H0V13z"/></svg>
+            </a>
+        </div>
+        <ul>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#case_study">Work</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>    
+    </nav>
+    
+    <nav class="desktop_menu">
         <div class="content">
-            <div class="logo">
-                <a href="index.html">
-                    <img class="back" src="img/svg/ic_back.svg" alt="back icon">
-                </a>
-            </div>
+            <div class="logo"><a href="index.html">inFullMobile</a></div>
             <ul>
                 <li><a href="index.html#services">Services</a></li>
                 <li><a href="index.html#case_study">Work</a></li>
@@ -39,10 +51,10 @@
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </div>
-    </nav>
+    </nav>  
    
 
-    <section id="case_intro" class="plexicon_intro window headerImg">
+    <section id="case_intro" class="plexicon_intro">
             <div class="content"
                 data-200="opacity: 1" 
                 data-400="opacity: 0; display:block;"
@@ -69,9 +81,8 @@
             </div>
 
             <div class="bg_case" 
-                data-center="background-position: 50% 0px; opacity:1; display:block;" 
-                data-top-bottom="background-position: 50% -200px; opacity:.1; display:none;"
-                data-anchor-target="#case_intro"
+                data-30p="transform:translate(0%,0%); opacity:1; display:block;" 
+                data-100p="transform:translate(0%,-20%); opacity:.1; display:none;"
             ></div>
 
     </section>
@@ -99,7 +110,7 @@
         <div class="content">
             <h2>About Plexicon</h3>
             <hr>
-            <p>The most exciting part of developing a physical product is in its purpose.<br> Plexicons are meant to be exposed and fit in variety of environments.</p>
+            <p>The most exciting part of developing a physical product is in its purpose. Plexicons are meant to be exposed and fit in variety of environments.</p>
 
             <div class="images">
                 <div class="left">

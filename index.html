@@ -15,29 +15,36 @@
 
     <link href="css/main.css" rel="stylesheet">
     <script src="js/modernizr-2.7.1.min.js"></script>
-
-    
-
 </head>
+
+
 <body class="loading">
 
-    <div class="loading-screen">
-        <div class="content">
-            <h1>HI! <span class="bold">Quality</span> of your apps, <br>is our success criteria</h1>
+<!--     <div class="loading-screen">
+        <div class="first_header">
+            <h1>HI! <span class="bold">Quality</span> of your apps, is our success criteria</h1>
+        </div>    
+    </div> -->
+
+
+    <nav class="mobile_menu">
+        <div class="menu_box">
+            <div class="logo"><a href="#intro">inFullMobile</a></div>
+            <a class="toggle_menu">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 13" fill="#ffffff"><path d="M0,0v3h20V0H0z M0,8h20V5H0V8z M0,13h20v-3H0V13z"/></svg>
+            </a>
         </div>
-    </div>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#case_study">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>    
+    </nav>
 
-    <div id="preload">
-        <img src="img/bg1.jpg">
-        <img src="img/bg2.jpg">
-        <img src="img/case_1.jpg">
-        <img src="img/case_4.jpg">
-    </div>  
-
-
-    <nav>
+    <nav class="desktop_menu">
         <div class="content">
-            <div class="logo"><a href="#intro1">inFullMobile</a></div>
+            <div class="logo"><a href="#intro">inFullMobile</a></div>
             <ul>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#case_study">Work</a></li>
@@ -47,58 +54,68 @@
         </div>
     </nav>
    
-
-    <section id="intro1" class="intro1 headerImg snap">
-        <div class="bg1" 
-            data-center="background-position: 50% 0px; opacity:1;" 
-            data-top-bottom="background-position: 50% -200px; opacity:.2;"
-            data-anchor-target="#intro1"
-        >
-            <div class="content" 
-                data-200="opacity: 1" 
-                data-400="opacity: 0; display:block;"
-                data-500="display:none;"
+    <header id="intro">
+        <div class="header_wrapper">
+            <div class="header_list"
+                data-0="transform:translate(0%,0%);"
+                data-100p="transform:translate(0%,-50%);"
+                data-200p="transform:translate(0%,-100%);"
             >
-                <h1>HI! <span class="bold">Quality</span> of your apps, <br>is our success criteria</h1>
-                <a href="#intro2" class="more">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 54"><path id="arrow" class="more_arrow" fill="#ffffff" d="M14.8,46.3l-5.4,4.9L4,46.3c-0.5-0.5-1.3-0.5-1.8,0s-0.5,1.2,0,1.6l6.2,5.7c0.5,0.5,1.3,0.5,1.8,0l6.2-5.7c0.5-0.5,0.5-1.2,0-1.6C16.1,45.9,15.3,45.9,14.8,46.3z"/><g id="mouse_1_" fill="#ffffff"><path id="frame" d="M9.5,2C13.6,2,17,5.4,17,9.5v7c0,4.1-3.4,7.5-7.5,7.5S2,20.6,2,16.5v-7C2,5.4,5.4,2,9.5,2 M9.5,0
-                    C4.3,0,0,4.3,0,9.5v7C0,21.7,4.3,26,9.5,26s9.5-4.3,9.5-9.5v-7C19,4.3,14.7,0,9.5,0L9.5,0z"/><path id="scroll" d="M9,5h1c0.6,0,1,0.4,1,1v2c0,0.6-0.4,1-1,1H9C8.4,9,8,8.6,8,8V6C8,5.4,8.4,5,9,5z"/></g></svg>
-                </a>
-            </div>
-        </div>
-    </section>
-            
-    <section id="intro2" class="intro2 headerImg snap">
-        <div class="bg2" 
-            data-top="background-position: 50% 0px;  opacity:1;" 
-            data-center="background-position: 50% 0px;  opacity:1;" 
-            data-top-bottom="background-position: 50% -200px; opacity:.2;" 
-            data-anchor-target="#intro2"
-        >
-            <div class="content">
-                <div class="header_2"
-                    data-60p="display:none;" 
-                    data-65p="display:block; opacity:0;" 
-                    data-95p="opacity:1; display:block;" 
-                    data-140p="opacity:0; display:block;" 
-                    data-150p="opacity:0; display:none;"  
+                <section id="intro1" class="headerImg"
+                    data-0="opacity: 1; transform:translate(0%,0%);"
+                    data-50p="opacity: .7; transform:translate(0%,40%);"
+                    data-100p="opacity: .2; transform:translate(0%,80%);" 
+                    data-110p="opacity: 0; transform:translate(0%,0%);" 
+                    data-anchor-target="#intro"  
                 >
-                    <h2>
-                        Feel free to <a href="mailto:info@infullmobile.com">let us know</a> about your mobile project
-                    </h2>
-                    <hr>
-                    <h3>Or <a href="#services">learn more</a> about our skills and values</h3>
-                </div>
-                <a href="#services" class="more">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 54"><path id="arrow" class="more_arrow" fill="$dark_color" d="M14.8,46.3l-5.4,4.9L4,46.3c-0.5-0.5-1.3-0.5-1.8,0s-0.5,1.2,0,1.6l6.2,5.7c0.5,0.5,1.3,0.5,1.8,0l6.2-5.7c0.5-0.5,0.5-1.2,0-1.6C16.1,45.9,15.3,45.9,14.8,46.3z"/><g id="mouse_1_" fill="$dark_color"><path id="frame" d="M9.5,2C13.6,2,17,5.4,17,9.5v7c0,4.1-3.4,7.5-7.5,7.5S2,20.6,2,16.5v-7C2,5.4,5.4,2,9.5,2 M9.5,0
-                    C4.3,0,0,4.3,0,9.5v7C0,21.7,4.3,26,9.5,26s9.5-4.3,9.5-9.5v-7C19,4.3,14.7,0,9.5,0L9.5,0z"/><path id="scroll" d="M9,5h1c0.6,0,1,0.4,1,1v2c0,0.6-0.4,1-1,1H9C8.4,9,8,8.6,8,8V6C8,5.4,8.4,5,9,5z"/></g></svg>
-                </a>
+                    <div class="caption">
+                        <div class="first_header">
+                            <h1>HI! <span class="bold">Quality</span> of your apps, is our success criteria</h1>
+                        </div>
+                        <a href="#intro2" class="more">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 54"><path id="arrow" class="more_arrow" fill="#ffffff" d="M14.8,46.3l-5.4,4.9L4,46.3c-0.5-0.5-1.3-0.5-1.8,0s-0.5,1.2,0,1.6l6.2,5.7c0.5,0.5,1.3,0.5,1.8,0l6.2-5.7c0.5-0.5,0.5-1.2,0-1.6C16.1,45.9,15.3,45.9,14.8,46.3z"/><g id="mouse_1_" fill="#ffffff"><path id="frame" d="M9.5,2C13.6,2,17,5.4,17,9.5v7c0,4.1-3.4,7.5-7.5,7.5S2,20.6,2,16.5v-7C2,5.4,5.4,2,9.5,2 M9.5,0
+                            C4.3,0,0,4.3,0,9.5v7C0,21.7,4.3,26,9.5,26s9.5-4.3,9.5-9.5v-7C19,4.3,14.7,0,9.5,0L9.5,0z"/><path id="scroll" d="M9,5h1c0.6,0,1,0.4,1,1v2c0,0.6-0.4,1-1,1H9C8.4,9,8,8.6,8,8V6C8,5.4,8.4,5,9,5z"/></g></svg>
+                        </a>
+                    </div>
+                </section>  
+                <section id="intro2" class="headerImg"
+                    data-0="transform:translate(0%,100%);"
+                    data-100p="transform:translate(0%,100%);" 
+                    data-150p="transform:translate(0%,140%);" 
+                    data-200p="transform:translate(0%,180%);"
+                    data-210p="transform:translate(0%,100%);"  
+                    data-anchor-target="#intro"        
+                >
+                    <div class="caption">
+                        <div class="second_header"
+                            data-0="opacity: 0;"
+                            data-50p="opacity: 0;"
+                            data-100p="opacity: 1; " 
+                            data-170p="opacity: 0; "
+                            data-anchor-target="#intro" 
+                        >
+                            <h2>
+                                Feel free to <a href="mailto:info@infullmobile.com">let us know</a> about your mobile project
+                            </h2>
+                            <hr>
+                            <h3>Or <a href="#services">learn more</a> about our skills and values</h3>
+                        </div>
+                        <a href="#services" class="more">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 54"><path id="arrow" class="more_arrow" fill="$dark_color" d="M14.8,46.3l-5.4,4.9L4,46.3c-0.5-0.5-1.3-0.5-1.8,0s-0.5,1.2,0,1.6l6.2,5.7c0.5,0.5,1.3,0.5,1.8,0l6.2-5.7c0.5-0.5,0.5-1.2,0-1.6C16.1,45.9,15.3,45.9,14.8,46.3z"/><g id="mouse_1_" fill="$dark_color"><path id="frame" d="M9.5,2C13.6,2,17,5.4,17,9.5v7c0,4.1-3.4,7.5-7.5,7.5S2,20.6,2,16.5v-7C2,5.4,5.4,2,9.5,2 M9.5,0
+                            C4.3,0,0,4.3,0,9.5v7C0,21.7,4.3,26,9.5,26s9.5-4.3,9.5-9.5v-7C19,4.3,14.7,0,9.5,0L9.5,0z"/><path id="scroll" d="M9,5h1c0.6,0,1,0.4,1,1v2c0,0.6-0.4,1-1,1H9C8.4,9,8,8.6,8,8V6C8,5.4,8.4,5,9,5z"/></g></svg>
+                        </a>
+                    </div>
+                </section>
             </div>
         </div>
-    </section>
+        <!-- <div id="helper">
+            <div class="marker red"></div>
+            <div class="marker green"></div>
+        </div> -->
+    </header>
 
-
-    <section id="services" class="services" data-menu-offset="-80">
+    <div>
+    <section id="services" name="services" class="services" data-menu-offset="-70">
         <div class="content">
             <h2><span class="bold">SERVICES</span> you'll get</h2> 
             <hr>
@@ -298,8 +315,8 @@
         </div>
     </section> 
 
-    <section id="work" class="work" data-menu-offset="-80">
-    <section id="case_study" class="case_study" data-menu-offset="-80"></section>
+    <section id="work" class="work" data-menu-offset="-70">
+    <section id="case_study" class="case_study" data-menu-offset="-70"></section>
         <div class="bg_work">
             <div class="content">
                 <h2><span class="bold">Work</span> you'll love</h2> 
@@ -311,7 +328,7 @@
             </div>
         </div>
 
-            <div class="case_item ">
+            <div class="case_item audit_case">
                 <div class="desc audit_box">
                     <h3>Audit</h3>
                     <ul class="tags">
@@ -325,10 +342,11 @@
                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.7,7.3L5.8,1.8c-0.4-0.4-1.1-0.4-1.5,0c-0.4,0.4-0.4,1,0,1.4L9.5,8l-5.2,4.8 c-0.4,0.4-0.4,1,0,1.4c0.4,0.4,1.1,0.4,1.5,0l5.9-5.5C12.1,8.3,12.1,7.7,11.7,7.3z"/></svg>
                     </a>
                 </div>
-                <img src="img/case_1.jpg" alt="case1">
+                <div class="mobile_overlay"></div>
+                <img src="img/case_1.jpg" class="audit_box_image" alt="case1">
             </div>
 
-            <div class="case_item ">
+            <div class="case_item plexicon_case">
                 <div class="desc plexicon_box">
                     <h3>Plexicon</h3>
                     <ul class="tags">
@@ -342,12 +360,13 @@
                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.7,7.3L5.8,1.8c-0.4-0.4-1.1-0.4-1.5,0c-0.4,0.4-0.4,1,0,1.4L9.5,8l-5.2,4.8 c-0.4,0.4-0.4,1,0,1.4c0.4,0.4,1.1,0.4,1.5,0l5.9-5.5C12.1,8.3,12.1,7.7,11.7,7.3z"/></svg>
                     </a>
                 </div>
+                <div class="mobile_overlay"></div>
                 <img src="img/case_4.jpg" class="plexicon_box_image" alt="case4">
             </div>
     </section> 
 
 
-    <section id="clients" class="clients window" data-menu-offset="-80">
+    <section id="clients" class="clients window" data-menu-offset="-70">
         <div class="bg_clients">
             <div class="content">
                 <h2><span class="bold">WHO WE WORK WITH</span></h2> 
@@ -372,7 +391,7 @@
         </div>
     </section> 
 
-    <section id="about" class="about window" data-menu-offset="-80">
+    <section id="about" class="about window" data-menu-offset="-70">
         <div class="content">
             <h2><span class="bold">Get to know us</span></h2> 
             <hr>
@@ -411,7 +430,7 @@
       
     </section>    
 
-    <section id="careers" class="careers window" data-menu-offset="-80">
+    <section id="careers" class="careers window" data-menu-offset="-70">
 
         <div class="content">
             <h2><span class="bold">want to join our team ?</span></h2> 
@@ -455,8 +474,8 @@
                         <div class="col_left">
                             <h3>Job Description</h3>
                             <p>We are looking for the best of the best ObjC developers, some out of the box thinking, the courage to get involved with the bleeding edge technologies and the will to over-deliver</p>
-                            <h3>WE OFFER</h3>
-                            <ul>
+                            <h3 class="mobile_hide">WE OFFER</h3>
+                            <ul class="mobile_hide">
                                 <li>Competitive Salary,</li>
                                 <li>Being a part of international projects,</li>
                                 <li>Business trips,</li>
@@ -464,17 +483,6 @@
                                 <li>Medical care,</li>
                                 <li>Top notch talent already on board,</li>
                             </ul>
-                        
-                            <p><strong>If you are interested, please send your CV via Apply button below.</strong></p>
-                        
-                            <a href="#" class="careers_print">
-                                print
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22"><path fill-rule="evenodd" clip-rule="evenodd" d="M21,9h-4V2H5v7H1l-1,1v7l1,1h4.3L6,20h10l0.7-2H21l1-1v-7L21,9z M7,4h8v5H7V4zM14,18H8c-0.6,0-1-0.4-1-1c0-0.6,0.4-1,1-1h6c0.6,0,1,0.4,1,1C15,17.6,14.6,18,14,18z M20,15c0,0.6-0.4,1-1,1h-2v-2H5v2H3c-0.6,0-1-0.4-1-1v-3c0-0.6,0.4-1,1-1h16c0.6,0,1,0.4,1,1V15z"/></svg>
-                            </a>
-                            <a href="#" class="careers_apply">
-                                apply
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.7,7.3L5.8,1.8c-0.4-0.4-1.1-0.4-1.5,0c-0.4,0.4-0.4,1,0,1.4L9.5,8l-5.2,4.8 c-0.4,0.4-0.4,1,0,1.4c0.4,0.4,1.1,0.4,1.5,0l5.9-5.5C12.1,8.3,12.1,7.7,11.7,7.3z"/></svg>
-                            </a>
                         </div>
 
                         <div class="col_right">
@@ -504,6 +512,19 @@
                                 <li>Attention to detail</li>
                             </ul>
                         </div>
+
+                        <div class="col_bottom">
+                            <p><strong>If you are interested, please send your CV via Apply button below.</strong></p>
+                        
+                            <a href="#" class="careers_print">
+                                print
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22"><path fill-rule="evenodd" clip-rule="evenodd" d="M21,9h-4V2H5v7H1l-1,1v7l1,1h4.3L6,20h10l0.7-2H21l1-1v-7L21,9z M7,4h8v5H7V4zM14,18H8c-0.6,0-1-0.4-1-1c0-0.6,0.4-1,1-1h6c0.6,0,1,0.4,1,1C15,17.6,14.6,18,14,18z M20,15c0,0.6-0.4,1-1,1h-2v-2H5v2H3c-0.6,0-1-0.4-1-1v-3c0-0.6,0.4-1,1-1h16c0.6,0,1,0.4,1,1V15z"/></svg>
+                            </a>
+                            <a href="mailto:info@infullmobile.com" class="careers_apply">
+                                apply
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.7,7.3L5.8,1.8c-0.4-0.4-1.1-0.4-1.5,0c-0.4,0.4-0.4,1,0,1.4L9.5,8l-5.2,4.8 c-0.4,0.4-0.4,1,0,1.4c0.4,0.4,1.1,0.4,1.5,0l5.9-5.5C12.1,8.3,12.1,7.7,11.7,7.3z"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </li>
             
@@ -522,58 +543,59 @@
                         </div>          
                     </a>
                     <div class="careers_info">
-                            <div class="col_left">
-                                <h3>Job Description</h3>
-                                <p>We are looking for the best of the best ObjC developers, some out of the box thinking, the courage to get involved with the bleeding edge technologies and the will to over-deliver</p>
-                                <h3>WE OFFER</h3>
-                                <ul>
-                                    <li>Competitive Salary,</li>
-                                    <li>Being a part of international projects,</li>
-                                    <li>Business trips,</li>
-                                    <li>Great atmosphere,</li>
-                                    <li>Medical care,</li>
-                                    <li>Top notch talent already on board,</li>
-                                </ul>
-                            
-                                <p><strong>If you are interested, please send your CV via Apply button below.</strong></p>
-                            
-                                <a href="#" class="careers_print">
-                                    print
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22"><path fill-rule="evenodd" clip-rule="evenodd" d="M21,9h-4V2H5v7H1l-1,1v7l1,1h4.3L6,20h10l0.7-2H21l1-1v-7L21,9z M7,4h8v5H7V4zM14,18H8c-0.6,0-1-0.4-1-1c0-0.6,0.4-1,1-1h6c0.6,0,1,0.4,1,1C15,17.6,14.6,18,14,18z M20,15c0,0.6-0.4,1-1,1h-2v-2H5v2H3c-0.6,0-1-0.4-1-1v-3c0-0.6,0.4-1,1-1h16c0.6,0,1,0.4,1,1V15z"/></svg>
-                                </a>
-                                <a href="#" class="careers_apply">
-                                    apply
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.7,7.3L5.8,1.8c-0.4-0.4-1.1-0.4-1.5,0c-0.4,0.4-0.4,1,0,1.4L9.5,8l-5.2,4.8 c-0.4,0.4-0.4,1,0,1.4c0.4,0.4,1.1,0.4,1.5,0l5.9-5.5C12.1,8.3,12.1,7.7,11.7,7.3z"/></svg>
-                                </a>
-                            </div>
-                            <div class="col_right">
-                                <h3>REQUIREMENTS</h3>
-                            
-                                <p>
-                                    <strong>What we expect:</strong>
-                                </p>
-                            
-                                <ul>
-                                    <li>A proven track record in ObjC/C/C++ projects (other languages a plus),</li>
-                                    <li>Participation in specification and planning of new product modules and features,</li>
-                                    <li>A flawless knowledge of the English language (both written and spoken),</li>
-                                    <li>Out-of-the-box thinking and creativity (we care about your problem solving skills, not the lines of code you write),</li>
-                                    <li>Following high quality programming standards,</li>
-                                    <li>Keep track of the industry developments and take the initiative to incorporate these into the company technologies,</li>
-                                    <li>Engagement and team-play,</li>
-                                </ul>
-                            
-                                <p>
-                                   <strong> What would make you the perfect candidate: </strong></p>
-                            
-                                <ul>
-                                    <li>Hands on experience in development for any other Mobile OS platform - iOS, Android, Symbian, WebOS, MeeGo, Maemo, Windows Phone, BlackBerry OS or related technologies,</li>
-                                    <li>Scrum (or other Agile) development method experience,</li>
-                                    <li>Passionate about mobile technology,</li>
-                                    <li>Attention to detail</li>
-                                </ul>
-                            </div>
+
+                        <div class="col_left">
+                            <h3>Job Description</h3>
+                            <p>We are looking for the best of the best ObjC developers, some out of the box thinking, the courage to get involved with the bleeding edge technologies and the will to over-deliver</p>
+                            <h3 class="mobile_hide">WE OFFER</h3>
+                            <ul class="mobile_hide">
+                                <li>Competitive Salary,</li>
+                                <li>Being a part of international projects,</li>
+                                <li>Business trips,</li>
+                                <li>Great atmosphere,</li>
+                                <li>Medical care,</li>
+                                <li>Top notch talent already on board,</li>
+                            </ul>
                         </div>
+                        <div class="col_right">
+                            <h3>REQUIREMENTS</h3>
+                        
+                            <p><strong>What we expect:</strong></p>
+                        
+                            <ul>
+                                <li>A proven track record in ObjC/C/C++ projects (other languages a plus),</li>
+                                <li>Participation in specification and planning of new product modules and features,</li>
+                                <li>A flawless knowledge of the English language (both written and spoken),</li>
+                                <li>Out-of-the-box thinking and creativity (we care about your problem solving skills, not the lines of code you write),</li>
+                                <li>Following high quality programming standards,</li>
+                                <li>Keep track of the industry developments and take the initiative to incorporate these into the company technologies,</li>
+                                <li>Engagement and team-play,</li>
+                            </ul>
+                        
+                            <p><strong> What would make you the perfect candidate: </strong></p>
+            
+                            <ul>
+                                <li>Hands on experience in development for any other Mobile OS platform - iOS, Android, Symbian, WebOS, MeeGo, Maemo, Windows Phone, BlackBerry OS or related technologies,</li>
+                                <li>Scrum (or other Agile) development method experience,</li>
+                                <li>Passionate about mobile technology,</li>
+                                <li>Attention to detail</li>
+                            </ul>
+                        </div>
+
+                        <div class="col_bottom">
+                            <p><strong>If you are interested, please send your CV via Apply button below.</strong></p>
+                        
+                            <a href="#" class="careers_print">
+                                print
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22"><path fill-rule="evenodd" clip-rule="evenodd" d="M21,9h-4V2H5v7H1l-1,1v7l1,1h4.3L6,20h10l0.7-2H21l1-1v-7L21,9z M7,4h8v5H7V4zM14,18H8c-0.6,0-1-0.4-1-1c0-0.6,0.4-1,1-1h6c0.6,0,1,0.4,1,1C15,17.6,14.6,18,14,18z M20,15c0,0.6-0.4,1-1,1h-2v-2H5v2H3c-0.6,0-1-0.4-1-1v-3c0-0.6,0.4-1,1-1h16c0.6,0,1,0.4,1,1V15z"/></svg>
+                            </a>
+                            <a href="mailto:info@infullmobile.com" class="careers_apply">
+                                apply
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.7,7.3L5.8,1.8c-0.4-0.4-1.1-0.4-1.5,0c-0.4,0.4-0.4,1,0,1.4L9.5,8l-5.2,4.8 c-0.4,0.4-0.4,1,0,1.4c0.4,0.4,1.1,0.4,1.5,0l5.9-5.5C12.1,8.3,12.1,7.7,11.7,7.3z"/></svg>
+                            </a>
+                        </div>
+
+                    </div>
                 </li>
             
                 <li class="careers_item">
@@ -589,65 +611,67 @@
                         </div>         
                     </a>
                     <div class="careers_info">
-                            <div class="col_left">
-                                <h3>Job Description</h3>
-                                <p>We are looking for the best of the best ObjC developers, some out of the box thinking, the courage to get involved with the bleeding edge technologies and the will to over-deliver</p>
-                                <h3>WE OFFER</h3>
-                                <ul>
-                                    <li>Competitive Salary,</li>
-                                    <li>Being a part of international projects,</li>
-                                    <li>Business trips,</li>
-                                    <li>Great atmosphere,</li>
-                                    <li>Medical care,</li>
-                                    <li>Top notch talent already on board,</li>
-                                </ul>
-                            
-                                <p><strong>If you are interested, please send your CV via Apply button below.</strong></p>
-                            
-                                <a href="#" class="careers_print">
-                                    print
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22"><path fill-rule="evenodd" clip-rule="evenodd" d="M21,9h-4V2H5v7H1l-1,1v7l1,1h4.3L6,20h10l0.7-2H21l1-1v-7L21,9z M7,4h8v5H7V4zM14,18H8c-0.6,0-1-0.4-1-1c0-0.6,0.4-1,1-1h6c0.6,0,1,0.4,1,1C15,17.6,14.6,18,14,18z M20,15c0,0.6-0.4,1-1,1h-2v-2H5v2H3c-0.6,0-1-0.4-1-1v-3c0-0.6,0.4-1,1-1h16c0.6,0,1,0.4,1,1V15z"/></svg>
-                                </a>
-                                <a href="#" class="careers_apply">
-                                    apply
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.7,7.3L5.8,1.8c-0.4-0.4-1.1-0.4-1.5,0c-0.4,0.4-0.4,1,0,1.4L9.5,8l-5.2,4.8 c-0.4,0.4-0.4,1,0,1.4c0.4,0.4,1.1,0.4,1.5,0l5.9-5.5C12.1,8.3,12.1,7.7,11.7,7.3z"/></svg>
-                                </a>
-                            </div>
-                            <div class="col_right">
-                                <h3>REQUIREMENTS</h3>
-                            
-                                <p>
-                                    <strong>What we expect:</strong>
-                                </p>
-                            
-                                <ul>
-                                    <li>A proven track record in ObjC/C/C++ projects (other languages a plus),</li>
-                                    <li>Participation in specification and planning of new product modules and features,</li>
-                                    <li>A flawless knowledge of the English language (both written and spoken),</li>
-                                    <li>Out-of-the-box thinking and creativity (we care about your problem solving skills, not the lines of code you write),</li>
-                                    <li>Following high quality programming standards,</li>
-                                    <li>Keep track of the industry developments and take the initiative to incorporate these into the company technologies,</li>
-                                    <li>Engagement and team-play,</li>
-                                </ul>
-                            
-                                <p>
-                                   <strong> What would make you the perfect candidate: </strong></p>
-                            
-                                <ul>
-                                    <li>Hands on experience in development for any other Mobile OS platform - iOS, Android, Symbian, WebOS, MeeGo, Maemo, Windows Phone, BlackBerry OS or related technologies,</li>
-                                    <li>Scrum (or other Agile) development method experience,</li>
-                                    <li>Passionate about mobile technology,</li>
-                                    <li>Attention to detail</li>
-                                </ul>
-                            </div>
+                        <div class="col_left">
+                            <h3>Job Description</h3>
+                            <p>We are looking for the best of the best ObjC developers, some out of the box thinking, the courage to get involved with the bleeding edge technologies and the will to over-deliver</p>
+                            <h3 class="mobile_hide">WE OFFER</h3>
+                            <ul class="mobile_hide">
+                                <li>Competitive Salary,</li>
+                                <li>Being a part of international projects,</li>
+                                <li>Business trips,</li>
+                                <li>Great atmosphere,</li>
+                                <li>Medical care,</li>
+                                <li>Top notch talent already on board,</li>
+                            </ul>
                         </div>
+                        <div class="col_right">
+                            <h3>REQUIREMENTS</h3>
+                        
+                            <p>
+                                <strong>What we expect:</strong>
+                            </p>
+                        
+                            <ul>
+                                <li>A proven track record in ObjC/C/C++ projects (other languages a plus),</li>
+                                <li>Participation in specification and planning of new product modules and features,</li>
+                                <li>A flawless knowledge of the English language (both written and spoken),</li>
+                                <li>Out-of-the-box thinking and creativity (we care about your problem solving skills, not the lines of code you write),</li>
+                                <li>Following high quality programming standards,</li>
+                                <li>Keep track of the industry developments and take the initiative to incorporate these into the company technologies,</li>
+                                <li>Engagement and team-play,</li>
+                            </ul>
+                        
+                            <p>
+                               <strong> What would make you the perfect candidate: </strong></p>
+                        
+                            <ul>
+                                <li>Hands on experience in development for any other Mobile OS platform - iOS, Android, Symbian, WebOS, MeeGo, Maemo, Windows Phone, BlackBerry OS or related technologies,</li>
+                                <li>Scrum (or other Agile) development method experience,</li>
+                                <li>Passionate about mobile technology,</li>
+                                <li>Attention to detail</li>
+                            </ul>
+                        </div>
+
+                        <div class="col_bottom">
+                            <p><strong>If you are interested, please send your CV via Apply button below.</strong></p>
+                        
+                            <a href="#" class="careers_print">
+                                print
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22"><path fill-rule="evenodd" clip-rule="evenodd" d="M21,9h-4V2H5v7H1l-1,1v7l1,1h4.3L6,20h10l0.7-2H21l1-1v-7L21,9z M7,4h8v5H7V4zM14,18H8c-0.6,0-1-0.4-1-1c0-0.6,0.4-1,1-1h6c0.6,0,1,0.4,1,1C15,17.6,14.6,18,14,18z M20,15c0,0.6-0.4,1-1,1h-2v-2H5v2H3c-0.6,0-1-0.4-1-1v-3c0-0.6,0.4-1,1-1h16c0.6,0,1,0.4,1,1V15z"/></svg>
+                            </a>
+                            <a href="mailto:info@infullmobile.com" class="careers_apply">
+                                apply
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.7,7.3L5.8,1.8c-0.4-0.4-1.1-0.4-1.5,0c-0.4,0.4-0.4,1,0,1.4L9.5,8l-5.2,4.8 c-0.4,0.4-0.4,1,0,1.4c0.4,0.4,1.1,0.4,1.5,0l5.9-5.5C12.1,8.3,12.1,7.7,11.7,7.3z"/></svg>
+                            </a>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </div>
 
     </section> 
 
-    <section id="contact" class="contact window" data-menu-offset="-80">
+    <section id="contact" class="contact window" data-menu-offset="-70">
         <div class="bg_contact">
             <div class="content">
                 <h2><span class="bold">where we are</span></h2> 
@@ -743,21 +767,28 @@
         </div>
     </footer>
 
+    </div>
+
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/enquire.min.js"></script>    
-    <script src="js/skrollr.min.js"></script>
-    <script src="js/skrollr.menu.min.js"></script> 
     <script src="js/jquery.accordion.js"></script> 
-    <script src="js/jquery.nicescroll.min.js"></script>
-
+   
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.js'></script> 
 
-    <!--<script src="js/jquery.scrollstop.js"></script> 
-    <script src="js/jquery.scrollsnap.js"></script> -->
+    <script src="js/skrollr.min.js"></script>
+    <script src="js/skrollr.menu.min.js"></script> 
+
+    
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/enquire.min.js"></script>  
+
+    <!--  
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/jquery.scrollstop.js"></script> 
+    <script src="js/jquery.scrollsnap.js"></script> 
+    -->
     <script src="js/script.js"></script>
  
 </body>
