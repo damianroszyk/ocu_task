@@ -55,6 +55,10 @@
         // Init Skrollr for 768 and up
         if(( winW >= 768) && (!Modernizr.touch)) {  
 
+            // Reset our slides
+            $headerImg.height('200%');
+            $headerBox.height('200%');
+
             // Init Skrollr
             var s = skrollr.init({
                 forceHeight: false,
