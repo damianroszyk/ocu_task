@@ -1,3 +1,9 @@
+
+.no-svg .plexicon .case_logo,
+.no-svg .plexicon .loading-screen .content .case_logo{
+	background-image:url('../img/svg/fallback/plexicon.png');
+}
+
 .plexicon{
 	
 	.content{
@@ -56,6 +62,14 @@
 		.content{
 			height:100%;
 			padding:120px 25px 20px 25px;
+
+				.case_logo{
+					background:url('../img/svg/plexicon.svg') 0 0 no-repeat;   
+					width:350px;
+					height:180px;
+					margin:110px auto 100px auto;	
+					display: block;
+				}
 		}
 	}
 
@@ -67,7 +81,8 @@
 		padding: 0 25px;
 	}
 
-	img.case_logo{
+	.case_logo{
+		background:url('../img/svg/plexicon.svg') 0 0 no-repeat;   
 		width:350px;
 		height:180px;
 		margin:110px auto 100px auto;	
@@ -266,6 +281,11 @@
 		background:#59afbc;	
 		@include clearfix;	
 
+		.content{
+			overflow: hidden;
+			position: relative;
+		}
+
 		.title{
 			width:360px;
 			float:left;
@@ -340,6 +360,7 @@
 		background:#ec798f;
 		position: relative;
 		height: 770px;
+		overflow:hidden;
 
 		.content{
 			position:relative;

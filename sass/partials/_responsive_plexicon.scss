@@ -1,8 +1,9 @@
 /*  Touch devices conditions */
 
 
-	.touch .plexicon_intro .bg_case{
+	.touch .plexicon .plexicon_intro .bg_case{
 	 	position: absolute;
+	 	background-attachment: scroll;
 	 	height:900px;
 	 }
 
@@ -91,7 +92,7 @@
 			line-height: 26px;
 		}
 
-		hr{
+		.case_about hr{
 			margin:20px auto;
 		}
 
@@ -100,7 +101,8 @@
 			line-height: 30px;
 		}
 
-		img.case_logo {
+		.case_logo,
+		.loading-screen .content .case_logo {
 			width: 230px;
 			height: 115px;
 			margin: 80px auto;
@@ -348,7 +350,8 @@
 			line-height: 26px;
 		}
 
-		img.case_logo{
+		.case_logo,
+		.loading-screen .content .case_logo {
 			margin:0 auto 40px auto;
 		}
 
@@ -497,7 +500,8 @@
 			line-height: 24px;
 		}
 
-		img.case_logo{
+		.case_logo,
+		.loading-screen .content .case_logo {
 			height:auto;
 			width:180px;
 		}
@@ -605,7 +609,9 @@
 	 	}
 
 	 	.case_ux{
-	 		height: 560px;
+	 		height: 590px;
+	 		overflow:hidden;
+
 	 		.content{
 	 			padding: 30px 15px;
 	 		}
@@ -617,11 +623,11 @@
 	 		.bg_ux {
 				background-size: 374px;
 				margin-left: -403px;
-				top: -11px;
+				top: -10px;
 			}
 
 			.bg_grey{
-				display: none;
+				bottom: -41px;
 			}
 	 	}
 
@@ -637,11 +643,12 @@
 
 	 		.phone_1{
 	 			top:310px;
-	 			right: -5px;
+	 			right: 15px;
 	 		}
 	 		.phone_2{
 	 			top:345px;
-	 			right: 80px;
+	 			right: auto;
+	 			left:15px
 	 		}
 
 	 		.icon_box{
