@@ -28,6 +28,7 @@
 
 .services_wrapper{
 	@include clearfix;
+
 	
 	.service_item{
 		@include clearfix;
@@ -36,11 +37,20 @@
 		height:220px;
 		margin:0 0 60px 0;
 
-		iframe, svg{
+		.mobile_icon{
 			float:left;
 			width:140px;
 			height:140px;
 			margin:20px;
+			display: none;	
+		}
+
+		iframe, svg{
+		 	float:left;
+			width:140px;
+			height:140px;
+			margin:20px;
+			display: block;
 		}
 
 		p{

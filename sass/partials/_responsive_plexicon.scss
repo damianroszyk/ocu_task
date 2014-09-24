@@ -1,11 +1,14 @@
 /*  Touch devices conditions */
 
 
-	.touch .plexicon .plexicon_intro .bg_case{
+	.touch .plexicon .plexicon_intro .bg_case,
+	.touch .plexicon .loading-screen{
 	 	position: absolute;
 	 	background-attachment: scroll;
 	 	height:900px;
 	 }
+
+
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
@@ -20,15 +23,46 @@
 			padding: 120px 0px;
 		}
 
-		.case_concept .sketch{
-			margin:-30px 0 0 0;
-			position: absolute;
-			right: -140px;
+		.case_concept{
 
-			img{
-				margin-left:-120px;
+			// .content{
+			// 	padding:80px 25px 20px 25px;
+			// }
+
+			.title{
+				width:330px;
+				padding-right: 10px;
+			}
+
+			.sketch{
+				width:600px;
+				float:right;
+				position:relative;
+				margin:0;
+				right:inherit;
+				background-size:100%;
+				height: 440px;
+
+				.swiper-wrapper{
+					margin:0;
+				}
+
+				img{
+					width:65%;
+					margin:90px 0 0 0;
+				}
 			}
 		}
+
+		// .case_concept .sketch{
+		// 	margin:-30px 0 0 0;
+		// 	position: absolute;
+		// 	right: -140px;
+
+		// 	img{
+		// 		margin-left:-120px;
+		// 	}
+		// }
 
 		.case_ux .bg_ux{
 			background-size: 100%;
@@ -177,7 +211,6 @@
 		} 
 
 		.case_concept{
-
 
 			.content{
 				padding:80px 25px 20px 25px;

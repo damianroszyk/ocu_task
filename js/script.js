@@ -85,14 +85,13 @@
                // event.preventDefault(); 
 
                 var defaultAnchorOffset = 0;
-
                 var anchor = $(this).attr('href');
-
                 var anchorOffset = $(anchor).attr('data-menu-offset') * -1;
+
                 if (!anchorOffset)
                     anchorOffset = defaultAnchorOffset; 
 
-                $('html,body').animate({ 
+                $('body').animate({ 
                     scrollTop: $(anchor).offset().top - anchorOffset
                 }, 500);        
             });
@@ -101,14 +100,6 @@
             $headerImg.height(win_doubleH);
             $headerBox.height(win_doubleH);
         }
-    
-        // // Check for touch
-        // if(Modernizr.touch) {
-
-        //     // Init Skrollr
-        //     var s = skrollr.init();
-        //     s.destroy();
-        // }
     }
     
     function initAdjustWindow() {
@@ -415,6 +406,13 @@
     $(".mobile_menu .logo a").click(function(){
         $(this).parents().eq(2).removeClass('active');   
     });
+
+
+    // test IE, good to disable svg animation
+
+    // if (navigator.userAgent.search("MSIE") >= 0) {
+    //     alert("Browser is InternetExplorer");
+    // }
 
 
 

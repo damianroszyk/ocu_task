@@ -1,10 +1,13 @@
 /*  Touch devices conditions */
 
 
-	.touch .audit .case_intro .bg_case{
+	.touch .audit .case_intro .bg_case,
+	.touch .audit .loading-screen{
 	 	position: absolute;
 	 	background-attachment: scroll;
 	 }
+
+	 
 
 
 /* Large Devices, Wide Screens */
@@ -37,6 +40,24 @@
 
 		.case_stats .image > div{
 			padding: 70px 20px 0 20px;
+		}
+
+		.case_backend .image{
+			width:100%;
+
+			img.arrows {
+				margin: 185px -30px 0 40px;
+			}
+
+			img.app{
+				width:35%;
+			}
+
+			img.backend{
+				width: 65%;
+				float:right;
+				margin: 0 -60px 0 0;
+			}
 		}
 	}
 
@@ -175,34 +196,33 @@
 		}
 
 
-		.case_backend .content{
-			padding:100px 25px;
+		.case_backend 
+
+		.case_backend{
+
+			.content{
+				padding:100px 25px;
+			}
+
+			.pros{
+				padding: 10px 10px 40px 0;
+
+				p{
+					font-size:16px;
+				}
+			} 
+
+			.image{
+
+				img.app{
+					margin: 50px 0 0 0;
+				}
+
+				img.arrows{
+					margin: 155px -30px 0 40px;
+				}
+			}
 		}
-
-		.case_backend .pros{
-			padding: 10px 10px 40px 0;
-
-			p{
-				font-size:16px;
-			}
-		} 
-
-		.case_backend .image{
-			width:100%;
-
-			img.arrows {
-				margin: 185px -30px 0 30px;
-			}
-
-			img.app{
-				margin-left: -50px;
-			}
-
-			img.backend{
-				margin-right: -400px;
-			}
-		}
-
 
 		.case_contact a{
 			font-size: 20px;
@@ -216,7 +236,7 @@
 
 	.audit{
 		.case_notification .title {
-		padding: 0 0px 0px 25px;
+			padding: 0 0px 0px 25px;
 		}
 
 		.case_intro p{
@@ -516,12 +536,6 @@
 			margin: 0 auto;
 			display: block;
 		}
-
-
-
-
-
-
 
 	}
 
