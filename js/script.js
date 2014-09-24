@@ -32,9 +32,9 @@
                     if (!anchorOffset)
                         anchorOffset = defaultAnchorOffset; 
 
-                    $('html,body').animate({ 
+                    $('body').animate({ 
                         scrollTop: $(anchor).offset().top - anchorOffset
-                    }, 500);     
+                    }, 100);     
               });
      
         }, 1000);
@@ -93,7 +93,7 @@
 
                 $('body').animate({ 
                     scrollTop: $(anchor).offset().top - anchorOffset
-                }, 500);        
+                }, 100);        
             });
 
             // Resize our slides
