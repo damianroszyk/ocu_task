@@ -7,7 +7,7 @@
 	 	background-attachment: scroll;
 	 }
 
-	 
+
 
 
 /* Large Devices, Wide Screens */
@@ -192,6 +192,7 @@
 
 			img{
 				width:70%;
+				max-width: 54px;
 			}
 		}
 
@@ -285,16 +286,34 @@
 
 		.case_typo .title{
 			width:100%;
+
+			img{
+				width:70%;
+				display: block;
+			}
 		}
 
 		.case_typo .image{
 			width:100%;
-			margin: 10px 0 -3px 0;
+			margin: 10px 0 0 0;
+
+			img{
+				width: 80%;
+				margin: 30px auto 0 auto;
+				display: block;
+			}
+		}
+
+		.case_notification .image img{
+			width:70%;
 		}
 
 		.case_icons .image img{
-			width:100%;
+			width: 80%;
+			margin: 0 auto;
+			display: block;
 		}
+
 
 		.case_controls .title{
 			width:100%;
@@ -304,6 +323,12 @@
 		.case_controls .image{
 			width:100%;
 			padding: 0 20px;
+
+			img{
+				width:60%;
+				display: block;
+				margin: 30px auto 0 auto;
+			}
 		}
 
 		.case_sprint .title{
@@ -313,6 +338,12 @@
 		.case_sprint .image{
 			width:100%;
 			padding: 0;
+
+			img{
+				width: 70%;
+				margin: 30px auto 0 auto;
+				display: block;
+			}
 		}
 
 		.case_stats .title{
