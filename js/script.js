@@ -37,12 +37,15 @@
               //       }, 100);     
               // });
 
-            var anchor = window.location.hash;
-            var anchorOffset = $(anchor).attr('data-menu-offset');
 
-            if (anchor){
-                window.location = anchor ;
-                window.scrollBy(0, anchorOffset);
+            if(( winW < 768) || (Modernizr.touch)) {  
+                var anchor = window.location.hash;
+                var anchorOffset = $(anchor).attr('data-menu-offset');
+
+                if (anchor){
+                    window.location = anchor ;
+                    window.scrollBy(0, anchorOffset);
+                }
             }
      
         }, 1000);
@@ -145,11 +148,29 @@
     // });
 
 
-    $(function() {     
-        $('#accordion').accordion({
-            oneOpenedItem   : true
-        });   
+    // $(function() {     
+    //     $('#accordion').accordion({
+    //         oneOpenedItem   : true
+    //     });   
+    // });
+
+    // accordion
+
+
+    var allPanels = $('#accordion .careers_info').hide();
+
+    $("#accordion>ul>li>a").click(function(){
+        $this = $(this);
+        $target = $this.next(".careers_info"); 
+
+        $this.parent().toggleClass('st-open');
+        $target.slideToggle();
     });
+
+
+
+
+
 
 
     function initialize() {
