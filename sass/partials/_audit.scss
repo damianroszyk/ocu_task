@@ -524,10 +524,18 @@
 
 				&.app{
 					margin:80px 0 0 0;
+					max-width:360px;
 				}
 
 				&.arrows{
+					max-width: 40px;
 					margin:185px -30px 0 40px;
+					position:relative;
+					z-index: 10;
+				}
+
+				&.backend{
+					max-width:700px;
 				}
 			}
 		}
