@@ -158,13 +158,31 @@
 
 
     var allPanels = $('#accordion .careers_info').hide();
+    var allParents = $('#accordion>ul>li');
 
     $("#accordion>ul>li>a").click(function(){
         $this = $(this);
         $target = $this.next(".careers_info"); 
 
-        $this.parent().toggleClass('st-open');
-        $target.slideToggle();
+        // allPanels.slideUp();
+        // $target.slideDown();
+
+
+        if(!$this.parent().hasClass('st-open')){
+
+            allParents.removeClass('st-open');
+            allPanels.slideUp();
+            $this.parent().addClass('st-open');
+            $target.slideDown();
+            
+        }else{
+
+            allPanels.slideUp();
+            allParents.removeClass('st-open');
+            //$this.parent().removeClass('st-open');
+        }
+
+        
     });
 
 
