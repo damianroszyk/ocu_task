@@ -4,7 +4,6 @@
   @include translateY(-50%);
 }
 
-
 @mixin clearfix() {
     &:before,
     &:after {
