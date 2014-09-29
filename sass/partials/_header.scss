@@ -170,6 +170,10 @@ nav{
 
 
 .mobile_menu{
+
+    @include backface-visibility(hidden);
+    @include perspective(1000);
+
     overflow: inherit; 
     display: none;
     z-index: 110;
@@ -177,8 +181,6 @@ nav{
     top:0;
     right:0;
 
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
 
     .menu_box{
         padding:0;
@@ -261,7 +263,7 @@ nav{
         top:0;
         right:0;
         width:40%;
-        z-index: 5;
+        z-index: 105;
 
         li{
             
@@ -298,7 +300,7 @@ nav{
 
 header#intro{
     width: 100%;
-    height: 200%;
+    height: 100%;
 }
 
 .header_wrapper{
@@ -309,11 +311,11 @@ header#intro{
 
 .header_list{
     width: 100%;
-    height: 200%;
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    background:#000;    
+    background:#072037;    
 }
 
 .headerImg{
@@ -321,7 +323,7 @@ header#intro{
     top:0;
     left:0;
     width:100%;
-    height:50%;
+    height:100%;
 
     &#intro1{
         background: url('../img/bg1.jpg') center center no-repeat;

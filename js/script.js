@@ -67,19 +67,19 @@
         if(( winW >= 768) && (!Modernizr.touch)) {  
 
             // Reset our slides
-            $headerImg.height('200%');
-            $headerBox.height('200%');
+            $headerImg.height('100%');
+            $headerBox.height('100%');
 
             // Init Skrollr
             var s = skrollr.init({
                 forceHeight: false,
                 scale: 2,
-                easing: 'sqrt'
+                easing: 'outCubic'
             });
 
             skrollr.menu.init(s, {
                 animate: true,
-                easing: 'sqrt',
+                easing: 'outCubic',
                 scale: 5,
                 duration: function(currentTop, targetTop) {
                     return 600;
@@ -432,21 +432,30 @@
 
         //menu
 
+        // if ($("nav.desktop_menu").offset().top < winH_fix) {
+        //     $("nav.desktop_menu").removeClass("nav_box");
+        //     $("nav.desktop_menu").removeClass("nav_dark");
+        //     // $(".mobile_menu").removeClass("nav_box");
+        //     // $(".mobile_menu").removeClass("nav_dark");
+        // } else if ($("nav").offset().top >= winH_fix && $("nav").offset().top < win2H){
+        //     $("nav.desktop_menu").addClass("nav_dark");
+        //     $("nav.desktop_menu").removeClass("nav_box");
+        //     // $(".mobile_menu").addClass("nav_dark");
+        //     // $(".mobile_menu").removeClass("nav_box");
+        // } else if ($("nav").offset().top >= win2H) {
+        //     $("nav.desktop_menu").addClass("nav_box");
+        //     $("nav.desktop_menu").removeClass("nav_dark");
+        //     // $(".mobile_menu").addClass("nav_box");
+        //     // $(".mobile_menu").removeClass("nav_dark");
+        // }
+
+
         if ($("nav.desktop_menu").offset().top < winH_fix) {
             $("nav.desktop_menu").removeClass("nav_box");
             $("nav.desktop_menu").removeClass("nav_dark");
-            // $(".mobile_menu").removeClass("nav_box");
-            // $(".mobile_menu").removeClass("nav_dark");
-        } else if ($("nav").offset().top >= winH_fix && $("nav").offset().top < win2H){
-            $("nav.desktop_menu").addClass("nav_dark");
-            $("nav.desktop_menu").removeClass("nav_box");
-            // $(".mobile_menu").addClass("nav_dark");
-            // $(".mobile_menu").removeClass("nav_box");
-        } else if ($("nav").offset().top >= win2H) {
+        } else {
             $("nav.desktop_menu").addClass("nav_box");
             $("nav.desktop_menu").removeClass("nav_dark");
-            // $(".mobile_menu").addClass("nav_box");
-            // $(".mobile_menu").removeClass("nav_dark");
         }
 
     });
