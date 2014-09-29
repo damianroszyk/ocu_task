@@ -13,10 +13,14 @@
     <link href="css/main.css" rel="stylesheet">
     <script src="js/modernizr-2.7.1.min.js"></script>
 
-        <script type="text/javascript" src="//use.typekit.net/chj8rki.js"></script>
+     <!-- Typekit -->
+
+    <script type="text/javascript" src="//use.typekit.net/chj8rki.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-  <script type="text/javascript">
+    <!-- Analitics -->
+
+    <script type="text/javascript">
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-40668396-2']);
         _gaq.push(['_trackPageview']);
@@ -31,6 +35,25 @@
         })();
         
         var static_url = "http://infullmobile.com";
+    </script>
+
+
+    <!-- IE mobile fix -->
+
+    <style type="text/css">
+        @-webkit-viewport   { width: device-width; }
+        @-moz-viewport      { width: device-width; }
+        @-ms-viewport       { width: device-width; }
+        @-o-viewport        { width: device-width; }
+        @viewport           { width: device-width; }
+    </style>
+    <script type="text/javascript">
+        // handle IE Mobile 10 not setting device width properly
+        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+          var msViewportStyle = document.createElement("style");
+          msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));
+          document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+        }
     </script>
 </head>
 
@@ -384,6 +407,23 @@
                 </div>
                 <div class="mobile_overlay"></div>
                 <img src="img/case_4.jpg" class="plexicon_box_image" alt="case4">
+            </div>
+
+            <div class="case_item box_case">
+                <div class="desc box_box">
+                    <h3>Next Generation Parcel Delivery</h3>
+                    <ul class="tags">
+                        <li>Consulting -</li>
+                        <li>Design -</li>
+                        <li>Development</li>
+                    </ul>
+                    <p>A game changer in terms of how packages are delivered to end consumers. A vision we feel strongly about and wish we could tell you more…</p>
+                    <p class="soon">Hold on tight - coming soon...</p>
+                </div>
+                <div class="box_bg">
+                    <img src="img/box_phone1.png" class="phone1" alt="phone1">
+                    <img src="img/box_phone2.png" class="phone2" alt="phone1">
+                </div>
             </div>
     </section> 
 

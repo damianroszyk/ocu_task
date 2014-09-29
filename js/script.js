@@ -39,6 +39,7 @@
 
 
             if(( winW < 768) || (Modernizr.touch)) {  
+                
                 var anchor = window.location.hash;
                 var anchorOffset = $(anchor).attr('data-menu-offset');
 
@@ -98,7 +99,7 @@
                 var anchor = $(this).attr('href');
                 var anchorOffset = $(anchor).offset().top - 70;
 
-                $('body').scrollTop(anchorOffset);        
+                $('html, body').scrollTop(anchorOffset);        
             });
 
             // });
