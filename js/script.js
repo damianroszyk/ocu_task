@@ -477,9 +477,10 @@
 
     // test IE, good to disable svg animation
 
-    // if (navigator.userAgent.search("MSIE") >= 0) {
-    //     alert("Browser is InternetExplorer");
-    // }
+    if (navigator.userAgent.search("MSIE") >= 0) {
+        $(".services_wrapper .service_item svg").hide();
+        $(".services_wrapper .service_item .mobile_icon").show();
+    }
 
 
 

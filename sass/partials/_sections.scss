@@ -37,6 +37,22 @@
 		height:220px;
 		margin:0 0 60px 0;
 
+		&.consulting .mobile_icon{
+			background: url(../img/svg/fallback/icon1.png) 0 0 no-repeat;
+		}
+
+		&.design .mobile_icon{
+			background: url(../img/svg/fallback/icon2.png) 0 0 no-repeat;
+		}
+
+		&.dev .mobile_icon{
+			background: url(../img/svg/fallback/icon3.png) 0 0 no-repeat;
+		}
+
+		&.delivery .mobile_icon{
+			background: url(../img/svg/fallback/icon4.png) 0 0 no-repeat;
+		}
+
 		.mobile_icon{
 			float:left;
 			width:140px;
@@ -163,8 +179,8 @@
 				display: inline-block;
 				text-transform: uppercase;
 				font-style: italic;
-				font-size:16px;
-				font-weight: 400;
+				font-size:14px;
+				font-weight: 600;
 				@include opacity (.5);
 				color:#ffffff;
 				padding:0 5px 0 0;
@@ -341,6 +357,7 @@
 		display: block;
 		border-top:1px solid $line_color;
 		@include clearfix;
+		pointer: cursor;
 
 	
 		.careers_icon{
@@ -438,6 +455,10 @@
 	.careers_info{
 		@extend .content;
 		@include clearfix;
+		@include translate3d(0,0,0);
+		@include backface-visibility(hidden);
+        @include perspective(1000);
+
 
 		padding:0 25px 20px 140px;
 

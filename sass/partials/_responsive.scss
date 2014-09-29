@@ -6,7 +6,8 @@
 }
 
 .touch nav{
-	-webkit-backface-visibility: hidden;
+	@include backface-visibility(hidden);
+    @include perspective(1000);
 }
 
 .touch .desktop_menu{
@@ -15,7 +16,8 @@
 
 .touch .mobile_menu{
 	display: block;
-	-webkit-backface-visibility: hidden;
+	@include backface-visibility(hidden);
+    @include perspective(1000);
 
 	a.toggle_menu{
 		right:10px;
@@ -103,11 +105,10 @@
 
 
 	.headerImg#intro1 .first_header, .headerImg#intro2 .second_header, .loading-screen .first_header{
-		// left:0;
+
 		width:100%;
 		margin: 0 0 0 -50%;
-		// margin:0;
-		// top: 30%;
+
 
 		h1{
 			font-size: 68px;
@@ -433,7 +434,8 @@
 	}
 
 	nav{
-		-webkit-backface-visibility: hidden;
+		@include backface-visibility(hidden);
+        @include perspective(1000);
 	}
 
 	.desktop_menu{
@@ -442,7 +444,8 @@
 
 	.mobile_menu{
 		display: block;
-		-webkit-backface-visibility: hidden;
+		@include backface-visibility(hidden);
+        @include perspective(1000);
 
 		a.toggle_menu{
 			right:10px;
@@ -742,7 +745,6 @@
 		margin:0 0 10px 0;
 	}
 
-
 	.services_wrapper .service_item svg{
 		display:none;
 	}
@@ -751,22 +753,6 @@
 		margin: 0 auto;
 		display: block;
 		float:none;
-	}
-
-	.services_wrapper .service_item.consulting .mobile_icon{
-		background: url(../img/svg/fallback/icon1.png) 0 0 no-repeat;
-	}
-
-	.services_wrapper .service_item.design .mobile_icon{
-		background: url(../img/svg/fallback/icon2.png) 0 0 no-repeat;
-	}
-
-	.services_wrapper .service_item.dev .mobile_icon{
-		background: url(../img/svg/fallback/icon3.png) 0 0 no-repeat;
-	}
-
-	.services_wrapper .service_item.delivery .mobile_icon{
-		background: url(../img/svg/fallback/icon4.png) 0 0 no-repeat;
 	}
 
 	.mobile_overlay{
