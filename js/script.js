@@ -16,11 +16,31 @@
     $body.imagesLoaded( function() {
         setTimeout(function() {
               
-              // Resize sections
-              adjustWindow();
-              
-              // Fade in sections
-              $body.removeClass('loading').addClass('loaded');
+                // Resize sections
+                adjustWindow();
+                  
+                // Fade in sections
+                $body.removeClass('loading').addClass('loaded');
+
+                var anchor = window.location.hash;
+
+                if (anchor == "#ios_developer"){
+                    anchorOffset = -60;
+
+                    setTimeout(function(){
+                        $('#ios_developer').addClass('st-open');
+                        $('#ios_developer .careers_info').slideDown();
+                    },1000);
+                }else if (anchor == "#ui_designer"){
+                    anchorOffset = -60;
+
+                    setTimeout(function(){
+                        $('#ui_designer').addClass('st-open');
+                        $('#ui_designer .careers_info').slideDown();
+                    },1000);
+                }
+
+
 
               // $(function scroller(){
               //       var defaultAnchorOffset = 0;
@@ -42,6 +62,22 @@
                 
                 var anchor = window.location.hash;
                 var anchorOffset = $(anchor).attr('data-menu-offset');
+
+                if (anchor == "#ios_developer"){
+                    anchorOffset = -60;
+
+                    setTimeout(function(){
+                        $('#ios_developer').addClass('st-open');
+                        $('#ios_developer .careers_info').slideDown();
+                    },1000);
+                }else if (anchor == "#ui_designer"){
+                    anchorOffset = -60;
+
+                    setTimeout(function(){
+                        $('#ui_designer').addClass('st-open');
+                        $('#ui_designer .careers_info').slideDown();
+                    },1000);
+                }
 
                 if (anchor){
                     window.location = anchor ;

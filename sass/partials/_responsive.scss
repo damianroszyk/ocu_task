@@ -194,6 +194,10 @@
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
 
+	nav ul li{
+		margin:5px;
+	}
+
 
 
 	.headerImg#intro1 .first_header br, 
@@ -281,9 +285,7 @@
 			padding: 60px 25px 0 25px;
 		}
 
-		.bg_work .bg_diagonal{
-			right: -68px;
-		}
+
 
 		.case_item {
 
@@ -310,8 +312,7 @@
 		}
 
 		.bg_work .bg_diagonal{
-			right:0;
-			left:652px;
+			left: 736px;
 		}
 
 		 a.main_btn{
@@ -402,7 +403,7 @@
 		}
 
 		.contact_details{
-			height:auto;
+			//height:auto;
 		}
 
 		.contact_details .city{
@@ -422,7 +423,8 @@
 			}
 
 			.map_arrow{
-				left: 190px;
+				left: auto;
+				right: 25px;
 			}
 		}
 
@@ -433,6 +435,10 @@
 @media only screen and (max-width : 768px) {
 
 
+	hr{
+		width: 40px;
+		height: 4px;
+	}
 
 	// header#intro{
 	// 	height:1600px;
@@ -490,8 +496,8 @@
 	}
 
 	.headerImg#intro1 .first_header h1, .loading-screen .first_header h1{
-		font-size: 58px;
-		line-height: 70px;
+		font-size: 70px;
+		line-height: 74px;
 		letter-spacing: 2px;	
 	}
 
@@ -583,7 +589,7 @@
 	}
 
 	.careers h2{
-		padding:0 0 50px 0;
+		padding:0 0 30px 0;
 	}
 
 	.careers hr{
@@ -591,7 +597,7 @@
 	}
 
 	.careers .pros{
-		display: none;
+		display: block;
 		width:80%;
 		padding: 10px 0 20px 0;
 	}
@@ -619,6 +625,14 @@
 		position:relative;
 		left:auto;
 		padding: 39px 0 30px 30px;
+	}
+
+	.contact .contact_details{
+		height: 340px;
+
+		.content{
+			height: 220px;
+		}
 	}
 
 	.contact .contact_details .city{
@@ -781,10 +795,10 @@
 	}
 
 	.careers .content{
-		padding: 40px 15px;
+		padding: 40px 15px 20px 15px;
 
-		h2{
-			padding:0;
+		.pros{
+			width:100%;
 		}
 	}
 
@@ -792,11 +806,19 @@
 		padding:0 15px 10px 15px;
 	}
 
+	.careers .careers_info .col_bottom p{
+		margin-bottom:30px;
+	}
+
 	.careers .careers_info a.careers_print,
-	.careers .careers_info a.careers_apply{
-		width:120px;
+	.careers .careers_info a.careers_apply,
+	.careers .careers_info a.careers_fb, 
+	.careers .careers_info a.careers_twitter{
+		width: 180px;
+		float: none;
+		display: block;
 		padding: 16px;
-		margin:10px 10px 0 0;
+		margin: 10px 10px 0 0;
 
 		svg{
 			right: 16px;

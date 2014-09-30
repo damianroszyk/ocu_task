@@ -430,7 +430,7 @@ a.more{
 }
 
 .loading-screen{
-    @include transition (opacity 2s ease-out, transform 0s 2s linear);
+    @include transition (opacity 1s .4s ease-out, transform 0s 1.5s linear);
     position:fixed;
     z-index: 1000;
     top:0;
@@ -442,7 +442,7 @@ a.more{
     background-size: cover;
     background-attachment: fixed;
 
-    .caption{
+    .caption{ 
         @extend .fadeInLeft;
         position: relative;
         height: 100%;
@@ -451,6 +451,7 @@ a.more{
     
 
     .first_header{
+         @include transition (opacity .3s linear);
         @include vertical-align();
         left:50%;
         width:1170px;
@@ -485,6 +486,18 @@ a.more{
     @include opacity(0);
     @include translate3d(0,-9999px,0);
     //display: none;
+
+    .caption .first_header{
+       
+       @include opacity(0); 
+    }
+}
+
+nav.desktop_menu ul li.ios_link,
+nav.mobile_menu ul li.ios_link,
+nav.desktop_menu ul li.ui_link,
+nav.mobile_menu ul li.ui_link{
+    display: none;
 }
 
 
