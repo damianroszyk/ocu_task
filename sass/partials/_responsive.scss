@@ -66,14 +66,11 @@
 
 	.careers_arrow{
 		 @include rotate(0deg);
-
 		
 		path{
 			fill:$dark_color;	
 		}	
 	}
-
-
 }
 
 .touch footer .content a.mma:hover{
@@ -92,6 +89,43 @@
 .touch a.more{
 	display:none;
 }
+
+.touch .careers .careers_info a.careers_print::after, 
+.touch .careers .careers_info a.careers_apply::after, 
+.touch .careers .careers_info a.careers_fb::after, 
+.touch .careers .careers_info a.careers_twitter::after{
+	display:none;
+}
+
+.touch .careers .careers_info a.careers_print:hover, 
+.touch .careers .careers_info a.careers_apply:hover, 
+.touch .careers .careers_info a.careers_fb:hover, 
+.touch .careers .careers_info a.careers_twitter:hover{
+	color: inherit;
+	
+	svg path{
+		fill:inherit;
+	}
+}
+
+.touch .careers .careers_info a.careers_fb:hover{
+	color: #3c599b;
+	
+	svg path{
+		fill:#3c599b;
+	}
+}
+
+.touch .careers .careers_info a.careers_twitter:hover{
+	color: #5eaade;
+	
+	svg path{
+		fill:#5eaade;
+	}
+}
+
+
+
 
 
 
