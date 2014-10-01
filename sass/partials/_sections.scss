@@ -4,18 +4,6 @@
 	position:relative;
 }
 
-.content{
-     h1, h2, hr, h3, .pros, .service_item, .logos li, .gallery img{
-    	@include opacity (0);
-    }
-}
-
-.case_item{
-	h3, ul, p, a{
-		@include opacity (0);	
-	}
-}
-
 .services{
     position:relative;
     background:#fff;

@@ -6,30 +6,6 @@
 
 .plexicon{
 	
-	.content{
-	     h1, h2, hr, h3, .pros, .service_item, .logos li, .gallery img{
-	    	@include opacity (1);
-	    }
-	}
-
-	.case_item{
-		h3, ul, p, a{
-			@include opacity (1);	
-		}
-	}
-
-	.case_about .images img, 
-	.sketch, 
-	.case_flowmap img,
-	.case_ux .bg_ux,
-	.case_design>.content>img,
-	.icon_box .design_icon,
-	.icon_box .tech_icon,
-	.case_frame .title,
-	.case_pack .title{
-		@include opacity (0);	
-	}
-
 	h2{
 		font-weight: 600;
 		font-size:40px;
