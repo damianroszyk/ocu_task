@@ -335,16 +335,40 @@
 
 /************* ICON4 *****************/
 
+.rec5_move{
+  @include translate(60px,86px);   
+}
+
+.rec6_move{
+  @include translate(76px,86px);   
+}
+
+.rec4_move{
+  @include translate(44px,86px);   
+}
+
+.cog_fix{
+  @include translate(-93.5px,-96.5px); 
+}
+
+.cog_move{
+  @include translate(93.5px,96.5px); 
+}
+
+.new_line1, .new_line2, .new_line3{
+  @include opacity (0);
+}
+
+.top_l_move{
+  @include translate(50px,63px);     
+}
+
 .no-touch{
 
   
   .circle{
     @include animation ('circ ease 6s 2s infinite');
     @include transform-origin(50%, 50%);
-  }
-
-  .top_l_move{
-    @include translate(50px,63px);     
   }
 
   .top_line{
@@ -372,18 +396,9 @@
     @include transform-origin(50%, 50%);
   }
 
-
-  .rec4_move{
-    @include translate(44px,86px);   
-  }
-
   .rec4{
     @include animation ('rec4 ease 6s 2s infinite');
     @include transform-origin(0, 0);
-  }
-
-  .rec5_move{
-    @include translate(60px,86px);   
   }
 
   .rec5{
@@ -391,9 +406,6 @@
     @include transform-origin(0, 0);
   }
 
-  .rec6_move{
-    @include translate(76px,86px);   
-  }
 
   .rec6{
     @include animation ('rec6 ease 6s 2s infinite');
@@ -401,23 +413,14 @@
   }
 
   .new_line1, .new_line2, .new_line3{
-    @include opacity (0);
     @include animation ('new_line1 ease 6s 2s infinite');
     @include transform-origin(50%, 50%);
   }
 
 
-  .cog_fix{
-    @include translate(-93.5px,-96.5px); 
-  }
-
   .cog{ 
     @include animation ('cog linear 4s infinite');
     @include transform-origin(0, 0);
-  }
-
-  .cog_move{
-    @include translate(93.5px,96.5px); 
   }
 
 }
@@ -444,7 +447,6 @@
   100% { @include translate(0,0);  }
 }
 
-
 @include keyframes ('bottom_l') {
   0% { @include translate(0,0); }
   15% { @include translate(5px,-14px)  }
@@ -454,7 +456,6 @@
   75% { @include translate(0,0);  }
   100% { @include translate(0,0);  }
 }
-
 
 @include keyframes ('rec1') {
   0% { @include translate(0,0); }
@@ -466,8 +467,6 @@
   100% { @include translate(0,0);  }
 }
 
-
-
 @include keyframes ('rec2') {
   0% { @include translate(0,0); }
   15% { @include translate(-15px,11px);  }
@@ -478,8 +477,6 @@
   100% { @include translate(0,0);  }
 }
 
-
-
 @include keyframes ('rec3') {
   0% { @include translate(0,0); opacity:1; }
   15% { @include translate(-31px,20px); opacity:0;  }
@@ -487,7 +484,6 @@
   75% { @include translate(0,0); opacity:1;  }
   100% { @include translate(0,0);  }
 }
-
 
 @include keyframes ('rec4') {
   0% { @include translate(0,0) ; fill:#ffffff; }
@@ -497,8 +493,6 @@
   100% { @include translate(0,0);  }
 }
 
-
-
 @include keyframes ('rec5') {
   0% { @include translate(0,0) ; fill:#ffffff; }
   15% { @include transform (translate(5px,-16px) scale(1.8,.15)); fill:#cccccc;  }
@@ -506,8 +500,6 @@
   75% { @include translate(0,0); fill:#ffffff;  }
   100% { @include translate(0,0);  }
 }
-
-
 
 @include keyframes ('rec6') {
   0% { @include translate(0,0) ; fill:#ffffff; }
@@ -517,7 +509,6 @@
   100% { @include translate(0,0);  }
 }
 
-
 @include keyframes ('new_line1') {
   0% { @include translate(0,0) ; @include opacity (0); }
   15% { @include translate(0,-8px); @include opacity (1); }
@@ -525,7 +516,6 @@
   75% { @include translate(0,0); @include opacity (0); }
   100% { @include translate(0,0); @include opacity (0); }
 }
-
 
 @include keyframes ('cog') {
   0%  { @include rotate(0deg); }
