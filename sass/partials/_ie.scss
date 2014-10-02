@@ -55,8 +55,9 @@
 	}
 
 	.loading-screen,
-	.audit .loading-screen,
-	.plexicon .loading-screen{
+	.loading .loading-screen,
+	.audit.loading .loading-screen,
+	.plexicon.loading .loading-screen{
 		display: none !important;
 	}
 
