@@ -38,6 +38,13 @@
                         $('#ui_designer').addClass('st-open');
                         $('#ui_designer .careers_info').slideDown();
                     },1000);
+                }else if (anchor == "#frontend_developer"){
+                    anchorOffset = -60;
+
+                    setTimeout(function(){
+                        $('#frontend_developer').addClass('st-open');
+                        $('#frontend_developer .careers_info').slideDown();
+                    },1000);
                 }
 
 
@@ -76,6 +83,13 @@
                     setTimeout(function(){
                         $('#ui_designer').addClass('st-open');
                         $('#ui_designer .careers_info').slideDown();
+                    },1000);
+                }else if (anchor == "#frontend_developer"){
+                    anchorOffset = -60;
+
+                    setTimeout(function(){
+                        $('#frontend_developer').addClass('st-open');
+                        $('#frontend_developer .careers_info').slideDown();
                     },1000);
                 }
 

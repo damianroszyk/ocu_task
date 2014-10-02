@@ -496,7 +496,9 @@ a.more{
 nav.desktop_menu ul li.ios_link,
 nav.mobile_menu ul li.ios_link,
 nav.desktop_menu ul li.ui_link,
-nav.mobile_menu ul li.ui_link{
+nav.mobile_menu ul li.ui_link,
+nav.desktop_menu ul li.frontend_link,
+nav.mobile_menu ul li.frontend_link{
     display: none;
 }
 
