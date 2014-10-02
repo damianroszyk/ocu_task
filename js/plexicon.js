@@ -1,7 +1,7 @@
 
 ( function( $ ) {
 
-
+    if ( ($('html').hasClass('no-ie')) ){
     var mySwiper = new Swiper('.sketch',{
         pagination: '.pagination',
         loop:true,
@@ -118,12 +118,9 @@
                 $(box).find('.title').addClass("fadeInLeft");
             }
         });
-
-        
-
-
-
     });
+
+    }
 
     
 

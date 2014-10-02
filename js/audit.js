@@ -1,7 +1,7 @@
 
 ( function( $ ) {
 
-
+    if ( ($('html').hasClass('no-ie')) ){
     $(window).scroll(function() {
 
         var imageH = 500;
@@ -92,7 +92,9 @@
                 });    
             };
         });
-    });    
+    }); 
+
+    }   
 
 } )( jQuery );
 
