@@ -2,7 +2,11 @@
 
 
 	.touch .audit .case_intro .bg_case,
-	.touch .audit .loading-screen{
+	.touch .audit .loading-screen,
+	.ie7 .audit .case_intro .bg_case,
+	.ie7 .audit .loading-screen,
+	.ie11 .audit .case_intro .bg_case,
+	.ie11 .audit .loading-screen{
 	 	position: absolute;
 	 	background-attachment: scroll;
 	 }

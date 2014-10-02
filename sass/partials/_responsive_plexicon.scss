@@ -2,12 +2,15 @@
 
 
 	.touch .plexicon .plexicon_intro .bg_case,
-	.touch .plexicon .loading-screen{
+	.touch .plexicon .loading-screen,
+	.ie7 .plexicon .plexicon_intro .bg_case,
+	.ie7 .plexicon .loading-screen,
+	.ie11 .plexicon .plexicon_intro .bg_case,
+	.ie11 .plexicon .loading-screen{
 	 	position: absolute;
 	 	background-attachment: scroll;
 	 	height:900px;
 	 }
-
 
 
 /* Large Devices, Wide Screens */

@@ -1,0 +1,46 @@
+.ie7{
+
+	.desktop_menu{
+		display: none;
+	}
+
+	.mobile_menu{
+		display: block;
+		position:absolute;
+
+		.logo a{
+			margin: 15px 0 20px 0;
+		}
+
+
+		 a.toggle_menu{
+		 	display: none;
+	
+		 }
+	}
+
+	.headerImg#intro1{
+		position: absolute;
+	 	background-attachment: scroll;
+	}
+
+	.header_list{
+		position:absolute;
+	}
+
+	.headerImg#intro1 .first_header{
+		@include translate3d(0,0,0);
+		margin:0;
+		left:0;
+		top:200px;
+		padding:40px;
+	}
+
+
+	.work .case_item .desc{
+		@include translate3d(0,0,0);	
+		top: 100px;
+	}
+
+
+}

@@ -402,114 +402,117 @@
 
     $('.address .warsaw').show();
 
-     google.maps.event.addDomListener(window, 'load', initialize);
+    google.maps.event.addDomListener(window, 'load', initialize);
 
 
-    $(window).scroll(function() {
- 
-        var winH = $(window).height();
-        var winH_fix = winH - 100;
-        var win2H = (winH * 2) - 90;
 
-        $('.content').each(function(){
-            var box = $(this);
-            var imagePos = $(this).offset().top;
-            var topOfWindow = $(window).scrollTop();
-            if (imagePos < topOfWindow+winH-100) {
-                $(box).find('h1').addClass("fadeInLeft");
-                $(box).find('h2').addClass("fadeInLeft");
-                setTimeout(function () { $(box).find('hr').addClass("fadeInLeft"); }, 200);
-                setTimeout(function () { $(box).find('h3').addClass("fadeInLeft"); }, 400);
+    if ( ($('html').hasClass('no-ie')) ){
+        $(window).scroll(function() {
+     
+            var winH = $(window).height();
+            var winH_fix = winH - 100;
+            var win2H = (winH * 2) - 90;
+
+            $('.content').each(function(){
+                var box = $(this);
+                var imagePos = $(this).offset().top;
+                var topOfWindow = $(window).scrollTop();
+                if (imagePos < topOfWindow+winH-100) {
+                    $(box).find('h1').addClass("fadeInLeft");
+                    $(box).find('h2').addClass("fadeInLeft");
+                    setTimeout(function () { $(box).find('hr').addClass("fadeInLeft"); }, 200);
+                    setTimeout(function () { $(box).find('h3').addClass("fadeInLeft"); }, 400);
+                }
+            });
+
+            $('#careers').each(function(){
+                var box = $(this);
+                 var imagePos = $(this).offset().top;
+                var topOfWindow = $(window).scrollTop();
+                if (imagePos < topOfWindow+winH-100) {
+                    setTimeout(function () { $(box).find('.pro1').addClass("fadeInLeft"); }, 400);
+                    setTimeout(function () { $(box).find('.pro2').addClass("fadeInLeft"); }, 700);
+                    setTimeout(function () { $(box).find('.pro3').addClass("fadeInLeft"); }, 1000);
+                }
+            });
+
+             $('.case_item ').each(function(){
+                var box = $(this);
+                 var imagePos = $(this).offset().top;
+                var topOfWindow = $(window).scrollTop();
+                if (imagePos < topOfWindow+winH-100) {
+                    setTimeout(function () { $(box).find('h3').addClass("fadeInLeft"); }, 100);
+                    setTimeout(function () { $(box).find('ul').addClass("fadeInLeft"); }, 400);
+                    setTimeout(function () { $(box).find('p').addClass("fadeInLeft"); }, 700);
+                    setTimeout(function () { $(box).find('a').addClass("fadeInLeft"); }, 1000);
+                }
+            });
+
+            $('#services').each(function(){
+                 var box = $(this);
+                 var imagePos = $(this).offset().top;
+                var topOfWindow = $(window).scrollTop();
+                if (imagePos < topOfWindow+winH-100) {
+                    setTimeout(function () { $(box).find('.consulting').addClass("fadeInLeft"); }, 600);
+                    setTimeout(function () { $(box).find('.design').addClass("fadeInLeft"); }, 900);
+                    setTimeout(function () { $(box).find('.dev').addClass("fadeInLeft"); }, 1200);
+                    setTimeout(function () { $(box).find('.delivery').addClass("fadeInLeft"); }, 1500);
+                }
+            });
+
+            $('.logos').each(function(){
+                 var imagePos = $(this).offset().top;
+                var topOfWindow = $(window).scrollTop();
+                if (imagePos < topOfWindow+winH-100) {
+                    $('.logos li').each(function(i) {
+                        var me = $(this);
+                        setTimeout(function () { $(me).addClass("fadeInLeft"); }, (100 * i));
+                    });    
+                };
+            });
+
+            $('.gallery').each(function(){
+                 var imagePos = $(this).offset().top;
+                var topOfWindow = $(window).scrollTop();
+                if (imagePos < topOfWindow+winH-100) {
+                    $('.gallery img').each(function(i) {
+                        var me = $(this);
+                        setTimeout(function () { $(me).addClass("fadeInLeft"); }, (100 * i));
+                    });    
+                };
+            });
+
+
+            //menu
+
+            // if ($("nav.desktop_menu").offset().top < winH_fix) {
+            //     $("nav.desktop_menu").removeClass("nav_box");
+            //     $("nav.desktop_menu").removeClass("nav_dark");
+            //     // $(".mobile_menu").removeClass("nav_box");
+            //     // $(".mobile_menu").removeClass("nav_dark");
+            // } else if ($("nav").offset().top >= winH_fix && $("nav").offset().top < win2H){
+            //     $("nav.desktop_menu").addClass("nav_dark");
+            //     $("nav.desktop_menu").removeClass("nav_box");
+            //     // $(".mobile_menu").addClass("nav_dark");
+            //     // $(".mobile_menu").removeClass("nav_box");
+            // } else if ($("nav").offset().top >= win2H) {
+            //     $("nav.desktop_menu").addClass("nav_box");
+            //     $("nav.desktop_menu").removeClass("nav_dark");
+            //     // $(".mobile_menu").addClass("nav_box");
+            //     // $(".mobile_menu").removeClass("nav_dark");
+            // }
+
+
+            if ($("nav.desktop_menu").offset().top < winH_fix) {
+                $("nav.desktop_menu").removeClass("nav_box");
+                $("nav.desktop_menu").removeClass("nav_dark");
+            } else {
+                $("nav.desktop_menu").addClass("nav_box");
+                $("nav.desktop_menu").removeClass("nav_dark");
             }
+
         });
-
-        $('#careers').each(function(){
-            var box = $(this);
-             var imagePos = $(this).offset().top;
-            var topOfWindow = $(window).scrollTop();
-            if (imagePos < topOfWindow+winH-100) {
-                setTimeout(function () { $(box).find('.pro1').addClass("fadeInLeft"); }, 400);
-                setTimeout(function () { $(box).find('.pro2').addClass("fadeInLeft"); }, 700);
-                setTimeout(function () { $(box).find('.pro3').addClass("fadeInLeft"); }, 1000);
-            }
-        });
-
-         $('.case_item ').each(function(){
-            var box = $(this);
-             var imagePos = $(this).offset().top;
-            var topOfWindow = $(window).scrollTop();
-            if (imagePos < topOfWindow+winH-100) {
-                setTimeout(function () { $(box).find('h3').addClass("fadeInLeft"); }, 100);
-                setTimeout(function () { $(box).find('ul').addClass("fadeInLeft"); }, 400);
-                setTimeout(function () { $(box).find('p').addClass("fadeInLeft"); }, 700);
-                setTimeout(function () { $(box).find('a').addClass("fadeInLeft"); }, 1000);
-            }
-        });
-
-        $('#services').each(function(){
-             var box = $(this);
-             var imagePos = $(this).offset().top;
-            var topOfWindow = $(window).scrollTop();
-            if (imagePos < topOfWindow+winH-100) {
-                setTimeout(function () { $(box).find('.consulting').addClass("fadeInLeft"); }, 600);
-                setTimeout(function () { $(box).find('.design').addClass("fadeInLeft"); }, 900);
-                setTimeout(function () { $(box).find('.dev').addClass("fadeInLeft"); }, 1200);
-                setTimeout(function () { $(box).find('.delivery').addClass("fadeInLeft"); }, 1500);
-            }
-        });
-
-        $('.logos').each(function(){
-             var imagePos = $(this).offset().top;
-            var topOfWindow = $(window).scrollTop();
-            if (imagePos < topOfWindow+winH-100) {
-                $('.logos li').each(function(i) {
-                    var me = $(this);
-                    setTimeout(function () { $(me).addClass("fadeInLeft"); }, (100 * i));
-                });    
-            };
-        });
-
-        $('.gallery').each(function(){
-             var imagePos = $(this).offset().top;
-            var topOfWindow = $(window).scrollTop();
-            if (imagePos < topOfWindow+winH-100) {
-                $('.gallery img').each(function(i) {
-                    var me = $(this);
-                    setTimeout(function () { $(me).addClass("fadeInLeft"); }, (100 * i));
-                });    
-            };
-        });
-
-
-        //menu
-
-        // if ($("nav.desktop_menu").offset().top < winH_fix) {
-        //     $("nav.desktop_menu").removeClass("nav_box");
-        //     $("nav.desktop_menu").removeClass("nav_dark");
-        //     // $(".mobile_menu").removeClass("nav_box");
-        //     // $(".mobile_menu").removeClass("nav_dark");
-        // } else if ($("nav").offset().top >= winH_fix && $("nav").offset().top < win2H){
-        //     $("nav.desktop_menu").addClass("nav_dark");
-        //     $("nav.desktop_menu").removeClass("nav_box");
-        //     // $(".mobile_menu").addClass("nav_dark");
-        //     // $(".mobile_menu").removeClass("nav_box");
-        // } else if ($("nav").offset().top >= win2H) {
-        //     $("nav.desktop_menu").addClass("nav_box");
-        //     $("nav.desktop_menu").removeClass("nav_dark");
-        //     // $(".mobile_menu").addClass("nav_box");
-        //     // $(".mobile_menu").removeClass("nav_dark");
-        // }
-
-
-        if ($("nav.desktop_menu").offset().top < winH_fix) {
-            $("nav.desktop_menu").removeClass("nav_box");
-            $("nav.desktop_menu").removeClass("nav_dark");
-        } else {
-            $("nav.desktop_menu").addClass("nav_box");
-            $("nav.desktop_menu").removeClass("nav_dark");
-        }
-
-    });
+    }
 
     // Mobile menu
 
@@ -553,7 +556,6 @@
 
     if ( ie >= 10 ){
         $('html').addClass("ie11");
-        $('html').removeClass("no-ie");
     } else if ( ie >= 5 && ie <=9 ){
         $('html').addClass("ie7");
         $('html').removeClass("no-ie");
