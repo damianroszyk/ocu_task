@@ -549,10 +549,15 @@
     }
 
     ie = 0;
-
     ie = getInternetExplorerVersion();
+
+    if ( ie >= 1 ){
+        $('html').removeClass("no-ie");
+        $('html').addClass("ie");
+    }
+
     
-    alert(ie);
+
 
 } )( jQuery );
 
