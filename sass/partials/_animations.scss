@@ -2,16 +2,18 @@
 
 /************* IE you fail! *****************/
 
-.ie .services_wrapper .service_item svg{
+.ie .services_wrapper .service_item svg,
+.touch .services_wrapper .service_item svg{
   display: none;
 }
 
-.ie .services_wrapper .service_item .mobile_icon{
+.ie .services_wrapper .service_item .mobile_icon,
+.touch .services_wrapper .service_item .mobile_icon{
   display: block; 
 }
 
 /************* Section hiding for fadeIn *****************/
-.no-touch, .no-ie{
+.no-touch.no-ie{
 
   .content{
        h1, h2, hr, h3, .pros, .service_item, .logos li, .gallery img{
@@ -83,7 +85,7 @@
 
 /************* Global animations *****************/
 
-.no-touch, .no-ie{
+.no-touch.no-ie{
 
   .fadeInLeft {
     @include animation('fadeInLeft ease-out 1s both');
@@ -120,7 +122,7 @@
 
 /************* Icon1 *****************/
 
-.no-touch, .no-ie{
+.no-touch.no-ie{
 
   .section1 {
     @include opacity (0);
@@ -163,7 +165,7 @@
 /************* ICON2 *****************/
 
 
-.no-touch, .no-ie{
+.no-touch.no-ie{
 
   .ratio_line {
   	stroke-dasharray: 320;
@@ -225,7 +227,7 @@
 
 /************* ICON3 *****************/
 
-.no-touch, .no-ie{
+.no-touch.no-ie{
 
   .line1 {
   	@include opacity (0);
@@ -361,7 +363,7 @@
   @include translate(50px,63px);     
 }
 
-.no-touch, .no-ie{
+.no-touch.no-ie{
 
   
   .circle{
