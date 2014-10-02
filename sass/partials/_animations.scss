@@ -2,13 +2,13 @@
 
 /************* IE you fail! *****************/
 
-.ie7 .services_wrapper .service_item svg,
+.ie9 .services_wrapper .service_item svg,
 .ie11 .services_wrapper .service_item svg,
 .touch .services_wrapper .service_item svg{
   display: none;
 }
 
-.ie7 .services_wrapper .service_item .mobile_icon,
+.ie9 .services_wrapper .service_item .mobile_icon,
 .ie11 .services_wrapper .service_item .mobile_icon,
 .touch .services_wrapper .service_item .mobile_icon{
   display: block; 

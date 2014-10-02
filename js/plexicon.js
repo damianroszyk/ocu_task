@@ -1,7 +1,8 @@
 
 ( function( $ ) {
 
-    if ( ($('html').hasClass('no-ie')) ){
+   
+
     var mySwiper = new Swiper('.sketch',{
         pagination: '.pagination',
         loop:true,
@@ -10,6 +11,7 @@
     });
 
 
+    if ( ($('html').hasClass('no-ie')) ){
     $(window).scroll(function() {
 
         imageH = 720;
