@@ -553,6 +553,10 @@
 
     if ( ie >= 10 ){
         $('html').addClass("ie11");
+        $('html').addClass("no-ie");
+    } else if ( ie >= 5 && ie <=9 ){
+        $('html').addClass("ie7");
+        $('html').addClass("no-ie");
     }
 
     
