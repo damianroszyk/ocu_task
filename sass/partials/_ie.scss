@@ -50,8 +50,14 @@
 		 // }
 	}
 
-	.loading-screen{
+	.plexicon .case_concept .pagination{
 		display: none;
+	}
+
+	.loading-screen,
+	.audit .loading-screen,
+	.plexicon .loading-screen{
+		display: none !important;
 	}
 
 
@@ -82,10 +88,14 @@
 		}
 	}
 
+	.work .case_item{
+		padding: 60px 20px 60px 20px;
+	}
+
 
 	.work .case_item .desc{
 		@include translate3d(0,0,0);	
-		top: 100px;
+		top: 0;
 	}
 
 	a.more{
