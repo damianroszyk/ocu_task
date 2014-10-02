@@ -102,7 +102,9 @@
 }
 
 .ie11{
-	.mobile_menu{
+	.mobile_menu,
+	.audit .mobile_menu,
+	.plexicon .mobile_menu{
 		position:absolute;
 	}	
 }
