@@ -54,12 +54,7 @@
 		display: none;
 	}
 
-	.loading-screen,
-	.loading .loading-screen,
-	.audit.loading .loading-screen,
-	.plexicon.loading .loading-screen{
-		display: none !important;
-	}
+
 
 
 	.headerImg#intro1{
@@ -90,11 +85,12 @@
 	}
 
 	.work .case_item{
-		padding: 60px 20px 60px 20px;
+		padding:0;
 	}
 
 
 	.work .case_item .desc{
+		padding: 60px 20px 60px 20px;
 		@include translate3d(0,0,0);	
 		top: 0;
 	}
@@ -105,9 +101,19 @@
 
 
 	.audit .case_intro .bg_case,
-	.audit .loading-screen,{
+	.audit .loading-screen,
+	.plexicon .case_intro .bg_case,
+	.plexicon .loading-screen{
 		position: absolute;
 	 	background-attachment: scroll;
+	}
+
+	.loading-screen,
+	.loading .loading-screen,
+	.audit.loading .loading-screen,
+	.plexicon.loading .loading-screen{
+		display: none !important;
+		@include opacity(0);
 	}
 
 }
