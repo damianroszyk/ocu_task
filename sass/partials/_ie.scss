@@ -13,11 +13,16 @@
 		}
 
 
-		 a.toggle_menu{
-		 	display: none;
+		 // a.toggle_menu{
+		 // 	display: none;
 	
-		 }
+		 // }
 	}
+
+	.loading-screen{
+		display: none;
+	}
+
 
 	.headerImg#intro1{
 		position: absolute;
@@ -28,12 +33,19 @@
 		position:absolute;
 	}
 
-	.headerImg#intro1 .first_header{
+	.headerImg#intro1 .first_header,
+	.loading-screen .first_header{
 		@include translate3d(0,0,0);
 		margin:0;
 		left:0;
 		top:200px;
 		padding:40px;
+		width:100%;
+
+		h1{
+			text-align: center;
+			margin:0 auto;
+		}
 	}
 
 
@@ -42,5 +54,14 @@
 		top: 100px;
 	}
 
+	a.more{
+		display: none;
+	}
 
+}
+
+.ie11{
+	.mobile_menu{
+		position:absolute;
+	}	
 }

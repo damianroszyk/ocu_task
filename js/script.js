@@ -11,6 +11,39 @@
     winW = $window.width();
 
 
+    // test IE, good to disable svg animation
+
+    function getInternetExplorerVersion()
+    {
+      var rv = -1;
+      if (navigator.appName == 'Microsoft Internet Explorer')
+      {
+        var ua = navigator.userAgent;
+        var re  = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+        if (re.exec(ua) != null)
+          rv = parseFloat( RegExp.$1 );
+      }
+      else if (navigator.appName == 'Netscape')
+      {
+        var ua = navigator.userAgent;
+        var re  = new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})");
+        if (re.exec(ua) != null)
+          rv = parseFloat( RegExp.$1 );
+      }
+      return rv;
+    }
+
+    ie = 0;
+    ie = getInternetExplorerVersion();
+
+    if ( ie >= 10 ){
+        $('html').addClass("ie11");
+    } else if ( ie >= 5 && ie <=9 ){
+        $('html').addClass("ie7");
+        $('html').removeClass("no-ie");
+    }
+
+
     // FadeIn all sections   
 
     $body.imagesLoaded( function() {
@@ -527,40 +560,6 @@
     $(".mobile_menu .logo a").click(function(){
         $(this).parents().eq(2).removeClass('active');   
     });
-
-
-    // test IE, good to disable svg animation
-
-    function getInternetExplorerVersion()
-    {
-      var rv = -1;
-      if (navigator.appName == 'Microsoft Internet Explorer')
-      {
-        var ua = navigator.userAgent;
-        var re  = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
-        if (re.exec(ua) != null)
-          rv = parseFloat( RegExp.$1 );
-      }
-      else if (navigator.appName == 'Netscape')
-      {
-        var ua = navigator.userAgent;
-        var re  = new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})");
-        if (re.exec(ua) != null)
-          rv = parseFloat( RegExp.$1 );
-      }
-      return rv;
-    }
-
-    ie = 0;
-    ie = getInternetExplorerVersion();
-
-    if ( ie >= 10 ){
-        $('html').addClass("ie11");
-    } else if ( ie >= 5 && ie <=9 ){
-        $('html').addClass("ie7");
-        $('html').removeClass("no-ie");
-    }
-
     
 } )( jQuery );
 
