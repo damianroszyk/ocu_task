@@ -551,14 +551,11 @@
     ie = 0;
     ie = getInternetExplorerVersion();
 
-    if ( ie >= 1 ){
-        $('html').removeClass("no-ie");
-        $('html').addClass("ie");
+    if ( ie >= 10 ){
+        $('html').addClass("ie11");
     }
 
     
-
-
 } )( jQuery );
 
 
