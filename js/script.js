@@ -526,14 +526,6 @@
     });
 
 
-    // test IE, good to disable svg animation
-
-    if (navigator.userAgent.search("MSIE") >= 0) {
-        $("html").removeClass("no-ie");
-        $(".services_wrapper .service_item svg").hide();
-        $(".services_wrapper .service_item .mobile_icon").show();
-    }
-
 } )( jQuery );
 
 

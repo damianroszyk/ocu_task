@@ -1,4 +1,15 @@
 
+
+/************* IE you fail! *****************/
+
+.ie .services_wrapper .service_item svg{
+  display: none;
+}
+
+.ie .services_wrapper .service_item .mobile_icon{
+  display: block; 
+}
+
 /************* Section hiding for fadeIn *****************/
 .no-touch, .no-ie{
 
@@ -70,9 +81,6 @@
   }
 }
 
-
-
-
 /************* Global animations *****************/
 
 .no-touch, .no-ie{
@@ -106,8 +114,6 @@
   50% { @include translate(0,-6px); }
   100% { @include translate(0,0); }
 }
-
-
 
 
 /************* Service icon animations *****************/
@@ -189,7 +195,6 @@
   	@include opacity (0);
   	@include animation ('fadeInLeft both 1s 2s, low ease 6s 4s infinite');
   }
-
 }
 
 @include keyframes ('ratio-line')  {
