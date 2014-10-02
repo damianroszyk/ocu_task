@@ -175,16 +175,16 @@
         }
     }
     
-    function initAdjustWindow() {
-        return {
-            match : function() {
-                adjustWindow();
-            },
-            unmatch : function() {
-                adjustWindow();
-            }
-        };
-    }
+    // function initAdjustWindow() {
+    //     return {
+    //         match : function() {
+    //             adjustWindow();
+    //         },
+    //         unmatch : function() {
+    //             adjustWindow();
+    //         }
+    //     };
+    // }
 
     // enquire.register("screen and (min-width : 768px)", initAdjustWindow(), false)
     //         .listen(100);
@@ -525,6 +525,34 @@
         $(this).parents().eq(2).removeClass('active');   
     });
 
+
+    // test IE, good to disable svg animation
+
+    function getInternetExplorerVersion()
+    {
+      var rv = -1;
+      if (navigator.appName == 'Microsoft Internet Explorer')
+      {
+        var ua = navigator.userAgent;
+        var re  = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+        if (re.exec(ua) != null)
+          rv = parseFloat( RegExp.$1 );
+      }
+      else if (navigator.appName == 'Netscape')
+      {
+        var ua = navigator.userAgent;
+        var re  = new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})");
+        if (re.exec(ua) != null)
+          rv = parseFloat( RegExp.$1 );
+      }
+      return rv;
+    }
+
+    ie = 0;
+
+    ie = getInternetExplorerVersion();
+    
+    alert(ie);
 
 } )( jQuery );
 
