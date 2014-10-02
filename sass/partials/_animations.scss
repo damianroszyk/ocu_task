@@ -29,6 +29,10 @@
     }
   }
 
+  .careers .careers_info h3{
+      @include opacity(1);
+  }
+
   .audit{
     
     .content{
