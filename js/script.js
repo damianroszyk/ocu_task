@@ -115,7 +115,7 @@
         }
 
         // Init Skrollr for 768 and up
-        if(( winW >= 768) && (!Modernizr.touch)) {  
+        if(( winW >= 768) && (!Modernizr.touch) && ($('html').hasClass('no-ie'))){  
 
             // Reset our slides
             $headerImg.height('100%');
@@ -529,11 +529,10 @@
     // test IE, good to disable svg animation
 
     if (navigator.userAgent.search("MSIE") >= 0) {
+        $("html").removeClass("no-ie");
         $(".services_wrapper .service_item svg").hide();
         $(".services_wrapper .service_item .mobile_icon").show();
     }
-
-
 
 } )( jQuery );
 

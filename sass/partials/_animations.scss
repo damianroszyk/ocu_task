@@ -1,6 +1,6 @@
 
 /************* Section hiding for fadeIn *****************/
-.no-touch{
+.no-touch, .no-ie{
 
   .content{
        h1, h2, hr, h3, .pros, .service_item, .logos li, .gallery img{
@@ -13,8 +13,6 @@
       @include opacity (0); 
     }
   }
-
-
 
   .audit{
     
@@ -44,7 +42,6 @@
 
   }
 
-
   .plexicon{
     
     .content{
@@ -71,7 +68,6 @@
       @include opacity (0); 
     }
   }
-
 }
 
 
@@ -79,7 +75,7 @@
 
 /************* Global animations *****************/
 
-.no-touch{
+.no-touch, .no-ie{
 
   .fadeInLeft {
     @include animation('fadeInLeft ease-out 1s both');
@@ -90,9 +86,6 @@
   }
 
 }
-
-
-
 
 @include keyframes ('fadeInLeft') {
   0% {
@@ -121,7 +114,7 @@
 
 /************* Icon1 *****************/
 
-.no-touch{
+.no-touch, .no-ie{
 
   .section1 {
     @include opacity (0);
@@ -164,7 +157,7 @@
 /************* ICON2 *****************/
 
 
-.no-touch{
+.no-touch, .no-ie{
 
   .ratio_line {
   	stroke-dasharray: 320;
@@ -227,7 +220,7 @@
 
 /************* ICON3 *****************/
 
-.no-touch{
+.no-touch, .no-ie{
 
   .line1 {
   	@include opacity (0);
@@ -363,7 +356,7 @@
   @include translate(50px,63px);     
 }
 
-.no-touch{
+.no-touch, .no-ie{
 
   
   .circle{
