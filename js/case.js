@@ -43,6 +43,9 @@
     //FadeIn all sections   
     $body.imagesLoaded( function() {
         setTimeout(function() {
+
+            // Resize sections
+            adjustWindow();
               
               // Fade in sections
               $body.removeClass('loading').addClass('loaded');
