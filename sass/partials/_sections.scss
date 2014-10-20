@@ -129,7 +129,7 @@
 	}
 
 
-	.plexicon_box{
+	.plexicon_box, .sara_box{
 		a.main_btn:hover{
 		
 		color:$dark_color;
@@ -153,6 +153,7 @@
 
 	.case_item{
 		position: relative;
+		border-bottom:2px solid #212225;
 
 		.desc{
 			@include vertical-align;
@@ -188,7 +189,7 @@
 				margin:10px 0 70px 0;
 			}
 
-			&.sara{
+			&.sara_box{
 				margin-left:100px;	
 			}
 
@@ -199,7 +200,57 @@
 			&.plexicon_box{
 				margin-left:100px;
 			}
+
 		}
+
+		&.samsung_case{
+			position:relative;
+
+			img.samsung_box_tv{
+				@include vertical-align;
+				position:absolute;
+				left:46%;
+				display: block;
+				width:659px;
+				height:511px;
+			}			
+		}
+
+		.samsung_box{
+
+			a.box_btn{
+				border-color:#5679a4;
+				color:#5679a4;
+				cursor: default;
+
+				svg{
+					display: none;
+				}
+
+				&::after{
+					display: none;
+				}
+			}
+		}
+
+		.sara_box{
+
+			a.box_btn{
+				border-color:#67615e;
+				color:#67615e;
+				cursor: default;
+
+				svg{
+					display: none;
+				}
+
+				&::after{
+					display: none;
+				}
+			}
+		}
+
+
 
 		.box_box{
 

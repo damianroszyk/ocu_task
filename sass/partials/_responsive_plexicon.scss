@@ -142,24 +142,33 @@
 		.loading-screen .content .case_logo {
 			width: 230px;
 			height: 115px;
-			margin: 80px auto;
+			margin: 60px auto 40px auto;
 			display: block;
 		}
 
 		.plexicon_intro{
-			height:660px;
+			height:740px;
 
-			.right p{
-				font-size:16px;
-				margin: 5px 0 10px 0;
+			a.case_prev, 
+			a.case_next{
+				display: none;
 			}
 
-			.right{
-				padding:10px 0 0 0;
+			.summary{
+				width:100%;
+				float:none;
+				padding:0 60px 10px 0;
 			}
 
-			.left{
-				padding: 0 40px 0 0;
+			.scope,
+			.deliverables{
+				width:50%;
+				padding:0 60px 0 0;
+			}
+
+			.bg_case{
+				background: url("../img/plexicon/bg_plexicon_mobile.jpg") center top no-repeat #000;
+				background-size: cover;
 			}
 		}
 
@@ -369,9 +378,9 @@
 
 		}
 
-		.case_contact a{
-			font-size: 20px;
-			padding: 20px 50px;
+		.case_contact a.main_btn{
+			padding: 16px 40px;
+			font-size:20px;
 		}
 	}
 
@@ -396,7 +405,20 @@
 		}
 	
 		.plexicon_intro{
-			height:590px;
+			height:690px;
+
+			.summary{
+				padding: 0 20px 10px 0;
+			}
+
+			.scope,
+			.deliverables{
+				padding:0;
+			}
+
+			.deliverables{
+				padding:0 0 0 20px;
+			}
 
 
 			.bg_case{
@@ -505,6 +527,15 @@
 			height: 340px;
 		}
 
+		footer .content{
+			padding:30px 25px;
+
+			p.copyright{
+		 		text-align:left;
+		 		padding: 50px 0 0 0;
+		 	}
+		}
+
 
 
 	}
@@ -559,25 +590,41 @@
 				padding:120px 15px 40px 15px;
 			}
 
-			.left, .right{
+			.summary{
+				padding:0 0 10px 0;
+			}
+
+			.scope{
 				width:100%;
-				float:none;
-				padding:0;
+
+				p{
+					width:auto;
+					margin:0;
+					padding:0;
+					border:none;
+				}
+
+				a{
+					width:100%;
+				}
+			}
+
+			.deliverables{
+				width:100%;
+				padding:30px 0 0 0;
 			}
 
 			.bg_case{
-				height: 820px;
+				height: 900px;
 			}
 		}
 
 		.case_details{
 			.content{
-				padding: 30px 15px;
-				
+				padding: 30px 15px;			
 			}
 
-			.left, .right{
-				
+			.left, .right{				
 				width:100%;
 				float:none;
 				padding:0;
@@ -751,6 +798,43 @@
 			overflow: hidden;
 			height: 240px;
 		}
+
+		 .case_contact{
+		 	padding: 40px 25px 20px 25px;
+
+		 	.content{
+		 		height: 140px;
+		 	}
+
+		 	a.case_prev, 
+		 	a.case_next{
+		 		top:85px;
+		 	}
+
+		 	a.case_prev{
+		 		padding:0 0 0 30px;
+		 	}
+
+		 	a.case_next{
+		 		padding:0 30px 0 0;
+		 	}
+
+		 	a.main_btn{
+		 		width:100%;
+		 	}
+		 }
+
+		 footer .content{
+		 	padding:30px 25px;
+
+		 	.social a{
+		 		margin:0 8px 0 0;
+		 	}
+
+		 	p.copyright{
+		 		padding:60px 0 0 0;
+		 	}
+		 }
 
 
 	}

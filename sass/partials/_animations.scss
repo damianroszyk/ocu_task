@@ -87,6 +87,31 @@
       @include opacity (0); 
     }
   }
+
+  .sara{
+    
+    .content{
+         h1, h2, hr, h3, .pros, .service_item, .logos li, .gallery img{
+          @include opacity (1);
+        }
+    }
+
+    .case_item{
+      h3, ul, p, a{
+        @include opacity (1); 
+      }
+    }
+
+    .branding .graphics > img,
+    .icons .image,
+    .navigation .image,
+    .recipes .image,
+    .mobile .image
+    {
+       @include opacity (0); 
+    }
+
+  }
 }
 
 /************* Global animations *****************/

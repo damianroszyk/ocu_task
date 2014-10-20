@@ -162,34 +162,42 @@
 
 
 	.work {
-		.case_item .audit_box{
-			width:340px;
-			left:50px;
-			margin:0;
 
-			p{
-				margin: 10px 0 30px 0;
+		.case_item{
+
+			.desc{
+				width:340px;
+				left:50px;
+				margin:0;	
+				z-index: 10;
+
+				p{
+					margin: 10px 0 30px 0;
+				}	
 			}
-		}
 
-		.case_item .plexicon_box{
-			width:360px;
-			right:50px;
-			margin:0;
-			left: auto;
-
-			p{
-				margin: 10px 0 30px 0;
+			.plexicon_box{
+				left: 50%;
 			}
-		}
 
-		.case_item .box_box{
-			width:340px;
-			left:50px;
-			margin:0;
+			.sara_box{
+				left: 50%;
+			}
 
-			p{
-				//margin: 10px 0 30px 0;
+			.box_bg{
+				height: 520px;
+				overflow:hidden;
+				position:relative;
+
+				img.phone1,
+				img.phone2{
+					bottom:-60px;
+				}
+			}
+
+			&.samsung_case img.samsung_box_tv{ 
+				width:500px;
+				height:auto;
 			}
 		}
 	}
@@ -323,12 +331,25 @@
 
 		.case_item {
 
+			&.sara_case,
+			&.plexicon_case{
+				@include clearfix;
+			}
+
+			&.samsung_case img.samsung_box_tv{
+				left:52%;
+			}
+
 			img{
 				height:480px;
 				width:auto;
 
 				&.plexicon_box_image{
-					margin-left:-70px;
+					float:right;
+				}
+
+				&.sara_box_image{
+					float:right;	
 				}
 			}
 
@@ -338,10 +359,27 @@
 
 			.plexicon_box{
 				right:25px;
-				width:44%;
-
-				
+				width:340px;
+				left:auto;
+				margin-left: 0;
 			}
+
+			.sara_box{
+				right:25px;
+				width:340px;
+				left:auto;
+				margin-left: 0;
+			}
+
+			.samsung_box{
+				left:25px;
+			}
+
+			.box_box{
+				left:25px;
+			}
+
+
 
 		}
 
@@ -562,6 +600,7 @@
 			padding: 60px 20px 60px 20px;
 			@include clearfix;
 			overflow: hidden;
+			border:none;
 
 			img{
 				display: none;
@@ -586,19 +625,42 @@
 				display: none;
 			}
 		}
+
+		.audit_case{
+			background:#e34e31;
+		}
+
+		.plexicon_case{
+			background:#59afbc;
+		}
+
+		.sara_case{
+			background:#4d3b2e;
+
+			.desc.sara_box{
+				margin-left:0;
+			}
+
+			.sara_box a.box_btn{
+				border-color: #a77754;
+				color: #a77754;
+			}
+		}
+
+		.case_item.samsung_case{
+			background:#0c4da2;
+
+			img.samsung_box_tv{
+				display:none;
+			}
+		}
+
+		.box_case{
+			background:#ffd000;
+		}
 	}
 
-	.audit_case{
-		background:#e34e31;
-	}
 
-	.plexicon_case{
-		background:#0079ff;
-	}
-
-	.box_case{
-		background:#ffd000;
-	}
 
 	.clients ul.logos li{
 		width:32%;

@@ -14,7 +14,6 @@
 
         var winH = $(window).height();
 
-
         $('.case_logotype').each(function(){
             var imagePos = $(this).offset().top;
             var topOfWindow = $(window).scrollTop();
