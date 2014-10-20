@@ -9,7 +9,7 @@
 	.ie11 .plexicon .loading-screen{
 	 	position: absolute;
 	 	background-attachment: scroll;
-	 	height:900px;
+	 	height:100%;
 	 }
 
 
@@ -393,6 +393,11 @@
 		h2{
 			font-size: 24px;
 			line-height: 26px;
+			text-align: center;
+		}
+
+		hr{
+			margin: 24px auto;
 		}
 
 		.case_logo,
@@ -430,6 +435,13 @@
 			padding: 10px 0 0 30px;
 		}
 
+		.case_about p{
+			padding:10px;
+			text-align: center;
+			max-width: 500px;
+			margin:0 auto;
+		}
+
 		.case_concept{
 			.content{
 				padding: 60px 25px 60px 25px;
@@ -437,7 +449,7 @@
 
 			.title{
 				width: 100%;
-				padding: 0 40px 40px 0;	
+				padding: 0 0 40px 0;	
 			}
 
 			.sketch{
@@ -445,21 +457,44 @@
 				margin: auto;
 				float: none;
 			}
+
+			p{
+				text-align: center;
+				max-width: 500px;
+				margin:0 auto;
+			}
 		} 
 
-		.case_flowmap .flow{
-			margin:-50px auto 0 auto;
+		.case_flowmap{
+
+			h2{
+				text-align: left;
+			}
+			hr{
+				margin:24px 0;
+			}
+
+			.flow{
+				margin:-50px auto 0 auto;
+			}
 		}
 
+
 		.case_ux{
-			height: 753px;
+			height: 773px;
 
 			.bg_ux{
 				background-size: 608px;
 				height: 600px;
 				bottom: auto;
 				margin-left: -403px;
-				top: 130px;
+				top: 150px;
+			}
+
+			p{
+				text-align: center;
+				max-width: 500px;
+				margin:0 auto;
 			}
 		}
 
@@ -468,17 +503,25 @@
 
 
 			 .title{
-			 	width:80%;
+			 	width:100%;
 			 	margin: 0 0 315px 0;
 				height: 247px;
 			 }
 
+			 p{
+				text-align: center;
+				max-width: 500px;
+				margin:0 auto;
+			}
+
 			.phone_1 {
 				top: 240px;
+				right: 115px;
 			}
 
 			 .phone_2{
 			 	top:275px;
+			 	right:250px;
 			 }
 
 			 .icon_box h4{
@@ -497,16 +540,27 @@
 
 				.tech_icon{
 
+					&>div{
+						width:70%;
+						float:left;
+						display: block;
+						padding:0 0 0 50px;
+					}
+
 					h3{
 						padding: 40px 0 0 0;
 						line-height: 24px;
 						font-size: 24px;
 					}
 
+					hr{
+						margin:24px 0;
+					}
+
 					img{
 						float:left;
-						margin: 50px 20px 120px 0px;
-						width: 150px;
+						margin:40px 0;
+						width: 30%;
 					}
 				}
 
@@ -518,6 +572,12 @@
 		.case_pack .content .title{
 			width: 100%;
 			padding: 350px 20px 0 20px;
+
+			 p{
+				text-align: center;
+				max-width: 500px;
+				margin:0 auto;
+			}
 		}
 
 		.case_frame .bg_frame_left,
@@ -764,20 +824,36 @@
 	 			padding: 30px 15px;
 	 		}
 
-	 		.icon_box .tech_icon img {
-				float: none;
-				width: 200px;
-				display: block;
-				margin: 0 auto;
-			}
+	 		.icon_box .tech_icon{
 
-			.icon_box .tech_icon h3 {
-				padding: 20px 0 0 0;
-				text-align: center;
-			}
-			.icon_box .tech_icon p {
-				padding: 0 0 40px 0;
-			}
+	 			& > div{
+	 				width: 100%;
+					float: none;
+					display: block;
+					padding: 0;
+	 			}
+
+	 			hr{
+	 				margin:24px auto;
+	 			}
+
+	 			img {
+					float: none;
+					width: 200px;
+					display: block;
+					margin: 0 auto;
+				}
+
+				h3 {
+					padding: 20px 0 0 0;
+					text-align: center;
+				}
+
+				p {
+					padding: 0 0 40px 0;
+				}
+		
+	 		}
 	 	}
 
 	 	.case_frame, .case_pack{
