@@ -249,12 +249,12 @@ nav{
     }  
 
     ul{
-        @include transition(all .2s ease-out);
+        @include transition(transform .2s ease-out);
         @include translate3d(0,-100%,0);
         @include backface-visibility(hidden);
         @include perspective(1000);
 
-        visibility: hidden;
+        //visibility: hidden;
         clear:both;
         padding: 76px 20px 20px 20px;
         background:$darker_color;
