@@ -231,9 +231,7 @@
             allPanels.slideUp();
             allParents.removeClass('st-open');
             //$this.parent().removeClass('st-open');
-        }
-
-        
+        }  
     });
 
 

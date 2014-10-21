@@ -611,6 +611,13 @@
 			height: 364px;
 			color: #fff;
 			text-align: center;
+			-webkit-backface-visibility:hidden;
+			-moz-backface-visibility:hidden;
+			-ms-backface-visibility:hidden;
+			-o-backface-visibility:hidden;
+			backface-visibility:hidden;
+			/* Fix of Webkit flickering */
+			z-index:1;
 		}
 
 		.swiper-wrapper {
@@ -618,7 +625,6 @@
 			position:relative;
 			width:100%;	
 		}
-
 
 		.swiper-slide {
 			  @include bs(content-box);
