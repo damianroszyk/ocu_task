@@ -111,6 +111,7 @@
 	.plexicon .loading-screen{
 		position: absolute;
 	 	background-attachment: scroll;
+	 	height:100%;
 	}
 
 	.loading-screen,
@@ -133,4 +134,17 @@
 	.plexicon .mobile_menu{
 		position:absolute;
 	}	
+}
+
+@media only screen and (max-width : 768px) {
+	.ie11 .audit .case_intro .bg_case,
+	.ie11 .audit .loading-screen,
+	.ie11 .plexicon .plexicon_intro .bg_case,
+	.ie11 .plexicon .loading-screen,
+	.ie11 .sara .case_intro .bg_case,
+	.ie11 .sara .loading-screen{
+	 	position: absolute;
+	 	background-attachment: scroll;
+	 	height:100%;
+	 }
 }
