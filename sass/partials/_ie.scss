@@ -53,6 +53,18 @@
 		 // }
 	}
 
+	.mobile_menu{ 
+	    ul{
+	        @include translate(0,-100%);
+	    }
+
+	    &.active ul{
+	        @include translate(0,0);  
+	        visibility: visible;
+	    }
+
+	}
+
 	.plexicon .case_concept .pagination{
 		display: none;
 	}

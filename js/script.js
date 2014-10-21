@@ -36,6 +36,8 @@
     ie = 0;
     ie = getInternetExplorerVersion();
 
+    alert(ie);
+
     if ( ie >= 10 ){
         $('html').addClass("ie11");
     } else if ( ie == 9 ){
