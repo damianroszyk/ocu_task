@@ -425,6 +425,14 @@
 			}
 		}
 
+		/* IE10 Windows Phone 8 Fixes */
+		.swiper-wp8-horizontal {
+		        -ms-touch-action: pan-y;
+		}
+		.swiper-wp8-vertical {
+		        -ms-touch-action: pan-x;
+		}
+
 		.pagination {
 		  position:absolute;		
 		  text-align: center;

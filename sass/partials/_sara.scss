@@ -671,6 +671,14 @@
 		  background: #855633;
 		  border:2px solid #855633;
 		}
+
+		/* IE10 Windows Phone 8 Fixes */
+		.swiper-wp8-horizontal {
+		        -ms-touch-action: pan-y;
+		}
+		.swiper-wp8-vertical {
+		        -ms-touch-action: pan-x;
+		}
 	}
 
 	.case_contact{

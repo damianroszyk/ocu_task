@@ -26,11 +26,11 @@
     ie = 0;
     ie = getInternetExplorerVersion();
 
-    alert(ie);
+    //alert(ie);
 
-    if ( ie >= 10 ){
+    if ( ie >= 11 ){
         $('html').addClass("ie11");
-    } else if ( ie == 9 ){
+    } else if ( ie == 9 || ie == 10 ){
         $('html').addClass("ie9");
         $('html').removeClass("no-ie");
     } else if ( ie <=8 && ie >5 ){

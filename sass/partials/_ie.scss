@@ -80,18 +80,16 @@
 
 	.headerImg#intro1 .first_header,
 	.loading-screen .first_header{
-		@include translate3d(0,0,0);
+		@include translate(0,-50%);
 		margin:0;
 		left:0;
-		top:30%;
+		top:50%;
 		padding:10px;
 		max-width: 1100px;
 		width:100%;
-		margin: 0 auto;
 		position: relative;
 
 		h1{
-			text-align: center;
 			margin:0 auto;
 		}
 	}
@@ -103,8 +101,13 @@
 
 	.work .case_item .desc{
 		padding: 60px 20px 60px 20px;
-		@include translate3d(0,0,0);	
-		top: 0;
+		@include translate(0,-50%);
+		top:50%;
+	}
+
+	.work .case_item.samsung_case img.samsung_box_tv{
+		@include translate(0,-50%);	
+		top:50%;
 	}
 
 	a.more{
