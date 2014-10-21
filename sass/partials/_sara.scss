@@ -152,6 +152,14 @@
 			left:auto;
 		}
 
+		a.appstore_link{
+			display: inline-block;
+			border:none;
+			img{
+				display: block;
+			}
+		}
+
 		img.intro_icon{
 			width:148px;
 			height:161px;

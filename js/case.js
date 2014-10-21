@@ -68,7 +68,7 @@
         }
 
         // Init Skrollr for 768 and up
-        if( winW >= 768) {
+        if(( winW >= 768) && (!Modernizr.touch) && ($('html').hasClass('no-ie'))){ 
 
             // Init Skrollr
             var s = skrollr.init({

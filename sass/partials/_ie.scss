@@ -22,8 +22,11 @@
 			line-height: 62px;
 		}
 	}
-	
 
+	.mobile_menu,
+	.desktop_menu,
+	#intro,
+	.main,
 	.loading-screen{
 		display: none;
 	}
@@ -53,9 +56,6 @@
 	.plexicon .case_concept .pagination{
 		display: none;
 	}
-
-
-
 
 	.headerImg#intro1{
 		position: absolute;

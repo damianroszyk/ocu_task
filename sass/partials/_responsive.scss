@@ -5,16 +5,19 @@
 	//height:1600px;
 }
 
-.touch nav{
+.touch nav,
+.ie9 nav{
 	@include backface-visibility(hidden);
     @include perspective(1000);
 }
 
-.touch .desktop_menu{
+.touch .desktop_menu,
+.ie9 .desktop_menu{
 	display: none;
 }
 
-.touch .mobile_menu{
+.touch .mobile_menu,
+.ie9 .mobile_menu{
 	display: block;
 	@include backface-visibility(hidden);
     @include perspective(1000);
@@ -47,7 +50,8 @@
     }
 } 
 
-.touch nav.nav_box .logo a{
+.touch nav.nav_box .logo a,
+.ie9 nav.nav_box .logo a{
 	margin: 20px 0 14px 0;
 }
 

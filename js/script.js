@@ -38,13 +38,13 @@
 
     if ( ie >= 10 ){
         $('html').addClass("ie11");
-    } else if ( ie >= 5 && ie <=8 ){
-        $('html').addClass("ie7");
-        $('html').removeClass("no-ie");
     } else if ( ie == 9 ){
         $('html').addClass("ie9");
         $('html').removeClass("no-ie");
-    }
+    } else if ( ie <=8 && ie >5 ){
+        $('html').addClass("ie7");
+        $('html').removeClass("no-ie");
+    } 
 
 
 
