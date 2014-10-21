@@ -90,7 +90,7 @@
         $(".video>.bg").addClass("open_video");
         $(".btn_play").fadeOut(300);
 
-        $(".video>iframe").attr('src', $(".video>iframe").attr('src') + '?rel=0&showinfo=0&autoplay=1');
+        $(".video>iframe").attr('src', $(".video>iframe").attr('src') + '?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933&amp;autoplay=1');
 
         setTimeout(function(){
             $(".video>iframe").addClass("open");

@@ -234,12 +234,6 @@
         }  
     });
 
-
-
-
-
-
-
     function initialize() {
 
         var styles = [{

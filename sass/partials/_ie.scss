@@ -126,16 +126,17 @@
 		@include translate(0,-50%);		
 	}
 
-	// .maps{
-	// 	display: none;
-	// }
+	.maps{
+		display: none;
+	}
 
 }
 
 .ie11{
 	.mobile_menu,
 	.audit .mobile_menu,
-	.plexicon .mobile_menu{
+	.plexicon .mobile_menu,
+	.sara .mobile_menu{
 		position:absolute;
 	}	
 }
@@ -151,4 +152,10 @@
 	 	background-attachment: scroll;
 	 	height:100%;
 	 }
+
+	.ie9 .work .case_item .desc{
+		padding: 0;
+		@include translate(0,0);
+		top:0;
+	}
 }
