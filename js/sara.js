@@ -66,27 +66,8 @@
 
 
 
-
-    var mySwiper = new Swiper('.swiper-container',{
-        pagination: '.pagination',
-        paginationClickable: true,
-        centeredSlides: true,
-        loop:true,
-        slidesPerView: 3,
-        loopedSlides: 3,
-        loopAdditionalSlides:3,
-        roundLengths:true,
-        watchActiveIndex: true,
-        keyboardControl: true,   
-        grabCursor: true,
-        offsetSlidesBefore:1,
-        offsetSlidesBefore:1
-    });
-
-
-
     if( $("html").hasClass("ie9") ){
-        
+
         var mySwiper = new Swiper('.swiper-container',{
             pagination: '.pagination',
             paginationClickable: true,
@@ -101,6 +82,24 @@
             offsetSlidesBefore:1,
             offsetSlidesBefore:1,
             onlyExternal:true
+        });  
+
+    }else{
+        
+        var mySwiper = new Swiper('.swiper-container',{
+            pagination: '.pagination',
+            paginationClickable: true,
+            centeredSlides: true,
+            loop:true,
+            slidesPerView: 3,
+            loopedSlides: 3,
+            loopAdditionalSlides:3,
+            roundLengths:true,
+            watchActiveIndex: true,
+            keyboardControl: true,   
+            grabCursor: true,
+            offsetSlidesBefore:1,
+            offsetSlidesBefore:1
         });    
     }
 
