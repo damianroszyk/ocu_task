@@ -65,9 +65,9 @@
 
 	}
 
-	.plexicon .case_concept .pagination{
-		display: none;
-	}
+	// .plexicon .case_concept .pagination{
+	// 	display: none;
+	// }
 
 	.headerImg#intro1{
 		position: absolute;
@@ -98,6 +98,10 @@
 	.work .case_item.samsung_case img.samsung_box_tv{
 		@include translate(0,-50%);	
 		top:50%;
+	}
+
+	.sara .video a{
+		@include translate(0,-50%);		
 	}
 
 	a.more{

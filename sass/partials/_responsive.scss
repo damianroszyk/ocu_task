@@ -838,8 +838,14 @@
 		padding-right: 20px;
 	}
 
-	.work .content, .work .careers .careers_info, .careers .work .careers_info{
+	.work .content, 
+	.work .careers .careers_info, 
+	.careers .work .careers_info{
 		padding: 60px 15px 0 15px;
+	}
+
+	.work .case_item .desc, .work .case_item .desc.plexicon_box{
+		width:100%;
 	}
 
 	.work .bg_work h3{
