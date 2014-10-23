@@ -34,6 +34,15 @@
                 }
             });
 
+            $('.feature').each(function(){
+                var box = $(this);
+                var imagePos = $(this).offset().top;
+                var topOfWindow = $(window).scrollTop();
+                if (imagePos < topOfWindow+winH-300) {
+                    $(box).find('.image').addClass("fadeInLeft");
+                }
+            });
+
             $('.navigation').each(function(){
                 var box = $(this);
                 var imagePos = $(this).offset().top;

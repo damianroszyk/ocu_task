@@ -46,7 +46,7 @@
 			padding:0;
 		}
 
-		.icons, .more_info .recipes{
+		.icons, .more_info .recipes, .feature{
 
 			.text {
 				float:left;
@@ -140,11 +140,13 @@
 		}
 
 		.icons .text, 
-		.more_info .recipes .text{
+		.more_info .recipes .text,
+		.feature .text{
 			padding: 0px 20px 0 0;
 		}
 
 		.icons .image,
+		.feature .image,
 		.navigation .image,
 		.more_info .recipes .image,
 		.more_info .mobile .image{
@@ -217,6 +219,7 @@
 	
 
 		.icons .text, 
+		.feature .text,
 		.more_info .recipes .text,
 		.navigation .text, 
 		.more_info .mobile .text{
@@ -226,6 +229,7 @@
 		}
 
 		.icons .image, 
+		.feature .image,
 		.navigation .image, 
 		.more_info .recipes .image, 
 		.more_info .mobile .image{
@@ -360,6 +364,7 @@
 		 }
 
 		 .icons .image, 
+		 .feature .image,
 		 .navigation .image, 
 		 .more_info .recipes .image, 
 		 .more_info .mobile .image{
