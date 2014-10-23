@@ -1,3 +1,8 @@
+.html5-watermark{
+	display: none!important;
+	visibility:hidden;
+}
+
 .sara{
 	a.case_prev, 
 	a.case_next{
@@ -468,6 +473,14 @@
 		.image{
 			float:left;
 			width:50%;
+
+			img{
+				display: inline-block;
+
+				&.first{
+					margin:0 15px 0 0;
+				}
+			}
 		}
 	}
 
@@ -546,12 +559,41 @@
 			.text{
 				float:left;
 				width: 50%;
-				padding: 10px 130px 0 0;
+				padding: 0 130px 0 0;
 			}
 
 			.image{
 				float:right;
 				width:50%;
+				padding:0px 50px 0px 50px;
+
+				.video_wrapper{
+					position: relative;
+					display: block;
+					height: 0;
+					padding: 0;
+					overflow: hidden;
+					padding-bottom: 56%;
+				}
+
+				iframe{
+					height: 100%;
+					width: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					bottom: 0;
+					border: 0;
+
+				}
+
+				img{
+					display: none;
+					max-width: 100%;
+					height: auto;
+					vertical-align: middle;
+					border:none;	
+				}
 			}
 		}
 
@@ -567,6 +609,34 @@
 			.image{
 				float:left;
 				width:50%;
+				padding:0px 50px 0px 50px;
+
+				.video_wrapper{
+					position: relative;
+					display: block;
+					height: 0;
+					padding: 0;
+					overflow: hidden;
+					padding-bottom: 56%;
+				}
+
+				iframe{
+					height: 100%;
+					width: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					bottom: 0;
+					border: 0;
+				}
+
+				img{
+					display: none;
+					max-width: 100%;
+					height: auto;
+					vertical-align: middle;
+					border:none;	
+				}
 			}
 		}
 	}

@@ -55,6 +55,20 @@
 			}
 		} 
 
+		.navigation	.image img{
+			width:45%;
+			margin:0 4% 0 0;
+
+			&.first{
+				margin:0 4% 0 0;	
+			}
+		}
+
+		.more_info .recipes .image,
+		.more_info .mobile .image{
+			padding:0 20px 0 20px;
+		}
+
 	}
 }
 
@@ -123,6 +137,7 @@
 			padding: 16px 40px;
 			font-size:20px;
 		}	
+
 	} 
 }
 

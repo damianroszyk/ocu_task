@@ -39,7 +39,8 @@
                 var imagePos = $(this).offset().top;
                 var topOfWindow = $(window).scrollTop();
                 if (imagePos < topOfWindow+winH-300) {
-                    $(box).find('.image').addClass("fadeInLeft");
+                    $(box).find('.image .first').addClass("fadeInLeft");
+                    setTimeout(function () { $(box).find('.image .second').addClass("fadeInLeft"); }, 300);
                 }
             });
 
