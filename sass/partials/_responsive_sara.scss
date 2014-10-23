@@ -12,6 +12,24 @@
 	 	height:100%;
 	 }
 
+	 .touch .sara .more_info .recipes .image .video_wrapper,
+	 .ie9 .sara .more_info .recipes .image .video_wrapper,
+	 .ie11 .sara .more_info .recipes .image .video_wrapper,
+	 .touch .sara .more_info .mobile .image .video_wrapper,
+	 .ie9 .sara .more_info .mobile .image .video_wrapper,
+	 .ie11 .sara .more_info .mobile .image .video_wrapper{
+		display: none;
+	 }
+
+	 .touch .sara .more_info .recipes .image img,
+	 .ie9 .sara .more_info .recipes .image img,
+	 .ie11 .sara .more_info .recipes .image img,
+	 .touch .sara .more_info .mobile .image img,
+	 .ie9 .sara .more_info .mobile .image img,
+	 .ie11 .sara .more_info .mobile .image img{
+	 	display: block;
+	 }
+
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
