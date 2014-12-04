@@ -45,6 +45,13 @@
                         $('#frontend_developer').addClass('st-open');
                         $('#frontend_developer .careers_info').slideDown();
                     },1000);
+                }else if (anchor == "#android_developer"){
+                    anchorOffset = -60;
+
+                    setTimeout(function(){
+                        $('#android_developer').addClass('st-open');
+                        $('#android_developer .careers_info').slideDown();
+                    },1000);
                 }
 
 
