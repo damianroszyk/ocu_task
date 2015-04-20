@@ -7004,6 +7004,20 @@
 	font-weight:300;
 	font-size:18px
 }
+
+.contact a.switch_map2
+{
+	background:#907aff;
+	display:block;
+	padding:85px 0 84px 60px;
+	color:#fff;
+	position:absolute;
+	left:80%;
+	top:0;
+	right:0;
+	font-weight:300;
+	font-size:18px
+}
 .contact a.switch_map .bold
 {
 	font-weight:400;

@@ -332,77 +332,119 @@
 
     }
 
+    var animating = false;
 
+    function Location() {
+        this.cityName = null;
+        this.buttonClass = null;
+        this.mapName = null;
+        this.addressClass = null;
+    }
 
+    Location.prototype.show = function() {
+        $('#maps .wrapper.' + this.mapName).show().css('top', -1050);
 
-    var switch_address_click = function(event) {
-        event.preventDefault();
-
-        var map_to_hide;
-        var map_to_show;
-
-        var self = this
-
-        if ($(self).find('span').text() === "Warsaw") {
-            map_to_hide = 'ny';
-            map_to_show = 'warsaw';
-        } else {
-            map_to_hide = 'warsaw';
-            map_to_show = 'ny';
-        };
-
-        $("#switch_address_btn").unbind("click");
-        $("#switch_address_btn").bind('click', function(event) {
-            event.preventDefault();
-        });
-
-
-        $('#maps .wrapper.' + map_to_hide + ' .overlay').show();
-        $('#maps .wrapper.' + map_to_show).show().css('top', -1050);
-
-        $('#maps .wrapper.' + map_to_hide).animate({
-            top : '+=700'
-        }, 1200, 'easeInSine', function() {
-
-            if ($(self).find('span').text() === "Warsaw") {
-                $('.address .ny').hide();
-                $('.address .warsaw').show('fade');
-                $(self).find('span').text('New York');
-            } else {
-                $('.address .warsaw').hide();
-                $('.address .ny').show('fade');
-                $(self).find('span').text('Warsaw');
-            };
-
-            $('#maps .wrapper.' + map_to_hide).css('top', -1050);
-
-            $('#maps .wrapper.' + map_to_hide + ' .overlay').hide();
-        });
-
-        setTimeout(function() {
-            $(self).toggleClass( "red" ); 
-        }, 1600);
-
+        var self = this;
         
-
         setTimeout(function() {
-            $('#maps .wrapper.' + map_to_show + ' .overlay').show().addClass('rotated');
-            $('#maps .wrapper.' + map_to_show).animate({
+            $('#maps .wrapper.' + self.mapName + ' .overlay').show()
+                .addClass('rotated');
+
+            $('#maps .wrapper.' + self.mapName).animate({
                 top : '+=700'
             }, 1200, 'easeOutSine', function() {
-                $('#maps .wrapper.' + map_to_show + ' .overlay').css('top', 0).hide().removeClass('rotated');
-                $("#switch_address_btn").bind('click', switch_address_click);
+                $('#maps .wrapper.' + self.mapName + ' .overlay').css('top', 0)
+                        .hide().removeClass('rotated');
             });
+            $(self.addressClass).show('fade');
         }, 1200);
+    }
+
+    Location.prototype.hideAndBindToButton = function(button) {
+        var self = this;
+        $('#maps .wrapper.' + this.mapName + ' .overlay').show();
+
+        $('#maps .wrapper.' + this.mapName).animate({
+            top : '+=700'
+        }, 1200, 'easeInSine', function() {
+            $(self.addressClass).hide();
+            $('#maps .wrapper.' + self.mapName).css('top', -1050);
+            $('#maps .wrapper.' + self.mapName + ' .overlay').hide();
+
+            button.bind('click', { targetLocation:self, button:button}, switch_address_click);
+            button.find('span').text(self.cityName);
+
+
+            $('#maps .wrapper.' + self.mapName).css('top', -1050);
+            $('#maps .wrapper.' + self.mapName + ' .overlay').hide();
+        });
+
+
+        setTimeout(function() {
+            $(button).removeClass( self.buttonClass ); 
+            $(button).addClass( currentLocation.buttonClass ); 
+            animating = false;
+        }, 1600);
+    }
+
+    var warsaw = new Location();
+    warsaw.cityName = 'Warsaw';
+    warsaw.mapName = 'warsaw';
+    warsaw.buttonClass = 'red';
+    warsaw.addressClass = '.address .warsaw';
+
+    var newYork = new Location();
+    newYork.cityName = "New York";
+    newYork.mapName = 'ny';
+    newYork.buttonClass = 'blue';
+    newYork.addressClass = '.address .ny'
+
+    var london = new Location();
+    london.cityName = "London";
+    london.mapName = "warsaw";
+    london.buttonClass = 'blue';
+    london.addressClass = '.address .london'
+
+    var currentLocation = null;
+
+    var switch_address_click = function(event) {
+        if(animating == true) {
+            return;
+        }
+        animating = true;
+        var button = event.data.button;
+
+        var targetLocation = event.data.targetLocation;
+        event.preventDefault();
+        button.unbind("click");
+        button.bind('click', function(event) {
+            event.preventDefault();
+        });
+        setCurrentLocation(targetLocation, button);
     };
 
 
-    $("#switch_address_btn").bind('click', switch_address_click);
+    function setCurrentLocation(location, button) {
+        if(currentLocation != null) {
+            currentLocation.hideAndBindToButton(button)
+        }
+        currentLocation = location;
+        currentLocation.show();
+    }
+
+
+    $("#switch_address_btn").bind('click', {targetLocation: newYork,
+        button:$("#switch_address_btn")}, 
+        switch_address_click);
+
+    $("#switch_address_btn2").bind('click', {targetLocation: london,
+        button:$("#switch_address_btn2")}, 
+        switch_address_click);
 
     $('.address .warsaw').show();
 
     google.maps.event.addDomListener(window, 'load', initialize);
-
+    currentLocation = warsaw
 
 
     if ( ($('html').hasClass('no-ie')) ){
