@@ -290,9 +290,9 @@
         }, {
         }];
 
-        var icon1 = new google.maps.MarkerImage("img/map-icon.png", null, null, null, new google.maps.Size(96, 61));
+        var icon1 = new google.maps.MarkerImage("img/map-icon_1.png", null, null, null, new google.maps.Size(96, 61));
         var icon2 = new google.maps.MarkerImage("img/map-icon_2.png", null, null, null, new google.maps.Size(96, 61));
-        var icon3 = new google.maps.MarkerImage("img/map-icon_2.png", null, null, null, new google.maps.Size(96, 61));
+        var icon3 = new google.maps.MarkerImage("img/map-icon_3.png", null, null, null, new google.maps.Size(96, 61));
 
         var map_canvas = document.getElementById('maps');
         var markers = [];
@@ -336,14 +336,14 @@
             zoom : 16,
             draggable : true,
             scrollwheel : false,
-            center : new google.maps.LatLng(40.721264, -73.95632),
+            center : new google.maps.LatLng(51.5226468, -0.0852889),
             mapTypeId : google.maps.MapTypeId.ROADMAP,
             disableDefaultUI : true,
             styles : styles
         });
 
         markers[2] = new google.maps.Marker({
-            position : new google.maps.LatLng(40.721264, -73.95632),
+            position : new google.maps.LatLng(51.5226468, -0.0852889),
             map : map3,
             icon : icon3
         });
