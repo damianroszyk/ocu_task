@@ -290,14 +290,15 @@
         }, {
         }];
 
-        var icon = new google.maps.MarkerImage("img/map-icon.png", null, null, null, new google.maps.Size(96, 61));
+        var icon1 = new google.maps.MarkerImage("img/map-icon.png", null, null, null, new google.maps.Size(96, 61));
         var icon2 = new google.maps.MarkerImage("img/map-icon_2.png", null, null, null, new google.maps.Size(96, 61));
+        var icon3 = new google.maps.MarkerImage("img/map-icon_2.png", null, null, null, new google.maps.Size(96, 61));
 
         var map_canvas = document.getElementById('maps');
         var markers = [];
 
         //warsaw
-        var map = new google.maps.Map($('#maps .warsaw .map')[0], {
+        var map1 = new google.maps.Map($('#maps .warsaw .map')[0], {
             zoom : 16,
             draggable : true,
             scrollwheel : false,
@@ -309,12 +310,12 @@
 
         markers[0] = new google.maps.Marker({
             position : new google.maps.LatLng(52.232347, 21.01305),
-            map : map,
-            icon : icon
+            map : map1,
+            icon : icon1
         });
 
-        //ny
-        var map2 = new google.maps.Map($('#maps .ny .map')[0], {
+        //newyork
+        var map2 = new google.maps.Map($('#maps .newyork .map')[0], {
             zoom : 16,
             draggable : true,
             scrollwheel : false,
@@ -330,6 +331,23 @@
             icon : icon2
         });
 
+        //london
+        var map3 = new google.maps.Map($('#maps .london .map')[0], {
+            zoom : 16,
+            draggable : true,
+            scrollwheel : false,
+            center : new google.maps.LatLng(40.721264, -73.95632),
+            mapTypeId : google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI : true,
+            styles : styles
+        });
+
+        markers[2] = new google.maps.Marker({
+            position : new google.maps.LatLng(40.721264, -73.95632),
+            map : map3,
+            icon : icon3
+        });
+
     }
 
     var animating = false;
@@ -342,6 +360,7 @@
     }
 
     Location.prototype.show = function() {
+		//alert("showing: "+this.cityName);
         $('#maps .wrapper.' + this.mapName).show().css('top', -1050);
 
         var self = this;
@@ -361,6 +380,7 @@
     }
 
     Location.prototype.hideAndBindToButton = function(button) {
+		//alert("hiding :"+this.cityName);
         var self = this;
         $('#maps .wrapper.' + this.mapName + ' .overlay').show();
 
@@ -371,8 +391,6 @@
             $('#maps .wrapper.' + self.mapName).css('top', -1050);
             $('#maps .wrapper.' + self.mapName + ' .overlay').hide();
 
-            button.bind('click', { targetLocation:self, button:button}, switch_address_click);
-            button.find('span').text(self.cityName);
 
 
             $('#maps .wrapper.' + self.mapName).css('top', -1050);
@@ -381,29 +399,31 @@
 
 
         setTimeout(function() {
-            $(button).removeClass( self.buttonClass ); 
-            $(button).addClass( currentLocation.buttonClass ); 
+            button.bind('click', { targetLocation:self, button:button}, switch_address_click);
+            button.find('span').text(self.cityName);
+            $(button).removeClass( currentLocation.buttonClass ); 
+            $(button).addClass( self.buttonClass ); 
             animating = false;
-        }, 1600);
+        }, 400);
     }
 
     var warsaw = new Location();
     warsaw.cityName = 'Warsaw';
     warsaw.mapName = 'warsaw';
-    warsaw.buttonClass = 'red';
-    warsaw.addressClass = '.address .warsaw';
+    warsaw.buttonClass = 'warsaw';
+    warsaw.addressClass = '.city.warsaw';
 
     var newYork = new Location();
     newYork.cityName = "New York";
-    newYork.mapName = 'ny';
-    newYork.buttonClass = 'blue';
-    newYork.addressClass = '.address .ny'
+    newYork.mapName = 'newyork';
+    newYork.buttonClass = 'newyork';
+    newYork.addressClass = '.city.newyork'
 
     var london = new Location();
     london.cityName = "London";
-    london.mapName = "warsaw";
-    london.buttonClass = 'blue';
-    london.addressClass = '.address .london'
+    london.mapName = "london";
+    london.buttonClass = 'london';
+    london.addressClass = '.city.london'
 
     var currentLocation = null;
 
@@ -437,8 +457,8 @@
         button:$("#switch_address_btn")}, 
         switch_address_click);
 
-    $("#switch_address_btn2").bind('click', {targetLocation: london,
-        button:$("#switch_address_btn2")}, 
+    $("#switch_address_btn_second").bind('click', {targetLocation: london,
+        button:$("#switch_address_btn_second")}, 
         switch_address_click);
 
     $('.address .warsaw').show();

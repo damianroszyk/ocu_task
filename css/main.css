@@ -6939,11 +6939,11 @@
 {
 	background:#24272b;
 	position:relative;
-	height:223px
+	height:259px
 }
 .contact .contact_details .content,.contact .contact_details .careers .careers_info,.careers .contact .contact_details .careers_info
 {
-	padding:40px 25px
+	padding:58px 25px
 }
 .contact .contact_details .city
 {
@@ -6993,9 +6993,9 @@
 }
 .contact a.switch_map
 {
-	background:#007aff;
 	display:block;
-	padding:85px 0 84px 60px;
+	float:right;
+	padding:36px 0 38px 60px;
 	color:#fff;
 	position:absolute;
 	left:70%;
@@ -7005,19 +7005,41 @@
 	font-size:18px
 }
 
-.contact a.switch_map2
+.contact a.switch_map.second
 {
-	background:#907aff;
-	display:block;
-	padding:85px 0 84px 60px;
-	color:#fff;
-	position:absolute;
-	left:80%;
-	top:0;
-	right:0;
-	font-weight:300;
-	font-size:18px
+	top:130px;
 }
+
+.contact a.switch_map.warsaw
+{
+	background:#2ae52a
+}
+
+.contact a.switch_map.warsaw:hover
+{
+	background:#29d529
+}
+
+.contact a.switch_map.newyork
+{
+	background:#007aff;
+}
+
+.contact a.switch_map.newyork:hover
+{
+	background:#0062cc
+}
+
+.contact a.switch_map.london
+{
+	background:#ef3f25
+}
+
+.contact a.switch_map.london:hover
+{
+	background:#d2280f
+}
+
 .contact a.switch_map .bold
 {
 	font-weight:400;
@@ -7057,14 +7079,6 @@
 	-ms-transform:rotate(90deg);
 	-o-transform:rotate(90deg);
 	transform:rotate(90deg)
-}
-.contact a.switch_map.red
-{
-	background:#ef3f25
-}
-.contact a.switch_map.red:hover
-{
-	background:#d2280f
 }
 	footer
 {
@@ -10470,8 +10484,7 @@
 }
 .contact a.switch_map
 {
-	padding:79px 0 67px 30px;
-	bottom:0
+	padding:43px 0 38px 30px;
 }
 .contact a.switch_map .bold
 {
@@ -10720,11 +10733,17 @@
 {
 	position:relative;
 	left:auto;
-	padding:39px 0 30px 30px
+	width:100%;
+	padding:35px 0 34px 30px
+}
+
+.contact a.switch_map.second
+{
+	top:0;
 }
 .contact .contact_details
 {
-	height:340px
+	height:460px
 }
 .contact .contact_details .content,.contact .contact_details .careers .careers_info,.careers .contact .contact_details .careers_info
 {
