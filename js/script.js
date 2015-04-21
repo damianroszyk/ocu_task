@@ -360,7 +360,6 @@
     }
 
     Location.prototype.show = function() {
-		//alert("showing: "+this.cityName);
         $('#maps .wrapper.' + this.mapName).show().css('top', -1050);
 
         var self = this;
@@ -374,13 +373,13 @@
             }, 1200, 'easeOutSine', function() {
                 $('#maps .wrapper.' + self.mapName + ' .overlay').css('top', 0)
                         .hide().removeClass('rotated');
+                animating = false;
             });
             $(self.addressClass).show('fade');
         }, 1200);
     }
 
     Location.prototype.hideAndBindToButton = function(button) {
-		//alert("hiding :"+this.cityName);
         var self = this;
         $('#maps .wrapper.' + this.mapName + ' .overlay').show();
 
@@ -403,7 +402,6 @@
             button.find('span').text(self.cityName);
             $(button).removeClass( currentLocation.buttonClass ); 
             $(button).addClass( self.buttonClass ); 
-            animating = false;
         }, 400);
     }
 
