@@ -6991,9 +6991,11 @@
 	color:#fff;
 	border-bottom:2px solid #007aff
 }
+
 .contact a.switch_map
 {
 	display:block;
+	background:#373d41;
 	float:right;
 	padding:36px 0 38px 60px;
 	color:#fff;
@@ -7002,42 +7004,37 @@
 	top:0;
 	right:0;
 	font-weight:300;
-	font-size:18px
+	font-size:18px;
 }
 
 .contact a.switch_map.second
 {
 	top:130px;
+	background:#40484e;
 }
 
 .contact a.switch_map.warsaw
-{
-	background:#2ae52a
-}
+{}
 
 .contact a.switch_map.warsaw:hover
 {
-	background:#29d529
+	background:#36d536;
 }
 
 .contact a.switch_map.newyork
+{}
+
+.contact a.switch_map.newyork:hover
 {
 	background:#007aff;
 }
 
-.contact a.switch_map.newyork:hover
-{
-	background:#0062cc
-}
-
 .contact a.switch_map.london
-{
-	background:#ef3f25
-}
+{}
 
 .contact a.switch_map.london:hover
 {
-	background:#d2280f
+	background:#ef3f25;
 }
 
 .contact a.switch_map .bold
