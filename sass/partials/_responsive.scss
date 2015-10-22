@@ -229,7 +229,7 @@
 	}
 
 	.contact .contact_details .city{
-		width:670px;
+		
 	}
 
 	.contact a.switch_map .map_arrow{
@@ -244,7 +244,42 @@
 		margin:5px;
 	}
 
+	.desktop_menu{
+		display: none;
+	}
 
+	.mobile_menu{
+		display: block;
+		@include backface-visibility(hidden);
+    @include perspective(1000);
+
+		a.toggle_menu{
+			right:10px;
+			top: 14px;
+		}
+
+		.mobile_menu.nav_box a.toggle_menu{
+			top: 14px;
+		}
+
+	    ul{
+	    	width: 100%;
+	    	padding: 70px 20px 10px 20px;
+
+	    	li a{
+	    		padding: 8px 4px;
+	    	}
+	    }
+
+	    .logo a{
+	    	width: 200px;
+	    	margin: 20px 0 14px 0;
+	    }
+
+	    &.active .logo a{
+			background:url('../img/svg/logo.svg') 0 0 no-repeat;   
+	    }
+	} 
 
 	.headerImg#intro1 .first_header br, 
 	.loading-screen .first_header br{
@@ -483,7 +518,7 @@
 		}
 
 		.contact_details .city{
-			width:480px;
+			
 		}
 
 		.contact_details .city div span{
@@ -491,8 +526,7 @@
 		}
 
 		a.switch_map{
-			padding: 79px 0 67px 30px;
-			bottom: 0;
+			padding: 20px 10px;
 
 			.bold{
 				padding:0;
@@ -529,43 +563,6 @@
 		@include backface-visibility(hidden);
         @include perspective(1000);
 	}
-
-	.desktop_menu{
-		display: none;
-	}
-
-	.mobile_menu{
-		display: block;
-		@include backface-visibility(hidden);
-        @include perspective(1000);
-
-		a.toggle_menu{
-			right:10px;
-			top: 14px;
-		}
-
-		.mobile_menu.nav_box a.toggle_menu{
-			top: 14px;
-		}
-
-	    ul{
-	    	width: 100%;
-	    	padding: 70px 20px 10px 20px;
-
-	    	li a{
-	    		padding: 8px 4px;
-	    	}
-	    }
-
-	    .logo a{
-	    	width: 200px;
-	    	margin: 20px 0 14px 0;
-	    }
-
-	    &.active .logo a{
-			background:url('../img/svg/logo.svg') 0 0 no-repeat;   
-	    }
-	} 
 
 	nav.nav_box .logo a{
 		margin: 20px 0 14px 0;
@@ -727,14 +724,6 @@
 		padding: 39px 0 30px 30px;
 	}
 
-	.contact .contact_details{
-		height: 340px;
-
-		.content{
-			height: 220px;
-		}
-	}
-
 	.contact .contact_details .city{
 		width:auto;
 	}
@@ -752,8 +741,35 @@
 		top:30px;
 	}
 
+	.contact a.switch_map
+	{
+		position:relative;
+		left:auto;
+		width:50%;
+		padding:20px 10px;
+	}
 
+	.contact a.switch_map.second
+	{
+		top:0;
+	}
 
+	.contact .contact_details
+ 	{
+		height: auto;
+
+		.content {
+			height: auto;
+		}
+
+		.city div {
+			width: 50%;
+
+			&:first-child {
+				width: 100%;
+			}
+		}
+	 }
 
 }
 
@@ -976,6 +992,31 @@
 		a{
 			display: inline-block;
 		}
+	}
+
+	.contact a.switch_map {
+		width: 100%;
+		padding: 15px;
+	}
+
+	footer .content .social,
+	footer .content a.mma{
+		top: 0;
+		position: relative;
+	}
+
+	footer .content .social {
+		left: 0;
+	}
+
+	footer .content p.copyright {
+		padding: 20px 0;
+	}
+
+	footer .content a.mma {
+		right: 0;
+    left: 0;
+    margin: auto;
 	}
 
 

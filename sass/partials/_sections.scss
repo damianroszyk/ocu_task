@@ -709,17 +709,17 @@
 
 	a.gmaps{
 		@extend .dark_btn;
-		width: 140px;
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		z-index: 10;
-		margin: 100px 0 0 -70px;
-		text-align: center;
-		font-size: 14px;
-		line-height: 14px;
-		padding: 12px;
-		background: #f4f4f4;
+		width:140px;
+		position:absolute;
+		left:50%;
+		top:50%;
+		z-index:10;
+		margin:100px 0 0 -70px;
+		text-align:center;
+		font-size:14px;
+		line-height:14px;
+		padding:12px;
+		background:#f4f4f4
 	}
 
 	.bg_contact{
@@ -748,25 +748,29 @@
 	.contact_details{
 		background:$darker_color;
 		position:relative;
-		height:223px;
+		height:200px;
 
-		.content{
+		.map_content{
 			padding:40px 25px;	
 		}
 
-
 		.city{
 			@include clearfix;
-			width:800px;
-
-
+		
 			div{
 				float:left;
-				width:33%;
+				width:25%;
+
+				&:first-child {
+					width: 40%;
+				}
 
 				h4{
 					color:$light_font_color;
 					margin:0 0 10px 0;
+					font-weight: 600;
+			    letter-spacing: 1px;
+			    font-size: 20px;
 				}
 
 				p{
@@ -796,22 +800,86 @@
 		}
 	}
 
-	a.switch_map{
-		background:$primary_color;	
-		display: block;
-		padding:85px 0 84px 60px;
-		color:#fff;
-		position:absolute;
-		left:70%;
-		top:0;
-		right:0;
-		font-weight: 300;
+	.map_tabs {
+		padding: 0;
+		background:$darker_color;
+		// background: #373d41;
+
+		.content {
+			padding: 0;
+		}
+	}
+
+	a.switch_map {
+		background: #2b2f33; 
+		border-left: 10px solid $darker_color;
+		border-top: 10px solid $darker_color;
+		display:block;
+		float: left;
+		width: 25%;
+		position: relative;
+		padding: 15px 20px;
+		font-weight:300;
 		font-size:18px;
+		color: #999;
+
+		&:last-child {
+			border-right: 10px solid $darker_color;		
+		}
+
+		&.warsaw {
+
+			&:hover {
+				background:#36d536;
+				color:#fff;
+			}
+		}
+
+		&.newyork {
+
+			&:hover {
+				background:#007aff;
+				color:#fff;
+			}
+		}
+
+		&.london {
+
+			&:hover {
+				background:#ef3f25;
+				color:#fff;
+			}
+		}
+
+		&.sfo {
+
+			&:hover {
+				background:#ffeb3b;
+				color:#222;
+			}
+		}
+
+		&.active {
+			background:$darker_color;
+			color:#fff;
+			cursor: default;
+			// pointer-events: none;
+
+			&:hover{
+				color:#fff;
+				background:$darker_color;
+			}
+
+			.map_arrow{
+				@include rotate(90deg);	
+			}
+		}
 
 		.bold{
-			font-weight: 400;
-			font-size:24px;
-			padding:5px 0 0 0;
+			font-weight: 600;
+			font-size:13px;
+			letter-spacing: 2px;
+			text-transform: uppercase;
 			display: block;
 		}
 
@@ -819,7 +887,7 @@
 			width:16px;
 			height:16px;
 			position:absolute;
-			left:280px;
+			right:20px;
 			top:48%;
 			@include transition(all 0.3s ease-in-out);
 			@include rotate(0deg);	
@@ -840,14 +908,23 @@
 	}
 
 	a.switch_map.red{
-		background:$secondary_color;	
+		background:$secondary_color;
 		
 		&:hover{
 			background:darken($secondary_color, 10%);
 		}	
 	}
-
 }
+
+// New Styles
+
+.contact .contact_details .careers .careers_info,
+.careers .contact .contact_details .careers_info
+{
+	padding:58px 25px;
+}
+
+// Footer
 
 footer{
 	background:#fff;
@@ -923,8 +1000,6 @@ footer{
 		}
 	}
 }
-
-
 
 
 

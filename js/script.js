@@ -293,6 +293,7 @@
         var icon1 = new google.maps.MarkerImage("img/map-icon_1.png", null, null, null, new google.maps.Size(96, 61));
         var icon2 = new google.maps.MarkerImage("img/map-icon_2.png", null, null, null, new google.maps.Size(96, 61));
         var icon3 = new google.maps.MarkerImage("img/map-icon_3.png", null, null, null, new google.maps.Size(96, 61));
+        var icon4 = new google.maps.MarkerImage("img/map-icon_4.png", null, null, null, new google.maps.Size(96, 61));
 
         var map_canvas = document.getElementById('maps');
         var markers = [];
@@ -348,6 +349,23 @@
             icon : icon3
         });
 
+        //sfo
+        var map4 = new google.maps.Map($('#maps .sfo .map')[0], {
+            zoom : 16,
+            draggable : true,
+            scrollwheel : false,
+            center : new google.maps.LatLng(37.798818, -122.413184),
+            mapTypeId : google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI : true,
+            styles : styles
+        });
+
+        markers[3] = new google.maps.Marker({
+            position : new google.maps.LatLng(37.798818, -122.413184),
+            map : map4,
+            icon : icon4
+        });
+
     }
 
     var animating = false;
@@ -396,12 +414,15 @@
             $('#maps .wrapper.' + self.mapName + ' .overlay').hide();
         });
 
-
         setTimeout(function() {
-            button.bind('click', { targetLocation:self, button:button}, switch_address_click);
-            button.find('span').text(self.cityName);
-            $(button).removeClass( currentLocation.buttonClass ); 
-            $(button).addClass( self.buttonClass ); 
+            // button.bind('click', { targetLocation:self, button:button}, switch_address_click);
+            $('.switch_map').removeClass( 'active' ); 
+            $(button).addClass( 'active' );
+
+            // button.bind('click', { targetLocation:self, button:button}, switch_address_click);
+            // button.find('span').text(self.cityName);
+            // $(button).removeClass( currentLocation.buttonClass ); 
+            // $(button).addClass( self.buttonClass ); 
         }, 400);
     }
 
@@ -423,22 +444,35 @@
     london.buttonClass = 'london';
     london.addressClass = '.city.london'
 
+    var sfo = new Location();
+    sfo.cityName = "San Francisco";
+    sfo.mapName = "sfo";
+    sfo.buttonClass = 'sfo';
+    sfo.addressClass = '.city.sfo'
+
     var currentLocation = null;
 
     var switch_address_click = function(event) {
-        if(animating == true) {
-            return;
-        }
-        animating = true;
         var button = event.data.button;
+        
 
-        var targetLocation = event.data.targetLocation;
-        event.preventDefault();
-        button.unbind("click");
-        button.bind('click', function(event) {
-            event.preventDefault();
-        });
-        setCurrentLocation(targetLocation, button);
+        if( !$(button).hasClass( 'active' ) ) {
+            if(animating == true) {
+                return;
+            }
+            animating = true;
+
+            var button = event.data.button;
+            var targetLocation = event.data.targetLocation;
+
+            // event.preventDefault();
+            // button.unbind("click");
+            // button.bind('click', function(event) {
+            //     event.preventDefault();
+            // });
+            
+            setCurrentLocation(targetLocation, button);   
+        }
     };
 
 
@@ -450,14 +484,22 @@
         currentLocation.show();
     }
 
-
-    $("#switch_address_btn").bind('click', {targetLocation: newYork,
-        button:$("#switch_address_btn")}, 
+    $("#switch_address_btn_newyork").bind('click', {targetLocation: newYork,
+        button:$("#switch_address_btn_newyork")}, 
         switch_address_click);
 
-    $("#switch_address_btn_second").bind('click', {targetLocation: london,
-        button:$("#switch_address_btn_second")}, 
+    $("#switch_address_btn_london").bind('click', {targetLocation: london,
+        button:$("#switch_address_btn_london")}, 
         switch_address_click);
+
+    $("#switch_address_btn_sfo").bind('click', {targetLocation: sfo,
+        button:$("#switch_address_btn_sfo")}, 
+        switch_address_click);
+
+    $("#switch_address_btn_warsaw").bind('click', {targetLocation: warsaw,
+        button:$("#switch_address_btn_warsaw")}, 
+        switch_address_click);
+
 
     $('.address .warsaw').show();
 
