@@ -354,14 +354,14 @@
             zoom : 16,
             draggable : true,
             scrollwheel : false,
-            center : new google.maps.LatLng(37.798818, -122.413184),
+            center : new google.maps.LatLng(37.797913, -122.401285),
             mapTypeId : google.maps.MapTypeId.ROADMAP,
             disableDefaultUI : true,
             styles : styles
         });
 
         markers[3] = new google.maps.Marker({
-            position : new google.maps.LatLng(37.798818, -122.413184),
+            position : new google.maps.LatLng(37.797913, -122.401285),
             map : map4,
             icon : icon4
         });
