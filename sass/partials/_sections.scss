@@ -332,7 +332,7 @@
 		position:relative;	
 	}
 
-	.content{
+	.content {
 	    padding:90px 25px 0 25px;
 
 		h2{
@@ -351,12 +351,53 @@
 	}
 
 	ul.logos{
-		margin:0 0 60px -40px;
+		margin:0 0 20px -40px;
 		width:1200px;
 		
 		li{
 			display: inline-block;
 			width:19%;
+		}
+	}
+
+	.bg_partners {
+		background: #1f2226;
+
+		.content{
+			padding: 0 25px;
+		}
+	}
+
+	ul.partners {
+		margin:0 0 0 -40px;
+		width:1200px;
+		overflow: hidden;
+
+		h4 {
+			text-align: center;
+			text-transform: uppercase;
+			width: auto;
+			padding: 60px 0;
+			margin:0;
+			font-size: 24px;
+			font-weight: 600;
+			color: #b6bbbf;
+		}
+		
+		li{
+			display: block;
+			float: left;
+			width: 19%;
+		}
+
+		a {
+			display: block;
+			height: 140px;
+			opacity: 0.5;
+
+			&:hover{
+				opacity: 0.8;
+			}
 		}
 	}
 
