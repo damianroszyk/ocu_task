@@ -25,7 +25,7 @@ nav{
             display: block;
             text-indent: 100%;
             overflow: hidden;
-            margin:60px 0 20px 0;    
+            margin:60px 0 20px 0;
 
             &:hover{
                 @include opacity (1);
@@ -66,8 +66,8 @@ nav{
         }
 
         ul li a:hover{
-            color:#fff; 
-            @include translateY(2px);  
+            color:#fff;
+            @include translateY(2px);
             @include opacity (1);
         }
 
@@ -80,7 +80,7 @@ nav{
             height: 2px;
             background: #fff;
             opacity: 0;
-            @include translateY(5px);  
+            @include translateY(5px);
             @include transition(all 0.3s ease-out);
             pointer-events: none;
         }
@@ -88,17 +88,17 @@ nav{
         ul li a:hover::before,
         ul li a:focus::before {
             @include opacity (0);
-            @include translateY(-2px);  
+            @include translateY(-2px);
         }
 
         ul li a:hover::after,
         ul li a:focus::after {
             @include opacity (1);
-            @include translateY(0);  
+            @include translateY(0);
         }
     }
 
-   
+
     &.nav_dark.desktop_menu{
 
         a{
@@ -109,19 +109,19 @@ nav{
         }
 
         a::after{
-            background: #2b2f33;    
+            background: #2b2f33;
         }
 
         .logo{
 
             a{
-                background:url('../img/svg/logo_dark.svg') 0 0 no-repeat;   
-            }   
-        } 
+                background:url('../img/svg/logo_dark.svg') 0 0 no-repeat;
+            }
+        }
     }
 
     &.nav_dark.mobile_menu .logo a{
-        background:url('../img/svg/logo_dark.svg') 0 0 no-repeat;       
+        background:url('../img/svg/logo_dark.svg') 0 0 no-repeat;
     }
 
     &.nav_box{
@@ -129,40 +129,40 @@ nav{
         padding:0;
         background:#fff;
         border-bottom:4px solid #eee;
-        overflow: inherit;  
-        
+        overflow: inherit;
+
 
         .content, ul{
             overflow: inherit;
-        }     
+        }
 
         &.desktop_menu li{
 
             a{
-                color:#2b2f33; 
+                color:#2b2f33;
                 padding:30px 0 30px 0;
-                border-bottom: 4px solid transparent; 
-                display: block; 
-                margin-bottom:-7px;  
+                border-bottom: 4px solid transparent;
+                display: block;
+                margin-bottom:-7px;
                 font-weight: 600;
                 @include transition(padding 0.3s ease-out);
                 // @include transition(none);
                 // @include transition(padding .3s ease-out);
-                
+
                 &:hover{
-                    border-bottom: 4px solid #0079ff;  
-                    color:#0079ff; 
-                }   
-            }  
+                    border-bottom: 4px solid #0079ff;
+                    color:#0079ff;
+                }
+            }
         }
 
         &.desktop_menu ul li a::after {
             @include transition(none);
         }
-    
+
         .logo a{
             background:url('../img/svg/logo_dark.svg') 0 0 no-repeat;
-            margin:30px 0 30px 0;  
+            margin:30px 0 30px 0;
             @include transition(all 0.3s ease-out);
         }
     }
@@ -174,7 +174,7 @@ nav{
     @include backface-visibility(hidden);
     @include perspective(1000);
 
-    overflow: inherit; 
+    overflow: inherit;
     display: none;
     z-index: 110;
     position:fixed;
@@ -185,11 +185,11 @@ nav{
     .menu_box{
         padding:0;
         background:#fff;
-        border-bottom:4px solid #eee;  
+        border-bottom:4px solid #eee;
         width:100%;
         height:70px;
         z-index: 10;
-        position:relative;  
+        position:relative;
     }
 
     .logo{
@@ -208,7 +208,7 @@ nav{
             display: block;
             text-indent: 100%;
             overflow: hidden;
-            margin:60px 0 20px 0;    
+            margin:60px 0 20px 0;
 
             &:hover{
                 @include opacity (1);
@@ -227,26 +227,26 @@ nav{
         z-index:10;
 
         svg{
-            fill:$dark_font_color;   
+            fill:$dark_font_color;
             width:20px;
             height:20px;
             margin:10px;
         }
 
         &:hover{
-            @include translate3d(0,2px,0);  
+            @include translate3d(0,2px,0);
             @include opacity(1);
         }
     }
 
     &.active a.toggle_menu svg{
-        fill:#fff;   
+        fill:#fff;
     }
 
     &.active .menu_box{
         background:$darker_color;
         border-bottom:none;
-    }  
+    }
 
     ul{
         @include transition(transform .2s ease-out);
@@ -266,7 +266,7 @@ nav{
         z-index: 5;
 
         li{
-            
+
             float:auto;
             width:100%;
             margin:0;
@@ -281,7 +281,7 @@ nav{
                 color:$light_font_color;
 
                 &:hover{
-                    @include translate3d(0,2px,0);  
+                    @include translate3d(0,2px,0);
                     color:#fff;
                 }
             }
@@ -295,7 +295,7 @@ nav{
     }
 
     &.active ul{
-        @include translate3d(0,0,0);  
+        @include translate3d(0,0,0);
         visibility: visible;
     }
 
@@ -312,7 +312,7 @@ header#intro{
 .header_wrapper{
     width: 100%;
     height: 100%;
-    overflow: hidden;     
+    overflow: hidden;
 }
 
 .header_list{
@@ -321,7 +321,7 @@ header#intro{
     position: fixed;
     top: 0;
     left: 0;
-    background:#072037;    
+    background:#072037;
 }
 
 .headerImg{
@@ -340,17 +340,17 @@ header#intro{
         .caption{
             @extend .fadeInLeft;
         }
-        
+
         .first_header{
             left:50%;
             top:50%;
             width:1170px;
             margin:0 0 0 -585px;
-            padding:25px; 
+            padding:25px;
             position:absolute;
             @include translate3d(0, -50%, 0);
 
-            h1{ 
+            h1{
                 color:#fff;
                 padding:0;
                 margin:0;
@@ -362,9 +362,9 @@ header#intro{
                 font-weight: 200;
 
                 .bold{
-                    font-weight: 500;   
-                }  
-            }   
+                    font-weight: 500;
+                }
+            }
         }
     }
 
@@ -384,13 +384,13 @@ header#intro{
 
             h2{
                 text-align: left;
-                color:$dark_font_color;  
+                color:$dark_font_color;
                 font-size:68px;
-                line-height: 80px; 
+                line-height: 80px;
                 letter-spacing: 2px;
                 text-transform: uppercase;
                 font-weight: 200;
-            }   
+            }
 
             hr{
                 width:52px;
@@ -431,7 +431,7 @@ a.more{
 
     svg{
         width:19px;
-        height:54px;    
+        height:54px;
     }
 }
 
@@ -448,13 +448,13 @@ a.more{
     background-size: cover;
     background-attachment: fixed;
 
-    .caption{ 
+    .caption{
         @extend .fadeInLeft;
         position: relative;
         height: 100%;
         width: 100%;
     }
-    
+
 
     .first_header{
          @include transition (opacity .3s linear);
@@ -462,11 +462,11 @@ a.more{
         left:50%;
         width:1170px;
         margin:0 0 0 -585px;
-        padding:25px; 
+        padding:25px;
         position:absolute;
         display: block;
 
-        h1{ 
+        h1{
             color:#fff;
             padding:0;
             margin:0;
@@ -478,9 +478,9 @@ a.more{
             font-weight: 200;
 
             .bold{
-                font-weight: 500;   
-            }  
-        }   
+                font-weight: 500;
+            }
+        }
     }
 }
 
@@ -494,8 +494,8 @@ a.more{
     //display: none;
 
     .caption .first_header{
-       
-       @include opacity(0); 
+
+       @include opacity(0);
     }
 }
 
@@ -506,9 +506,7 @@ nav.mobile_menu ul li.ios_link,
 nav.desktop_menu ul li.ui_link,
 nav.mobile_menu ul li.ui_link,
 nav.desktop_menu ul li.frontend_link,
-nav.mobile_menu ul li.frontend_link{
+nav.mobile_menu ul li.frontend_link,
+nav.mobile_menu ul li.python_link{
     display: none;
 }
-
-
-  
