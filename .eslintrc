@@ -1,0 +1,35 @@
+{
+	"ecmaFeatures": {
+		"modules": true
+	},
+	"env": {
+		"browser": true,
+		"node": true,
+		"es6": true
+	},
+	"rules": {
+		"strict": 1,
+		"no-use-before-define": [2, "nofunc"],
+		"no-underscore-dangle": 0,
+		"quotes": [
+			2,
+			"single"
+		]
+	},
+	"globals" : {
+		"angular": true,
+		"_": true,
+		"jasmine": true,
+		"describe": true,
+		"xdescribe": true,
+		"before": true,
+		"beforeEach": true,
+		"after": true,
+		"afterEach": true,
+		"it": true,
+		"xit": true,
+		"inject": true,
+		"expect": true,
+		"spyOn": true
+	}
+}
