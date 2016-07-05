@@ -9,13 +9,12 @@ linters:
         enabled: false
 
     SelectorDepth:
-        max_depth: 4
+        max_depth: 3
 
     NestingDepth:
-        max_depth: 4
+        max_depth: 3
 
     SelectorFormat:
-        enabled: false
         convention: hyphenated_BEM
 
     NameFormat:

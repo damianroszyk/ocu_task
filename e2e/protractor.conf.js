@@ -1,20 +1,20 @@
 exports.config = {
 
-  allScriptsTimeout: 11000,
+    allScriptsTimeout: 11000,
 
-  specs: [ 'index.js' ],
+    specs: [ 'index.js' ],
 
-  capabilities: {
-    'browserName': 'chrome'
-  },
+    capabilities: {
+        'browserName': 'chrome'
+    },
 
-  directConnect: true,
+    directConnect: true,
 
-  baseUrl: 'http://localhost:8079/',
+    baseUrl: 'http://localhost:8079/',
 
-  framework: 'jasmine',
+    framework: 'jasmine',
 
-  jasmineNodeOpts: {
-    defaultTimeoutInterval: 30000
-  }
+    jasmineNodeOpts: {
+        defaultTimeoutInterval: 30000
+    }
 };

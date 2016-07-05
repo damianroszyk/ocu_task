@@ -17,3 +17,8 @@ npm start
 ```
 npm run build
 ```
+
+## Running e2e tests
+```
+npm start && npm run e2e
+```
