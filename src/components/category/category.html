@@ -1,0 +1,17 @@
+<div class="category">
+    <h2>Category</h2>
+
+    <category-tiles
+        ng-if="$ctrl.hasChildrenCategories"
+        categories="$ctrl.subcategories">
+    </category-tiles>
+
+    <playlist-tiles
+        ng-if="!$ctrl.hasChildrenCategories"
+        playlists="$ctrl.playlists">
+    </playlist-tiles>
+
+    <a ui-sref="playlist({playlistName: 'testPlaylist'})">
+        Playlist page
+    </a>
+</div>

@@ -1,6 +1,8 @@
 <div class="home">
     <h1>Hello world!</h1>
 
+    <h2>Home</h2>
+
     <category-tiles
         categories="$ctrl.categories">
     </category-tiles>
@@ -8,4 +10,6 @@
     <playlist-tiles
         playlists="$ctrl.promotedPlaylists">
     </playlist-tiles>
+
+    <a ui-sref="category({categoryName: 'testCategory'})">Category page</a>
 </div>
