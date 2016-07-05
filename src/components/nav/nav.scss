@@ -1,0 +1,25 @@
+.nav {
+    height: 50px;
+    background-color: #888;
+    font-size: 0;
+}
+
+.nav__item {
+    display: inline-block;
+    height: 50px;
+    vertical-align: top;
+    font-size: initial;
+    border-left: 3px solid #000;
+    &:first-child {
+        border-left: none;
+    }
+}
+
+.nav-button {
+    height: 50px;
+    width: 50px;
+}
+
+.nav__item__right {
+    float: right;
+}
