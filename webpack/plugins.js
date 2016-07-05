@@ -15,7 +15,7 @@ var plugins = [
 ];
 
 if (production) {
-	plugins.push(new webpack.optimize.UglifyJsPlugin());
+	// plugins.push(new webpack.optimize.UglifyJsPlugin());
 }
 
 module.exports = plugins;
