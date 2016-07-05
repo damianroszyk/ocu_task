@@ -1,6 +1,7 @@
 import angular from 'angular';
 import app from './app';
 
+/*@ngInject*/
 let run = ($rootScope, $state) => {
     $rootScope.$state = $state;
 };
