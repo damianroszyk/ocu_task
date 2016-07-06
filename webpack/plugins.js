@@ -12,6 +12,9 @@ var plugins = [
     }, {
         from: 'src/shared/images/',
         to: 'shared/images/'
+    }, {
+        from: 'src/shared/i18n/',
+        to: 'shared/i18n/'
     }])
 ];
 
