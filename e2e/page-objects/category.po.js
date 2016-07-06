@@ -4,6 +4,7 @@ function CategoryPageObject() {
 
     this.get = function() {
         browser.get('/#/category/testCategory');
+        browser.waitForAngular();
     };
 
     this.getHeading = function() {

@@ -4,6 +4,7 @@ function PlaylistPageObject() {
 
     this.get = function() {
         browser.get('/#/playlist/testPlaylist');
+        browser.waitForAngular();
     };
 
     this.getHeading = function() {
