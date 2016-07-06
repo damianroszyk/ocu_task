@@ -1,6 +1,0 @@
-[0706/093017:ERROR:process_info.cc(608)] range at 0x6be0526e00000000, size 0x1f6 fully unreadable
-[0706/093017:ERROR:process_info.cc(608)] range at 0x6be0528e00000000, size 0x1f6 fully unreadable
-[0706/093017:ERROR:process_info.cc(608)] range at 0x0, size 0x1f6 fully unreadable
-[0706/093017:ERROR:process_reader_win.cc(113)] NtOpenThread: {Odmowa dostêpu} Proces za¿¹da³ dostêpu do obiektu, ale prawa dostêpu nie zosta³y przyznane.  (0xc0000022)
-[0706/093017:ERROR:exception_snapshot_win.cc(57)] thread ID 2348 not found in process
-[0706/093017:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::InitializeException failed
