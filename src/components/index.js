@@ -6,6 +6,7 @@ import './_home/';
 import './_category/';
 import './_playlist/';
 
+import './breadcrumb/'
 import './category-tile/'
 import './category-tiles/'
 import './player-deezer/'
