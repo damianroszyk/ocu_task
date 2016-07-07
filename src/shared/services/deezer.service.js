@@ -7,36 +7,35 @@ class DeezerService {
         this.$q = $q;
         this.angularLoad = angularLoad;
         this.thirdPartyConstant = thirdPartyConstant;
+        this.deferredDeezerSdk = this.$q.defer();
     }
     initialize() {
         const DZ_ROOT = angular.element(`<div id="dz-root"></div>`);
         angular.element(document.body).append(DZ_ROOT);
         return this.angularLoad
             .loadScript(this.thirdPartyConstant.deezerSdkUrl)
-            .then(() => this.handleDeezerSdkLoad());
+            .then(() => this.handleDeezerSdkScript());
     }
-    handleDeezerSdkLoad() {
+    handleDeezerSdkScript() {
         this.dz = window.DZ;
         this.dz.init({
             appId: this.thirdPartyConstant.deezerAppId,
             channelUrl: `${window.location.origin}/channel.html`
         });
+        this.deferredDeezerSdk.resolve(this.dz);
+    }
+    fetch(resource) {
+        let deferredRequest = this.$q.defer();
+        this.deferredDeezerSdk.promise.then(() =>
+            this.dz.api(resource, response => deferredRequest.resolve(response))
+        );
+        return deferredRequest.promise;
     }
     getPlaylist(playlistId) {
-        let deferred = this.$q.defer();
-        this.dz.api(
-            `/playlist/${playlistId}`,
-            response => deferred.resolve(response)
-        );
-        return deferred.promise;
+        return this.fetch(`/playlist/${playlistId}`);
     }
     getTrack(trackId) {
-        let deferred = this.$q.defer();
-        this.dz.api(
-            `/track/${trackId}`,
-            response => deferred.resolve(response)
-        );
-        return deferred.promise;
+        return this.fetch(`/track/${trackId}`);
     }
 }
 
