@@ -1,6 +1,12 @@
 import './header/';
 import './footer/';
 import './nav/';
-import './home/';
-import './category/';
-import './playlist/';
+
+import './_home/';
+import './_category/';
+import './_playlist/';
+
+import './category-tiles/'
+import './category-tile/'
+import './playlist-tiles/'
+import './playlist-tile/'

@@ -1,7 +1,7 @@
 import angular from 'angular';
 import app from '../../app';
 
-import template from 'text!./category.html';
+import template from 'text!./playlist.html';
 
 let controller = () => {
 
@@ -9,8 +9,5 @@ let controller = () => {
 
 export default angular
     .module(app)
-    .component('category', {
-        template,
-        controller
-    })
+    .component('playlist', { template, controller })
     .name;

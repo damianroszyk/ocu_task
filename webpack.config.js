@@ -15,5 +15,6 @@ module.exports = {
 	},
 	postcss: postcss,
 	devServer: devServer,
-	plugins: plugins
+	plugins: plugins,
+	devtool: 'source-map'
 };

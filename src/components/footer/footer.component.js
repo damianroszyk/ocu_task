@@ -9,8 +9,5 @@ let controller = () => {
 
 export default angular
     .module(app)
-    .component('appFooter', {
-        template,
-        controller
-    })
+    .component('appFooter', { template, controller })
     .name;

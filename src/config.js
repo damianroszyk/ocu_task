@@ -4,11 +4,13 @@ import app from './app';
 /*@ngInject*/
 let config = ($urlRouterProvider, $translateProvider) => {
     $urlRouterProvider.otherwise('/');
-    $translateProvider.useStaticFilesLoader({
-        prefix: 'shared/i18n/',
-        suffix: '.json'
-    });
-    $translateProvider.preferredLanguage('en_US');
+    $translateProvider
+        .preferredLanguage('en_US')
+        .useSanitizeValueStrategy('escape')
+        .useStaticFilesLoader({
+            prefix: 'shared/i18n/',
+            suffix: '.json'
+        });
 };
 
 export default angular
