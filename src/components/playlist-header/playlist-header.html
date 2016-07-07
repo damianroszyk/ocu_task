@@ -1,3 +1,27 @@
 <header class="playlist-header">
-    {{::$ctrl.playlist.title}}
+    <div class="playlist-header-column">
+        <div class="playlist-header-column__left">
+            <img
+                class="playlist-header__thumbnail"
+                ng-src="{{::$ctrl.playlist.picture_medium}}"
+                alt="Playlist thumbnail"/>
+        </div
+        ><div class="playlist-header-column__right">
+            <h2 class="playlist-header__title">
+                {{::$ctrl.playlist.title}}
+            </h2>
+            <h3>
+                <span>{{::$ctrl.playlist.nb_tracks}} SONGS</span>
+                <span>{{::$ctrl.playlist.duration}} mins</span>
+            </h3>
+        </div>
+    </div>
+    <div class="playlist-header-column">
+        <p ng-show="::$ctrl.playlist.description">
+            {{::$ctrl.playlist.description}}
+        </p>
+        <p ng-hide="::$ctrl.playlist.description">
+            Default playlist description
+        </p>
+    </div>
 </header>

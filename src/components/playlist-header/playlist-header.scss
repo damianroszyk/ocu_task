@@ -1,3 +1,27 @@
 .playlist-header {
-    
+    font-size: 0;
+}
+.playlist-header-column {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    font-size: initial;
+}
+
+.playlist-header-column__left,
+.playlist-header-column__right {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.playlist-header-column__left {
+    width: 30%;
+}
+
+.playlist-header-column__right {
+    width: 70%;
+}
+
+.playlist-header__thumbnail {
+    width: 100%;
 }
