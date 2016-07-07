@@ -7,5 +7,6 @@ import './run';
 import './bootstrap';
 
 import './shared/constants';
+import './shared/services';
 
 import './components/';
