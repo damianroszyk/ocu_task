@@ -2,10 +2,7 @@ import angular from 'angular';
 import app from '../../app';
 
 import template from 'text!./playlist.html';
-
-let controller = () => {
-
-};
+import controller from './playlist.controller.js';
 
 export default angular
     .module(app)
