@@ -1,3 +1,12 @@
-<div class="playlist-tile">
-    {{::$ctrl.playlist.name}}
+<div
+    class="playlist-tile"
+    ui-sref="playlist({playlistId: $ctrl.playlist.id})">
+    <img
+        class="playlist-tile__image"
+        ng-src="{{::$ctrl.playlist.imageUrl}}"/>
+    <div class="playlist-tile-description">
+        <p class="playlist-tile-description__content">
+            {{::$ctrl.playlist.description}}
+        </p>
+    </div>
 </div>

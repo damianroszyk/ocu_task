@@ -1,11 +1,15 @@
 import app from '../../app';
 
+let squash = true;
+
 const CATEGORY_ROUTER = {
     categoryState: {
-        url: '^/category/:categoryName',
+        url: '^/category/:l1/:l2/:l3/:l4',
         template: `<category></category>`,
         params: {
-            categoryName: { array: true }
+            l2: { squash },
+            l3: { squash },
+            l4: { squash }
         }
     }
 };

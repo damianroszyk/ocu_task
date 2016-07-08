@@ -1,18 +1,11 @@
-<div class="home">
-    <h1 translate="{{::'HELLO_WORLD'}}"></h1>
-
+<div class="home container">
     <h2 translate="{{::'HOME_HEADLINE'}}"></h2>
-
     <category-tiles
+        layout="$ctrl.categoriesLayout"
         categories="$ctrl.categories">
     </category-tiles>
-
     <playlist-tiles
-        playlists="$ctrl.featuredPlaylists">
+        layout="$ctrl.playlistsLayout"
+        playlists="$ctrl.playlists">
     </playlist-tiles>
-
-    <a
-        ui-sref="category({categoryName: 'testCategory'})"
-        translate="{{::'CATEGORY_PAGE_BUTTON'}}">
-    </a>
 </div>

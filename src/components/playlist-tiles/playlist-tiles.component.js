@@ -5,7 +5,8 @@ import template from 'text!./playlist-tiles.html';
 import controller from './playlist-tiles.controller';
 
 let bindings = {
-    playlists: '<'
+    playlists: '<',
+    layout: '<?'
 };
 
 export default angular

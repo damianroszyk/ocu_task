@@ -1,3 +1,42 @@
-.playlist-tile {
-    
+@import '../../shared/styles/variables';
+@import '../../shared/styles/mixins';
+
+$playlist-tile-width: 220px;
+$playlist-tile-height: 300px;
+
+playlist-tile {
+    position: relative;
+    float: left;
+    width: $playlist-tile-width;
+    height: $playlist-tile-height;
+    background: $grey-5;
+    cursor: pointer;
+    margin: $distance-sm;
+
+    .playlist-tiles--horizontal & {
+        float: none;
+        width: auto;
+        display: block;
+        margin-bottom: $distance-md;
+    }
+}
+
+.playlist-tile__image {
+    @include position-absolute(0, 0, auto, auto);
+    width: $playlist-tile-width;
+    z-index: $z-index-1;
+
+    .playlist-tiles--horizontal & {
+        @include position-absolute(0, auto, 0, 0);
+    }
+}
+
+.playlist-tile-description {
+    @include position-absolute($playlist-tile-width, $distance-sm, 0, $distance-sm);
+    overflow: hidden;
+}
+
+.playlist-tile-description__content {
+    font-size: 13px;
+    color: $white;
 }

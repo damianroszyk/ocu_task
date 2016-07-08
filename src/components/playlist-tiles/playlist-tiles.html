@@ -1,4 +1,8 @@
-<div class="playlist-tiles">
+<div
+    class="playlist-tiles"
+    ng-class="{
+        'playlist-tiles--horizontal': $ctrl.layout === 'horizontal'
+    }">
     <playlist-tile
         ng-repeat="playlist in ::$ctrl.playlists"
         playlist="playlist">

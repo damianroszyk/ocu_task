@@ -13,7 +13,7 @@ describe('Home page test suite', function() {
     });
 
     it('should have heading', function() {
-        expect(homePage.getHeading()).toEqual('Hello world!');
+        expect(homePage.getHeading()).toEqual('Home');
     });
 
     it('should have footer', function() {

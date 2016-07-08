@@ -1,3 +1,18 @@
-<div class="category-tile">
-    {{::$ctrl.category.name}}
+<div
+    class="category-tile"
+    ui-sref="category({l1: $ctrl.category.name})"
+    ng-class="{
+        'category-tile--featured': $ctrl.category.featured
+    }">
+    <img
+        class="category-tile__image"
+        src="http://placehold.it/220x{{$ctrl.category.featured ? '460' : '220'}}" />
+    <h4 class="category-tile__title">
+        {{::$ctrl.category.name}}
+    </h4>
+    <button
+        class="category-tile__control"
+        ng-click="$ctrl.toggleCategoryExpand($event)">
+        &plus;
+    </button>
 </div>
