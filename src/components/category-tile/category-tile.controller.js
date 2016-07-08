@@ -1,6 +1,8 @@
 export default class CategoryTileController {
     /*@ngInject*/
-    constructor() {
-
+    constructor() {}
+    toggleCategoryExpand($event) {
+        $event.stopPropagation();
+        this.category.expanded = !this.category.expanded;
     }
 }

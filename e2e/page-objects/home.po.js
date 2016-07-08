@@ -1,6 +1,6 @@
 function HomePageObject() {
 
-    var heading = element.all(by.css('h1')).first();
+    var heading = element.all(by.css('h2')).first();
     var header = element.all(by.css('header')).first();
     var footer = element.all(by.css('footer')).first();
 
