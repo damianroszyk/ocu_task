@@ -1,3 +1,7 @@
+@import '../../shared/styles/variables';
+@import '../../shared/styles/mixins';
+
 .category-tiles {
-    
+    @include clearfix();
+    padding: $distance-sm;
 }

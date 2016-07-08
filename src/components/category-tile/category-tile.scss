@@ -1,3 +1,36 @@
-.category-tile {
-    
+@import '../../shared/styles/variables';
+@import '../../shared/styles/mixins';
+
+$category-tile-width: 220px;
+$category-tile-height: 220px;
+
+category-tile {
+    position: relative;
+    float: left;
+    width: $category-tile-width;
+    min-height: $category-tile-height;
+    background: $grey-2;
+    cursor: pointer;
+    margin: $distance-sm;
+}
+
+.category-tile--featured {
+    height: 2 * $category-tile-height + $distance-md;
+}
+
+.category-tile__image {
+    @include position-absolute(0, 0, 0, 0);
+    z-index: $z-index-1;
+}
+
+.category-tile__title {
+    @include position-absolute(auto, $distance-md, $distance-md, $distance-md);
+    z-index: $z-index-2;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.category-tile__control {
+    @include position-absolute($distance-md, $distance-md, auto, auto);
+    z-index: $z-index-2;
 }
