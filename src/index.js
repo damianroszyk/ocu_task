@@ -8,5 +8,6 @@ import './bootstrap';
 
 import './shared/constants';
 import './shared/services';
+import './shared/directives';
 
 import './components/';
