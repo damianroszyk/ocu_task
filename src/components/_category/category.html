@@ -1,6 +1,17 @@
 <div class="category container">
     <h2>Category</h2>
 
+    <button
+        ng-hide="$ctrl.playlistLayout === 'horizontal'"
+        ng-click="$ctrl.playlistLayout = 'horizontal'">
+        Set playlists horizontal
+    </button>
+    <button
+        ng-show="$ctrl.playlistLayout === 'horizontal'"
+        ng-click="$ctrl.playlistLayout = 'tiles'">
+        Set playlists tiles
+    </button>
+
     <category-tiles
         ng-if="$ctrl.hasChildrenCategories"
         categories="$ctrl.subcategories">
@@ -8,6 +19,7 @@
 
     <playlist-tiles
         ng-if="!$ctrl.hasChildrenCategories"
+        layout="$ctrl.playlistLayout"
         playlists="$ctrl.playlists">
     </playlist-tiles>
 </div>

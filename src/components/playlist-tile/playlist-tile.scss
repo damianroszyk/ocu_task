@@ -12,12 +12,23 @@ playlist-tile {
     background: $grey-5;
     cursor: pointer;
     margin: $distance-sm;
+
+    .playlist-tiles--horizontal & {
+        float: none;
+        width: auto;
+        display: block;
+        margin-bottom: $distance-md;
+    }
 }
 
 .playlist-tile__image {
     @include position-absolute(0, 0, auto, auto);
     width: $playlist-tile-width;
     z-index: $z-index-1;
+
+    .playlist-tiles--horizontal & {
+        @include position-absolute(0, auto, 0, 0);
+    }
 }
 
 .playlist-tile-description {
