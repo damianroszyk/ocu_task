@@ -1,1 +1,1 @@
-import './sec-to-min.filter';
+import './convertSeconds.filter';
