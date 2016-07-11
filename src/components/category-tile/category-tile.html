@@ -12,7 +12,30 @@
     </h4>
     <button
         class="category-tile__control"
+        ng-if="::$ctrl.category.children.length"
         ng-click="$ctrl.toggleCategoryExpand($event)">
-        &plus;
+        <span ng-if="!$ctrl.category.expanded">
+            &plus;
+        </span>
+        <span ng-if="$ctrl.category.expanded">
+            x
+        </span>
     </button>
+    <div
+        class="category-tile__subcategories"
+        ng-if="$ctrl.category.expanded">
+        <ul class="subcategories-list">
+            <li ng-repeat="subcategory in ::$ctrl.category.children">
+                <a
+                    class="subcategories-list__element"
+                    ng-click="$event.stopPropagation()"
+                    ui-sref="category({
+                        l1: $ctrl.category.name,
+                        l2: subcategory.name
+                    })">
+                    {{::subcategory.name}}
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>
