@@ -1,1 +1,1 @@
-import './convertSeconds.filter';
+import './convert-seconds.filter';
