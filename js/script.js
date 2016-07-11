@@ -59,6 +59,13 @@
                         $('#python_dev').addClass('st-open');
                         $('#python_dev .careers_info').slideDown();
                     },1000);
+                }else if (anchor == "#new_business_development_manager"){
+                    anchorOffset = -60;
+
+                    setTimeout(function(){
+                        $('#new_business_development_manager').addClass('st-open');
+                        $('#new_business_development_manager .careers_info').slideDown();
+                    },1000);
                 }
 
 
