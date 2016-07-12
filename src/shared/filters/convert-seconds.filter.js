@@ -11,14 +11,12 @@ let convertSeconds = () => (input, type) => {
         if (type === 'hours') {
             hours = Math.floor(minutes / 60);
             minutes = minutes - (hours * 60);
+            return `${hours} hrs ${minutes} mins`;
         } else {
             seconds = input % 60;
             seconds = seconds < 10 ? `0${seconds}` : seconds;
+            return `${minutes}:${seconds}`;
         }
-
-        return type === 'hours' ?
-            `${hours} hrs ${minutes} mins` :
-            `${minutes}:${seconds}`;
     }
 }
 
