@@ -4,6 +4,7 @@ const HOME_ROUTER = {
     homeState: {
         url: '/',
         template: `<home></home>`,
+        pageTitle: `Home`
     }
 };
 

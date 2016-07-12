@@ -10,7 +10,8 @@ const CATEGORY_ROUTER = {
             l2: { squash },
             l3: { squash },
             l4: { squash }
-        }
+        },
+        pageTitle: `Category`
     }
 };
 
