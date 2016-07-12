@@ -3,7 +3,8 @@ import app from '../../app';
 const PLAYLIST_ROUTER = {
     playlistState: {
         url: '^/playlist/:playlistName',
-        template: `<playlist></playlist>`
+        template: `<playlist></playlist>`,
+        pageTitle: `Playlist`
     }
 };
 
