@@ -7,6 +7,7 @@ import './_category/';
 import './_playlist/';
 
 import './breadcrumb/'
+import './categories-dropdown/'
 import './category-tile/'
 import './category-tiles/'
 import './player-deezer/'

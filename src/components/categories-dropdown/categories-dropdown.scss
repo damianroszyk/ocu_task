@@ -1,0 +1,65 @@
+$white: #fff;
+$light-grey: #eee;
+$grey: #ccc;
+$grey-border: 1px solid $grey;
+
+.categories-dropdown {
+    background-color: $grey;
+    overflow: hidden;
+}
+
+.categories-dropdown__list {
+    width: 200px;
+    position: relative;
+}
+
+.categories-list__item {
+    list-style: none;
+    line-height: 40px;
+    background-color: $light-grey;
+    border-bottom: $grey-border;
+    cursor: pointer;
+
+    &:last-child {
+        border-bottom: 0;
+    }
+}
+
+.categories-list__link,
+.categories-child-list__link {
+    width: 100%;
+    display: inline-block;
+
+    &:hover {
+        background-color: $white;
+    }
+}
+
+.categories-child-list {
+    display: none;
+    position: absolute;
+    list-style: none;
+    left: 240px;
+    top: 0;
+    width: 200px;
+    height: 100%;
+}
+
+.categories-child-list__item {
+    border-bottom: $grey-border;
+}
+
+.categories-list__item:hover .categories-child-list {
+    display: block;
+    background-color: $light-grey;
+    z-index: 100;
+}
+
+.categories-list__item.active .categories-child-list {
+    display: block;
+    background-color: $light-grey;
+}
+
+.categories-list__item.active .categories-list__link {
+    background-color: $white;
+}
