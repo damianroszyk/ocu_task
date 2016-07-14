@@ -1,12 +1,19 @@
+import _ from 'lodash';
+
+// console.log("_", _);
+
 export default class CategoriesDropdownController {
     /*@ngInject*/
     constructor(categories) {
         this.categories = categories.getCategories();
-        console.log("categoriessd", categories.getCategories());
     }
-    isActive(category, currentState){
-        if(category.name === currentState){
-            return 'active';
-        }
+    isActive(category, l1Category) {
+        return category.name === l1Category ? 'active' : '';
+    }
+    showCategoryChildren(category, target) {
+        this[target] = category.children;
+    }
+    hideCategoryChildren(target) {
+            this[target] = [];
     }
 }

@@ -1,29 +1,35 @@
 <div class="categories-dropdown container">
-    <ul class="categories-dropdown__list">
-        <li
-            class="categories-list__item"
-            ng-repeat="category in ::$ctrl.categories"
-            ng-class="$ctrl.isActive(category, $root.$state.params.l1)">
-            <a
-                class="categories-list__link"
-                ui-sref="category({l1: category.name, l2: ''})">
-                {{::category.name}}
-            </a>
-            <ul
-                class="categories-child-list">
-                <li
-                    class="categories-child-list__item"
-                    ng-repeat="categoryChild in ::category.children">
-                    <a
-                        class="categories-child-list__link"
-                        ui-sref="category({
-                            l1: category.name,
-                            l2: categoryChild.name
-                        })">
-                        {{::categoryChild.name}}
-                    </a>
-                </li>
-            </ul>
-        </li>
-    </ul>
+    <div class="categories-dropdown__column">
+        <ul class="categories-dropdown__list">
+            <li
+                class="categories-list__item"
+                ng-repeat="category in ::$ctrl.categories"
+                ng-class="$ctrl.isActive(category, $root.$state.params.l1)">
+                <a
+                    class="categories-list__link"
+                    ui-sref="category({l1: category.name, l2: ''})"
+                    ng-mouseover="$ctrl.showCategoryChildren(category, 'l2Children')"
+                    ng-mouseleave="$ctrl.hideCategoryChildren('l2Children')">
+                    {{::category.name}}
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="categories-dropdown__column" id="dummy">
+        <ul
+            class="categories-child-list">
+            <li
+                class="categories-child-list__item"
+                ng-repeat="categoryChild in $ctrl.l2Children">
+                <a
+                    class="categories-child-list__link"
+                    ui-sref="category({
+                        l1: category.name,
+                        l2: categoryChild.name
+                    })">
+                    {{::categoryChild.name}}
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>

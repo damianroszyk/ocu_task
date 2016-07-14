@@ -2,7 +2,6 @@ export default class HomeController {
     /*@ngInject*/
     constructor($timeout, categories) {
         this.categories = categories.getCategories();
-        console.log("categories", categories.getCategories());
         this.playlists = [{
             id: 30595446,
             name: 'playlist 1',
