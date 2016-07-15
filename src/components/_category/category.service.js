@@ -13,7 +13,7 @@ class CategoryService {
 	}
 	getCategories() {
 		let url = this.modelHelper.buildUrl(this.categoryBackend, 'list');
-		return this.$http.get(url);
+		return this.$http.get(url, { cache: true });
 	}
 }
 
