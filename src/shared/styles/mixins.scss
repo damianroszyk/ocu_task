@@ -16,3 +16,7 @@
     bottom: $bottom;
     left: $left;
 }
+
+@mixin border-bottom($width, $type, $color) {
+    border-bottom: $width $type $color;
+}

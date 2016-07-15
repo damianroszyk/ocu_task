@@ -1,7 +1,9 @@
 <div class="nav container">
     <div class="nav__item">
-        <div class="nav-button">
-            icon
+        <div
+            class="nav-button"
+            ng-click="showCategories = !showCategories">
+            menu
         </div>
     </div>
     <div class="nav__item">
@@ -32,4 +34,5 @@
             Logout
         </div>
     </div>
+    <categories-dropdown is-shown="showCategories"></categories-dropdown>
 </div>
