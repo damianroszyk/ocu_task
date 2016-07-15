@@ -1,6 +1,6 @@
 export default class CategoryController {
     /*@ngInject*/
-    constructor() {
+    constructor(categoryService) {
         this.playlists = [{
             id: 30595446,
             name: 'playlist 1',

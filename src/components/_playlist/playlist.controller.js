@@ -7,10 +7,5 @@ export default class PlaylistController {
             console.log('playlist', playlist);
             this.playlist = playlist;
         });
-
-        this.tracks = [
-            { name: 'Track 1' },
-            { name: 'Track 2' }
-        ];
     }
 }
