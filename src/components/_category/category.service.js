@@ -13,10 +13,7 @@ class CategoryService {
 	}
 	getCategories() {
 		let url = this.modelHelper.buildUrl(this.categoryBackend, 'list');
-		//@TODO: handle brand header in interceptor
-		return this.$http.get(url, {
-		    headers: {'brand': this.backendConstant.clientBrand}
-		});
+		return this.$http.get(url);
 	}
 }
 

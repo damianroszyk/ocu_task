@@ -1,6 +1,6 @@
 export default class HomeController {
     /*@ngInject*/
-    constructor($timeout) {
+    constructor($timeout, categoryService) {
         this.categories = [{
             name: 'l1_category1',
             featured: true,

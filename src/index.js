@@ -7,6 +7,7 @@ import './run';
 import './bootstrap';
 
 import './shared/constants';
+import './shared/interceptors';
 import './shared/filters';
 import './shared/services';
 import './shared/directives';
