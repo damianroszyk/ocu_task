@@ -1,7 +1,3 @@
-import _ from 'lodash';
-
-// console.log("_", _);
-
 export default class CategoriesDropdownController {
     /*@ngInject*/
     constructor(categories) {
@@ -14,6 +10,11 @@ export default class CategoriesDropdownController {
         this[target] = category.children;
     }
     hideCategoryChildren(target) {
-            this[target] = [];
+        this[target] = [];
+    }
+    hideSubcategories() {
+        this.l2Children = [];
+        this.l3Children = [];
+        this.l4Children = [];
     }
 }

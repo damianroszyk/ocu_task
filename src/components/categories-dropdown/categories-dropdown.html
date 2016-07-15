@@ -1,4 +1,7 @@
-<div class="categories-dropdown container">
+<div
+    class="categories-dropdown container"
+    ng-show="$ctrl.isShown"
+    ng-mouseleave="$ctrl.hideSubcategories()">
     <div class="categories-dropdown__column">
         <ul class="categories-dropdown__list">
             <li
@@ -8,21 +11,55 @@
                 <a
                     class="categories-list__link"
                     ui-sref="category({l1: category.name, l2: ''})"
-                    ng-mouseover="$ctrl.showCategoryChildren(category, 'l2Children')"
-                    ng-mouseleave="$ctrl.hideCategoryChildren('l2Children')">
+                    ng-mouseover="$ctrl.hideSubcategories();
+                        $ctrl.showCategoryChildren(category, 'l2Children')">
                     {{::category.name}}
                 </a>
             </li>
         </ul>
     </div>
-    <div class="categories-dropdown__column" id="dummy">
-        <ul
-            class="categories-child-list">
+    <div class="categories-dropdown__column">
+        <ul class="categories-dropdown__list">
             <li
-                class="categories-child-list__item"
+                class="categories-list__item"
                 ng-repeat="categoryChild in $ctrl.l2Children">
                 <a
-                    class="categories-child-list__link"
+                    class="categories-list__link"
+                    ng-mouseover="$ctrl.showCategoryChildren(categoryChild, 'l3Children');
+                        $ctrl.hideCategoryChildren('l4Children')"
+                    ui-sref="category({
+                        l1: category.name,
+                        l2: categoryChild.name
+                    })">
+                    {{::categoryChild.name}}
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="categories-dropdown__column">
+        <ul class="categories-dropdown__list">
+            <li
+                class="categories-list__item"
+                ng-repeat="categoryChild in $ctrl.l3Children">
+                <a
+                    class="categories-list__link"
+                    ng-mouseover="$ctrl.showCategoryChildren(categoryChild, 'l4Children')"
+                    ui-sref="category({
+                        l1: category.name,
+                        l2: categoryChild.name
+                    })">
+                    {{::categoryChild.name}}
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="categories-dropdown__column">
+        <ul class="categories-dropdown__list">
+            <li
+                class="categories-list__item"
+                ng-repeat="categoryChild in $ctrl.l4Children">
+                <a
+                    class="categories-list__link"
                     ui-sref="category({
                         l1: category.name,
                         l2: categoryChild.name

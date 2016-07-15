@@ -33,9 +33,23 @@ class CategoriesService {
             children: [{
                 name: 'l2_category_4',
                 children: [{
-                    name: 'l3_category_4'
+                    name: 'l3_category_4',
+                    children: [{
+                        name: 'l4_category_1'
+                    }, {
+                        name: 'l4_category_2'
+                    }, {
+                        name: 'l4_category_3'
+                    }]
                 }, {
-                    name: 'l3_category_5'
+                    name: 'l3_category_5',
+                    children: [{
+                        name: 'l4_category_4'
+                    }, {
+                        name: 'l4_category_5'
+                    }, {
+                        name: 'l4_category_6'
+                    }]
                 }, {
                     name: 'l3_category_6'
                 }]
@@ -52,7 +66,14 @@ class CategoriesService {
             children: [{
                 name: 'l2_category_7',
                 children: [{
-                    name: 'l3_category_7'
+                    name: 'l3_category_7',
+                    children: [{
+                        name: 'l4_category_7'
+                    }, {
+                        name: 'l4_category_8'
+                    }, {
+                        name: 'l4_category_9'
+                    }]
                 }, {
                     name: 'l3_category_8'
                 }, {
