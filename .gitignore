@@ -3,3 +3,4 @@ node_modules
 dist
 debug.log
 npm-debug.log*
+phantomjsdriver.log
