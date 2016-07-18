@@ -1,5 +1,5 @@
 import angular from 'angular';
-import app from '../../app';
+import app from 'app';
 
 import template from 'text!./playlist-header.html';
 import controller from './playlist-header.controller';

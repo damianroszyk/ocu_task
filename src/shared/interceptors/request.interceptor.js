@@ -1,4 +1,4 @@
-import app from '../../app';
+import app from 'app';
 
  /*@ngInject*/
 let requestInterceptor = ($provide, $httpProvider) => {

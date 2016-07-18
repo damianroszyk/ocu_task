@@ -1,5 +1,5 @@
 import angular from 'angular';
-import app from '../../app';
+import app from 'app';
 
 const BACKEND_CONSTANT = {
     apiVersion: 'v1',

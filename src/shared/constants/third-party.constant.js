@@ -1,5 +1,5 @@
 import angular from 'angular';
-import app from '../../app';
+import app from 'app';
 
 const THIRD_PARTY_CONSTANT = {
     deezerSdkUrl: 'https://cdns-files.dzcdn.net/js/min/dz.js',

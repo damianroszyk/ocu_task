@@ -1,5 +1,5 @@
 import angular from 'angular';
-import app from '../../app';
+import app from 'app';
 
 const DOM_CONSTANT = {
     mediaBreakpoints: {

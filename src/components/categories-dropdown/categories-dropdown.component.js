@@ -1,5 +1,5 @@
 import angular from 'angular';
-import app from '../../app';
+import app from 'app';
 
 import template from 'text!./categories-dropdown.html';
 import controller from './categories-dropdown.controller';

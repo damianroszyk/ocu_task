@@ -4,7 +4,6 @@ export default class CategoriesDropdownController {
         categoryService.getCategories().then((response) => {
             this.categories = response.data;
         });
-
     }
     isActive(category, l1Category) {
         return category.name === l1Category ? 'active' : '';

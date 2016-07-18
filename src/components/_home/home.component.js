@@ -1,5 +1,5 @@
 import angular from 'angular';
-import app from '../../app';
+import app from 'app';
 
 import template from 'text!./home.html';
 import controller from './home.controller';
