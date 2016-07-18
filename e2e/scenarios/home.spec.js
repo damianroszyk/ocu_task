@@ -19,4 +19,17 @@ describe('Home page test suite', function() {
     it('should have footer', function() {
         expect(homePage.getFooter()).toEqual('Footer');
     });
+
+    it('should have title', function() {
+        expect(homePage.getTitle()).toEqual('Pitched | Home');
+    });
+
+    it('should have category toggle button', function() {
+        expect(homePage.getCategoryToggleButton()).not.toBe(null);
+    });
+
+    it('should open category dropdown', function() {
+        homePage.getCategoryToggleButton().click();
+        expect(homePage.getCategoryDropdownElement().isPresent()).toBe(true);
+    });
 });
