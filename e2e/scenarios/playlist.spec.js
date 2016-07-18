@@ -11,4 +11,8 @@ describe('Playlist page test suite', function() {
     it('should have heading', function() {
         expect(playlistPage.getHeading()).toEqual('Playlist');
     });
+
+    it('should have title', function() {
+        expect(playlistPage.getTitle()).toEqual('Pitched | Playlist');
+    });
 });
