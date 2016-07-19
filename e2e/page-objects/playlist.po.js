@@ -1,6 +1,6 @@
 function PlaylistPageObject() {
 
-    var heading = element.all(by.css('h2')).first();
+    var heading = element(by.css('h2'));
     var title = element(by.css('title'));
 
     this.get = function() {

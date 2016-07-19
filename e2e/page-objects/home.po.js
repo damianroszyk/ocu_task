@@ -1,8 +1,8 @@
 function HomePageObject() {
 
-    var heading = element.all(by.css('h2')).first();
-    var header = element.all(by.css('header')).first();
-    var footer = element.all(by.css('footer')).first();
+    var heading = element(by.css('h2'));
+    var header = element(by.css('header'));
+    var footer = element(by.css('footer'));
     var title = element(by.css('title'));
     var categoryToggleButton = element(by.css('.nav-menu-button'));
     var categoryDropdownElement = element(by.css('.categories-dropdown'));

@@ -2,7 +2,7 @@
     <div class="nav__item">
         <div
             class="nav-button nav-menu-button"
-            ng-click="showCategories = !showCategories">
+            ng-click="showCategories = !showCategories; $event.stopPropagation();">
             menu
         </div>
     </div>
