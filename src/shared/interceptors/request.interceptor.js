@@ -1,9 +1,10 @@
+import angular from 'angular';
 import app from 'app';
 
- /*@ngInject*/
+ /* @ngInject */
 let requestInterceptor = ($provide, $httpProvider) => {
 
-	/*@ngInject*/
+	/* @ngInject */
 	let interceptorFactory = backendConstant => {
 
 		let request = config => {

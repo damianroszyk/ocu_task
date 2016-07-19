@@ -1,6 +1,4 @@
 export default class BreadcrumbController {
-    /*@ngInject*/
-    constructor() {
-
-    }
+	/* @ngInject */
+	constructor() {}
 }

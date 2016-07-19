@@ -5,11 +5,11 @@ import template from 'text!./category-tiles.html';
 import controller from './category-tiles.controller';
 
 let bindings = {
-    categories: '<',
-    layout: '<?'
+	categories: '<',
+	layout: '<?'
 };
 
 export default angular
-    .module(app)
-    .component('categoryTiles', { template, controller, bindings })
-    .name;
+	.module(app)
+	.component('categoryTiles', { template, controller, bindings })
+	.name;

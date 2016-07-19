@@ -4,4 +4,4 @@ module.exports = {
 	alias: {
 		app: path.resolve(__dirname, '../src/app')
 	}
-}
+};

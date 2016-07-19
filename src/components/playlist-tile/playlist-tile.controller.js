@@ -1,6 +1,4 @@
 export default class PlaylistTileController {
-    /*@ngInject*/
-    constructor() {
-
-    }
+	/* @ngInject */
+	constructor() {}
 }

@@ -5,10 +5,10 @@ import template from 'text!./category-tile.html';
 import controller from './category-tile.controller';
 
 let bindings = {
-    category: '<'
+	category: '<'
 };
 
 export default angular
-    .module(app)
-    .component('categoryTile', { template, controller, bindings })
-    .name;
+	.module(app)
+	.component('categoryTile', { template, controller, bindings })
+	.name;

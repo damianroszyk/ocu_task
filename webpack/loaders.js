@@ -9,7 +9,7 @@ module.exports = [{
 	loaders: ['style', 'css', 'postcss-loader']
 }, {
 	test: /\.scss$/,
-    loaders: ['style', 'css', 'sass', 'postcss-loader']
+	loaders: ['style', 'css', 'sass', 'postcss-loader']
 }, {
 	test: /\.js$/,
 	exclude: /(node_modules)/,

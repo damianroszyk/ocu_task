@@ -5,10 +5,10 @@ import template from 'text!./track-list.html';
 import controller from './track-list.controller';
 
 let bindings = {
-    tracks: '<'
+	tracks: '<'
 };
 
 export default angular
-    .module(app)
-    .component('trackList', { template, controller, bindings })
-    .name;
+	.module(app)
+	.component('trackList', { template, controller, bindings })
+	.name;

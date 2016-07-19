@@ -1,4 +1,4 @@
 export default class CategoryTilesController {
-    /*@ngInject*/
-    constructor() {}
+	/* @ngInject */
+	constructor() {}
 }

@@ -1,18 +1,19 @@
+import angular from 'angular';
 import app from 'app';
 
 const HOME_ROUTER = {
-    homeState: {
-        url: '/',
-        template: `<home></home>`,
-        pageTitle: `Home`
-    }
+	homeState: {
+		url: '/',
+		template: `<home></home>`,
+		pageTitle: `Home`
+	}
 };
 
-/*@ngInject*/
+/* @ngInject */
 let homeRouter = $stateProvider => $stateProvider
-    .state('home', HOME_ROUTER.homeState);
+	.state('home', HOME_ROUTER.homeState);
 
 export default angular
-    .module(app)
-    .config(homeRouter)
-    .name;
+	.module(app)
+	.config(homeRouter)
+	.name;

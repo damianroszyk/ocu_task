@@ -1,18 +1,19 @@
+import angular from 'angular';
 import app from 'app';
 
 const PLAYLIST_ROUTER = {
-    playlistState: {
-        url: '^/playlist/:playlistName',
-        template: `<playlist></playlist>`,
-        pageTitle: `Playlist`
-    }
+	playlistState: {
+		url: '^/playlist/:playlistName',
+		template: `<playlist></playlist>`,
+		pageTitle: `Playlist`
+	}
 };
 
-/*@ngInject*/
+/* @ngInject */
 let playlistRouter = $stateProvider => $stateProvider
-    .state('playlist', PLAYLIST_ROUTER.playlistState);
+	.state('playlist', PLAYLIST_ROUTER.playlistState);
 
 export default angular
-    .module(app)
-    .config(playlistRouter)
-    .name;
+	.module(app)
+	.config(playlistRouter)
+	.name;

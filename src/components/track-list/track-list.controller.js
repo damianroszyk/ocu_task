@@ -1,5 +1,4 @@
 export default class TrackListController {
-    /*@ngInject*/
-    constructor() {
-    }
+	/* @ngInject */
+	constructor() {}
 }

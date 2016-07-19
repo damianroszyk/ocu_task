@@ -5,10 +5,10 @@ import template from 'text!./categories-dropdown.html';
 import controller from './categories-dropdown.controller';
 
 let bindings = {
-    isShown: '='
+	isShown: '='
 };
 
 export default angular
-    .module(app)
-    .component('categoriesDropdown', { template, controller, bindings })
-    .name;
+	.module(app)
+	.component('categoriesDropdown', { template, controller, bindings })
+	.name;

@@ -2,8 +2,8 @@ import angular from 'angular';
 import app from 'app';
 
 class CategoryService {
-    /*@ngInject*/
-    constructor($http, backendConstant, modelHelper) {
+	/* @ngInject */
+	constructor($http, backendConstant, modelHelper) {
 		this.$http = $http;
 		this.modelHelper = modelHelper;
 		this.backendConstant = backendConstant;
@@ -13,11 +13,13 @@ class CategoryService {
 	}
 	getCategories() {
 		let url = this.modelHelper.buildUrl(this.categoryBackend, 'list');
-		return this.$http.get(url, { cache: true });
+		return this.$http.get(url, {
+			cache: true
+		});
 	}
 }
 
 export default angular
-    .module(app)
-    .service('categoryService', CategoryService)
-    .name;
+	.module(app)
+	.service('categoryService', CategoryService)
+	.name;
