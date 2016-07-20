@@ -1,4 +1,5 @@
-import './deezer.service';
 import './categories.service';
-import './model-helper.service';
+import './deezer.service';
 import './dom-helper.service';
+import './model-helper.service';
+import './storage.service';

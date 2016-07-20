@@ -4,29 +4,29 @@ var httpServerInstance;
 
 exports.config = {
 
-    allScriptsTimeout: 11000,
+	allScriptsTimeout: 11000,
 
-    specs: [ 'index.js' ],
+	specs: ['index.js'],
 
-    capabilities: {
-        'browserName': 'phantomjs',
-        'phantomjs.binary.path': phantomjs.path
-    },
+	capabilities: {
+		'browserName': 'phantomjs',
+		'phantomjs.binary.path': phantomjs.path
+	},
 
-    seleniumServerJar: '../node_modules/protractor/selenium/selenium-server-standalone-2.52.0.jar',
+	seleniumServerJar: '../node_modules/protractor/selenium/selenium-server-standalone-2.52.0.jar',
 
-    baseUrl: 'http://localhost:8666',
+	baseUrl: 'http://localhost:8666',
 
-    onPrepare: function() {
-        httpServerInstance = httpServer.createServer({
-            root: 'dist/'
-        });
-        httpServerInstance.listen(8666);
-    },
+	onPrepare: function() {
+		httpServerInstance = httpServer.createServer({
+			root: 'dist/'
+		});
+		httpServerInstance.listen(8666);
+	},
 
-    framework: 'jasmine',
+	framework: 'jasmine',
 
-    jasmineNodeOpts: {
-        defaultTimeoutInterval: 30000
-    }
+	jasmineNodeOpts: {
+		defaultTimeoutInterval: 30000
+	}
 };

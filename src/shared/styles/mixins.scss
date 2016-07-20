@@ -17,6 +17,14 @@
     left: $left;
 }
 
+@mixin position-fixed($top, $right, $bottom, $left) {
+    position: fixed;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
 @mixin border-bottom($width, $type, $color) {
     border-bottom: $width $type $color;
 }

@@ -1,3 +1,20 @@
-.header {
+@import '../../shared/styles/variables';
+@import '../../shared/styles/mixins';
 
+$header-height: 400px;
+$header-brand-size: 300px;
+
+.header {
+	height: $header-height;
+	background: $grey-1;
+	overflow: hidden;
+}
+
+.header__background-image {
+	height: $header-height;
+	background-position: center;
+}
+
+.header__brand-image {
+	@include position-absolute(50px, auto, auto, 50px);
 }

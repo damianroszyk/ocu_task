@@ -1,0 +1,31 @@
+@import '../../shared/styles/variables';
+@import '../../shared/styles/mixins';
+
+$cookies-message-banner-height: 50px;
+
+.cookies-message {
+	@include position-fixed(0, 0, auto, 0);
+	height: $cookies-message-banner-height;
+	line-height: $cookies-message-banner-height;
+	z-index: $z-index-5;
+	background: $opacity-5;
+	text-align: center;
+}
+
+.cookies-message__text {
+	color: $white;
+	font-weight: normal;
+}
+
+.cookies-message__control {
+	line-height: normal;
+	cursor: pointer;
+	background: $grey-3;
+	width: $cookies-message-banner-height / 2;
+	height: $cookies-message-banner-height / 2;
+	border-radius: 50%;
+	border: 0;
+	margin-left: $distance-sm;
+	text-align: center;
+	outline: none;
+}

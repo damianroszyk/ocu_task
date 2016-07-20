@@ -1,1 +1,10 @@
-<header class="header" translate="{{::'HEADER_CONTENT'}}"></header>
+<header class="header">
+	<cookies-message></cookies-message>
+	<div
+		class="header__background-image"
+		style="background-image: url('{{::$ctrl.backgroundImage}}')">
+	</div>
+	<img
+		class="header__brand-image"
+		ng-src="{{::$ctrl.brandImage}}" />
+</header>

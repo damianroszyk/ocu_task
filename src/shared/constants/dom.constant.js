@@ -8,7 +8,9 @@ const DOM_CONSTANT = {
 		md: 762,
 		sm: 480,
 		xs: 0
-	}
+	},
+	defaultHeaderBackgroundImage: 'http://placehold.it/1920x400/f2f2f2',
+	defaultHeaderBrandImage: 'http://placehold.it/300x300'
 };
 
 export default angular
