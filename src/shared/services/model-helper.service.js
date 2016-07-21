@@ -3,7 +3,9 @@ import app from 'app';
 
 class ModelHelperService {
 	/* @ngInject */
-	constructor() {}
+	constructor($state) {
+		this.$state = $state;
+	}
 	buildUrl(...parts) {
 		return parts.join('/');
 	}

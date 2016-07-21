@@ -1,6 +1,6 @@
 <div
     class="category-tile"
-    ui-sref="category({l1: $ctrl.category.name})"
+    ui-sref="category($ctrl.category.stateParams)"
     ng-class="{
         'category-tile--featured': $ctrl.category.featured
     }">
@@ -29,10 +29,7 @@
                 <a
                     class="subcategories-list__element"
                     ng-click="$event.stopPropagation()"
-                    ui-sref="category({
-                        l1: $ctrl.category.name,
-                        l2: subcategory.name
-                    })">
+                    ui-sref="category(subcategory.stateParams)">
                     {{::subcategory.name}}
                 </a>
             </li>

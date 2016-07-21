@@ -5,15 +5,21 @@ let squash = true;
 
 const CATEGORY_ROUTER = {
 	categoryState: {
-		url: '^/category/:l1/:l2/:l3/:l4',
-		template: `<category></category>`,
+		url: '^/:categoryId/:l1/:l2/:l3/:l4',
+		template: `<category category="$resolve.category"></category>`,
 		params: {
 			l2: { squash },
 			l3: { squash },
 			l4: { squash }
 		},
-		pageTitle: `Category`
+		pageTitle: `Category`,
+		resolve: { category }
 	}
+};
+
+/* @ngInject */
+function category($stateParams, categoryService, modelHelper) {
+	return categoryService.getCategory($stateParams.categoryId);
 };
 
 /* @ngInject */

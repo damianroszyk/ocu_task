@@ -4,9 +4,15 @@ import app from 'app';
 const HOME_ROUTER = {
 	homeState: {
 		url: '/',
-		template: `<home></home>`,
-		pageTitle: `Home`
+		template: `<home categories="$resolve.categories"></home>`,
+		pageTitle: `Home`,
+		resolve: { categories }
 	}
+};
+
+/* @ngInject */
+function categories(categoryService) {
+	return categoryService.getCategories();
 };
 
 /* @ngInject */
