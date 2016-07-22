@@ -4,23 +4,23 @@
 $footer-height: 300px;
 
 .footer {
-    background-color: $dark-grey;
+    background-color: $grey-8;
 	height: $footer-height;
 	text-align: center;
 	color: $white;
-	padding-top: 60px;
+	padding-top: 3 * $distance-md;
 }
 
 .footer__brand-image {
-	height: 120px;
+	height: 3 * $distance-lg;
 }
 
-.footer__copyright,
-.footer__links {
+.footer-footnote__copyright,
+.footer-footnote__links {
 	display: inline-block;
 }
 
-.footer__link {
+.footer-footnote__links a {
 	text-decoration: none;
 	color: $white;
 }

@@ -10,7 +10,7 @@ const DOM_CONSTANT = {
 		xs: 0
 	},
 	defaultHeaderBackgroundImage: 'http://digster.fm/files/2015/09/1920x450-lores.jpg',
-	defaultHeaderBrandImage: 'http://digster.fm/wp-content/themes/digster/images/logo-header.png',
+	defaultBrandImage: 'http://digster.fm/wp-content/themes/digster/images/logo-header.png',
 	defaultCategoryTileImage: 'https://spotifyapps.blob.core.windows.net/sinfini-imagefiles/MainMenu_Instrument_MainImage_270x270'
 };
 
