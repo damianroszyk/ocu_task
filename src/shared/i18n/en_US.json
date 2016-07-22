@@ -1,6 +1,9 @@
 {
-    "COOKIES_MESSAGE": "This website uses cookies to improve your experience. By continuing to use this site you are agreeing to this.",
-    "FOOTER_CONTENT": "Footer",
-    "HEADER_CONTENT": "Header",
-    "PLAYLIST_HEADLINE": "Playlist"
+	"COOKIES_MESSAGE": "This website uses cookies to improve your experience. By continuing to use this site you are agreeing to this.",
+	"FOOTER_COPYRIGHT": "© Copyright 2015 Universal Music Group. All rights reserved.",
+	"HEADER_CONTENT": "Header",
+	"PLAYLIST_HEADLINE": "Playlist",
+	"MUSIC_SERVICE": "My music service",
+	"PRIVACY_POLICY": "Privacy Policy",
+	"TERMS_OF_USE": "Terms of Use"
 }

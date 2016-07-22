@@ -1,29 +1,48 @@
 @import '../../shared/styles/variables';
 @import '../../shared/styles/mixins';
 
+$nav-height: 56px;
+$music-service: 224px;
+$nav-margin-width: 5px;
+
 .nav {
-    height: 50px;
-    background-color: $grey-5;
+    height: $nav-height;
     font-size: 0;
+	margin-top: -$nav-height;
+	background-color: initial;
 }
 
 .nav__item {
     display: inline-block;
-    height: 50px;
+	background-color: $yellow;
+    height: $nav-height;
     vertical-align: top;
     font-size: initial;
-    border-left: 3px solid $black;
+    margin-left: $nav-margin-width;
 
-    &:first-child {
-        border-left: 0;
+	&:first-child {
+        margin-left: 0;
     }
 }
 
 .nav-button {
-    height: 50px;
-    width: 50px;
+    height: $nav-height;
+    width: $nav-height;
 }
 
 .nav__item__right {
     float: right;
+}
+
+.music-service {
+	width: $music-service;
+	line-height: $nav-height;
+	text-align: center;
+}
+
+.nav-breadcrumb {
+	width: calc(100% - #{$music-service + 4 * $nav-height + 5 * $nav-margin-width});
+	line-height: $nav-height;
+	padding-left: $distance-lg;
+	box-sizing: border-box;
 }

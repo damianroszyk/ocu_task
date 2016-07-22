@@ -10,7 +10,7 @@
                 ng-class="$ctrl.isActive(category, $root.$state.params.l1)">
                 <a
                     class="categories-list__link"
-                    ui-sref="category({l1: category.name, l2: ''})"
+                    ui-sref="category(category.stateParams)"
                     ng-mouseover="$ctrl.hideSubcategories();
                         $ctrl.showCategoryChildren(category, 'l2Children')">
                     {{::category.name}}
@@ -27,10 +27,7 @@
                     class="categories-list__link"
                     ng-mouseover="$ctrl.showCategoryChildren(categoryChild, 'l3Children');
                         $ctrl.hideCategoryChildren('l4Children')"
-                    ui-sref="category({
-                        l1: category.name,
-                        l2: categoryChild.name
-                    })">
+                    ui-sref="category(categoryChild.stateParams)">
                     {{::categoryChild.name}}
                 </a>
             </li>
@@ -44,10 +41,7 @@
                 <a
                     class="categories-list__link"
                     ng-mouseover="$ctrl.showCategoryChildren(categoryChild, 'l4Children')"
-                    ui-sref="category({
-                        l1: category.name,
-                        l2: categoryChild.name
-                    })">
+                    ui-sref="category(categoryChild.stateParams)">
                     {{::categoryChild.name}}
                 </a>
             </li>
@@ -60,10 +54,7 @@
                 ng-repeat="categoryChild in $ctrl.l4Children">
                 <a
                     class="categories-list__link"
-                    ui-sref="category({
-                        l1: category.name,
-                        l2: categoryChild.name
-                    })">
+                    ui-sref="category(categoryChild.stateParams)">
                     {{::categoryChild.name}}
                 </a>
             </li>
