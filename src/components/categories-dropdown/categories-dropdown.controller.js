@@ -2,7 +2,7 @@ export default class CategoriesDropdownController {
 	/* @ngInject */
 	constructor(categoryService, domHelper) {
 		categoryService.getCategories().then((response) => {
-			this.categories = response.data;
+			this.categories = response;
 		});
 		domHelper.handleOutsideClick(
 			document.querySelectorAll('categories-dropdown')[0],
@@ -16,7 +16,7 @@ export default class CategoriesDropdownController {
 		return category.name === l1Category ? 'active' : '';
 	}
 	showCategoryChildren(category, target) {
-		this[target] = category.subcategories;
+		this[target] = category.children;
 	}
 	hideCategoryChildren(target) {
 		this[target] = [];

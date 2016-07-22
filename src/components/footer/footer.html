@@ -1,1 +1,26 @@
-<footer class="footer" translate="{{::'FOOTER_CONTENT'}}"></footer>
+<footer class="footer">
+	<div class="footer__text">
+		<p class="footer__copyright" translate="{{::'FOOTER_COPYRIGHT'}}"></p>
+		<p class="footer__links">
+			<a
+				class="footer__link"
+				href="#"
+				translate="{{::'PRIVACY_POLICY'}}"></a>
+			<span> | </span>
+			<a
+				class="footer__link"
+				href="#"
+				translate="{{::'TERMS_OF_USE'}}"></a>
+		</p>
+	</div>
+	<div class="footer__icons">
+		<a href="#"><img src="../../src/assets/facebook-icon.png" title="" alt="Facebook"></a>
+		<a href="#"><img src="../../src/assets/facebook-icon.png" title="" alt="Twitter"></a>
+		<a href="#"><img src="../../src/assets/facebook-icon.png" title="" alt="Email"></a>
+		<a href="#"><img src="../../src/assets/facebook-icon.png" title="" alt="Spotify"></a>
+		<a href="#"><img src="../../src/assets/facebook-icon.png" title="" alt="Apple Music"></a>
+	</div>
+	<img
+		class="footer__brand-image"
+		ng-src="{{::$ctrl.brandImage}}" />
+</footer>

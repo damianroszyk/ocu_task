@@ -3,36 +3,31 @@
         <div
             class="nav-button nav-menu-button"
             ng-click="showCategories = !showCategories; $event.stopPropagation();">
-            menu
+			menu
         </div>
     </div>
     <div class="nav__item">
-        <div class="account-button">
-            My account
+        <div class="music-service" translate="{{::'MUSIC_SERVICE'}}">
+
         </div>
     </div>
-    <div class="nav__item">
+    <div class="nav__item nav-breadcrumb">
         <breadcrumb></breadcrumb>
     </div>
     <div class="nav__item nav__item__right">
         <div class="nav-button">
-            search
+
         </div>
     </div>
     <div class="nav__item nav__item__right">
         <div class="nav-button">
-            tags
+
         </div>
     </div>
-    <div class="nav__item nav__item__right">
-        <div class="nav-button">
-            view
-        </div>
-    </div>
-    <div class="nav__item nav__item__right">
-        <div class="account-logout">
-            Logout
-        </div>
-    </div>
+	<div class="nav__item nav__item__right">
+		<div class="nav-button">
+
+		</div>
+	</div>
     <categories-dropdown is-shown="showCategories"></categories-dropdown>
 </div>

@@ -1,3 +1,26 @@
+@import '../../shared/styles/variables';
+@import '../../shared/styles/mixins';
+
+$footer-height: 300px;
+
 .footer {
-    
+    background-color: $dark-grey;
+	height: $footer-height;
+	text-align: center;
+	color: $white;
+	padding-top: 60px;
+}
+
+.footer__brand-image {
+	height: 120px;
+}
+
+.footer__copyright,
+.footer__links {
+	display: inline-block;
+}
+
+.footer__link {
+	text-decoration: none;
+	color: $white;
 }

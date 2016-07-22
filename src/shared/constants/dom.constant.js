@@ -9,8 +9,9 @@ const DOM_CONSTANT = {
 		sm: 480,
 		xs: 0
 	},
-	defaultHeaderBackgroundImage: 'http://placehold.it/1920x400/f2f2f2',
-	defaultHeaderBrandImage: 'http://placehold.it/300x300'
+	defaultHeaderBackgroundImage: 'http://digster.fm/files/2015/09/1920x450-lores.jpg',
+	defaultHeaderBrandImage: 'http://digster.fm/wp-content/themes/digster/images/logo-header.png',
+	defaultFooterBrandImage: 'http://digster.fm/wp-content/themes/digster/images/logo-header.png'
 };
 
 export default angular

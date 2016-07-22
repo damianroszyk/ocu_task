@@ -16,5 +16,5 @@ $header-brand-size: 300px;
 }
 
 .header__brand-image {
-	@include position-absolute(50px, auto, auto, 50px);
+	@include position-absolute(50px, auto, auto, calc(50% - 585px));
 }
