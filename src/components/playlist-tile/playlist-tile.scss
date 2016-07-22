@@ -1,17 +1,22 @@
 @import '../../shared/styles/variables';
 @import '../../shared/styles/mixins';
 
-$playlist-tile-width: 220px;
+$playlist-tile-width: 275px;
 $playlist-tile-height: 300px;
+$playlist-tile-offset: 24px;
 
 playlist-tile {
     position: relative;
     float: left;
     width: $playlist-tile-width;
-    height: $playlist-tile-height;
+    min-height: $playlist-tile-height;
     background: $grey-5;
     cursor: pointer;
-    margin: $distance-sm;
+    margin: 0 $playlist-tile-offset $playlist-tile-offset 0;
+
+	&:nth-child(4n) {
+		margin-right: 0;
+	}
 
     .playlist-tiles--horizontal & {
         float: none;
