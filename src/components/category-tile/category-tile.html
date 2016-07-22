@@ -6,14 +6,14 @@
     }">
     <img
         class="category-tile__image"
-        src="http://placehold.it/220x{{$ctrl.category.featured ? '460' : '220'}}" />
+        ng-src="{{::$ctrl.category.imageUrl}}" />
     <h4 class="category-tile__title">
         {{::$ctrl.category.name}}
     </h4>
     <button
         class="category-tile__control"
         ng-if="::$ctrl.category.children.length"
-        ng-click="$ctrl.toggleCategoryExpand($event)">
+        ng-click="$ctrl.toggleCategoryExpand($ctl.category.expanded, $event)">
         <span ng-if="!$ctrl.category.expanded">
             &plus;
         </span>
@@ -23,6 +23,7 @@
     </button>
     <div
         class="category-tile__subcategories"
+		click-outside="$ctrl.toggleCategoryExpand(true)"
         ng-if="$ctrl.category.expanded">
         <ul class="subcategories-list">
             <li ng-repeat="subcategory in ::$ctrl.category.children">

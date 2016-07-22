@@ -21,6 +21,7 @@ category-tile {
 
 .category-tile__image {
     @include position-absolute(0, 0, 0, 0);
+	width: 100%;
     z-index: $z-index-1;
 }
 
@@ -37,16 +38,21 @@ category-tile {
 }
 
 .category-tile__subcategories {
-    @include position-absolute(0, 0, auto, 0);
+    @include position-absolute(0, 0, auto, auto);
+	width: (2 * $category-tile-width) + $distance-md;
     min-height: $category-tile-height;
     box-sizing: border-box;
     padding-top: 2 * $distance-md;
     background: $grey-4;
-    z-index: $z-index-2;
+    z-index: $z-index-3;
 
     .category-tile--featured & {
         min-height: $category-tile-height--featured;
     }
+
+	category-tile:nth-child(4n+1) & {
+		@include position-absolute(0, auto, auto, 0);
+	}
 }
 
 .subcategories-list {

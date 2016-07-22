@@ -6,11 +6,10 @@ class DomHelperService {
 	constructor($timeout) {
 		this.$timeout = $timeout;
 	}
-
 	handleOutsideClick(element, callback) {
 		angular.element(window).on('click', ($event) => {
 			if (!element.contains($event.target)) {
-				this.$timeout(() => callback());
+				this.$timeout(() => (callback || angular.noop)($event));
 			}
 		});
 	}
