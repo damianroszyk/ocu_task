@@ -1,18 +1,25 @@
 @import '../../shared/styles/variables';
 @import '../../shared/styles/mixins';
 
-$category-tile-width: 220px;
-$category-tile-height: 220px;
+$category-tile-width: 275px;
+$category-tile-height: 275px;
+$category-tile-border-height: 5px;
 $category-tile-height--featured: 2 * $category-tile-height + $distance-md;
+$category-tile-offset: 24px;
 
 category-tile {
     position: relative;
     float: left;
     width: $category-tile-width;
-    min-height: $category-tile-height;
+    height: $category-tile-height;
     background: $grey-2;
     cursor: pointer;
-    margin: $distance-sm;
+    margin: 0 $category-tile-offset $category-tile-offset 0;
+	border-bottom: $category-tile-border-height solid $yellow;
+
+	&:nth-child(4n) {
+		margin-right: 0;
+	}
 }
 
 .category-tile--featured {
@@ -21,30 +28,51 @@ category-tile {
 
 .category-tile__image {
     @include position-absolute(0, 0, 0, 0);
+	overflow: hidden;
 	width: 100%;
     z-index: $z-index-1;
+
+	> img {
+		width: 100%;
+	}
 }
 
 .category-tile__title {
     @include position-absolute(auto, $distance-md, $distance-md, $distance-md);
     z-index: $z-index-2;
+	color: $white;
     margin: 0;
     text-transform: uppercase;
 }
 
 .category-tile__control {
     @include position-absolute($distance-md, $distance-md, auto, auto);
+	@include flex-middle();
     z-index: $z-index-3;
+	background: none;
+	border: 2px solid $white;
+	color: $white;
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	outline: none;
+	font-size: 32px;
+
+	.category-tile__subcategories & {
+		z-index: $z-index-5;
+		color: $grey-5;
+		border-color: $grey-5;
+	}
 }
 
 .category-tile__subcategories {
     @include position-absolute(0, 0, auto, auto);
-	width: (2 * $category-tile-width) + $distance-md;
+	width: (2 * $category-tile-width) + $category-tile-offset;
     min-height: $category-tile-height;
     box-sizing: border-box;
     padding-top: 2 * $distance-md;
-    background: $grey-4;
-    z-index: $z-index-3;
+    background: $white;
+    z-index: $z-index-4;
 
     .category-tile--featured & {
         min-height: $category-tile-height--featured;

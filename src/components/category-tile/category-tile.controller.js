@@ -5,6 +5,9 @@ export default class CategoryTileController {
 	constructor($rootScope, domConstant) {
 		this.$rootScope = $rootScope;
 		this.category.imageUrl = this.category.imageUrl || domConstant.defaultCategoryTileImage;
+		this.listenToCollapseEvent();
+	}
+	listenToCollapseEvent() {
 		this.$rootScope.$on(COLLAPSE_ALL_EVENT, ($event, categoryId) => {
 			if (categoryId !== this.category.id) {
 				this.category.expanded = false;

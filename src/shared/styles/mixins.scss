@@ -28,3 +28,9 @@
 @mixin border-bottom($width, $type, $color) {
     border-bottom: $width $type $color;
 }
+
+@mixin flex-middle() {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
