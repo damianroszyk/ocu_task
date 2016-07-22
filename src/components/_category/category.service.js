@@ -29,34 +29,36 @@ class CategoryService {
 	}
 	categoriesParamsBuilder(categories) {
 		console.time('categoriesParamsBuilder');
-		categories = _.values(categories);
 		this.traverseCategories({}, categories, 0);
 		console.timeEnd('categoriesParamsBuilder');
 		return categories;
 	}
 	categoryParamsBuilder(category) {
 		console.time('categoriesParamsBuilder');
-		category.children = _.values(category.children);
-		category.parents = _.values(category.parents);
 		let stateParams = {};
-		this.traverseCategories(stateParams, category.parents, 0);
-		let categoryNestingLevel = Object.keys(stateParams).length + 1;
-		stateParams[`l${categoryNestingLevel}`] = 'mock';
-		this.traverseCategories(stateParams, category.children, categoryNestingLevel);
+		category.parents = this.traverseCategories(stateParams, category.parents, 0);
+		let nestingLevel = Object.keys(stateParams).length + 1;
+		stateParams[`l${nestingLevel}`] = 'mock';
+		category.children = this.traverseCategories(stateParams, category.children, nestingLevel);
 		console.timeEnd('categoriesParamsBuilder');
 		return category;
 	}
 	traverseCategories(stateParams, categories, nestingLevel) {
 		nestingLevel++;
+		categories = _.values(categories);
 		for (let i = 0; i < categories.length; i++) {
-			stateParams[nestingLevel] = _.kebabCase(categories[i].name);
-			categories[i].stateParams = _.mapValues(stateParams, (key, index) => parseInt(index, 10) <= nestingLevel ? key : '');
-			categories[i].stateParams = _.mapKeys(categories[i].stateParams, (value, key) => `l${key}`);
-			categories[i].stateParams.categoryId = categories[i].id;
+			this.addCategoryStateParams(stateParams, categories[i], nestingLevel);
 			if (categories[i].children && categories[i].children.length) {
 				this.traverseCategories(stateParams, categories[i].children, nestingLevel);
 			}
 		}
+		return categories;
+	}
+	addCategoryStateParams(stateParams, category, nestingLevel) {
+		stateParams[nestingLevel] = _.kebabCase(category.name);
+		category.stateParams = _.mapValues(stateParams, (key, index) => parseInt(index, 10) <= nestingLevel ? key : '');
+		category.stateParams = _.mapKeys(category.stateParams, (value, key) => `l${key}`);
+		category.stateParams.categoryId = category.id;
 	}
 }
 
