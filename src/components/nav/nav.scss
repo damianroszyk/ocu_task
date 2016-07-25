@@ -13,6 +13,12 @@ $xs-nav-margin-width: 3px;
 	margin-top: -$nav-height;
 	line-height: $nav-height;
 	background-color: initial;
+
+	.xs & {
+		height: $xs-nav-height;
+		margin-top: -$xs-nav-height;
+		line-height: $xs-nav-height;
+	}
 }
 
 .nav__item {
@@ -26,11 +32,39 @@ $xs-nav-margin-width: 3px;
 	&:first-child {
         margin-left: 0;
     }
+
+	.xs & {
+		height: $xs-nav-height;
+		margin-left: $xs-nav-margin-width;
+
+		&:first-child {
+	        margin-left: 0;
+	    }
+	}
 }
 
 .nav-button {
     height: $nav-height;
     width: $nav-height;
+    position: relative;
+
+	.xs & {
+		height: $xs-nav-height;
+	    width: $xs-nav-height;
+	}
+}
+
+.nav-button__icon {
+	position: absolute;
+	top: 9px;
+	left: 9px;
+	width: 38px;
+
+	.xs & {
+		top: 3px;
+		left: 3px;
+		width: 30px;
+	}
 }
 
 .nav__item__right {
@@ -40,41 +74,19 @@ $xs-nav-margin-width: 3px;
 .music-service {
 	width: $music-service;
 	text-align: center;
+
+	.xs & {
+		width: calc(100% - #{4 * $xs-nav-height + 4 * $xs-nav-margin-width});
+		text-align: center;
+	}
 }
 
 .nav-breadcrumb {
 	width: calc(100% - #{$music-service + 4 * $nav-height + 5 * $nav-margin-width});
 	padding-left: $distance-lg;
 	box-sizing: border-box;
-}
 
-.xs {
-	.nav {
-	    height: $xs-nav-height;
-		margin-top: -$xs-nav-height;
-		line-height: $xs-nav-height;
-	}
-
-	.nav-button {
-	    height: $xs-nav-height;
-	    width: $xs-nav-height;
-	}
-
-	.nav__item {
-	    height: $xs-nav-height;
-		margin-left: $xs-nav-margin-width;
-
-		&:first-child {
-	        margin-left: 0;
-	    }
-	}
-
-	.music-service {
-		width: calc(100% - #{4 * $xs-nav-height + 4 * $xs-nav-margin-width});
-		text-align: center;
-	}
-
-	.nav-breadcrumb {
+	.xs & {
 		display: none;
 	}
 }

@@ -1,30 +1,45 @@
 <header class="playlist-header container">
-    <div class="playlist-header-column">
-        <div class="playlist-header-column__thumbnail-container">
-            <img
-                class="playlist-header__thumbnail"
-                ng-src="{{::$ctrl.playlist.picture_medium}}"
-                alt="Playlist thumbnail"/>
-        </div>
-        <div class="playlist-header-column__caption-container">
-            <h3 class="playlist-header__title">
-                {{::$ctrl.playlist.title}}
-            </h3>
-            <p class="playlist-header__caption">
-                <strong>{{::$ctrl.playlist.nb_tracks}}</strong>
-                <span class="playlist-header__caption--uppercase"> songs</span>
-            </p>
-            <p class="playlist-header__caption">
-                <strong>{{::$ctrl.playlist.duration | convertSeconds:'hours' }}</strong>
-            </p>
-        </div>
+    <div class="playlist-header__column-left">
+        <img
+            class="playlist-header__thumbnail"
+            ng-src="{{::$ctrl.playlist.picture_medium}}"
+            alt="Playlist thumbnail"/>
     </div>
-    <div class="playlist-header-column">
-        <p ng-show="::$ctrl.playlist.description">
+    <div class="playlist-header__column-middle">
+        <h3 class="playlist-header__title">
+            {{::$ctrl.playlist.title}}
+        </h3>
+        <p class="playlist-header__caption">
+            <span>{{::$ctrl.playlist.nb_tracks}}</span>
+            <span class="playlist-header__caption--lowercase"> songs,</span>
+            <span>
+				{{::$ctrl.playlist.duration | convertSeconds:'hours' }}
+			</span>
+        </p>
+		<button
+			class="playlist-header__follow-button"
+			type="button">
+			Follow
+		</button>
+		<p ng-show="::$ctrl.playlist.description">
             {{::$ctrl.playlist.description}}
         </p>
         <p ng-hide="::$ctrl.playlist.description">
             Default playlist description
         </p>
+    </div>
+    <div class="playlist-header__column-right">
+		<img
+			class="playlist-share-icon"
+			src="../../src/shared/images/icons/Twitter-bg.png"
+			alt="Twitter">
+		<img
+			class="playlist-share-icon"
+			src="../../src/shared/images/icons/Facebook-bg.png"
+			alt="Facebook">
+		<img
+			class="playlist-share-icon"
+			src="../../src/shared/images/icons/Pinterest-bg.png"
+			alt="Pinterest">
     </div>
 </header>

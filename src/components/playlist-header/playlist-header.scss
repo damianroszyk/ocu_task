@@ -1,28 +1,43 @@
+@import '../../shared/styles/variables';
+
+$playlist-header-height: 275px;
+
 .playlist-header {
-    font-size: 0;
+	height: $playlist-header-height;
+	margin: 2 * $distance-md auto $distance-md;
+	background-color: $grey-1;
 }
 
-.playlist-header-column {
-    display: inline-block;
-    width: 50%;
-    vertical-align: top;
-    font-size: initial;
-}
-
-.playlist-header-column__thumbnail-container {
-    width: 30%;
+.playlist-header__column-left {
+    width: $playlist-header-height;
     float: left;
+	height: 100%;
 }
 
-.playlist-header-column__caption-container {
-    width: 70%;
-    float: right;
+.playlist-header__column-middle {
+    float: left;
+	margin-left: $distance-md;
+}
+
+.playlist-header__column-right {
+	float: right;
+	width: 183px;
+	padding: 20px 25px 0 0;
+	box-sizing: border-box;
+    text-align: right;
 }
 
 .playlist-header__thumbnail {
     width: 100%;
 }
 
-.playlist-header__caption--uppercase {
-    text-transform: uppercase;
+.playlist-header__caption--lowercase {
+    text-transform: lowercase;
+}
+
+.playlist-header__follow-button {
+	padding: 7px 25px;
+	border-radius: 18px;
+	border: 0;
+	background-color: $yellow;
 }
