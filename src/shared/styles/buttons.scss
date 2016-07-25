@@ -1,0 +1,12 @@
+$button-height: 34px;
+
+.btn-circled {
+	height: $button-height;
+	background: $yellow;
+	color: $black;
+	border: 0;
+	padding: 0 $distance-md;
+	outline: none;
+	border-radius: ($button-height / 2);
+	cursor: pointer;
+}

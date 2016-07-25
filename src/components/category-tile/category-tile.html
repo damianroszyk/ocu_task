@@ -12,29 +12,43 @@
         {{::$ctrl.category.name}}
     </h4>
     <button
-        class="category-tile__control"
+        class="category-tile__control category-tile__control--plus-white"
         ng-if="::$ctrl.category.children.length"
         ng-click="$ctrl.toggleCategoryExpand(false, $event)">
-        &plus;
     </button>
     <div
-        class="animated fadeIn category-tile__subcategories"
+        class="category-tile__subcategories animated"
 		click-outside="$ctrl.toggleCategoryExpand(true)"
         ng-if="$ctrl.category.expanded">
 		<button
-	        class="category-tile__control"
+	        class="category-tile__control category-tile__control--close-black"
 	        ng-click="$ctrl.toggleCategoryExpand(true, $event)">
-	        x
 	    </button>
+		<h5 class="subcategories-tile__title">
+			<strong>
+				Top {{::$ctrl.category.children.length}}
+			</strong>
+			{{::$ctrl.category.name}} subcategories
+		</h5>
         <ul class="subcategories-list">
-            <li ng-repeat="subcategory in ::$ctrl.category.children">
-                <a
-                    class="subcategories-list__element"
-                    ng-click="$event.stopPropagation()"
-                    ui-sref="category(subcategory.stateParams)">
-                    {{::subcategory.name}}
-                </a>
+            <li
+				class="subcategories-list-element"
+				ng-repeat="subcategory in ::$ctrl.category.children | limitTo: 5 track by $index"
+				ng-click="$event.stopPropagation()"
+				ui-sref="category(subcategory.stateParams)">
+				<p class="subcategories-list-element__title">
+					{{::$index + 1}}. {{::subcategory.name}}
+				</p>
+				<span class="subcategories-list-element__description">
+					Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+					Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+				</span>
             </li>
         </ul>
+		<button
+			class="btn-circled subcategories__control"
+			ui-sref="category($ctrl.category.stateParams)">
+			See all {{::$ctrl.category.name}} subcategories
+		</button>
     </div>
 </div>

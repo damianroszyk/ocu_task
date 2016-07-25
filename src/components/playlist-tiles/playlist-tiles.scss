@@ -3,5 +3,5 @@
 
 .playlist-tiles {
     @include clearfix();
-    padding: $distance-sm;
+	margin-top: $distance-lg;
 }
