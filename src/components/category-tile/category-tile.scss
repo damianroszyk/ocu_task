@@ -1,5 +1,6 @@
 @import '../../shared/styles/variables';
 @import '../../shared/styles/mixins';
+@import '../../shared/styles/animations';
 
 $category-tile-width: 275px;
 $category-tile-height: 275px;
@@ -49,7 +50,6 @@ category-tile {
     @include position-absolute($distance-md, $distance-md, auto, auto);
 	@include flex-middle();
     z-index: $z-index-3;
-	background: none;
 	border: 2px solid $white;
 	color: $white;
 	width: 45px;
@@ -57,12 +57,26 @@ category-tile {
 	border-radius: 50%;
 	outline: none;
 	font-size: 32px;
+	cursor: pointer;
 
 	.category-tile__subcategories & {
 		z-index: $z-index-5;
-		color: $grey-5;
-		border-color: $grey-5;
+		border-color: $black;
 	}
+}
+
+.category-tile__control--plus-white {
+	background: url('/shared/images/icons/plus-white.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+
+}
+
+.category-tile__control--close-black {
+	background: url('/shared/images/icons/close-black.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+
 }
 
 .category-tile__subcategories {
@@ -81,9 +95,64 @@ category-tile {
 	category-tile:nth-child(4n+1) & {
 		@include position-absolute(0, auto, auto, 0);
 	}
+
+	&.ng-enter {
+		animation: fade-in .3s;
+	}
+
+	&.ng-leave {
+		animation: fade-out .3s;
+	}
 }
 
 .subcategories-list {
+	margin-top: ($distance-md + $distance-sm);
     list-style-type: none;
-    padding-left: $distance-md;
+	padding: 0;
+}
+
+.subcategories-tile__title {
+	@include position-absolute($distance-md, auto, auto, $distance-md);
+	margin: 0;
+	text-transform: uppercase;
+	font-size: 21px;
+	font-weight: normal;
+
+	strong {
+		font-weight: bold;
+	}
+}
+
+.subcategories-list-element {
+	padding: $distance-sm $distance-md;
+	background: $white;
+
+	&:hover {
+		background: $yellow;
+		transition: background .2s linear;
+	}
+}
+
+.subcategories-list-element__title {
+	font-weight: bold;
+	margin-top: 0;
+	margin-bottom: ($distance-sm / 2);
+
+	.subcategories-list-element:hover & {
+		text-decoration: underline;
+	}
+}
+
+.subcategories-list-element__description {
+	line-height: 18px;
+	font-size: 15px;
+	color: $grey-6;
+
+	.subcategories-list-element:hover & {
+		text-decoration: underline;
+	}
+}
+
+.subcategories__control {
+	margin: 0 $distance-md $distance-md;
 }
