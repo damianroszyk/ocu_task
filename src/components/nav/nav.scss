@@ -4,11 +4,14 @@
 $nav-height: 56px;
 $music-service: 224px;
 $nav-margin-width: 5px;
+$xs-nav-height: 36px;
+$xs-nav-margin-width: 3px;
 
 .nav {
     height: $nav-height;
     font-size: 0;
 	margin-top: -$nav-height;
+	line-height: $nav-height;
 	background-color: initial;
 }
 
@@ -36,13 +39,42 @@ $nav-margin-width: 5px;
 
 .music-service {
 	width: $music-service;
-	line-height: $nav-height;
 	text-align: center;
 }
 
 .nav-breadcrumb {
 	width: calc(100% - #{$music-service + 4 * $nav-height + 5 * $nav-margin-width});
-	line-height: $nav-height;
 	padding-left: $distance-lg;
 	box-sizing: border-box;
+}
+
+.xs {
+	.nav {
+	    height: $xs-nav-height;
+		margin-top: -$xs-nav-height;
+		line-height: $xs-nav-height;
+	}
+
+	.nav-button {
+	    height: $xs-nav-height;
+	    width: $xs-nav-height;
+	}
+
+	.nav__item {
+	    height: $xs-nav-height;
+		margin-left: $xs-nav-margin-width;
+
+		&:first-child {
+	        margin-left: 0;
+	    }
+	}
+
+	.music-service {
+		width: calc(100% - #{4 * $xs-nav-height + 4 * $xs-nav-margin-width});
+		text-align: center;
+	}
+
+	.nav-breadcrumb {
+		display: none;
+	}
 }

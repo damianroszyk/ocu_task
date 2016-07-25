@@ -24,3 +24,18 @@ $footer-height: 300px;
 	text-decoration: none;
 	color: $white;
 }
+
+.xs {
+	.footer {
+		padding-top: 3 * $distance-sm;
+	}
+
+	.footer-footnote p {
+		margin: 0;
+		line-height: 1.4;
+	}
+
+	.footer__icons {
+		margin-top: 30px;
+	}
+}

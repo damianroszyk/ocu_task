@@ -3,7 +3,7 @@ import app from 'app';
 
 const DOM_CONSTANT = {
 	mediaBreakpoints: {
-		xl: 1200,
+		xl: 1170,
 		lg: 992,
 		md: 762,
 		sm: 480,
