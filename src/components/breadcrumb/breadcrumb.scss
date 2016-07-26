@@ -1,3 +1,21 @@
-.breadcrumb {
-    
+@import '../../shared/styles/variables';
+@import '../../shared/styles/mixins';
+
+.breadcrumb-crumbs {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.breadcrumb-crumbs__crumb {
+	display: inline-block;
+}
+
+.crumb-delimiter {
+	display: inline-block;
+	margin: 0 $distance-sm;
+
+	&::after {
+		content: '>';
+	}
 }

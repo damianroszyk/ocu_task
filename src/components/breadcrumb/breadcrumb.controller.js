@@ -1,4 +1,9 @@
 export default class BreadcrumbController {
 	/* @ngInject */
-	constructor() {}
+	constructor(breadcrumbService) {
+		breadcrumbService.registerObserver(this.renderBreadcrumb.bind(this));
+	}
+	renderBreadcrumb(breadcrumb) {
+		this.breadcrumb = breadcrumb;
+	}
 }

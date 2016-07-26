@@ -1,6 +1,9 @@
 export default class HomeController {
 	/* @ngInject */
-	constructor() {
+	constructor(breadcrumbService) {
+		breadcrumbService.breadcrumb = [{
+			name: 'Home'
+		}];
 		this.playlists = [{
 			id: 30595446,
 			name: 'playlist 1',

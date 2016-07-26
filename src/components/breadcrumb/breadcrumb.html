@@ -1,3 +1,20 @@
 <div class="breadcrumb">
-    category/category2/playlist
+    <ul class="breadcrumb-crumbs">
+    	<li
+			class="breadcrumb-crumbs__crumb"
+			ng-repeat="crumb in $ctrl.breadcrumb">
+			<span ng-show="$last || $ctrl.breadcrumb.length === 1">
+				{{::crumb.name}}
+			</span>
+			<a
+				ng-if="!$last && $ctrl.breadcrumb.length !== 1"
+				ui-sref="{{::crumb.state}}({{::crumb.stateParams}})">
+				{{::crumb.name}}
+			</a>
+			<span
+				class="crumb-delimiter"
+				ng-hide="$last">
+			</span>
+    	</li>
+    </ul>
 </div>
