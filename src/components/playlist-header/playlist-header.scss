@@ -12,6 +12,7 @@ $playlist-header-height: 275px;
     width: $playlist-header-height;
     float: left;
 	height: 100%;
+	position: relative;
 }
 
 .playlist-header__column-middle {
@@ -29,6 +30,18 @@ $playlist-header-height: 275px;
 
 .playlist-header__thumbnail {
     width: 100%;
+}
+
+.playlist-header__thumbnail--overlay {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	background: rgba(0, 0, 0, 0.4);
+	background-image: url('/shared/images/icons/play-button.png');
+	background-repeat: no-repeat;
+	background-position: 50%;
 }
 
 .playlist-header__caption--lowercase {
