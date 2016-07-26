@@ -3,10 +3,13 @@
     	<li
 			class="breadcrumb-crumbs__crumb"
 			ng-repeat="crumb in $ctrl.breadcrumb">
-			<span ng-show="$last || $ctrl.breadcrumb.length === 1">
+			<span
+				class="crumb-name"
+				ng-show="$last || $ctrl.breadcrumb.length === 1">
 				{{::crumb.name}}
 			</span>
 			<a
+				class="crumb-name"
 				ng-if="!$last && $ctrl.breadcrumb.length !== 1"
 				ui-sref="{{::crumb.state}}({{::crumb.stateParams}})">
 				{{::crumb.name}}

@@ -41,9 +41,7 @@ class BreadcrumbService extends Observable {
 			buildParentsCrumbRecursive(category.parents[0]);
 		}
 		breadcrumb.push({
-			name: category.category.name,
-			state: 'category',
-			stateParams: _.defaults(category.category.stateParams, defaultCategoryStateParams)
+			name: category.category.name
 		});
 		this.breadcrumb = breadcrumb;
 	}
