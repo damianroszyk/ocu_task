@@ -17,6 +17,12 @@ class BreadcrumbService extends Observable {
 		return this._breadcrumb;
 	}
 	buildCategoryBreadcrumb(category) {
+		let defaultCategoryStateParams = {
+			l1: '',
+			l2: '',
+			l3: '',
+			l4: ''
+		};
 		let breadcrumb = [{
 			name: 'Home',
 			state: 'home'
@@ -25,7 +31,7 @@ class BreadcrumbService extends Observable {
 			breadcrumb.push({
 				name: parent.name,
 				state: 'category',
-				stateParams: parent.stateParams
+				stateParams: _.defaults(parent.stateParams, defaultCategoryStateParams)
 			});
 			if (parent.children && parent.children.length) {
 				buildParentsCrumbRecursive(parent.children[0]);
@@ -37,7 +43,7 @@ class BreadcrumbService extends Observable {
 		breadcrumb.push({
 			name: category.category.name,
 			state: 'category',
-			stateParams: category.category.stateParams
+			stateParams: _.defaults(category.category.stateParams, defaultCategoryStateParams)
 		});
 		this.breadcrumb = breadcrumb;
 	}
