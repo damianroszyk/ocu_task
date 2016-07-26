@@ -1,18 +1,18 @@
 var PlaylistPage = require('../page-objects/playlist.po');
 
 describe('Playlist page test suite', function() {
-    var playlistPage;
+	var playlistPage;
 
-    beforeEach(function() {
-        playlistPage = new PlaylistPage();
-        playlistPage.get();
-    });
+	beforeEach(function() {
+		playlistPage = new PlaylistPage();
+		playlistPage.get();
+	});
 
-    it('should have heading', function() {
-        expect(playlistPage.getHeading()).toEqual('Playlist');
-    });
+	it('should have heading', function() {
+		expect(playlistPage.getHeading()).toEqual('Playlist');
+	});
 
-    it('should have title', function() {
-        expect(playlistPage.getTitle()).toEqual('Pitched | Playlist');
-    });
+	it('should have title', function() {
+		expect(playlistPage.getTitle()).toEqual('Pitched | Playlist');
+	});
 });

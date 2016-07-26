@@ -1,20 +1,20 @@
 function CategoryPageObject() {
 
-    var heading = element(by.css('h2'));
-    var title = element(by.css('title'));
+	var categoryTile = element(by.css('.category-tile'));
+	var title = element(by.css('title'));
 
-    this.get = function() {
-        browser.get('/#/category/testCategory');
-        browser.waitForAngular();
-    };
+	this.get = function() {
+		browser.get('/#/11/category/testCategory');
+		browser.waitForAngular();
+	};
 
-    this.getHeading = function() {
-        return heading.getText();
-    };
+	this.getCategoryTile = function() {
+		return categoryTile;
+	};
 
-    this.getTitle = function() {
-        return title.getInnerHtml();
-    };
+	this.getTitle = function() {
+		return title.getInnerHtml();
+	};
 }
 
 module.exports = CategoryPageObject;

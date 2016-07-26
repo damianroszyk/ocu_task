@@ -1,7 +1,73 @@
-.track-list {
+@import '../../shared/styles/variables';
 
-}
+$table_width: 1170px;
+$table_body_height: 450px;
+$column_one_width: 450px;
+$column_two_width: 300px;
+$column_three_width: 300px;
+$column_four_width: 120px;
 
-.track-list__track {
-    
+.track-table {
+	width: $table_width;
+	table-layout: fixed;
+	border-collapse: collapse;
+	background-color: $white;
+
+	th { text-decoration: underline; }
+
+	th,
+	td {
+		padding: 5px;
+		text-align: left;
+	}
+
+	td:nth-child(1),
+	th:nth-child(1) { min-width: $column_one_width; }
+
+	td:nth-child(2),
+	th:nth-child(2) {
+		min-width: $column_two_width;
+		border-left: 1px solid $grey-3;
+	}
+
+	td:nth-child(3),
+	th:nth-child(3) {
+		width: $column_three_width;
+		border-left: 1px solid $grey-3;
+	}
+
+	td:nth-child(4),
+	th:nth-child(4) {
+		width: $column_four_width;
+		border-left: 1px solid $grey-3;
+	}
+
+	thead {
+		background-color: $grey-7;
+		color: $white;
+
+		tr {
+		  display: block;
+		  position: relative;
+		}
+	}
+
+	tbody {
+		display: block;
+		overflow: auto;
+		width: 100%;
+		height: $table_body_height;
+		border: 2px solid $grey-6;
+		border-top: 0;
+		box-sizing: border-box;
+
+		tr {
+			height: 35px;
+		}
+
+		tr:nth-child(even) {
+			border-top: 1px solid $grey-3;
+			border-bottom: 1px solid $grey-3;
+		}
+	}
 }

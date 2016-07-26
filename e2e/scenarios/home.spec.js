@@ -8,12 +8,14 @@ describe('Home page test suite', function() {
 		homePage.get();
 	});
 
-	it('should have heading', function() {
-		expect(homePage.getHeading()).toEqual('Home');
+	it('should have header image', function() {
+		expect(homePage.getHeaderImage()).toEqual(jasmine.objectContaining({
+			height: 400
+		}));
 	});
 
 	it('should have footer', function() {
-		expect(homePage.getFooter()).toEqual('Footer');
+		expect(homePage.getFooterCopyright()).toContain('Copyright');
 	});
 
 	it('should have title', function() {

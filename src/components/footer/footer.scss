@@ -4,11 +4,15 @@
 $footer-height: 300px;
 
 .footer {
-    background-color: $grey-8;
+	background-color: $grey-8;
 	height: $footer-height;
 	text-align: center;
 	color: $white;
 	padding-top: 3 * $distance-md;
+
+	.xs & {
+		padding-top: 3 * $distance-sm;
+	}
 }
 
 .footer__brand-image {
@@ -23,4 +27,17 @@ $footer-height: 300px;
 .footer-footnote__links a {
 	text-decoration: none;
 	color: $white;
+}
+
+.footer-footnote p {
+	.xs & {
+		margin: 0;
+		line-height: 1.4;
+	}
+}
+
+.footer__icons {
+	.xs & {
+		margin-top: 30px;
+	}
 }

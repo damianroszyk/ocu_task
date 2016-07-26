@@ -1,7 +1,7 @@
 function HomePageObject() {
 
-	var heading = element(by.css('h2'));
-	var footer = element(by.css('footer'));
+	var headerImage = element(by.css('.header__background-image'));
+	var footerCopyright = element(by.css('.footer-footnote__copyright'));
 	var title = element(by.css('title'));
 	var categoryToggleButton = element(by.css('.nav-menu-button'));
 	var categoryDropdownElement = element(by.css('.categories-dropdown'));
@@ -11,12 +11,12 @@ function HomePageObject() {
 		browser.get('/');
 	};
 
-	this.getHeading = function() {
-		return heading.getText();
+	this.getHeaderImage = function() {
+		return headerImage.getSize();
 	};
 
-	this.getFooter = function() {
-		return footer.getText();
+	this.getFooterCopyright = function() {
+		return footerCopyright.getText();
 	};
 
 	this.getTitle = function() {
