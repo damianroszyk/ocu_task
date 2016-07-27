@@ -1,0 +1,90 @@
+@import '/variables';
+
+$sm-icon: 30px;
+$md-icon: 40px;
+$lg-icon: 50px;
+
+@mixin icon($size, $url) {
+	width: $size;
+	height: $size;
+	display: inline-block;
+	background-repeat: no-repeat;
+    background-position: 50%;
+	background-image: url($url);
+}
+
+@mixin icon-background($color) {
+	border-radius: 50%;
+	background-color: $color;
+}
+
+@mixin icon-parent-width() {
+	width: 100%;
+	height: 100%;
+	background-size: 65%;
+}
+
+.icon-twitter {
+	@include icon($md-icon, '/shared/images/icons/twitter-icon.png');
+}
+
+.icon-twitter--blue-background {
+	@extend .icon-twitter;
+	@include icon-background($blue);
+}
+
+.icon-facebook {
+	@include icon($md-icon, '/shared/images/icons/facebook-icon.png');
+}
+
+.icon-facebook--blue-background {
+	@extend .icon-facebook;
+	@include icon-background($blue);
+}
+
+.icon-pinterest {
+	@include icon($md-icon, '/shared/images/icons/pinterest-icon.png');
+}
+
+.icon-pinterest--blue-background {
+	@extend .icon-pinterest;
+	@include icon-background($blue);
+}
+
+.icon-spotify {
+	@include icon($md-icon, '/shared/images/icons/spotify-icon.png');
+}
+
+.icon-email {
+	@include icon($md-icon, '/shared/images/icons/spotify-icon.png');
+}
+
+.icon-apple {
+	@include icon($md-icon, '/shared/images/icons/spotify-icon.png');
+}
+
+.icon-hamburger {
+	@include icon($md-icon, '/shared/images/icons/hamburger-icon.png');
+	@include icon-parent-width();
+}
+
+.icon-search {
+	@include icon($md-icon, '/shared/images/icons/search-icon.png');
+	@include icon-parent-width();
+}
+
+.icon-tiles {
+	@include icon($md-icon, '/shared/images/icons/tiles-icon.png');
+	@include icon-parent-width();
+
+}
+
+.icon-tiles--big {
+	@extend .icon-tiles;
+	background-size: 90%;
+}
+
+.icon-tags {
+	@include icon($md-icon, '/shared/images/icons/tags-icon.png');
+	@include icon-parent-width();
+}

@@ -3,10 +3,7 @@
         <div
             class="nav-button nav-menu-button"
             ng-click="showCategories = !showCategories; $event.stopPropagation();">
-			<img
-				class="nav-button__icon"
-				src="/shared/images/icons/Hamburger.png"
-				alt="Menu">
+			<span class="icon-hamburger"></span>
         </div>
     </div>
     <div class="nav__item music-service" translate="{{::'MUSIC_SERVICE'}}">
@@ -17,26 +14,17 @@
     </div>
     <div class="nav__item nav__item__right">
         <div class="nav-button">
-			<img
-				class="nav-button__icon"
-				src="/shared/images/icons/Tags.png"
-				alt="Menu">
+			<span class="icon-tags"></span>
         </div>
     </div>
     <div class="nav__item nav__item__right">
         <div class="nav-button">
-			<img
-				class="nav-button__icon"
-				src="/shared/images/icons/Tile.png"
-				alt="Menu">
+			<span class="icon-tiles--big"></span>
         </div>
     </div>
 	<div class="nav__item nav__item__right">
 		<div class="nav-button">
-			<img
-				class="nav-button__icon"
-				src="/shared/images/icons/Search.png"
-				alt="Menu">
+			<span class="icon-search"></span>
 		</div>
 	</div>
     <categories-dropdown is-shown="showCategories"></categories-dropdown>
