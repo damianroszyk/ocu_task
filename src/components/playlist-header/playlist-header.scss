@@ -7,6 +7,10 @@ $playlist-header-height: 275px;
 	height: $playlist-header-height;
 	margin: 2 * $distance-md auto $distance-md;
 	background-color: $grey-1;
+
+	.xs & {
+		height: 50vw;
+	}
 }
 
 .playlist-header__column-left {
@@ -14,6 +18,10 @@ $playlist-header-height: 275px;
     float: left;
 	height: 100%;
 	position: relative;
+
+	.xs & {
+		width: 50%;
+	}
 }
 
 .playlist-header__column-middle {
@@ -27,6 +35,75 @@ $playlist-header-height: 275px;
 	padding: 20px 25px 0 0;
 	box-sizing: border-box;
     text-align: right;
+}
+
+.playlist-header__column-right--top,
+.playlist-header__column-right--bottom {
+	float: left;
+    width: calc(100% - #{$playlist-header-height});
+	box-sizing: border-box;
+}
+
+.playlist-header__column-right--top {
+	padding: $distance-md $distance-md 0;
+
+	.xs & {
+		padding: $distance-sm $distance-sm 0;
+		width: 50%;
+		height: 100%;
+	    position: relative;
+	}
+}
+
+.playlist-header__info {
+	float: left;
+}
+
+.playlist-header__title {
+	font-size: 28px;
+	margin: 0 0 10px;
+
+	.xs & {
+		font-size: 14px;
+	}
+}
+
+.playlist-header__social-icons {
+	float: right;
+
+	.xs & {
+		float: none;
+		bottom: 6px;
+		position: absolute;
+	}
+}
+
+.playlist-header__follow-button--desktop {
+	.xs & {
+		display: none;
+	}
+}
+
+.playlist-header__follow-button--mobile {
+	display: none;
+
+	.xs & {
+		display: inline-block;
+	}
+}
+
+
+.playlist-header__column-right--bottom {
+	padding: 0 8 * $distance-md $distance-md $distance-md;
+
+	.xs & {
+		width: 100%;
+		padding: 15px 10px;
+
+		p {
+			margin-top: 0;
+		}
+	}
 }
 
 .playlist-header__thumbnail {
@@ -47,11 +124,4 @@ $playlist-header-height: 275px;
 
 .playlist-header__caption--lowercase {
     text-transform: lowercase;
-}
-
-.playlist-header__follow-button {
-	padding: 7px 25px;
-	border-radius: 18px;
-	border: 0;
-	background-color: $yellow;
 }

@@ -10,32 +10,30 @@ $xs-header-brand-size: 79px;
 	height: $header-height;
 	background: $grey-1;
 	overflow: hidden;
+
+	.xs & {
+		height: $xs-header-height;
+	}
 }
 
 .header__background-image {
 	height: $header-height;
 	background-position: center;
+
+	.xs & {
+		height: $xs-header-height;
+	}
 }
 
 .header__brand-image {
 	@include position-absolute(50px, auto, auto, 0);
-}
 
-.xl .header__brand-image {
-	@include position-absolute(50px, auto, auto, calc(50% - 585px));
-}
-
-.xs {
-	.header {
-		height: $xs-header-height;
-	}
-
-	.header__background-image {
-		height: $xs-header-height;
-	}
-
-	.header__brand-image {
-		height: $xs-header-brand-size;
+	.xs & {
 		@include position-absolute(0, auto, auto, 0);
+		height: $xs-header-brand-size;
+	}
+
+	.xl & {
+		@include position-absolute(50px, auto, auto, calc(50% - 585px));
 	}
 }

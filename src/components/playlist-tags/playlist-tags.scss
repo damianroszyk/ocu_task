@@ -1,0 +1,35 @@
+@import '../../shared/styles/variables';
+
+.playlist-tags {
+	background-color: initial;
+	margin: 40px auto;
+
+	.xs & {
+		padding: 0 10px;
+	}
+}
+
+.playlist-tags__label {
+	.xs & {
+		display: none;
+	}
+}
+
+.tags-list {
+	display: inline;
+	padding-left: 0;
+}
+
+.tags-list__item {
+	list-style: none;
+	display: inline-block;
+	background-color: $grey-7;
+	color: $white;
+	line-height: 26px;
+	padding: 0 7px;
+	margin-left: 3px;
+
+	.xs & {
+		margin-bottom: 8px;
+	}
+}
