@@ -6,5 +6,9 @@
 	"MUSIC_SERVICE": "My music service",
 	"PRIVACY_POLICY": "Privacy Policy",
 	"TERMS_OF_USE": "Terms of Use",
-	"ALL_RIGHTS_RESERVED": "All rights reserved."
+	"ALL_RIGHTS_RESERVED": "All rights reserved.",
+	"TRACK": "track",
+	"ARTIST": "artist",
+	"ALBUM": "album",
+	"TIME": "time"
 }

@@ -1,12 +1,12 @@
 @import '../../shared/styles/variables';
 
-$table_width: 1170px;
-$table_body_height: 525px;
-$column_one_width: 40px;
-$column_two_width: 450px;
-$column_three_width: 286px;
-$column_four_width: 293px;
-$column_five_width: 80px;
+$table-width: 1170px;
+$table-body-height: 525px;
+$column-one-width: 40px;
+$column-two-width: 450px;
+$column-three-width: 286px;
+$column-four-width: 293px;
+$column-five-width: 80px;
 
 @mixin column($width) {
 	width: $width;
@@ -21,7 +21,7 @@ $column_five_width: 80px;
 }
 
 .track-table {
-	width: $table_width;
+	width: $table-width;
 	table-layout: fixed;
 	border-collapse: collapse;
 	background-color: $white;
@@ -45,6 +45,11 @@ $column_five_width: 80px;
 	}
 
 	th {
+		p {
+			text-transform: uppercase;
+			margin: 0;
+		}
+
 		.xs & {
 			display: none;
 		}
@@ -52,7 +57,7 @@ $column_five_width: 80px;
 
 	td:nth-child(1),
 	th:nth-child(1) {
-		@include column($column_one_width);
+		@include column($column-one-width);
 
 		.xs & {
 			display: none;
@@ -61,7 +66,7 @@ $column_five_width: 80px;
 
 	td:nth-child(2),
 	th:nth-child(2) {
-		@include column($column_two_width);
+		@include column($column-two-width);
 
 		.xs & {
 			font-size: 20px;
@@ -70,7 +75,7 @@ $column_five_width: 80px;
 
 	td:nth-child(3),
 	th:nth-child(3) {
-		@include column($column_three_width);
+		@include column($column-three-width);
 		border-left: 1px solid $grey-3;
 
 		.xs & {
@@ -80,7 +85,7 @@ $column_five_width: 80px;
 
 	td:nth-child(4),
 	th:nth-child(4) {
-		@include column($column_four_width);
+		@include column($column-four-width);
 		border-left: 1px solid $grey-3;
 
 		.xs & {
@@ -90,7 +95,7 @@ $column_five_width: 80px;
 
 	td:nth-child(5),
 	th:nth-child(5) {
-		@include column($column_five_width);
+		@include column($column-five-width);
 		border-left: 1px solid $grey-3;
 
 		.xs & {
@@ -113,7 +118,7 @@ $column_five_width: 80px;
 		display: block;
 		overflow: auto;
 		width: 100%;
-		height: $table_body_height;
+		height: $table-body-height;
 		border-top: 0;
 		box-sizing: border-box;
 

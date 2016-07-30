@@ -14,11 +14,9 @@
 	            {{::$ctrl.playlist.title}}
 	        </h3>
 	        <p class="playlist-header__caption">
-	            <span>{{::$ctrl.playlist.nb_tracks}}</span>
-	            <span class="playlist-header__caption--lowercase"> songs,</span>
-	            <span>
-					{{::$ctrl.playlist.duration | convertSeconds:'hours' }}
-				</span>
+	            {{::$ctrl.playlist.nb_tracks}}
+	            <span> songs,</span>
+				{{::$ctrl.playlist.duration | convertSeconds:'hours' }}
 	        </p>
 			<button
 				class="playlist-header__follow-button--desktop btn-circled"

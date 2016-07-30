@@ -1,10 +1,11 @@
 <div class="playlist-tags container">
 	<span class="playlist-tags__label">Tags:</span>
 	<ul class="tags-list">
-		<li class="tags-list__item">Hard Rock</li>
-		<li class="tags-list__item">Hard Rock</li>
-		<li class="tags-list__item">Hard Rock</li>
-		<li class="tags-list__item">Hard Rock</li>
-		<li class="tags-list__item">Hard Rock</li>
+		<li
+			class="tags-list__item"
+			ng-repeat="tag in ::$ctrl.tags"
+			tag="tag">
+			{{::tag.name}}
+		</li>
 	</ul>
 </div>
