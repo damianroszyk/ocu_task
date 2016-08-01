@@ -3,8 +3,8 @@
 
 $header-height: 400px;
 $header-brand-size: 300px;
-$header-height-xs: 115px;
-$header-brand-size-xs: 79px;
+$header-height--xs: 115px;
+$header-brand-size--xs: 79px;
 
 .header {
 	height: $header-height;
@@ -12,7 +12,7 @@ $header-brand-size-xs: 79px;
 	overflow: hidden;
 
 	.xs & {
-		height: $header-height-xs;
+		height: $header-height--xs;
 	}
 }
 
@@ -21,7 +21,7 @@ $header-brand-size-xs: 79px;
 	background-position: center;
 
 	.xs & {
-		height: $header-height-xs;
+		height: $header-height--xs;
 	}
 }
 
@@ -30,7 +30,7 @@ $header-brand-size-xs: 79px;
 
 	.xs & {
 		@include position-absolute(0, auto, auto, 0);
-		height: $header-brand-size-xs;
+		height: $header-brand-size--xs;
 	}
 
 	.xl & {
