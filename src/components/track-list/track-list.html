@@ -1,10 +1,19 @@
 <table class="track-table container">
     <thead>
         <tr class="track-table__head">
-            <th class="track-table__heading">TRACK</th>
-            <th class="track-table__heading">ARTIST</th>
-            <th class="track-table__heading">ALBUM</th>
-            <th class="track-table__heading">TIME</th>
+			<th class="track-table__heading"></th>
+            <th class="track-table__heading">
+				<p translate="{{::'TRACK'}}"></p>
+            </th>
+            <th class="track-table__heading">
+				<p translate="{{::'ARTIST'}}">
+			</th>
+            <th class="track-table__heading">
+				<p translate="{{::'ALBUM'}}">
+			</th>
+            <th class="track-table__heading">
+				<p translate="{{::'TIME'}}">
+			</th>
         </tr>
     </thead>
 	<div class="track-table--scroll">
@@ -12,6 +21,7 @@
 	        <tr
 	            class="track-table__row"
 	            ng-repeat="track in ::$ctrl.tracks">
+				<td class="track-table__item"></td>
 	            <td class="track-table__item">{{::track.title}}</td>
 	            <td class="track-table__item">{{::track.artist.name}}</td>
 	            <td class="track-table__item">{{::track.album.title}}</td>

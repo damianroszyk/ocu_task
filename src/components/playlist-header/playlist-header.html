@@ -4,42 +4,43 @@
             class="playlist-header__thumbnail"
             ng-src="{{::$ctrl.playlist.picture_medium}}"
             alt="Playlist thumbnail"/>
+		<div class="playlist-header__thumbnail--overlay">
+			<div class="playlist-header-play-button"></div>
+		</div>
     </div>
-    <div class="playlist-header__column-middle">
-        <h3 class="playlist-header__title">
-            {{::$ctrl.playlist.title}}
-        </h3>
-        <p class="playlist-header__caption">
-            <span>{{::$ctrl.playlist.nb_tracks}}</span>
-            <span class="playlist-header__caption--lowercase"> songs,</span>
-            <span>
+    <div class="playlist-header__column-right--top">
+		<div class="playlist-header__info">
+	        <h3 class="playlist-header__title">
+	            {{::$ctrl.playlist.title}}
+	        </h3>
+	        <p class="playlist-header__caption">
+	            {{::$ctrl.playlist.nb_tracks}}
+	            <span> songs,</span>
 				{{::$ctrl.playlist.duration | convertSeconds:'hours' }}
-			</span>
-        </p>
+	        </p>
+			<button
+				class="playlist-header__follow-button--desktop btn-circled"
+				type="button">
+				Follow
+			</button>
+		</div>
+		<div class="playlist-header__social-icons">
+			<span class="icon-twitter--blue-background"></span>
+			<span class="icon-facebook--blue-background"></span>
+			<span class="icon-pinterest--blue-background"></span>
+		</div>
+    </div>
+	<div class="playlist-header__column-right--bottom">
+		<p ng-show="::$ctrl.playlist.description">
+			{{::$ctrl.playlist.description}}
+		</p>
+		<p ng-hide="::$ctrl.playlist.description">
+			Default playlist description Default playlist description Default playlist description Default playlist description Default playlist description Default playlist description
+		</p>
 		<button
-			class="playlist-header__follow-button"
+			class="playlist-header__follow-button--mobile btn-circled"
 			type="button">
 			Follow
 		</button>
-		<p ng-show="::$ctrl.playlist.description">
-            {{::$ctrl.playlist.description}}
-        </p>
-        <p ng-hide="::$ctrl.playlist.description">
-            Default playlist description
-        </p>
-    </div>
-    <div class="playlist-header__column-right">
-		<img
-			class="playlist-share-icon"
-			src="/shared/images/icons/Twitter-bg.png"
-			alt="Twitter">
-		<img
-			class="playlist-share-icon"
-			src="/shared/images/icons/Facebook-bg.png"
-			alt="Facebook">
-		<img
-			class="playlist-share-icon"
-			src="/shared/images/icons/Pinterest-bg.png"
-			alt="Pinterest">
-    </div>
+	</div>
 </header>

@@ -6,11 +6,12 @@ $playlist-tile-height: 300px;
 $playlist-tile-offset: 24px;
 
 playlist-tile {
+	@include border-bottom(6px, solid, $grey-3);
     position: relative;
     float: left;
     width: $playlist-tile-width;
     min-height: $playlist-tile-height;
-    background: $grey-5;
+    background: $grey-1;
     cursor: pointer;
     margin: 0 $playlist-tile-offset $playlist-tile-offset 0;
 
@@ -24,11 +25,19 @@ playlist-tile {
         display: block;
         margin-bottom: $distance-md;
     }
+
+	.xs & {
+		width: 48%;
+		margin: 0 4% 4% 0;
+
+		&:nth-child(2n) {
+			margin-right: 0;
+		}
+	}
 }
 
 .playlist-tile__image {
-    @include position-absolute(0, 0, auto, auto);
-    width: $playlist-tile-width;
+    width: 100%;
     z-index: $z-index-1;
 
     .playlist-tiles--horizontal & {
@@ -36,12 +45,35 @@ playlist-tile {
     }
 }
 
-.playlist-tile-description {
-    @include position-absolute($playlist-tile-width, $distance-sm, 0, $distance-sm);
+.playlist-tile-meta {
     overflow: hidden;
+    padding: $distance-sm $distance-sm $distance-md;
 }
 
-.playlist-tile-description__content {
-    font-size: 13px;
-    color: $white;
+.playlist-tile-meta__title {
+	margin-top: 0;
+	text-transform: uppercase;
+}
+
+.playlist-tile-meta__dash {
+	float: left;
+}
+
+.playlist-tile-meta__content {
+	float: right;
+	width: 92%;
+}
+
+.playlist-tile__summary {
+	margin-top: 0;
+
+	.xs & {
+		display: none;
+	}
+}
+
+.playlist-tile__description {
+	.xs & {
+		margin-top: 0;
+	}
 }

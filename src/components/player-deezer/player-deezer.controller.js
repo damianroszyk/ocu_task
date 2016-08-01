@@ -10,7 +10,7 @@ export default class PlayerDeezerController {
 	playerUrl() {
 		return this.$sce.trustAsResourceUrl([
 			this.playerConstant.embeddedDeezerPlayerUrl,
-			`?format=classic&autoplay=true&playlist=true&size=medium&type=playlist`,
+			`?format=classic&autoplay=false&playlist=true&size=medium&type=playlist`,
 			`&app_id=${this.thirdPartyConstant.deezerAppId}`,
 			`&width=${this.width}`,
 			`&height=${this.height}`,

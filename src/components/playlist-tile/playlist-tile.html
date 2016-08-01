@@ -1,12 +1,31 @@
 <div
-    class="playlist-tile"
-    ui-sref="playlist({playlistId: $ctrl.playlist.id})">
-    <img
-        class="playlist-tile__image"
-        ng-src="{{::$ctrl.playlist.imageUrl}}"/>
-    <div class="playlist-tile-description">
-        <p class="playlist-tile-description__content">
-            {{::$ctrl.playlist.description}}
-        </p>
-    </div>
+class="playlist-tile"
+ui-sref="playlist({playlistId: $ctrl.playlist.id})">
+	<img
+	    class="playlist-tile__image"
+	    ng-src="{{::$ctrl.playlist.imageUrl}}"/>
+	<div class="playlist-tile-meta">
+		<h3 class="playlist-tile-meta__title">
+			{{::$ctrl.playlist.name}}
+		</h3>
+		<div class="playlist-tile-meta__dash">--</div>
+		<div class="playlist-tile-meta__content">
+			<p class="playlist-tile__summary">
+				{{::$ctrl.playlist.summary}}
+			</p>
+			<p class="playlist-tile__description">
+			    {{::$ctrl.playlist.description}}
+			</p>
+			<p class="playlist-tile__duration">
+				{{::$ctrl.playlist.nbTracks}}
+				<span class="playlist-header__caption--lowercase"> songs,</span>
+				{{::$ctrl.playlist.duration | convertSeconds:'hours' }}
+			</p>
+			<button
+				class="btn-circled"
+				type="button">
+				Follow
+			</button>
+		</div>
+	</div>
 </div>
