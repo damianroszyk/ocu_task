@@ -12,7 +12,9 @@ let metatags = metatagsService => {
 					${tag.identifier}="${tag.key}"
 					content="${tag.content}">`);
 
-			let clearMetatags = () => element.next('meta').remove();
+			let clearMetatags = () => angular
+				.element(document.querySelectorAll(`meta[metatags] ~ meta`))
+				.remove();
 
 			let metatagsAppender = metatags => {
 				clearMetatags();
