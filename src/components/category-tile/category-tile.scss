@@ -17,7 +17,7 @@ category-tile {
     margin: 0 $category-tile-offset $category-tile-offset 0;
 	border-bottom: $category-tile-border-height solid $yellow;
 
-	&:nth-child(4n) {
+	.xl &:nth-child(4n) {
 		margin-right: 0;
 	}
 }
@@ -68,7 +68,6 @@ category-tile {
 	background: url('/shared/images/icons/plus-white.png');
 	background-repeat: no-repeat;
 	background-position: center center;
-
 }
 
 .category-tile__control--close-black {
@@ -91,7 +90,7 @@ category-tile {
         min-height: $category-tile-height--featured;
     }
 
-	category-tile:nth-child(4n+1) & {
+	.xl category-tile:nth-child(4n+1) & {
 		@include position-absolute(0, auto, auto, 0);
 	}
 

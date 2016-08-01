@@ -1,18 +1,23 @@
 import angular from 'angular';
 import app from 'app';
 
+import { CategoriesResolver } from 'category/category.resolvers';
+import { PlaylistsResolver } from 'playlist/playlist.resolvers';
+
 const HOME_ROUTER = {
 	homeState: {
 		url: '/',
-		template: `<home categories="$resolve.categories"></home>`,
+		template: `
+			<home
+				categories="$resolve.categories"
+				playlists="$resolve.playlists">
+			</home>`,
 		pageTitle: `Home`,
-		resolve: { categories }
+		resolve: {
+			categories: CategoriesResolver.constructor,
+			playlists: PlaylistsResolver.constructor
+		}
 	}
-};
-
-/* @ngInject */
-function categories(categoryService) {
-	return categoryService.getCategories();
 };
 
 /* @ngInject */

@@ -5,7 +5,8 @@ import template from 'text!./home.html';
 import controller from './home.controller';
 
 let bindings = {
-	categories: '<'
+	categories: '<',
+	playlists: '<'
 };
 
 export default angular

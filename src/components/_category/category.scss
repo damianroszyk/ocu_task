@@ -1,3 +1,10 @@
+@import '../../shared/styles/variables';
+
 .category {
 	background-color: initial;
+}
+
+.category__title {
+	margin-bottom: $distance-md;
+	text-transform: uppercase;
 }

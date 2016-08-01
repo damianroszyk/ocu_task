@@ -1,11 +1,19 @@
 import angular from 'angular';
 import app from 'app';
 
+import { PlaylistResolver } from 'playlist/playlist.resolvers';
+
 const PLAYLIST_ROUTER = {
 	playlistState: {
-		url: '^/playlist/:playlistName',
-		template: `<playlist></playlist>`,
-		pageTitle: `Playlist`
+		url: '^/playlist/:playlistId',
+		template: `
+			<playlist
+				playlist="$resolve.playlist">
+			</playlist>`,
+		pageTitle: `Playlist`,
+		resolve: {
+			playlist: PlaylistResolver.constructor
+		}
 	}
 };
 

@@ -1,25 +1,30 @@
 import angular from 'angular';
 import app from 'app';
 
+import { CategoryResolver } from 'category/category.resolvers';
+import { PlaylistsResolver } from 'playlist/playlist.resolvers';
+
 let squash = true;
 
 const CATEGORY_ROUTER = {
 	categoryState: {
-		url: '^/:categoryId/:l1/:l2/:l3/:l4',
-		template: `<category category="$resolve.category"></category>`,
+		url: '^/category/:categoryId/:l1/:l2/:l3/:l4',
+		template: `
+			<category
+				category="$resolve.category"
+				playlists="$resolve.playlists">
+			</category>`,
 		params: {
 			l2: { squash },
 			l3: { squash },
 			l4: { squash }
 		},
 		pageTitle: `Category`,
-		resolve: { category }
+		resolve: {
+			category: CategoryResolver.constructor,
+			playlists: PlaylistsResolver.constructor
+		}
 	}
-};
-
-/* @ngInject */
-function category($stateParams, categoryService, modelHelper) {
-	return categoryService.getCategory($stateParams.categoryId);
 };
 
 /* @ngInject */
