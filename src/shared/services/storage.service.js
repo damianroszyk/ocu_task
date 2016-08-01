@@ -1,16 +1,21 @@
 import angular from 'angular';
 import app from 'app';
 
-class StorageService {
+import Persistable from 'abstract/persistable';
+
+class StorageService extends Persistable {
 	/* @ngInject */
-	constructor() {
-		this.storage = localStorage;
+	constructor($log) {
+		super($log);
 	}
-	setStorageProperty(property, value) {
-		this.storage.setItem(property, JSON.stringify(value));
+	setStorageProperty(key, value) {
+		super.setPersistentProperty(key, value);
 	}
-	getStorageProperty(property) {
-		return JSON.parse(this.storage.getItem(property));
+	getStorageProperty(key) {
+		return super.getPersistentProperty(key);
+	}
+	removeStorageProperty(key) {
+		super.removePersistentProperty(key);
 	}
 }
 
