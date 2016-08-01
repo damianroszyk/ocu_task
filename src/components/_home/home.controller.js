@@ -1,7 +1,11 @@
 export default class HomeController {
 	/* @ngInject */
-	constructor(breadcrumbService) {
+	constructor(breadcrumbService, metatagsService) {
 		breadcrumbService.breadcrumb = [];
+		metatagsService
+			.clearMetatags()
+			.appendMetatag(`og:title`, `Homepage`)
+			.appendMetatag(`og:type`, `website`);
 		this.playlists = [{
 			id: 30595446,
 			name: 'playlist 1',

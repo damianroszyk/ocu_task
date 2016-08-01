@@ -38,7 +38,7 @@ class CategoryService {
 		let stateParams = {};
 		category.parents = this.traverseCategories(stateParams, category.parents, 0);
 		let nestingLevel = Object.keys(stateParams).length + 1;
-		stateParams[`l${nestingLevel}`] = 'mock';
+		stateParams[`l${nestingLevel}`] = category.category.name;
 		category.children = this.traverseCategories(stateParams, category.children, nestingLevel);
 		console.timeEnd('categoriesParamsBuilder');
 		return category;

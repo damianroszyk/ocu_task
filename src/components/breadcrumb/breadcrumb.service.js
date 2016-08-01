@@ -1,7 +1,7 @@
-import Observable from '../../shared/abstract/observable';
-
 import angular from 'angular';
 import app from 'app';
+
+import Observable from 'abstract/observable';
 
 class BreadcrumbService extends Observable {
 	/* @ngInject */
@@ -18,10 +18,7 @@ class BreadcrumbService extends Observable {
 	}
 	buildCategoryBreadcrumb(category) {
 		let defaultCategoryStateParams = {
-			l1: '',
-			l2: '',
-			l3: '',
-			l4: ''
+			l1: '', l2: '', l3: '', l4: ''
 		};
 		let breadcrumb = [{
 			name: 'Home',
