@@ -65,7 +65,7 @@ playlist-tile {
 }
 
 .playlist-tile__summary {
-	margin-top: 0;
+	margin: 0;
 
 	.xs & {
 		display: none;
@@ -73,7 +73,9 @@ playlist-tile {
 }
 
 .playlist-tile__description {
-	.xs & {
-		margin-top: 0;
-	}
+	margin: 0;
+}
+
+.playlist-tile__duration {
+	margin-top: 3px;
 }
