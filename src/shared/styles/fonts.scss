@@ -4,47 +4,52 @@ body {
 	font-family: 'Source Sans Pro', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 th {
 	font-weight: 600;
 }
 
-.text-xs {
+.text--xs {
 	font-size: 14px;
 }
 
-.text-sm {
+.text--sm {
 	font-size: 16px;
 }
 
-.text-md {
+.text--md {
 	font-size: 18px;
 }
 
-.text-lg {
+.text--lg {
 	font-size: 21px;
 }
 
-.text-xl {
+.text--xl {
 	font-size: 35px;
 }
 
-.text-xxl {
+.text--xxl {
 	font-size: 46px;
 }
 
-.text-light {
+.text--light {
 	font-weight: 300;
 }
 
-.text-normal {
+.text--normal {
 	font-weight: 400;
 }
 
-.text-semibold {
+.text--semibold {
 	font-weight: 600;
 }
 
-.text-bold {
+.text--bold {
 	font-weight: 700;
 }
