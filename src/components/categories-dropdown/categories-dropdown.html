@@ -1,6 +1,7 @@
 <div
     class="categories-dropdown container"
     ng-if="$ctrl.isShown"
+	click-outside="$ctrl.closeDropdown()"
     ng-mouseleave="$ctrl.hideSubcategories()">
     <div class="categories-dropdown__column">
         <ul class="categories-dropdown__list">

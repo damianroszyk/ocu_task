@@ -3,9 +3,16 @@
 
 $category-tile-width: 275px;
 $category-tile-height: 275px;
+
 $category-tile-border-height: 5px;
+$category-tile-border-height--xs: 3px;
+
 $category-tile-height--featured: 2 * $category-tile-height + $distance-md;
 $category-tile-offset: 24px;
+$category-tile-offset--xs: 10px;
+
+$category-tile-control-radius: 45px;
+$category-tile-control-radius--xs: 25px;
 
 category-tile {
     position: relative;
@@ -18,6 +25,17 @@ category-tile {
 	border-bottom: $category-tile-border-height solid $yellow;
 
 	.xl &:nth-child(4n) {
+		margin-right: 0;
+	}
+
+	.xs & {
+		width: calc(50% - #{$category-tile-offset--xs / 2});
+		margin: 0 $category-tile-offset--xs $category-tile-offset--xs 0;
+		height: 50vw;
+		border-bottom: $category-tile-border-height--xs solid $yellow;
+	}
+
+	.xs &:nth-child(2n) {
 		margin-right: 0;
 	}
 }
@@ -33,7 +51,7 @@ category-tile {
     z-index: $z-index-1;
 
 	> img {
-		width: 100%;
+		height: 100%;
 	}
 }
 
@@ -51,12 +69,18 @@ category-tile {
     z-index: $z-index-3;
 	border: 2px solid $white;
 	color: $white;
-	width: 45px;
-	height: 45px;
+	width: $category-tile-control-radius;
+	height: $category-tile-control-radius;
 	border-radius: 50%;
 	outline: none;
 	font-size: 32px;
 	cursor: pointer;
+
+	.xs & {
+		width: $category-tile-control-radius--xs;
+		height: $category-tile-control-radius--xs;
+		border: 1px solid $white;
+	}
 
 	.category-tile__subcategories & {
 		z-index: $z-index-5;
@@ -64,17 +88,24 @@ category-tile {
 	}
 }
 
-.category-tile__control--plus-white {
-	background: url('/shared/images/icons/plus-white.png');
+%category-tile__control-icon {
 	background-repeat: no-repeat;
 	background-position: center center;
+	background-color: initial;
+
+	.xs & {
+		background-size: 50%;
+	}
+}
+
+.category-tile__control--plus-white {
+	@extend %category-tile__control-icon;
+	background-image: url('/shared/images/icons/plus-white.png');
 }
 
 .category-tile__control--close-black {
-	background: url('/shared/images/icons/close-black.png');
-	background-repeat: no-repeat;
-	background-position: center center;
-
+	@extend %category-tile__control-icon;
+	background-image: url('/shared/images/icons/close-black.png');
 }
 
 .category-tile__subcategories {
@@ -92,6 +123,14 @@ category-tile {
 
 	.xl category-tile:nth-child(4n+1) & {
 		@include position-absolute(0, auto, auto, 0);
+	}
+
+	.xs category-tile:nth-child(2n+1) & {
+		@include position-absolute(0, auto, auto, 0);
+	}
+
+	.xs & {
+		width: 100vw;
 	}
 
 	&.ng-enter {

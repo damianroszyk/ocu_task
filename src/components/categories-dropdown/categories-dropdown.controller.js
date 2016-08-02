@@ -1,13 +1,9 @@
 export default class CategoriesDropdownController {
 	/* @ngInject */
-	constructor(categoryService, domHelper) {
-		categoryService.getCategories().then((response) => {
-			this.categories = response;
-		});
-		domHelper.handleOutsideClick(
-			document.querySelectorAll('categories-dropdown')[0],
-			this.closeDropdown.bind(this)
-		);
+	constructor(categoryService) {
+		categoryService
+			.getCategories()
+			.then(response => this.categories = response);
 	}
 	closeDropdown() {
 		this.isShown = false;
