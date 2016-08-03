@@ -17,3 +17,4 @@ import './playlist-tags/';
 import './playlist-tile/';
 import './playlist-tiles/';
 import './track-list/';
+import './search-tile/';

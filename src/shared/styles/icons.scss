@@ -65,16 +65,28 @@ $lg-icon: 50px;
 
 .icon-hamburger {
 	@include icon($md-icon, '/shared/images/icons/hamburger-icon.png');
+}
+
+.icon-hamburger--full-width {
+	@include icon($md-icon, '/shared/images/icons/hamburger-icon.png');
 	@include icon-parent-width();
 }
 
 .icon-search {
+	@include icon($md-icon, '/shared/images/icons/search-icon.png');
+}
+
+.icon-search--full-width {
 	@include icon($md-icon, '/shared/images/icons/search-icon.png');
 	@include icon-parent-width();
 	background-size: 49%;
 }
 
 .icon-tiles {
+	@include icon($md-icon, '/shared/images/icons/tiles-icon.png');
+}
+
+.icon-tiles--full-width {
 	@include icon($md-icon, '/shared/images/icons/tiles-icon.png');
 	@include icon-parent-width();
 	background-size: 49%;
@@ -83,6 +95,14 @@ $lg-icon: 50px;
 
 .icon-tags {
 	@include icon($md-icon, '/shared/images/icons/tags-icon.png');
+}
+
+.icon-tags--full-width {
+	@include icon($md-icon, '/shared/images/icons/tags-icon.png');
 	@include icon-parent-width();
 	background-size: 62%;
+}
+
+.icon-close {
+	@include icon($md-icon, '/shared/images/icons/close-black.png');
 }

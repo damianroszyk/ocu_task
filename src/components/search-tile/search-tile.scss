@@ -1,0 +1,70 @@
+@import '../../shared/styles/variables';
+@import '../../shared/styles/mixins';
+
+$search-tile-width: 574px;
+$search-tile-height: 275px;
+$search-button-width: 156px;
+$search-input-width: 378px;
+$search-form-height: 49px;
+
+.search-tile {
+	width: $search-tile-width;
+	height: $search-tile-height;
+	margin-bottom: $distance-md;
+	background-size: cover;
+	position: relative;
+}
+
+.search-tile-form {
+	position: absolute;
+	bottom: 3 * $distance-sm;
+	width: 100%;
+	text-align: center;
+	font-size: 0;
+}
+
+.search-tile-form__input,
+.search-tile-form__button {
+	height: $search-form-height;
+	border: 3px solid $yellow;
+	font-size: 21px;
+	box-sizing: border-box;
+	vertical-align: top;
+
+	&:focus {
+		outline: 0;
+	}
+}
+
+.search-tile-form__input {
+	width: $search-input-width;
+	padding: 0 $distance-sm 0 5 * $distance-sm;
+	border-right: 0;
+
+	@include placeholder() {
+		color: $black;
+	    opacity: 1;
+	}
+}
+
+.search-tile-form__button {
+	background-color: $yellow;
+	text-transform: capitalize;
+	font-weight: 600;
+	width: $search-button-width;
+}
+
+.icon-search--input,
+.icon-close--input {
+	@include position-absolute(0, auto, auto, 0);
+	height: $search-form-height;
+	width: $search-form-height;
+}
+
+.icon-search--input {
+	background-size: 24px;
+}
+
+.icon-close--input {
+	cursor: pointer;
+}

@@ -10,5 +10,7 @@
 	"TRACK": "track",
 	"ARTIST": "artist",
 	"ALBUM": "album",
-	"TIME": "time"
+	"TIME": "time",
+	"SEARCH": "search",
+	"SEARCH_TILE_INPUT": "Search Digster"
 }

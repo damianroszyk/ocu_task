@@ -1,0 +1,36 @@
+<div
+	class="search-tile"
+	ng-if="$ctrl.backgroundImage"
+	style="background-image: url('{{::$ctrl.backgroundImage}}')">
+		<form
+			class="search-tile-form"
+			action="index.html"
+			method="post">
+			<div class="relative-container">
+				<span
+					class="icon-search icon-search--input"
+					ng-hide="$ctrl.query">
+
+				</span>
+				<span
+					class="icon-close icon-close--input"
+					ng-show="$ctrl.query"
+					ng-click="$ctrl.query = ''">
+
+				</span>
+				<input
+					class="search-tile-form__input"
+					type="text"
+					name="search"
+					placeholder="{{'SEARCH_TILE_INPUT' | translate}}"
+					ng-model="$ctrl.query">
+
+				<button
+					class="search-tile-form__button"
+					type="submit"
+					name="button"
+					translate="{{::'SEARCH'}}">
+				</button>
+			</div>
+		</form>
+</div>
