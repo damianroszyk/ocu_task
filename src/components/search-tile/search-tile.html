@@ -2,11 +2,11 @@
 	class="search-tile"
 	ng-if="$ctrl.backgroundImage"
 	style="background-image: url('{{::$ctrl.backgroundImage}}')">
+	<div class="search-tile__form-wrapper">
 		<form
 			class="search-tile-form"
 			action="index.html"
 			method="post">
-			<div class="relative-container">
 				<span
 					class="icon-search icon-search--input"
 					ng-hide="$ctrl.query">
@@ -31,6 +31,6 @@
 					name="button"
 					translate="{{::'SEARCH'}}">
 				</button>
-			</div>
 		</form>
+	</div>
 </div>
