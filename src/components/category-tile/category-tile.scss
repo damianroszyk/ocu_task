@@ -60,6 +60,7 @@ category-tile {
     z-index: $z-index-2;
 	color: $white;
     margin: 0;
+	word-wrap: break-word;
 }
 
 .category-tile__control {
