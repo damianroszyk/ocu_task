@@ -21,7 +21,7 @@ $lg-icon: 50px;
 @mixin icon-parent-width() {
 	width: 100%;
 	height: 100%;
-	background-size: 65%;
+	background-size: 50%;
 }
 
 .icon-twitter {
@@ -56,35 +56,53 @@ $lg-icon: 50px;
 }
 
 .icon-email {
-	@include icon($md-icon, '/shared/images/icons/spotify-icon.png');
+	@include icon($md-icon, '/shared/images/icons/email-icon.png');
 }
 
 .icon-apple {
-	@include icon($md-icon, '/shared/images/icons/spotify-icon.png');
+	@include icon($md-icon, '/shared/images/icons/apple-icon.png');
 }
 
 .icon-hamburger {
+	@include icon($md-icon, '/shared/images/icons/hamburger-icon.png');
+}
+
+.icon-hamburger--full-width {
 	@include icon($md-icon, '/shared/images/icons/hamburger-icon.png');
 	@include icon-parent-width();
 }
 
 .icon-search {
 	@include icon($md-icon, '/shared/images/icons/search-icon.png');
+}
+
+.icon-search--full-width {
+	@include icon($md-icon, '/shared/images/icons/search-icon.png');
 	@include icon-parent-width();
+	background-size: 49%;
 }
 
 .icon-tiles {
 	@include icon($md-icon, '/shared/images/icons/tiles-icon.png');
-	@include icon-parent-width();
-
 }
 
-.icon-tiles--big {
-	@extend .icon-tiles;
-	background-size: 90%;
+.icon-tiles--full-width {
+	@include icon($md-icon, '/shared/images/icons/tiles-icon.png');
+	@include icon-parent-width();
+	background-size: 49%;
+
 }
 
 .icon-tags {
 	@include icon($md-icon, '/shared/images/icons/tags-icon.png');
+}
+
+.icon-tags--full-width {
+	@include icon($md-icon, '/shared/images/icons/tags-icon.png');
 	@include icon-parent-width();
+	background-size: 62%;
+}
+
+.icon-close {
+	@include icon($md-icon, '/shared/images/icons/close-black.png');
 }

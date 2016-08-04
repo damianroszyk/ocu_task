@@ -4,7 +4,7 @@ export default class CategoryTileController {
 	/* @ngInject */
 	constructor($rootScope, domConstant) {
 		this.$rootScope = $rootScope;
-		this.category.imageUrl = this.category.imageUrl || domConstant.defaultCategoryTileImage;
+		this.category.image = this.category.image || domConstant.defaultCategoryTileImage;
 		this.listenToCollapseEvent();
 	}
 	listenToCollapseEvent() {
