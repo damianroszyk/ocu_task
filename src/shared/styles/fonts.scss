@@ -28,6 +28,10 @@ th {
 
 .text--lg {
 	font-size: 21px;
+
+	.xs & {
+		font-size: 16px;
+	}
 }
 
 .text--xl {

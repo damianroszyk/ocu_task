@@ -1,5 +1,5 @@
 @mixin clearfix() {
-    &:after {
+    &::after {
         content: '.';
         display: block;
         clear: both;
@@ -34,3 +34,23 @@
 	align-items: center;
 	justify-content: center;
 }
+
+// scss-lint:disable all
+@mixin placeholder() {
+	&::-webkit-input-placeholder {
+	  @content
+	}
+
+	&:-moz-placeholder {
+	  @content
+	}
+
+	&::-moz-placeholder {
+	  @content
+	}
+
+	&:-ms-input-placeholder {
+	  @content
+	}
+}
+// scss-lint:enable all
