@@ -22,10 +22,14 @@
 				{{::$ctrl.playlist.duration | convertSeconds:'hours' }}
 			</p>
 			<button
-				class="btn-circled"
+				class="btn-circled playlist-tile__button"
 				type="button">
 				Follow
 			</button>
+			<playlist-tags
+				tags="$ctrl.tags">
+
+			</playlist-tags>
 		</div>
 	</div>
 </div>

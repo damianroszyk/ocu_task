@@ -85,6 +85,10 @@ $search-form-height--xs: 30px;
 	.xs & {
 		width: 30%;
 	}
+
+	&:disabled {
+		color: $black;
+	}
 }
 
 .icon-search--input,
