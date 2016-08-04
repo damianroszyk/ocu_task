@@ -1,7 +1,6 @@
-export default class PlaylistTileController {
+export default class SearchTileController {
 	/* @ngInject */
 	constructor(domConstant) {
 		this.backgroundImage = this.backgroundImage || domConstant.defaultHeaderBackgroundImage;
-		this.brandImage = this.brandImage || domConstant.defaultBrandImage;
 	}
 }

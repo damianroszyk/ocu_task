@@ -6,7 +6,7 @@ $search-tile-height: 275px;
 $search-button-width: 156px;
 $search-input-width: 378px;
 $search-form-height: 49px;
-$search-form-height-mobile: 30px;
+$search-form-height--xs: 30px;
 
 .search-tile {
 	width: $search-tile-width;
@@ -56,7 +56,7 @@ $search-form-height-mobile: 30px;
 
 	.xs & {
 		font-size: 16px;
-		height: $search-form-height-mobile;
+		height: $search-form-height--xs;
 		border-width: 2px;
 	}
 }
@@ -94,8 +94,8 @@ $search-form-height-mobile: 30px;
 	width: $search-form-height;
 
 	.xs & {
-		height: $search-form-height-mobile;
-		width: $search-form-height-mobile;
+		height: $search-form-height--xs;
+		width: $search-form-height--xs;
 	}
 }
 
