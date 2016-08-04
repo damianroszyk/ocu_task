@@ -10,7 +10,7 @@ class PlaylistService {
 		this.modelHelper = modelHelper;
 		this.backendConstant = backendConstant;
 		this.playlistBackend = this.modelHelper.buildUrl(
-			backendConstant.apiVersion, 'category'
+			backendConstant.apiVersion, 'playlist'
 		);
 	}
 	getPlaylists(categoryId = null) {

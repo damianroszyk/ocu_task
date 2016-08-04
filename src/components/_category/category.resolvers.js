@@ -1,13 +1,11 @@
-export class CategoryResolver {
-	/* @ngInject */
-	static constructor($stateParams, categoryService) {
-		return categoryService.getCategory($stateParams.categoryId);
-	}
-}
+/* @ngInject */
+let category = function($stateParams, categoryService) {
+	return categoryService.getCategory($stateParams.categoryId);
+};
 
-export class CategoriesResolver {
-	/* @ngInject */
-	static constructor($stateParams, categoryService) {
-		return categoryService.getCategories();
-	}
-}
+/* @ngInject */
+let categories = function($stateParams, categoryService) {
+	return categoryService.getCategories();
+};
+
+export { category, categories };

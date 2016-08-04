@@ -1,8 +1,8 @@
 import angular from 'angular';
 import app from 'app';
 
-import { CategoryResolver } from 'category/category.resolvers';
-import { PlaylistsResolver } from 'playlist/playlist.resolvers';
+import { category } from 'category/category.resolvers';
+import { playlists } from 'playlist/playlist.resolvers';
 
 let squash = true;
 
@@ -20,10 +20,7 @@ const CATEGORY_ROUTER = {
 			l4: { squash }
 		},
 		pageTitle: `Category`,
-		resolve: {
-			category: CategoryResolver.constructor,
-			playlists: PlaylistsResolver.constructor
-		}
+		resolve: { category, playlists }
 	}
 };
 

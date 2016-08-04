@@ -1,7 +1,7 @@
 import angular from 'angular';
 import app from 'app';
 
-import { PlaylistResolver } from 'playlist/playlist.resolvers';
+import { playlist } from 'playlist/playlist.resolvers';
 
 const PLAYLIST_ROUTER = {
 	playlistState: {
@@ -11,9 +11,7 @@ const PLAYLIST_ROUTER = {
 				playlist="$resolve.playlist">
 			</playlist>`,
 		pageTitle: `Playlist`,
-		resolve: {
-			playlist: PlaylistResolver.constructor
-		}
+		resolve: { playlist }
 	}
 };
 

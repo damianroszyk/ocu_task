@@ -1,8 +1,8 @@
 import angular from 'angular';
 import app from 'app';
 
-import { CategoriesResolver } from 'category/category.resolvers';
-import { PlaylistsResolver } from 'playlist/playlist.resolvers';
+import { categories } from 'category/category.resolvers';
+import { playlists } from 'playlist/playlist.resolvers';
 
 const HOME_ROUTER = {
 	homeState: {
@@ -13,10 +13,7 @@ const HOME_ROUTER = {
 				playlists="$resolve.playlists">
 			</home>`,
 		pageTitle: `Home`,
-		resolve: {
-			categories: CategoriesResolver.constructor,
-			playlists: PlaylistsResolver.constructor
-		}
+		resolve: { categories, playlists }
 	}
 };
 
