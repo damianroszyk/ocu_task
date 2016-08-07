@@ -1,9 +1,12 @@
 <div
 	class="playlist-tile"
 	ui-sref="playlist({playlistId: $ctrl.playlist.id})">
-	<img
-	    class="playlist-tile__image"
-	    ng-src="{{::$ctrl.playlist.imageUrl}}"/>
+	<div class="playlist-tile__image-wrapper">
+		<img
+		    class="playlist-tile__image"
+		    ng-src="{{::$ctrl.playlist.imageUrl}}"/>
+		<div class="play-button-overlay"></div>
+	</div>
 	<div class="playlist-tile-meta">
 		<h3 class="playlist-tile-meta__title text--md">
 			{{::$ctrl.playlist.name}}
@@ -30,6 +33,9 @@
 				tags="$ctrl.tags">
 
 			</playlist-tags>
+			<p class="playlist-tile__tracks">
+				Track number: <strong>{{::$ctrl.playlist.nbTracks}}</strong>
+			</p>
 		</div>
 	</div>
 </div>

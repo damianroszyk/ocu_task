@@ -127,3 +127,41 @@ playlist-tile {
 		display: none;
 	}
 }
+
+.playlist-tags {
+	.playlist-tile & {
+		display: none;
+	}
+
+	.playlist-tiles--horizontal & {
+		display: block;
+	}
+}
+
+.playlist-tile__tracks {
+	display: none;
+
+	.playlist-tiles--horizontal & {
+		display: block;
+		margin-top: 7px;
+	}
+}
+
+.playlist-tile__image-wrapper {
+
+	.playlist-tiles--horizontal & {
+		width: $playlist-tile-height--horizontal;
+		height: $playlist-tile-height--horizontal;
+		position: relative;
+		float: left;
+		overflow: hidden;
+	}
+
+	.play-button-overlay {
+		display: none;
+
+		.playlist-tiles--horizontal & {
+			display: block;
+		}
+	}
+}
