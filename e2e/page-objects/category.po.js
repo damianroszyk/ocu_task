@@ -1,11 +1,11 @@
 function CategoryPageObject() {
 
 	var categoryTile = element(by.css('.category-tile'));
+	var categoryName = element(by.css('.category__title'));
 	var title = element(by.css('title'));
 
-	this.get = function() {
-		browser.get('/#/category/11/metal');
-		browser.waitForAngular();
+	this.get = function(path) {
+		browser.get('/#/category/' + path);
 	};
 
 	this.getCategoryTile = function() {
@@ -14,6 +14,10 @@ function CategoryPageObject() {
 
 	this.getTitle = function() {
 		return title.getInnerHtml();
+	};
+
+	this.getCategoryName = function() {
+		return categoryName.getText();
 	};
 }
 

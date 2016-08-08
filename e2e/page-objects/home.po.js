@@ -9,6 +9,7 @@ function HomePageObject() {
 	var cookieMessageControl = element(by.css('.cookies-message__control'));
 	var searchTileInput = element(by.css('.search-tile-form__input'));
 	var searchTileControl = element(by.css('.search-tile-form__button'));
+	var categoryTiles = element.all(by.css('.category-tile'));
 
 	this.get = function() {
 		browser.get('/');
@@ -24,6 +25,10 @@ function HomePageObject() {
 
 	this.getTitle = function() {
 		return title.getInnerHtml();
+	};
+
+	this.getCategoryTile = function() {
+		return categoryTiles.first();
 	};
 
 	this.getCookieMessageElement = function() {

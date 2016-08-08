@@ -5,7 +5,6 @@ function PlaylistPageObject() {
 
 	this.get = function(id) {
 		browser.get('/#/playlist/'+ id);
-		browser.waitForAngular();
 	};
 
 	this.getPlaylistTitle = function() {

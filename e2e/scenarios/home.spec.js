@@ -34,7 +34,7 @@ describe('Home page test suite', function() {
 	});
 
 	it('should have category toggle button', function() {
-		expect(homePage.getCategoryToggleButton()).not.toBe(null);
+		expect(homePage.getCategoryToggleButton().isPresent()).toBe(true);
 	});
 
 	it('should open category dropdown', function() {
