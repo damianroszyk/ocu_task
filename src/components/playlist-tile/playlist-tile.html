@@ -29,13 +29,12 @@
 				type="button">
 				Follow
 			</button>
-			<playlist-tags
-				tags="$ctrl.tags">
-
-			</playlist-tags>
-			<p class="playlist-tile__tracks">
-				Track number: <strong>{{::$ctrl.playlist.nbTracks}}</strong>
-			</p>
 		</div>
+	</div>
+	<div class="playlist-tile__tags-wrapper">
+		<playlist-tags tags="$ctrl.tags"></playlist-tags>
+		<p class="playlist-tile__tracks">
+			Track number: <strong>{{::$ctrl.playlist.nbTracks}}</strong>
+		</p>
 	</div>
 </div>

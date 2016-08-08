@@ -30,6 +30,13 @@ playlist-tile {
 		height: $playlist-tile-height--horizontal;
 		border: 0;
 		background-color: transparent;
+
+		.xs & {
+			width: 100%;
+			height: 50vw;
+			margin-bottom: $distance-md;
+			border-bottom: 5px solid $grey-2;
+		}
     }
 
 	.xs & {
@@ -45,6 +52,10 @@ playlist-tile {
 .playlist-tile {
 	.playlist-tiles--horizontal & {
 		height: $playlist-tile-height--horizontal;
+
+		.xs & {
+			height: 50vw;
+		}
 	}
 }
 
@@ -56,6 +67,10 @@ playlist-tile {
 		width: auto;
 		height: $playlist-tile-height--horizontal;
 		float: left;
+
+		.xs & {
+			height: 50vw;
+		}
     }
 }
 
@@ -70,7 +85,13 @@ playlist-tile {
 		margin-left: 15px;
 		padding-left: 0;
 		height: 100%;
-		border-bottom: 5px solid $grey-2;
+
+		.xs & {
+			width: 55%;
+			margin-left: 0;
+			padding: 0 15px;
+			border-bottom: 0;
+		}
 	}
 }
 
@@ -128,6 +149,15 @@ playlist-tile {
 	}
 }
 
+.playlist-tile__tags-wrapper {
+	display: none;
+
+	.playlist-tiles--horizontal & {
+		display: block;
+		border-bottom: 5px solid $grey-2;
+	}
+}
+
 .playlist-tags {
 	.playlist-tile & {
 		display: none;
@@ -155,6 +185,11 @@ playlist-tile {
 		position: relative;
 		float: left;
 		overflow: hidden;
+
+		.xs & {
+			width: 45%;
+			height: 50vw;
+		}
 	}
 
 	.play-button-overlay {
