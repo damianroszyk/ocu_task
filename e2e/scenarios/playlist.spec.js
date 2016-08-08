@@ -5,14 +5,14 @@ describe('Playlist page test suite', function() {
 
 	beforeEach(function() {
 		playlistPage = new PlaylistPage();
-		playlistPage.get();
+		playlistPage.get(30595446);
 	});
 
-	it('should have heading', function() {
-		expect(playlistPage.getHeading()).toEqual('Playlist');
+	it('should have playlist name', function() {
+		expect(playlistPage.getPlaylistTitle()).toEqual('Best Playlist EVER !!');
 	});
 
-	it('should have title', function() {
+	it('should have page title', function() {
 		expect(playlistPage.getTitle()).toEqual('Pitched | Playlist');
 	});
 });

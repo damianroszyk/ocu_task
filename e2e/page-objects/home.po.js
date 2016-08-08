@@ -5,7 +5,10 @@ function HomePageObject() {
 	var title = element(by.css('title'));
 	var categoryToggleButton = element(by.css('.nav-menu-button'));
 	var categoryDropdownElement = element(by.css('.categories-dropdown'));
-
+	var cookieMessageElement = element(by.css('.cookies-message'));
+	var cookieMessageControl = element(by.css('.cookies-message__control'));
+	var searchTileInput = element(by.css('.search-tile-form__input'));
+	var searchTileControl = element(by.css('.search-tile-form__button'));
 
 	this.get = function() {
 		browser.get('/');
@@ -23,12 +26,36 @@ function HomePageObject() {
 		return title.getInnerHtml();
 	};
 
+	this.getCookieMessageElement = function() {
+		return cookieMessageElement;
+	};
+
+	this.hideCookieMessage = function() {
+		cookieMessageControl.click();
+	};
+
+	this.openCategoryDropdown = function() {
+		return categoryToggleButton.click();
+	};
+
 	this.getCategoryToggleButton = function() {
 		return categoryToggleButton;
 	};
 
 	this.getCategoryDropdownElement = function() {
 		return categoryDropdownElement;
+	};
+
+	this.getSearchTileInput = function() {
+		return searchTileInput;
+	};
+
+	this.setSearchTileInputText = function(text) {
+		searchTileInput.sendKeys(text);
+	};
+
+	this.doTileSearch = function() {
+		searchTileControl.click();
 	};
 }
 

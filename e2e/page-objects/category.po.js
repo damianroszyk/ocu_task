@@ -4,7 +4,7 @@ function CategoryPageObject() {
 	var title = element(by.css('title'));
 
 	this.get = function() {
-		browser.get('/#/11/category/testCategory');
+		browser.get('/#/category/11/metal');
 		browser.waitForAngular();
 	};
 
