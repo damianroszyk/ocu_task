@@ -73,6 +73,7 @@ $search-form-height--xs: 30px;
 
 	.xs & {
 		width: 70%;
+		padding-left: 3 * $distance-sm;
 	}
 }
 
@@ -81,6 +82,7 @@ $search-form-height--xs: 30px;
 	text-transform: capitalize;
 	font-weight: 600;
 	width: $search-button-width;
+	cursor: pointer;
 
 	.xs & {
 		width: 30%;
