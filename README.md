@@ -18,6 +18,11 @@ npm start
 npm run build
 ```
 
+## Linting files
+```
+npm run lint
+```
+
 ## Running e2e tests on development environment
 ```
 npm start && npm run e2e-dev

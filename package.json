@@ -45,7 +45,7 @@
   },
   "scripts": {
     "build": "node ./node_modules/webpack/bin/webpack --production",
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server",
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server --hot --inline",
     "lint": "node ./node_modules/eslint/bin/eslint --config ./.eslintrc src/ --ext .js",
     "pree2e-ci": "node ./node_modules/protractor/bin/webdriver-manager update",
     "pree2e-dev": "node ./node_modules/protractor/bin/webdriver-manager update",
