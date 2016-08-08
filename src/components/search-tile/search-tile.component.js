@@ -5,7 +5,7 @@ import template from 'text!./search-tile.html';
 import controller from './search-tile.controller';
 
 let bindings = {
-	backgroundImage: '<'
+	backgroundImage: '<?'
 };
 
 export default angular
