@@ -6,6 +6,7 @@ function CategoryPageObject() {
 
 	this.get = function(path) {
 		browser.get('/#/category/' + path);
+		browser.waitForAngular();
 	};
 
 	this.getCategoryTile = function() {

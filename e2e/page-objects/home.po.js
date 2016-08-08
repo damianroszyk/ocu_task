@@ -10,9 +10,11 @@ function HomePageObject() {
 	var searchTileInput = element(by.css('.search-tile-form__input'));
 	var searchTileControl = element(by.css('.search-tile-form__button'));
 	var categoryTiles = element.all(by.css('.category-tile'));
+	var playlistTiles = element.all(by.css('.playlist-tile'));
 
 	this.get = function() {
 		browser.get('/');
+		browser.waitForAngular();
 	};
 
 	this.getHeaderImage = function() {
@@ -29,6 +31,10 @@ function HomePageObject() {
 
 	this.getCategoryTile = function() {
 		return categoryTiles.first();
+	};
+
+	this.getPlaylistTile = function() {
+		return playlistTiles.first();
 	};
 
 	this.getCookieMessageElement = function() {

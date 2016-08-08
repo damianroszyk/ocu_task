@@ -6,10 +6,10 @@ describe('Category page test suite', function() {
 	var categoryPage, homePage, categoryPath;
 
 	beforeEach(function() {
-		categoryPage = new CategoryPage();
 		homePage = new HomePage();
 		homePage.get();
 		homePage.getCategoryTile().getAttribute('href').then(function(path) {
+			categoryPage = new CategoryPage();
 			categoryPath = path.split('/');
 			categoryPath.splice(0, 2);
 			categoryPage.get(categoryPath[0] + '/' + categoryPath[1]);

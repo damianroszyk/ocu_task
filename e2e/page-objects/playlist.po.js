@@ -5,10 +5,11 @@ function PlaylistPageObject() {
 
 	this.get = function(id) {
 		browser.get('/#/playlist/'+ id);
+		browser.waitForAngular();
 	};
 
 	this.getPlaylistTitle = function() {
-		return playlistTitle.getText();
+		return playlistTitle;
 	};
 
 	this.getTitle = function() {
