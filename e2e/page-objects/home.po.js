@@ -14,7 +14,6 @@ function HomePageObject() {
 
 	this.get = function() {
 		browser.get('/');
-		browser.waitForAngular();
 	};
 
 	this.getHeaderImage = function() {
