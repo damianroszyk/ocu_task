@@ -1,4 +1,5 @@
 import angular from 'angular';
+import _ from 'lodash';
 import app from 'app';
 
 const CLASSES = {
@@ -18,8 +19,8 @@ let tagItem = () => {
 		link: (scope, element) => {
 			const WEIGHT = scope.tagItem.weight;
 			for (let className in CLASSES) {
-				let range = CLASSES[className].split('-');
-				if (parseInt(range[0], 10) < WEIGHT && WEIGHT <= parseInt(range[1], 10)) {
+				let range = _.map(CLASSES[className].split('-'), _.parseInt);
+				if (range[0] < WEIGHT && WEIGHT <= range[1]) {
 					element.addClass(`tag-cloud-element--${className}`);
 					break;
 				}
