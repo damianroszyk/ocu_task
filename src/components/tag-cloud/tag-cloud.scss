@@ -1,6 +1,7 @@
 @import '../../shared/styles/variables';
 @import '../../shared/styles/mixins';
 
+
 $tag-max-width: 200px;
 
 .tag-cloud {
@@ -18,6 +19,9 @@ $tag-max-width: 200px;
 	display: inline-block;
 	padding: $distance-md $distance-lg;
 	margin: $distance-sm;
+	animation-duration: .5s;
+	animation-fill-mode: both;
+	animation-name: fade-in;
 
 	&--xs {
 		padding: ($distance-sm / 2) $distance-sm;
