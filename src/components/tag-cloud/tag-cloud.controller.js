@@ -1,13 +1,9 @@
 export default class TagCloudController {
 	/* @ngInject */
-	constructor($timeout) {
-		this.tagsAnimated = []
+	constructor() {
 		angular.forEach(this.tags, tag => {
+			// @TODO: use weight returned from backend when implemented
 			tag.weight = Math.floor(Math.random() * 100);
 		});
-		$timeout(() => {
-			this.tagsAnimated = this.tags;
-		}, 1000)
-
 	}
 }
