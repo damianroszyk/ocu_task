@@ -8,8 +8,17 @@
 		padding: 0 $distance-sm;
 	}
 
+	.playlist-tile & {
+		display: none;
+	}
+
 	.playlist-tiles--horizontal & {
+		display: block;
 		margin: 5px auto;
+
+		.xs & {
+			margin: $distance-md 0 12px 0;
+		}
 	}
 }
 
@@ -22,6 +31,10 @@
 		display: block;
 		margin-bottom: 5px;
 		font-weight: 600;
+
+		.xs & {
+			display: none;
+		}
 	}
 }
 
