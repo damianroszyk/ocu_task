@@ -18,6 +18,13 @@ class CategoryService {
 			this.decorateCategories(this.categoriesParamsBuilder.bind(this))(response.data)
 		);
 	}
+	getFlatCategories() {
+		return this.getCategories().then(categories => {
+			let result = [];
+			this.flattenCategories(categories, result);
+			return result;
+		});
+	}
 	getCategory(categoryId) {
 		let url = this.modelHelper.buildUrl(this.categoryBackend, 'single', categoryId);
 		return this.$http.get(url).then(response =>
@@ -59,6 +66,16 @@ class CategoryService {
 		category.stateParams = _.mapValues(stateParams, (key, index) => parseInt(index, 10) <= nestingLevel ? key : '');
 		category.stateParams = _.mapKeys(category.stateParams, (value, key) => `l${key}`);
 		category.stateParams.categoryId = category.id;
+	}
+	flattenCategories(categories, target) {
+		categories = _.values(categories);
+		for (let i = 0; i < categories.length; i++) {
+			if (categories[i].children && categories[i].children.length) {
+				this.flattenCategories(categories[i].children, target);
+			}
+			target.push(categories[i]);
+			delete categories[i].children;
+		}
 	}
 }
 
