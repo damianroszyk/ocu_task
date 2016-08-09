@@ -35,8 +35,16 @@
 	justify-content: center;
 }
 
-// scss-lint:disable all
+@mixin clearfix {
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
 @mixin placeholder() {
+	// scss-lint:disable all
 	&::-webkit-input-placeholder {
 	  @content
 	}
@@ -52,5 +60,5 @@
 	&:-ms-input-placeholder {
 	  @content
 	}
+	// scss-lint:enable all
 }
-// scss-lint:enable all

@@ -1,1 +1,11 @@
-tag cloud
+<ul class="tag-cloud">
+	<li
+		class="tag-cloud-element"
+		ng-repeat="tag in ::$ctrl.tags"
+		tag-item="tag"
+		ui-sref="category(tag.stateParams)">
+		<p class="tag-cloud-element__title">
+			{{::tag.name}}
+		</p>
+	</li>
+</ul>
