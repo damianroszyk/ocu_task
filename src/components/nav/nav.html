@@ -13,13 +13,33 @@
         <breadcrumb></breadcrumb>
     </div>
     <div class="nav__item nav__item__right">
-        <div class="nav-button">
-			<span class="icon-tags--full-width"></span>
+        <div
+			class="nav-button"
+			ui-sref="tags"
+			ng-class="{
+				'nav-button--active': $root.$state.is('tags')
+			}">
+			<span
+				ng-class="{
+					'icon-tags--full-width': !$root.$state.is('tags'),
+					'icon-tags--active--full-width': $root.$state.is('tags')
+				}">
+			</span>
         </div>
     </div>
     <div class="nav__item nav__item__right">
-        <div class="nav-button">
-			<span class="icon-tiles--full-width"></span>
+        <div
+			class="nav-button"
+			ui-sref="home"
+			ng-class="{
+				'nav-button--active': $root.$state.is('home')
+			}">
+			<span
+				ng-class="{
+					'icon-tiles--full-width': !$root.$state.is('home'),
+					'icon-tiles--active--full-width': $root.$state.is('home')
+				}">
+			</span>
         </div>
     </div>
 	<div class="nav__item nav__item__right">

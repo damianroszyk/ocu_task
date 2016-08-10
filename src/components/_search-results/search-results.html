@@ -1,5 +1,9 @@
 <div class="search-results container">
-	<h1>Hello World</h1>
+	<h1 class="search-results__title">
+		<span translate="{{::'SEARCH_RESULTS_FOR'}}"></span>
+		<span>:</span>
+		<span class="search-results__searched">{{searched}}</span>
+	</h1>
 	<playlist-tiles
 		layout="'horizontal'"
         playlists="$ctrl.playlists">

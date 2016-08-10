@@ -4,8 +4,13 @@ let category = function($stateParams, categoryService) {
 };
 
 /* @ngInject */
-let categories = function($stateParams, categoryService) {
+let categories = function(categoryService) {
 	return categoryService.getCategories();
 };
 
-export { category, categories };
+/* @ngInject */
+let flatCategories = function(categoryService) {
+	return categoryService.getFlatCategories();
+};
+
+export { category, categories, flatCategories };

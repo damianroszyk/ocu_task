@@ -44,9 +44,14 @@ $nav-margin-width--xs: 3px;
 }
 
 .nav-button {
+	cursor: pointer;
     height: $nav-height;
     width: $nav-height;
     position: relative;
+
+	&--active {
+		background: $black;
+	}
 
 	.xs & {
 		height: $nav-height--xs;

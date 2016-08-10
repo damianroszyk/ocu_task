@@ -56,12 +56,20 @@
 		margin-bottom: 8px;
 	}
 
-	&:first-child {
-		margin-left: 0;
-	}
-
 	&:hover {
 		background-color: $yellow;
 		color: $black;
+	}
+
+	.playlist-tiles--horizontal & {
+		&:first-child {
+			margin-left: 0;
+		}
+
+		.xs & {
+			&:first-child {
+				margin-left: 3px;
+			}
+		}
 	}
 }
