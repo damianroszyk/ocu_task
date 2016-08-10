@@ -1,15 +1,14 @@
 function PlaylistPageObject() {
 
-	var heading = element(by.css('h2'));
+	var playlistTitle = element(by.css('.playlist-header__title'));
 	var title = element(by.css('title'));
 
-	this.get = function() {
-		browser.get('/#/playlist/testPlaylist');
-		browser.waitForAngular();
+	this.get = function(id) {
+		browser.get('/#/playlist/'+ id);
 	};
 
-	this.getHeading = function() {
-		return heading.getText();
+	this.getPlaylistTitle = function() {
+		return playlistTitle;
 	};
 
 	this.getTitle = function() {

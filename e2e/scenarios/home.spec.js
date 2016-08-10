@@ -8,6 +8,17 @@ describe('Home page test suite', function() {
 		homePage.get();
 	});
 
+	it('should have search tile input', function() {
+		expect(homePage.getSearchTileInput()).toBeDefined();
+	});
+
+	it('should allow to use search tile', function() {
+		homePage.setSearchTileInputText('foo');
+		homePage.doTileSearch();
+		//@TODO (Pawel): To be implemented
+		// expect(browser.currentUrl()).toContain('/foo/bar');
+	});
+
 	it('should have header image', function() {
 		expect(homePage.getHeaderImage()).toEqual(jasmine.objectContaining({
 			height: 400
@@ -23,11 +34,24 @@ describe('Home page test suite', function() {
 	});
 
 	it('should have category toggle button', function() {
-		expect(homePage.getCategoryToggleButton()).not.toBe(null);
+		expect(homePage.getCategoryToggleButton().isPresent()).toBe(true);
 	});
 
 	it('should open category dropdown', function() {
-		homePage.getCategoryToggleButton().click();
+		homePage.openCategoryDropdown();
 		expect(homePage.getCategoryDropdownElement().isPresent()).toBe(true);
+	});
+
+	it('should have cookie message', function() {
+		expect(homePage.getCookieMessageElement().getAttribute('class')).not.toMatch('ng-hide');
+	});
+
+	it('should control cookie message', function() {
+		homePage.hideCookieMessage();
+		expect(homePage.getCookieMessageElement().getAttribute('class')).toMatch('ng-hide');
+	});
+
+	it('should persist cookie message state', function() {
+		expect(homePage.getCookieMessageElement().getAttribute('class')).toMatch('ng-hide');
 	});
 });
