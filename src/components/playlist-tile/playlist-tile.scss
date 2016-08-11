@@ -4,6 +4,7 @@
 $playlist-tile-width: 275px;
 $playlist-tile-height: 300px;
 $playlist-tile-offset: 24px;
+$playlist-tile-height: 440px;
 $playlist-tile-height--horizontal: 180px;
 $column-right--horizontal: 977px;
 
@@ -15,11 +16,15 @@ playlist-tile {
     width: $playlist-tile-width;
     min-height: $playlist-tile-height;
     background: $grey-1;
-    cursor: pointer;
     margin: 0 $playlist-tile-offset $playlist-tile-offset 0;
+	height: $playlist-tile-height;
 
 	&:nth-child(4n) {
 		margin-right: 0;
+	}
+
+	&:hover .playlist-tile__description {
+		display: block;
 	}
 
     .playlist-tiles--horizontal & {
@@ -51,6 +56,8 @@ playlist-tile {
 }
 
 .playlist-tile {
+	height: 100%;
+
 	.playlist-tiles--horizontal & {
 		height: $playlist-tile-height--horizontal;
 
@@ -78,6 +85,11 @@ playlist-tile {
 .playlist-tile-meta {
     overflow: hidden;
     padding: $distance-sm $distance-sm $distance-md;
+	position: absolute;
+	bottom: 0;
+	width: $playlist-tile-width;
+	background-color: $grey-1;
+	box-sizing: border-box;
 
 	.playlist-tiles--horizontal & {
 		float: left;
@@ -87,6 +99,8 @@ playlist-tile {
 		padding-left: 0;
 		padding-bottom: 0;
 		height: $playlist-tile-height--horizontal / 2;
+		position: relative;
+		background-color: inherit;
 
 		.xs & {
 			width: 50%;
@@ -136,6 +150,13 @@ playlist-tile {
 
 .playlist-tile__description {
 	margin: 0;
+	max-height: 200px;
+	overflow: hidden;
+	display: none;
+
+	.playlist-tiles--horizontal & {
+		display: block;
+	}
 }
 
 .playlist-tile__duration {
@@ -184,6 +205,7 @@ playlist-tile {
 }
 
 .playlist-tile__image-wrapper {
+	cursor: pointer;
 
 	.playlist-tiles--horizontal & {
 		width: $playlist-tile-height--horizontal;
