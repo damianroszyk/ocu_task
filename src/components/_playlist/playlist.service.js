@@ -1,4 +1,5 @@
 import angular from 'angular';
+import _ from 'lodash';
 import app from 'app';
 
 class PlaylistService {
@@ -12,7 +13,31 @@ class PlaylistService {
 		this.playlistBackend = this.modelHelper.buildUrl(
 			backendConstant.apiVersion, 'playlist'
 		);
+		this.searchBackend = this.modelHelper.buildUrl(
+			backendConstant.apiVersion, 'search', backendConstant.clientBrand
+		);
 	}
+
+	processPlaylists(response) {
+		let playlists = _.values(response);
+		let deezer = '';
+		for (var i = 0; i < playlists.length; i++) {
+			for (var a = 0; a < playlists[i].external_playlists.length; a++) {
+				var service = playlists[i].external_playlists[a].source;
+				playlists[i][service] = playlists[i].external_playlists[a];
+			}
+		}
+		return response;
+	}
+
+	searchPlaylists(query, order = 'newest', sort = 'desc') {
+		let url = this.modelHelper.buildUrl(this.searchBackend, query);
+		let params = {order, sort};
+		return this.$http.get(url, { params }).then(response =>
+			this.processPlaylists(response.data)
+		);
+	}
+
 	getPlaylists(categoryId = null) {
 		return this.$q.when([{
 			id: 30595446,
