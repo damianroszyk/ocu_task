@@ -5,6 +5,7 @@ import './nav/';
 import './_category/';
 import './_home/';
 import './_playlist/';
+import './_search-results/';
 import './_tags/';
 
 import './breadcrumb/';

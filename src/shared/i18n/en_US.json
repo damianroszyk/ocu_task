@@ -12,5 +12,6 @@
 	"ALBUM": "album",
 	"TIME": "time",
 	"SEARCH": "search",
-	"SEARCH_TILE_INPUT": "Search Digster"
+	"SEARCH_TILE_INPUT": "Search Digster",
+	"SEARCH_RESULTS_FOR": "search results for"
 }

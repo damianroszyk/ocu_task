@@ -29,7 +29,9 @@
 					class="search-tile-form__button"
 					type="submit"
 					name="button"
-					translate="{{::'SEARCH'}}">
+					translate="{{::'SEARCH'}}"
+					ng-disabled="!$ctrl.query"
+					ui-sref="searchResults({query: $ctrl.query})">
 				</button>
 		</form>
 	</div>

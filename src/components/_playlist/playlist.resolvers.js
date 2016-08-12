@@ -8,4 +8,9 @@ let playlists = function($stateParams, playlistService) {
 	return playlistService.getPlaylists($stateParams.categoryId);
 };
 
-export { playlist, playlists };
+/* @ngInject */
+let search = function($stateParams, playlistService) {
+	return playlistService.searchPlaylists($stateParams.query);
+};
+
+export { playlist, playlists, search };
