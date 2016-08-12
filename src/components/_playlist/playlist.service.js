@@ -18,16 +18,14 @@ class PlaylistService {
 		);
 	}
 
-	processPlaylists(response) {
-		let playlists = _.values(response);
-		let deezer = '';
-		for (var i = 0; i < playlists.length; i++) {
-			for (var a = 0; a < playlists[i].external_playlists.length; a++) {
-				var service = playlists[i].external_playlists[a].source;
-				playlists[i][service] = playlists[i].external_playlists[a];
-			}
-		}
-		return response;
+	processPlaylists(playlists) {
+		playlists = _.values(playlists);
+		angular.forEach(playlists, playlist => {
+			angular.forEach(playlist.external_playlists, externalPlaylist => {
+				playlist[externalPlaylist.source] = externalPlaylist;
+			});
+		});
+		return playlists;
 	}
 
 	searchPlaylists(query, order = 'newest', sort = 'desc') {
