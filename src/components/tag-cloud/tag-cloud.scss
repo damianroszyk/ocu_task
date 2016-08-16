@@ -1,7 +1,6 @@
 @import '../../shared/styles/variables';
 @import '../../shared/styles/mixins';
 
-
 $tag-max-width: 200px;
 
 .tag-cloud {
@@ -22,6 +21,11 @@ $tag-max-width: 200px;
 	animation-duration: .5s;
 	animation-fill-mode: both;
 	animation-name: fade-in;
+	transition: background .2s linear;
+
+	&:hover {
+		background: $yellow;
+	}
 
 	&--xs {
 		padding: ($distance-sm / 2) $distance-sm;
@@ -51,4 +55,9 @@ $tag-max-width: 200px;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	overflow: hidden;
+	transition: color .2s linear;
+
+	.tag-cloud-element:hover & {
+		color: $black;
+	}
 }
