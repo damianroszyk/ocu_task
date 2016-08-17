@@ -22,8 +22,11 @@ $tag-max-width: 200px;
 	animation-fill-mode: both;
 	animation-name: fade-in;
 	transition: background .2s linear;
+	outline: none;
 
-	&:hover {
+	&:hover,
+	&:active,
+	&:focus {
 		background: $yellow;
 	}
 
@@ -57,7 +60,9 @@ $tag-max-width: 200px;
 	overflow: hidden;
 	transition: color .2s linear;
 
-	.tag-cloud-element:hover & {
+	.tag-cloud-element:hover &,
+	.tag-cloud-element:active &,
+	.tag-cloud-element:focus & {
 		color: $black;
 	}
 }
