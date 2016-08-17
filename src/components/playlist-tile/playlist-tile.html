@@ -4,7 +4,7 @@
 		ui-sref="playlist({playlistId: $ctrl.playlist.id})">
 		<img
 		    class="playlist-tile__image"
-		    ng-src="{{::$ctrl.playlist.imageUrl}}"/>
+		    ng-src="{{::$ctrl.playlist.imageUrl || $ctrl.defaultPlaylistTileImage}}"/>
 		<div class="play-button-overlay"></div>
 	</div>
 	<div class="playlist-tile-meta">
@@ -16,7 +16,7 @@
 		<div class="playlist-tile-meta__dash">—</div>
 		<div class="playlist-tile-meta__content">
 			<p class="playlist-tile__description">
-			    {{::$ctrl.playlist.description}}
+			    {{::$ctrl.playlist.description || ('PLAYLIST_NO_DESCRIPTION' | translate)}}
 			</p>
 			<p class="playlist-tile__duration">
 				{{::$ctrl.playlist.tracks.length}}
