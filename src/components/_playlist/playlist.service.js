@@ -18,7 +18,7 @@ class PlaylistService {
 			backendConstant.apiVersion, 'search', backendConstant.clientBrand
 		);
 		this.categoryBackend = this.modelHelper.buildUrl(
-			backendConstant.apiVersion, 'category/'
+			backendConstant.apiVersion, 'category'
 		);
 	}
 
@@ -48,10 +48,14 @@ class PlaylistService {
 		return playlists;
 	}
 
-	getPlaylists(categoryId) {
-		return this.$http.get(this.categoryBackend + categoryId + '/playlists').then(response =>
+	getCategoryPlaylists(categoryId) {
+		if (categoryId === undefined) {
+			return;
+		}
+		let url = this.modelHelper.buildUrl(this.categoryBackend, categoryId, 'playlists');
+		return this.$http.get(url).then(response =>
 			this.addDefaultData(response.data)
-		);;
+		);
 	}
 
 	getPlaylist(playlistId) {

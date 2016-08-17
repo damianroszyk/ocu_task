@@ -2,7 +2,7 @@ import angular from 'angular';
 import app from 'app';
 
 import { categories } from 'category/category.resolvers';
-import { playlists } from 'playlist/playlist.resolvers';
+import { categoryPlaylists } from 'playlist/playlist.resolvers';
 
 const HOME_ROUTER = {
 	homeState: {
@@ -10,10 +10,10 @@ const HOME_ROUTER = {
 		template: `
 			<home
 				categories="$resolve.categories"
-				playlists="$resolve.playlists">
+				categoryPlaylists="$resolve.categoryPlaylists">
 			</home>`,
 		pageTitle: `Home`,
-		resolve: { categories, playlists }
+		resolve: { categories, categoryPlaylists }
 	}
 };
 

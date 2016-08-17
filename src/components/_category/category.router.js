@@ -2,7 +2,7 @@ import angular from 'angular';
 import app from 'app';
 
 import { category } from 'category/category.resolvers';
-import { playlists } from 'playlist/playlist.resolvers';
+import { categoryPlaylists } from 'playlist/playlist.resolvers';
 
 let squash = true;
 
@@ -12,7 +12,7 @@ const CATEGORY_ROUTER = {
 		template: `
 			<category
 				category="$resolve.category"
-				playlists="$resolve.playlists">
+				categoryPlaylists="$resolve.categoryPlaylists">
 			</category>`,
 		params: {
 			l2: { squash },
@@ -20,7 +20,7 @@ const CATEGORY_ROUTER = {
 			l4: { squash }
 		},
 		pageTitle: `Category`,
-		resolve: { category, playlists }
+		resolve: { category, categoryPlaylists }
 	}
 };
 

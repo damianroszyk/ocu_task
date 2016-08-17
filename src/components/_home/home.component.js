@@ -6,7 +6,7 @@ import controller from './home.controller';
 
 let bindings = {
 	categories: '<',
-	playlists: '<'
+	categoryPlaylists: '<'
 };
 
 export default angular
