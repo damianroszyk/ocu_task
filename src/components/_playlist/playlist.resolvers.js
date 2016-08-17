@@ -9,8 +9,13 @@ let categoryPlaylists = function($stateParams, playlistService) {
 };
 
 /* @ngInject */
+let featuredPlaylists = function(playlistService) {
+	return playlistService.getFeaturedPlaylists();
+};
+
+/* @ngInject */
 let search = function($stateParams, playlistService) {
 	return playlistService.searchPlaylists($stateParams.query);
 };
 
-export { playlist, categoryPlaylists, search };
+export { playlist, categoryPlaylists, featuredPlaylists, search };

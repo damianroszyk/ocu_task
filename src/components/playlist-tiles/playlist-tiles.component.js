@@ -5,7 +5,7 @@ import template from 'text!./playlist-tiles.html';
 import controller from './playlist-tiles.controller';
 
 let bindings = {
-	categoryPlaylists: '<',
+	playlists: '<',
 	layout: '<?'
 };
 

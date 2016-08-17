@@ -42,17 +42,22 @@ class PlaylistService {
 
 	addDefaultData(playlists) {
 		angular.forEach(playlists, playlist => {
-			playlist.description = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.';
-			playlist.imageUrl = this.domConstant.defaultCategoryTileImage;
+			_.defaults(playlist,
+			playlist.description = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.',
+			playlist.imageUrl = this.domConstant.defaultCategoryTileImage);
 		});
 		return playlists;
 	}
 
 	getCategoryPlaylists(categoryId) {
-		if (categoryId === undefined) {
-			return;
-		}
 		let url = this.modelHelper.buildUrl(this.categoryBackend, categoryId, 'playlists');
+		return this.$http.get(url).then(response =>
+			this.addDefaultData(response.data)
+		);
+	}
+
+	getFeaturedPlaylists() {
+		let url = this.modelHelper.buildUrl(this.playlistBackend, 'list');
 		return this.$http.get(url).then(response =>
 			this.addDefaultData(response.data)
 		);
