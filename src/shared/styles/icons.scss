@@ -90,11 +90,22 @@ $lg-icon: 50px;
 	@include icon($md-icon, '/shared/images/icons/tiles-icon.png');
 	@include icon-parent-width();
 	background-size: 49%;
+}
 
+.icon-tiles--active--full-width {
+	@include icon($md-icon, '/shared/images/icons/tiles-icon--active.png');
+	@include icon-parent-width();
+	background-size: 49%;
 }
 
 .icon-tags {
 	@include icon($md-icon, '/shared/images/icons/tags-icon.png');
+}
+
+.icon-tags--active--full-width {
+	@include icon($md-icon, '/shared/images/icons/tags-icon--active.png');
+	@include icon-parent-width();
+	background-size: 62%;
 }
 
 .icon-tags--full-width {

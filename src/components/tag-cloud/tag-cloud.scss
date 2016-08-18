@@ -1,0 +1,68 @@
+@import '../../shared/styles/variables';
+@import '../../shared/styles/mixins';
+
+$tag-max-width: 200px;
+
+.tag-cloud {
+	@include clearfix();
+	position: relative;
+	list-style: none;
+	margin: $distance-md 0;
+	padding: 0;
+	text-align: center;
+}
+
+.tag-cloud-element {
+	cursor: pointer;
+	background: $grey-7;
+	display: inline-block;
+	padding: $distance-md $distance-lg;
+	margin: $distance-sm;
+	animation-duration: .5s;
+	animation-fill-mode: both;
+	animation-name: fade-in;
+	transition: background .2s linear;
+	outline: none;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: $yellow;
+	}
+
+	&--xs {
+		padding: ($distance-sm / 2) $distance-sm;
+		font-size: 13px;
+	}
+
+	&--sm {
+		padding: $distance-sm $distance-md;
+		font-size: 15px;
+	}
+
+	&--md {
+		padding: $distance-md $distance-lg;
+		font-size: 17px;
+	}
+
+	&--lg {
+		padding: ($distance-md * 1.5)  $distance-lg;
+		font-size: 21px;
+	}
+}
+
+.tag-cloud-element__title {
+	color: $white;
+	margin: 0;
+	max-width: $tag-max-width;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	transition: color .2s linear;
+
+	.tag-cloud-element:hover &,
+	.tag-cloud-element:active &,
+	.tag-cloud-element:focus & {
+		color: $black;
+	}
+}

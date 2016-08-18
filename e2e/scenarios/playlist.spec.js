@@ -1,18 +1,24 @@
 var PlaylistPage = require('../page-objects/playlist.po');
+var HomePage = require('../page-objects/home.po');
 
 describe('Playlist page test suite', function() {
-	var playlistPage;
+	var playlistPage, homePage, playlistId;
 
 	beforeEach(function() {
-		playlistPage = new PlaylistPage();
-		playlistPage.get();
+		homePage = new HomePage();
+		homePage.get();
+		homePage.getPlaylistTile().getAttribute('href').then(function(path) {
+			playlistPage = new PlaylistPage();
+			playlistId = path.split('/').pop();
+			playlistPage.get(playlistId);
+		});
 	});
 
-	it('should have heading', function() {
-		expect(playlistPage.getHeading()).toEqual('Playlist');
-	});
-
-	it('should have title', function() {
+	it('should have page title', function() {
 		expect(playlistPage.getTitle()).toEqual('Pitched | Playlist');
+	});
+
+	it('should have playlist title', function() {
+		expect(playlistPage.getPlaylistTitle().isPresent()).toBe(true);
 	});
 });

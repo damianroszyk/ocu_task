@@ -1,10 +1,12 @@
-import './header/';
 import './footer/';
+import './header/';
 import './nav/';
 
-import './_home/';
 import './_category/';
+import './_home/';
 import './_playlist/';
+import './_search-results/';
+import './_tags/';
 
 import './breadcrumb/';
 import './categories-dropdown/';
@@ -17,5 +19,6 @@ import './playlist-header/';
 import './playlist-tags/';
 import './playlist-tile/';
 import './playlist-tiles/';
-import './track-list/';
 import './search-tile/';
+import './tag-cloud/';
+import './track-list/';

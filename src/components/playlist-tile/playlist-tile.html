@@ -1,31 +1,40 @@
-<div
-	class="playlist-tile"
-	ui-sref="playlist({playlistId: $ctrl.playlist.id})">
-	<img
-	    class="playlist-tile__image"
-	    ng-src="{{::$ctrl.playlist.imageUrl}}"/>
+<div class="playlist-tile">
+	<div
+		class="playlist-tile__image-wrapper"
+		ui-sref="playlist({playlistId: $ctrl.playlist.id})">
+		<img
+		    class="playlist-tile__image"
+		    ng-src="{{::$ctrl.playlist.imageUrl || $ctrl.defaultPlaylistTileImage}}"/>
+		<div class="play-button-overlay"></div>
+	</div>
 	<div class="playlist-tile-meta">
-		<h3 class="playlist-tile-meta__title text--md">
+		<h3
+			class="playlist-tile-meta__title text--md"
+			ui-sref="playlist({playlistId: $ctrl.playlist.external_playlists[1].service_playlist_id})">
 			{{::$ctrl.playlist.name}}
 		</h3>
 		<div class="playlist-tile-meta__dash">—</div>
 		<div class="playlist-tile-meta__content">
-			<p class="playlist-tile__summary text--semibold">
-				{{::$ctrl.playlist.summary}}
-			</p>
 			<p class="playlist-tile__description">
-			    {{::$ctrl.playlist.description}}
+			    {{::$ctrl.playlist.description || ('PLAYLIST_NO_DESCRIPTION' | translate)}}
 			</p>
 			<p class="playlist-tile__duration">
-				{{::$ctrl.playlist.nbTracks}}
+				{{::$ctrl.playlist.tracks.length}}
 				<span class="playlist-header__caption--lowercase"> songs,</span>
-				{{::$ctrl.playlist.duration | convertSeconds:'hours' }}
+				{{::$ctrl.playlist.total_duration | convertSeconds:'hours' }}
 			</p>
 			<button
-				class="btn-circled"
+				class="btn-circled playlist-tile__button"
 				type="button">
 				Follow
 			</button>
 		</div>
 	</div>
+	<div class="playlist-tile__tags-wrapper">
+		<playlist-tags tags="$ctrl.tags"></playlist-tags>
+		<p class="playlist-tile__tracks">
+			Track number: <strong>{{::$ctrl.playlist.tracks.length}}</strong>
+		</p>
+	</div>
+	<div class="clear-both"></div>
 </div>
