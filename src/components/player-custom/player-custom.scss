@@ -1,3 +1,182 @@
-.player-custom {
+@import '../../shared/styles/variables';
+@import '../../shared/styles/mixins';
 
+@mixin main-button() {
+	padding: 44px 44px 0 0;
+	display: inline-block;
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+@mixin secondary-button() {
+	padding: 24px 24px 0 0;
+	display: inline-block;
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+.player-custom {
+	height: 260px;
+	padding: 20px;
+	background-color: $black;
+	position: relative;
+}
+
+.player-custom__track-thumbnail{
+	width: 150px;
+	height: 150px;
+	background-color: $grey-6;
+	display: inline-block;
+}
+
+.player-custom__track-description{
+	display: inline-block;
+	vertical-align: top;
+	color: $grey-1;
+	padding-left: 40px;
+	padding-top: 10px;
+	margin-left: -3px;
+	margin-top: -1px;
+}
+
+.player-custom__track-name{
+
+}
+
+.player-custom__track-name{
+	margin-top: 20px;
+}
+
+.player-custom__controls{
+	margin-top: 40px;
+	display: table;
+	width: 100%;
+}
+
+.player-custom__main-buttons{
+	width: 150px;
+	text-align: center;
+	display: table-cell;
+}
+
+.player-custom__play-button {
+	@include main-button();
+	background-image: url('/shared/images/icons/play-button.png');
+}
+.player-custom__pause-button{
+	@include main-button();
+	background-image: url('/shared/images/icons/pause-button.png');
+}
+.player-custom__previous-button{
+	@include main-button();
+	background-image: url('/shared/images/icons/prev-button.png');
+}
+.player-custom__next-button{
+	@include main-button();
+	background-image: url('/shared/images/icons/next-button.png');
+}
+
+.player-custom__slider{
+	color: $grey-1;
+	display: table-cell;
+	vertical-align: top;
+	padding-left: 40px;
+	position: relative;
+	text-align: center;
+}
+
+.player-custom__slider-min{
+	position: absolute;
+	left: 40px;
+	top: 0;
+}
+
+.player-custom__slider-max{
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.player-custom__slider-bar{
+	width: 90%;
+	display: inline-block;
+	vertical-align: 1px;
+	position: relative;
+	background-color: $grey-7;
+	@include border-radius(3px);
+	cursor: pointer;
+}
+
+.player-custom__slider-completed-container{
+	@include border-radius(3px);
+	width: 100%;
+	overflow: hidden;
+}
+
+.player-custom__slider-completed{
+	padding: 4px 0;
+	@include gradient-background(#36a1d4, #36a1d4, #237192);
+}
+
+.player-custom__slider-handler{
+	@include border-radius(90px);
+	background-color: $white;
+	padding: 12px;
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: -8px;
+}
+
+.player-custom__secondary-buttons{
+	text-align: right;
+}
+
+.player-custom__shuffle-button {
+	@include secondary-button();
+	background-image: url('/shared/images/icons/shuffle-button.png');
+
+	&.active{
+		background-image: url('/shared/images/icons/shuffle-button--active.png');
+	}
+}
+.player-custom__repeat-button {
+	@include secondary-button();
+	background-image: url('/shared/images/icons/repeat-button.png');
+
+	&.active{
+		background-image: url('/shared/images/icons/repeat-button--active.png');
+	}
+}
+.player-custom__mute-button {
+	@include secondary-button();
+	background-image: url('/shared/images/icons/mute-button.png');
+
+	&.active{
+		background-image: url('/shared/images/icons/mute-button--active.png');
+	}
+}
+
+.player-custom__volume-bar{
+	width: 200px;
+	display: inline-block;
+	position: relative;
+	vertical-align: 9px;
+	background-color: $grey-7;
+	@include border-radius(3px);
+	cursor: pointer;
+}
+
+.player-custom__volume-completed-container{
+	@include border-radius(3px);
+	width: 100%;
+	overflow: hidden;
+}
+
+.player-custom__volume-completed{
+	padding: 3px 0;
+	@include gradient-background(#36a1d4, #36a1d4, #237192);
 }
