@@ -20,7 +20,10 @@ class DeezerService {
 		this.dz = window.DZ;
 		this.dz.init({
 			appId: this.thirdPartyConstant.deezerAppId,
-			channelUrl: `${window.location.origin}/channel.html`
+			channelUrl: `${window.location.origin}/channel.html`,
+			player : {
+				onload : function(){}
+			}
 		});
 		this.deferredDeezerSdk.resolve(this.dz);
 	}
