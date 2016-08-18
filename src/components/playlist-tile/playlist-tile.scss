@@ -140,14 +140,6 @@ playlist-tile {
 	}
 }
 
-.playlist-tile__summary {
-	margin: 0;
-
-	.xs & {
-		display: none;
-	}
-}
-
 .playlist-tile__description {
 	margin: 0;
 	max-height: 200px;

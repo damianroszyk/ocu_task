@@ -3,12 +3,10 @@
 		{{$ctrl.category.category.name}}
 	</h2>
     <category-tiles
-        ng-if="$ctrl.category.children.length"
         categories="$ctrl.category.children">
     </category-tiles>
     <playlist-tiles
-        ng-if="!$ctrl.category.children.length"
         layout="$ctrl.playlistLayout"
-        playlists="$ctrl.playlists">
+        playlists="$ctrl.categoryPlaylists">
     </playlist-tiles>
 </div>

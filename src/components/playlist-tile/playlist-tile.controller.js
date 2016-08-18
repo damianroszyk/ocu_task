@@ -1,6 +1,7 @@
 export default class PlaylistTileController {
 	/* @ngInject */
-	constructor() {
+	constructor(domConstant) {
+		this.defaultPlaylistTileImage = domConstant.defaultCategoryTileImage;
 		this.tags = [{
 			id: 1,
 			name: 'Hard Rock'

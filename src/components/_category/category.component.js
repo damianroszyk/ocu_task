@@ -6,7 +6,7 @@ import controller from './category.controller.js';
 
 let bindings = {
 	category: '<',
-	playlists: '<'
+	categoryPlaylists: '<'
 };
 
 export default angular

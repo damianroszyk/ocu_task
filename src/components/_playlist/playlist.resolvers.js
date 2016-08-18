@@ -4,8 +4,13 @@ let playlist = function($stateParams, playlistService) {
 };
 
 /* @ngInject */
-let playlists = function($stateParams, playlistService) {
-	return playlistService.getPlaylists($stateParams.categoryId);
+let categoryPlaylists = function($stateParams, playlistService) {
+	return playlistService.getCategoryPlaylists($stateParams.categoryId);
+};
+
+/* @ngInject */
+let featuredPlaylists = function(playlistService) {
+	return playlistService.getFeaturedPlaylists();
 };
 
 /* @ngInject */
@@ -13,4 +18,4 @@ let search = function($stateParams, playlistService) {
 	return playlistService.searchPlaylists($stateParams.query);
 };
 
-export { playlist, playlists, search };
+export { playlist, categoryPlaylists, featuredPlaylists, search };
