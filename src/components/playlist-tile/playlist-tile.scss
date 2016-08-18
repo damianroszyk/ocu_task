@@ -4,7 +4,7 @@
 $playlist-tile-width: 275px;
 $playlist-tile-height: 300px;
 $playlist-tile-offset: 24px;
-$playlist-tile-height: 440px;
+$playlist-tile-height: 430px;
 $playlist-tile-height--horizontal: 180px;
 $column-right--horizontal: 977px;
 
@@ -18,13 +18,12 @@ playlist-tile {
     background: $grey-1;
     margin: 0 $playlist-tile-offset $playlist-tile-offset 0;
 	height: $playlist-tile-height;
+	animation-duration: .5s;
+	animation-fill-mode: both;
+	animation-name: fade-in;
 
 	&:nth-child(4n) {
 		margin-right: 0;
-	}
-
-	&:hover .playlist-tile__description {
-		display: block;
 	}
 
     .playlist-tiles--horizontal & {
@@ -83,11 +82,10 @@ playlist-tile {
 }
 
 .playlist-tile-meta {
+	@include position-absolute(auto, 0, 0, 0);
+	display: block;
+	min-height: 155px;
     overflow: hidden;
-    padding: $distance-sm $distance-sm $distance-md;
-	position: absolute;
-	bottom: 0;
-	width: $playlist-tile-width;
 	background-color: $grey-1;
 	box-sizing: border-box;
 
@@ -113,7 +111,8 @@ playlist-tile {
 }
 
 .playlist-tile-meta__title {
-	margin-top: 0;
+	@include ellipsis();
+	margin: $distance-sm 0 $distance-sm (1.5 * $distance-sm);
 	text-transform: uppercase;
 
 	.playlist-tiles--horizontal & {
@@ -124,6 +123,7 @@ playlist-tile {
 
 .playlist-tile-meta__dash {
 	float: left;
+	margin-left: $distance-sm;
 
 	.playlist-tiles--horizontal & {
 		display: none;
@@ -131,8 +131,7 @@ playlist-tile {
 }
 
 .playlist-tile-meta__content {
-	float: right;
-	width: 92%;
+	padding: 0 $distance-sm $distance-md ($distance-md + $distance-sm);
 
 	.playlist-tiles--horizontal & {
 		float: left;
@@ -140,11 +139,23 @@ playlist-tile {
 	}
 }
 
-.playlist-tile__description {
-	margin: 0;
-	max-height: 200px;
+.playlist-tile-description {
+	height: 20px;
 	overflow: hidden;
-	display: none;
+	max-height: 200px;
+	transition: height .2s ease;
+}
+
+.playlist-tile-description__content {
+	@include text-shadow($black);
+	margin: 0;
+	overflow: hidden;
+	transition: text-shadow .2s linear;
+	padding-bottom: $distance-sm;
+
+	.playlist-tile--expanded & {
+		text-shadow: none;
+	}
 
 	.playlist-tiles--horizontal & {
 		display: block;
@@ -153,6 +164,8 @@ playlist-tile {
 
 .playlist-tile__duration {
 	margin-top: 3px;
+	margin-bottom: $distance-md;
+	display: block;
 
 	.playlist-tiles--horizontal & {
 		display: none;
@@ -189,6 +202,7 @@ playlist-tile {
 	.playlist-tiles--horizontal & {
 		display: block;
 		margin-top: 7px;
+		margin-bottom: $distance-sm;
 
 		.xs & {
 			display: none;
@@ -211,12 +225,28 @@ playlist-tile {
 			height: 50vw;
 		}
 	}
+}
 
-	.play-button-overlay {
-		display: none;
+play-button {
+	@include flex-middle();
+	@include position-absolute(0, 0, auto, 0);
+	height: 0;
+	overflow: hidden;
+	background: none;
+	transition: background .2s ease;
 
-		.playlist-tiles--horizontal & {
-			display: block;
-		}
+	.playlist-tile--expanded & {
+		background: $opacity-3;
+	}
+}
+
+.play-button__icon {
+	width: 45px;
+	height: 45px;
+	opacity: 0;
+	transition: opacity .2s ease;
+
+	.playlist-tile--expanded & {
+		opacity: 1;
 	}
 }

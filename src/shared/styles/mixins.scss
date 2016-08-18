@@ -36,11 +36,27 @@
 }
 
 @mixin clearfix {
-	&:after {
+	&::after {
 		content: '';
 		display: table;
 		clear: both;
 	}
+}
+
+@mixin ellipsis() {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+@mixin text-shadow($color) {
+	text-shadow: 0 0 1.5px $color;
+}
+
+@mixin flex-middle() {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 @mixin placeholder() {

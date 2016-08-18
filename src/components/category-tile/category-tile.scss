@@ -23,6 +23,9 @@ category-tile {
     cursor: pointer;
     margin: 0 $category-tile-offset $category-tile-offset 0;
 	border-bottom: $category-tile-border-height solid $yellow;
+	animation-duration: .5s;
+	animation-fill-mode: both;
+	animation-name: fade-in;
 
 	.xl &:nth-child(4n) {
 		margin-right: 0;
