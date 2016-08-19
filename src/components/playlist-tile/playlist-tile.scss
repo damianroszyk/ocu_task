@@ -11,6 +11,7 @@ $column-right--horizontal: 977px;
 
 playlist-tile {
 	@include border-bottom(6px, solid, $grey-3);
+	@include fade-in();
     position: relative;
     float: left;
     width: $playlist-tile-width;
@@ -18,9 +19,6 @@ playlist-tile {
     background: $grey-1;
     margin: 0 $playlist-tile-offset $playlist-tile-offset 0;
 	height: $playlist-tile-height;
-	animation-duration: .5s;
-	animation-fill-mode: both;
-	animation-name: fade-in;
 
 	&:nth-child(4n) {
 		margin-right: 0;
@@ -89,6 +87,10 @@ playlist-tile {
 	background-color: $grey-1;
 	box-sizing: border-box;
 
+	.xs & {
+		height: 220px;
+	}
+
 	.playlist-tiles--horizontal & {
 		float: left;
 		width: $column-right--horizontal;
@@ -114,6 +116,11 @@ playlist-tile {
 	@include ellipsis();
 	margin: $distance-sm 0 $distance-sm (1.5 * $distance-sm);
 	text-transform: uppercase;
+
+	.xs & {
+		font-size: 16px;
+		margin-bottom: ($distance-sm / 2);
+	}
 
 	.playlist-tiles--horizontal & {
 		text-transform: none;
@@ -144,6 +151,11 @@ playlist-tile {
 	overflow: hidden;
 	max-height: 200px;
 	transition: height .2s ease;
+
+	.xs & {
+		height: 99px;
+		font-size: 15px;
+	}
 }
 
 .playlist-tile-description__content {
@@ -152,6 +164,10 @@ playlist-tile {
 	overflow: hidden;
 	transition: text-shadow .2s linear;
 	padding-bottom: $distance-sm;
+
+	.xs & {
+		text-shadow: none;
+	}
 
 	.playlist-tile--expanded & {
 		text-shadow: none;
@@ -167,12 +183,25 @@ playlist-tile {
 	margin-bottom: $distance-md;
 	display: block;
 
+	.xs & {
+		font-size: 15px;
+		margin-top: 0;
+		margin-bottom: 13px;
+	}
+
 	.playlist-tiles--horizontal & {
 		display: none;
 	}
 }
 
 .playlist-tile__button {
+	.xs & {
+		font-size: 24px;
+		width: 150px;
+		height: 40px;
+		border-radius: 20px;
+	}
+
 	.playlist-tiles--horizontal & {
 		display: none;
 	}
@@ -210,6 +239,16 @@ playlist-tile {
 	}
 }
 
+.playlist-tile__overlay {
+	@include position-absolute(0, 0, 0, 0);
+	background: none;
+	transition: background .2s ease;
+
+	.playlist-tile--expanded & {
+		background: $opacity-3;
+	}
+}
+
 .playlist-tile__image-wrapper {
 	cursor: pointer;
 
@@ -232,12 +271,6 @@ play-button {
 	@include position-absolute(0, 0, auto, 0);
 	height: 0;
 	overflow: hidden;
-	background: none;
-	transition: background .2s ease;
-
-	.playlist-tile--expanded & {
-		background: $opacity-3;
-	}
 }
 
 .play-button__icon {

@@ -59,6 +59,12 @@
 	justify-content: center;
 }
 
+@mixin fade-in($duration: .5s) {
+	animation-duration: $duration;
+	animation-fill-mode: both;
+	animation-name: fade-in;
+}
+
 @mixin placeholder() {
 	// scss-lint:disable all
 	&::-webkit-input-placeholder {

@@ -2,7 +2,7 @@ import angular from 'angular';
 import app from 'app';
 
 /* @ngInject */
-let playlistTile = () => {
+let playlistTile = (responsiveService) => {
 	return {
 		restrict: 'A',
 		link: (scope, element) => {
@@ -10,7 +10,6 @@ let playlistTile = () => {
 			const EXPANDED_CLASS = 'playlist-tile--expanded';
 
 			scope.$watch('$viewContentLoaded', () => {
-
 				let playButton = element.find('play-button');
 				let figcaptionInitialHeight = element.find('figcaption')[0].clientHeight;
 				let descriptionElement = element.find('p')[0];
@@ -33,8 +32,19 @@ let playlistTile = () => {
 					descriptionContainer[0].style.height = `${descriptionInitialHeight}px`;
 				};
 
-				element.on('mouseover', handleMouseover);
-				element.on('mouseleave', handleMouseleave);
+				let registerListener = () => element
+					.on('mouseover', handleMouseover)
+					.on('mouseleave', handleMouseleave);
+
+				let unregisterListener = () => element
+					.off('mouseover')
+					.off('mouseleave');
+
+				let listenerHandler = rwdClass => rwdClass !== 'xs' ?
+					registerListener() : unregisterListener();
+
+				responsiveService.registerObserver(listenerHandler);
+				listenerHandler(responsiveService.rwdClass);
 			});
 		}
 	};

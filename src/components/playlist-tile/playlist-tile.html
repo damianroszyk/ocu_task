@@ -2,6 +2,7 @@
 	<div
 		class="playlist-tile__image-wrapper"
 		ui-sref="playlist({playlistId: $ctrl.playlist.id})">
+		<div class="playlist-tile__overlay"></div>
 		<img
 		    class="playlist-tile__image"
 		    ng-src="{{::$ctrl.playlist.imageUrl || $ctrl.defaultPlaylistTileImage}}"/>
