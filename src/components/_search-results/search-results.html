@@ -3,17 +3,32 @@
 		<span translate="{{::'SEARCH_RESULTS_FOR'}}"></span>:
 		<span class="search-results__searched">{{$root.$state.params.query}}</span>
 	</h1>
-	<form
-		class="search-results__sort"
-		name="search-results__sort">
-		<select
-			ng-model="$ctrl.order"
-			ng-change ="$ctrl.sortSearchResults()">
-			<option value="updated">Recently updated</option>
-			<option value="newest">Newest first</option>
-			<option value="length">Length of time</option>
-		</select>
-	</form>
+	<div class="sort-dropdown" uib-dropdown>
+		<button
+			class="sort-dropdown__button"
+			type="button"
+			uib-dropdown-toggle
+			ng-disabled="disabled">
+		<span class="sort-dropdown__button--text text--semibold">
+			{{$ctrl.chosenSortingOption.name || 'Sort by'}}
+		</span>
+		<span class="icon-chevron--down--float-right"></span>
+		</button>
+		<ul
+			class="sort-dropdown__menu"
+			uib-dropdown-menu role="menu"
+			aria-labelledby="single-button">
+			<li
+				class="sort-dropdown__menu-item"
+				ng-repeat="item in $ctrl.sortOptions"
+				ng-click="$ctrl.setSortingParam(item)"
+				ng-class="{
+					'sort-dropdown__menu-item--active': item.value === $ctrl.chosenSortingOption.value
+				}">
+				{{item.name}}
+			</li>
+		</ul>
+	</div>
 	<div class="clear-both"></div>
 	<playlist-tiles
 		layout="'horizontal'"
