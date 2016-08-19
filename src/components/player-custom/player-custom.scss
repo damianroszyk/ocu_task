@@ -19,17 +19,21 @@
 }
 
 .player-custom {
-	height: 260px;
 	padding: 20px;
 	background-color: $black;
 	position: relative;
 }
 
+.player-custom__track-thumbnail-container{
+	width: 150px;
+	height: 150px;
+	background-color: $black;
+	display: inline-block;
+}
+
 .player-custom__track-thumbnail{
 	width: 150px;
 	height: 150px;
-	background-color: $grey-6;
-	display: inline-block;
 }
 
 .player-custom__track-description{
@@ -42,12 +46,16 @@
 	margin-top: -1px;
 }
 
-.player-custom__track-name{
+.player-custom__track-artist{
+}
 
+.player-custom__track-album{
+	margin-top: 10px;
+	color: $grey-4;
 }
 
 .player-custom__track-name{
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
 .player-custom__controls{
@@ -60,6 +68,18 @@
 	width: 150px;
 	text-align: center;
 	display: table-cell;
+}
+
+.player-custom__main-buttons-rwd{
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.player-custom__rwd-controls-container{
+	display: inline-block;
+	float: right;
+	margin-top: 28px;
+	display: none;
 }
 
 .player-custom__play-button {
@@ -92,12 +112,14 @@
 	position: absolute;
 	left: 40px;
 	top: 0;
+	width: 5%;
 }
 
 .player-custom__slider-max{
 	position: absolute;
 	right: 0;
 	top: 0;
+	width: 5%;
 }
 
 .player-custom__slider-bar{
@@ -129,9 +151,11 @@
 	height: 0;
 	position: absolute;
 	top: -8px;
+	margin-left: -12px;
+	left: 0;
 }
 
-.player-custom__secondary-buttons{
+.player-custom__secondary-buttons, .player-custom__secondary-buttons-rwd{
 	text-align: right;
 }
 
@@ -179,4 +203,108 @@
 .player-custom__volume-completed{
 	padding: 3px 0;
 	@include gradient-background(#36a1d4, #36a1d4, #237192);
+}
+
+@media (max-width: 991px){
+
+	.player-custom__controls{
+		display: block;
+	}
+
+	.player-custom__main-buttons{
+		display: block;
+	}
+
+	.player-custom__slider{
+		display: block;
+		padding-left: 0;
+	}
+
+	.player-custom__slider-min{
+		left: 0;
+	}
+
+	.player-custom__rwd-controls-container{
+		display: inline-block;
+	}
+
+	.player-custom__main-buttons{
+		 display: none;
+	 }
+
+	.player-custom__secondary-buttons{
+		display: none;
+	}
+
+	.player-custom__slider-bar{
+		width: 85%;
+	}
+}
+
+@media (max-width: 767px){
+	.player-custom__rwd-controls-container{
+		display: block;
+		float: none;
+	}
+
+	.player-custom__main-buttons-rwd{
+		display: inline-block;
+		margin-bottom: 0;
+	}
+
+	.player-custom__secondary-buttons-rwd{
+		display: inline-block;
+		vertical-align: 10px;
+	}
+
+	.player-custom__slider-bar{
+		width: 80%;
+	}
+}
+
+@media (max-width: 567px){
+	.player-custom__rwd-controls-container{
+		display: block;
+		float: none;
+		margin-top: 10px;
+	}
+
+	.player-custom__main-buttons-rwd{
+		display: block;
+		margin-bottom: 0;
+	}
+
+	.player-custom__secondary-buttons-rwd{
+		display: block;
+		text-align: center;
+		margin-top: 10px;
+	}
+
+	.player-custom__slider-bar{
+		width: 80%;
+	}
+
+	.player-custom__controls{
+		margin-top: 20px;
+	}
+}
+
+@media (max-width: 479px){
+	.player-custom__track-thumbnail-container{
+		display: none;
+	}
+
+	.player-custom__track-description{
+		padding: 0;
+		text-align: center;
+		display: block;
+	}
+
+	.player-custom__volume-bar{
+		width: 100px;
+	}
+
+	.player-custom__slider-bar{
+		width: 70%;
+	}
 }
