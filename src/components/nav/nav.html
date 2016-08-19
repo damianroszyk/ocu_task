@@ -6,8 +6,9 @@
 			<span class="icon-hamburger--full-width"></span>
         </div>
     </div>
-    <div class="nav__item music-service text--lg" translate="{{::'MUSIC_SERVICE'}}">
-
+    <div
+		class="nav__item music-service text--lg"
+		translate="{{::'MUSIC_SERVICE'}}">
     </div>
     <div class="nav__item nav-breadcrumb text--lg">
         <breadcrumb></breadcrumb>
@@ -19,11 +20,10 @@
 			ng-class="{
 				'nav-button--active': $root.$state.is('tags')
 			}">
-			<span
-				ng-class="{
-					'icon-tags--full-width': !$root.$state.is('tags'),
-					'icon-tags--active--full-width': $root.$state.is('tags')
-				}">
+			<span ng-class="{
+				'icon-tags--full-width': !$root.$state.is('tags'),
+				'icon-tags--active--full-width': $root.$state.is('tags')
+			}">
 			</span>
         </div>
     </div>
@@ -34,11 +34,10 @@
 			ng-class="{
 				'nav-button--active': $root.$state.is('home')
 			}">
-			<span
-				ng-class="{
-					'icon-tiles--full-width': !$root.$state.is('home'),
-					'icon-tiles--active--full-width': $root.$state.is('home')
-				}">
+			<span ng-class="{
+				'icon-tiles--full-width': !$root.$state.is('home'),
+				'icon-tiles--active--full-width': $root.$state.is('home')
+			}">
 			</span>
         </div>
     </div>

@@ -17,7 +17,7 @@
 		margin: 5px auto;
 
 		.xs & {
-			margin: $distance-md 0 12px 0;
+			margin: $distance-md 0 12px;
 		}
 	}
 }
@@ -44,6 +44,7 @@
 }
 
 .tags-list__item {
+	cursor: pointer;
 	list-style: none;
 	display: inline-block;
 	background-color: $grey-7;
@@ -51,6 +52,7 @@
 	line-height: 26px;
 	padding: 0 7px;
 	margin-left: 3px;
+	transition: all .2s ease;
 
 	.xs & {
 		margin-bottom: 8px;
@@ -66,10 +68,8 @@
 			margin-left: 0;
 		}
 
-		.xs & {
-			&:first-child {
-				margin-left: 3px;
-			}
+		.xs &:first-child {
+			margin-left: 3px;
 		}
 	}
 }

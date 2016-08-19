@@ -102,6 +102,11 @@ $lg-icon: 50px;
 	@include icon($md-icon, '/shared/images/icons/tags-icon.png');
 }
 
+.icon-play {
+	@include icon($md-icon, '/shared/images/icons/play-button.png');
+	background-size: 100%;
+}
+
 .icon-tags--active--full-width {
 	@include icon($md-icon, '/shared/images/icons/tags-icon--active.png');
 	@include icon-parent-width();

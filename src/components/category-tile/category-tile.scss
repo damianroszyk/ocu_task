@@ -15,6 +15,7 @@ $category-tile-control-radius: 45px;
 $category-tile-control-radius--xs: 25px;
 
 category-tile {
+	@include fade-in();
     position: relative;
     float: left;
     width: $category-tile-width;
