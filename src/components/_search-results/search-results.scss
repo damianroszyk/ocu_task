@@ -1,8 +1,14 @@
 .search-results__title {
 	text-transform: uppercase;
+	width: 900px;
+	float: left;
 }
 
 .search-results__searched {
 	text-transform: none;
 	font-weight: 400;
+}
+
+.search-results__sort {
+	float: left;
 }
