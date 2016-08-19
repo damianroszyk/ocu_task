@@ -148,7 +148,7 @@ playlist-tile {
 }
 
 .playlist-tile-description {
-	height: 20px;
+	height: $distance-md;
 	overflow: hidden;
 	max-height: 200px;
 	transition: height .2s ease;
@@ -199,8 +199,8 @@ playlist-tile {
 	.xs & {
 		font-size: 24px;
 		width: 150px;
-		height: 40px;
-		border-radius: 20px;
+		height: $distance-lg;
+		border-radius: $distance-md;
 	}
 
 	.playlist-tiles--horizontal & {
