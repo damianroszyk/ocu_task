@@ -2,10 +2,11 @@ import angular from 'angular';
 import app from 'app';
 
 /* @ngInject */
-let playlistTile = (responsiveService) => {
+let playlistTile = responsiveService => {
 	return {
 		restrict: 'A',
-		link: (scope, element) => {
+		require: '^playlistTiles',
+		link: (scope, element, attrs, controller) => {
 
 			const EXPANDED_CLASS = 'playlist-tile--expanded';
 
@@ -40,8 +41,9 @@ let playlistTile = (responsiveService) => {
 					.off('mouseover')
 					.off('mouseleave');
 
-				let listenerHandler = rwdClass => rwdClass !== 'xs' ?
-					registerListener() : unregisterListener();
+				let listenerHandler = rwdClass =>
+					rwdClass !== 'xs' && controller.layout !== 'horizontal' ?
+						registerListener() : unregisterListener();
 
 				responsiveService.registerObserver(listenerHandler);
 				listenerHandler(responsiveService.rwdClass);
