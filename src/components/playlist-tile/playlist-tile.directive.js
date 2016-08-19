@@ -29,7 +29,7 @@ let playlistTile = (responsiveService) => {
 				let handleMouseleave = () => {
 					element.removeClass(EXPANDED_CLASS);
 					playButton[0].style.height = `0px`;
-					descriptionContainer[0].style.height = `${descriptionInitialHeight}px`;
+					descriptionContainer[0].style.height = '';
 				};
 
 				let registerListener = () => element
