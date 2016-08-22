@@ -122,3 +122,15 @@ $lg-icon: 50px;
 .icon-close {
 	@include icon($md-icon, '/shared/images/icons/close-black.png');
 }
+
+.icon-chevron--down--float-right {
+	@include icon(38px, '/shared/images/icons/chevron-down-grey.png');
+	float: right;
+	transition: transform .5s;
+
+	.xs & {
+		width: 30px;
+		height: 30px;
+		background-size: 80%;
+	}
+}

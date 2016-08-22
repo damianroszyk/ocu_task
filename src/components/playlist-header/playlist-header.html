@@ -29,11 +29,8 @@
 		</div>
     </div>
 	<div class="playlist-header__column-right--bottom">
-		<p ng-show="::$ctrl.playlist.description">
-			{{::$ctrl.playlist.description}}
-		</p>
-		<p ng-hide="::$ctrl.playlist.description">
-			Default playlist description Default playlist description Default playlist description Default playlist description Default playlist description Default playlist description
+		<p>
+			{{::$ctrl.playlist.description || ('PLAYLIST_NO_DESCRIPTION' | translate)}}
 		</p>
 		<button
 			class="playlist-header__follow-button--mobile btn-circled"
