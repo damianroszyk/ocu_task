@@ -4,4 +4,8 @@
 .playlist-tiles {
     @include clearfix();
 	margin-top: $distance-lg;
+
+	.xs & {
+		margin-top: $distance-md;
+	}
 }

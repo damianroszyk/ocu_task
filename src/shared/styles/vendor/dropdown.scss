@@ -1,6 +1,7 @@
 @import '../variables';
 
 $sort-button-height: 40px;
+$sort-button-height-mobile: 32px;
 $sort-button-width: 380px;
 $sort-padding-left: 15px;
 $border-radius: 3px;
@@ -8,6 +9,12 @@ $border-radius: 3px;
 .sort-dropdown {
 	position: relative;
 	float: right;
+
+	.xs & {
+		margin: 0 auto;
+		width: 90%;
+		float: none;
+	}
 }
 
 .sort-dropdown__button {
@@ -35,6 +42,17 @@ $border-radius: 3px;
 		.icon-chevron--down--float-right {
 			transform: rotate(180deg);
 		}
+
+		.xs & {
+			line-height: $sort-button-height-mobile - 1px;
+		}
+	}
+
+	.xs & {
+		width: 100%;
+		margin-top: 0;
+		height: $sort-button-height-mobile;
+		line-height: $sort-button-height-mobile - 2px;
 	}
 }
 
@@ -60,6 +78,10 @@ $border-radius: 3px;
 	.sort-dropdown.open & {
 		display: block;
 	}
+
+	.xs & {
+		width: 100%;
+	}
 }
 
 .sort-dropdown__menu-item {
@@ -73,6 +95,13 @@ $border-radius: 3px;
 
 	&:hover {
 		background-color: $grey-2;
+	}
+
+	.xs & {
+		width: 100%;
+		box-sizing: border-box;
+		height: $sort-button-height-mobile;
+		line-height: $sort-button-height-mobile;
 	}
 }
 

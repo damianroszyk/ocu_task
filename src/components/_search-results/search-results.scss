@@ -2,6 +2,13 @@
 	text-transform: uppercase;
 	width: 792px;
 	float: left;
+
+	.xs & {
+		width: 100%;
+		padding: 0 15px;
+		box-sizing: border-box;
+		font-size: 18px;
+	}
 }
 
 .search-results__searched {
