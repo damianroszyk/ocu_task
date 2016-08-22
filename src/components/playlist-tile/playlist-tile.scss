@@ -160,22 +160,22 @@ playlist-tile {
 }
 
 .playlist-tile-description__content {
-	@include text-shadow($black);
 	margin: 0;
 	overflow: hidden;
-	transition: text-shadow .2s linear;
+	transition: font-weight .2s linear;
 	padding-bottom: $distance-sm;
+	font-weight: 600;
 
 	.xs & {
-		text-shadow: none;
+		font-weight: 400;
 	}
 
 	.playlist-tile--expanded & {
-		text-shadow: none;
+		font-weight: 400;
 	}
 
 	.playlist-tiles--horizontal & {
-		text-shadow: none;
+		font-weight: 400;
 	}
 }
 

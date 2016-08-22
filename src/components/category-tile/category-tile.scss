@@ -62,6 +62,11 @@ category-tile {
 	color: $white;
     margin: 0;
 	word-wrap: break-word;
+
+	.xs & {
+		@include position-absolute(auto, $distance-sm, $distance-sm, 13px);
+		font-size: 21px;
+	}
 }
 
 .category-tile__control {
@@ -76,6 +81,7 @@ category-tile {
 	outline: none;
 	font-size: 32px;
 	cursor: pointer;
+	background-color: transparent;
 
 	.xs & {
 		width: $category-tile-control-radius--xs;
