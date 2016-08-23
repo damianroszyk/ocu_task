@@ -1,4 +1,5 @@
 @import '/variables';
+@import '../../shared/styles/mixins';
 
 $sm-icon: 30px;
 $md-icon: 40px;
@@ -82,6 +83,12 @@ $lg-icon: 50px;
 	background-size: 49%;
 }
 
+.icon-search--active--full-width {
+	@include icon($md-icon, '/shared/images/icons/search-icon--active.png');
+	@include icon-parent-width();
+	background-size: 57%;
+}
+
 .icon-tiles {
 	@include icon($md-icon, '/shared/images/icons/tiles-icon.png');
 }
@@ -121,6 +128,20 @@ $lg-icon: 50px;
 
 .icon-close {
 	@include icon($md-icon, '/shared/images/icons/close-black.png');
+}
+
+.icon-close-white--rounded {
+	@include icon(35px, '/shared/images/icons/close-white.png');
+	@include position-absolute($distance-md, $distance-md, auto, auto);
+	border: 2px solid $white;
+	color: $white;
+	border-radius: 50%;
+	cursor: pointer;
+
+	.xs & {
+		height: 24px;
+		width: 24px;
+	}
 }
 
 .icon-chevron--down--float-right {

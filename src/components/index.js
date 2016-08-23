@@ -19,5 +19,7 @@ import './playlist-tags/';
 import './playlist-tile/';
 import './playlist-tiles/';
 import './search-tile/';
+import './search-dropdown/';
+import './search-form/';
 import './tag-cloud/';
 import './track-list/';

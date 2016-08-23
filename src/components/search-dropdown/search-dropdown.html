@@ -1,0 +1,13 @@
+<div
+	class="search-dropdown"
+	click-outside="$ctrl.closeDropdown()"
+	ng-if="$ctrl.isShown">
+	<p
+		class="search-dropdown-title"
+		translate="{{::'FIND_PLAYLISTS'}}">
+	</p>
+	<span
+		class="icon-close-white--rounded"
+		ng-click="$ctrl.closeDropdown()"></span>
+	<search-form></search-form>
+</div>
