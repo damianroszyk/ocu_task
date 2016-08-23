@@ -1,6 +1,6 @@
 export default class PlayerCustomController {
 	/* @ngInject */
-	constructor(deezer, $scope, playerConstant, thirdPartyConstant) {
+	constructor(deezer, $scope, $stateParams, playlistService, playerConstant, thirdPartyConstant) {
 
 		var player = this;
 
@@ -11,6 +11,8 @@ export default class PlayerCustomController {
 		this.isMuted = false;
 		this.volume = 100; // <0, 100>
 		this.percent = 0.0; // <0.0, 100.0>
+		//this.playlistId = $stateParams.playlistId; provided by attr
+		this.playlist;
 		this.track = {
 			artist: '',
 			album: '',
@@ -22,6 +24,10 @@ export default class PlayerCustomController {
 			completedSeconds: '00'
 		};
 
+		playlistService.getPlaylist(player.playlistId).then(function(response){
+			player.playlist = response;
+		});
+
 		if(!deezer.dz.player.loaded){
 			deezer.dz.Event.subscribe('player_loaded', function(newTrack){
 				deezer.dz.player.playPlaylist(player.playlistId, false);
@@ -32,7 +38,6 @@ export default class PlayerCustomController {
 		}
 
 		deezer.dz.Event.subscribe('current_track', function(newTrack){
-			console.log(newTrack);
 			$scope.$apply(function(){
 				player.track.artist = newTrack.track.artist.name;
 				player.track.album = newTrack.track.album.title;
@@ -99,6 +104,15 @@ export default class PlayerCustomController {
 		var percent = (event.offsetX / event.currentTarget.clientWidth) * 100;
 		this.deezer.dz.player.seek(percent);
 		this.isPlayingTrack = true;
+	}
+
+	playTrackOfPlaylist(){
+		var srcElement = event.srcElement || event.target;
+		var parentElement = srcElement.parentElement;
+		var rowIndex = parentElement.rowIndex - 1; // should start from 0
+		console.log(rowIndex);
+		this.isPlayingTrack = true;
+		DZ.player.playPlaylist(this.playlistId, true, rowIndex)
 	}
 
 }

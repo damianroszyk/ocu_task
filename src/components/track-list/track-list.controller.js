@@ -1,4 +1,11 @@
 export default class TrackListController {
 	/* @ngInject */
-	constructor() {}
+	constructor() {
+	}
+
+	onTrackTitleClick(event){
+		if(!!this.trackTitleClickCallback){
+			this.trackTitleClickCallback({event: event});
+		}
+	}
 }

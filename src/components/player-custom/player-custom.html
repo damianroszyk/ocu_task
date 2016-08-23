@@ -62,4 +62,10 @@
 			</div>
 		</div>
 	</div>
+	<div class="player-custom__tracklist">
+		<track-list
+			tracks="$ctrl.playlist.tracks.data"
+			track-title-click-callback="$ctrl.playTrackOfPlaylist()">
+		</track-list>
+	</div>
 </div>

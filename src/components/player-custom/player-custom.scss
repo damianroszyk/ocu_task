@@ -22,6 +22,10 @@
 	padding: 20px;
 	background-color: $black;
 	position: relative;
+
+	.track-table__item:nth-child(2){
+		cursor: pointer;
+	}
 }
 
 .player-custom__track-thumbnail-container{
@@ -203,6 +207,10 @@
 .player-custom__volume-completed{
 	padding: 3px 0;
 	@include gradient-background(#36a1d4, #36a1d4, #237192);
+}
+
+.player-custom__tracklist{
+	margin-top: 20px;
 }
 
 @media (max-width: 991px){
