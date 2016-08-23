@@ -28,12 +28,12 @@
 				<span class="playlist-header__caption--lowercase"> songs,</span>
 				{{::$ctrl.playlist.total_duration | convertSeconds:'hours'}}
 			</span>
-			<button
-				class="btn-circled playlist-tile__button"
-				type="button">
-				Follow
-			</button>
 		</div>
+		<button
+			class="btn-circled playlist-tile__button"
+			type="button">
+			Follow
+		</button>
 	</figcaption>
 	<div class="playlist-tile__tags-wrapper">
 		<playlist-tags tags="$ctrl.tags"></playlist-tags>
