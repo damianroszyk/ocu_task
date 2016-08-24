@@ -2,10 +2,7 @@ import angular from 'angular';
 import app from 'app';
 
 import template from 'text!./nav.html';
-
-let controller = () => {
-
-};
+import controller from './nav.controller';
 
 export default angular
     .module(app)
