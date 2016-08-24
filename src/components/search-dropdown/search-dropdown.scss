@@ -3,8 +3,8 @@
 
 $search-dropdown-width: 574px;
 $search-dropdown-height: 190px;
-$search-dropdown-width--mobile: 100%;
-$search-dropdown-height--mobile: 130px;
+$search-dropdown-width--xs: 100%;
+$search-dropdown-height--xs: 130px;
 
 .search-dropdown {
 	@include position-absolute(96px, 0, auto, auto);
@@ -22,8 +22,8 @@ $search-dropdown-height--mobile: 130px;
 
 	.xs & {
 		top: 56px;
-		width: $search-dropdown-width--mobile;
-	    height: $search-dropdown-height--mobile;
+		width: $search-dropdown-width--xs;
+	    height: $search-dropdown-height--xs;
 	}
 }
 

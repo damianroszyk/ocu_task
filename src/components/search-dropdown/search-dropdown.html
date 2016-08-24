@@ -1,7 +1,7 @@
 <div
 	class="search-dropdown"
 	click-outside="$ctrl.closeDropdown()"
-	ng-if="$ctrl.isShown">
+	ng-show="$ctrl.isShown">
 	<p
 		class="search-dropdown-title"
 		translate="{{::'FIND_PLAYLISTS'}}">
@@ -9,5 +9,5 @@
 	<span
 		class="icon-close-white--rounded"
 		ng-click="$ctrl.closeDropdown()"></span>
-	<search-form></search-form>
+	<search-form ng-if="$ctrl.isShown"></search-form>
 </div>

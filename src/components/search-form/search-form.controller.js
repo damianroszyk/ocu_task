@@ -1,6 +1,9 @@
 export default class SearchFormController {
 	/* @ngInject */
-	constructor() {
-
+	constructor($scope) {
+		let clearQuery = () => {
+			this.query = '';
+		};
+		$scope.$on('$stateChangeSuccess', clearQuery);
 	}
 }

@@ -34,10 +34,7 @@ $search-form-height--xs: 30px;
 	font-size: 21px;
 	box-sizing: border-box;
 	vertical-align: top;
-
-	&:focus {
-		outline: 0;
-	}
+	outline: none;
 
 	.xs & {
 		font-size: 16px;
