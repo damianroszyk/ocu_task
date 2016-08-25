@@ -11,7 +11,16 @@
 		tags="$ctrl.tags">
 	</playlist-tags>
 
-	<player-custom
-		playlist-id="$ctrl.playlist.id">
-	</player-custom>
+	<div ng-if="$ctrl.musicProvider == 'DEEZER'">
+		<player-custom popup="false">
+		</player-custom>
+	</div>
+
+	<div ng-if="$ctrl.musicProvider == 'SPOTIFY'">
+		<player-spotify
+			playlist-id="$ctrl.playlist.id"
+		>
+		</player-spotify>
+	</div>
+
 </div>

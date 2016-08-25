@@ -5,7 +5,7 @@ import template from 'text!./player-custom.html';
 import controller from './player-custom.controller';
 
 let bindings = {
-	playlistId: '<'
+	popup: '<'
 };
 
 export default angular

@@ -17,6 +17,7 @@
 				<div ng-click="$ctrl.next();" class="player-custom__next-button"></div>
 			</div>
 			<div class="player-custom__secondary-buttons-rwd">
+				<div ng-click="$ctrl.showPopup();" class="player-custom__popup-button" ng-show="!$ctrl.popup"></div>
 				<div ng-click="$ctrl.shuffle();" class="player-custom__shuffle-button" ng-class="{active: $ctrl.isShuffling}"></div>
 				<div ng-click="$ctrl.repeat();" class="player-custom__repeat-button" ng-class="{active: $ctrl.isRepeating}"></div>
 				<div ng-click="$ctrl.mute();" class="player-custom__mute-button" ng-class="{active: $ctrl.isMuted}"></div>
@@ -52,6 +53,7 @@
 		</div>
 	</div>
 	<div class="player-custom__secondary-buttons">
+		<div ng-click="$ctrl.showPopup();" class="player-custom__popup-button" ng-show="!$ctrl.popup"></div>
 		<div ng-click="$ctrl.shuffle();" class="player-custom__shuffle-button" ng-class="{active: $ctrl.isShuffling}"></div>
 		<div ng-click="$ctrl.repeat();" class="player-custom__repeat-button" ng-class="{active: $ctrl.isRepeating}"></div>
 		<div ng-click="$ctrl.mute();" class="player-custom__mute-button" ng-class="{active: $ctrl.isMuted}"></div>

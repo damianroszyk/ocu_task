@@ -163,6 +163,14 @@
 	text-align: right;
 }
 
+.player-custom__popup-button{
+	@include secondary-button();
+	background-image: url('/shared/images/icons/popup-button.png');
+
+	&.active{
+		display: none;
+	}
+}
 .player-custom__shuffle-button {
 	@include secondary-button();
 	background-image: url('/shared/images/icons/shuffle-button.png');

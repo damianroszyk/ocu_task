@@ -1,6 +1,6 @@
 export default class PlayerCustomController {
 	/* @ngInject */
-	constructor(deezer, $scope, $stateParams, playlistService, playerConstant, thirdPartyConstant) {
+	constructor(deezer, $scope, $window, $stateParams, playlistService, playerConstant, thirdPartyConstant) {
 
 		var player = this;
 
@@ -11,8 +11,9 @@ export default class PlayerCustomController {
 		this.isMuted = false;
 		this.volume = 100; // <0, 100>
 		this.percent = 0.0; // <0.0, 100.0>
-		//this.playlistId = $stateParams.playlistId; provided by attr
+		this.playlistId = $stateParams.playlistId - 0;
 		this.playlist;
+		this.window = $window;
 		this.track = {
 			artist: '',
 			album: '',
@@ -24,38 +25,44 @@ export default class PlayerCustomController {
 			completedSeconds: '00'
 		};
 
-		playlistService.getPlaylist(player.playlistId).then(function(response){
+		if(this.popup){
+			var header = document.getElementsByClassName('header')[0];
+			var nav = document.getElementsByClassName('nav')[0];
+			var footer = document.getElementsByClassName('footer')[0];
+			header.parentNode.removeChild(header);
+			nav.parentNode.removeChild(nav);
+			footer.parentNode.removeChild(footer);
+		}
+
+		document.addEventListener("DEEZER_LOADED", function(){
+
+			deezer.dz.player.playPlaylist($stateParams.playlistId - 0, false);
+
+			deezer.dz.Event.subscribe('current_track', function(newTrack){
+				$scope.$apply(function(){
+					player.track.artist = newTrack.track.artist.name;
+					player.track.album = newTrack.track.album.title;
+					player.track.albumId = newTrack.track.album.id;
+					player.track.title = newTrack.track.title;
+					player.track.minutes = (newTrack.track.duration - newTrack.track.duration%60) / 60;
+					player.track.seconds = (newTrack.track.duration % 60 < 10 ? '0' + (newTrack.track.duration % 60) : (newTrack.track.duration % 60));
+				});
+			});
+
+			deezer.dz.Event.subscribe('player_position', function(positionArray){
+				var percent = (positionArray[1] == 0 ? 0 : (positionArray[0] / positionArray[1]) * 100);
+				var completedTime = Math.floor(positionArray[0]);
+				$scope.$apply(function(){
+					player.percent = percent;
+					player.track.completedMinutes = (completedTime - completedTime%60) / 60;
+					player.track.completedSeconds = (completedTime % 60 < 10 ? '0' + (completedTime % 60) : (completedTime % 60));
+				});
+			});
+
+		});
+
+		playlistService.getPlaylist($stateParams.playlistId - 0).then(function(response){
 			player.playlist = response;
-		});
-
-		if(!deezer.dz.player.loaded){
-			deezer.dz.Event.subscribe('player_loaded', function(newTrack){
-				deezer.dz.player.playPlaylist(player.playlistId, false);
-			});
-		}
-		else{
-			deezer.dz.player.playPlaylist(player.playlistId, false);
-		}
-
-		deezer.dz.Event.subscribe('current_track', function(newTrack){
-			$scope.$apply(function(){
-				player.track.artist = newTrack.track.artist.name;
-				player.track.album = newTrack.track.album.title;
-				player.track.albumId = newTrack.track.album.id;
-				player.track.title = newTrack.track.title;
-				player.track.minutes = (newTrack.track.duration - newTrack.track.duration%60) / 60;
-				player.track.seconds = (newTrack.track.duration % 60 < 10 ? '0' + (newTrack.track.duration % 60) : (newTrack.track.duration % 60));
-			});
-		});
-
-		deezer.dz.Event.subscribe('player_position', function(positionArray){
-			var percent = (positionArray[1] == 0 ? 0 : (positionArray[0] / positionArray[1]) * 100);
-			var completedTime = Math.floor(positionArray[0]);
-			$scope.$apply(function(){
-				player.percent = percent;
-				player.track.completedMinutes = (completedTime - completedTime%60) / 60;
-				player.track.completedSeconds = (completedTime % 60 < 10 ? '0' + (completedTime % 60) : (completedTime % 60));
-			});
 		});
 	}
 
@@ -110,9 +117,12 @@ export default class PlayerCustomController {
 		var srcElement = event.srcElement || event.target;
 		var parentElement = srcElement.parentElement;
 		var rowIndex = parentElement.rowIndex - 1; // should start from 0
-		console.log(rowIndex);
 		this.isPlayingTrack = true;
 		DZ.player.playPlaylist(this.playlistId, true, rowIndex)
+	}
+
+	showPopup(){
+		this.window.open('#/player/deezer/' + this.playlistId, "_blank", "width=480,height=640,menubar=no,status=no,titlebar=no,toolbar=no,directories=no");
 	}
 
 }
