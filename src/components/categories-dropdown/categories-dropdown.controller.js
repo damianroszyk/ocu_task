@@ -1,6 +1,6 @@
 export default class CategoriesDropdownController {
 	/* @ngInject */
-	constructor($scope, categoryService, $stateParams) {
+	constructor($scope, categoryService) {
 		categoryService
 			.getCategories()
 			.then(response => this.categories = response);
