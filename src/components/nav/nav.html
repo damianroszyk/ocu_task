@@ -1,9 +1,16 @@
 <div class="nav container text--semibold">
-    <div class="nav__item">
+    <div
+		class="nav__item"
+		ng-class="{
+			'nav__item--menu-clicked': showCategories
+		}">
         <div
             class="nav-button nav-menu-button"
             ng-click="showCategories = !showCategories; $event.stopPropagation();">
-			<span class="icon-hamburger--full-width"></span>
+			<span ng-class="{
+				'icon-hamburger--full-width': !showCategories ,
+				'icon-hamburger--active--full-width': showCategories
+			}"></span>
         </div>
     </div>
     <div

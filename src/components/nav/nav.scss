@@ -105,3 +105,12 @@ $nav-margin-width--xs: 3px;
 		height: 56px;
 	}
 }
+
+.nav__item--menu-clicked {
+	height: 96px;
+	background-color: $grey-7;
+
+	.xs & {
+		height: 56px;
+	}
+}
