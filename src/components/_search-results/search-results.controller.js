@@ -15,7 +15,7 @@ export default class SearchResultsController {
 	}
 	setSortingParam(option) {
 		let order = option.value;
-		let sort = 'asc';
+		let sort = (order === 'newest') ? 'desc' : 'asc';
 		this.chosenSortingOption = option;
 		this.$state.go('searchResults', { order, sort }, { reload : true });
 	}
