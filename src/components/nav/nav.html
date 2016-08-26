@@ -6,7 +6,8 @@
 		}">
         <div
             class="nav-button nav-menu-button"
-            ng-click="showCategories = !showCategories; $event.stopPropagation();">
+            ng-click="showCategories = !showCategories;
+			$event.stopPropagation(); showSearchDropdown = false;">
 			<span ng-class="{
 				'icon-hamburger--full-width': !showCategories ,
 				'icon-hamburger--active--full-width': showCategories
@@ -55,7 +56,8 @@
 		}">
 		<div
 			class="nav-button"
-			ng-click="showSearchDropdown = !showSearchDropdown; $event.stopPropagation();">
+			ng-click="showSearchDropdown = !showSearchDropdown;
+			$event.stopPropagation(); showCategories = false;">
 			<span ng-class="{
 				'icon-search--full-width': !showSearchDropdown ,
 				'icon-search--active--full-width': showSearchDropdown
