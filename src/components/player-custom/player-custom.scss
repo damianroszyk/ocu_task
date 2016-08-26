@@ -15,17 +15,30 @@
 	background-position: center center;
 	background-repeat: no-repeat;
 	cursor: pointer;
-	margin-left: 10px;
+	margin: 0 2px;
+}
+
+@mixin widget-button() {
+	padding: 34px 34px 0 0;
+	display: inline-block;
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	margin: 1px 0 1px 5px;
+	background-color: $grey-3;
+
+	&.active, &:hover, &:focus{
+		background-color: $yellow;
+	}
 }
 
 .player-custom {
 	padding: 20px;
 	background-color: $black;
-	position: relative;
-
-	.track-table__item:nth-child(2){
-		cursor: pointer;
-	}
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 200px;
 }
 
 .player-custom__track-thumbnail-container{
@@ -44,10 +57,38 @@
 	display: inline-block;
 	vertical-align: top;
 	color: $grey-1;
-	padding-left: 40px;
 	padding-top: 10px;
 	margin-left: -3px;
 	margin-top: -1px;
+}
+
+.player-custom__widget-controls{
+	display: inline-block;
+	width: 44px;
+}
+
+.player-custom__widget-controls-popup{
+	display: none;
+}
+
+.player-custom__popup-button{
+	@include widget-button();
+	background-image: url('/shared/images/icons/popup-button.png');
+}
+
+.player-custom__toggle-button{
+	@include widget-button();
+	background-image: url('/shared/images/icons/hide-button.png');
+}
+
+.player-custom__maximize-button{
+	@include widget-button();
+	background-image: url('/shared/images/icons/maximize-button.png');
+}
+
+.player-custom__close-button{
+	@include widget-button();
+	background-image: url('/shared/images/icons/closeplayer-button.png');
 }
 
 .player-custom__track-artist{
@@ -69,21 +110,12 @@
 }
 
 .player-custom__main-buttons{
-	width: 150px;
 	text-align: center;
-	display: table-cell;
+	margin-bottom: 10px;
 }
 
-.player-custom__main-buttons-rwd{
-	text-align: center;
-	margin-bottom: 20px;
-}
-
-.player-custom__rwd-controls-container{
-	display: inline-block;
-	float: right;
-	margin-top: 28px;
-	display: none;
+.player-custom__controls-container{
+	margin-top: 18px;
 }
 
 .player-custom__play-button {
@@ -105,29 +137,24 @@
 
 .player-custom__slider{
 	color: $grey-1;
-	display: table-cell;
-	vertical-align: top;
-	padding-left: 40px;
+	margin-top: 10px;
 	position: relative;
 	text-align: center;
 }
 
 .player-custom__slider-min{
 	position: absolute;
-	left: 40px;
 	top: 0;
-	width: 5%;
 }
 
 .player-custom__slider-max{
 	position: absolute;
 	right: 0;
 	top: 0;
-	width: 5%;
 }
 
 .player-custom__slider-bar{
-	width: 90%;
+	width: 50%;
 	display: inline-block;
 	vertical-align: 1px;
 	position: relative;
@@ -160,17 +187,9 @@
 }
 
 .player-custom__secondary-buttons, .player-custom__secondary-buttons-rwd{
-	text-align: right;
+	text-align: center;
 }
 
-.player-custom__popup-button{
-	@include secondary-button();
-	background-image: url('/shared/images/icons/popup-button.png');
-
-	&.active{
-		display: none;
-	}
-}
 .player-custom__shuffle-button {
 	@include secondary-button();
 	background-image: url('/shared/images/icons/shuffle-button.png');
@@ -197,19 +216,18 @@
 }
 
 .player-custom__volume-bar{
-	width: 200px;
+	width: 90px;
 	display: inline-block;
 	position: relative;
 	vertical-align: 9px;
-	background-color: $grey-7;
 	@include border-radius(3px);
 	cursor: pointer;
 }
 
 .player-custom__volume-completed-container{
 	@include border-radius(3px);
-	width: 100%;
 	overflow: hidden;
+	background-color: $grey-7;
 }
 
 .player-custom__volume-completed{
@@ -221,106 +239,70 @@
 	margin-top: 20px;
 }
 
-@media (max-width: 991px){
+.player-custom--minified{
 
-	.player-custom__controls{
-		display: block;
+	.player-custom__track-thumbnail-container,
+	.player-custom__secondary-buttons,
+	.player-custom__slider,
+	.player-custom__tracklist,
+	.player-custom__track-album{
+		display: none
 	}
 
-	.player-custom__main-buttons{
-		display: block;
+	.player-custom__widget-controls{
+		width: 200px;
+		text-align: center;
+
+		div{
+			margin: 0 5px;
+		}
 	}
 
-	.player-custom__slider{
+	.player-custom__track-description{
 		display: block;
-		padding-left: 0;
-	}
-
-	.player-custom__slider-min{
-		left: 0;
+		text-align: center;
 	}
 
 	.player-custom__rwd-controls-container{
-		display: inline-block;
-	}
-
-	.player-custom__main-buttons{
-		 display: none;
-	 }
-
-	.player-custom__secondary-buttons{
-		display: none;
-	}
-
-	.player-custom__slider-bar{
-		width: 85%;
+		float: none;
+		display: block;
 	}
 }
 
-@media (max-width: 767px){
-	.player-custom__rwd-controls-container{
-		display: block;
-		float: none;
+.player-custom--popup{
+	width: auto;
+
+	.player-custom__widget-controls-popup{
+		display: none;
+
+		div{
+			margin: 0 5px 5px 0;
+		}
 	}
 
-	.player-custom__main-buttons-rwd{
+	.player-custom__widget-controls{
+		display: none;
+	}
+
+	.player-custom__track-description{
+		padding-left: 20px;
+	}
+
+	.player-custom__main-buttons{
+		width: 150px;
 		display: inline-block;
-		margin-bottom: 0;
 	}
 
-	.player-custom__secondary-buttons-rwd{
+	.player-custom__secondary-buttons{
 		display: inline-block;
 		vertical-align: 10px;
 	}
 
 	.player-custom__slider-bar{
-		width: 80%;
-	}
-}
-
-@media (max-width: 567px){
-	.player-custom__rwd-controls-container{
-		display: block;
-		float: none;
-		margin-top: 10px;
+		width: 75%;
 	}
 
-	.player-custom__main-buttons-rwd{
-		display: block;
-		margin-bottom: 0;
-	}
-
-	.player-custom__secondary-buttons-rwd{
-		display: block;
-		text-align: center;
-		margin-top: 10px;
-	}
-
-	.player-custom__slider-bar{
-		width: 80%;
-	}
-
-	.player-custom__controls{
-		margin-top: 20px;
-	}
-}
-
-@media (max-width: 479px){
-	.player-custom__track-thumbnail-container{
-		display: none;
-	}
-
-	.player-custom__track-description{
-		padding: 0;
-		text-align: center;
-		display: block;
-	}
-
-	.player-custom__volume-bar{
-		width: 100px;
-	}
-
-	.player-custom__slider-bar{
-		width: 70%;
+	.player-track-table tbody {
+		height: 324px;
 	}
 }

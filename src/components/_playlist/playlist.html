@@ -1,6 +1,8 @@
 <div class="playlist">
 	<playlist-header
-		playlist="$ctrl.playlist">
+		playlist="$ctrl.playlist"
+		show-player="$ctrl.showPlayer()"
+	>
 	</playlist-header>
 
 	<track-list
@@ -11,12 +13,15 @@
 		tags="$ctrl.tags">
 	</playlist-tags>
 
-	<div ng-if="$ctrl.musicProvider == 'DEEZER'">
-		<player-custom popup="false">
+	<div ng-if="$ctrl.musicProvider == 'DEEZER'" ng-show="$ctrl.playerShown">
+		<player-custom
+			popup="false"
+			hide-player="$ctrl.hidePlayer()"
+		>
 		</player-custom>
 	</div>
 
-	<div ng-if="$ctrl.musicProvider == 'SPOTIFY'">
+	<div ng-if="$ctrl.musicProvider == 'SPOTIFY'" ng-show="$ctrl.playerShown">
 		<player-spotify
 			playlist-id="$ctrl.playlist.id"
 		>

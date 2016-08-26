@@ -30,5 +30,14 @@ export default class PlaylistController {
 			name: 'Guitar'
 		}];
 		this.musicProvider = "DEEZER";
+		this.playerShown = true;
+	}
+
+	showPlayer(){
+		this.playerShown = true;
+	}
+
+	hidePlayer(){
+		this.playerShown = false;
 	}
 }

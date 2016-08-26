@@ -5,8 +5,7 @@ import template from 'text!./track-list.html';
 import controller from './track-list.controller';
 
 let bindings = {
-	tracks: '<',
-	trackTitleClickCallback: '&?'
+	tracks: '<'
 };
 
 export default angular

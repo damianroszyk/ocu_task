@@ -22,7 +22,7 @@
 	            class="track-table__row"
 	            ng-repeat="track in ::$ctrl.tracks">
 				<td class="track-table__item"></td>
-	            <td class="track-table__item" ng-click="$ctrl.onTrackTitleClick({event: $event})">{{::track.title}}</td>
+	            <td class="track-table__item">{{::track.title}}</td>
 	            <td class="track-table__item">{{::track.artist.name}}</td>
 	            <td class="track-table__item">{{::track.album.title}}</td>
 	            <td class="track-table__item">{{::track.duration | convertSeconds }}</td>

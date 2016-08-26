@@ -5,7 +5,8 @@ import template from 'text!./player-custom.html';
 import controller from './player-custom.controller';
 
 let bindings = {
-	popup: '<'
+	popup: '<',
+	hidePlayer: '&?'
 };
 
 export default angular

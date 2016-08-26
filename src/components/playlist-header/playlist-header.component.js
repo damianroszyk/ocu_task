@@ -5,7 +5,8 @@ import template from 'text!./playlist-header.html';
 import controller from './playlist-header.controller';
 
 let bindings = {
-	playlist: '<'
+	playlist: '<',
+	showPlayer: '&?'
 };
 
 export default angular

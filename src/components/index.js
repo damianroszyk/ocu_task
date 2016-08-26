@@ -16,6 +16,7 @@ import './cookies-message/';
 import './player-deezer/';
 import './player-spotify/';
 import './player-custom/';
+import './player-track-list/';
 import './playlist-header/';
 import './playlist-tags/';
 import './playlist-tile/';

@@ -8,6 +8,7 @@ export default class PlayerCustomController {
 		this.isPlayingTrack = false;
 		this.isShuffling = false;
 		this.isRepeating = false;
+		this.isPlayerMinified = false;
 		this.isMuted = false;
 		this.volume = 100; // <0, 100>
 		this.percent = 0.0; // <0.0, 100.0>
@@ -115,7 +116,7 @@ export default class PlayerCustomController {
 
 	playTrackOfPlaylist(){
 		var srcElement = event.srcElement || event.target;
-		var parentElement = srcElement.parentElement;
+		var parentTr = srcElement.parentElement;
 		var rowIndex = parentElement.rowIndex - 1; // should start from 0
 		this.isPlayingTrack = true;
 		DZ.player.playPlaylist(this.playlistId, true, rowIndex)
@@ -123,6 +124,20 @@ export default class PlayerCustomController {
 
 	showPopup(){
 		this.window.open('#/player/deezer/' + this.playlistId, "_blank", "width=480,height=640,menubar=no,status=no,titlebar=no,toolbar=no,directories=no");
+		this.close();
+	}
+
+	toggle(){
+		this.isPlayerMinified = !this.isPlayerMinified;
+	}
+
+	maximize(){
+
+	}
+
+	close(){
+		this.isPlayerMinified = false;
+		this.hidePlayer();
 	}
 
 }
