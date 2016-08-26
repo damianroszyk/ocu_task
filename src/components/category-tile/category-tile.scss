@@ -56,15 +56,26 @@ category-tile {
 	}
 }
 
-.category-tile__title {
-    @include position-absolute(auto, $distance-md, $distance-md, $distance-md);
+.category-tile-meta {
+	@include position-absolute(auto, $distance-md, $distance-md, $distance-md);
     z-index: $z-index-2;
+
+	.xs & {
+		@include position-absolute(auto, $distance-sm, $distance-sm, 13px);
+	}
+}
+
+.category-tile__icon {
+	max-width: $distance-lg;
+	max-height: $distance-lg;
+}
+
+.category-tile__title {
 	color: $white;
     margin: 0;
 	word-wrap: break-word;
 
 	.xs & {
-		@include position-absolute(auto, $distance-sm, $distance-sm, 13px);
 		font-size: 21px;
 	}
 }
