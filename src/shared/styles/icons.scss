@@ -73,6 +73,12 @@ $lg-icon: 50px;
 	@include icon-parent-width();
 }
 
+.icon-hamburger--active--full-width {
+	@include icon($md-icon, '/shared/images/icons/hamburger-icon--active.png');
+	@include icon-parent-width();
+	background-color: $grey-7;
+}
+
 .icon-search {
 	@include icon($md-icon, '/shared/images/icons/search-icon.png');
 }
