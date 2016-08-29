@@ -8,6 +8,7 @@ $promo-slot-width--vertical: 275px;
 $promo-slot-height--vertical: 593px;
 
 %promo-slot {
+	@include fade-in();
 	float: left;
 	overflow: hidden;
 	position: relative;
