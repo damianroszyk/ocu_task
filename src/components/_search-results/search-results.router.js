@@ -5,7 +5,7 @@ import { search } from 'playlist/playlist.resolvers';
 
 const SEARCH_RESULTS_ROUTER = {
 	searchResultsState: {
-		url: '^/search-results/:query',
+		url: '^/search-results/:query?order?sort',
 		template: `
 			<search-results
 				results="$resolve.search">

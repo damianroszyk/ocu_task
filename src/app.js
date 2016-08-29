@@ -5,6 +5,7 @@ import 'angular-translate-loader-static-files';
 import 'angular-loading-bar';
 import 'angular-ui-router';
 import 'angular-load';
+import 'angular-ui-bootstrap/src/dropdown';
 
 const PITCHED_WEBAPP = angular
 	.module('pitchedWebapp', [
@@ -12,7 +13,8 @@ const PITCHED_WEBAPP = angular
 		'ui.router',
 		'pascalprecht.translate',
 		'angular-loading-bar',
-		'angularLoad'
+		'angularLoad',
+		'ui.bootstrap.dropdown'
 	]);
 
 export default PITCHED_WEBAPP.name;

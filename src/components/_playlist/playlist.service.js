@@ -32,7 +32,7 @@ class PlaylistService {
 		return playlists;
 	}
 
-	searchPlaylists(query, order = 'newest', sort = 'desc') {
+	searchPlaylists(query, order, sort) {
 		let url = this.modelHelper.buildUrl(this.searchBackend, query);
 		let params = {order, sort};
 		return this.$http.get(url, { params }).then(response =>

@@ -1,5 +1,15 @@
 <div class="home container">
-	<search-tile></search-tile>
+	<div class="home__featured">
+		<promo-slot
+			layout="horizontal"
+			featured-item="$ctrl.featuredItem1">
+		</promo-slot>
+		<search-tile></search-tile>
+	</div>
+	<promo-slot
+		layout="vertical"
+		featured-item="$ctrl.featuredItem2">
+	</promo-slot>
     <category-tiles
         layout="$ctrl.categoriesLayout"
         categories="$ctrl.categories">

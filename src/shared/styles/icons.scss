@@ -1,4 +1,5 @@
 @import '/variables';
+@import '../../shared/styles/mixins';
 
 $sm-icon: 30px;
 $md-icon: 40px;
@@ -72,6 +73,12 @@ $lg-icon: 50px;
 	@include icon-parent-width();
 }
 
+.icon-hamburger--active--full-width {
+	@include icon($md-icon, '/shared/images/icons/hamburger-icon--active.png');
+	@include icon-parent-width();
+	background-color: $grey-7;
+}
+
 .icon-search {
 	@include icon($md-icon, '/shared/images/icons/search-icon.png');
 }
@@ -80,6 +87,12 @@ $lg-icon: 50px;
 	@include icon($md-icon, '/shared/images/icons/search-icon.png');
 	@include icon-parent-width();
 	background-size: 49%;
+}
+
+.icon-search--active--full-width {
+	@include icon($md-icon, '/shared/images/icons/search-icon--active.png');
+	@include icon-parent-width();
+	background-size: 57%;
 }
 
 .icon-tiles {
@@ -121,4 +134,30 @@ $lg-icon: 50px;
 
 .icon-close {
 	@include icon($md-icon, '/shared/images/icons/close-black.png');
+}
+
+.icon-close-white--rounded {
+	@include icon(35px, '/shared/images/icons/close-white.png');
+	@include position-absolute($distance-md, $distance-md, auto, auto);
+	border: 2px solid $white;
+	color: $white;
+	border-radius: 50%;
+	cursor: pointer;
+
+	.xs & {
+		height: 24px;
+		width: 24px;
+	}
+}
+
+.icon-chevron--down--float-right {
+	@include icon(38px, '/shared/images/icons/chevron-down-grey.png');
+	float: right;
+	transition: transform .15s;
+
+	.xs & {
+		width: 30px;
+		height: 30px;
+		background-size: 80%;
+	}
 }

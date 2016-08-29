@@ -15,7 +15,7 @@ let featuredPlaylists = function(playlistService) {
 
 /* @ngInject */
 let search = function($stateParams, playlistService) {
-	return playlistService.searchPlaylists($stateParams.query);
+	return playlistService.searchPlaylists($stateParams.query, $stateParams.order, $stateParams.sort);
 };
 
 export { playlist, categoryPlaylists, featuredPlaylists, search };

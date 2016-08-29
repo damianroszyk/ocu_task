@@ -1,7 +1,7 @@
 <div class="playlist-tile" playlist-tile>
 	<div
 		class="playlist-tile__image-wrapper"
-		ui-sref="playlist({playlistId: $ctrl.playlist.id})">
+		ui-sref="playlist({playlistId: $ctrl.playlist.external_playlists[1].service_playlist_id})">
 		<div class="playlist-tile__overlay"></div>
 		<img
 		    class="playlist-tile__image"
@@ -28,12 +28,12 @@
 				<span class="playlist-header__caption--lowercase"> songs,</span>
 				{{::$ctrl.playlist.total_duration | convertSeconds:'hours'}}
 			</span>
-			<button
-				class="btn-circled playlist-tile__button"
-				type="button">
-				Follow
-			</button>
 		</div>
+		<button
+			class="btn-circled playlist-tile__button"
+			type="button">
+			Follow
+		</button>
 	</figcaption>
 	<div class="playlist-tile__tags-wrapper">
 		<playlist-tags tags="$ctrl.tags"></playlist-tags>
