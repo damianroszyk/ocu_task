@@ -10,7 +10,7 @@ const HOME_ROUTER = {
 		template: `
 			<home
 				categories="$resolve.categories"
-				featured-playlists="$resolve.featuredPlaylists.data">
+				featured-playlists="$resolve.featuredPlaylists">
 			</home>`,
 		pageTitle: `Home`,
 		resolve: { categories, featuredPlaylists }
