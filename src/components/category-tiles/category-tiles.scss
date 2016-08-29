@@ -3,5 +3,11 @@
 
 .category-tiles {
     @include clearfix();
+	width: 1196px;
+	max-width: 100vw;
 	margin-top: $distance-sm;
+
+	.xs & {
+		max-width: 100%;
+	}
 }

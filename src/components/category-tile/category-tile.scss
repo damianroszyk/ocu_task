@@ -25,10 +25,6 @@ category-tile {
     margin: 0 $category-tile-offset $category-tile-offset 0;
 	border-bottom: $category-tile-border-height solid $yellow;
 
-	.xl &:nth-child(4n) {
-		margin-right: 0;
-	}
-
 	.xs & {
 		width: calc(50% - #{$category-tile-offset--xs / 2});
 		margin: 0 $category-tile-offset--xs $category-tile-offset--xs 0;

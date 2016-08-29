@@ -5,6 +5,8 @@ $search-tile-width: 574px;
 $search-tile-height: 275px;
 
 .search-tile {
+	@include fade-in();
+	float: left;
 	width: $search-tile-width;
 	height: $search-tile-height;
 	margin-bottom: $distance-md;
