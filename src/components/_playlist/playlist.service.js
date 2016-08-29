@@ -45,9 +45,21 @@ class PlaylistService {
 		return this.$http.get(url);
 	}
 
+	sortFeaturedPlaylists(playlists) {
+		let sortedPlaylists = _.filter(_.sortBy(playlists, 'featured'), function(o) {
+			return o.featured > 1 && o.featured < 7;
+		});
+		return sortedPlaylists;
+	}
+
 	getFeaturedPlaylists() {
 		let url = this.modelHelper.buildUrl(this.playlistBackend, 'list');
-		return this.$http.get(url);
+		let headers = {
+			featured: 1
+		};
+		return this.$http.get(url, { headers }).then(response =>
+			this.sortFeaturedPlaylists(response.data)
+		);
 	}
 
 	getPlaylist(playlistId) {
