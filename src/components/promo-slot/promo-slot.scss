@@ -72,4 +72,10 @@ $promo-slot-height--vertical: 593px;
 	font-weight: 700;
     margin: 0;
     text-transform: uppercase;
+
+	.promo-slot--vertical & {
+		@include flex-middle();
+		bottom: 0;
+		padding: 0;
+	}
 }
