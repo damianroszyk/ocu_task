@@ -18,6 +18,7 @@ import './playlist-header/';
 import './playlist-tags/';
 import './playlist-tile/';
 import './playlist-tiles/';
+import './promo-slot/';
 import './search-tile/';
 import './search-dropdown/';
 import './search-form/';

@@ -31,24 +31,41 @@ class CategoryService {
 			this.decorateCategories(this.categoryParamsBuilder.bind(this))(response.data)
 		);
 	}
+	getFeaturedCategories() {
+		let url = this.modelHelper.buildUrl(this.categoryBackend, 'list');
+		let headers = {
+			featured: 1
+		};
+		return this.$http.get(url, { headers }).then(response =>
+			this.decorateCategories(this.featuredCategoriesParamsBuilder.bind(this))(response.data)
+		);
+	}
 	decorateCategories(decorator) {
 		return categories => (decorator || angular.identity)(categories);
 	}
 	categoriesParamsBuilder(categories) {
-		console.time('categoriesParamsBuilder');
 		this.traverseCategories({}, categories, 0);
-		console.timeEnd('categoriesParamsBuilder');
 		return categories;
 	}
 	categoryParamsBuilder(category) {
-		console.time('categoryParamsBuilder');
 		let stateParams = {};
 		category.parents = this.traverseCategories(stateParams, category.parents, 0);
 		let nestingLevel = Object.keys(stateParams).length + 1;
-		stateParams[`l${nestingLevel}`] = category.category.name;
+		stateParams[`l${nestingLevel}`] = _.kebabCase(category.name);
 		category.children = this.traverseCategories(stateParams, category.children, nestingLevel);
-		console.timeEnd('categoryParamsBuilder');
 		return category;
+	}
+	featuredCategoriesParamsBuilder(categories) {
+		angular.forEach(categories, category => {
+			let stateParams = {};
+			category.parents = this.traverseCategories(stateParams, category.parents, 0);
+			stateParams = _.mapKeys(stateParams, (value, key) => `l${key}`);
+			let nestingLevel = Object.keys(stateParams).length + 1;
+			stateParams[`l${nestingLevel}`] = _.kebabCase(category.name);
+			stateParams.categoryId = category.id;
+			category.stateParams = stateParams;
+		});
+		return categories;
 	}
 	traverseCategories(stateParams, categories, nestingLevel) {
 		nestingLevel++;

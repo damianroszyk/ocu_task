@@ -1,0 +1,75 @@
+@import '../../shared/styles/variables';
+@import '../../shared/styles/mixins';
+
+$promo-slot-width--horizontal: 574px;
+$promo-slot-height--horizontal: 275px;
+
+$promo-slot-width--vertical: 275px;
+$promo-slot-height--vertical: 593px;
+
+%promo-slot {
+	float: left;
+	overflow: hidden;
+	position: relative;
+
+	&[href] {
+		cursor: pointer;
+	}
+
+	> div {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.promo-slot--horizontal {
+	@extend %promo-slot;
+	width: $promo-slot-width--horizontal;
+	height: $promo-slot-height--horizontal;
+	margin-right: 24px;
+	background: $grey-2;
+
+	.xs & {
+		width: 100%;
+		height: 50vw;
+		margin-bottom: 20px;
+	}
+}
+
+.promo-slot--vertical {
+	@extend %promo-slot;
+	width: $promo-slot-width--vertical;
+	height: $promo-slot-height--vertical;
+	margin: 0 24px 24px 0;
+	background: $grey-2;
+
+	.xs & {
+		width: calc(50% - 5px);
+		margin: 0 10px 10px 0;
+	    height: 100vw;
+	}
+}
+
+.promo-slot__image {
+	@include block-center();
+
+	.promo-slot--horizontal & {
+		width: 100%;
+	}
+
+	.promo-slot--vertical & {
+		height: 100%;
+	}
+}
+
+.promo-slot__title {
+	@include position-absolute(0, 0, auto, 0);
+	color: $white;
+	padding-top: $distance-lg;
+	text-align: center;
+	z-index: $z-index-2;
+	font-size: 35px;
+	font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+}

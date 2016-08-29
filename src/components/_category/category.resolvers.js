@@ -9,8 +9,13 @@ let categories = function(categoryService) {
 };
 
 /* @ngInject */
+let featuredCategories = function(categoryService) {
+	return categoryService.getFeaturedCategories();
+};
+
+/* @ngInject */
 let flatCategories = function(categoryService) {
 	return categoryService.getFlatCategories();
 };
 
-export { category, categories, flatCategories };
+export { category, categories, featuredCategories, flatCategories };
