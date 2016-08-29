@@ -18,7 +18,7 @@ export default class PlayerSpotifyController {
 	}
 
 	showPopup(){
-		this.window.open('#/player/spotify/' + this.playlistId, "_blank", "width=480,height=640,menubar=no,status=no,titlebar=no,toolbar=no,directories=no");
+		this.window.open('#/player/spotify/' + this.playlistId, '_blank', 'width=480,height=640,menubar=no,status=no,titlebar=no,toolbar=no,directories=no');
 		this.close();
 	}
 

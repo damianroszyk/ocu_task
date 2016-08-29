@@ -23,7 +23,7 @@ class DeezerService {
 			channelUrl: `${window.location.origin}/channel.html`,
 			player : {
 				onload : function(){
-					document.dispatchEvent(new Event("DEEZER_LOADED"));
+					document.dispatchEvent(new Event('DEEZER_LOADED'));
 				}
 			}
 		});

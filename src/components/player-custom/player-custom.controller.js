@@ -35,7 +35,7 @@ export default class PlayerCustomController {
 			footer.parentNode.removeChild(footer);
 		}
 
-		document.addEventListener("DEEZER_LOADED", function(){
+		document.addEventListener('DEEZER_LOADED', function(){
 
 			deezer.dz.player.playPlaylist($stateParams.playlistId - 0, false);
 
@@ -119,11 +119,11 @@ export default class PlayerCustomController {
 		var parentTr = srcElement.parentElement.parentElement;
 		var rowIndex = parentTr.rowIndex;
 		this.isPlayingTrack = true;
-		DZ.player.playPlaylist(this.playlistId, true, rowIndex)
+		DZ.player.playPlaylist(this.playlistId, true, rowIndex);
 	}
 
 	showPopup(){
-		this.window.open('#/player/deezer/' + this.playlistId, "_blank", "width=480,height=640,menubar=no,status=no,titlebar=no,toolbar=no,directories=no");
+		this.window.open('#/player/deezer/' + this.playlistId, '_blank', 'width=480,height=640,menubar=no,status=no,titlebar=no,toolbar=no,directories=no');
 		this.close();
 	}
 
