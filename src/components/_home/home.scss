@@ -1,4 +1,5 @@
 @import '../../shared/styles/variables';
+@import '../../shared/styles/mixins';
 
 .home {
 	margin-top: $distance-lg;
@@ -6,4 +7,8 @@
 	.xs & {
 		margin-top: $distance-md;
 	}
+}
+
+.home__featured {
+	@include clearfix();
 }

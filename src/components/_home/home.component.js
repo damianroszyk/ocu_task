@@ -6,6 +6,7 @@ import controller from './home.controller';
 
 let bindings = {
 	categories: '<',
+	featuredCategories: '<',
 	featuredPlaylists: '<'
 };
 
