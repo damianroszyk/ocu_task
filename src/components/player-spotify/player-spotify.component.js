@@ -5,7 +5,9 @@ import template from 'text!./player-spotify.html';
 import controller from './player-spotify.controller';
 
 let bindings = {
-	popup: '<'
+	popup: '<',
+	hidePlayer: '&?',
+	playerShown: '<'
 };
 
 export default angular

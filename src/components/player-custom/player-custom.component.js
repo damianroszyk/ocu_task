@@ -6,7 +6,8 @@ import controller from './player-custom.controller';
 
 let bindings = {
 	popup: '<',
-	hidePlayer: '&?'
+	hidePlayer: '&?',
+	playerShown: '<'
 };
 
 export default angular

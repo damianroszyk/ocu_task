@@ -4,6 +4,8 @@ export default class PlayerSpotifyController {
 
 		this.playlistId = $stateParams.playlistId - 0;
 		this.window = $window;
+		this.isPlayerMinified = false;
+		this.isMaximized = false;
 
 		if(this.popup){
 			var header = document.getElementsByClassName('header')[0];
@@ -17,5 +19,20 @@ export default class PlayerSpotifyController {
 
 	showPopup(){
 		this.window.open('#/player/spotify/' + this.playlistId, "_blank", "width=480,height=640,menubar=no,status=no,titlebar=no,toolbar=no,directories=no");
+		this.close();
+	}
+
+	toggle(){
+		this.isPlayerMinified = !this.isPlayerMinified;
+	}
+
+	maximize(){
+		this.isMaximized = !this.isMaximized;
+	}
+
+	close(){
+		this.isPlayerMinified = false;
+		this.isMaximized = false;
+		this.hidePlayer();
 	}
 }

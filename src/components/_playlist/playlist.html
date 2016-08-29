@@ -17,13 +17,16 @@
 		<player-custom
 			popup="false"
 			hide-player="$ctrl.hidePlayer()"
+			player-shown="$ctrl.playerShown"
 		>
 		</player-custom>
 	</div>
 
 	<div ng-if="$ctrl.musicProvider == 'SPOTIFY'" ng-show="$ctrl.playerShown">
 		<player-spotify
-			playlist-id="$ctrl.playlist.id"
+			popup="false"
+			hide-player="$ctrl.hidePlayer()"
+			player-shown="$ctrl.playerShown"
 		>
 		</player-spotify>
 	</div>

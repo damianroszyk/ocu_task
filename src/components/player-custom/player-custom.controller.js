@@ -116,8 +116,8 @@ export default class PlayerCustomController {
 
 	playTrackOfPlaylist(){
 		var srcElement = event.srcElement || event.target;
-		var parentTr = srcElement.parentElement;
-		var rowIndex = parentElement.rowIndex - 1; // should start from 0
+		var parentTr = srcElement.parentElement.parentElement;
+		var rowIndex = parentTr.rowIndex;
 		this.isPlayingTrack = true;
 		DZ.player.playPlaylist(this.playlistId, true, rowIndex)
 	}
@@ -132,12 +132,14 @@ export default class PlayerCustomController {
 	}
 
 	maximize(){
-
+		this.isMaximized = !this.isMaximized;
 	}
 
 	close(){
 		this.isPlayerMinified = false;
+		this.isMaximized = false;
 		this.hidePlayer();
+		this.pause();
 	}
 
 }

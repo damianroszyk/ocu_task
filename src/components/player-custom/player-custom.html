@@ -1,14 +1,12 @@
-<div class="player-custom container" ng-class="{'player-custom--minified': $ctrl.isPlayerMinified, 'player-custom--popup': $ctrl.popup}">
-
-	<!--
-	<div class="player-custom__widget-controls-popup">
+<div class="player-custom"
+	 ng-class="{'player-custom--minified': $ctrl.isPlayerMinified, 'player-custom--popup': $ctrl.popup, 'player-custom--maximized': $ctrl.isMaximized}"
+>
+	<div class="player-custom__widget-controls--maximized">
 		<div ng-click="$ctrl.showPopup();" class="player-custom__popup-button" ng-show="!$ctrl.popup"></div>
 		<div ng-click="$ctrl.toggle();" class="player-custom__toggle-button" ng-class="{active: $ctrl.isPlayerMinified}"></div>
 		<div ng-click="$ctrl.maximize();" class="player-custom__maximize-button" ng-class="{active: $ctrl.isMaximized}"></div>
 		<div ng-click="$ctrl.close();" class="player-custom__close-button"></div>
 	</div>
-	-->
-
 	<div class="player-custom__track-info">
 		<div class="player-custom__track-thumbnail-container">
 			<img class="player-custom__track-thumbnail" ng-src="https://api.deezer.com/album/{{$ctrl.track.albumId}}'/image" ng-show="$ctrl.track.albumId != null" />
