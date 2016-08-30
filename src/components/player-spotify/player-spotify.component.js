@@ -1,8 +1,8 @@
 import angular from 'angular';
 import app from 'app';
 
-import template from 'text!./player-custom.html';
-import controller from './player-custom.controller';
+import template from 'text!./player-spotify.html';
+import controller from './player-spotify.controller';
 
 let bindings = {
 	popup: '<',
@@ -12,5 +12,5 @@ let bindings = {
 
 export default angular
 	.module(app)
-	.component('playerCustom', { template, controller, bindings })
+	.component('playerSpotify', { template, controller, bindings })
 	.name;

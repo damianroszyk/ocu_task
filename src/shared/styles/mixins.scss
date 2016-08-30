@@ -83,3 +83,15 @@
 	}
 	// scss-lint:enable all
 }
+
+@mixin gradient-background($nogradientcolor, $gradientparams...){
+	background: $nogradientcolor;
+	background: -webkit-linear-gradient($gradientparams);
+	background: -o-linear-gradient($gradientparams);
+	background: -moz-linear-gradient($gradientparams);
+	background: linear-gradient($gradientparams);
+}
+
+@mixin border-radius($radius: 5px) {
+	border-radius: $radius;
+}
