@@ -13,7 +13,7 @@ $promo-slot-height--vertical: 593px;
 	overflow: hidden;
 	position: relative;
 
-	&[href] {
+	[href] {
 		cursor: pointer;
 	}
 
