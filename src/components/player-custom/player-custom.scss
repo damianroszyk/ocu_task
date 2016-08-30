@@ -227,13 +227,13 @@
 	cursor: pointer;
 }
 
-.player-custom__volume-completed-container {
+.player-custom__volume-slider-container {
 	@include border-radius(3px);
 	overflow: hidden;
 	background-color: $grey-7;
 }
 
-.player-custom__volume-completed {
+.player-custom__volume-slider {
 	padding: 3px 0;
 	@include gradient-background(#36a1d4, #36a1d4, #237192);
 }

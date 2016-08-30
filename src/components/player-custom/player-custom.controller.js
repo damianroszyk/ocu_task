@@ -100,19 +100,35 @@ export default class PlayerCustomController {
 	}
 
 	setVolume(event){
-		var percent = (event.offsetX / event.currentTarget.clientWidth) * 100;
-		this.deezer.dz.player.setVolume(percent);
-		this.volume = percent;
+		if(event.which === 1){
+			var percent = (event.offsetX / event.currentTarget.clientWidth) * 100;
+			this.deezer.dz.player.setVolume(percent);
+			this.volume = percent;
+		}
 	}
 
 	setPercent(event){
-		var percent = (event.offsetX / event.currentTarget.clientWidth) * 100;
-		this.deezer.dz.player.seek(percent);
-		this.deezer.dz.player.play();
-		this.isPlayingTrack = true;
+		if(event.which === 1) {
+			var percent = (event.offsetX / event.currentTarget.clientWidth);
+			this.deezer.dz.player.seek(percent * 100);
+			var completedTime = Math.floor(this.track.duration * percent);
+			this.percent = percent * 100;
+			this.track.completed = completedTime;
+			//setTimeout(this.deezer.dz.player.play, 2000);
+			this.isPlayingTrack = true;
+		}
 	}
 
-	playTrackOfPlaylist(){
+	setPercentTemporarily(event){
+		if(event.which === 1) {
+			var percent = (event.offsetX / event.currentTarget.clientWidth);
+			var completedTime = Math.floor(this.track.duration * percent);
+			this.percent = percent * 100;
+			this.track.completed = completedTime;
+		}
+	}
+
+	playTrackOfPlaylist(event){
 		var srcElement = event.srcElement || event.target;
 		var parentTr = srcElement.parentElement.parentElement;
 		var rowIndex = parentTr.rowIndex;
