@@ -4,6 +4,6 @@ export default class PlayerTrackListController {
 	}
 
 	onTrackTitleClick(event){
-		(this.trackTitleClickCallback || angular.noop)(event);
+		(this.trackTitleClickCallback || angular.noop)({ event });
 	}
 }
