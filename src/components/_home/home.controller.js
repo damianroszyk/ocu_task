@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const LOWER_PROMO_STARTS = 2;
+const LOWER_PROMO_STARTS = 3;
 const LOWER_PROMO_ENDS = 6;
 
 export default class HomeController {
