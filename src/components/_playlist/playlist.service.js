@@ -33,16 +33,18 @@ class PlaylistService {
 	}
 
 	searchPlaylists(query, order, sort) {
+		let params = { order, sort };
+		let headers = { published: 1 };
 		let url = this.modelHelper.buildUrl(this.searchBackend, query);
-		let params = {order, sort};
-		return this.$http.get(url, { params }).then(response =>
+		return this.$http.get(url, { params, headers }).then(response =>
 			this.processPlaylists(response.data)
 		);
 	}
 
 	getCategoryPlaylists(categoryId) {
+		let headers = { published: 1 };
 		let url = this.modelHelper.buildUrl(this.categoryBackend, categoryId, 'playlists');
-		return this.$http.get(url);
+		return this.$http.get(url, { headers });
 	}
 
 	sortFeaturedPlaylists(playlists) {
@@ -55,7 +57,8 @@ class PlaylistService {
 	getFeaturedPlaylists() {
 		let url = this.modelHelper.buildUrl(this.playlistBackend, 'list');
 		let headers = {
-			featured: 1
+			featured: 1,
+			published: 1
 		};
 		return this.$http.get(url, { headers }).then(response =>
 			this.sortFeaturedPlaylists(response.data)
