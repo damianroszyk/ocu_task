@@ -13,22 +13,22 @@
 		tags="$ctrl.tags">
 	</playlist-tags>
 
-	<div ng-if="$ctrl.musicProvider == 'DEEZER'" ng-show="$ctrl.playerShown">
-		<player-custom
-			popup="false"
-			hide-player="$ctrl.hidePlayer()"
-			player-shown="$ctrl.playerShown"
-		>
-		</player-custom>
-	</div>
+	<div ng-show="$ctrl.playerShown">
+		<div ng-if="$ctrl.musicProvider === 'DEEZER'">
+			<player-custom
+				popup="false"
+				hide-player="$ctrl.hidePlayer()"
+				player-shown="$ctrl.playerShown">
+			</player-custom>
+		</div>
 
-	<div ng-if="$ctrl.musicProvider == 'SPOTIFY'" ng-show="$ctrl.playerShown">
-		<player-spotify
-			popup="false"
-			hide-player="$ctrl.hidePlayer()"
-			player-shown="$ctrl.playerShown"
-		>
-		</player-spotify>
+		<div ng-if="$ctrl.musicProvider === 'SPOTIFY'">
+			<player-spotify
+				popup="false"
+				hide-player="$ctrl.hidePlayer()"
+				player-shown="$ctrl.playerShown">
+			</player-spotify>
+		</div>
 	</div>
 
 </div>

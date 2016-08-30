@@ -1,7 +1,8 @@
 export default class PlayerSpotifyController {
 	/* @ngInject */
-	constructor($window, $stateParams) {
+	constructor($window, $stateParams, playerConstant) {
 
+		this.thirdPartyConstant = playerConstant;
 		this.playlistId = $stateParams.playlistId - 0;
 		this.window = $window;
 		this.isPlayerMinified = false;
@@ -18,7 +19,10 @@ export default class PlayerSpotifyController {
 	}
 
 	showPopup(){
-		this.window.open('#/player/spotify/' + this.playlistId, '_blank', 'width=480,height=640,menubar=no,status=no,titlebar=no,toolbar=no,directories=no');
+		this.window.open(
+			'#/player/spotify/' + this.playlistId,
+			'_blank',
+			'width='+this.playerConstant.popupSize.width+',height='+this.playerConstant.popupSize.height+',menubar=no,status=no,titlebar=no,toolbar=no,directories=no');
 		this.close();
 	}
 

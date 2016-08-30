@@ -32,12 +32,10 @@ export default class PlaylistController {
 		this.musicProvider = 'DEEZER';
 		this.playerShown = false;
 	}
-
-	showPlayer(){
+	showPlayer() {
 		this.playerShown = true;
 	}
-
-	hidePlayer(){
+	hidePlayer() {
 		this.playerShown = false;
 	}
 }

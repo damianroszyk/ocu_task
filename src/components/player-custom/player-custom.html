@@ -1,38 +1,101 @@
-<div class="player-custom"
-	 ng-class="{'player-custom--minified': $ctrl.isPlayerMinified, 'player-custom--popup': $ctrl.popup, 'player-custom--maximized': $ctrl.isMaximized}"
->
+<div
+	class="player-custom"
+	ng-class="{
+		'player-custom--minified': $ctrl.isPlayerMinified,
+		'player-custom--popup': $ctrl.popup,
+		'player-custom--maximized': $ctrl.isMaximized
+	}">
 	<div class="player-custom__widget-controls--maximized">
-		<div ng-click="$ctrl.showPopup();" class="player-custom__popup-button" ng-show="!$ctrl.popup"></div>
-		<div ng-click="$ctrl.toggle();" class="player-custom__toggle-button" ng-class="{active: $ctrl.isPlayerMinified}"></div>
-		<div ng-click="$ctrl.maximize();" class="player-custom__maximize-button" ng-class="{active: $ctrl.isMaximized}"></div>
-		<div ng-click="$ctrl.close();" class="player-custom__close-button"></div>
+		<div
+			class="player-custom__popup-button"
+			ng-click="$ctrl.showPopup()"
+			ng-show="!$ctrl.popup">
+		</div>
+		<div
+			class="player-custom__toggle-button"
+			ng-click="$ctrl.toggle()"
+			ng-class="{active: $ctrl.isPlayerMinified}">
+		</div>
+		<div
+			class="player-custom__maximize-button"
+			ng-click="$ctrl.maximize()"
+			ng-class="{active: $ctrl.isMaximized}">
+		</div>
+		<div
+			class="player-custom__close-button"
+			ng-click="$ctrl.close()">
+		</div>
 	</div>
 	<div class="player-custom__track-info">
 		<div class="player-custom__track-thumbnail-container">
-			<img class="player-custom__track-thumbnail" ng-src="https://api.deezer.com/album/{{$ctrl.track.albumId}}'/image" ng-show="$ctrl.track.albumId != null" />
+			<img
+				class="player-custom__track-thumbnail"
+				ng-src="https://api.deezer.com/album/{{$ctrl.track.albumId}}'/image"
+				ng-show="$ctrl.track.albumId != null" />
 		</div>
 		<div class="player-custom__widget-controls">
-			<div ng-click="$ctrl.showPopup();" class="player-custom__popup-button" ng-show="!$ctrl.popup"></div>
-			<div ng-click="$ctrl.toggle();" class="player-custom__toggle-button" ng-class="{active: $ctrl.isPlayerMinified}"></div>
-			<div ng-click="$ctrl.maximize();" class="player-custom__maximize-button" ng-class="{active: $ctrl.isMaximized}"></div>
-			<div ng-click="$ctrl.close();" class="player-custom__close-button"></div>
+			<div
+				class="player-custom__popup-button"
+				ng-click="$ctrl.showPopup()"
+				ng-show="!$ctrl.popup">
+			</div>
+			<div
+				class="player-custom__toggle-button"
+				ng-click="$ctrl.toggle()"
+				ng-class="{active: $ctrl.isPlayerMinified}">
+			</div>
+			<div
+				class="player-custom__maximize-button"
+				ng-click="$ctrl.maximize()"
+				ng-class="{active: $ctrl.isMaximized}">
+			</div>
+			<div
+				class="player-custom__close-button"
+				ng-click="$ctrl.close()">
+			</div>
 		</div>
-		<div class="player-custom__track-description">
+		<div class="player-custom__track-description" responsive>
 			<div class="player-custom__track-artist">{{$ctrl.track.artist}}</div>
 			<div class="player-custom__track-album">{{$ctrl.track.album}}</div>
 			<div class="player-custom__track-name">{{$ctrl.track.title}}</div>
 		</div>
-		<div class="player-custom__controls-container">
+		<div class="player-custom__controls-container" responsive>
 			<div class="player-custom__main-buttons">
-				<div ng-click="$ctrl.prev();" class="player-custom__previous-button"></div>
-				<div ng-click="$ctrl.play();" ng-show="!$ctrl.isPlayingTrack" class="player-custom__play-button"></div>
-				<div ng-click="$ctrl.pause();" ng-show="$ctrl.isPlayingTrack" class="player-custom__pause-button"></div>
-				<div ng-click="$ctrl.next();" class="player-custom__next-button"></div>
+				<div
+					class="player-custom__previous-button"
+					ng-click="$ctrl.prev()">
+				</div>
+				<div
+					class="player-custom__play-button"
+					ng-click="$ctrl.play()"
+					ng-show="!$ctrl.isPlayingTrack">
+				</div>
+				<div
+					class="player-custom__pause-button"
+					ng-click="$ctrl.pause()"
+					ng-show="$ctrl.isPlayingTrack">
+				</div>
+				<div
+					class="player-custom__next-button"
+					ng-click="$ctrl.next()">
+				</div>
 			</div>
 			<div class="player-custom__secondary-buttons">
-				<div ng-click="$ctrl.shuffle();" class="player-custom__shuffle-button" ng-class="{active: $ctrl.isShuffling}"></div>
-				<div ng-click="$ctrl.repeat();" class="player-custom__repeat-button" ng-class="{active: $ctrl.isRepeating}"></div>
-				<div ng-click="$ctrl.mute();" class="player-custom__mute-button" ng-class="{active: $ctrl.isMuted}"></div>
+				<div
+					class="player-custom__shuffle-button"
+					ng-click="$ctrl.shuffle()"
+					ng-class="{active: $ctrl.isShuffling}">
+				</div>
+				<div
+					class="player-custom__repeat-button"
+					ng-click="$ctrl.repeat()"
+					ng-class="{active: $ctrl.isRepeating}">
+				</div>
+				<div
+					class="player-custom__mute-button"
+					ng-click="$ctrl.mute()"
+					ng-class="{active: $ctrl.isMuted}">
+				</div>
 				<div class="player-custom__volume-bar" ng-click="$ctrl.setVolume($event)">
 					<div class="player-custom__volume-completed-container">
 						<div class="player-custom__volume-completed" ng-style="{width: ($ctrl.isMuted ? '0%' : $ctrl.volume + '%')}">
@@ -42,8 +105,11 @@
 			</div>
 			<div style="clear:both"></div>
 			<div class="player-custom__slider">
-				<div class="player-custom__slider-min">{{$ctrl.track.completedMinutes + ":" + $ctrl.track.completedSeconds}}</div>
-				<div class="player-custom__slider-bar" ng-click="$ctrl.setPercent($event)">
+				<div class="player-custom__slider-min">{{$ctrl.track.completed | convertSeconds }}</div>
+				<div
+					class="player-custom__slider-bar"
+					ng-click="$ctrl.setPercent($event)"
+					responsive>
 					<div class="player-custom__slider-completed-container">
 						<div class="player-custom__slider-completed" ng-style="{width: $ctrl.percent + '%'}">
 						</div>
@@ -51,7 +117,7 @@
 					<div class="player-custom__slider-handler" ng-style="{left: $ctrl.percent + '%'}">
 					</div>
 				</div>
-				<div class="player-custom__slider-max">{{$ctrl.track.minutes + ":" + $ctrl.track.seconds}}</div>
+				<div class="player-custom__slider-max">{{$ctrl.track.duration | convertSeconds }}</div>
 			</div>
 		</div>
 	</div>

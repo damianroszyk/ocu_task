@@ -1,11 +1,27 @@
-<div class="player-spotify"
-	 ng-class="{'player-spotify--minified': $ctrl.isPlayerMinified, 'player-spotify--popup': $ctrl.popup, 'player-spotify--maximized': $ctrl.isMaximized}"
->
+<div
+	class="player-spotify"
+	ng-class="{
+		'player-spotify--minified': $ctrl.isPlayerMinified,
+		'player-spotify--popup': $ctrl.popup,
+		'player-spotify--maximized': $ctrl.isMaximized
+	}">
 	<div class="player-spotify__widget-controls">
-		<div ng-click="$ctrl.showPopup();" class="player-spotify__popup-button" ng-show="!$ctrl.popup"></div>
-		<div ng-click="$ctrl.toggle();" class="player-spotify__toggle-button" ng-class="{active: $ctrl.isPlayerMinified}"></div>
-		<div ng-click="$ctrl.maximize();" class="player-spotify__maximize-button" ng-class="{active: $ctrl.isMaximized}"></div>
-		<div ng-click="$ctrl.close();" class="player-spotify__close-button"></div>
+		<div
+			class="player-spotify__popup-button"
+			ng-click="$ctrl.showPopup()"
+			ng-show="!$ctrl.popup">
+		</div>
+		<div
+			class="player-spotify__toggle-button"
+			ng-click="$ctrl.toggle()"
+			ng-class="{active: $ctrl.isPlayerMinified}"></div>
+		<div
+			class="player-spotify__maximize-button"
+			ng-click="$ctrl.maximize()"
+			ng-class="{active: $ctrl.isMaximized}"></div>
+		<div
+			class="player-spotify__close-button"
+			ng-click="$ctrl.close()"></div>
 	</div>
 	<iframe
 		ng-if="$ctrl.playerShown || $ctrl.popup"

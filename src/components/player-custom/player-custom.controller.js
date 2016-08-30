@@ -1,10 +1,11 @@
 export default class PlayerCustomController {
 	/* @ngInject */
-	constructor(deezer, $scope, $window, $stateParams, playlistService, playerConstant, thirdPartyConstant) {
+	constructor(deezer, $scope, $window, $stateParams, playlistService, playerConstant) {
 
 		var player = this;
 
 		this.deezer = deezer;
+		this.playerConstant = playerConstant;
 		this.isPlayingTrack = false;
 		this.isShuffling = false;
 		this.isRepeating = false;
@@ -20,49 +21,45 @@ export default class PlayerCustomController {
 			album: '',
 			albumId: null,
 			title: '',
-			minutes: '0',
-			seconds: '00',
-			completedMinutes: '0',
-			completedSeconds: '00'
+			duration: 0,
+			completed: 0
 		};
 
 		if(this.popup){
-			var header = document.getElementsByClassName('header')[0];
-			var nav = document.getElementsByClassName('nav')[0];
-			var footer = document.getElementsByClassName('footer')[0];
+			let header = document.getElementsByClassName('header')[0];
+			let nav = document.getElementsByClassName('nav')[0];
+			let footer = document.getElementsByClassName('footer')[0];
 			header.parentNode.removeChild(header);
 			nav.parentNode.removeChild(nav);
 			footer.parentNode.removeChild(footer);
 		}
 
-		document.addEventListener('DEEZER_LOADED', function(){
+		document.addEventListener('DEEZER_LOADED', () => {
 
 			deezer.dz.player.playPlaylist($stateParams.playlistId - 0, false);
 
-			deezer.dz.Event.subscribe('current_track', function(newTrack){
-				$scope.$apply(function(){
+			deezer.dz.Event.subscribe('current_track', newTrack => {
+				$scope.$apply(() => {
 					player.track.artist = newTrack.track.artist.name;
 					player.track.album = newTrack.track.album.title;
 					player.track.albumId = newTrack.track.album.id;
 					player.track.title = newTrack.track.title;
-					player.track.minutes = (newTrack.track.duration - newTrack.track.duration%60) / 60;
-					player.track.seconds = (newTrack.track.duration % 60 < 10 ? '0' + (newTrack.track.duration % 60) : (newTrack.track.duration % 60));
+					player.track.duration = newTrack.track.duration - 0;
 				});
 			});
 
-			deezer.dz.Event.subscribe('player_position', function(positionArray){
+			deezer.dz.Event.subscribe('player_position', positionArray => {
 				var percent = (positionArray[1] == 0 ? 0 : (positionArray[0] / positionArray[1]) * 100);
 				var completedTime = Math.floor(positionArray[0]);
-				$scope.$apply(function(){
+				$scope.$apply(() => {
 					player.percent = percent;
-					player.track.completedMinutes = (completedTime - completedTime%60) / 60;
-					player.track.completedSeconds = (completedTime % 60 < 10 ? '0' + (completedTime % 60) : (completedTime % 60));
+					player.track.completed = completedTime;
 				});
 			});
 
 		});
 
-		playlistService.getPlaylist($stateParams.playlistId - 0).then(function(response){
+		playlistService.getPlaylist($stateParams.playlistId - 0).then(response => {
 			player.playlist = response;
 		});
 	}
@@ -93,7 +90,7 @@ export default class PlayerCustomController {
 	}
 
 	repeat(){
-		this.deezer.dz.player.setRepeat(this.isRepeating ? 0 : 2);
+		this.deezer.dz.player.setRepeat(this.isRepeating ? this.playerConstant.deezerRepeatingDictionary.noRepeat : this.playerConstant.deezerRepeatingDictionary.repeatTrack);
 		this.isRepeating = !this.isRepeating;
 	}
 
@@ -111,6 +108,7 @@ export default class PlayerCustomController {
 	setPercent(event){
 		var percent = (event.offsetX / event.currentTarget.clientWidth) * 100;
 		this.deezer.dz.player.seek(percent);
+		this.deezer.dz.player.play();
 		this.isPlayingTrack = true;
 	}
 
@@ -123,7 +121,10 @@ export default class PlayerCustomController {
 	}
 
 	showPopup(){
-		this.window.open('#/player/deezer/' + this.playlistId, '_blank', 'width=480,height=640,menubar=no,status=no,titlebar=no,toolbar=no,directories=no');
+		this.window.open(
+			'#/player/deezer/' + this.playlistId,
+			'_blank',
+			'width='+this.playerConstant.popupSize.width+',height='+this.playerConstant.popupSize.height+',menubar=no,status=no,titlebar=no,toolbar=no,directories=no');
 		this.close();
 	}
 

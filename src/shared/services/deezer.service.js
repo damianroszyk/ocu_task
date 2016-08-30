@@ -22,9 +22,7 @@ class DeezerService {
 			appId: this.thirdPartyConstant.deezerAppId,
 			channelUrl: `${window.location.origin}/channel.html`,
 			player : {
-				onload : function(){
-					document.dispatchEvent(new Event('DEEZER_LOADED'));
-				}
+				onload : () => document.dispatchEvent(new Event('DEEZER_LOADED'))
 			}
 		});
 		this.deferredDeezerSdk.resolve(this.dz);
