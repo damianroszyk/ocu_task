@@ -16,7 +16,7 @@ class CategoryService {
 		let cache = true;
 		let headers = { published: 1 };
 		let url = this.modelHelper.buildUrl(this.categoryBackend, 'list');
-		return this.$http.get(url, { cache, published }).then(response =>
+		return this.$http.get(url, { cache, headers }).then(response =>
 			this.decorateCategories(this.categoriesParamsBuilder.bind(this))(response.data)
 		);
 	}
