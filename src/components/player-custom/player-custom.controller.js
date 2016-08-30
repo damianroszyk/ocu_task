@@ -57,6 +57,8 @@ export default class PlayerCustomController {
 				});
 			});
 
+			$scope.$on('$stateChangeStart', player.deezer.dz.player.pause);
+
 		});
 
 		playlistService.getPlaylist($stateParams.playlistId - 0).then(response => {
