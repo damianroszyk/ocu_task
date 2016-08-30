@@ -13,8 +13,10 @@ class CategoryService {
 		);
 	}
 	getCategories() {
+		let cache = true;
+		let headers = { published: 1 };
 		let url = this.modelHelper.buildUrl(this.categoryBackend, 'list');
-		return this.$http.get(url, { cache: true }).then(response =>
+		return this.$http.get(url, { cache, published }).then(response =>
 			this.decorateCategories(this.categoriesParamsBuilder.bind(this))(response.data)
 		);
 	}
@@ -34,7 +36,8 @@ class CategoryService {
 	getFeaturedCategories() {
 		let url = this.modelHelper.buildUrl(this.categoryBackend, 'list');
 		let headers = {
-			featured: 1
+			featured: 1,
+			published: 1
 		};
 		return this.$http.get(url, { headers }).then(response =>
 			this.decorateCategories(this.featuredCategoriesParamsBuilder.bind(this))(response.data)
