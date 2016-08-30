@@ -47,7 +47,7 @@ class PlaylistService {
 
 	sortFeaturedPlaylists(playlists) {
 		let sortedPlaylists = _.filter(_.sortBy(playlists, 'featured'), function(o) {
-			return o.featured > 1 && o.featured < 7;
+			return o.featured > 2 && o.featured < 7;
 		});
 		return sortedPlaylists;
 	}
