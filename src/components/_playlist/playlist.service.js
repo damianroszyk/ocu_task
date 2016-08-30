@@ -21,7 +21,6 @@ class PlaylistService {
 			backendConstant.apiVersion, 'category'
 		);
 	}
-
 	processPlaylists(playlists) {
 		playlists = _.values(playlists);
 		angular.forEach(playlists, playlist => {
@@ -31,7 +30,6 @@ class PlaylistService {
 		});
 		return playlists;
 	}
-
 	searchPlaylists(query, order, sort) {
 		let params = { order, sort };
 		let headers = { published: 1 };
@@ -40,20 +38,11 @@ class PlaylistService {
 			this.processPlaylists(response.data)
 		);
 	}
-
 	getCategoryPlaylists(categoryId) {
 		let headers = { published: 1 };
 		let url = this.modelHelper.buildUrl(this.categoryBackend, categoryId, 'playlists');
 		return this.$http.get(url, { headers });
 	}
-
-	sortFeaturedPlaylists(playlists) {
-		let sortedPlaylists = _.filter(_.sortBy(playlists, 'featured'), function(o) {
-			return o.featured > 1 && o.featured < 7;
-		});
-		return sortedPlaylists;
-	}
-
 	getFeaturedPlaylists() {
 		let url = this.modelHelper.buildUrl(this.playlistBackend, 'list');
 		let headers = {
@@ -61,10 +50,9 @@ class PlaylistService {
 			published: 1
 		};
 		return this.$http.get(url, { headers }).then(response =>
-			this.sortFeaturedPlaylists(response.data)
+			this.processPlaylists(response.data)
 		);
 	}
-
 	getPlaylist(playlistId) {
 		return this.deezer.getPlaylist(playlistId);
 	}
