@@ -4,7 +4,7 @@
             class="playlist-header__thumbnail"
             ng-src="{{::$ctrl.playlist.picture_medium}}"
             alt="Playlist thumbnail"/>
-		<div class="play-button-overlay"></div>
+		<div class="play-button-overlay" ng-click="$ctrl.onPlayButtonClick()"></div>
     </div>
     <div class="playlist-header__column-right--top">
 		<div class="playlist-header__info">

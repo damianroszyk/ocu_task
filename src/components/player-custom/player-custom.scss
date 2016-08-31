@@ -1,0 +1,419 @@
+@import '../../shared/styles/variables';
+@import '../../shared/styles/mixins';
+
+@mixin main-button() {
+	padding: 44px 44px 0 0;
+	display: inline-block;
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+@mixin secondary-button() {
+	padding: 24px 24px 0 0;
+	display: inline-block;
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	margin: 0 2px;
+}
+
+@mixin widget-button() {
+	padding: 34px 34px 0 0;
+	display: inline-block;
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	margin: 1px 0 1px 5px;
+	background-color: $grey-3;
+
+	&.active, &:hover, &:focus {
+		background-color: $yellow;
+	}
+}
+
+.player-custom {
+	padding: 20px;
+	background-color: $black;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 200px;
+	transition: 500ms;
+}
+
+.player-custom__track-thumbnail-container {
+	width: 150px;
+	height: 150px;
+	background-color: $black;
+	display: inline-block;
+}
+
+.player-custom__track-thumbnail {
+	width: 150px;
+	height: 150px;
+}
+
+.player-custom__track-description {
+	display: inline-block;
+	vertical-align: top;
+	color: $grey-1;
+	padding-top: 10px;
+	margin-left: -3px;
+	margin-top: -1px;
+}
+
+.player-custom__widget-controls {
+	display: inline-block;
+	width: 44px;
+}
+
+.player-custom__widget-controls-popup, .player-custom__widget-controls--maximized {
+	display: none;
+}
+
+.player-custom__popup-button {
+	@include widget-button();
+	background-image: url('/shared/images/icons/popup-button.png');
+}
+
+.player-custom__toggle-button {
+	@include widget-button();
+	background-image: url('/shared/images/icons/hide-button.png');
+}
+
+.player-custom__maximize-button {
+	@include widget-button();
+	background-image: url('/shared/images/icons/maximize-button.png');
+}
+
+.player-custom__close-button {
+	@include widget-button();
+	background-image: url('/shared/images/icons/closeplayer-button.png');
+}
+
+.player-custom__track-album {
+	margin-top: 10px;
+	color: $grey-4;
+}
+
+.player-custom__track-name {
+	margin-top: 10px;
+}
+
+.player-custom__controls {
+	margin-top: 40px;
+	display: table;
+	width: 100%;
+}
+
+.player-custom__main-buttons {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.player-custom__controls-container {
+	margin-top: 18px;
+}
+
+.player-custom__play-button {
+	@include main-button();
+	background-image: url('/shared/images/icons/play-button.png');
+}
+
+.player-custom__pause-button {
+	@include main-button();
+	background-image: url('/shared/images/icons/pause-button.png');
+}
+
+.player-custom__previous-button {
+	@include main-button();
+	background-image: url('/shared/images/icons/prev-button.png');
+}
+
+.player-custom__next-button {
+	@include main-button();
+	background-image: url('/shared/images/icons/next-button.png');
+}
+
+.player-custom__slider {
+	color: $grey-1;
+	margin-top: 10px;
+	position: relative;
+	text-align: center;
+}
+
+.player-custom__slider-min {
+	position: absolute;
+	top: 0;
+}
+
+.player-custom__slider-max {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.player-custom__slider-bar {
+	width: 50%;
+	display: inline-block;
+	vertical-align: 1px;
+	position: relative;
+	background-color: $grey-7;
+	@include border-radius(3px);
+	cursor: pointer;
+}
+
+.player-custom__slider-completed-container {
+	@include border-radius(3px);
+	width: 100%;
+	overflow: hidden;
+}
+
+.player-custom__slider-completed {
+	padding: 4px 0;
+	@include gradient-background(#36a1d4, #36a1d4, #237192);
+}
+
+.player-custom__slider-handler {
+	@include border-radius(90px);
+	background-color: $white;
+	padding: 12px;
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: -8px;
+	margin-left: -12px;
+	left: 0;
+}
+
+.player-custom__secondary-buttons, .player-custom__secondary-buttons-rwd {
+	text-align: center;
+}
+
+.player-custom__shuffle-button {
+	@include secondary-button();
+	background-image: url('/shared/images/icons/shuffle-button.png');
+
+	&.active {
+		background-image: url('/shared/images/icons/shuffle-button--active.png');
+	}
+}
+
+.player-custom__repeat-button {
+	@include secondary-button();
+	background-image: url('/shared/images/icons/repeat-button.png');
+
+	&.active {
+		background-image: url('/shared/images/icons/repeat-button--active.png');
+	}
+}
+
+.player-custom__mute-button {
+	@include secondary-button();
+	background-image: url('/shared/images/icons/mute-button.png');
+
+	&.active {
+		background-image: url('/shared/images/icons/mute-button--active.png');
+	}
+}
+
+.player-custom__volume-bar {
+	width: 90px;
+	display: inline-block;
+	position: relative;
+	vertical-align: 9px;
+	@include border-radius(3px);
+	cursor: pointer;
+}
+
+.player-custom__volume-slider-container {
+	@include border-radius(3px);
+	overflow: hidden;
+	background-color: $grey-7;
+}
+
+.player-custom__volume-slider {
+	padding: 3px 0;
+	@include gradient-background(#36a1d4, #36a1d4, #237192);
+}
+
+.player-custom__tracklist {
+	margin-top: 20px;
+}
+
+.player-custom--minified {
+
+	.player-custom__track-thumbnail-container,
+	.player-custom__secondary-buttons,
+	.player-custom__slider,
+	.player-custom__tracklist,
+	.player-custom__track-album {
+		display: none
+	}
+
+	.player-custom__widget-controls {
+		width: 200px;
+		text-align: center;
+
+		div {
+			margin: 0 5px;
+		}
+	}
+
+	.player-custom__track-description {
+		display: block;
+		text-align: center;
+	}
+
+	.player-custom__rwd-controls-container {
+		float: none;
+		display: block;
+	}
+}
+
+.player-custom--maximized {
+
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	min-width: 480px;
+
+	.player-custom__widget-controls {
+		display: none;
+	}
+
+	.player-custom__widget-controls--maximized {
+		display: block;
+
+		> div {
+			margin: 0 10px 5px 0;
+		}
+	}
+
+	.player-custom__track-info {
+		display: table;
+	}
+
+	.player-custom__track-thumbnail-container {
+		display: table-cell;
+	}
+
+	.player-custom__track-thumbnail-container.sm, .player-custom__track-thumbnail.sm,
+	.player-custom__track-thumbnail-container.xs, .player-custom__track-thumbnail.xs {
+		width: 100px;
+		height: 100px;
+	}
+
+	.player-custom__track-description {
+		display: table-cell;
+		padding-left: 10px;
+		width: 20%;
+
+		&.lg{
+			width: 30%;
+		}
+
+		&.md, &.sm, &.xs{
+			width: 34%;
+		}
+	}
+
+	.player-custom__controls-container {
+		display: table-cell;
+		vertical-align: middle;
+		margin-top: 0;
+		text-align: center;
+		width: 80%;
+
+		&.lg{
+			width: 70%;
+		}
+
+		&.md, &.sm, &.xs{
+			width: 66%;
+		}
+	}
+
+	.player-custom__main-buttons {
+		display: inline-block;
+	}
+
+	.player-custom__secondary-buttons {
+		display: inline-block;
+		vertical-align: 10px;
+	}
+
+	.player-custom__slider-bar {
+		width: 90%;
+
+		&.lg{
+			width: 80%;
+		}
+
+		&.md{
+			width: 70%;
+		}
+
+		&.sm{
+			width: 55%;
+		}
+
+		&.xs{
+			width: 35%;
+		}
+	}
+
+	.player-track-table {
+
+		width: 100%;
+		max-width: none;
+
+		tbody {
+			font-size: 1rem;
+		}
+
+		tr, td {
+			display: block;
+		}
+	}
+}
+
+.player-custom--popup {
+	width: auto;
+
+	.player-custom__widget-controls-popup {
+		display: none;
+
+		div {
+			margin: 0 5px 5px 0;
+		}
+	}
+
+	.player-custom__widget-controls {
+		display: none;
+	}
+
+	.player-custom__track-description {
+		padding-left: 20px;
+	}
+
+	.player-custom__main-buttons {
+		width: 150px;
+		display: inline-block;
+	}
+
+	.player-custom__secondary-buttons {
+		display: inline-block;
+		vertical-align: 10px;
+	}
+
+	.player-custom__slider-bar {
+		width: 75%;
+	}
+
+	.player-track-table tbody {
+		height: 324px;
+	}
+}

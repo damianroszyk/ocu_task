@@ -1,0 +1,14 @@
+<table class="player-track-table container">
+	<div class="player-track-table--scroll">
+	    <tbody>
+	        <tr
+	            class="player-track-table__row"
+	            ng-repeat="track in ::$ctrl.tracks">
+				<td>
+					<div class="track-table__item" ng-click="$ctrl.onTrackTitleClick({event: $event})">{{::track.title}}</div>
+					<div class="track-table__item">{{::track.artist.name}}</div>
+				</td>
+	        </tr>
+	    </tbody>
+	</div>
+</table>

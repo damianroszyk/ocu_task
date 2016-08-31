@@ -12,6 +12,10 @@ $playlist-header-height: 275px;
 	.xs & {
 		height: 50vw;
 	}
+
+	.play-button-overlay {
+		cursor: pointer;
+	}
 }
 
 .playlist-header__column-left {
