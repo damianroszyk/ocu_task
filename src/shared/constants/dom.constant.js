@@ -9,7 +9,7 @@ const DOM_CONSTANT = {
 		sm: 480,
 		xs: 0
 	},
-	defaultHeaderBackgroundImage: 'http://digster.fm/files/2015/09/1920x450-lores.jpg',
+	defaultHeaderBackgroundImage: '/shared/images/images/taylor_swift_header.jpg',
 	defaultBrandImage: 'http://digster.fm/wp-content/themes/digster/images/logo-header.png',
 	defaultCategoryTileImage: 'https://spotifyapps.blob.core.windows.net/sinfini-imagefiles/MainMenu_Instrument_MainImage_270x270'
 };
