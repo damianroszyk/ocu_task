@@ -4,6 +4,9 @@
         'category-tiles--horizontal': $ctrl.layout === 'horizontal'
     }">
     <category-tile
+		ng-class="{
+			'category-tile-container--expaned': category.expanded
+		}"
         ng-repeat="category in ::$ctrl.categories"
         category="category">
     </category-tile>

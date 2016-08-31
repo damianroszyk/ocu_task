@@ -11,4 +11,5 @@
 
 .home__featured {
 	@include clearfix();
+	padding-bottom: $distance-sm;
 }

@@ -4,6 +4,7 @@ export default class CategoryTileController {
 	/* @ngInject */
 	constructor($rootScope, domConstant, playlistService) {
 		this.$rootScope = $rootScope;
+		this.playlistService = playlistService;
 		this.category.image = this.category.image || domConstant.defaultCategoryTileImage;
 		this.listenToCollapseEvent();
 	}
@@ -15,10 +16,18 @@ export default class CategoryTileController {
 		});
 	}
 	toggleCategoryExpand(state, $event) {
-		this.$rootScope.$broadcast(COLLAPSE_ALL_EVENT, this.category.id);
 		if ($event && $event.stopPropagation) {
 			$event.stopPropagation();
 		}
+		this.$rootScope.$broadcast(COLLAPSE_ALL_EVENT, this.category.id);
 		this.category.expanded = !state;
+		if (!this.category.playlists) {
+			this._getCategoryTopPlaylists();
+		}
+	}
+	_getCategoryTopPlaylists() {
+		this.playlistService
+			.getTopCategoryPlaylists(this.category.id)
+			.then(playlists => this.category.playlists = playlists);
 	}
 }
