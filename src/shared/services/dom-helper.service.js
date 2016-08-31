@@ -13,6 +13,9 @@ class DomHelperService {
 			}
 		});
 	}
+	scrollTop() {
+		document.body.scrollTop = 0;
+	}
 }
 
 export default angular
