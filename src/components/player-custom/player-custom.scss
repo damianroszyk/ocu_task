@@ -381,7 +381,9 @@
 }
 
 .player-custom--popup {
-	width: auto;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
 
 	.player-custom__widget-controls-popup {
 		display: none;
@@ -416,4 +418,10 @@
 	.player-track-table tbody {
 		height: 324px;
 	}
+}
+
+.player-custom__loader{
+	width: 100%;
+	height: 200px;
+	background: transparent url('/shared/images/player-loader.gif') center center no-repeat;
 }

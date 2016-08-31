@@ -36,8 +36,6 @@ export default class PlayerCustomController {
 
 		document.addEventListener('DEEZER_LOADED', () => {
 
-			deezer.dz.player.playPlaylist($stateParams.playlistId - 0, false);
-
 			deezer.dz.Event.subscribe('current_track', newTrack => {
 				$scope.$apply(() => {
 					player.track.artist = newTrack.track.artist.name;
@@ -59,11 +57,14 @@ export default class PlayerCustomController {
 
 		$scope.$on('$stateChangeStart', player.deezer.dz.player.pause);
 
-	});
-
 		playlistService.getPlaylist($stateParams.playlistId - 0).then(response => {
 			player.playlist = response;
+			deezer.dz.player.playPlaylist($stateParams.playlistId - 0, false);
 		});
+
+	});
+
+
 	}
 
 	play(){
