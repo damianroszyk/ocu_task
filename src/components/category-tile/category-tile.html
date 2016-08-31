@@ -18,7 +18,7 @@
     </div>
     <button
         class="category-tile__control category-tile__control--plus-white"
-        ng-if="::$ctrl.category.children.length"
+        ng-if="::$ctrl.category.hasPlaylists === true"
         ng-click="$ctrl.toggleCategoryExpand(false, $event)">
     </button>
     <div
