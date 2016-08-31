@@ -27,6 +27,7 @@ $header-brand-size--xs: 79px;
 
 .header__brand-image {
 	@include position-absolute(50px, auto, auto, 0);
+	cursor: pointer;
 
 	.xs & {
 		@include position-absolute(0, auto, auto, 0);

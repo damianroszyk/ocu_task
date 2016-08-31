@@ -1,5 +1,6 @@
 <div class="promo-slot--{{::$ctrl.layout}}">
 	<div
+		class="promo-slot__wrapper"
 		ng-if="$ctrl.featuredItem"
 		ui-sref="{{$ctrl.featuredItem.type}}($ctrl.featuredItem.stateParams)">
 		<img
@@ -8,5 +9,8 @@
 		<h3 class="promo-slot__title">
 			{{::$ctrl.featuredItem.name}}
 		</h3>
+		<img
+			class="promo-slot__icon"
+			ng-src="{{::$ctrl.featuredItem.icon}}" />
 	</div>
 </div>

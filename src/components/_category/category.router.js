@@ -12,7 +12,7 @@ const CATEGORY_ROUTER = {
 		template: `
 			<category
 				category="$resolve.category"
-				category-playlists="$resolve.categoryPlaylists.data">
+				category-playlists="$resolve.categoryPlaylists">
 			</category>`,
 		params: {
 			l2: { squash },
