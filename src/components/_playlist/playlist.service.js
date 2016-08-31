@@ -41,7 +41,9 @@ class PlaylistService {
 	getCategoryPlaylists(categoryId) {
 		let headers = { published: 1 };
 		let url = this.modelHelper.buildUrl(this.categoryBackend, categoryId, 'playlists');
-		return this.$http.get(url, { headers });
+		return this.$http.get(url, { headers }).then(response =>
+			this.processPlaylists(response.data)
+		);
 	}
 	getFeaturedPlaylists() {
 		let url = this.modelHelper.buildUrl(this.playlistBackend, 'list');
