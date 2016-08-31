@@ -5,8 +5,9 @@ const LOWER_PROMO_ENDS = 6;
 
 export default class HomeController {
 	/* @ngInject */
-	constructor(breadcrumbService, metatagsService) {
+	constructor(breadcrumbService, metatagsService, domConstant) {
 		breadcrumbService.breadcrumb = [];
+		this.domConstant = domConstant;
 		this._fillPromoSlots();
 		metatagsService
 			.clearMetatags()
@@ -31,6 +32,7 @@ export default class HomeController {
 				featuredPlaylist.deezer.service_playlist_id : null;
 			featuredPlaylist.type = 'playlist';
 			featuredPlaylist.stateParams = { playlistId };
+			featuredPlaylist.image = featuredPlaylist.image || this.domConstant.defaultCategoryTileImage;
 			this[`featuredItem${featured}`] = featuredPlaylist;
 		}
 	}
