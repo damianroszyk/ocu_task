@@ -2,7 +2,7 @@ const COLLAPSE_ALL_EVENT = 'collapseAllCategoryTiles';
 
 export default class CategoryTileController {
 	/* @ngInject */
-	constructor($rootScope, domConstant) {
+	constructor($rootScope, domConstant, playlistService) {
 		this.$rootScope = $rootScope;
 		this.category.image = this.category.image || domConstant.defaultCategoryTileImage;
 		this.listenToCollapseEvent();

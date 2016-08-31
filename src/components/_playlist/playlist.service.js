@@ -58,6 +58,12 @@ class PlaylistService {
 	getPlaylist(playlistId) {
 		return this.deezer.getPlaylist(playlistId);
 	}
+	getTopPlaylist(categoryId) {
+		let url = this.modelHelper.buildUrl(this.categoryBackend, categoryId, 'playlists') + '?limit=5';
+		return this.$http.get(url).then(response =>
+			this.processPlaylists(response.data)
+		);
+	}
 }
 
 export default angular

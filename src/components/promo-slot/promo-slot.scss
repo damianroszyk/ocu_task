@@ -66,7 +66,7 @@ $promo-slot-height--vertical: 593px;
 .promo-slot__title {
 	@include position-absolute(0, 0, auto, 0);
 	color: $white;
-	padding-top: $distance-lg;
+	padding: $distance-lg $distance-lg 0;
 	text-align: center;
 	z-index: $z-index-2;
 	font-size: 35px;
@@ -79,4 +79,14 @@ $promo-slot-height--vertical: 593px;
 		bottom: 0;
 		padding: 0;
 	}
+}
+
+.promo-slot__wrapper {
+	position: relative;
+}
+
+.promo-slot__icon {
+	position: absolute;
+	bottom: 20%;
+	left: 48%;
 }
