@@ -5,7 +5,8 @@ let category = function($stateParams, categoryService) {
 
 /* @ngInject */
 let categories = function(categoryService) {
-	return categoryService.getCategories();
+	let notFeatured = true;
+	return categoryService.getCategories(notFeatured);
 };
 
 /* @ngInject */
