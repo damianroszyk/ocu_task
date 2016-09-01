@@ -16,7 +16,8 @@
     </div>
     <div
 		class="nav__item music-service text--lg"
-		translate="{{::'MUSIC_SERVICE'}}">
+		translate="{{::'MUSIC_SERVICE'}}"
+		ng-click="showMusicService = !showMusicService">
     </div>
     <div class="nav__item nav-breadcrumb text--lg">
         <breadcrumb></breadcrumb>
@@ -65,4 +66,5 @@
 	</div>
     <categories-dropdown is-shown="showCategories"></categories-dropdown>
 	<search-dropdown is-shown="$ctrl.showSearchDropdown"></search-dropdown>
+	<music-service is-shown="showMusicService"></music-service>
 </div>
