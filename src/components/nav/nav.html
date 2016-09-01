@@ -7,7 +7,7 @@
         <div
             class="nav-button nav-menu-button"
             ng-click="showCategories = !showCategories;
-			$event.stopPropagation(); showSearchDropdown = false;">
+			$event.stopPropagation(); $ctrl.showSearchDropdown = false;">
 			<span ng-class="{
 				'icon-hamburger--full-width': !showCategories ,
 				'icon-hamburger--active--full-width': showCategories
@@ -52,18 +52,17 @@
 	<div
 		class="nav__item nav__item__right"
 		ng-class="{
-			'nav__item--search-clicked': showSearchDropdown
+			'nav__item--search-clicked': $ctrl.showSearchDropdown
 		}">
 		<div
 			class="nav-button"
-			ng-click="showSearchDropdown = !showSearchDropdown;
-			$event.stopPropagation(); showCategories = false;">
+			ng-click="$ctrl.showSearch($event, $root.$state); this.showCategories = false;">
 			<span ng-class="{
-				'icon-search--full-width': !showSearchDropdown ,
-				'icon-search--active--full-width': showSearchDropdown
+				'icon-search--full-width': !$ctrl.showSearchDropdown ,
+				'icon-search--active--full-width': $ctrl.showSearchDropdown
 			}"></span>
 		</div>
 	</div>
     <categories-dropdown is-shown="showCategories"></categories-dropdown>
-	<search-dropdown is-shown="showSearchDropdown"></search-dropdown>
+	<search-dropdown is-shown="$ctrl.showSearchDropdown"></search-dropdown>
 </div>
