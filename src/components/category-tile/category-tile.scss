@@ -41,6 +41,10 @@ category-tile {
     height: $category-tile-height--featured;
 }
 
+.category-tile-container--expaned {
+	z-index: $z-index-5;
+}
+
 .category-tile__image {
     @include position-absolute(0, 0, 0, 0);
 	overflow: hidden;
@@ -135,7 +139,7 @@ category-tile {
         min-height: $category-tile-height--featured;
     }
 
-	.xl category-tile:nth-child(4n+1) & {
+	.xl .category-tile--left & {
 		@include position-absolute(0, auto, auto, 0);
 	}
 
@@ -147,13 +151,13 @@ category-tile {
 		width: 100vw;
 	}
 
-	&.ng-enter {
+	/*&.ng-enter {
 		animation: fade-in .3s;
 	}
 
 	&.ng-leave {
 		animation: fade-out .3s;
-	}
+	}*/
 }
 
 .subcategories-list {
@@ -175,6 +179,7 @@ category-tile {
 }
 
 .subcategories-list-element {
+	@include fade-in();
 	padding: $distance-sm $distance-md;
 	background: $white;
 

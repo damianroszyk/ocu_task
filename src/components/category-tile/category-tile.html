@@ -3,7 +3,9 @@
     ui-sref="category($ctrl.category.stateParams)"
     ng-class="{
         'category-tile--featured': $ctrl.category.featured,
-		'category-tile--expanded': $ctrl.category.expanded
+		'category-tile--expanded': $ctrl.category.expanded,
+		'category-tile--right': $parent.$index < 6 || ($parent.$index - 2) % 4 !== 0,
+		'category-tile--left': $parent.$index >= 6 && ($parent.$index - 2) % 4 === 0
     }">
 	<div class="category-tile__image">
 		<img ng-src="{{::$ctrl.category.image}}" />
@@ -18,11 +20,11 @@
     </div>
     <button
         class="category-tile__control category-tile__control--plus-white"
-        ng-if="::$ctrl.category.children.length"
+        ng-if="::$ctrl.category.hasPlaylists"
         ng-click="$ctrl.toggleCategoryExpand(false, $event)">
     </button>
     <div
-        class="category-tile__subcategories animated"
+        class="category-tile__subcategories"
 		click-outside="$ctrl.toggleCategoryExpand(true)"
         ng-if="$ctrl.category.expanded">
 		<button
@@ -31,22 +33,21 @@
 	    </button>
 		<h5 class="subcategories-tile__title">
 			<strong>
-				Top {{::$ctrl.category.children.length}}
+				Top {{$ctrl.category.playlists.length}}
 			</strong>
-			{{::$ctrl.category.name}} subcategories
+			{{$ctrl.category.name}} playlists
 		</h5>
         <ul class="subcategories-list">
             <li
 				class="subcategories-list-element"
-				ng-repeat="subcategory in ::$ctrl.category.children | limitTo: 5 track by $index"
+				ng-repeat="playlist in ::$ctrl.category.playlists"
 				ng-click="$event.stopPropagation()"
-				ui-sref="category(subcategory.stateParams)">
+				ui-sref="playlist({playlistId: playlist.deezer.service_playlist_id})">
 				<p class="subcategories-list-element__title">
-					{{::$index + 1}}. {{::subcategory.name}}
+					{{::$index + 1}}. {{::playlist.name}}
 				</p>
 				<span class="subcategories-list-element__description">
-					Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
-					Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+					{{::playlist.description || ('PLAYLIST_NO_DESCRIPTION' | translate)}}
 				</span>
             </li>
         </ul>

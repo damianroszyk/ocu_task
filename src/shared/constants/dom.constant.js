@@ -10,8 +10,9 @@ const DOM_CONSTANT = {
 		xs: 0
 	},
 	defaultHeaderBackgroundImage: '/shared/images/images/taylor_swift_header.jpg',
+	defaultSearchTileImage: '/shared/images/images/search-tile_image.jpg',
 	defaultBrandImage: 'http://digster.fm/wp-content/themes/digster/images/logo-header.png',
-	defaultCategoryTileImage: 'https://spotifyapps.blob.core.windows.net/sinfini-imagefiles/MainMenu_Instrument_MainImage_270x270'
+	defaultCategoryTileImage: 'shared/images/default_artist_cover.png'
 };
 
 export default angular

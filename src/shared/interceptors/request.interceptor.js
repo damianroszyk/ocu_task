@@ -1,21 +1,18 @@
 import angular from 'angular';
 import app from 'app';
 
+/* @ngInject */
+let requestInterceptorFactory = (backendConstant) => {
+	let request = config => {
+		config.headers.brand = backendConstant.clientBrand;
+		return config;
+	};
+	return { request };
+};
+
  /* @ngInject */
 let requestInterceptor = ($provide, $httpProvider) => {
-
-	/* @ngInject */
-	let interceptorFactory = backendConstant => {
-
-		let request = config => {
-			config.headers.brand = backendConstant.clientBrand;
-			return config;
-		};
-
-		return { request };
-	};
-
-	$provide.factory('requestInterceptor', interceptorFactory);
+	$provide.factory('requestInterceptor', requestInterceptorFactory);
 	$httpProvider.interceptors.push('requestInterceptor');
 };
 

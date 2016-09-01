@@ -1,6 +1,6 @@
 export default class SearchTileController {
 	/* @ngInject */
 	constructor(domConstant) {
-		this.backgroundImage = this.backgroundImage || domConstant.defaultHeaderBackgroundImage;
+		this.searchTileImage = this.searchTileImage || domConstant.defaultSearchTileImage;
 	}
 }
