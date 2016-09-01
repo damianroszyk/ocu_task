@@ -9,8 +9,10 @@
 		<h3 class="promo-slot__title">
 			{{::$ctrl.featuredItem.name}}
 		</h3>
-		<img
-			class="promo-slot__icon"
-			ng-src="{{::$ctrl.featuredItem.icon}}" />
+		<div class="promo-slot__icon-wrapper">
+			<img
+				class="promo-slot__icon"
+				ng-src="{{::$ctrl.featuredItem.icon}}" />
+		</div>
 	</div>
 </div>
