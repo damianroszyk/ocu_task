@@ -14,6 +14,8 @@ export default class PlayerCustomController {
 		this.volume = 100; // <0, 100>
 		this.percent = 0.0; // <0.0, 100.0>
 		this.playlistId = $stateParams.playlistId - 0;
+		this.trackIdx = isNaN($stateParams.trackIdx) ? undefined : $stateParams.trackIdx - 0;
+		this.trackTime = isNaN($stateParams.trackTime) ? undefined : $stateParams.trackTime - 0;
 		this.playlist;
 		this.window = $window;
 		this.track = {
@@ -22,7 +24,8 @@ export default class PlayerCustomController {
 			albumId: null,
 			title: '',
 			duration: 0,
-			completed: 0
+			completed: 0,
+			idx: -1
 		};
 
 		if(this.popup){
@@ -43,6 +46,7 @@ export default class PlayerCustomController {
 					player.track.albumId = newTrack.track.album.id;
 					player.track.title = newTrack.track.title;
 					player.track.duration = newTrack.track.duration - 0;
+					player.track.idx = newTrack.index;
 				});
 			});
 
@@ -55,15 +59,21 @@ export default class PlayerCustomController {
 				});
 			});
 
-		$scope.$on('$stateChangeStart', player.deezer.dz.player.pause);
+			$scope.$on('$stateChangeStart', player.deezer.dz.player.pause);
 
-		playlistService.getPlaylist($stateParams.playlistId - 0).then(response => {
-			player.playlist = response;
-			deezer.dz.player.playPlaylist($stateParams.playlistId - 0, false);
+			playlistService.getPlaylist($stateParams.playlistId - 0).then(response => {
+				player.playlist = response;
+				if(typeof player.trackIdx === 'undefined'){
+					deezer.dz.player.playPlaylist(player.playlistId - 0, false);
+				}
+				else{
+					deezer.dz.player.playPlaylist(player.playlistId, true, player.trackIdx, player.trackTime);
+				}
+
+
+			});
+
 		});
-
-	});
-
 
 	}
 
@@ -141,7 +151,7 @@ export default class PlayerCustomController {
 
 	showPopup(){
 		this.window.open(
-			'#/player/deezer/' + this.playlistId,
+			'#/player/deezer/' + this.playlistId + '/' + this.track.idx + '/' + this.track.completed,
 			'_blank',
 			'width='+this.playerConstant.popupSize.width+',height='+this.playerConstant.popupSize.height+',menubar=no,status=no,titlebar=no,toolbar=no,directories=no');
 		this.close();
