@@ -12,13 +12,14 @@ class CategoryService {
 			backendConstant.apiVersion, 'category'
 		);
 	}
-	getCategories() {
+	getCategories(notFeatured = false) {
 		let cache = true;
 		let headers = { published: 1 };
 		let url = this.modelHelper.buildUrl(this.categoryBackend, 'list');
-		return this.$http.get(url, { cache, headers }).then(response =>
-			this.decorateCategories(this.categoriesParamsBuilder.bind(this))(response.data)
-		);
+		return this.$http.get(url, { cache, headers }).then(response => {
+			let categories = this.categoriesParamsBuilder(response.data);
+			return notFeatured ? _.filter(categories, ['featured', null]) : categories;
+		});
 	}
 	getFlatCategories() {
 		return this.getCategories().then(categories => {
