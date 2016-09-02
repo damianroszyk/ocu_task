@@ -8,6 +8,7 @@ export default class NavController {
 		if (root.is('home')) {
 			var searchInputs = document.getElementsByClassName('search-form__input');
 			searchInputs[0].focus();
+			document.body.scrollTop = 300;
 			return;
 		}
 		this.showSearchDropdown = !this.showSearchDropdown;
