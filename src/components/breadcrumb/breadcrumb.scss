@@ -7,6 +7,8 @@ $breadcrumb-height: 56px;
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 .breadcrumb-crumbs__crumb {
@@ -20,6 +22,9 @@ $breadcrumb-height: 56px;
 	height: $breadcrumb-height;
 	color: $black;
 	padding: 0 ($distance-sm / 2);
+	max-width: 5 * $distance-lg;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .crumb-delimiter {
