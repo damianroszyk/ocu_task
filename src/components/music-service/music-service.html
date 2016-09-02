@@ -1,5 +1,11 @@
 <div
 	class="music-service"
-	ng-if="$ctrl.isShown">
-		<h1>Hello from </h1>
+	ng-show="$ctrl.isShown">
+	<p
+		class="music-service__title"
+		translate="{{::'FIND_PLAYLISTS'}}">
+	</p>
+	<span
+		class="icon-close-white--rounded"
+		ng-click="$ctrl.closeDropdown()"></span>
 </div>
