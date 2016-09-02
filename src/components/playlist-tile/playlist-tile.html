@@ -1,7 +1,10 @@
 <div class="playlist-tile" playlist-tile>
 	<div
 		class="playlist-tile__image-wrapper"
-		ui-sref="playlist({playlistId: $ctrl.playlist.deezer.service_playlist_id})">
+		ui-sref="playlist({
+			localPlaylistId: $ctrl.playlist.id,
+			servicePlaylistId: $ctrl.playlist.deezer.service_playlist_id
+		})">
 		<div class="playlist-tile__overlay"></div>
 		<img
 		    class="playlist-tile__image"
@@ -13,7 +16,10 @@
 	<figcaption class="playlist-tile-meta">
 		<h3
 			class="playlist-tile-meta__title text--md"
-			ui-sref="playlist({playlistId: $ctrl.playlist.deezer.service_playlist_id})">
+			ui-sref="playlist({
+				localPlaylistId: $ctrl.playlist.id,
+				servicePlaylistId: $ctrl.playlist.deezer.service_playlist_id
+			})">
 			{{::$ctrl.playlist.name}}
 		</h3>
 		<div class="playlist-tile-meta__dash">&mdash;</div>
@@ -36,7 +42,9 @@
 		</button>
 	</figcaption>
 	<div class="playlist-tile__tags-wrapper">
-		<playlist-tags tags="$ctrl.tags"></playlist-tags>
+		<playlist-tags
+			tags="$ctrl.playlist.categories">
+		</playlist-tags>
 		<span class="playlist-tile__tracks">
 			Track number: <strong>{{::$ctrl.playlist.tracks.length}}</strong>
 		</span>

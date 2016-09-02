@@ -5,7 +5,8 @@ import template from 'text!./playlist.html';
 import controller from './playlist.controller.js';
 
 let bindings = {
-	playlist: '<'
+	playlist: '<',
+	deezerPlaylist: '<'
 };
 
 export default angular

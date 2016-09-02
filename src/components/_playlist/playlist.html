@@ -1,16 +1,15 @@
 <div class="playlist">
 	<playlist-header
-		playlist="$ctrl.playlist"
-		show-player="$ctrl.showPlayer()"
-	>
+		playlist="$ctrl.deezerPlaylist"
+		show-player="$ctrl.showPlayer()">
 	</playlist-header>
 
 	<track-list
-		tracks="$ctrl.playlist.tracks.data">
+		tracks="$ctrl.deezerPlaylist.tracks.data">
 	</track-list>
 
 	<playlist-tags
-		tags="$ctrl.tags">
+		tags="$ctrl.playlist.categories">
 	</playlist-tags>
 
 	<div ng-show="$ctrl.playerShown">

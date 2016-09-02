@@ -1,6 +1,11 @@
 /* @ngInject */
 let playlist = function($stateParams, playlistService) {
-	return playlistService.getPlaylist($stateParams.playlistId);
+	return playlistService.getPlaylist($stateParams.localPlaylistId);
+};
+
+/* @ngInject */
+let deezerPlaylist = function($stateParams, playlistService) {
+	return playlistService.getDeezerPlaylist($stateParams.servicePlaylistId);
 };
 
 /* @ngInject */
@@ -18,4 +23,4 @@ let search = function($stateParams, playlistService) {
 	return playlistService.searchPlaylists($stateParams.query, $stateParams.order, $stateParams.sort);
 };
 
-export { playlist, categoryPlaylists, featuredPlaylists, search };
+export { playlist, deezerPlaylist, categoryPlaylists, featuredPlaylists, search };

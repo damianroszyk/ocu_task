@@ -1,17 +1,18 @@
 import angular from 'angular';
 import app from 'app';
 
-import { playlist } from 'playlist/playlist.resolvers';
+import { playlist, deezerPlaylist } from 'playlist/playlist.resolvers';
 
 const PLAYLIST_ROUTER = {
 	playlistState: {
-		url: '^/playlist/:playlistId',
+		url: '^/playlist/:localPlaylistId/:servicePlaylistId',
 		template: `
 			<playlist
-				playlist="$resolve.playlist">
+				playlist="$resolve.playlist.data"
+				deezer-playlist="$resolve.deezerPlaylist">
 			</playlist>`,
 		pageTitle: `Playlist`,
-		resolve: { playlist }
+		resolve: { playlist, deezerPlaylist }
 	}
 };
 
