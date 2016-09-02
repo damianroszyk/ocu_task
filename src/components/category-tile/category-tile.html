@@ -42,7 +42,10 @@
 				class="subcategories-list-element"
 				ng-repeat="playlist in ::$ctrl.category.playlists"
 				ng-click="$event.stopPropagation()"
-				ui-sref="playlist({playlistId: playlist.deezer.service_playlist_id})">
+				ui-sref="playlist({
+					servicePlaylistId: playlist.deezer.service_playlist_id,
+					localPlaylistId: playlist.id
+				})">
 				<p class="subcategories-list-element__title">
 					{{::$index + 1}}. {{::playlist.name}}
 				</p>
