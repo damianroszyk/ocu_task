@@ -122,7 +122,7 @@
 	</div>
 	<div class="player-custom__tracklist" ng-if="!!$ctrl.playlist">
 		<player-track-list
-			tracks="$ctrl.playlist.tracks.data"
+			tracks="$ctrl.playerService.tracks"
 			track-title-click-callback="$ctrl.playTrackOfPlaylist(event)">
 		</player-track-list>
 	</div>

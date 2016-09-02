@@ -5,8 +5,8 @@
 	            class="player-track-table__row"
 	            ng-repeat="track in ::$ctrl.tracks">
 				<td>
-					<div class="track-table__item" ng-click="$ctrl.onTrackTitleClick({event: $event})">{{::track.title}}</div>
-					<div class="track-table__item">{{::track.artist.name}}</div>
+					<div class="track-table__item" ng-click="$ctrl.onTrackTitleClick({event: $event})">{{::track.name}}</div>
+					<div class="track-table__item">{{::track.artists[0].name}}</div>
 				</td>
 	        </tr>
 	    </tbody>

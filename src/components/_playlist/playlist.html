@@ -12,22 +12,4 @@
 		tags="$ctrl.playlist.categories">
 	</playlist-tags>
 
-	<div ng-show="$ctrl.playerShown">
-		<div ng-if="$ctrl.musicProvider === 'DEEZER'">
-			<player-custom
-				popup="false"
-				hide-player="$ctrl.hidePlayer()"
-				player-shown="$ctrl.playerShown">
-			</player-custom>
-		</div>
-
-		<div ng-if="$ctrl.musicProvider === 'SPOTIFY'">
-			<player-spotify
-				popup="false"
-				hide-player="$ctrl.hidePlayer()"
-				player-shown="$ctrl.playerShown">
-			</player-spotify>
-		</div>
-	</div>
-
 </div>

@@ -4,3 +4,4 @@ import './metatags.service';
 import './model-helper.service';
 import './responsive.service';
 import './storage.service';
+import './player.service';

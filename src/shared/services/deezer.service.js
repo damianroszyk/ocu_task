@@ -3,7 +3,7 @@ import app from 'app';
 
 class DeezerService {
 	/* @ngInject */
-	constructor($q, angularLoad, thirdPartyConstant) {
+	constructor($q, angularLoad, thirdPartyConstant, playerService) {
 		this.$q = $q;
 		this.angularLoad = angularLoad;
 		this.thirdPartyConstant = thirdPartyConstant;
