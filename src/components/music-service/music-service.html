@@ -1,11 +1,26 @@
 <div
 	class="music-service"
+	click-outside="$ctrl.closeDropdown()"
 	ng-show="$ctrl.isShown">
 	<p
-		class="music-service__title"
-		translate="{{::'FIND_PLAYLISTS'}}">
+		class="music-service__title text--xl"
+		translate="{{::'SELECT_MUSIC'}}">
 	</p>
 	<span
 		class="icon-close-white--rounded"
 		ng-click="$ctrl.closeDropdown()"></span>
+	<div class="music-service-providers-wrapper">
+		<div
+			class="music-service__provider"
+			ng-repeat="service in ::$ctrl.services">
+			<img
+				class="music-service__provider-logo"
+				ng-src="{{service.logo}}" />
+			<p class="music-service__provider-name text--lg">
+				{{service.name}}
+			</p>
+		</div>
+	</div>
+	<div class="clear-both"></div>
+	<button class="btn-circled music-service__save-button">Save</button>
 </div>

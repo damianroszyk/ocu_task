@@ -3,7 +3,6 @@ export default class SearchDropdownController {
 	constructor($scope) {
 		$scope.$on('$stateChangeSuccess', this.closeDropdown.bind(this));
 	}
-
 	closeDropdown() {
 		this.isShown = false;
 	}

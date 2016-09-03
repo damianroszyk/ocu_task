@@ -1,28 +1,93 @@
 @import '../../shared/styles/variables';
 @import '../../shared/styles/mixins';
 
-$search-dropdown-width: 574px;
-$search-dropdown-height: 190px;
-$search-dropdown-width--xs: 100%;
-$search-dropdown-height--xs: 130px;
+$music-service-width: 680px;
+$music-service-height: 300px;
+$music-service-width--xs: 100%;
+$music-service-height--xs: auto;
+$service-provider-width: 180px;
+$service-provider-height: 95px;
+$service-provider-margin: 30px;
 
 .music-service {
-	@include position-absolute(96px, 0, auto, auto);
+	@include position-absolute(96px, auto, auto, 61px);
 	font-size: initial;
 	background-color: $grey-7;
     z-index: 100;
-	height: $search-dropdown-height;
-	width: $search-dropdown-width;
+	height: $music-service-height;
+	width: $music-service-width;
 	line-height: initial;
 	font-weight: 400;
-
-	.search-form-wrapper {
-		bottom: 50px;
-	}
+	padding: $distance-md $distance-lg $distance-lg;
+	box-sizing: border-box;
 
 	.xs & {
 		top: 56px;
-		width: $search-dropdown-width--xs;
-	    height: $search-dropdown-height--xs;
+		left: auto;
+		width: $music-service-width--xs;
+	    height: $music-service-height--xs;
+		padding: 6%;
+		padding-bottom: 100px;
 	}
+}
+
+.music-service__title {
+	color: $white;
+	margin: 0 0 3 * $distance-sm;
+
+	&::first-letter {
+		text-transform: uppercase;
+	}
+
+	.xs & {
+		padding-right: 30px;
+	}
+}
+
+.music-service__provider {
+	float: left;
+	width: $service-provider-width;
+	height: $service-provider-height;
+	background-color: $grey-2;
+	margin-right: $service-provider-margin;
+	text-align: center;
+	padding: 15px $distance-md;
+    box-sizing: border-box;
+	cursor: pointer;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&:hover {
+		border: 5px solid $green;
+		padding: $distance-sm $distance-md;
+	}
+
+	.xs & {
+		margin-right: 5vw;
+		width: 41.5vw;
+		margin-bottom: 5vw;
+
+		&:nth-child(2n) {
+			margin-right: 0;
+		}
+	}
+}
+
+.music-service__provider-name {
+	margin: 0;
+
+	&::first-letter {
+		text-transform: uppercase;
+	}
+}
+
+.music-service__provider-logo {
+	max-height: 38px;
+}
+
+.music-service__save-button {
+	@include position-absolute(auto, auto, 40px, auto);
+	width: 95px;
 }

@@ -80,6 +80,7 @@ $nav-margin-width--xs: 3px;
 .my-music-service {
 	width: $my-music-service;
 	text-align: center;
+	cursor: pointer;
 
 	.xs & {
 		width: calc(100% - #{4 * $nav-height--xs + 4 * $nav-margin-width--xs});
@@ -109,6 +110,20 @@ $nav-margin-width--xs: 3px;
 .nav__item--menu-clicked {
 	height: 96px;
 	background-color: $grey-7;
+
+	.xs & {
+		height: 56px;
+	}
+}
+
+.my-music-service__title {
+	margin: 0;
+}
+
+.my-music-service--clicked {
+	height: 96px;
+	background-color: $grey-7;
+	color: $white;
 
 	.xs & {
 		height: 56px;
