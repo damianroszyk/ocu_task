@@ -84,16 +84,3 @@ $promo-slot-height--vertical: 583px;
 .promo-slot__wrapper {
 	position: relative;
 }
-
-.promo-slot__icon-wrapper {
-	position: absolute;
-    height: 50px;
-    width: 100%;
-    bottom: 20%;
-    text-align: center;
-}
-
-.promo-slot__icon {
-	max-width: 50px;
-	max-height: 50px;
-}
