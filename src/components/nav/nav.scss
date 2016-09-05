@@ -3,7 +3,7 @@
 @import '../../shared/styles/icons';
 
 $nav-height: 56px;
-$music-service: 224px;
+$my-service-dropdown-width: 224px;
 $nav-margin-width: 5px;
 $nav-height--xs: 36px;
 $nav-margin-width--xs: 3px;
@@ -77,9 +77,10 @@ $nav-margin-width--xs: 3px;
     float: right;
 }
 
-.music-service {
-	width: $music-service;
+.my-service-dropdown {
+	width: $my-service-dropdown-width;
 	text-align: center;
+	cursor: pointer;
 
 	.xs & {
 		width: calc(100% - #{4 * $nav-height--xs + 4 * $nav-margin-width--xs});
@@ -88,7 +89,7 @@ $nav-margin-width--xs: 3px;
 }
 
 .nav-breadcrumb {
-	width: calc(100% - #{$music-service + 4 * $nav-height + 5 * $nav-margin-width});
+	width: calc(100% - #{$my-service-dropdown-width + 4 * $nav-height + 5 * $nav-margin-width});
 	padding-left: $distance-lg;
 	box-sizing: border-box;
 
@@ -109,6 +110,20 @@ $nav-margin-width--xs: 3px;
 .nav__item--menu-clicked {
 	height: 96px;
 	background-color: $grey-7;
+
+	.xs & {
+		height: 56px;
+	}
+}
+
+.my-service-dropdown__title {
+	margin: 0;
+}
+
+.my-service-dropdown--clicked {
+	height: 96px;
+	background-color: $grey-7;
+	color: $white;
 
 	.xs & {
 		height: 56px;
