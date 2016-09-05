@@ -1,21 +1,21 @@
-@import '../../shared/styles/variables';
-@import '../../shared/styles/mixins';
+@import '../../../shared/styles/variables';
+@import '../../../shared/styles/mixins';
 
-$music-service-width: 680px;
-$music-service-height: 300px;
-$music-service-width--xs: 100%;
-$music-service-height--xs: auto;
+$service-dropdown-width: 680px;
+$service-dropdown-height: 300px;
+$service-dropdown-width--xs: 100%;
+$service-dropdown-height--xs: auto;
 $service-provider-width: 180px;
 $service-provider-height: 95px;
 $service-provider-margin: 30px;
 
-.music-service {
+.service-dropdown {
 	@include position-absolute(96px, auto, auto, 61px);
 	font-size: initial;
 	background-color: $grey-7;
-    z-index: 100;
-	height: $music-service-height;
-	width: $music-service-width;
+    z-index: $z-index-5;
+	height: $service-dropdown-height;
+	width: $service-dropdown-width;
 	line-height: initial;
 	font-weight: 400;
 	padding: $distance-md $distance-lg $distance-lg;
@@ -24,14 +24,14 @@ $service-provider-margin: 30px;
 	.xs & {
 		top: 56px;
 		left: auto;
-		width: $music-service-width--xs;
-	    height: $music-service-height--xs;
+		width: $service-dropdown-width--xs;
+	    height: $service-dropdown-height--xs;
 		padding: 6%;
 		padding-bottom: 100px;
 	}
 }
 
-.music-service__title {
+.service-dropdown__title {
 	color: $white;
 	margin: 0 0 3 * $distance-sm;
 
@@ -44,7 +44,7 @@ $service-provider-margin: 30px;
 	}
 }
 
-.music-service__provider {
+.service-dropdown__provider {
 	float: left;
 	width: $service-provider-width;
 	height: $service-provider-height;
@@ -75,7 +75,7 @@ $service-provider-margin: 30px;
 	}
 }
 
-.music-service__provider-name {
+.service-dropdown__provider-name {
 	margin: 0;
 
 	&::first-letter {
@@ -83,11 +83,11 @@ $service-provider-margin: 30px;
 	}
 }
 
-.music-service__provider-logo {
+.service-dropdown__provider-logo {
 	max-height: 38px;
 }
 
-.music-service__save-button {
+.service-dropdown__save-button {
 	@include position-absolute(auto, auto, 40px, auto);
 	width: 95px;
 }

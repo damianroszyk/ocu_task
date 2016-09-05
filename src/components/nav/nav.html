@@ -8,7 +8,7 @@
             class="nav-button nav-menu-button"
             ng-click="showCategories = !showCategories;
 			$event.stopPropagation(); $ctrl.showSearchDropdown = false;
-			showMusicService = false">
+			showServiceDropdown = false">
 			<span ng-class="{
 				'icon-hamburger--full-width': !showCategories ,
 				'icon-hamburger--active--full-width': showCategories
@@ -16,15 +16,15 @@
         </div>
     </div>
     <div
-		class="nav__item my-music-service text--lg"
-		ng-click="showMusicService = !showMusicService;
+		class="nav__item my-service-dropdown text--lg"
+		ng-click="showServiceDropdown = !showServiceDropdown;
 		$event.stopPropagation(); $ctrl.showSearchDropdown = false;
 		showCategories = false"
 		ng-class="{
-			'my-music-service--clicked': showMusicService
+			'my-service-dropdown--clicked': showServiceDropdown
 		}">
 		<p
-			class="my-music-service__title"
+			class="my-service-dropdown__title"
 			translate="{{::'MUSIC_SERVICE'}}">
 
 		</p>
@@ -68,7 +68,7 @@
 		<div
 			class="nav-button"
 			ng-click="$ctrl.showSearch($event, $root.$state);
-			this.showCategories = false; showMusicService = false">
+			this.showCategories = false; showServiceDropdown = false">
 			<span ng-class="{
 				'icon-search--full-width': !$ctrl.showSearchDropdown ,
 				'icon-search--active--full-width': $ctrl.showSearchDropdown
@@ -77,5 +77,5 @@
 	</div>
     <categories-dropdown is-shown="showCategories"></categories-dropdown>
 	<search-dropdown is-shown="$ctrl.showSearchDropdown"></search-dropdown>
-	<music-service is-shown="showMusicService"></music-service>
+	<service-dropdown is-shown="showServiceDropdown"></service-dropdown>
 </div>
