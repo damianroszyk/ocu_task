@@ -3,8 +3,17 @@ import app from 'app';
 
 const THIRD_PARTY_CONSTANT = {
 	deezerSdkUrl: 'https://cdns-files.dzcdn.net/js/min/dz.js',
-	deezerAppId: 1
-	// deezerPlayerIsLoadedEvent: 'deezerPlayerIsLoaded'
+	deezerAppId: 1,
+	services: [{
+		name : 'apple',
+		logo : '/shared/images/icons/apple-icon--black.png'
+	}, {
+		name : 'deezer',
+		logo : '/shared/images/icons/deezer-icon--black.png'
+	}, {
+		name : 'spotify',
+		logo : '/shared/images/icons/spotify-icon--black.png'
+	}]
 };
 
 export default angular

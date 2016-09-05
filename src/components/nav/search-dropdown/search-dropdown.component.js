@@ -10,5 +10,5 @@ let bindings = {
 
 export default angular
 	.module(app)
-	.component('searchDropdown', { template, controller, bindings})
+	.component('searchDropdown', { template, controller, bindings })
 	.name;
