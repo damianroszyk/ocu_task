@@ -4,6 +4,7 @@ import app from 'app';
 const THIRD_PARTY_CONSTANT = {
 	deezerSdkUrl: 'https://cdns-files.dzcdn.net/js/min/dz.js',
 	deezerAppId: 1
+	// deezerPlayerIsLoadedEvent: 'deezerPlayerIsLoaded'
 };
 
 export default angular

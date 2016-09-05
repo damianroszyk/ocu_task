@@ -16,6 +16,14 @@ class BreadcrumbService extends Observable {
 	get breadcrumb() {
 		return this._breadcrumb;
 	}
+	buildPlaylistBreadcrumb(playlist) {
+		this.breadcrumb = [{
+			name: 'Home',
+			state: 'home'
+		}, {
+			name: playlist.title
+		}];
+	}
 	buildCategoryBreadcrumb(category) {
 		let defaultCategoryStateParams = {
 			l1: '', l2: '', l3: '', l4: ''

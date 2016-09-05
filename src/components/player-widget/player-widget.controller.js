@@ -1,6 +1,9 @@
-export default class PlayerCustomController {
+export default class PlayerWidgetController {
 	/* @ngInject */
-	constructor(playerService) {
-		this.playerService = playerService;
+	constructor(playerWidgetService) {
+		playerWidgetService.registerObserver(this._renderPlayer.bind(this));
+	}
+	_renderPlayer(player) {
+		this.player = player;
 	}
 }

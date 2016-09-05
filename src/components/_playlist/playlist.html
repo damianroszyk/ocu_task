@@ -1,15 +1,12 @@
 <div class="playlist">
 	<playlist-header
-		playlist="$ctrl.deezerPlaylist"
+		playlist="$ctrl.servicePlaylist"
 		show-player="$ctrl.showPlayer()">
 	</playlist-header>
-
 	<track-list
-		tracks="$ctrl.deezerPlaylist.tracks.data">
+		tracks="$ctrl.servicePlaylist.tracks.data">
 	</track-list>
-
 	<playlist-tags
-		tags="$ctrl.playlist.categories">
+		tags="$ctrl.localPlaylist.categories">
 	</playlist-tags>
-
 </div>

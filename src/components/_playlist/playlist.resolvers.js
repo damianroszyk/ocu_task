@@ -1,26 +1,27 @@
 /* @ngInject */
-let playlist = function($stateParams, playlistService) {
-	return playlistService.getPlaylist($stateParams.localPlaylistId);
-};
+let localPlaylist = ($stateParams, playlistService) =>
+	playlistService.getPlaylist($stateParams.localPlaylistId);
 
 /* @ngInject */
-let deezerPlaylist = function($stateParams, playlistService) {
-	return playlistService.getDeezerPlaylist($stateParams.servicePlaylistId);
-};
+let servicePlaylist = ($stateParams, playlistService) =>
+	playlistService.getDeezerPlaylist($stateParams.servicePlaylistId);
 
 /* @ngInject */
-let categoryPlaylists = function($stateParams, playlistService) {
-	return playlistService.getCategoryPlaylists($stateParams.categoryId);
-};
+let categoryPlaylists = ($stateParams, playlistService) =>
+	playlistService.getCategoryPlaylists($stateParams.categoryId);
 
 /* @ngInject */
-let featuredPlaylists = function(playlistService) {
-	return playlistService.getFeaturedPlaylists();
-};
+let featuredPlaylists = (playlistService) =>
+	playlistService.getFeaturedPlaylists();
 
 /* @ngInject */
-let search = function($stateParams, playlistService) {
-	return playlistService.searchPlaylists($stateParams.query, $stateParams.order, $stateParams.sort);
-};
+let search = ($stateParams, playlistService) =>
+	playlistService.searchPlaylists($stateParams.query, $stateParams.order, $stateParams.sort);
 
-export { playlist, deezerPlaylist, categoryPlaylists, featuredPlaylists, search };
+export {
+	localPlaylist,
+	servicePlaylist,
+	categoryPlaylists,
+	featuredPlaylists,
+	search
+};

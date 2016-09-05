@@ -1,5 +1,7 @@
-.player-widget{
+$player-widget-offset: 440px;
+
+.player-widget {
 	position: absolute;
-	top: 440px;
+	top: $player-widget-offset;
 	right: 0;
 }

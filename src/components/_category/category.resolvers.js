@@ -1,22 +1,22 @@
 /* @ngInject */
-let category = function($stateParams, categoryService) {
-	return categoryService.getCategory($stateParams.categoryId);
-};
+let category = ($stateParams, categoryService) =>
+	categoryService.getCategory($stateParams.categoryId);
 
 /* @ngInject */
-let categories = function(categoryService) {
-	let notFeatured = true;
-	return categoryService.getCategories(notFeatured);
-};
+let categories = (categoryService) =>
+	categoryService.getCategories(true);
 
 /* @ngInject */
-let featuredCategories = function(categoryService) {
-	return categoryService.getFeaturedCategories();
-};
+let featuredCategories = (categoryService) =>
+	categoryService.getFeaturedCategories();
 
 /* @ngInject */
-let flatCategories = function(categoryService) {
-	return categoryService.getFlatCategories();
-};
+let flatCategories = (categoryService) =>
+	categoryService.getFlatCategories();
 
-export { category, categories, featuredCategories, flatCategories };
+export {
+	category,
+	categories,
+	featuredCategories,
+	flatCategories
+};

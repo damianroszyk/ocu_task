@@ -8,7 +8,10 @@ let bindings = {
 	popup: '<',
 	hidePlayer: '&?',
 	playerShown: '<',
-	playlistId: '<'
+	trackIdx: '<',
+	trackTime: '<',
+	localPlaylistId: '<',
+	servicePlaylistId: '<'
 };
 
 export default angular

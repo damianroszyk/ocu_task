@@ -3,8 +3,15 @@ import app from 'app';
 
 const CUSTOM_PLAYER_ROUTER = {
 	playerState: {
-		url: '^/player/deezer/:playlistId/:trackIdx/:trackTime',
-		template: '<player-custom popup="true" playlist-id="$state.params.playlistId" track-idx="$state.params.trackIdx" track-time="$state.params.trackTime"></player-custom>',
+		url: '^/player/:localPlaylistId/deezer/:servicePlaylistId/:trackIdx/:trackTime',
+		template: `
+			<player-custom
+				popup="true"
+				local-playlist-id="$state.params.localPlaylistId"
+				service-playlist-id="$state.params.servicePlaylistId"
+				track-idx="$state.params.trackIdx"
+				track-time="$state.params.trackTime">
+			</player-custom>`,
 		pageTitle: `Player`
 	}
 };
