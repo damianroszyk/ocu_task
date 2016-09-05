@@ -9,7 +9,7 @@ const DOM_CONSTANT = {
 		sm: 480,
 		xs: 0
 	},
-	defaultHeaderBackgroundImage: '/shared/images/images/taylor_swift_header.jpg',
+	defaultHeaderBackgroundImage: '/shared/images/images/lorde_header.jpg',
 	defaultSearchTileImage: '/shared/images/images/search-tile_image.jpg',
 	defaultBrandImage: 'http://digster.fm/wp-content/themes/digster/images/logo-header.png',
 	defaultCategoryTileImage: 'shared/images/default_artist_cover.png'
