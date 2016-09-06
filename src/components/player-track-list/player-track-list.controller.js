@@ -1,9 +1,7 @@
 export default class PlayerTrackListController {
 	/* @ngInject */
-	constructor() {
-	}
-
-	onTrackTitleClick(event){
+	constructor() {}
+	onTrackTitleClick(event) {
 		(this.trackTitleClickCallback || angular.noop)(event);
 	}
 }

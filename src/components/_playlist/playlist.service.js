@@ -21,7 +21,46 @@ class PlaylistService {
 			backendConstant.apiVersion, 'category'
 		);
 	}
-	processPlaylists(playlists) {
+	searchPlaylists(query, order, sort) {
+		let params = { order, sort };
+		let headers = { published: 1 };
+		let url = this.modelHelper.buildUrl(this.searchBackend, query);
+		return this.$http
+			.get(url, { params, headers })
+			.then(response => this._normalizeLocalPlaylists(response.data));
+	}
+	getCategoryPlaylists(categoryId) {
+		let headers = { published: 1 };
+		let url = this.modelHelper.buildUrl(this.categoryBackend, categoryId, 'playlists');
+		return this.$http
+			.get(url, { headers })
+			.then(response => this._normalizeLocalPlaylists(response.data));
+	}
+	getFeaturedPlaylists() {
+		let url = this.modelHelper.buildUrl(this.playlistBackend, 'list');
+		let headers = { featured: 1, published: 1};
+		return this.$http
+			.get(url, { headers })
+			.then(response => this._normalizeLocalPlaylists(response.data));
+	}
+	getPlaylist(playlistId) {
+		let url = this.modelHelper.buildUrl(this.playlistBackend, playlistId);
+		return this.$http.get(url);
+	}
+	getDeezerPlaylist(playlistId) {
+		return this.deezer
+			.getPlaylist(playlistId)
+			.then(response => this._normalizeServicePlaylist('deezer', response));
+	}
+	getTopCategoryPlaylists(categoryId) {
+		let url = this.modelHelper.buildUrl(this.categoryBackend, categoryId, 'playlists');
+		let params = { limit: 5 };
+		let headers = { published: 1 };
+		return this.$http
+			.get(url, { params, headers })
+			.then(response => this._normalizeLocalPlaylists(response.data));
+	}
+	_normalizeLocalPlaylists(playlists) {
 		playlists = _.values(playlists);
 		angular.forEach(playlists, playlist => {
 			angular.forEach(playlist.external_playlists, externalPlaylist => {
@@ -30,45 +69,8 @@ class PlaylistService {
 		});
 		return playlists;
 	}
-	searchPlaylists(query, order, sort) {
-		let params = { order, sort };
-		let headers = { published: 1 };
-		let url = this.modelHelper.buildUrl(this.searchBackend, query);
-		return this.$http.get(url, { params, headers }).then(response =>
-			this.processPlaylists(response.data)
-		);
-	}
-	getCategoryPlaylists(categoryId) {
-		let headers = { published: 1 };
-		let url = this.modelHelper.buildUrl(this.categoryBackend, categoryId, 'playlists');
-		return this.$http.get(url, { headers }).then(response =>
-			this.processPlaylists(response.data)
-		);
-	}
-	getFeaturedPlaylists() {
-		let url = this.modelHelper.buildUrl(this.playlistBackend, 'list');
-		let headers = {
-			featured: 1,
-			published: 1
-		};
-		return this.$http.get(url, { headers }).then(response =>
-			this.processPlaylists(response.data)
-		);
-	}
-	getPlaylist(playlistId) {
-		let url = this.modelHelper.buildUrl(this.playlistBackend, playlistId);
-		return this.$http.get(url);
-	}
-	getDeezerPlaylist(playlistId) {
-		return this.deezer.getPlaylist(playlistId);
-	}
-	getTopCategoryPlaylists(categoryId) {
-		let url = this.modelHelper.buildUrl(this.categoryBackend, categoryId, 'playlists');
-		let params = { limit: 5 };
-		let headers = { published: 1 };
-		return this.$http.get(url, { params, headers }).then(response =>
-			this.processPlaylists(response.data)
-		);
+	_normalizeServicePlaylist(service, response) {
+		return response;
 	}
 }
 

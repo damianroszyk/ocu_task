@@ -7,7 +7,11 @@ import controller from './player-custom.controller';
 let bindings = {
 	popup: '<',
 	hidePlayer: '&?',
-	playerShown: '<'
+	playerShown: '<',
+	trackIdx: '<',
+	trackTime: '<',
+	localPlaylistId: '<',
+	servicePlaylistId: '<'
 };
 
 export default angular

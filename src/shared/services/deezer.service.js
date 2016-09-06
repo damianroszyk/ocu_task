@@ -3,29 +3,20 @@ import app from 'app';
 
 class DeezerService {
 	/* @ngInject */
-	constructor($q, angularLoad, thirdPartyConstant) {
+	constructor($q, angularLoad, dispatcherService, thirdPartyConstant) {
 		this.$q = $q;
 		this.angularLoad = angularLoad;
+		this.dispatcherService = dispatcherService;
 		this.thirdPartyConstant = thirdPartyConstant;
 		this.deferredDeezerSdk = this.$q.defer();
+		this.deferredPlayer = this.$q.defer();
 	}
 	initialize() {
 		const DZ_ROOT = angular.element(`<div id="dz-root"></div>`);
 		angular.element(document.body).append(DZ_ROOT);
 		return this.angularLoad
 			.loadScript(this.thirdPartyConstant.deezerSdkUrl)
-			.then(() => this.handleDeezerSdkScript());
-	}
-	handleDeezerSdkScript() {
-		this.dz = window.DZ;
-		this.dz.init({
-			appId: this.thirdPartyConstant.deezerAppId,
-			channelUrl: `${window.location.origin}/channel.html`,
-			player : {
-				onload : () => document.dispatchEvent(new Event('DEEZER_LOADED'))
-			}
-		});
-		this.deferredDeezerSdk.resolve(this.dz);
+			.then(() => this._handleDeezerSdkScript());
 	}
 	fetch(resource) {
 		let deferredRequest = this.$q.defer();
@@ -39,6 +30,20 @@ class DeezerService {
 	}
 	getTrack(trackId) {
 		return this.fetch(`/track/${trackId}`);
+	}
+	_handleDeezerSdkScript() {
+		this.dz = window.DZ;
+		this.dz.init({
+			appId: this.thirdPartyConstant.deezerAppId,
+			channelUrl: `${window.location.origin}/channel.html`,
+			player: {
+				onload: this._handleDeezerPlayerIsLoaded.bind(this)
+			}
+		});
+		this.deferredDeezerSdk.resolve(this.dz);
+	}
+	_handleDeezerPlayerIsLoaded() {
+		this.deferredPlayer.resolve();
 	}
 }
 

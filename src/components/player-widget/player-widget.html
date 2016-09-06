@@ -1,0 +1,18 @@
+<div
+	class="player-widget"
+	ng-if="$ctrl.player.show">
+	<player-custom
+		ng-if="$ctrl.player.service === 'deezer'"
+		popup="false"
+		player-shown="$ctrl.player.show"
+		service-playlist-id="$ctrl.player.servicePlaylistId"
+		local-playlist-id="$ctrl.player.localPlaylistId">
+	</player-custom>
+	<player-spotify
+		ng-if="$ctrl.player.service === 'spotify'"
+		popup="false"
+		player-shown="$ctrl.player.show"
+		service-playlist-id="$ctrl.player.servicePlaylistId"
+		local-playlist-id="$ctrl.player.localPlaylistId">
+	</player-spotify>
+</div>

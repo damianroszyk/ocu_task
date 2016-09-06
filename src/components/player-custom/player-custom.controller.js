@@ -1,187 +1,167 @@
 export default class PlayerCustomController {
 	/* @ngInject */
-	constructor(deezer, $scope, $window, $stateParams, playlistService, playerConstant) {
-
-		var player = this;
-
+	constructor(deezer, $scope, $window, playlistService, playerWidgetService, playerConstant) {
+		this.$scope = $scope;
+		this.window = $window;
 		this.deezer = deezer;
 		this.playlistService = playlistService;
+		this.playerWidgetService = playerWidgetService;
 		this.playerConstant = playerConstant;
-		this.stateParams = $stateParams;
-		this.scope = $scope;
-		this.isPlayingTrack = false;
-		this.isShuffling = false;
-		this.isRepeating = false;
-		this.isPlayerMinified = false;
-		this.isMuted = false;
-		this.volume = 100; // <0, 100>
-		this.percent = 0.0; // <0.0, 100.0>
-		this.playlistId = $stateParams.playlistId - 0;
-		this.trackIdx = isNaN($stateParams.trackIdx) ? undefined : $stateParams.trackIdx - 0;
-		this.trackTime = isNaN($stateParams.trackTime) ? undefined : $stateParams.trackTime - 0;
-		this.playlist;
-		this.window = $window;
-		this.track = {
-			artist: '',
-			album: '',
-			albumId: null,
-			title: '',
-			duration: 0,
-			completed: 0,
-			idx: -1
-		};
-
-		if(player.popup){
-			let header = document.getElementsByClassName('header')[0];
-			let nav = document.getElementsByClassName('nav')[0];
-			let footer = document.getElementsByClassName('footer')[0];
-			header.parentNode.removeChild(header);
-			nav.parentNode.removeChild(nav);
-			footer.parentNode.removeChild(footer);
-		}
-
-
-
-		if(!!deezer.dz && !!deezer.dz.player && deezer.dz.player.loaded){
-			player.subscribePlayerEvents();
-			player.initPlayer();
-		}
-		else{
-			document.addEventListener('DEEZER_LOADED', () => {
-				player.subscribePlayerEvents();
-				player.initPlayer();
-			});
-		}
-
+		this.track = {};
 	}
-	initPlayer(){
-
-		var player = this;
-
-		this.scope.$on('$stateChangeStart', player.deezer.dz.player.pause);
-
-		this.playlistService.getPlaylist(this.stateParams.playlistId - 0).then(response => {
-
-			player.playlist = response;
-
-			if(typeof player.trackIdx === 'undefined'){
-				this.deezer.dz.player.playPlaylist(player.playlistId - 0, false);
-			}
-			else{
-				this.deezer.dz.player.playPlaylist(player.playlistId, true, player.trackIdx, player.trackTime);
-			}
-
-		});
-
+	$onInit() {
+		this.deezer.deferredPlayer.promise.then(() => this.popup ?
+			this.runPlayerInPopup() : this.runPlayerInWhitelabel()
+		);
 	}
-	subscribePlayerEvents(){
-
-		var player = this;
-
-		this.deezer.dz.Event.subscribe('current_track', newTrack => {
-
-			this.scope.$apply(() => {
-				player.track.artist = newTrack.track.artist.name;
-				player.track.album = newTrack.track.album.title;
-				player.track.albumId = newTrack.track.album.id;
-				player.track.title = newTrack.track.title;
-				player.track.duration = newTrack.track.duration - 0;
-				player.track.idx = newTrack.index;
-			});
-		});
-
-		this.deezer.dz.Event.subscribe('player_position', positionArray => {
-
-			var percent = (positionArray[1] == 0 ? 0 : (positionArray[0] / positionArray[1]) * 100);
-			var completedTime = Math.floor(positionArray[0]);
-
-			this.scope.$apply(() => {
-				player.percent = percent;
-				player.track.completed = completedTime;
-			});
-
-		});
-
+	$onChanges(changedBindings) {
+		if (changedBindings.servicePlaylistId) {
+			this.$onInit();
+		}
 	}
-	play(){
+	runPlayerInPopup() {
+		this.playlistService
+			.getPlaylist(this.localPlaylistId)
+			.then(playlist => {
+				this.playlist = playlist.data;
+				this.playerShown = true;
+				this.initPlaylist();
+				this.play();
+			});
+		this.deezer
+			.getPlaylist(this.servicePlaylistId)
+			.then(playlist => this.tracks = playlist.tracks.data);
+	}
+	runPlayerInWhitelabel() {
+		this.playlist = true;
+		this.tracks = this.playerWidgetService.tracks;
+		this.initPlaylist();
+		this.pause();
+	}
+	initPlaylist() {
+		this.subscribePlayerEvents();
+		if (this.trackIdx) {
+			this.deezer.dz.player.playPlaylist(
+				parseInt(this.servicePlaylistId, 10), true,
+				parseInt(this.trackIdx, 10),
+				parseInt(this.trackTime, 10)
+			);
+		} else {
+			this.deezer.dz.player.playPlaylist(parseInt(this.servicePlaylistId, 10), false);
+		}
+	}
+	subscribePlayerEvents() {
+		this.deezer.dz.Event.subscribe('current_track', this._handleCurrentTrackChange.bind(this));
+		this.deezer.dz.Event.subscribe('player_position', this._handlePlayerPositionChange.bind(this));
+	}
+	_handleCurrentTrackChange(newTrack) {
+		this.$scope.$apply(() => {
+			this.track.artist = newTrack.track.artist.name;
+			this.track.album = newTrack.track.album.title;
+			this.track.albumId = newTrack.track.album.id;
+			this.track.title = newTrack.track.title;
+			this.track.duration = newTrack.track.duration - 0;
+			this.track.idx = newTrack.index;
+		});
+	}
+	_handlePlayerPositionChange(positionArray) {
+		let percent = (positionArray[1] == 0 ? 0 : (positionArray[0] / positionArray[1]) * 100);
+		let completedTime = Math.floor(positionArray[0]);
+		this.$scope.$apply(() => {
+			this.percent = percent;
+			this.track.completed = completedTime;
+		});
+	}
+	play() {
 		this.isPlayingTrack = true;
 		this.deezer.dz.player.play();
 	}
-	pause(){
+	pause() {
 		this.isPlayingTrack = false;
 		this.deezer.dz.player.pause();
 	}
-	next(){
+	next() {
 		this.isPlayingTrack = true;
 		this.deezer.dz.player.next();
 	}
-	prev(){
+	prev() {
 		this.isPlayingTrack = true;
 		this.deezer.dz.player.prev();
 	}
-	shuffle(){
+	shuffle() {
 		this.deezer.dz.player.setShuffle(!this.isShuffling);
 		this.isShuffling = !this.isShuffling;
 	}
-	repeat(){
-		this.deezer.dz.player.setRepeat(this.isRepeating ? this.playerConstant.deezerRepeatingDictionary.noRepeat : this.playerConstant.deezerRepeatingDictionary.repeatTrack);
+	repeat() {
+		let repeat = this.isRepeating ?
+			this.playerConstant.deezerRepeatingDictionary.noRepeat :
+			this.playerConstant.deezerRepeatingDictionary.repeatTrack;
+		this.deezer.dz.player.setRepeat(repeat);
 		this.isRepeating = !this.isRepeating;
 	}
-	mute(){
+	mute() {
 		this.deezer.dz.player.setMute(!this.isMuted);
 		this.isMuted = !this.isMuted;
 	}
-	setVolume(event){
-		if(event.which === 1){
-			var percent = (event.offsetX / event.currentTarget.clientWidth) * 100;
+	setVolume(event) {
+		if (event.which === 1) {
+			let percent = (event.offsetX / event.currentTarget.clientWidth) * 100;
 			this.deezer.dz.player.setVolume(percent);
 			this.volume = percent;
 		}
 	}
-	setPercent(event){
-		if(event.which === 1) {
-			var percent = (event.offsetX / event.currentTarget.clientWidth);
+	setPercent(event) {
+		if (event.which === 1) {
+			let percent = (event.offsetX / event.currentTarget.clientWidth);
 			this.deezer.dz.player.seek(percent * 100);
-			var completedTime = Math.floor(this.track.duration * percent);
+			let completedTime = Math.floor(this.track.duration * percent);
 			this.percent = percent * 100;
 			this.track.completed = completedTime;
-			//setTimeout(this.deezer.dz.player.play, 2000);
 			this.isPlayingTrack = true;
 		}
 	}
-	setPercentTemporarily(event){
-		if(event.which === 1) {
-			var percent = (event.offsetX / event.currentTarget.clientWidth);
-			var completedTime = Math.floor(this.track.duration * percent);
+	setPercentTemporarily(event) {
+		if (event.which === 1) {
+			let percent = (event.offsetX / event.currentTarget.clientWidth);
+			let completedTime = Math.floor(this.track.duration * percent);
 			this.percent = percent * 100;
 			this.track.completed = completedTime;
 		}
 	}
-	playTrackOfPlaylist(event){
-		var srcElement = event.srcElement || event.target;
-		var parentTr = srcElement.parentElement.parentElement;
-		var rowIndex = parentTr.rowIndex;
+	playTrackOfPlaylist(event) {
+		let srcElement = event.srcElement || event.target;
+		let parentTr = srcElement.parentElement.parentElement;
+		let rowIndex = parentTr.rowIndex;
 		this.isPlayingTrack = true;
-		DZ.player.playPlaylist(this.playlistId, true, rowIndex);
+		this.deezer.dz.player.playPlaylist(parseInt(this.servicePlaylistId, 10), true, rowIndex);
 	}
-	showPopup(){
-		this.window.open(
-			'#/player/deezer/' + this.playlistId + '/' + this.track.idx + '/' + this.track.completed,
-			'_blank',
-			'width='+this.playerConstant.popupSize.width+',height='+this.playerConstant.popupSize.height+',menubar=no,status=no,titlebar=no,toolbar=no,directories=no');
+	showPopup() {
+		let url = [
+			'#/player',
+			this.localPlaylistId,
+			'deezer',
+			this.servicePlaylistId,
+			this.track.idx,
+			this.track.completed
+		].join('/');
+		let attrs = [
+			`width=${this.playerConstant.popupSize.width}`,
+			`height=${this.playerConstant.popupSize.height}`,
+			`menubar=no`, `status=no`, `titlebar=no`, `toolbar=no`, `directories=no`
+		].join(',');
+		this.window.open(url, '_blank', attrs);
 		this.close();
 	}
-	toggle(){
+	toggle() {
 		this.isPlayerMinified = !this.isPlayerMinified;
 	}
-	maximize(){
+	maximize() {
 		this.isMaximized = !this.isMaximized;
 	}
-	close(){
+	close() {
 		this.isPlayerMinified = false;
 		this.isMaximized = false;
-		this.hidePlayer();
 		this.pause();
+		this.playerWidgetService.destroy().notify();
 	}
-
 }

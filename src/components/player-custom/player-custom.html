@@ -120,13 +120,12 @@
 			</div>
 		</div>
 	</div>
-	<div class="player-custom__tracklist" ng-if="!!$ctrl.playlist">
+	<div class="player-custom__tracklist">
 		<player-track-list
-			tracks="$ctrl.playlist.tracks.data"
+			tracks="$ctrl.tracks"
 			track-title-click-callback="$ctrl.playTrackOfPlaylist(event)">
 		</player-track-list>
 	</div>
 	<div class="player-custom__loader" ng-if="!$ctrl.playlist">
 	</div>
 </div>
-

@@ -1,4 +1,5 @@
 import './deezer.service';
+import './dispatcher.service';
 import './dom-helper.service';
 import './metatags.service';
 import './model-helper.service';
