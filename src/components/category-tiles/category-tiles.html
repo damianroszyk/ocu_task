@@ -10,4 +10,10 @@
         ng-repeat="category in ::$ctrl.categories"
         category="category">
     </category-tile>
+	<promo-slot
+		class="promo-slot--recommended"
+		ng-if="$ctrl.featuredCategory"
+		layout="horizontal"
+		featured-item="$ctrl.featuredCategory">
+	</promo-slot>
 </div>

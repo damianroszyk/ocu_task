@@ -6,14 +6,17 @@
 		</promo-slot>
 		<search-tile></search-tile>
 	</div>
-	<promo-slot
-		layout="vertical"
-		featured-item="$ctrl.featuredItem2">
-	</promo-slot>
-    <category-tiles
-        layout="$ctrl.categoriesLayout"
-        categories="$ctrl.categories">
-    </category-tiles>
+	<div class="home__categories">
+		<promo-slot
+			layout="vertical"
+			featured-item="$ctrl.featuredItem2">
+		</promo-slot>
+	    <category-tiles
+	        layout="$ctrl.categoriesLayout"
+	        categories="$ctrl.categories"
+			featured-category="$ctrl.featuredItem7">
+	    </category-tiles>
+	</div>
     <playlist-tiles
         layout="$ctrl.playlistsLayout"
         playlists="$ctrl.lowerPromoPlaylists">

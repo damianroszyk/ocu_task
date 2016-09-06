@@ -13,3 +13,7 @@
 	@include clearfix();
 	padding-bottom: $distance-sm;
 }
+
+.home__categories {
+	@include clearfix();
+}

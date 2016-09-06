@@ -51,6 +51,10 @@ $promo-slot-height--vertical: 583px;
 	}
 }
 
+.promo-slot--recommended div {
+	border-bottom: 5px solid $yellow;
+}
+
 .promo-slot__image {
 	@include block-center();
 

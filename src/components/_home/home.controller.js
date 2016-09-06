@@ -17,6 +17,7 @@ export default class HomeController {
 	_fillPromoSlots() {
 		this._fillPromoSlot('1');
 		this._fillPromoSlot('2');
+		this._fillPromoSlot('7');
 		this.lowerPromoPlaylists = _.filter(_.sortBy(this.featuredPlaylists, 'featured'),
 			p => p.featured >= LOWER_PROMO_STARTS && p.featured <= LOWER_PROMO_ENDS
 		);
