@@ -20,6 +20,7 @@ export default class PlaylistController {
 		this.playerWidgetService.player = {
 			service,
 			servicePlaylistId: servicePlaylist.service_playlist_id,
+			serviceUserId: servicePlaylist.service_user_id,
 			localPlaylistId: this.localPlaylist.id,
 			show: true
 		};

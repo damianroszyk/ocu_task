@@ -8,7 +8,8 @@ let bindings = {
 	popup: '<',
 	hidePlayer: '&?',
 	playerShown: '<',
-	playlistId: '<'
+	serviceUserId: '<',
+	servicePlaylistId: '<'
 };
 
 export default angular

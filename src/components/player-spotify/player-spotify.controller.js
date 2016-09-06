@@ -1,42 +1,41 @@
 export default class PlayerSpotifyController {
 	/* @ngInject */
-	constructor($window, $stateParams, playerConstant) {
-
-		this.thirdPartyConstant = playerConstant;
-		this.playlistId = $stateParams.playlistId - 0;
+	constructor($window, $timeout, $stateParams, $sce, playerConstant, playerWidgetService) {
+		this.$timeout = $timeout;
+		this.playerConstant = playerConstant;
+		this.playerWidgetService = playerWidgetService;
 		this.window = $window;
-		this.isPlayerMinified = false;
-		this.isMaximized = false;
-
-		if(this.popup){
-			var header = document.getElementsByClassName('header')[0];
-			var nav = document.getElementsByClassName('nav')[0];
-			var footer = document.getElementsByClassName('footer')[0];
-			header.parentNode.removeChild(header);
-			nav.parentNode.removeChild(nav);
-			footer.parentNode.removeChild(footer);
-		}
+		this.playerIsLoaded = false;
+		this.$sce = $sce;
 	}
-
-	showPopup(){
-		this.window.open(
-			'#/player/spotify/' + this.playlistId,
-			'_blank',
-			'width='+this.playerConstant.popupSize.width+',height='+this.playerConstant.popupSize.height+',menubar=no,status=no,titlebar=no,toolbar=no,directories=no');
+	playerUrl() {
+		return this.$sce.trustAsResourceUrl([
+			this.playerConstant.embeddedSpotifyPlayerUrl,
+			`?uri=spotify:user:${this.serviceUserId}:playlist:${this.servicePlaylistId}`,
+		].join(''));
+	}
+	showPopup() {
+		let url = `#/player/spotify/${this.serviceUserId}/${this.servicePlaylistId}`;
+		let attrs = [
+			`width=${this.playerConstant.popupSize.width}`,
+			`height=${this.playerConstant.popupSize.height}`,
+			`menubar=no,status=no,titlebar=no,toolbar=no,directories=no`
+		].join(',');
+		this.window.open(url, '_blank', attrs);
 		this.close();
 	}
-
-	toggle(){
+	setPlayerLoaded() {
+		this.playerIsLoaded = true;
+	}
+	toggle() {
 		this.isPlayerMinified = !this.isPlayerMinified;
 	}
-
-	maximize(){
+	maximize() {
 		this.isMaximized = !this.isMaximized;
 	}
-
-	close(){
+	close() {
 		this.isPlayerMinified = false;
 		this.isMaximized = false;
-		this.hidePlayer();
+		this.playerWidgetService.destroy().notify();
 	}
 }

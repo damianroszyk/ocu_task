@@ -5,6 +5,7 @@ const PLAYER_CONSTANT = {
 	defaultWidth: 600,
 	defaultHeight: 700,
 	embeddedDeezerPlayerUrl: 'https://www.deezer.com/plugins/player',
+	embeddedSpotifyPlayerUrl: 'https://embed.spotify.com',
 	deezerRepeatingDictionary: {
 		noRepeat: 0,
 		repeatPlaylist: 1,

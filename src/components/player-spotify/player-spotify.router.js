@@ -3,11 +3,12 @@ import app from 'app';
 
 const SPOTIFY_PLAYER_ROUTER = {
 	playerState: {
-		url: '^/player/spotify/:playlistId',
+		url: '^/player/spotify/:serviceUserId/:servicePlaylistId',
 		template: `
 			<player-spotify
 				popup="true"
-				playlist-id="$state.params.playlistId">
+				service-user-id="$state.params.serviceUserId"
+				service-playlist-id="$state.params.servicePlaylistId">
 			</player-spotify>`,
 		pageTitle: `Player`
 	}

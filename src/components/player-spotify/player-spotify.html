@@ -25,8 +25,14 @@
 	</div>
 	<iframe
 		ng-if="$ctrl.playerShown || $ctrl.popup"
-		src="https://embed.spotify.com/?uri=spotify:user:spotify:playlist:3rgsDhGHZxZ9sB9DQWQfuf"
+		ng-src="{{$ctrl.playerUrl()}}"
+		ng-show="$ctrl.playerIsLoaded"
+		is-loaded="$ctrl.setPlayerLoaded()"
 		frameborder="0"
-		allowtransparency="true"
-	/>
+		allowtransparency="true">
+	</iframe>
+	<div
+		ng-hide="$ctrl.playerIsLoaded"
+		class="player-custom__loader">
+	</div>
 </div>
