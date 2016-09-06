@@ -11,8 +11,10 @@ export default class HomeController {
 		this._fillPromoSlots();
 		metatagsService
 			.clearMetatags()
-			.appendMetatag(`og:title`, `Homepage`)
-			.appendMetatag(`og:type`, `website`);
+			.appendMetatag(`og:image`, domConstant.defaultBrandImage)
+			.appendMetatag(`og:title`, `Digster homepage`)
+			.appendMetatag(`og:description`, `Digster homepage`)
+			.appendMetatag(`description`, `Digster homepage`, 'name');
 	}
 	_fillPromoSlots() {
 		this._fillPromoSlot('1');

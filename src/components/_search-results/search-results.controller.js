@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 export default class SearchResultsController {
 	/* @ngInject */
-	constructor($state, playlistService) {
+	constructor($state, playlistService, metatagsService, domConstant) {
 		this.$state = $state;
 		this.playlistService = playlistService;
 		this.order = this.$state.params.order;
@@ -11,7 +11,15 @@ export default class SearchResultsController {
 			{ value: 'newest', name : 'Newest first'},
 			{ value: 'length', name : 'Length of time'}
 		];
-		this.chosenSortingOption = _.find(this.sortOptions, { value : this.$state.params.order});
+		this.chosenSortingOption = _.find(this.sortOptions, {
+			value: this.$state.params.order
+		});
+		metatagsService
+			.clearMetatags()
+			.appendMetatag(`og:image`, domConstant.defaultBrandImage)
+			.appendMetatag(`og:title`, `Digster search: ${$state.params.query}`)
+			.appendMetatag(`og:description`, `Digster search: ${$state.params.query}`)
+			.appendMetatag(`description`, `Digster search: ${$state.params.query}`, 'name');
 	}
 	setSortingParam(option) {
 		let order = option.value;
