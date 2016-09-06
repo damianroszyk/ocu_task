@@ -34,10 +34,9 @@ export default class PlayerCustomController {
 	}
 	runPlayerInWhitelabel() {
 		this.playlist = true;
-		console.log('this.playerWidgetService', this.playerWidgetService.tracks);
 		this.tracks = this.playerWidgetService.tracks;
-		console.log('this.tracks[0]', this.tracks[0]);
 		this.initPlaylist();
+		this.pause();
 	}
 	initPlaylist() {
 		this.subscribePlayerEvents();

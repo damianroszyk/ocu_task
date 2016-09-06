@@ -44,9 +44,6 @@ class DeezerService {
 	}
 	_handleDeezerPlayerIsLoaded() {
 		this.deferredPlayer.resolve();
-		// this.dispatcherService.dispatch(
-		// 	this.thirdPartyConstant.deezerPlayerIsLoadedEvent
-		// );
 	}
 }
 

@@ -8,30 +8,6 @@ class PlayerWidgetService extends Observable {
 		super();
 		this._player = {};
 	}
-	set service(service) {
-		this._player.service = service;
-	}
-	set show(show) {
-		this._player.show = !!show;
-	}
-	set servicePlaylistId(servicePlaylistId) {
-		this._player.servicePlaylistId = servicePlaylistId;
-	}
-	set localPlaylistId(localPlaylistId) {
-		this._player.localPlaylistId = localPlaylistId;
-	}
-	set tracks(tracks) {
-		this._player.tracks = tracks;
-	}
-	get servicePlaylistId() {
-		return this._player.servicePlaylistId;
-	}
-	get localPlaylistId() {
-		return this._player.localPlaylistId;
-	}
-	get tracks() {
-		return this._player.tracks;
-	}
 	set player(player) {
 		this._player = player;
 	}

@@ -6,11 +6,13 @@ export default class PlaylistController {
 	}
 	showPlayer() {
 		this.playerWidgetService.destroy();
-		this.playerWidgetService.service = 'deezer';
-		this.playerWidgetService.tracks = this.servicePlaylist.tracks.data;
-		this.playerWidgetService.servicePlaylistId = this.servicePlaylist.id;
-		this.playerWidgetService.localPlaylistId = this.localPlaylist.id;
-		this.playerWidgetService.show = true;
+		this.playerWidgetService.player = {
+			service: 'deezer',
+			tracks: this.servicePlaylist.tracks.data,
+			servicePlaylistId: this.servicePlaylist.id,
+			localPlaylistId: this.localPlaylist.id,
+			show: true
+		};
 		this.playerWidgetService.notify();
 	}
 }
