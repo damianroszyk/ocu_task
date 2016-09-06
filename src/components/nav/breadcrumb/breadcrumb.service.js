@@ -21,7 +21,7 @@ class BreadcrumbService extends Observable {
 			name: 'Home',
 			state: 'home'
 		}, {
-			name: playlist.title
+			name: playlist.name
 		}];
 	}
 	buildCategoryBreadcrumb(category) {

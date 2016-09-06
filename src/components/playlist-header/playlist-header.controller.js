@@ -1,7 +1,8 @@
 export default class PlaylistHeaderController {
 	/* @ngInject */
-	constructor() {}
-
+	constructor(domConstant) {
+		this.defaultPlaylistTileImage = domConstant.defaultCategoryTileImage;
+	}
 	onPlayButtonClick(){
 		this.showPlayer();
 	}

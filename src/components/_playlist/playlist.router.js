@@ -1,18 +1,17 @@
 import angular from 'angular';
 import app from 'app';
 
-import { localPlaylist, servicePlaylist } from 'playlist/playlist.resolvers';
+import { localPlaylist } from 'playlist/playlist.resolvers';
 
 const PLAYLIST_ROUTER = {
 	playlistState: {
-		url: '^/playlist/:localPlaylistId/:service/:servicePlaylistId',
+		url: '^/playlist/:localPlaylistId',
 		template: `
 			<playlist
-				local-playlist="$resolve.localPlaylist.data"
-				service-playlist="$resolve.servicePlaylist">
+				local-playlist="$resolve.localPlaylist.data">
 			</playlist>`,
 		pageTitle: `Playlist`,
-		resolve: { localPlaylist, servicePlaylist }
+		resolve: { localPlaylist }
 	}
 };
 

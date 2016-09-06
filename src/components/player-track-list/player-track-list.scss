@@ -1,19 +1,22 @@
 @import '../../shared/styles/variables';
 
+player-track-list {
+	display: block;
+	height: 398px;
+}
+
 .player-track-table {
 	table-layout: fixed;
 	border-collapse: collapse;
 	background-color: $black;
 	color: $white;
 
-	tbody{
-		display: block;
+	tbody {
 		overflow: auto;
 		width: 100%;
-		height: 398px;
 		border-top: 0;
 		box-sizing: border-box;
-		font-size: 0.8rem;
+		font-size: .8rem;
 	}
 
 	td {
@@ -23,14 +26,15 @@
 		border-bottom: 1px solid $white;
 	}
 
-	.track-table__item{
+	.track-table__item {
 		cursor: default;
 	}
 
-	.track-table__item:nth-child(1){
+	.track-table__item:nth-child(1) {
 		cursor: pointer;
 
-		&:hover, &:focus{
+		&:hover,
+		&:focus {
 			background-color: $yellow;
 			color: $black;
 			transition: 500ms;
