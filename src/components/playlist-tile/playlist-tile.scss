@@ -118,6 +118,7 @@ playlist-tile {
 	@include ellipsis();
 	margin: $distance-sm 0 $distance-sm (1.5 * $distance-sm);
 	text-transform: uppercase;
+	cursor: pointer;
 
 	.xs & {
 		font-size: 16px;
