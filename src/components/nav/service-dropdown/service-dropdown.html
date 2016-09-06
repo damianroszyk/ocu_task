@@ -13,7 +13,12 @@
 	<div class="service-dropdown-providers-wrapper">
 		<div
 			class="service-dropdown__provider"
-			ng-repeat="service in ::$ctrl.services">
+			ng-repeat="service in ::$ctrl.services"
+			ng-class="{
+				'service-dropdown__provider--disabled': service.disabled,
+				'service-dropdown__provider--selected': service.selected
+			}"
+			ng-click="$ctrl.selectService(service)">
 			<img
 				class="service-dropdown__provider-logo"
 				ng-src="{{service.logo}}" />
@@ -23,5 +28,9 @@
 		</div>
 	</div>
 	<div class="clear-both"></div>
-	<button class="btn-circled service-dropdown__save-button">Save</button>
+	<button
+		class="btn-circled service-dropdown__save-button"
+		ng-click="$ctrl.save()">
+		Save
+	</button>
 </div>

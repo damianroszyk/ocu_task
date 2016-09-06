@@ -10,9 +10,12 @@ export default class PlayerCustomController {
 		this.track = {};
 	}
 	$onInit() {
-		this.deezer.deferredPlayer.promise.then(() => this.popup ?
-			this.runPlayerInPopup() : this.runPlayerInWhitelabel()
-		);
+		this.deezer.deferredPlayer.promise.then(() => {
+			this.deezer
+				.getPlaylist(parseInt(this.servicePlaylistId, 10))
+				.then(playlist => this.tracks = playlist.tracks.data);
+			return this.popup ? this.runPlayerInPopup() : this.runPlayerInWhitelabel();
+		});
 	}
 	$onChanges(changedBindings) {
 		if (changedBindings.servicePlaylistId) {
@@ -28,9 +31,6 @@ export default class PlayerCustomController {
 				this.initPlaylist();
 				this.play();
 			});
-		this.deezer
-			.getPlaylist(this.servicePlaylistId)
-			.then(playlist => this.tracks = playlist.tracks.data);
 	}
 	runPlayerInWhitelabel() {
 		this.playlist = true;
