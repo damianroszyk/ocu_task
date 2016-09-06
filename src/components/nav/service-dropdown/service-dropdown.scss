@@ -51,17 +51,19 @@ $service-provider-margin: 30px;
 	background-color: $grey-2;
 	margin-right: $service-provider-margin;
 	text-align: center;
-	padding: 15px $distance-md;
+	padding: $distance-sm $distance-md;
     box-sizing: border-box;
 	cursor: pointer;
+	border: 5px solid $grey-2;
+	transition: border .2s ease;
 
 	&:last-child {
 		margin-right: 0;
 	}
 
+	&--selected,
 	&:hover {
 		border: 5px solid $green;
-		padding: $distance-sm $distance-md;
 	}
 
 	.xs & {
@@ -73,6 +75,11 @@ $service-provider-margin: 30px;
 			margin-right: 0;
 		}
 	}
+}
+
+.service-dropdown__provider--disabled {
+	opacity: .1;
+	cursor: not-allowed;
 }
 
 .service-dropdown__provider-name {

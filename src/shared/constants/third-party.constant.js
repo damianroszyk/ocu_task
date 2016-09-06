@@ -6,6 +6,7 @@ const THIRD_PARTY_CONSTANT = {
 	deezerAppId: 1,
 	services: [{
 		name : 'apple',
+		disabled: true,
 		logo : '/shared/images/icons/apple-icon--black.png'
 	}, {
 		name : 'deezer',
@@ -13,7 +14,8 @@ const THIRD_PARTY_CONSTANT = {
 	}, {
 		name : 'spotify',
 		logo : '/shared/images/icons/spotify-icon--black.png'
-	}]
+	}],
+	defaultService: 1
 };
 
 export default angular
