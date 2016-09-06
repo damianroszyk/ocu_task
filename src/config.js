@@ -2,9 +2,10 @@ import angular from 'angular';
 import app from 'app';
 
 /* @ngInject */
-let config = ($urlRouterProvider, $translateProvider, cfpLoadingBarProvider) => {
+let config = ($locationProvider, $urlRouterProvider, $translateProvider, cfpLoadingBarProvider) => {
 	$urlRouterProvider.otherwise('/');
 	cfpLoadingBarProvider.includeSpinner = false;
+	$locationProvider.hashPrefix('!');
 	$translateProvider
 		.preferredLanguage('en_US')
 		.useSanitizeValueStrategy('escape')
