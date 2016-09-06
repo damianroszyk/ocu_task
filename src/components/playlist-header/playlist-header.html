@@ -4,7 +4,11 @@
             class="playlist-header__thumbnail"
             ng-src="{{::$ctrl.playlist.image || $ctrl.defaultPlaylistTileImage}}"
             alt="Playlist thumbnail"/>
-		<div class="play-button-overlay" ng-click="$ctrl.onPlayButtonClick()"></div>
+		<div
+			class="play-button-overlay"
+			ga-track-event="['Playlist', 'Play', $ctrl.playlist.name]"
+			ng-click="$ctrl.onPlayButtonClick()">
+		</div>
     </div>
     <div class="playlist-header__column-right--top">
 		<div class="playlist-header__info">
@@ -18,6 +22,7 @@
 	        </p>
 			<button
 				class="playlist-header__follow-button--desktop btn-circled"
+				ga-track-event="['Playlist', 'Follow', $ctrl.playlist.name]"
 				type="button">
 				Follow
 			</button>
@@ -34,6 +39,7 @@
 		</p>
 		<button
 			class="playlist-header__follow-button--mobile btn-circled"
+			ga-track-event="['Playlist', 'Follow', $ctrl.playlist.name]"
 			type="button">
 			Follow
 		</button>

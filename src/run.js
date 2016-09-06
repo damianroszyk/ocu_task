@@ -2,10 +2,10 @@ import angular from 'angular';
 import app from 'app';
 
 /* @ngInject */
-let run = ($rootScope, $state, deezer, domHelper) => {
+let run = ($rootScope, $state, Analytics, deezer, domHelper) => {
 	$rootScope.$state = $state;
-	deezer.initialize();
 	$rootScope.$on('$stateChangeSuccess', domHelper.scrollTop);
+	deezer.initialize();
 };
 
 export default angular

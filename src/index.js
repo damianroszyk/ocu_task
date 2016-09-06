@@ -3,6 +3,7 @@ import './shared/styles/index.scss';
 
 import './app';
 import './config';
+import './analytics';
 import './run';
 import './bootstrap';
 
