@@ -121,3 +121,7 @@ $playlist-header-height: 275px;
 .playlist-header__caption--lowercase {
     text-transform: lowercase;
 }
+
+.playlist-header__description {
+	word-wrap: break-word;
+}
