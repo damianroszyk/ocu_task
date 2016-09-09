@@ -31,10 +31,9 @@ export default class HomeController {
 			featuredCategory.type = 'category';
 			this[`featuredItem${featured}`] = featuredCategory;
 		} else if (featuredPlaylist) {
-			let playlistId = featuredPlaylist.deezer ?
-				featuredPlaylist.deezer.service_playlist_id : null;
+			let playlistId = featuredPlaylist.id;
 			featuredPlaylist.type = 'playlist';
-			featuredPlaylist.stateParams = { playlistId };
+			featuredPlaylist.stateParams = { localPlaylistId: playlistId };
 			featuredPlaylist.image = featuredPlaylist.image || this.domConstant.defaultCategoryTileImage;
 			this[`featuredItem${featured}`] = featuredPlaylist;
 		}
