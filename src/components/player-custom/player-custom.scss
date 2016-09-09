@@ -389,12 +389,18 @@
 			display: block;
 		}
 	}
+
+	player-track-list,
+	.player-custom__tracklist {
+		height: 100%;
+	}
 }
 
 .player-custom--popup {
 	width: 100%;
 	height: 100%;
 	box-sizing: border-box;
+	overflow: hidden;
 
 	.player-custom__widget-controls-popup {
 		display: none;
@@ -428,6 +434,10 @@
 
 	.player-track-table tbody {
 		height: 324px;
+
+		td {
+			width: 365px;
+		}
 	}
 }
 

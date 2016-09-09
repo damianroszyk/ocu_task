@@ -12,8 +12,8 @@ const PLAYER_CONSTANT = {
 		repeatTrack: 2
 	},
 	popupSize: {
-		width: 480,
-		height: 640
+		width: 420,
+		height: 680
 	}
 };
 
