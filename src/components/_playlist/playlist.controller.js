@@ -18,6 +18,10 @@ export default class PlaylistController {
 		let servicePlaylist = _.find(this.localPlaylist.external_playlists, {
 			source: service
 		});
+		if (service === 'apple') {
+			window.open(this.localPlaylist.apple_music_link || 'https://itunes.apple.com/us/curator/digster/id1018903101');
+			return;
+		}
 		if (!servicePlaylist) {
 			//@TODO: handle not found 3rd party playlist here
 			return;
