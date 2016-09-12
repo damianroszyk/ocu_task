@@ -6,7 +6,6 @@ const THIRD_PARTY_CONSTANT = {
 	deezerAppId: 1,
 	services: [{
 		name : 'apple',
-		disabled: true,
 		logo : '/shared/images/icons/apple-icon--black.png'
 	}, {
 		name : 'deezer',
