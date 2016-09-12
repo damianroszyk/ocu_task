@@ -2,11 +2,14 @@ const COLLAPSE_ALL_EVENT = 'collapseAllCategoryTiles';
 
 export default class CategoryTileController {
 	/* @ngInject */
-	constructor(dispatcherService, domConstant, playlistService) {
+	constructor($translate, $sce, dispatcherService, domConstant, playlistService) {
 		this.dispatcherService = dispatcherService;
 		this.playlistService = playlistService;
 		this.category.image = this.category.image || domConstant.defaultCategoryTileImage;
 		this.listenToCollapseEvent();
+		this.$translate = $translate;
+		this.$sce = $sce;
+		this.defaultPlaylistDescription = $sce.trustAsHtml($translate.instant('PLAYLIST_NO_DESCRIPTION'));
 	}
 	listenToCollapseEvent() {
 		this.dispatcherService.listen(COLLAPSE_ALL_EVENT, ($event, categoryId) => {
@@ -29,5 +32,9 @@ export default class CategoryTileController {
 		this.playlistService
 			.getTopCategoryPlaylists(this.category.id)
 			.then(playlists => this.category.playlists = playlists);
+	}
+	playlistDescription(playlist_description) {
+		return this.$sce.trustAsHtml(playlist_description) ?
+		this.$sce.trustAsHtml(playlist_description) : this.defaultPlaylistDescription;
 	}
 }

@@ -50,8 +50,9 @@
 				<p class="subcategories-list-element__title">
 					{{::$index + 1}}. {{::playlist.name}}
 				</p>
-				<span class="subcategories-list-element__description">
-					{{::playlist.description || ('PLAYLIST_NO_DESCRIPTION' | translate)}}
+				<span
+					class="subcategories-list-element__description"
+					ng-bind-html="$ctrl.playlistDescription(playlist.description)">
 				</span>
             </li>
         </ul>
