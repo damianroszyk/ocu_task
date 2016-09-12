@@ -23,8 +23,9 @@
 		<div class="playlist-tile-meta__dash">&mdash;</div>
 		<div class="playlist-tile-meta__content">
 			<div class="playlist-tile-description">
-				<p class="playlist-tile-description__content">
-				    {{::$ctrl.playlist.description || ('PLAYLIST_NO_DESCRIPTION' | translate)}}
+				<p
+					class="playlist-tile-description__content"
+					ng-bind-html="$ctrl.playlistDescription()">
 				</p>
 			</div>
 			<span class="playlist-tile__duration">

@@ -34,8 +34,9 @@
 		</div>
     </div>
 	<div class="playlist-header__column-right--bottom">
-		<p class="playlist-header__description">
-			{{::$ctrl.playlist.description || ('PLAYLIST_NO_DESCRIPTION' | translate)}}
+		<p
+			class="playlist-header__description"
+			ng-bind-html="$ctrl.playlistDescription()">
 		</p>
 		<button
 			class="playlist-header__follow-button--mobile btn-circled"
