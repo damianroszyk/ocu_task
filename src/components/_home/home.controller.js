@@ -12,7 +12,7 @@ export default class HomeController {
 		metatagsService
 			.clearMetatags()
 			.appendMetatag(`og:image`, domConstant.defaultBrandImage)
-			.appendMetatag(`og:title`, `Digster homepage`)
+			.appendMetatag(`og:title`, `Digster`)
 			.appendMetatag(`og:description`, `Digster homepage`)
 			.appendMetatag(`description`, `Digster homepage`, 'name');
 	}

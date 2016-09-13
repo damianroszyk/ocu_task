@@ -6,12 +6,17 @@ let pageTitle = () => {
 	return {
 		restrict: 'A',
 		link: (scope, element) => {
-			let stateChangeHandler = (event, toState) => {
+			let stateChangeHandler = (event, toState, $state) => {
 				let title = toState.pageTitle ?
-					`Pitched | ${toState.pageTitle}` : `Pitched`;
+					`Digster | ${toState.pageTitle}` : `Digster`;
+
+				if (toState.name === 'searchResults') {
+					title = `${$state.query} - Search - Digster`;
+				}
+
 				angular.element(element).text(title);
 			};
-			scope.$on('$stateChangeStart', stateChangeHandler);
+			scope.$on('$stateChangeSuccess', stateChangeHandler);
 		}
 	};
 };
