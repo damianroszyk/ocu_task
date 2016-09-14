@@ -1,5 +1,5 @@
-@import '../../shared/styles/variables';
-@import '../../shared/styles/mixins';
+@import '../../../shared/styles/variables';
+@import '../../../shared/styles/mixins';
 
 $service-dropdown-width: 680px;
 $service-dropdown-height: 300px;
@@ -97,26 +97,4 @@ $service-provider-margin: 30px;
 .service-dropdown__save-button {
 	@include position-absolute(auto, auto, 40px, auto);
 	width: 95px;
-}
-
-.music-service-wrapper {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	position: fixed;
-	background-color: rgba(0, 0, 0, 0.2);
-	transform-style: preserve-3d;
-	z-index: $z-index-1;
-
-	.service-dropdown {
-		position: relative;
-		top: auto;
-		transform: translateY(100%);
-		left: auto;
-		margin: 0 auto;
-	}
-
-	music-service {
-		position: relative;
-	}
 }

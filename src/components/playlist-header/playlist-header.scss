@@ -125,25 +125,3 @@ $playlist-header-height: 275px;
 .playlist-header__description {
 	word-wrap: break-word;
 }
-
-.music-service-modal {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	position: fixed;
-	background-color: rgba(0, 0, 0, 0.2);
-	transform-style: preserve-3d;
-	z-index: $z-index-1;
-
-	.service-dropdown {
-		position: relative;
-		top: auto;
-		transform: translateY(100%);
-		left: auto;
-		margin: 0 auto;
-	}
-
-	music-service {
-		position: relative;
-	}
-}

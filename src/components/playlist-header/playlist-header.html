@@ -46,13 +46,6 @@
 		</button>
 	</div>
 </header>
-<div
-	class="music-service-modal"
-	ng-show="$ctrl.showModal"
-	ng-click="$ctrl.closeModalOverlay()">
-	<music-service
-		ng-click="$event.stopPropagation()"
-		ng-show="$ctrl.showModal"
-		is-shown="true">
-	</music-service>
-</div>
+<music-service
+	is-shown="$ctrl.showModal">
+</music-service>

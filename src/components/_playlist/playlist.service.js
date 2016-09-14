@@ -72,6 +72,9 @@ class PlaylistService {
 	_normalizeServicePlaylist(service, response) {
 		return response;
 	}
+	cons() {
+		console.log('kłons');
+	}
 }
 
 export default angular

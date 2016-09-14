@@ -25,7 +25,7 @@ export default class PlaylistController {
 		if (!servicePlaylist) {
 			//@TODO: handle not found 3rd party playlist here
 			// if playlist service not selected
-			console.log('open modal');
+			console.log(`No playlist in ${service}`);
 			return;
 		}
 		this.playerWidgetService.destroy();
