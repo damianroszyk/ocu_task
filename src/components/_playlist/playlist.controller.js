@@ -9,9 +9,9 @@ export default class PlaylistController {
 		metatagsService
 			.clearMetatags()
 			.appendMetatag(`og:image`, this.localPlaylist.image || domConstant.defaultBrandImage)
-			.appendMetatag(`og:title`, `Digster playlist: ${this.localPlaylist.name}`)
-			.appendMetatag(`og:description`, `Digster playlist: ${this.localPlaylist.name}`)
-			.appendMetatag(`description`, `Digster playlist: ${this.localPlaylist.name}`, 'name');
+			.appendMetatag(`og:title`, `${this.localPlaylist.name} - Playlist - Digster`)
+			.appendMetatag(`og:description`, `${this.localPlaylist.description}`)
+			.appendMetatag(`description`, `${this.localPlaylist.description}`, 'name');
 	}
 	showPlayer() {
 		let service = this.serviceDropdown.service.name;

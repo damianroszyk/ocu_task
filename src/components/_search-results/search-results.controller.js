@@ -17,7 +17,7 @@ export default class SearchResultsController {
 		metatagsService
 			.clearMetatags()
 			.appendMetatag(`og:image`, domConstant.defaultBrandImage)
-			.appendMetatag(`og:title`, `Digster search: ${$state.params.query}`)
+			.appendMetatag(`og:title`, `${$state.params.query} - Search - Digster`)
 			.appendMetatag(`og:description`, `Digster search: ${$state.params.query}`)
 			.appendMetatag(`description`, `Digster search: ${$state.params.query}`, 'name');
 	}
