@@ -1,3 +1,4 @@
+import './category-id.service';
 import './deezer.service';
 import './dispatcher.service';
 import './dom-helper.service';
