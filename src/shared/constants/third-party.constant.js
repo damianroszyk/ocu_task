@@ -14,7 +14,10 @@ const THIRD_PARTY_CONSTANT = {
 		name : 'spotify',
 		logo : '/shared/images/icons/spotify-icon--black.png'
 	}],
-	defaultService: 1
+	defaultService: [{
+		name : 'empty',
+		logo : '/shared/images/icons/spotify-icon--black.png'
+	}]
 };
 
 export default angular

@@ -2,10 +2,10 @@ import _ from 'lodash';
 
 export default class PlaylistController {
 	/* @ngInject */
-	constructor(breadcrumbService, playerWidgetService, serviceDropdown, metatagsService, domConstant) {
+	constructor(breadcrumbService, playerWidgetService, musicService, metatagsService, domConstant) {
 		breadcrumbService.buildPlaylistBreadcrumb(this.localPlaylist);
 		this.playerWidgetService = playerWidgetService;
-		this.serviceDropdown = serviceDropdown;
+		this.musicService = musicService;
 		metatagsService
 			.clearMetatags()
 			.appendMetatag(`og:image`, this.localPlaylist.image || domConstant.defaultBrandImage)
@@ -14,7 +14,7 @@ export default class PlaylistController {
 			.appendMetatag(`description`, `${this.localPlaylist.description}`, 'name');
 	}
 	showPlayer() {
-		let service = this.serviceDropdown.service.name;
+		let service = this.musicService.service.name;
 		let servicePlaylist = _.find(this.localPlaylist.external_playlists, {
 			source: service
 		});
@@ -24,6 +24,8 @@ export default class PlaylistController {
 		}
 		if (!servicePlaylist) {
 			//@TODO: handle not found 3rd party playlist here
+			// if playlist service not selected
+			console.log('open modal');
 			return;
 		}
 		this.playerWidgetService.destroy();

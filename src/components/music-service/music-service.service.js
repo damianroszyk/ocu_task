@@ -2,13 +2,13 @@ import angular from 'angular';
 import app from 'app';
 import Observable from 'abstract/observable';
 
-class ServiceDropdownService extends Observable {
+class MusicServiceService extends Observable {
 	/* @ngInject */
 	constructor(storage, thirdPartyConstant) {
 		super();
 		this.storage = storage;
 		this._service = storage.getStorageProperty('preferredService') ||
-			thirdPartyConstant.services[thirdPartyConstant.defaultService];
+			thirdPartyConstant.defaultService[0];
 	}
 	set service(service) {
 		this._service = service;
@@ -22,5 +22,5 @@ class ServiceDropdownService extends Observable {
 
 export default angular
 	.module(app)
-	.service('serviceDropdown', ServiceDropdownService)
+	.service('musicService', MusicServiceService)
 	.name;

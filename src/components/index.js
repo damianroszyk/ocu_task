@@ -11,6 +11,7 @@ import './_tags/';
 import './category-tile/';
 import './category-tiles/';
 import './cookies-message/';
+import './music-service/';
 import './player-widget/';
 import './player-deezer/';
 import './player-spotify/';

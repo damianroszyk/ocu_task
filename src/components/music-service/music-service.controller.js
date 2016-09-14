@@ -1,16 +1,16 @@
 import _ from 'lodash';
 
-export default class ServiceDropdown {
+export default class MusicService {
 	/* @ngInject */
-	constructor($scope, thirdPartyConstant, serviceDropdown) {
+	constructor($scope, thirdPartyConstant, musicService) {
 		$scope.$on('$stateChangeSuccess', this.closeDropdown.bind(this));
 		this.services = angular.copy(thirdPartyConstant.services);
-		this.serviceDropdown = serviceDropdown;
+		this.musicService = musicService;
 		this._getPreferredService();
 	}
 	_getPreferredService() {
 		angular.forEach(this.services, service => {
-			service.selected = this.serviceDropdown.service.name === service.name;
+			service.selected = this.musicService.service.name === service.name;
 		});
 	}
 	closeDropdown() {
@@ -25,7 +25,7 @@ export default class ServiceDropdown {
 	}
 	save() {
 		let selectedService = _.filter(this.services, service => service.selected)[0];
-		this.serviceDropdown.service = selectedService;
+		this.musicService.service = selectedService;
 		this.closeDropdown();
 	}
 }
