@@ -7,7 +7,7 @@
 		<div
 			class="play-button-overlay"
 			ga-track-event="['Playlist', 'Play', $ctrl.playlist.name]"
-			ng-click="$ctrl.onPlayButtonClick()">
+			ng-click="$ctrl.onPlayButtonClick(); $event.stopPropagation()">
 		</div>
     </div>
     <div class="playlist-header__column-right--top">
@@ -46,6 +46,12 @@
 		</button>
 	</div>
 </header>
-<div class="music-service-modal">
-	<music-service is-shown="false"></music-service>
-</div>
+<!-- <div
+	class="music-service-modal"
+	ng-show="$ctrl.showModal"
+	ng-click="$ctrl.closeModalOverlay()"> -->
+	<music-service
+		ng-click="$event.stopPropagation()"
+		ng-show="$ctrl.showModal">
+	</music-service>
+<!-- </div> -->
