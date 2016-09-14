@@ -28,6 +28,6 @@ export default class MusicService {
 		let selectedService = _.filter(this.services, service => service.selected)[0];
 		this.musicService.service = selectedService;
 		this.closeDropdown();
-		this.playlistService.cons();
+		this.playlistService.showPlayer(this.playlist);
 	}
 }

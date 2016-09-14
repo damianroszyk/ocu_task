@@ -5,7 +5,8 @@ import template from 'text!./music-service.html';
 import controller from './music-service.controller';
 
 let bindings = {
-	isShown: '='
+	isShown: '=',
+	playlist: '<'
 };
 
 export default angular
