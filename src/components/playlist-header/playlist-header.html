@@ -46,12 +46,13 @@
 		</button>
 	</div>
 </header>
-<!-- <div
+<div
 	class="music-service-modal"
 	ng-show="$ctrl.showModal"
-	ng-click="$ctrl.closeModalOverlay()"> -->
+	ng-click="$ctrl.closeModalOverlay()">
 	<music-service
 		ng-click="$event.stopPropagation()"
-		ng-show="$ctrl.showModal">
+		ng-show="$ctrl.showModal"
+		is-shown="true">
 	</music-service>
-<!-- </div> -->
+</div>
