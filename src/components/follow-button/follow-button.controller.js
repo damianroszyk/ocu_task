@@ -1,21 +1,25 @@
 export default class FollowButtonController {
 	/* @ngInject */
-	constructor($state, Analytics, serviceDropdown, spotify, deezer) {
+	constructor($scope, $state, Analytics, serviceDropdown, spotify, deezer) {
 		this.$state = $state;
 		this.serviceDropdown = serviceDropdown;
 		this.Analytics = Analytics;
 		this.spotify = spotify;
 		this.deezer = deezer;
+		serviceDropdown.registerObserver(() => this._unsetFollowedPlaylist());
 	}
 	onFollowClick() {
 		let category = this.$state.is('home') ? 'Home' : 'Category';
-		// this.Analytics.trackEvent(category, 'Follow', this.playlist.name);
+		this.Analytics.trackEvent(category, 'Follow', this.playlist.name);
 		if (this.serviceDropdown.isSpotify()) {
 			this._followPlaylistOnSpotify();
 		}
 		if (this.serviceDropdown.isDeezer()) {
 			this._followPlaylistOnDeezer();
 		}
+	}
+	_unsetFollowedPlaylist() {
+		this.followed = false;
 	}
 	_followPlaylistOnSpotify() {
 		this.spotify
