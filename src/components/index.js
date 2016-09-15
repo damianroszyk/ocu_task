@@ -13,7 +13,7 @@ import './category-tiles/';
 import './cookies-message/';
 import './follow-button/';
 import './music-providers/';
-// import './music-provider-modal/';
+import './music-provider-modal/';
 import './player-widget/';
 import './player-deezer/';
 import './player-spotify/';

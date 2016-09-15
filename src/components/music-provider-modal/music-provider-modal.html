@@ -1,37 +1,22 @@
 <div
-	class="music-service-wrapper"
+	class="music-provider-modal"
 	ng-show="$ctrl.isShown">
-	<div class="service-dropdown">
+	<div
+		class="provider-modal__backdrop animated"
+		ng-show="$ctrl.isShown"
+		ng-click="$ctrl.closeModal()">
+	</div>
+	<div class="provider-modal">
 		<p
-			class="service-dropdown__title text--xl"
+			class="provider-modal__title text--xl"
 			translate="{{::'SELECT_MUSIC'}}">
 		</p>
 		<span
 			class="icon-close-white--rounded"
-			ng-click="$ctrl.closeDropdown()">
+			ng-click="$ctrl.closeModal()">
 		</span>
-		<div class="service-dropdown-providers-wrapper">
-			<div
-				class="service-dropdown__provider"
-				ng-repeat="service in ::$ctrl.services"
-				ng-class="{
-					'service-dropdown__provider--disabled': service.disabled,
-					'service-dropdown__provider--selected': service.selected
-				}"
-				ng-click="$ctrl.selectService(service)">
-				<img
-					class="service-dropdown__provider-logo"
-					ng-src="{{service.logo}}" />
-				<p class="service-dropdown__provider-name text--lg">
-					{{service.name}}
-				</p>
-			</div>
-		</div>
-		<div class="clear-both"></div>
-		<button
-			class="btn-circled service-dropdown__save-button"
-			ng-click="$ctrl.save()">
-			Save
-		</button>
+		<music-providers
+			on-save="$ctrl.closeModal()">
+		</music-providers>
 	</div>
 </div>
