@@ -2,7 +2,7 @@ import angular from 'angular';
 import app from 'app';
 
 const THIRD_PARTY_CONSTANT = {
-	services: [{
+	providers: [{
 		name : 'apple',
 		logo : '/shared/images/icons/apple-icon--black.png'
 	}, {

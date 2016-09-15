@@ -12,7 +12,7 @@ import './category-tile/';
 import './category-tiles/';
 import './cookies-message/';
 import './follow-button/';
-// import './music-service/';
+// import './music-service-modal/';
 import './player-widget/';
 import './player-deezer/';
 import './player-spotify/';

@@ -1,0 +1,36 @@
+<div
+	class="music-provider-dropdown"
+	click-outside="$ctrl.closeDropdown()"
+	ng-show="$ctrl.isShown">
+	<p
+		class="music-provider-dropdown__title text--xl"
+		translate="{{::'SELECT_MUSIC'}}">
+	</p>
+	<span
+		class="icon-close-white--rounded"
+		ng-click="$ctrl.closeDropdown()">
+	</span>
+	<div class="music-provider-dropdown-providers-wrapper">
+		<div
+			class="music-provider-dropdown__provider"
+			ng-repeat="provider in ::$ctrl.providers"
+			ng-class="{
+				'music-provider-dropdown__provider--disabled': provider.disabled,
+				'music-provider-dropdown__provider--selected': provider.selected
+			}"
+			ng-click="$ctrl.selectProvider(provider)">
+			<img
+				class="music-provider-dropdown__provider-logo"
+				ng-src="{{::provider.logo}}" />
+			<p class="music-provider-dropdown__provider-name text--lg">
+				{{::provider.name}}
+			</p>
+		</div>
+	</div>
+	<div class="clear-both"></div>
+	<button
+		class="btn-circled music-provider-dropdown__save-button"
+		ng-click="$ctrl.save()">
+		Save
+	</button>
+</div>
