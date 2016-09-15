@@ -10,7 +10,8 @@ export default class ServiceDropdown {
 	}
 	_getPreferredService() {
 		angular.forEach(this.services, service => {
-			service.selected = this.serviceDropdown.service.name === service.name;
+			service.selected = this.serviceDropdown.service &&
+				this.serviceDropdown.service.name === service.name;
 		});
 	}
 	closeDropdown() {

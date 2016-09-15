@@ -19,30 +19,60 @@ class DeezerService {
 			.then(() => this._handleDeezerSdkScript());
 	}
 	authorize() {
+		let deferredAuthorization = this.$q.defer();
+		let perms = this.thirdPartyConstant.deezerScopes.join(',');
 		this.deferredDeezerSdk.promise.then(() => {
 			this.dz.login(response => {
-				console.log('response', response);
+				return response.authResponse ?
+					deferredAuthorization.resolve() :
+					deferredAuthorization.reject();
+			}, { perms });
+		});
+		return deferredAuthorization.promise;
+	}
+	authorizeIfNeccessary() {
+		let deferredAuthorization = this.$q.defer();
+		this.deferredDeezerSdk.promise.then(() => {
+			this.dz.getLoginStatus(response => {
+				if (response.authResponse) {
+					deferredAuthorization.resolve();
+				} else {
+					this.authorize().then(() => deferredAuthorization.resolve());
+				}
 			});
 		});
+		return deferredAuthorization.promise;
 	}
-	fetch(resource) {
+	_request(resource, method = false, params) {
 		let deferredRequest = this.$q.defer();
-		this.deferredDeezerSdk.promise.then(() =>
-			this.dz.api(resource, response => deferredRequest.resolve(response))
-		);
+		this.deferredDeezerSdk.promise.then(() => {
+			if (method && params) {
+				this.dz.api(resource, method, params, response =>
+					deferredRequest.resolve(response)
+				);
+			} else {
+				this.dz.api(resource, response =>
+					deferredRequest.resolve(response)
+				);
+			}
+		});
 		return deferredRequest.promise;
 	}
 	getPlaylist(playlistId) {
-		return this.fetch(`/playlist/${playlistId}`);
+		return this._request(`/playlist/${playlistId}`);
 	}
 	getTrack(trackId) {
-		return this.fetch(`/track/${trackId}`);
+		return this._request(`/track/${trackId}`);
+	}
+	followPlaylist(playlistId) {
+		let params = { playlist_id: playlistId };
+		return this._request(`/user/${this.dz.user_id}/playlists`, 'POST', params);
 	}
 	_handleDeezerSdkScript() {
 		this.dz = window.DZ;
 		this.dz.init({
 			appId: this.thirdPartyConstant.deezerAppId,
-			channelUrl: `${window.location.origin}/channel.html`,
+			channelUrl: this.thirdPartyConstant.deezerRedirectUri,
 			player: {
 				onload: this._handleDeezerPlayerIsLoaded.bind(this)
 			}

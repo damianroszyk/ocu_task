@@ -9,7 +9,7 @@ export default class FollowButtonController {
 	}
 	onFollowClick() {
 		let category = this.$state.is('home') ? 'Home' : 'Category';
-		this.Analytics.trackEvent(category, 'Follow', this.playlist.name);
+		// this.Analytics.trackEvent(category, 'Follow', this.playlist.name);
 		if (this.serviceDropdown.isSpotify()) {
 			this._followPlaylistOnSpotify();
 		}
@@ -28,7 +28,11 @@ export default class FollowButtonController {
 				.then(() => this.followed = 'spotify');
 	}
 	_followPlaylistOnDeezer() {
-		this.deezer.authorize()
-			.then(response => console.log('response', response))
+		this.deezer.authorizeIfNeccessary()
+			.then(() => this.deezer
+				.followPlaylist(
+					this.playlist.deezer.service_playlist_id
+				))
+				.then(() => this.followed = 'deezer');
 	}
 }

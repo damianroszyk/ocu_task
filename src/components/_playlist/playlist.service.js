@@ -4,14 +4,14 @@ import app from 'app';
 
 class PlaylistService {
 	/* @ngInject */
-	constructor($http, $q, deezer, backendConstant, domConstant, modelHelper, playerWidgetService, musicService) {
+	constructor($http, $q, deezer, backendConstant, domConstant, modelHelper, playerWidgetService) {
 		this.$http = $http;
 		this.$q = $q;
 		this.deezer = deezer;
 		this.modelHelper = modelHelper;
 		this.domConstant = domConstant;
 		this.playerWidgetService = playerWidgetService;
-		this.musicService = musicService;
+		// this.musicService = musicService;
 		this.backendConstant = backendConstant;
 		this.playlistBackend = this.modelHelper.buildUrl(
 			backendConstant.apiVersion, 'playlist'

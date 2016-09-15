@@ -7,8 +7,7 @@ class ServiceDropdownService extends Observable {
 	constructor(storage, thirdPartyConstant) {
 		super();
 		this.storage = storage;
-		this._service = storage.getStorageProperty('preferredService') ||
-			thirdPartyConstant.defaultService[0];
+		this._service = storage.getStorageProperty('preferredService');
 	}
 	set service(service) {
 		this._service = service;

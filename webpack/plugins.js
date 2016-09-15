@@ -13,6 +13,9 @@ var plugins = [
 		from: 'src/channel-spotify.html',
 		to: 'channel-spotify.html'
 	}, {
+		from: 'src/channel-deezer.html',
+		to: 'channel-deezer.html'
+	}, {
 		from: 'src/shared/images/',
 		to: 'shared/images/'
 	}, {
