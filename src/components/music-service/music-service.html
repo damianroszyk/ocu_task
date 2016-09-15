@@ -1,0 +1,37 @@
+<div
+	class="music-service-wrapper"
+	ng-show="$ctrl.isShown">
+	<div class="service-dropdown">
+		<p
+			class="service-dropdown__title text--xl"
+			translate="{{::'SELECT_MUSIC'}}">
+		</p>
+		<span
+			class="icon-close-white--rounded"
+			ng-click="$ctrl.closeDropdown()">
+		</span>
+		<div class="service-dropdown-providers-wrapper">
+			<div
+				class="service-dropdown__provider"
+				ng-repeat="service in ::$ctrl.services"
+				ng-class="{
+					'service-dropdown__provider--disabled': service.disabled,
+					'service-dropdown__provider--selected': service.selected
+				}"
+				ng-click="$ctrl.selectService(service)">
+				<img
+					class="service-dropdown__provider-logo"
+					ng-src="{{service.logo}}" />
+				<p class="service-dropdown__provider-name text--lg">
+					{{service.name}}
+				</p>
+			</div>
+		</div>
+		<div class="clear-both"></div>
+		<button
+			class="btn-circled service-dropdown__save-button"
+			ng-click="$ctrl.save()">
+			Save
+		</button>
+	</div>
+</div>

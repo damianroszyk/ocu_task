@@ -12,7 +12,6 @@ const THIRD_PARTY_CONSTANT = {
 		name : 'spotify',
 		logo : '/shared/images/icons/spotify-icon--black.png'
 	}],
-	defaultService: 1,
 	authWindowWidth: 450,
 	authWindowHeight: 730,
 	deezerSdkUrl: 'https://cdns-files.dzcdn.net/js/min/dz.js',

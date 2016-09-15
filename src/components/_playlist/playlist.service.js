@@ -4,12 +4,14 @@ import app from 'app';
 
 class PlaylistService {
 	/* @ngInject */
-	constructor($http, $q, deezer, backendConstant, domConstant, modelHelper) {
+	constructor($http, $q, deezer, backendConstant, domConstant, modelHelper, playerWidgetService, musicService) {
 		this.$http = $http;
 		this.$q = $q;
 		this.deezer = deezer;
 		this.modelHelper = modelHelper;
 		this.domConstant = domConstant;
+		this.playerWidgetService = playerWidgetService;
+		this.musicService = musicService;
 		this.backendConstant = backendConstant;
 		this.playlistBackend = this.modelHelper.buildUrl(
 			backendConstant.apiVersion, 'playlist'
@@ -71,6 +73,30 @@ class PlaylistService {
 	}
 	_normalizeServicePlaylist(service, response) {
 		return response;
+	}
+	showPlayer(playlist) {
+		let service = this.musicService.service.name;
+		let servicePlaylist = _.find(playlist.external_playlists, {
+			source: service
+		});
+		if (service === 'apple') {
+			window.open(playlist.apple_music_link || 'https://itunes.apple.com/us/curator/digster/id1018903101');
+			return;
+		}
+		if (!servicePlaylist) {
+			//@TODO: handle not found 3rd party playlist here
+			console.log(`No playlist in ${service}`);
+			return;
+		}
+		this.playerWidgetService.destroy();
+		this.playerWidgetService.player = {
+			service,
+			servicePlaylistId: servicePlaylist.service_playlist_id,
+			serviceUserId: servicePlaylist.service_user_id,
+			localPlaylistId: playlist.id,
+			show: true
+		};
+		this.playerWidgetService.notify();
 	}
 }
 

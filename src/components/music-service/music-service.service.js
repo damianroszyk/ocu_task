@@ -2,7 +2,7 @@ import angular from 'angular';
 import app from 'app';
 import Observable from 'abstract/observable';
 
-class ServiceDropdownService extends Observable {
+class MusicServiceService extends Observable {
 	/* @ngInject */
 	constructor(storage, thirdPartyConstant) {
 		super();
@@ -18,18 +18,9 @@ class ServiceDropdownService extends Observable {
 	get service() {
 		return this._service;
 	}
-	isSet() {
-		return this._service && this._service.name;
-	}
-	isSpotify() {
-		return this._service && this._service.name === 'spotify';
-	}
-	isDeezer() {
-		return this._service && this._service.name === 'deezer';
-	}
 }
 
 export default angular
 	.module(app)
-	.service('serviceDropdown', ServiceDropdownService)
+	.service('musicService', MusicServiceService)
 	.name;
