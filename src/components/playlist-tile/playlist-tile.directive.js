@@ -42,7 +42,7 @@ let playlistTile = responsiveService => {
 					.off('mouseleave');
 
 				let listenerHandler = rwdClass =>
-					rwdClass !== 'xs' && controller.layout !== 'horizontal' ?
+					rwdClass !== 'md' && controller.layout !== 'horizontal' ?
 						registerListener() : unregisterListener();
 
 				responsiveService.registerObserver(listenerHandler);

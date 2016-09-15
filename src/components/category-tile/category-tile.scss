@@ -3,6 +3,8 @@
 
 $category-tile-width: 275px;
 $category-tile-height: 275px;
+$category-tile-width--md: 180px;
+$category-tile-height--md: 180px;
 
 $category-tile-border-height: 5px;
 $category-tile-border-height--xs: 3px;
@@ -10,9 +12,11 @@ $category-tile-border-height--xs: 3px;
 $category-tile-height--featured: 2 * $category-tile-height + $distance-md;
 $category-tile-offset: 24px;
 $category-tile-offset--xs: 10px;
+$category-tile-offset--md: 16px;
 
 $category-tile-control-radius: 45px;
 $category-tile-control-radius--xs: 25px;
+$category-tile-control-radius--md: 38px;
 
 category-tile {
 	@include fade-in();
@@ -34,6 +38,12 @@ category-tile {
 
 	.xs &:nth-child(2n) {
 		margin-right: 0;
+	}
+
+	.md & {
+		width: $category-tile-width--md;
+	    height: $category-tile-height--md;
+		margin: 0 $category-tile-offset--md $category-tile-offset--md 0;
 	}
 }
 
@@ -63,6 +73,10 @@ category-tile {
 	.xs & {
 		@include position-absolute(auto, $distance-sm, $distance-sm, 13px);
 	}
+
+	.md & {
+		@include position-absolute(auto, 15px, 15px, 15px);
+	}
 }
 
 .category-tile__icon {
@@ -77,6 +91,10 @@ category-tile {
 
 	.xs & {
 		font-size: 21px;
+	}
+
+	.md & {
+		font-size: 25px;
 	}
 }
 
@@ -98,6 +116,13 @@ category-tile {
 		width: $category-tile-control-radius--xs;
 		height: $category-tile-control-radius--xs;
 		border: 1px solid $white;
+	}
+
+	.md & {
+		width: $category-tile-control-radius--md;
+		height: $category-tile-control-radius--md;
+		top: 15px;
+		right: 15px;
 	}
 
 	.category-tile__subcategories & {

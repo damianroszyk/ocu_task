@@ -9,6 +9,8 @@ $playlist-tile-height--horizontal: 180px;
 $column-right--horizontal: 977px;
 $playlist-tile-description-font: 15px;
 
+$playlist-tile-width--md: 180px;
+
 playlist-tile {
 	@include border-bottom(6px, solid, $grey-3);
 	@include fade-in();
@@ -51,6 +53,13 @@ playlist-tile {
 		&:nth-child(2n) {
 			margin-right: 0;
 		}
+	}
+
+	.md & {
+		width: $playlist-tile-width--md;
+		margin: 0 16px 16px 0;
+		height: 410px;
+		min-height: 0;
 	}
 }
 
@@ -130,6 +139,10 @@ playlist-tile {
 		margin-left: $distance-sm;
 	}
 
+	.md & {
+		margin-left: $distance-sm;
+	}
+
 	.playlist-tiles--horizontal & {
 		text-transform: none;
 		margin-bottom: 5px;
@@ -148,6 +161,10 @@ playlist-tile {
 	.xs & {
 		display: none;
 	}
+
+	.md & {
+		display: none;
+	}
 }
 
 .playlist-tile-meta__dash--xs {
@@ -156,6 +173,10 @@ playlist-tile {
 	display: none;
 
 	.xs & {
+		display: block;
+	}
+
+	.md & {
 		display: block;
 	}
 }
@@ -170,6 +191,10 @@ playlist-tile {
 	.xs & {
 		padding: 0 $distance-sm 0 $distance-md;
 	}
+
+	.md & {
+		padding: 0 $distance-sm 0 $distance-md;
+	}
 }
 
 .playlist-tile-description {
@@ -182,6 +207,10 @@ playlist-tile {
 		height: 70px;
 		font-size: $playlist-tile-description-font;
 	}
+
+	.md & {
+		height: 92px;
+	}
 }
 
 .playlist-tile-description__content {
@@ -192,6 +221,10 @@ playlist-tile {
 	font-weight: 600;
 
 	.xs & {
+		font-weight: 400;
+	}
+
+	.md & {
 		font-weight: 400;
 	}
 
@@ -232,6 +265,10 @@ playlist-tile {
 		border-radius: 23px;
 		margin-bottom: 0;
 		display: block;
+		margin-left: $distance-md;
+	}
+
+	.md & {
 		margin-left: $distance-md;
 	}
 
