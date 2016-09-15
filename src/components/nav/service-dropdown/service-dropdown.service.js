@@ -18,6 +18,15 @@ class ServiceDropdownService extends Observable {
 	get service() {
 		return this._service;
 	}
+	isSet() {
+		return this._service && this._service.name;
+	}
+	isSpotify() {
+		return this._service && this._service.name === 'spotify';
+	}
+	isDeezer() {
+		return this._service && this._service.name === 'deezer';
+	}
 }
 
 export default angular

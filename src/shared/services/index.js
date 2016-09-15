@@ -1,5 +1,6 @@
 import './category-id.service';
 import './deezer.service';
+import './spotify.service';
 import './dispatcher.service';
 import './dom-helper.service';
 import './metatags.service';

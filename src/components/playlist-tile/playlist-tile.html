@@ -25,7 +25,7 @@
 			<div class="playlist-tile-description">
 				<p
 					class="playlist-tile-description__content"
-					ng-bind-html="$ctrl.playlistDescription()">
+					ng-bind-html="$ctrl.playlistDescriptionHTML">
 				</p>
 			</div>
 			<span class="playlist-tile__duration">
@@ -34,12 +34,10 @@
 				{{::$ctrl.playlist.total_duration | convertSeconds:'hours'}}
 			</span>
 		</div>
-		<button
-			class="btn-circled playlist-tile__button"
-			ng-click="$ctrl.onFollowClick()"
-			type="button">
-			Follow
-		</button>
+		<follow-button
+			class="playlist-tile__button"
+			playlist="$ctrl.playlist">
+		</follow-button>
 	</figcaption>
 	<div class="playlist-tile__tags-wrapper">
 		<playlist-tags

@@ -4,7 +4,9 @@ import app from 'app';
 /* @ngInject */
 let requestInterceptorFactory = (backendConstant) => {
 	let request = config => {
-		config.headers.brand = backendConstant.clientBrand;
+		if (config.url.indexOf('spotify') < 0) {
+			config.headers.brand = backendConstant.clientBrand;
+		}
 		return config;
 	};
 	return { request };

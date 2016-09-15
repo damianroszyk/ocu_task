@@ -56,6 +56,10 @@ $lg-icon: 50px;
 	@include icon($md-icon, '/shared/images/icons/spotify-icon.png');
 }
 
+.icon-spotify--black {
+	@include icon($md-icon, '/shared/images/icons/spotify-icon--black.png');
+}
+
 .icon-email {
 	@include icon($md-icon, '/shared/images/icons/email-icon.png');
 }
