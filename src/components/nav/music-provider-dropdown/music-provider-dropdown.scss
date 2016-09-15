@@ -5,9 +5,6 @@ $music-provider-dropdown-width: 680px;
 $music-provider-dropdown-height: 300px;
 $music-provider-dropdown-width--xs: 100%;
 $music-provider-dropdown-height--xs: auto;
-$service-provider-width: 180px;
-$service-provider-height: 95px;
-$service-provider-margin: 30px;
 
 .music-provider-dropdown {
 	@include position-absolute(96px, auto, auto, 61px);
@@ -42,59 +39,4 @@ $service-provider-margin: 30px;
 	.xs & {
 		padding-right: 30px;
 	}
-}
-
-.music-provider-dropdown__provider {
-	float: left;
-	width: $service-provider-width;
-	height: $service-provider-height;
-	background-color: $grey-2;
-	margin-right: $service-provider-margin;
-	text-align: center;
-	padding: $distance-sm $distance-md;
-    box-sizing: border-box;
-	cursor: pointer;
-	border: 5px solid $grey-2;
-	transition: border .2s ease;
-
-	&:last-child {
-		margin-right: 0;
-	}
-
-	&--selected,
-	&:hover {
-		border: 5px solid $green;
-	}
-
-	.xs & {
-		margin-right: 5vw;
-		width: 41.5vw;
-		margin-bottom: 5vw;
-
-		&:nth-child(2n) {
-			margin-right: 0;
-		}
-	}
-}
-
-.music-provider-dropdown__provider--disabled {
-	opacity: .1;
-	cursor: not-allowed;
-}
-
-.music-provider-dropdown__provider-name {
-	margin: 0;
-
-	&::first-letter {
-		text-transform: uppercase;
-	}
-}
-
-.music-provider-dropdown__provider-logo {
-	max-height: 38px;
-}
-
-.music-provider-dropdown__save-button {
-	@include position-absolute(auto, auto, 40px, auto);
-	width: 95px;
 }

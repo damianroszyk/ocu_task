@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-export default class MusicServiceModal {
+export default class MusicProviderModal {
 	/* @ngInject */
 	constructor($scope, thirdPartyConstant, playlistService) {
 		$scope.$on('$stateChangeSuccess', this.closeDropdown.bind(this));
