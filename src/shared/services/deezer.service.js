@@ -18,6 +18,13 @@ class DeezerService {
 			.loadScript(this.thirdPartyConstant.deezerSdkUrl)
 			.then(() => this._handleDeezerSdkScript());
 	}
+	authorize() {
+		this.deferredDeezerSdk.promise.then(() => {
+			this.dz.login(response => {
+				console.log('response', response);
+			});
+		});
+	}
 	fetch(resource) {
 		let deferredRequest = this.$q.defer();
 		this.deferredDeezerSdk.promise.then(() =>
