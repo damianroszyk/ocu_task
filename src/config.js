@@ -5,7 +5,11 @@ import app from 'app';
 let config = ($locationProvider, $urlRouterProvider, $translateProvider, cfpLoadingBarProvider) => {
 	$urlRouterProvider.otherwise('/');
 	cfpLoadingBarProvider.includeSpinner = false;
-	$locationProvider.hashPrefix('!');
+
+	$locationProvider
+		.html5Mode(true)
+		.hashPrefix('!');
+
 	$translateProvider
 		.preferredLanguage('en_US')
 		.useSanitizeValueStrategy('escape')
