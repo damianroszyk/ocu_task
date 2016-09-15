@@ -11,7 +11,7 @@ const DOM_CONSTANT = {
 	},
 	defaultHeaderBackgroundImage: '/shared/images/images/lorde_header.jpg',
 	defaultSearchTileImage: '/shared/images/images/search-tile_image.jpg',
-	defaultBrandImage: 'http://digster.fm/wp-content/themes/digster/images/logo-header.png',
+	defaultBrandImage: '/shared/images/images/digster_logo.png',
 	defaultCategoryTileImage: 'shared/images/default_artist_cover.png'
 };
 

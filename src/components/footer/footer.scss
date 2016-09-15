@@ -17,7 +17,8 @@ $footer-height: 300px;
 }
 
 .footer__brand-image {
-	height: 3 * $distance-lg;
+	height: 3 * $distance-md;
+	margin-top: $distance-md;
 }
 
 .footer-footnote__copyright,
@@ -40,5 +41,14 @@ $footer-height: 300px;
 .footer__icons {
 	.xs & {
 		margin-top: 30px;
+	}
+}
+
+.footer__icon {
+	margin-left: $distance-sm;
+    text-decoration: none;
+
+	&:first-child {
+		margin-left: 0;
 	}
 }
