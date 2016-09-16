@@ -6,7 +6,7 @@ import { featuredPlaylists } from 'playlist/playlist.resolvers';
 
 const HOME_ROUTER = {
 	homeState: {
-		url: '/',
+		url: '^/',
 		template: `
 			<home
 				categories="$resolve.categories"

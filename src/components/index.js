@@ -2,8 +2,8 @@ import './footer/';
 import './header/';
 import './nav/';
 
-import './_category/';
 import './_home/';
+import './_category/';
 import './_playlist/';
 import './_search-results/';
 import './_tags/';
