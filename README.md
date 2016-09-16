@@ -13,9 +13,11 @@ npm install
 npm start
 ```
 
-## Building production application
+## Building application for specific environment
+'env' parameter value is representing JSON file that contains environment-specific variables and needs to be defined in variables directory.
+QA variables are used by default
 ```
-npm run build
+npm run build -- --env=dev|qa|stg
 ```
 
 ## Linting files
