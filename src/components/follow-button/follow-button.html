@@ -1,0 +1,12 @@
+<button
+	class="btn-circled follow-button"
+	ng-click="$ctrl.onFollowClick()"
+	ng-disabled="$ctrl.followed"
+	type="button">
+	<span ng-hide="$ctrl.followed">
+		Follow
+	</span>
+	<span ng-show="$ctrl.followed">
+		Following
+	</span>
+</button>

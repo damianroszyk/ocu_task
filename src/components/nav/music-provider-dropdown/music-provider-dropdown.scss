@@ -1,0 +1,42 @@
+@import '../../../shared/styles/variables';
+@import '../../../shared/styles/mixins';
+
+$music-provider-dropdown-width: 680px;
+$music-provider-dropdown-height: 300px;
+$music-provider-dropdown-width--xs: 100%;
+$music-provider-dropdown-height--xs: auto;
+
+.music-provider-dropdown {
+	@include position-absolute(96px, auto, auto, 61px);
+	font-size: initial;
+	background-color: $grey-7;
+    z-index: $z-index-5;
+	height: $music-provider-dropdown-height;
+	width: $music-provider-dropdown-width;
+	line-height: initial;
+	font-weight: 400;
+	padding: $distance-md $distance-lg $distance-lg;
+	box-sizing: border-box;
+
+	.xs & {
+		top: 56px;
+		left: auto;
+		width: $music-provider-dropdown-width--xs;
+	    height: $music-provider-dropdown-height--xs;
+		padding: 6%;
+		padding-bottom: 100px;
+	}
+}
+
+.music-provider-dropdown__title {
+	color: $white;
+	margin: 0 0 3 * $distance-sm;
+
+	&::first-letter {
+		text-transform: uppercase;
+	}
+
+	.xs & {
+		padding-right: 30px;
+	}
+}

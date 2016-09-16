@@ -2,9 +2,7 @@ import angular from 'angular';
 import app from 'app';
 
 const THIRD_PARTY_CONSTANT = {
-	deezerSdkUrl: 'https://cdns-files.dzcdn.net/js/min/dz.js',
-	deezerAppId: 1,
-	services: [{
+	providers: [{
 		name : 'apple',
 		logo : '/shared/images/icons/apple-icon--black.png'
 	}, {
@@ -14,7 +12,18 @@ const THIRD_PARTY_CONSTANT = {
 		name : 'spotify',
 		logo : '/shared/images/icons/spotify-icon--black.png'
 	}],
-	defaultService: 1
+	authWindowWidth: 450,
+	authWindowHeight: 730,
+	deezerRedirectUri: `${window.location.origin}/channel-deezer.html`,
+	deezerSdkUrl: 'https://cdns-files.dzcdn.net/js/min/dz.js',
+	deezerAppId: 191082,
+	deezerScopes: ['basic_access', 'email', 'manage_library'],
+	spotifyApiUrl: 'https://api.spotify.com/v1',
+	spotifyAuthUrl: 'https://accounts.spotify.com/authorize',
+	spotifyScopes: ['user-read-email', 'playlist-modify-public', 'playlist-modify-private'],
+	spotifyRedirectUrl: `${window.location.origin}/channel-spotify.html`,
+	spotifyClientId: 'a4cbbe2aece14f1cb7c0159d866156cb', // dev
+	// spotifyClientId: '5bad0bd0b3104fe2a52380ae24673078' // remote
 };
 
 export default angular

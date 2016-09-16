@@ -2,9 +2,11 @@ import angular from 'angular';
 import app from 'app';
 
 /* @ngInject */
-let config = ($locationProvider, $urlRouterProvider, $translateProvider, cfpLoadingBarProvider) => {
+let config = ($locationProvider, $compileProvider, $urlRouterProvider, $translateProvider, cfpLoadingBarProvider) => {
+
 	$urlRouterProvider.otherwise('/');
 	cfpLoadingBarProvider.includeSpinner = false;
+	$compileProvider.debugInfoEnabled(false);
 
 	$locationProvider
 		.html5Mode(true)

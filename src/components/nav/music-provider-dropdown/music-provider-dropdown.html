@@ -1,0 +1,17 @@
+<div
+	class="music-provider-dropdown"
+	click-outside="$ctrl.closeDropdown()"
+	ng-show="$ctrl.isShown">
+	<p
+		class="music-provider-dropdown__title text--xl"
+		translate="{{::'SELECT_MUSIC'}}">
+	</p>
+	<span
+		class="icon-close-white--rounded"
+		ng-click="$ctrl.closeDropdown()">
+	</span>
+	<music-providers
+		ng-if="$ctrl.isShown"
+		on-save="$ctrl.closeDropdown()">
+	</music-providers>
+</div>

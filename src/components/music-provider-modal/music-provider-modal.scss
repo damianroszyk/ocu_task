@@ -1,0 +1,60 @@
+@import '../../shared/styles/variables';
+@import '../../shared/styles/mixins';
+
+$provider-modal-width: 680px;
+$provider-modal-height: 300px;
+$provider-modal-width--xs: 100%;
+$provider-modal-height--xs: auto;
+
+.music-provider-modal {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	position: fixed;
+	transform-style: preserve-3d;
+	z-index: $z-index-1;
+}
+
+.provider-modal__backdrop {
+	@include position-absolute(0, 0, 0, 0);
+	background: $opacity-5;
+}
+
+.provider-modal {
+	font-size: initial;
+	background-color: $grey-7;
+    z-index: $z-index-5;
+	height: $provider-modal-height;
+	width: $provider-modal-width;
+	line-height: initial;
+	font-weight: 400;
+	padding: $distance-md $distance-lg $distance-lg;
+	box-sizing: border-box;
+	position: relative;
+	top: auto;
+	transform: translateY(100%);
+	left: auto;
+	margin: 0 auto;
+
+	.xs & {
+		top: 56px;
+		left: auto;
+		width: $provider-modal-width--xs;
+	    height: $provider-modal-height--xs;
+		padding: 6%;
+		padding-bottom: 100px;
+	}
+}
+
+.provider-modal__title {
+	color: $white;
+	margin: 0 0 3 * $distance-sm;
+
+	&::first-letter {
+		text-transform: uppercase;
+	}
+
+	.xs & {
+		padding-right: 30px;
+	}
+}
