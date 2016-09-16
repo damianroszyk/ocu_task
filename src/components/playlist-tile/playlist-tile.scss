@@ -93,10 +93,11 @@ playlist-tile {
 .playlist-tile-meta {
 	@include position-absolute(auto, 0, 0, 0);
 	display: block;
-	min-height: 155px;
+	min-height: 165px;
     overflow: hidden;
 	background-color: $grey-1;
 	box-sizing: border-box;
+	padding-top: $distance-sm;
 
 	.xs & {
 		height: calc(#{$playlist-tile-height} - 48vw);
@@ -226,9 +227,10 @@ playlist-tile {
 
 	.md & {
 		font-weight: 400;
+		font-size: 15px;
 	}
 
-	.playlist-tile--expanded & {
+	.playlist-tile--text-normal & {
 		font-weight: 400;
 	}
 
@@ -251,6 +253,10 @@ playlist-tile {
 
 	.playlist-tiles--horizontal & {
 		display: none;
+	}
+
+	.md & {
+		font-size: 15px;
 	}
 }
 

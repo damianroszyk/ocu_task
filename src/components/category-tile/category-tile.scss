@@ -16,7 +16,7 @@ $category-tile-offset--md: 16px;
 
 $category-tile-control-radius: 45px;
 $category-tile-control-radius--xs: 25px;
-$category-tile-control-radius--md: 38px;
+$category-tile-control-radius--md: 35px;
 
 category-tile {
 	@include fade-in();
@@ -82,6 +82,16 @@ category-tile {
 .category-tile__icon {
 	max-width: $distance-lg;
 	max-height: $distance-lg;
+
+	.md & {
+		max-width: 35px;
+		max-height: 35px;
+	}
+
+	.xs & {
+		max-width: 35px;
+		max-height: 35px;
+	}
 }
 
 .category-tile__title {
