@@ -2,7 +2,8 @@
 	<div
 		class="playlist-tile__image-wrapper"
 		ui-sref="playlist({
-			localPlaylistId: $ctrl.playlist.id
+			localPlaylistId: $ctrl.playlist.id,
+			slug: $ctrl.playlist.slug
 		})">
 		<div class="playlist-tile__overlay"></div>
 		<img
@@ -16,7 +17,8 @@
 		<h3
 			class="playlist-tile-meta__title text--md"
 			ui-sref="playlist({
-				localPlaylistId: $ctrl.playlist.id
+				localPlaylistId: $ctrl.playlist.id,
+				slug: $ctrl.playlist.slug
 			})">
 			{{::$ctrl.playlist.name}}
 		</h3>

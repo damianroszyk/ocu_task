@@ -1,6 +1,6 @@
 /* @ngInject */
 let localPlaylist = ($stateParams, playlistService) =>
-	playlistService.getPlaylist($stateParams.localPlaylistId);
+	playlistService.getPlaylist($stateParams.slug);
 
 /* @ngInject */
 let servicePlaylist = ($stateParams, playlistService) =>
