@@ -1,9 +1,8 @@
 <div
 	class="music-provider-modal"
-	ng-show="$ctrl.isShown">
+	ng-show="$ctrl.isOpened">
 	<div
 		class="provider-modal__backdrop animated"
-		ng-show="$ctrl.isShown"
 		ng-click="$ctrl.closeModal()">
 	</div>
 	<div class="provider-modal">
@@ -16,7 +15,8 @@
 			ng-click="$ctrl.closeModal()">
 		</span>
 		<music-providers
-			on-save="$ctrl.closeModal()">
+			ng-if="$ctrl.isOpened"
+			on-save="$ctrl.onSave()">
 		</music-providers>
 	</div>
 </div>

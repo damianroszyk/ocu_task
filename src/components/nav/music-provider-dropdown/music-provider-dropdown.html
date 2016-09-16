@@ -11,6 +11,7 @@
 		ng-click="$ctrl.closeDropdown()">
 	</span>
 	<music-providers
+		ng-if="$ctrl.isShown"
 		on-save="$ctrl.closeDropdown()">
 	</music-providers>
 </div>

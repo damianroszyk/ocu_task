@@ -20,12 +20,10 @@
 	            <span> songs,</span>
 				{{::$ctrl.playlist.total_duration | convertSeconds:'hours' }}
 	        </p>
-			<button
-				class="playlist-header__follow-button--desktop btn-circled"
-				ga-track-event="['Playlist', 'Follow', $ctrl.playlist.name]"
-				type="button">
-				Follow
-			</button>
+			<follow-button
+				class="playlist-header__follow-button--desktop"
+				playlist="$ctrl.playlist">
+			</follow-button>
 		</div>
 		<div class="playlist-header__social-icons">
 			<span class="icon-twitter--blue-background"></span>
@@ -38,11 +36,10 @@
 			class="playlist-header__description"
 			ng-bind-html="$ctrl.playlistDescription()">
 		</p>
-		<button
-			class="playlist-header__follow-button--mobile btn-circled"
-			ga-track-event="['Playlist', 'Follow', $ctrl.playlist.name]"
-			type="button">
-			Follow
-		</button>
+		<follow-button
+			class="playlist-header__follow-button--mobile"
+			playlist="$ctrl.playlist">
+		</follow-button>
+
 	</div>
 </header>

@@ -9,12 +9,15 @@ export default class FollowButtonController {
 		musicProvider.registerObserver(() => this._unsetFollowedPlaylist());
 	}
 	onFollowClick() {
-		let category = this.$state.is('home') ? 'Home' : 'Category';
-		this.Analytics.trackEvent(category, 'Follow', this.playlist.name);
-		if (this.musicProvider.isSpotify()) {
+		this.Analytics.trackEvent(this.$state.current.name, 'Follow', this.playlist.name);
+		this._followPlaylist();
+	}
+	_followPlaylist() {
+		if (!this.musicProvider.isSet()) {
+			this.musicProvider.openModal(this._followPlaylist.bind(this));
+		} else if (this.musicProvider.isSpotify()) {
 			this._followPlaylistOnSpotify();
-		}
-		if (this.musicProvider.isDeezer()) {
+		} else if (this.musicProvider.isDeezer()) {
 			this._followPlaylistOnDeezer();
 		}
 	}

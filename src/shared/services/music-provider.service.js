@@ -17,7 +17,7 @@ class MusicProviderService extends Observable {
 		this.notifyObservers(this._provider);
 	}
 	get provider() {
-		return this._provider;
+		return this.storage.getStorageProperty(PROVIDER_KEY);
 	}
 	isSet() {
 		return this._provider && this._provider.name;
@@ -27,6 +27,12 @@ class MusicProviderService extends Observable {
 	}
 	isDeezer() {
 		return this._provider && this._provider.name === 'deezer';
+	}
+	registerModalHandler(modalHandler) {
+		this.modalHandler = modalHandler;
+	}
+	openModal(callback) {
+		(this.modalHandler || angular.noop)(callback);
 	}
 }
 

@@ -5,6 +5,7 @@ export default class MusicProviders {
 	constructor(thirdPartyConstant, musicProvider) {
 		this.providers = angular.copy(thirdPartyConstant.providers);
 		this.musicProvider = musicProvider;
+		this.chosenProvider = musicProvider.provider;
 		this._getChosenProvider();
 	}
 	_getChosenProvider() {

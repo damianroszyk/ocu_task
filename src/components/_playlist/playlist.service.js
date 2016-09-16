@@ -4,14 +4,14 @@ import app from 'app';
 
 class PlaylistService {
 	/* @ngInject */
-	constructor($http, $q, deezer, backendConstant, domConstant, modelHelper, playerWidgetService) {
+	constructor($http, $q, deezer, backendConstant, musicProvider, domConstant, modelHelper, playerWidgetService) {
 		this.$http = $http;
 		this.$q = $q;
 		this.deezer = deezer;
 		this.modelHelper = modelHelper;
 		this.domConstant = domConstant;
 		this.playerWidgetService = playerWidgetService;
-		// this.musicService = musicService;
+		this.musicProvider = musicProvider;
 		this.backendConstant = backendConstant;
 		this.playlistBackend = this.modelHelper.buildUrl(
 			backendConstant.apiVersion, 'playlist'
@@ -47,7 +47,10 @@ class PlaylistService {
 	}
 	getPlaylist(playlistId) {
 		let url = this.modelHelper.buildUrl(this.playlistBackend, playlistId);
-		return this.$http.get(url);
+		return this.$http.get(url).then(response => {
+			response.data = this._normalizeLocalPlaylists([response.data])[0];
+			return response;
+		});
 	}
 	getDeezerPlaylist(playlistId) {
 		return this.deezer
@@ -75,7 +78,7 @@ class PlaylistService {
 		return response;
 	}
 	showPlayer(playlist) {
-		let service = this.musicService.service.name;
+		let service = this.musicProvider.provider.name;
 		let servicePlaylist = _.find(playlist.external_playlists, {
 			source: service
 		});

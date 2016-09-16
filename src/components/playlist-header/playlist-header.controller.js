@@ -1,19 +1,18 @@
 export default class PlaylistHeaderController {
 	/* @ngInject */
-	constructor($translate, $sce, domConstant, storage, playlistService) {
+	constructor($translate, $sce, domConstant, musicProvider, playlistService) {
 		this.defaultPlaylistTileImage = domConstant.defaultCategoryTileImage;
 		this.$translate = $translate;
 		this.defaultPlaylistDescription = $sce.trustAsHtml($translate.instant('PLAYLIST_NO_DESCRIPTION'));
 		this.cmsPlaylistDescription = $sce.trustAsHtml(this.playlist.description);
-		this.storage = storage;
 		this.playlistService = playlistService;
+		this.musicProvider = musicProvider;
 	}
-	onPlayButtonClick(playlist) {
-		if (!this.storage.getStorageProperty('preferredService')) {
-			this.showModal = true;
-			return;
+	onPlayButtonClick() {
+		if (!this.musicProvider.isSet()) {
+			this.musicProvider.openModal(this.onPlayButtonClick.bind(this));
 		}
-		this.playlistService.showPlayer(playlist);
+		this.playlistService.showPlayer(this.playlist);
 	}
 	playlistDescription() {
 		return this.cmsPlaylistDescription ? this.cmsPlaylistDescription : this.defaultPlaylistDescription;

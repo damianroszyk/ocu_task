@@ -17,7 +17,7 @@ $provider-modal-height--xs: auto;
 
 .provider-modal__backdrop {
 	@include position-absolute(0, 0, 0, 0);
-	background: $opacity-6;
+	background: $opacity-5;
 }
 
 .provider-modal {
