@@ -8,7 +8,7 @@ let squash = true;
 
 const CATEGORY_ROUTER = {
 	categoryState: {
-		url: '^/category/:categoryId/:l1/:l2/:l3/:l4',
+		url: '^/:l1/:l2/:l3/:l4',
 		template: `
 			<category
 				category="$resolve.category"
