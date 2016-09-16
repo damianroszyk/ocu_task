@@ -3,10 +3,15 @@ import app from 'app';
 
 /* @ngInject */
 let config = ($locationProvider, $compileProvider, $urlRouterProvider, $translateProvider, cfpLoadingBarProvider) => {
+
 	$urlRouterProvider.otherwise('/');
 	cfpLoadingBarProvider.includeSpinner = false;
 	$compileProvider.debugInfoEnabled(false);
-	$locationProvider.hashPrefix('!');
+
+	$locationProvider
+		.html5Mode(true)
+		.hashPrefix('!');
+
 	$translateProvider
 		.preferredLanguage('en_US')
 		.useSanitizeValueStrategy('escape')

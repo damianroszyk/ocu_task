@@ -45,6 +45,8 @@ playlist-tile {
 	.xs & {
 		width: 48%;
 		margin: 0 4% 4% 0;
+		height: auto;
+		min-height: 0;
 
 		&:nth-child(2n) {
 			margin-right: 0;
@@ -90,6 +92,8 @@ playlist-tile {
 	.xs & {
 		height: calc(#{$playlist-tile-height} - 48vw);
 		padding-bottom: $distance-md;
+		position: relative;
+		height: auto;
 	}
 
 	.playlist-tiles--horizontal & {
@@ -123,6 +127,7 @@ playlist-tile {
 	.xs & {
 		font-size: 16px;
 		margin-bottom: ($distance-sm / 2);
+		margin-left: $distance-sm;
 	}
 
 	.playlist-tiles--horizontal & {
@@ -139,6 +144,20 @@ playlist-tile {
 	.playlist-tiles--horizontal & {
 		display: none;
 	}
+
+	.xs & {
+		display: none;
+	}
+}
+
+.playlist-tile-meta__dash--xs {
+	float: left;
+	margin-left: $distance-sm;
+	display: none;
+
+	.xs & {
+		display: block;
+	}
 }
 
 .playlist-tile-meta__content {
@@ -146,6 +165,10 @@ playlist-tile {
 
 	.playlist-tiles--horizontal & {
 		padding-left: 0;
+	}
+
+	.xs & {
+		padding: 0 $distance-sm 0 $distance-md;
 	}
 }
 
@@ -156,7 +179,7 @@ playlist-tile {
 	transition: height .2s ease;
 
 	.xs & {
-		height: 120px;
+		height: 70px;
 		font-size: $playlist-tile-description-font;
 	}
 }
@@ -189,7 +212,8 @@ playlist-tile {
 	.xs & {
 		font-size: 15px;
 		margin-top: 2px;
-		margin-bottom: 13px;
+		margin-bottom: $distance-sm;
+		height: 3 * $distance-sm;
 	}
 
 	.playlist-tiles--horizontal & {
@@ -208,6 +232,7 @@ playlist-tile {
 		border-radius: 23px;
 		margin-bottom: 0;
 		display: block;
+		margin-left: $distance-md;
 	}
 
 	.playlist-tiles--horizontal & {
