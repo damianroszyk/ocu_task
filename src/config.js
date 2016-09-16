@@ -9,7 +9,7 @@ let config = ($locationProvider, $compileProvider, $urlRouterProvider, $translat
 	$compileProvider.debugInfoEnabled(false);
 
 	$locationProvider
-		.html5Mode(false)
+		.html5Mode(true)
 		.hashPrefix('!');
 
 	$translateProvider
