@@ -45,6 +45,10 @@ $playlist-header-height--md: 240px;
 	float: left;
 	width: calc(100% - #{$playlist-header-height});
 	box-sizing: border-box;
+
+	.md & {
+		width: calc(100% - #{$playlist-header-height--md});
+	}
 }
 
 .playlist-header__column-right--top {
