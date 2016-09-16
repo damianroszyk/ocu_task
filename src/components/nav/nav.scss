@@ -136,6 +136,10 @@ $nav-margin-width--md: 4px;
 	.xs & {
 		height: 56px;
 	}
+
+	.md & {
+		height: 70px;
+	}
 }
 
 .nav__item--menu-clicked {
@@ -144,6 +148,10 @@ $nav-margin-width--md: 4px;
 
 	.xs & {
 		height: 56px;
+	}
+
+	.md & {
+		height: 70px;
 	}
 }
 
@@ -158,5 +166,9 @@ $nav-margin-width--md: 4px;
 
 	.xs & {
 		height: 56px;
+	}
+
+	.md & {
+		height: 70px;
 	}
 }

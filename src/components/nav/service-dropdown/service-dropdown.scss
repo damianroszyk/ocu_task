@@ -29,6 +29,11 @@ $service-provider-margin: 30px;
 		padding: 6%;
 		padding-bottom: 100px;
 	}
+
+	.md & {
+		top: 70px;
+		left: 50px;
+	}
 }
 
 .service-dropdown__title {
