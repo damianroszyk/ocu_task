@@ -1,14 +1,14 @@
 /* @ngInject */
 let localPlaylist = ($stateParams, playlistService) =>
-	playlistService.getPlaylist($stateParams.localPlaylistId);
+	playlistService.getPlaylist($stateParams.slug);
 
 /* @ngInject */
 let servicePlaylist = ($stateParams, playlistService) =>
 	playlistService.getDeezerPlaylist($stateParams.servicePlaylistId);
 
 /* @ngInject */
-let categoryPlaylists = ($stateParams, playlistService) =>
-	playlistService.getCategoryPlaylists($stateParams.categoryId);
+let categoryPlaylists = ($stateParams, modelHelper, playlistService) =>
+	playlistService.getCategoryPlaylists(modelHelper.getCategoryIdentifier($stateParams));
 
 /* @ngInject */
 let featuredPlaylists = (playlistService) =>

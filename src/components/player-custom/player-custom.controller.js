@@ -137,7 +137,7 @@ export default class PlayerCustomController {
 	}
 	showPopup() {
 		let url = [
-			'#!/player',
+			'/player',
 			this.localPlaylistId,
 			'deezer',
 			this.servicePlaylistId,

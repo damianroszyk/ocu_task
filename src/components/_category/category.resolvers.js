@@ -1,6 +1,6 @@
 /* @ngInject */
-let category = ($stateParams, categoryService) =>
-	categoryService.getCategory($stateParams.categoryId);
+let category = ($stateParams, modelHelper, categoryService) =>
+	categoryService.getCategory(modelHelper.getCategoryIdentifier($stateParams));
 
 /* @ngInject */
 let categories = (categoryService) =>

@@ -15,7 +15,7 @@ export default class PlayerSpotifyController {
 		].join(''));
 	}
 	showPopup() {
-		let url = `#!/player/spotify/${this.serviceUserId}/${this.servicePlaylistId}`;
+		let url = `/player/spotify/${this.serviceUserId}/${this.servicePlaylistId}`;
 		let attrs = [
 			`width=${this.playerConstant.popupSize.width}`,
 			`height=${this.playerConstant.popupSize.height}`,

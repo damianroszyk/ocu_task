@@ -5,7 +5,7 @@ import { localPlaylist } from 'playlist/playlist.resolvers';
 
 const PLAYLIST_ROUTER = {
 	playlistState: {
-		url: '^/playlist/:localPlaylistId',
+		url: '^/playlist/:slug',
 		template: `
 			<playlist
 				local-playlist="$resolve.localPlaylist.data">

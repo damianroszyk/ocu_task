@@ -2,12 +2,6 @@ import './footer/';
 import './header/';
 import './nav/';
 
-import './_category/';
-import './_home/';
-import './_playlist/';
-import './_search-results/';
-import './_tags/';
-
 import './category-tile/';
 import './category-tiles/';
 import './cookies-message/';
@@ -28,3 +22,9 @@ import './search-tile/';
 import './search-form/';
 import './tag-cloud/';
 import './track-list/';
+
+import './_home/';
+import './_playlist/';
+import './_category/';
+import './_search-results/';
+import './_tags/';
