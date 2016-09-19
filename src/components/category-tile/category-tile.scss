@@ -243,6 +243,7 @@ category-tile {
 	line-height: 18px;
 	font-size: 15px;
 	color: $grey-6;
+    word-wrap: break-word;
 
 	.subcategories-list-element:hover & {
 		text-decoration: underline;
