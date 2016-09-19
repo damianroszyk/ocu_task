@@ -24,7 +24,7 @@ import './tag-cloud/';
 import './track-list/';
 
 import './_search-results/';
+import './_tags/';
 import './_home/';
 import './_playlist/';
 import './_category/';
-import './_tags/';
