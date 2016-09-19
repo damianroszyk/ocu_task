@@ -7,11 +7,19 @@
 	.xs & {
 		margin-top: $distance-md;
 	}
+
+	.md & {
+		margin-top: 24px;
+	}
 }
 
 .home__featured {
 	@include clearfix();
 	padding-bottom: $distance-sm;
+
+	.md & {
+		padding-bottom: 0;
+	}
 }
 
 .home__categories {

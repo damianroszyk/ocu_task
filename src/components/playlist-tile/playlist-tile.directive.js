@@ -9,6 +9,7 @@ let playlistTile = responsiveService => {
 		link: (scope, element, attrs, controller) => {
 
 			const EXPANDED_CLASS = 'playlist-tile--expanded';
+			const TEXT_NORMAL_CLASS = 'playlist-tile--text-normal';
 
 			scope.$watch('$viewContentLoaded', () => {
 				let playButton = element.find('play-button');
@@ -24,7 +25,10 @@ let playlistTile = responsiveService => {
 						element[0].clientHeight -
 						(figcaptionInitialHeight + descriptionElement.clientHeight - descriptionPadding)
 					}px`;
-					descriptionContainer[0].style.height = `${descriptionElement.clientHeight}px`;
+					if (descriptionElement.clientHeight > 28) {
+						descriptionContainer[0].style.height = `${descriptionElement.clientHeight}px`;
+						element.addClass(TEXT_NORMAL_CLASS);
+					}
 				};
 
 				let handleMouseleave = () => {
@@ -42,7 +46,7 @@ let playlistTile = responsiveService => {
 					.off('mouseleave');
 
 				let listenerHandler = rwdClass =>
-					rwdClass !== 'xs' && controller.layout !== 'horizontal' ?
+					rwdClass !== 'md' && controller.layout !== 'horizontal' ?
 						registerListener() : unregisterListener();
 
 				responsiveService.registerObserver(listenerHandler);

@@ -3,6 +3,7 @@
 @import '../../shared/styles/icons';
 
 $footer-height: 300px;
+$footer-height--md: 250px;
 
 .footer {
 	background-color: $grey-8;
@@ -14,11 +15,15 @@ $footer-height: 300px;
 	.xs & {
 		padding-top: 3 * $distance-sm;
 	}
+
+	.md & {
+		height: $footer-height--md;
+		padding-top: $distance-lg;
+	}
 }
 
 .footer__brand-image {
-	height: 3 * $distance-md;
-	margin-top: $distance-md;
+	height: 7 * $distance-md;
 }
 
 .footer-footnote__copyright,
