@@ -8,6 +8,8 @@ $column-three-width: 286px;
 $column-four-width: 293px;
 $column-five-width: 80px;
 
+$column-width--md: 235px;
+
 @mixin column($width) {
 	width: $width;
 	max-width: $width;
@@ -42,6 +44,10 @@ $column-five-width: 80px;
 		.xs & {
 			display: block;
 		}
+
+		.md & {
+			text-overflow: ellipsis;
+		}
 	}
 
 	th {
@@ -62,6 +68,10 @@ $column-five-width: 80px;
 		.xs & {
 			display: none;
 		}
+
+		.md & {
+			display: none;
+		}
 	}
 
 	td:nth-child(2),
@@ -70,6 +80,11 @@ $column-five-width: 80px;
 
 		.xs & {
 			font-size: 20px;
+		}
+
+		.md & {
+			max-width: $column-width--md;
+			width: 251px;
 		}
 	}
 
@@ -81,6 +96,11 @@ $column-five-width: 80px;
 		.xs & {
 			border: 0;
 		}
+
+		.md & {
+			max-width: $column-width--md;
+			width: 250px;
+		}
 	}
 
 	td:nth-child(4),
@@ -91,6 +111,11 @@ $column-five-width: 80px;
 		.xs & {
 			border: 0;
 		}
+
+		.md & {
+			max-width: $column-width--md;
+			width: 249px;
+		}
 	}
 
 	td:nth-child(5),
@@ -100,6 +125,11 @@ $column-five-width: 80px;
 
 		.xs & {
 			display: none;
+		}
+
+		.md & {
+			max-width: 40px;
+			width: 40px;
 		}
 	}
 
