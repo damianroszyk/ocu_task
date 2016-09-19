@@ -2,9 +2,11 @@
 @import '../../shared/styles/mixins';
 
 $header-height: 400px;
+$header-height--md: 280px;
 $header-brand-size: 300px;
 $header-height--xs: 115px;
 $header-brand-size--xs: 79px;
+$header-brand-size--md: 200px;
 
 .header {
 	height: $header-height;
@@ -13,6 +15,10 @@ $header-brand-size--xs: 79px;
 
 	.xs & {
 		height: $header-height--xs;
+	}
+
+	.md & {
+		height: $header-height--md;
 	}
 }
 
@@ -23,6 +29,10 @@ $header-brand-size--xs: 79px;
 	.xs & {
 		height: $header-height--xs;
 	}
+
+	.md & {
+		height: $header-height--md;
+	}
 }
 
 .header__brand-image {
@@ -32,6 +42,11 @@ $header-brand-size--xs: 79px;
 	.xs & {
 		@include position-absolute(0, auto, auto, 0);
 		height: $header-brand-size--xs;
+	}
+
+	.md & {
+		@include position-absolute(50px, auto, auto, calc(50% - 384px));
+		height: $header-brand-size--md;
 	}
 
 	.xl & {

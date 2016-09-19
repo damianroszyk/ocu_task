@@ -26,6 +26,11 @@ $music-provider-dropdown-height--xs: auto;
 		padding: 6%;
 		padding-bottom: 100px;
 	}
+
+	.md & {
+		top: 70px;
+		left: 50px;
+	}
 }
 
 .music-provider-dropdown__title {

@@ -3,7 +3,10 @@
 
 $search-button-width: 156px;
 $search-input-width: 378px;
+$search-button-width--md: 100px;
+$search-input-width--md: 230px;
 $search-form-height: 49px;
+$search-form-height--md: 38px;
 $search-form-height--xs: 30px;
 
 .search-form-wrapper {
@@ -14,6 +17,10 @@ $search-form-height--xs: 30px;
 	font-size: 0;
 
 	.xs & {
+		bottom: $distance-md;
+	}
+
+	.md & {
 		bottom: $distance-md;
 	}
 }
@@ -41,6 +48,11 @@ $search-form-height--xs: 30px;
 		height: $search-form-height--xs;
 		border-width: 2px;
 	}
+
+	.md & {
+		font-size: 18px;
+		height: $search-form-height--md;
+	}
 }
 
 .search-form__input {
@@ -56,6 +68,10 @@ $search-form-height--xs: 30px;
 	.xs & {
 		width: 70%;
 		padding-left: 3 * $distance-sm;
+	}
+
+	.md & {
+		width: $search-input-width--md;
 	}
 }
 
@@ -73,6 +89,10 @@ $search-form-height--xs: 30px;
 	&:disabled {
 		color: $black;
 	}
+
+	.md & {
+		width: $search-button-width--md;
+	}
 }
 
 .icon-search--input,
@@ -85,6 +105,11 @@ $search-form-height--xs: 30px;
 		height: $search-form-height--xs;
 		width: $search-form-height--xs;
 	}
+
+	.md & {
+		height: $search-form-height--md;
+		width: $search-form-height--md;
+	}
 }
 
 .icon-search--input {
@@ -93,6 +118,10 @@ $search-form-height--xs: 30px;
 	.xs & {
 		background-size: 14px;
 	}
+
+	.md & {
+		background-size: 19px;
+	}
 }
 
 .icon-close--input {
@@ -100,5 +129,9 @@ $search-form-height--xs: 30px;
 
 	.xs & {
 		background-size: 10px;
+	}
+
+	.md & {
+		background-size: 12px;
 	}
 }

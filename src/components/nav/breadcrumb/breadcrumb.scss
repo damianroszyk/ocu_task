@@ -36,4 +36,9 @@ $breadcrumb-height: 56px;
 	background-position: center center;
 	width: $distance-md;
 	height: $breadcrumb-height;
+
+	.md & {
+		vertical-align: top;
+		height: 46px;
+	}
 }
