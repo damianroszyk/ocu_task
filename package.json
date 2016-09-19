@@ -48,6 +48,9 @@
   },
   "scripts": {
 	"build": "node ./node_modules/webpack/bin/webpack",
+	"build:dev": "node ./node_modules/webpack/bin/webpack --env dev",
+	"build:qa": "node ./node_modules/webpack/bin/webpack --env qa",
+	"build:stg": "node ./node_modules/webpack/bin/webpack --env stg",
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server --hot --inline --env dev",
     "lint": "node ./node_modules/eslint/bin/eslint --config ./.eslintrc src/ --ext .js",
     "pree2e-ci": "node ./node_modules/protractor/bin/webdriver-manager update",
