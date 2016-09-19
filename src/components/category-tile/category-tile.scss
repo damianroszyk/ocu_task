@@ -186,6 +186,11 @@ category-tile {
 		width: 100vw;
 	}
 
+	.md & {
+		width: (2 * $category-tile-width--md) + $category-tile-offset--md;
+	    min-height: $category-tile-height--md;
+	}
+
 	/*&.ng-enter {
 		animation: fade-in .3s;
 	}
@@ -246,4 +251,11 @@ category-tile {
 
 .subcategories__control {
 	margin: 0 $distance-md $distance-md;
+
+	.md & {
+		max-width: 90%;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
 }
