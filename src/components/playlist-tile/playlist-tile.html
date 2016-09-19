@@ -47,7 +47,8 @@
 			tags="$ctrl.playlist.categories">
 		</playlist-tags>
 		<span class="playlist-tile__tracks">
-			Track number: <strong>{{::$ctrl.playlist.tracks.length}}</strong>
+			<span translate="{{::'NUMBER_OF_TRACKS'}}"></span>:
+			<strong>{{::$ctrl.playlist.tracks.length}}</strong>
 		</span>
 	</div>
 	<div class="clear-both"></div>
