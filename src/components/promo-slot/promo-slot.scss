@@ -3,9 +3,13 @@
 
 $promo-slot-width--horizontal: 574px;
 $promo-slot-height--horizontal: 275px;
+$promo-slot-width--horizontal--md: 376px;
+$promo-slot-height--horizontal--md: 180px;
 
 $promo-slot-width--vertical: 275px;
 $promo-slot-height--vertical: 583px;
+$promo-slot-width--vertical--md: 180px;
+$promo-slot-height--vertical--md: 386px;
 
 %promo-slot {
 	@include fade-in();
@@ -35,6 +39,12 @@ $promo-slot-height--vertical: 583px;
 		height: 50vw;
 		margin-bottom: 20px;
 	}
+
+	.md & {
+		width: $promo-slot-width--horizontal--md;
+		height: $promo-slot-height--horizontal--md;
+		margin-right: 16px;
+	}
 }
 
 .promo-slot--vertical {
@@ -48,6 +58,12 @@ $promo-slot-height--vertical: 583px;
 		width: calc(50% - 5px);
 		margin: 0 10px 10px 0;
 	    height: 100vw;
+	}
+
+	.md & {
+		width: $promo-slot-width--vertical--md;
+		height: $promo-slot-height--vertical--md;
+		margin: 0 16px 16px 0;
 	}
 }
 
@@ -82,6 +98,10 @@ $promo-slot-height--vertical: 583px;
 		@include flex-middle();
 		bottom: 0;
 		padding: 0;
+	}
+
+	.md & {
+		font-size: 27px;
 	}
 }
 

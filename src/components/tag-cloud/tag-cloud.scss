@@ -38,16 +38,28 @@ $tag-max-width: 200px;
 	&--sm {
 		padding: $distance-sm $distance-md;
 		font-size: 15px;
+
+		.md & {
+			padding: 8px 16px;
+		}
 	}
 
 	&--md {
 		padding: $distance-md $distance-lg;
 		font-size: 17px;
+
+		.md & {
+			padding: 15px 3 * $distance-sm;
+		}
 	}
 
 	&--lg {
 		padding: ($distance-md * 1.5)  $distance-lg;
 		font-size: 21px;
+
+		.md & {
+			padding: $distance-md $distance-lg;
+		}
 	}
 }
 

@@ -14,6 +14,10 @@
 		top: 56px;
 		width: 100%;
 	}
+
+	.md & {
+		top: 70px;
+	}
 }
 
 .categories-dropdown__list {
@@ -28,6 +32,13 @@
 		column-width: 160px;
 	    column-count: 2;
 	}
+
+	.md & {
+		max-width: 768px;
+	    box-sizing: border-box;
+		column-width: 240px;
+	    column-count: 3;
+	}
 }
 
 .categories-list__item {
@@ -36,12 +47,16 @@
     background-color: $grey-7;
     cursor: pointer;
 	box-sizing: border-box;
+
+	.md & {
+		line-height: 35px;
+	}
 }
 
 .categories-list__link {
     width: 100%;
     display: inline-block;
-	padding: 0 3* $distance-sm 0 $distance-sm;
+	padding: 0 3 * $distance-sm 0 $distance-sm;
 	box-sizing: border-box;
 	font-size: 27px;
 	text-decoration: none;
@@ -58,6 +73,10 @@
 
 	.xs & {
 		font-size: 21px;
+	}
+
+	.md & {
+		font-size: 24px;
 	}
 }
 
