@@ -1,9 +1,13 @@
+const PLAY_LOCAL_PLAYLIST_EVT = 'playLocalPlaylist';
+
 export default class PlayerCustomController {
 	/* @ngInject */
-	constructor(deezer, $scope, $window, $timeout, playlistService, playerWidgetService, playerConstant) {
+	constructor(deezer, $scope, $state, $window, $timeout, dispatcherService, playlistService, playerWidgetService, playerConstant) {
 		this.$scope = $scope;
-		this.window = $window;
+		this.$state = $state;
+		this.$window = $window;
 		this.$timeout = $timeout;
+		this.dispatcherService = dispatcherService;
 		this.deezer = deezer;
 		this.playlistService = playlistService;
 		this.playerWidgetService = playerWidgetService;
@@ -32,6 +36,12 @@ export default class PlayerCustomController {
 		}
 	}
 	runPlayerInPopup() {
+		if (window.opener) {
+			this.registerOpenerEvents();
+		}
+		this.playLocalPlaylist(this.localPlaylistId);
+	}
+	playLocalPlaylist(localPlaylistId) {
 		this.playlistService
 			.getPlaylist(this.localPlaylistId)
 			.then(playlist => {
@@ -45,7 +55,6 @@ export default class PlayerCustomController {
 		this.playlist = true;
 		this.tracks = this.playerWidgetService.tracks;
 		this.initPlaylist();
-		// this.pause();
 	}
 	initPlaylist() {
 		this.subscribePlayerEvents();
@@ -146,7 +155,7 @@ export default class PlayerCustomController {
 	}
 	showPopup() {
 		let url = [
-			'/player',
+			'#/player',
 			this.localPlaylistId,
 			'deezer',
 			this.servicePlaylistId,
@@ -158,7 +167,8 @@ export default class PlayerCustomController {
 			`height=${this.playerConstant.popupSize.height}`,
 			`menubar=no`, `status=no`, `titlebar=no`, `toolbar=no`, `directories=no`
 		].join(',');
-		this.window.open(url, '_blank', attrs);
+		this.playerWidgetService.popup = 'deezer';
+		this.$window.open(url, '_blank', attrs);
 		this.close();
 	}
 	toggle() {
@@ -172,5 +182,28 @@ export default class PlayerCustomController {
 		this.isMaximized = false;
 		this.pause();
 		this.playerWidgetService.destroy().notify();
+	}
+	registerOpenerEvents() {
+		this.$window.opener.addEventListener(
+			this.playerConstant.playLocalPlaylistEvent,
+			this._handlePlayLocalPlaylistEvent.bind(this)
+		);
+		this.$window.onbeforeunload = (event) => {
+			this.dispatcherService.dispatchNative(
+				this.playerConstant.popupClosedEvent, event, this.$window.opener
+			);
+			return 'Your own message goes here...';
+		};
+		console.log('this.$window.onunload', this.$window, this.$window.onunload);
+	}
+	_handlePlayLocalPlaylistEvent(event) {
+		if (event.detail && event.detail.playlist) {
+			this.$state.go('customPlayer', {
+				localPlaylistId: event.detail.playlist.id,
+				servicePlaylistId: event.detail.playlist.deezer.service_playlist_id,
+				trackIdx: 0,
+				trackTime: 0
+			}, { reload: true });
+		}
 	}
 }
