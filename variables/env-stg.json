@@ -1,5 +1,7 @@
 {
 	"apiVersion": "'52.207.215.196/v1'",
 	"spotifyClientId": "'5bad0bd0b3104fe2a52380ae24673078'",
-	"deezerAppId": 189242
+	"deezerAppId": 189242,
+	"digsterTracker1GA": "'UA-16664610-9'",
+	"digsterTracker2GA": "'UA-83012337-1'"
 }

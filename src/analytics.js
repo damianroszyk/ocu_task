@@ -2,16 +2,16 @@ import angular from 'angular';
 import app from 'app';
 
 /* @ngInject */
-let analytics = (AnalyticsProvider) => {
+let analytics = (AnalyticsProvider, thirdPartyConstant) => {
 	AnalyticsProvider.setPageEvent('$stateChangeSuccess');
 	AnalyticsProvider.setAccount([{
-		tracker: 'UA-16664610-9',
+		tracker: thirdPartyConstant.digsterTracker1GA,
 		trackEvent: true,
-		name: 'DigsterTracker1'
+		name: 'digsterTracker1'
 	}, {
-		tracker: 'UA-83012337-1',
+		tracker: thirdPartyConstant.digsterTracker2GA,
 		trackEvent: true,
-		name: 'DigsterTracker2'
+		name: 'digsterTracker2'
 	}]);
 };
 
