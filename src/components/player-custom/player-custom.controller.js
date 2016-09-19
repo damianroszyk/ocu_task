@@ -1,8 +1,9 @@
 export default class PlayerCustomController {
 	/* @ngInject */
-	constructor(deezer, $scope, $window, playlistService, playerWidgetService, playerConstant) {
+	constructor(deezer, $scope, $window, $timeout, playlistService, playerWidgetService, playerConstant) {
 		this.$scope = $scope;
 		this.window = $window;
+		this.$timeout = $timeout;
 		this.deezer = deezer;
 		this.playlistService = playlistService;
 		this.playerWidgetService = playerWidgetService;
@@ -10,10 +11,18 @@ export default class PlayerCustomController {
 		this.track = {};
 	}
 	$onInit() {
+		// @HACK: workaround to play deezer player on initialization.
+		const PLAY_AFTER = 1000;
 		this.deezer.deferredPlayer.promise.then(() => {
 			this.deezer
 				.getPlaylist(parseInt(this.servicePlaylistId, 10))
-				.then(playlist => this.tracks = playlist.tracks.data);
+				.then(playlist => {
+					this.tracks = playlist.tracks.data;
+					this.$timeout(() => {
+						this.pause();
+						this.play();
+					}, PLAY_AFTER);
+				});
 			return this.popup ? this.runPlayerInPopup() : this.runPlayerInWhitelabel();
 		});
 	}
@@ -36,7 +45,7 @@ export default class PlayerCustomController {
 		this.playlist = true;
 		this.tracks = this.playerWidgetService.tracks;
 		this.initPlaylist();
-		this.pause();
+		// this.pause();
 	}
 	initPlaylist() {
 		this.subscribePlayerEvents();
