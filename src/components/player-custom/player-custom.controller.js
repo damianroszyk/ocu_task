@@ -155,7 +155,7 @@ export default class PlayerCustomController {
 	}
 	showPopup() {
 		let url = [
-			'#/player',
+			'/player',
 			this.localPlaylistId,
 			'deezer',
 			this.servicePlaylistId,
@@ -192,9 +192,7 @@ export default class PlayerCustomController {
 			this.dispatcherService.dispatchNative(
 				this.playerConstant.popupClosedEvent, event, this.$window.opener
 			);
-			return 'Your own message goes here...';
 		};
-		console.log('this.$window.onunload', this.$window, this.$window.onunload);
 	}
 	_handlePlayLocalPlaylistEvent(event) {
 		if (event.detail && event.detail.playlist) {

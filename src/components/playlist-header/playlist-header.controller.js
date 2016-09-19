@@ -1,6 +1,7 @@
 export default class PlaylistHeaderController {
 	/* @ngInject */
-	constructor($translate, $sce, domConstant, playerWidgetService, dispatcherService, musicProvider, playerConstant, playlistService) {
+	constructor($translate, $sce, domConstant, playerWidgetService, dispatcherService,
+		musicProvider, playerConstant, playlistService) {
 		this.defaultPlaylistTileImage = domConstant.defaultCategoryTileImage;
 		this.$translate = $translate;
 		this.playerWidgetService = playerWidgetService;
