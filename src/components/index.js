@@ -23,8 +23,8 @@ import './search-form/';
 import './tag-cloud/';
 import './track-list/';
 
+import './_search-results/';
 import './_home/';
 import './_playlist/';
 import './_category/';
-import './_search-results/';
 import './_tags/';

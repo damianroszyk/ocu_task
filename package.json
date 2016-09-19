@@ -40,6 +40,7 @@
     "sass-loader": "^4.0.0",
     "string-replace-webpack-plugin": "0.0.3",
     "style-loader": "^0.13.1",
+    "superconf": "^0.2.0",
     "text-loader": "0.0.1",
     "uglify-loader": "^1.3.0",
     "webpack": "^1.13.1",
@@ -47,10 +48,10 @@
     "yargs": "^4.7.1"
   },
   "scripts": {
-	"build": "node ./node_modules/webpack/bin/webpack",
-	"build:dev": "node ./node_modules/webpack/bin/webpack --env dev",
-	"build:qa": "node ./node_modules/webpack/bin/webpack --env qa",
-	"build:stg": "node ./node_modules/webpack/bin/webpack --env stg",
+    "build": "node ./node_modules/webpack/bin/webpack",
+    "build:dev": "node ./node_modules/webpack/bin/webpack --env dev",
+    "build:qa": "node ./node_modules/webpack/bin/webpack --env qa",
+    "build:stg": "node ./node_modules/webpack/bin/webpack --env stg",
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server --hot --inline --env dev",
     "lint": "node ./node_modules/eslint/bin/eslint --config ./.eslintrc src/ --ext .js",
     "pree2e-ci": "node ./node_modules/protractor/bin/webdriver-manager update",

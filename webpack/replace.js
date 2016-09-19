@@ -1,4 +1,5 @@
 var stringReplacePlugin = require('string-replace-webpack-plugin');
+var superconf = require('superconf');
 var argv = require('yargs').argv;
 
 var environment = argv.env || 'qa';
@@ -14,10 +15,8 @@ var replacer = stringReplacePlugin.replace({
 });
 
 function loadVariables(environment) {
-	var variables;
-	try {
-		variables = require('./../variables/env-' + environment + '.json');
-	} catch(e) {
+	var variables = superconf('variables/env-' + environment);
+	if (!variables) {
 		throw 'Unable to load environment variables for: ' + environment;
 	}
 	return variables;
