@@ -2,7 +2,7 @@ import angular from 'angular';
 import app from 'app';
 
 const BACKEND_CONSTANT = {
-	apiVersion: 'http://api-dev.pitched.apps.miquido.com/v1',
+	apiVersion: '<% apiVersion %>',
 	clientBrand: 4
 };
 

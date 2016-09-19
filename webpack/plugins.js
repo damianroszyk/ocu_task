@@ -1,11 +1,13 @@
 var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var NgAnnotatePlugin = require('ng-annotate-webpack-plugin');
+var StringReplacePlugin = require('string-replace-webpack-plugin');
 var argv = require('yargs').argv;
 
-var production = !!argv.production;
+var development = argv.env === 'dev';
 
 var plugins = [
+	new StringReplacePlugin(),
 	new CopyWebpackPlugin([{
 		from: 'src/index.html',
 		to: 'index.html'
@@ -24,7 +26,7 @@ var plugins = [
 	}])
 ];
 
-if (production) {
+if (!development) {
 	plugins.push(new NgAnnotatePlugin());
 	plugins.push(new webpack.optimize.UglifyJsPlugin());
 }

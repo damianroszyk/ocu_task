@@ -1,3 +1,5 @@
+var replace = require('./replace');
+
 module.exports = [{
 	test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
 	loader: 'file-loader'
@@ -17,4 +19,8 @@ module.exports = [{
 	query: {
 		presets: ['es2015']
 	}
+}, {
+	test: /.constant.js$/,
+	exclude: /(node_modules)/,
+	loader: replace
 }];
