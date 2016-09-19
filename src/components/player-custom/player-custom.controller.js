@@ -14,6 +14,9 @@ export default class PlayerCustomController {
 		this.playerConstant = playerConstant;
 		this.track = {};
 	}
+	$onDestroy() {
+		this.close();
+	}
 	$onInit() {
 		// @HACK: workaround to play deezer player on initialization.
 		const PLAY_AFTER = 1000;
@@ -155,7 +158,7 @@ export default class PlayerCustomController {
 	}
 	showPopup() {
 		let url = [
-			'/player',
+			'#/player',
 			this.localPlaylistId,
 			'deezer',
 			this.servicePlaylistId,
