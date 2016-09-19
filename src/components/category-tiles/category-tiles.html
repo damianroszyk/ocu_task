@@ -3,6 +3,11 @@
     ng-class="{
         'category-tiles--horizontal': $ctrl.layout === 'horizontal'
     }">
+	<promo-slot
+		ng-if="$ctrl.featuredCategory1"
+		layout="vertical"
+		featured-item="$ctrl.featuredCategory1">
+	</promo-slot>
     <category-tile
 		ng-class="{
 			'category-tile-container--expaned': category.expanded
@@ -12,8 +17,8 @@
     </category-tile>
 	<promo-slot
 		class="promo-slot--recommended"
-		ng-if="$ctrl.featuredCategory"
+		ng-if="$ctrl.featuredCategory2"
 		layout="horizontal"
-		featured-item="$ctrl.featuredCategory">
+		featured-item="$ctrl.featuredCategory2">
 	</promo-slot>
 </div>

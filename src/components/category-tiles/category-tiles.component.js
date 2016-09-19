@@ -6,7 +6,8 @@ import controller from './category-tiles.controller';
 
 let bindings = {
 	categories: '<',
-	featuredCategory: '<',
+	featuredCategory1: '<?',
+	featuredCategory2: '<?',
 	layout: '<?'
 };
 
