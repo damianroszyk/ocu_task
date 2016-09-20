@@ -178,10 +178,8 @@ category-tile {
         min-height: $category-tile-height--featured;
     }
 
-	.xl .category-tile--left & {
-		@include position-absolute(0, auto, auto, 0);
-	}
-
+	.category &,
+	.xl .category-tile--left &,
 	.xs category-tile:nth-child(2n) & {
 		@include position-absolute(0, auto, auto, 0);
 	}
