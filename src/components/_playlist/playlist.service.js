@@ -4,13 +4,15 @@ import app from 'app';
 
 class PlaylistService {
 	/* @ngInject */
-	constructor($http, $q, deezer, backendConstant, musicProvider, domConstant, modelHelper, playerWidgetService) {
+	constructor($http, $q, deezer, backendConstant, musicProvider, domConstant, modelHelper, playerWidgetService, snackbarService, $translate) {
 		this.$http = $http;
 		this.$q = $q;
 		this.deezer = deezer;
 		this.modelHelper = modelHelper;
 		this.domConstant = domConstant;
 		this.playerWidgetService = playerWidgetService;
+		this.snackbarService = snackbarService;
+		this.translate = $translate;
 		this.musicProvider = musicProvider;
 		this.backendConstant = backendConstant;
 		this.playlistBackend = this.modelHelper.buildUrl(
@@ -87,8 +89,8 @@ class PlaylistService {
 			return;
 		}
 		if (!servicePlaylist) {
-			//@TODO: handle not found 3rd party playlist here
-			console.log(`No playlist in ${service}`);
+			this.snackbarService.showErrorMessage(this.translate.instant('NO_PLAYLIST_IN_PROVIDER_SERVICE', {service: service}));
+
 			return;
 		}
 		this.playerWidgetService.destroy();

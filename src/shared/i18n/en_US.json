@@ -18,6 +18,7 @@
 	"SEARCH_FORM_INPUT": "Search Digster",
 	"SEARCH_RESULTS_FOR": "search results for",
 	"PLAYLIST_NO_DESCRIPTION": "No description",
+	"NO_PLAYLIST_IN_PROVIDER_SERVICE": "No playlist in {{service}}.",
 	"FIND_PLAYLISTS": "find playlists",
 	"SELECT_MUSIC": "Select your preferred streaming app",
 	"NUMBER_OF_TRACKS": "Number of tracks"
