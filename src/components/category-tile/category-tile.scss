@@ -182,8 +182,12 @@ category-tile {
 		@include position-absolute(0, auto, auto, 0);
 	}
 
-	.xs category-tile:nth-child(2n+1) & {
+	.xs category-tile:nth-child(2n) & {
 		@include position-absolute(0, auto, auto, 0);
+	}
+
+	.xs category-tile:nth-child(2) & {
+		@include position-absolute(0, 0, auto, auto);
 	}
 
 	.xs & {
