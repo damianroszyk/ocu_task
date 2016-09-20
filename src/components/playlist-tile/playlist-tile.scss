@@ -60,6 +60,10 @@ playlist-tile {
 		margin: 0 16px 16px 0;
 		height: 410px;
 		min-height: 0;
+
+		&:nth-child(4n) {
+			margin-right: 0;
+		}
 	}
 }
 
