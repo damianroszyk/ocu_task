@@ -2,12 +2,14 @@
 @import '../../../shared/styles/mixins';
 
 $music-provider-dropdown-width: 680px;
+$music-provider-dropdown-width--md: 768px;
 $music-provider-dropdown-height: 300px;
 $music-provider-dropdown-width--xs: 100%;
 $music-provider-dropdown-height--xs: auto;
 
 .music-provider-dropdown {
 	@include position-absolute(96px, auto, auto, 61px);
+	animation: fade-in .5s;
 	font-size: initial;
 	background-color: $grey-7;
     z-index: $z-index-5;
@@ -28,8 +30,37 @@ $music-provider-dropdown-height--xs: auto;
 	}
 
 	.md & {
+		width: $music-provider-dropdown-width--md;
 		top: 70px;
+		left: 0;
+	}
+
+	&.ng-hide-add {
+		z-index: 10;
+	}
+
+	&.ng-hide {
+		z-index: 10;
+  		animation: fade-out .5s;
+	}
+}
+
+.music-provider-dropdown__connector {
+	@include position-absolute(auto, auto, 100%, 0);
+	height: 40px;
+	width: 224px;
+	background: $grey-7;
+
+	.md & {
 		left: 50px;
+		width: 185px;
+		height: 24px;
+	}
+
+	.xs & {
+		left: 37px;
+		width: calc(100% - 154px);
+		height: 20px;
 	}
 }
 

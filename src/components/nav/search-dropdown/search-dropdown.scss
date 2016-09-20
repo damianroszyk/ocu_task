@@ -10,6 +10,7 @@ $search-dropdown-height--md: 150px;
 
 .search-dropdown {
 	@include position-absolute(96px, 0, auto, auto);
+	animation: fade-in .5s;
 	font-size: initial;
 	background-color: $grey-7;
     z-index: 100;
@@ -32,6 +33,34 @@ $search-dropdown-height--md: 150px;
 		top: 70px;
 		width: $search-dropdown-width--md;
 	    height: $search-dropdown-height--md;
+	}
+
+	&.ng-hide-add {
+		z-index: 10;
+	}
+
+	&.ng-hide {
+		z-index: 10;
+  		animation: fade-out .5s;
+	}
+}
+
+.search-dropdown__connector {
+	@include position-absolute(auto, 121px, 100%, auto);
+	height: 40px;
+	width: 56px;
+	background: $grey-7;
+
+	.md & {
+		width: 46px;
+		height: 25px;
+		right: 101px;
+	}
+
+	.xs & {
+		width: 36px;
+		height: 20px;
+		right: 78px;
 	}
 }
 

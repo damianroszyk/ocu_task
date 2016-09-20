@@ -2,8 +2,8 @@
 @import '../../../shared/styles/mixins';
 
 .categories-dropdown-wrapper {
+	animation: fade-in .5s;
     background-color: $grey-7;
-    overflow: hidden;
     z-index: 100;
     font-size: initial;
 	position: absolute;
@@ -17,6 +17,32 @@
 
 	.md & {
 		top: 70px;
+	}
+
+	&.ng-hide-add {
+		z-index: 10;
+	}
+
+	&.ng-hide {
+		z-index: 10;
+  		animation: fade-out .5s;
+	}
+}
+
+.categories-dropdown__connector {
+	@include position-absolute(auto, auto, 100%, 0);
+	height: 40px;
+	width: 56px;
+	background: $grey-7;
+
+	.md & {
+		width: 46px;
+		height: 25px;
+	}
+
+	.xs & {
+		width: 38px;
+		height: 20px;
 	}
 }
 
@@ -44,13 +70,20 @@
 .categories-list__item {
     list-style: none;
     line-height: $distance-lg;
-    background-color: $grey-7;
     cursor: pointer;
 	box-sizing: border-box;
 
 	.md & {
 		line-height: 35px;
 	}
+
+	.xs & {
+		line-height: 30px;
+	}
+}
+
+.categories-list__item--active a {
+	color: $yellow;
 }
 
 .categories-list__link {
@@ -80,14 +113,9 @@
 	}
 }
 
-.categories-list__item.active {
-	background-color: $white;
-}
-
 .categories-dropdown {
     width: 1172px;
     float: left;
-    background-color: $grey-5;
 
 	.xs & {
 		width: 100%;
