@@ -137,12 +137,12 @@ export default class PlayerCustomController {
 			this.track.completed = completedTime;
 		}
 	}
-	playTrackOfPlaylist(event) {
+	playTrackOfPlaylist(event, index) {
 		let srcElement = event.srcElement || event.target;
 		let parentTr = srcElement.parentElement.parentElement;
 		let rowIndex = parentTr.rowIndex;
 		this.isPlayingTrack = true;
-		this.deezer.dz.player.playPlaylist(parseInt(this.servicePlaylistId, 10), true, rowIndex);
+		this.deezer.dz.player.playPlaylist(parseInt(this.servicePlaylistId, 10), true, index);
 	}
 	showPopup() {
 		let url = [

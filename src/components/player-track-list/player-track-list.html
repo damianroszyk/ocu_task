@@ -1,17 +1,14 @@
-<table class="player-track-table player-track-table--scroll">
-    <tbody>
-        <tr
-            class="player-track-table__row"
-            ng-repeat="track in $ctrl.tracks"
-			ng-click="$ctrl.onTrackTitleClick({event: $event})">
-			<td>
-				<div class="track-table__item">
+<ul class="player-track-list player-track-table--scroll">
+        <li
+            class="player-track-list__item"
+            ng-repeat="track in $ctrl.tracks">
+			<div ng-click="$ctrl.onTrackTitleClick({event: $event}, $index)">
+				<div class="player-track-list__title">
 					{{track.title}}
 				</div>
-				<div class="track-table__item">
+				<div class="player-track-list__author">
 					{{track.artist.name}}
 				</div>
-			</td>
-        </tr>
-    </tbody>
-</table>
+			</div>
+        </li>
+</ul>

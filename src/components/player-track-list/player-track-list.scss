@@ -5,59 +5,43 @@ player-track-list {
 	height: 398px;
 }
 
-.player-track-table {
+.player-track-list {
 	height: 100%;
 	table-layout: fixed;
 	border-collapse: collapse;
 	background-color: $black;
 	color: $white;
+	font-size: .8rem;
+    overflow: auto;
+	padding: 0;
 
-	tbody {
-		overflow: auto;
-		height: 100%;
-		display: block;
-		width: 100%;
-		border-top: 0;
-		box-sizing: border-box;
-		font-size: .8rem;
-	}
-
-	td {
-		padding: 5px;
-		text-align: left;
-		box-sizing: border-box;
-		border-bottom: 1px solid $white;
-	}
-
-	.track-table__item {
-		cursor: default;
-	}
-
-	.track-table__item:nth-child(1) {
-		cursor: pointer;
-
-		&:hover,
-		&:focus {
-			background-color: $yellow;
-			color: $black;
-			transition: 500ms;
-		}
-	}
-
-	tbody::-webkit-scrollbar-track {
+	&::-webkit-scrollbar-track {
 		border-left: 2px solid $grey-6;
 		background-color: $black;
 	}
 
-	tbody::-webkit-scrollbar {
+	&::-webkit-scrollbar {
 		width: 17px;
 		background-color: $black;
 	}
 
-	tbody::-webkit-scrollbar-thumb {
+	&::-webkit-scrollbar-thumb {
 		background-color: $yellow;
 		border: 4px solid rgba(0, 0, 0, 0);
 		background-clip: padding-box;
 		border-radius: $distance-sm;
+	}
+}
+.player-track-list__item {
+	cursor: pointer;
+	list-style: none;
+	border-bottom: 1px solid $white;
+	padding: 5px 2px;
+
+	&:hover,
+	&:focus {
+		background-color: $yellow;
+		color: $black;
+		transition: 500ms;
 	}
 }
