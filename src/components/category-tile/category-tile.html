@@ -24,9 +24,9 @@
         ng-click="$ctrl.toggleCategoryExpand(false, $event)">
     </button>
     <div
-        class="category-tile__subcategories"
+        class="category-tile__subcategories animated"
 		click-outside="$ctrl.toggleCategoryExpand(true)"
-        ng-if="$ctrl.category.expanded">
+        ng-show="$ctrl.category.expanded">
 		<button
 	        class="category-tile__control category-tile__control--close-black"
 	        ng-click="$ctrl.toggleCategoryExpand(true, $event)">
@@ -35,17 +35,14 @@
 			<strong>
 				Top {{$ctrl.category.playlists.length}}
 			</strong>
-			{{$ctrl.category.name}} playlists
+			{{::$ctrl.category.name}} playlists
 		</h5>
         <ul class="subcategories-list">
             <li
 				class="subcategories-list-element"
 				ng-repeat="playlist in ::$ctrl.category.playlists"
 				ng-click="$event.stopPropagation()"
-				ui-sref="playlist({
-					slug: playlist.slug
-					localPlaylistId: playlist.id
-				})">
+				ui-sref="playlist({slug: playlist.slug})">
 				<p class="subcategories-list-element__title">
 					{{::$index + 1}}. {{::playlist.name}}
 				</p>
@@ -58,7 +55,7 @@
 		<button
 			class="btn-circled subcategories__control"
 			ui-sref="category($ctrl.category.stateParams)">
-			See all {{::$ctrl.category.name}} subcategories
+			See all {{::$ctrl.category.name}} playlists
 		</button>
     </div>
 </div>

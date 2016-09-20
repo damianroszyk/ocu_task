@@ -12,7 +12,7 @@ $music-provider-dropdown-height--xs: auto;
 	animation: fade-in .5s;
 	font-size: initial;
 	background-color: $grey-7;
-    z-index: $z-index-5;
+    z-index: $z-index-6;
 	height: $music-provider-dropdown-height;
 	width: $music-provider-dropdown-width;
 	line-height: initial;
@@ -36,10 +36,6 @@ $music-provider-dropdown-height--xs: auto;
 	}
 
 	&.ng-hide-add {
-		z-index: 10;
-	}
-
-	&.ng-hide {
 		z-index: 10;
   		animation: fade-out .5s;
 	}

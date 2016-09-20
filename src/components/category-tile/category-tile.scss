@@ -166,12 +166,13 @@ category-tile {
 
 .category-tile__subcategories {
     @include position-absolute(0, 0, auto, auto);
+	animation: fade-in .3s;
 	width: (2 * $category-tile-width) + $category-tile-offset;
     min-height: $category-tile-height;
     box-sizing: border-box;
     padding-top: 2 * $distance-md;
     background: $white;
-    z-index: $z-index-4;
+    z-index: 9999999;
 
     .category-tile--featured & {
         min-height: $category-tile-height--featured;
@@ -194,13 +195,9 @@ category-tile {
 	    min-height: $category-tile-height--md;
 	}
 
-	/*&.ng-enter {
-		animation: fade-in .3s;
-	}
-
-	&.ng-leave {
+	&.ng-hide-add {
 		animation: fade-out .3s;
-	}*/
+	}
 }
 
 .subcategories-list {
@@ -262,4 +259,13 @@ category-tile {
 		white-space: nowrap;
 		overflow: hidden;
 	}
+}
+
+.subcategories-loader {
+	@include flex-middle();
+	height: 200px;
+}
+
+.subcategories-loader__element {
+	background: url('/shared/images/player-loader.gif');
 }

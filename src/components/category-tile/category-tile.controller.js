@@ -29,9 +29,13 @@ export default class CategoryTileController {
 		}
 	}
 	_getCategoryTopPlaylists() {
+		this.subcategoriesAreLoaded = false;
 		this.playlistService
 			.getTopCategoryPlaylists(this.category.id)
-			.then(playlists => this.category.playlists = playlists);
+			.then(playlists => {
+				this.category.playlists = playlists
+				this.subcategoriesAreLoaded = true;
+			});
 	}
 	playlistDescription(playlist_description) {
 		return this.$sce.trustAsHtml(playlist_description) ?
