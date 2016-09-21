@@ -1,5 +1,6 @@
 @import '../../shared/styles/variables';
 @import '../../shared/styles/mixins';
+@import '../../shared/styles/animations';
 @import '../../shared/styles/icons';
 
 $nav-height: 56px;
@@ -38,6 +39,7 @@ $nav-margin-width--md: 4px;
     height: $nav-height;
     vertical-align: top;
     margin-left: $nav-margin-width;
+	transition: all .35s ease;
 
 	&:first-child {
         margin-left: 0;
@@ -129,46 +131,24 @@ $nav-margin-width--md: 4px;
 	}
 }
 
-.nav__item--search-clicked {
-	height: 96px;
+%nav-item--clicked {
+	color: $white;
+	position: relative;
 	background-color: $grey-7;
+}
 
-	.xs & {
-		height: 56px;
-	}
-
-	.md & {
-		height: 70px;
-	}
+.nav__item--search-clicked {
+	@extend %nav-item--clicked;
 }
 
 .nav__item--menu-clicked {
-	height: 96px;
-	background-color: $grey-7;
+	@extend %nav-item--clicked;
+}
 
-	.xs & {
-		height: 56px;
-	}
-
-	.md & {
-		height: 70px;
-	}
+.my-service-dropdown--clicked {
+	@extend %nav-item--clicked;
 }
 
 .my-service-dropdown__title {
 	margin: 0;
-}
-
-.my-service-dropdown--clicked {
-	height: 96px;
-	background-color: $grey-7;
-	color: $white;
-
-	.xs & {
-		height: 56px;
-	}
-
-	.md & {
-		height: 70px;
-	}
 }

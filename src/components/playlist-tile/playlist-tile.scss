@@ -60,6 +60,10 @@ playlist-tile {
 		margin: 0 16px 16px 0;
 		height: 410px;
 		min-height: 0;
+
+		&:nth-child(4n) {
+			margin-right: 0;
+		}
 	}
 }
 
@@ -83,11 +87,11 @@ playlist-tile {
 		width: auto;
 		height: $playlist-tile-height--horizontal;
 		float: left;
-
-		.xs & {
-			height: 50vw;
-		}
     }
+
+	.xs & {
+		height: 50vw;
+	}
 }
 
 .playlist-tile-meta {
@@ -202,6 +206,7 @@ playlist-tile {
 	height: $distance-md;
 	overflow: hidden;
 	max-height: 200px;
+	word-break: break-word;
 	transition: height .2s ease;
 
 	.xs & {

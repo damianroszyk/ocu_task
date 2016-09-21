@@ -36,7 +36,10 @@ category-tile {
 		border-bottom: $category-tile-border-height--xs solid $yellow;
 	}
 
-	.xs &:nth-child(2n) {
+	.xs .home &:nth-child(2n + 1),
+	.xs .category &:nth-child(2n),
+	.xs .home &:nth-child(3),
+	.xs .home &:nth-child(2) {
 		margin-right: 0;
 	}
 
@@ -163,23 +166,26 @@ category-tile {
 
 .category-tile__subcategories {
     @include position-absolute(0, 0, auto, auto);
+	animation: fade-in .3s;
 	width: (2 * $category-tile-width) + $category-tile-offset;
     min-height: $category-tile-height;
     box-sizing: border-box;
     padding-top: 2 * $distance-md;
     background: $white;
-    z-index: $z-index-4;
+    z-index: 9999999;
 
     .category-tile--featured & {
         min-height: $category-tile-height--featured;
     }
 
-	.xl .category-tile--left & {
+	.category &,
+	.xl .category-tile--left &,
+	.xs category-tile:nth-child(2n) & {
 		@include position-absolute(0, auto, auto, 0);
 	}
 
-	.xs category-tile:nth-child(2n+1) & {
-		@include position-absolute(0, auto, auto, 0);
+	.xs category-tile:nth-child(2) & {
+		@include position-absolute(0, 0, auto, auto);
 	}
 
 	.xs & {
@@ -191,13 +197,9 @@ category-tile {
 	    min-height: $category-tile-height--md;
 	}
 
-	/*&.ng-enter {
-		animation: fade-in .3s;
-	}
-
-	&.ng-leave {
+	&.ng-hide-add {
 		animation: fade-out .3s;
-	}*/
+	}
 }
 
 .subcategories-list {
@@ -259,4 +261,13 @@ category-tile {
 		white-space: nowrap;
 		overflow: hidden;
 	}
+}
+
+.subcategories-loader {
+	@include flex-middle();
+	height: 200px;
+}
+
+.subcategories-loader__element {
+	background: url('/shared/images/player-loader.gif');
 }

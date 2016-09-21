@@ -1,7 +1,8 @@
 <div
-    class="categories-dropdown-wrapper container"
+    class="categories-dropdown-wrapper container animated"
     ng-show="$ctrl.isShown"
 	click-outside="$ctrl.closeDropdown()">
+	<div class="categories-dropdown__connector"></div>
     <div class="categories-dropdown">
 		<span
 			class="icon-close-white--rounded"
@@ -10,6 +11,9 @@
         <ul class="categories-dropdown__list">
             <li
                 class="categories-list__item"
+				ng-class="{
+					'categories-list__item--active': $root.$state.params.l1 === category.slug
+				}"
                 ng-repeat="category in ::$ctrl.categories">
                 <a
                     class="categories-list__link"

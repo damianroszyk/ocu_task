@@ -33,7 +33,7 @@ export default class HomeController {
 		} else if (featuredPlaylist) {
 			let playlistId = featuredPlaylist.id;
 			featuredPlaylist.type = 'playlist';
-			featuredPlaylist.stateParams = { localPlaylistId: playlistId };
+			featuredPlaylist.stateParams = { slug: featuredPlaylist.slug };
 			featuredPlaylist.image = featuredPlaylist.image || this.domConstant.defaultCategoryTileImage;
 			this[`featuredItem${featured}`] = featuredPlaylist;
 		}
