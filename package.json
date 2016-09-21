@@ -54,6 +54,7 @@
     "build:dev": "node ./node_modules/webpack/bin/webpack --env dev",
     "build:qa": "node ./node_modules/webpack/bin/webpack --env qa",
     "build:stg": "node ./node_modules/webpack/bin/webpack --env stg",
+	"build:prod": "node ./node_modules/webpack/bin/webpack --env prod",
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server --env dev",
 	"start:hot": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server --hot --inline --env dev",
     "lint": "node ./node_modules/eslint/bin/eslint --config ./.eslintrc src/ --ext .js",
