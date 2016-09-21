@@ -8,9 +8,14 @@
 npm install
 ```
 
-## Running development environment
+## Running development environment with browser-sync instance
 ```
 npm start
+```
+
+## Running development environment with webpack hot module replacement
+```
+npm run start:hot
 ```
 
 ## Building application for specific environment
