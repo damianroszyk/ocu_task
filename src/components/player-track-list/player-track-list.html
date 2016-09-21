@@ -2,7 +2,7 @@
         <li
             class="player-track-list__item"
             ng-repeat="track in $ctrl.tracks">
-			<div ng-click="$ctrl.onTrackTitleClick({event: $event}, $index)">
+			<div ng-click="$ctrl.onTrackTitleClick({index: $index})">
 				<div class="player-track-list__title">
 					{{track.title}}
 				</div>
