@@ -2,7 +2,7 @@
 
 .playlist-tags {
 	background-color: initial;
-	margin: $distance-lg auto;
+	margin: 0 auto 32px;
 
 	.xs & {
 		padding: 0 $distance-sm;
@@ -53,10 +53,7 @@
 	padding: 0 7px;
 	margin-left: 3px;
 	transition: all .2s ease;
-
-	.xs & {
-		margin-bottom: 8px;
-	}
+	margin-bottom: 8px;
 
 	/*&:hover {
 		background-color: $yellow;
