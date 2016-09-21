@@ -5,12 +5,15 @@
 
 $nav-height: 56px;
 $my-service-dropdown-width: 224px;
+$my-service-dropdown-width--sm: 170px;
 $my-service-dropdown-width--md: 184px;
 $nav-margin-width: 5px;
 $nav-height--xs: 36px;
 $nav-margin-width--xs: 3px;
 $nav-height--md: 46px;
 $nav-margin-width--md: 4px;
+$nav-height--sm: 41px;
+$nav-margin-width--sm: 4px;
 
 .nav {
     height: $nav-height;
@@ -24,6 +27,12 @@ $nav-margin-width--md: 4px;
 		height: $nav-height--xs;
 		margin-top: -$nav-height--xs;
 		line-height: $nav-height--xs;
+	}
+
+	.sm & {
+		height: $nav-height--sm;
+		margin-top: -$nav-height--sm;
+		line-height: $nav-height--sm;
 	}
 
 	.md & {
@@ -54,6 +63,15 @@ $nav-margin-width--md: 4px;
 	    }
 	}
 
+	.sm & {
+		height: $nav-height--sm;
+		margin-left: $nav-margin-width--sm;
+
+		&:first-child {
+	        margin-left: 0;
+	    }
+	}
+
 	.md & {
 		height: $nav-height--md;
 		margin-left: $nav-margin-width--md;
@@ -77,6 +95,11 @@ $nav-margin-width--md: 4px;
 	.xs & {
 		height: $nav-height--xs;
 	    width: $nav-height--xs;
+	}
+
+	.sm & {
+		height: $nav-height--sm;
+	    width: $nav-height--sm;
 	}
 
 	.md & {
@@ -112,6 +135,10 @@ $nav-margin-width--md: 4px;
 		text-align: center;
 	}
 
+	.sm & {
+		width: $my-service-dropdown-width--sm;
+	}
+
 	.md & {
 		width: $my-service-dropdown-width--md;
 	}
@@ -124,6 +151,10 @@ $nav-margin-width--md: 4px;
 
 	.xs & {
 		display: none;
+	}
+
+	.sm & {
+		width: calc(100% - #{$my-service-dropdown-width--sm + 4 * $nav-height--sm + 5 * $nav-margin-width--sm});
 	}
 
 	.md & {

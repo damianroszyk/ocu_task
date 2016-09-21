@@ -8,6 +8,10 @@
 		margin-top: $distance-sm;
 	}
 
+	.sm & {
+		margin-top: $distance-md;
+	}
+
 	.md & {
 		margin-top: 24px;
 	}

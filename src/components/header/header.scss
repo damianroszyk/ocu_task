@@ -3,9 +3,11 @@
 
 $header-height: 400px;
 $header-height--md: 280px;
+$header-height--sm: 150px;
 $header-brand-size: 300px;
 $header-height--xs: 115px;
 $header-brand-size--xs: 79px;
+$header-brand-size--sm: 100px;
 $header-brand-size--md: 200px;
 
 .header {
@@ -15,6 +17,10 @@ $header-brand-size--md: 200px;
 
 	.xs & {
 		height: $header-height--xs;
+	}
+
+	.sm & {
+		height: $header-height--sm;
 	}
 
 	.md & {
@@ -30,6 +36,10 @@ $header-brand-size--md: 200px;
 		height: $header-height--xs;
 	}
 
+	.sm & {
+		height: $header-height--sm;
+	}
+
 	.md & {
 		height: $header-height--md;
 	}
@@ -42,6 +52,11 @@ $header-brand-size--md: 200px;
 	.xs & {
 		@include position-absolute(0, auto, auto, 0);
 		height: $header-brand-size--xs;
+	}
+
+	.sm & {
+		@include position-absolute(0, auto, auto, 0);
+		height: $header-brand-size--sm;
 	}
 
 	.md & {
