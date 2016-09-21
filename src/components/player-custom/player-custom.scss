@@ -397,10 +397,11 @@
 }
 
 .player-custom--popup {
+	overflow-x: auto;
+	overflow-y: hidden;
 	width: 100%;
 	height: 100%;
 	box-sizing: border-box;
-	overflow: hidden;
 
 	.player-custom__widget-controls-popup {
 		display: none;
@@ -438,6 +439,11 @@
 		td {
 			width: 365px;
 		}
+	}
+
+	.player-custom__inner-wrapper {
+		width: 380px;
+		margin: 0 auto;
 	}
 }
 
