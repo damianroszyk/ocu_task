@@ -33,8 +33,8 @@ export default class CategoryTileController {
 		this.playlistService
 			.getTopCategoryPlaylists(this.category.id)
 			.then(playlists => {
-				this.category.playlists = playlists
-				this.subcategoriesAreLoaded = true;
+				this.category.playlists = playlists;
+				this.playlistsAreLoaded = true;
 			});
 	}
 	playlistDescription(playlist_description) {

@@ -235,6 +235,8 @@ category-tile {
 }
 
 .subcategories-list {
+	animation: none;
+	min-height: 100px;
 	margin-top: ($distance-md + $distance-sm);
     list-style-type: none;
 	padding: 0;
@@ -296,10 +298,19 @@ category-tile {
 }
 
 .subcategories-loader {
+	@include position-absolute($distance-md, 0, 0, 0);
 	@include flex-middle();
+	z-index: $z-index-5;
 	height: 200px;
+
+	&.ng-hide-add {
+		animation: fade-out .3s;
+	}
 }
 
 .subcategories-loader__element {
-	background: url('/shared/images/player-loader.gif');
+	background: url('/shared/images/default-loader.gif');
+	background-size: 100%;
+	width: 100px;
+	height: 100px;
 }

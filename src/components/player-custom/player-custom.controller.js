@@ -1,8 +1,5 @@
 import PlayerController from 'abstract/player';
 
-// @HACK: workaround to play deezer player on initialization.
-const PLAY_AFTER = 1000;
-
 export default class PlayerCustomController extends PlayerController {
 	/* @ngInject */
 	constructor(deezer, $scope, $state, $window, $timeout, dispatcherService, playlistService, playerWidgetService, playerConstant) {
@@ -24,10 +21,6 @@ export default class PlayerCustomController extends PlayerController {
 				.getPlaylist(parseInt(this.servicePlaylistId, 10))
 				.then(playlist => {
 					this.tracks = playlist.tracks.data;
-					this.$timeout(() => {
-						this.pause();
-						this.play();
-					}, PLAY_AFTER);
 				});
 			return this.popup ? this.runPlayerInPopup() : this.runPlayerInWhitelabel();
 		});
@@ -47,7 +40,6 @@ export default class PlayerCustomController extends PlayerController {
 				this.playlist = playlist.data;
 				this.playerShown = true;
 				this.initPlaylist();
-				this.play();
 			});
 	}
 	runPlayerInWhitelabel() {
@@ -57,6 +49,7 @@ export default class PlayerCustomController extends PlayerController {
 	}
 	initPlaylist() {
 		this.subscribePlayerEvents();
+		this.isPlayingTrack = true;
 		if (this.trackIdx) {
 			this.deezer.dz.player.playPlaylist(
 				parseInt(this.servicePlaylistId, 10), true,
@@ -64,7 +57,7 @@ export default class PlayerCustomController extends PlayerController {
 				parseInt(this.trackTime, 10)
 			);
 		} else {
-			this.deezer.dz.player.playPlaylist(parseInt(this.servicePlaylistId, 10), false);
+			this.deezer.dz.player.playPlaylist(parseInt(this.servicePlaylistId, 10), 0);
 		}
 	}
 	subscribePlayerEvents() {
@@ -145,12 +138,9 @@ export default class PlayerCustomController extends PlayerController {
 			this.track.completed = completedTime;
 		}
 	}
-	playTrackOfPlaylist(event) {
-		let srcElement = event.srcElement || event.target;
-		let parentTr = srcElement.parentElement.parentElement;
-		let rowIndex = parentTr.rowIndex;
+	playTrackOfPlaylist(index) {
 		this.isPlayingTrack = true;
-		this.deezer.dz.player.playPlaylist(parseInt(this.servicePlaylistId, 10), true, rowIndex);
+		this.deezer.dz.player.playPlaylist(parseInt(this.servicePlaylistId, 10), true, index);
 	}
 	showPopup() {
 		let url = [
@@ -179,17 +169,14 @@ export default class PlayerCustomController extends PlayerController {
 	close() {
 		this.isPlayerMinified = false;
 		this.isMaximized = false;
-		this.$timeout(() => this.pause(), 3 * PLAY_AFTER);
+		this.$timeout(() => this.pause(), 3000);
 		this.playerWidgetService.destroy().notify();
 	}
 	handlePlayLocalPlaylistEvent(event) {
 		if (event.detail && event.detail.playlist) {
-			this.$state.go('customPlayer', {
-				localPlaylistId: event.detail.playlist.id,
-				servicePlaylistId: event.detail.playlist.deezer.service_playlist_id,
-				trackIdx: 0,
-				trackTime: 0
-			}, { reload: true });
+			this.localPlaylistId = event.detail.playlist.id;
+			this.servicePlaylistId = event.detail.playlist.deezer.service_playlist_id;
+			this.$onInit();
 		}
 	}
 }

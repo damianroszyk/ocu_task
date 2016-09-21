@@ -1,4 +1,6 @@
-<header class="header">
+<header
+	class="header"
+	ng-if="!$root.$state.is('spotifyPlayer') && !$root.$state.is('customPlayer')">
 	<cookies-message></cookies-message>
 	<div
 		class="header__background-image"

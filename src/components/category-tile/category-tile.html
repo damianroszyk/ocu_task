@@ -37,6 +37,11 @@
 			</strong>
 			{{::$ctrl.category.name}} playlists
 		</h5>
+		<div
+			class="subcategories-loader"
+			ng-hide="$ctrl.playlistsAreLoaded">
+			<div class="subcategories-loader__element"></div>
+		</div>
         <ul class="subcategories-list">
             <li
 				class="subcategories-list-element"
@@ -53,6 +58,7 @@
             </li>
         </ul>
 		<button
+			ng-show="$ctrl.playlistsAreLoaded"
 			class="btn-circled subcategories__control"
 			ui-sref="category($ctrl.category.stateParams)">
 			See all {{::$ctrl.category.name}} playlists
