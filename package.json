@@ -50,11 +50,12 @@
     "yargs": "^4.7.1"
   },
   "scripts": {
+	"prebuild": "npm install",
     "build": "node ./node_modules/webpack/bin/webpack",
-    "build:dev": "node ./node_modules/webpack/bin/webpack --env dev",
-    "build:qa": "node ./node_modules/webpack/bin/webpack --env qa",
-    "build:stg": "node ./node_modules/webpack/bin/webpack --env stg",
-	"build:prod": "node ./node_modules/webpack/bin/webpack --env prod",
+    "build:dev": "npm run prebuild && node ./node_modules/webpack/bin/webpack --env dev",
+    "build:qa": "npm run prebuild && node ./node_modules/webpack/bin/webpack --env qa",
+    "build:stg": "npm run prebuild && node ./node_modules/webpack/bin/webpack --env stg",
+	"build:prod": "npm run prebuild && node ./node_modules/webpack/bin/webpack --env prod",
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server --env dev",
 	"start:hot": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server --hot --inline --env dev",
     "lint": "node ./node_modules/eslint/bin/eslint --config ./.eslintrc src/ --ext .js",
