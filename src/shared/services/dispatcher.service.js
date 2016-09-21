@@ -21,8 +21,8 @@ class DispatcherService {
 			(callback || angular.noop)(event, payload)
 		);
 	}
-	listenNative(eventName, callback) {
-		this.$window.addEventListener(eventName, event =>
+	listenNative(eventName, callback, context = null) {
+		(context || this.$window).addEventListener(eventName, event =>
 			(callback || angular.noop)(event)
 		);
 	}

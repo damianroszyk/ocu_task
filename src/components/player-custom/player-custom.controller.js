@@ -1,8 +1,12 @@
-const PLAY_LOCAL_PLAYLIST_EVT = 'playLocalPlaylist';
+import PlayerController from 'abstract/player';
 
-export default class PlayerCustomController {
+// @HACK: workaround to play deezer player on initialization.
+const PLAY_AFTER = 1000;
+
+export default class PlayerCustomController extends PlayerController {
 	/* @ngInject */
 	constructor(deezer, $scope, $state, $window, $timeout, dispatcherService, playlistService, playerWidgetService, playerConstant) {
+		super($window, $state, dispatcherService, playerConstant);
 		this.$scope = $scope;
 		this.$state = $state;
 		this.$window = $window;
@@ -14,12 +18,7 @@ export default class PlayerCustomController {
 		this.playerConstant = playerConstant;
 		this.track = {};
 	}
-	$onDestroy() {
-		this.close();
-	}
 	$onInit() {
-		// @HACK: workaround to play deezer player on initialization.
-		const PLAY_AFTER = 1000;
 		this.deezer.deferredPlayer.promise.then(() => {
 			this.deezer
 				.getPlaylist(parseInt(this.servicePlaylistId, 10))
@@ -39,9 +38,6 @@ export default class PlayerCustomController {
 		}
 	}
 	runPlayerInPopup() {
-		if (window.opener) {
-			this.registerOpenerEvents();
-		}
 		this.playLocalPlaylist(this.localPlaylistId);
 	}
 	playLocalPlaylist(localPlaylistId) {
@@ -158,7 +154,7 @@ export default class PlayerCustomController {
 	}
 	showPopup() {
 		let url = [
-			'#/player',
+			'/player',
 			this.localPlaylistId,
 			'deezer',
 			this.servicePlaylistId,
@@ -183,21 +179,10 @@ export default class PlayerCustomController {
 	close() {
 		this.isPlayerMinified = false;
 		this.isMaximized = false;
-		this.pause();
+		this.$timeout(() => this.pause(), 3 * PLAY_AFTER);
 		this.playerWidgetService.destroy().notify();
 	}
-	registerOpenerEvents() {
-		this.$window.opener.addEventListener(
-			this.playerConstant.playLocalPlaylistEvent,
-			this._handlePlayLocalPlaylistEvent.bind(this)
-		);
-		this.$window.onbeforeunload = (event) => {
-			this.dispatcherService.dispatchNative(
-				this.playerConstant.popupClosedEvent, event, this.$window.opener
-			);
-		};
-	}
-	_handlePlayLocalPlaylistEvent(event) {
+	handlePlayLocalPlaylistEvent(event) {
 		if (event.detail && event.detail.playlist) {
 			this.$state.go('customPlayer', {
 				localPlaylistId: event.detail.playlist.id,

@@ -2,9 +2,11 @@ import _ from 'lodash';
 
 export default class MusicProviders {
 	/* @ngInject */
-	constructor(thirdPartyConstant, musicProvider, playerWidgetService) {
+	constructor(thirdPartyConstant, playerConstant, musicProvider, dispatcherService, playerWidgetService) {
 		this.providers = angular.copy(thirdPartyConstant.providers);
+		this.playerConstant = playerConstant;
 		this.musicProvider = musicProvider;
+		this.dispatcherService = dispatcherService;
 		this.chosenProvider = musicProvider.provider;
 		this.playerWidgetService = playerWidgetService;
 		this._getChosenProvider();
@@ -25,6 +27,7 @@ export default class MusicProviders {
 		let selectedProvider = _.filter(this.providers, provider => provider.selected)[0];
 		this.musicProvider.provider = selectedProvider;
 		this.playerWidgetService.destroy().notify();
+		this.dispatcherService.dispatchNative(this.playerConstant.musicProviderUpdatedEvent);
 		this.onSave();
 	}
 }

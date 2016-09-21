@@ -8,6 +8,7 @@ const PLAYER_CONSTANT = {
 	embeddedSpotifyPlayerUrl: 'https://embed.spotify.com',
 	playLocalPlaylistEvent: 'playLocalPlaylist',
 	popupClosedEvent: 'popupClosed',
+	musicProviderUpdatedEvent: 'musicProviderUpdated',
 	deezerRepeatingDictionary: {
 		noRepeat: 0,
 		repeatPlaylist: 1,
