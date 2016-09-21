@@ -8,8 +8,8 @@ export default class SearchResultsController {
 		this.order = this.$state.params.order;
 		this.sortOptions = [
 			{ value: 'updated', name : 'Recently updated'},
-			{ value: 'newest', name : 'Newest first'},
-			{ value: 'length', name : 'Length of time'}
+			{ value: 'newest', name : 'Newest first'}
+			//{ value: 'length', name : 'Length of time'}
 		];
 		this.chosenSortingOption = _.find(this.sortOptions, {
 			value: this.$state.params.order
