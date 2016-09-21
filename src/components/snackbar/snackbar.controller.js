@@ -1,14 +1,15 @@
 
+
 export default class PlaylistController {
 	/* @ngInject */
-	constructor($scope, snackbarService) {
-		this.maxShownMessages = 5;
-		this.messageHidingInterval = 2000; //ms
-		this.messageFadingTime = 500; //ms, should be equal to the transition value in the snackbar.css
+	constructor($scope, snackbarService, snackbarConstant) {
+		this.maxShownMessages = snackbarConstant.maxShownMessages;
+		this.messageHidingInterval = snackbarConstant.messageHidingInterval;
+		this.messageFadingTime = snackbarConstant.messageFadingTime;
 		this.isShown = true;
 		this.messagesQueue = [];
 		this.shownMessages = [];
-		this.hidingTimeout = 0;
+		this.hidingTimeout = 0; // the current hiding timeout id will be set to this variable
 		this.snackbarService = snackbarService;
 		this.scope = $scope;
 		snackbarService.registerObserver(() => this.checkServiceMessagesQueue());
@@ -17,6 +18,11 @@ export default class PlaylistController {
 		this.fadeInMessage = this.fadeInMessage.bind(this);
 	}
 	checkServiceMessagesQueue(){
+
+		if(this.messagesQueue.length > 100){ // this won't allow user to flood the app with too much messages
+			return;
+		}
+
 		var message = this.snackbarService.pickQueuedMessage();
 
 		if(message != null){
@@ -30,8 +36,8 @@ export default class PlaylistController {
 	showNext(){
 		if(this.messagesQueue.length > 0){
 
-			this.shownMessages.push(Object.assign({}, this.messagesQueue.shift(), {isShown: false}));
-			setTimeout(this.fadeInMessage, 0);
+			this.shownMessages.push(Object.assign({}, this.messagesQueue.shift(), {isShown: false})); // "isShown: false" described in the line below
+			setTimeout(this.fadeInMessage, 0); // we need setTimeout, because the "shown" class cannot be applied immediately, otherwise the css transition effect will not work
 
 			if(!this.hidingTimeout){
 				this.hidingTimeout = setTimeout(this.hideOldest,  this.messageHidingInterval);
@@ -47,7 +53,7 @@ export default class PlaylistController {
 			player.scope.$apply();
 			setTimeout(player.removeMessage,  player.messageFadingTime);
 			if(player.shownMessages.length == 1){
-				player.hidingTimeout = 0;
+				player.hidingTimeout = 0; // there's no need to run "hideOldest" function again, because timeout that will remove the last message has been already set
 			}
 			else{
 				player.hidingTimeout = setTimeout(player.hideOldest,  player.messageHidingInterval);
