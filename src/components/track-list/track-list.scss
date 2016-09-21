@@ -29,6 +29,7 @@ $column-width--md: 235px;
 	background-color: $white;
 	border: 2px solid $grey-6;
 	border-top: 0;
+	margin-bottom: $distance-lg;
 
 	.xs & {
 		width: 100%;
