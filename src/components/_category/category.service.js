@@ -40,9 +40,10 @@ class CategoryService {
 	}
 	getFeaturedCategories() {
 		let url = this.modelHelper.buildUrl(this.categoryBackend, 'list');
+		let params = { featured: true };
 		let headers = { featured: 1, published: 1 };
 		return this.$http
-			.get(url, { headers })
+			.get(url, { params, headers })
 			.then(response => this._buildFeaturedCategoriesParams(response.data));
 	}
 	_buildCategoriesParams(categories) {
