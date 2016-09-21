@@ -174,12 +174,9 @@ export default class PlayerCustomController extends PlayerController {
 	}
 	handlePlayLocalPlaylistEvent(event) {
 		if (event.detail && event.detail.playlist) {
-			this.$state.go('customPlayer', {
-				localPlaylistId: event.detail.playlist.id,
-				servicePlaylistId: event.detail.playlist.deezer.service_playlist_id,
-				trackIdx: 0,
-				trackTime: 0
-			}, { reload: true });
+			this.localPlaylistId = event.detail.playlist.id;
+			this.servicePlaylistId = event.detail.playlist.deezer.service_playlist_id;
+			this.$onInit();
 		}
 	}
 }
