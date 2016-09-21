@@ -9,6 +9,10 @@
 		margin-top: 0;
 	}
 
+	.sm & {
+		margin-top: $distance-md;
+	}
+
 	.md & {
 		margin-top: $distance-md;
 	}

@@ -9,7 +9,7 @@
 	}
 
 	.sm & {
-		margin-top: $distance-md;
+		margin-top: 1vw;
 	}
 
 	.md & {
@@ -20,6 +20,10 @@
 .home__featured {
 	@include clearfix();
 	padding-bottom: $distance-sm;
+
+	.sm & {
+		padding-bottom: 1vw;
+	}
 
 	.md & {
 		padding-bottom: 0;

@@ -9,6 +9,7 @@ $playlist-tile-height--horizontal: 180px;
 $column-right--horizontal: 977px;
 $playlist-tile-description-font: 15px;
 
+$playlist-tile-width--sm: 24.25vw;
 $playlist-tile-width--md: 180px;
 
 playlist-tile {
@@ -55,6 +56,17 @@ playlist-tile {
 		}
 	}
 
+	.sm & {
+		width: $playlist-tile-width--sm;
+		margin: 0 1vw 1vw 0;
+		height: auto;
+		min-height: 0;
+
+		&:nth-child(4n) {
+			margin-right: 0;
+		}
+	}
+
 	.md & {
 		width: $playlist-tile-width--md;
 		margin: 0 16px 16px 0;
@@ -92,6 +104,10 @@ playlist-tile {
 	.xs & {
 		height: 50vw;
 	}
+
+	.sm & {
+		height: 24.25vw;
+	}
 }
 
 .playlist-tile-meta {
@@ -106,6 +122,13 @@ playlist-tile {
 	.xs & {
 		height: calc(#{$playlist-tile-height} - 48vw);
 		padding-bottom: $distance-md;
+		position: relative;
+		height: auto;
+	}
+
+	.sm & {
+		height: calc(#{$playlist-tile-height} - 24.25vw);
+		padding: 0;
 		position: relative;
 		height: auto;
 	}
@@ -144,6 +167,12 @@ playlist-tile {
 		margin-left: $distance-sm;
 	}
 
+	.sm & {
+		font-size: 16px;
+		margin-bottom: ($distance-sm / 2);
+		margin-left: $distance-sm;
+	}
+
 	.md & {
 		margin-left: $distance-sm;
 	}
@@ -167,6 +196,10 @@ playlist-tile {
 		display: none;
 	}
 
+	.sm & {
+		display: none;
+	}
+
 	.md & {
 		display: none;
 	}
@@ -178,6 +211,10 @@ playlist-tile {
 	display: none;
 
 	.xs & {
+		display: block;
+	}
+
+	.sm & {
 		display: block;
 	}
 
@@ -194,6 +231,10 @@ playlist-tile {
 	}
 
 	.xs & {
+		padding: 0 $distance-sm 0 $distance-md;
+	}
+
+	.sm & {
 		padding: 0 $distance-sm 0 $distance-md;
 	}
 
@@ -214,8 +255,13 @@ playlist-tile {
 		font-size: $playlist-tile-description-font;
 	}
 
+	.sm & {
+		height: 68px;
+		font-size: $playlist-tile-description-font;
+	}
+
 	.md & {
-		height: 92px;
+		height: 88px;
 	}
 }
 
@@ -228,6 +274,11 @@ playlist-tile {
 
 	.xs & {
 		font-weight: 400;
+	}
+
+	.sm & {
+		font-weight: 400;
+		font-size: 15px;
 	}
 
 	.md & {
@@ -250,6 +301,13 @@ playlist-tile {
 	display: block;
 
 	.xs & {
+		font-size: 15px;
+		margin-top: 2px;
+		margin-bottom: $distance-sm;
+		height: 3 * $distance-sm;
+	}
+
+	.sm & {
 		font-size: 15px;
 		margin-top: 2px;
 		margin-bottom: $distance-sm;
