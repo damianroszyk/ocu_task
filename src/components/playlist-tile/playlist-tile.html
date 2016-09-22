@@ -1,10 +1,7 @@
 <div class="playlist-tile" playlist-tile>
 	<div
 		class="playlist-tile__image-wrapper"
-		ui-sref="playlist({
-			localPlaylistId: $ctrl.playlist.id,
-			slug: $ctrl.playlist.slug
-		})">
+		ng-click="$ctrl.launchPlayer()">
 		<div class="playlist-tile__overlay"></div>
 		<img
 		    class="playlist-tile__image"

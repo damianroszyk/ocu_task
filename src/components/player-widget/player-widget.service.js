@@ -4,8 +4,12 @@ import Observable from 'abstract/observable';
 
 class PlayerWidgetService extends Observable {
 	/* @ngInject */
-	constructor() {
+	constructor(dispatcherService, playerConstant, musicProvider, thirdPartyConstant) {
 		super();
+		this.dispatcherService = dispatcherService;
+		this.playerConstant = playerConstant;
+		this.musicProvider = musicProvider;
+		this.thirdPartyConstant = thirdPartyConstant;
 		this._player = {};
 		this._popup = false;
 	}
@@ -27,6 +31,43 @@ class PlayerWidgetService extends Observable {
 	destroy() {
 		this._player = {};
 		return this;
+	}
+	launch(playlist) {
+		if (!this.musicProvider.isSet()) {
+			this.musicProvider.openModal(() => this.launch(playlist));
+		}
+		if (this.popup) {
+			this.dispatcherService.dispatchNative(
+				this.playerConstant.playLocalPlaylistEvent, { playlist }
+			);
+		} else {
+			this._createPlayer(playlist);
+			this.dispatcherService.listenNative(
+				this.playerConstant.popupClosedEvent, () => this.popup = false
+			);
+		}
+	}
+	_createPlayer(playlist) {
+		let provider = this.musicProvider.provider.name;
+		let providerPlaylist = _.find(playlist.external_playlists, { source: provider});
+		if (provider === 'apple') {
+			window.open(playlist.apple_music_link || this.thirdPartyConstant.digsterAppleMusicAccount);
+			return;
+		}
+		if (!providerPlaylist) {
+			//@TODO: handle not found 3rd party playlist here
+			console.log(`No playlist in ${service}`);
+			return;
+		}
+		this.destroy();
+		this.player = {
+			service: provider,
+			servicePlaylistId: providerPlaylist.service_playlist_id,
+			serviceUserId: providerPlaylist.service_user_id,
+			localPlaylistId: playlist.id,
+			show: true
+		};
+		this.notify();
 	}
 }
 
