@@ -16,6 +16,7 @@ export default class PlaylistHeaderController {
 		this.playerWidgetService.launch(this.playlist);
 	}
 	playlistDescription() {
-		return this.cmsPlaylistDescription ? this.cmsPlaylistDescription : this.defaultPlaylistDescription;
+		return this.cmsPlaylistDescription ?
+			this.cmsPlaylistDescription : this.defaultPlaylistDescription;
 	}
 }

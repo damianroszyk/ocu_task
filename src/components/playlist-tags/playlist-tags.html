@@ -5,6 +5,7 @@
 	<ul class="tags-list">
 		<li
 			class="tags-list__item"
+			ui-sref="category({ l1: tag.slug })"
 			ng-repeat="tag in ::$ctrl.tags">
 			{{::tag.name}}
 		</li>

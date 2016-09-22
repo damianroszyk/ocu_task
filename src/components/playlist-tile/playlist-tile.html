@@ -10,12 +10,12 @@
 			<i class="icon-play play-button__icon"></i>
 		</play-button>
 	</div>
-	<figcaption class="playlist-tile-meta">
-		<h3
-			class="playlist-tile-meta__title text--md"
-			ui-sref="playlist({
-				slug: $ctrl.playlist.slug
-			})">
+	<figcaption
+		class="playlist-tile-meta"
+		ui-sref="playlist({
+			slug: $ctrl.playlist.slug
+		})">
+		<h3 class="playlist-tile-meta__title text--md">
 			{{::$ctrl.playlist.name}}
 		</h3>
 		<div class="playlist-tile-meta__dash">&mdash;</div>

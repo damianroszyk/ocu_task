@@ -44,7 +44,7 @@
 }
 
 .tags-list__item {
-	/*cursor: pointer;*/
+	cursor: pointer;
 	list-style: none;
 	display: inline-block;
 	background-color: $grey-7;
@@ -55,10 +55,10 @@
 	transition: all .2s ease;
 	margin-bottom: 8px;
 
-	/*&:hover {
+	&:hover {
 		background-color: $yellow;
 		color: $black;
-	}*/
+	}
 
 	.playlist-tiles--horizontal & {
 		&:first-child {
