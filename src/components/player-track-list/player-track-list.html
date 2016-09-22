@@ -1,8 +1,9 @@
 <ul class="player-track-list player-track-table--scroll">
         <li
             class="player-track-list__item"
-            ng-repeat="track in $ctrl.tracks">
-			<div ng-click="$ctrl.onTrackTitleClick({index: $index})">
+            ng-repeat="track in $ctrl.tracks track by $index">
+			<div ng-click="$ctrl.onTrackTitleClick({index: $index, track: track})">
+				{{$index}}
 				<div class="player-track-list__title">
 					{{track.title}}
 				</div>
