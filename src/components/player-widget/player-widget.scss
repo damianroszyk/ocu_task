@@ -4,4 +4,8 @@ $player-widget-offset: 440px;
 	position: absolute;
 	top: $player-widget-offset;
 	right: 0;
+
+	&.sticky {
+		position: fixed;
+	}
 }
