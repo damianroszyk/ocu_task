@@ -15,7 +15,7 @@
 	"ALBUM": "album",
 	"TIME": "time",
 	"SEARCH": "search",
-	"SEARCH_FORM_INPUT": "Search Digster",
+	"SEARCH_FORM_INPUT": "Search Digster...",
 	"SEARCH_RESULTS_FOR": "search results for",
 	"PLAYLIST_NO_DESCRIPTION": "No description",
 	"NO_PLAYLIST_IN_PROVIDER_SERVICE": "No playlist in {{service}}.",

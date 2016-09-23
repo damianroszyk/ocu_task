@@ -118,7 +118,7 @@ $nav-margin-width--md: 4px;
 }
 
 .nav-breadcrumb {
-	width: calc(100% - #{$my-service-dropdown-width + 4 * $nav-height + 5 * $nav-margin-width});
+	width: calc(100% - #{$my-service-dropdown-width + 2 * $nav-height + 3 * $nav-margin-width});
 	padding-left: $distance-lg;
 	box-sizing: border-box;
 
