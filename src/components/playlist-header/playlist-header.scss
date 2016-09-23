@@ -14,6 +14,7 @@ $playlist-header-height--md: 240px;
 
 	.xs & {
 		height: $playlist-header-height--xs;
+		margin-top: $distance-md;
 	}
 
 	.play-button-overlay {

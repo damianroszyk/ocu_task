@@ -152,6 +152,11 @@ $lg-icon: 50px;
 		height: 24px;
 		width: 24px;
 	}
+
+	.sm & {
+		height: 27px;
+		width: 27px;
+	}
 }
 
 .icon-chevron--down--float-right {
@@ -160,6 +165,12 @@ $lg-icon: 50px;
 	transition: transform .15s;
 
 	.xs & {
+		width: 30px;
+		height: 30px;
+		background-size: 80%;
+	}
+
+	.sm & {
 		width: 30px;
 		height: 30px;
 		background-size: 80%;

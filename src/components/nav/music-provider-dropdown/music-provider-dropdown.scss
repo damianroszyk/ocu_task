@@ -29,6 +29,15 @@ $music-provider-dropdown-height--xs: auto;
 		padding-bottom: 100px;
 	}
 
+	.sm & {
+		top: calc(41px + 1vw);
+		left: auto;
+		width: $music-provider-dropdown-width--xs;
+	    height: $music-provider-dropdown-height--xs;
+		padding: 4%;
+		padding-bottom: 100px;
+	}
+
 	.md & {
 		width: $music-provider-dropdown-width--md;
 		top: 70px;
@@ -47,16 +56,22 @@ $music-provider-dropdown-height--xs: auto;
 	width: 224px;
 	background: $grey-7;
 
-	.md & {
-		left: 50px;
-		width: 185px;
-		height: 24px;
-	}
-
 	.xs & {
 		left: 37px;
 		width: calc(100% - 154px);
 		height: 20px;
+	}
+
+	.sm & {
+		left: 45px;
+		width: 170px;
+		height: 1vw;
+	}
+
+	.md & {
+		left: 50px;
+		width: 185px;
+		height: 24px;
 	}
 }
 

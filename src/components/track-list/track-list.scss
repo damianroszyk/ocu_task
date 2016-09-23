@@ -20,6 +20,11 @@ $column-width--md: 235px;
 		white-space: normal;
 		width: inherit;
 	}
+
+	.sm & {
+		white-space: normal;
+		width: inherit;
+	}
 }
 
 .track-table {
@@ -36,6 +41,11 @@ $column-width--md: 235px;
 		border: 0;
 	}
 
+	.sm & {
+		width: 100%;
+		border: 0;
+	}
+
 	th,
 	td {
 		padding: 5px;
@@ -43,6 +53,10 @@ $column-width--md: 235px;
 		box-sizing: border-box;
 
 		.xs & {
+			display: block;
+		}
+
+		.sm & {
 			display: block;
 		}
 
@@ -60,6 +74,10 @@ $column-width--md: 235px;
 		.xs & {
 			display: none;
 		}
+
+		.sm & {
+			display: none;
+		}
 	}
 
 	td:nth-child(1),
@@ -67,6 +85,10 @@ $column-width--md: 235px;
 		@include column($column-one-width);
 
 		.xs & {
+			display: none;
+		}
+
+		.sm & {
 			display: none;
 		}
 
@@ -80,6 +102,10 @@ $column-width--md: 235px;
 		@include column($column-two-width);
 
 		.xs & {
+			font-size: 20px;
+		}
+
+		.sm & {
 			font-size: 20px;
 		}
 
@@ -98,6 +124,10 @@ $column-width--md: 235px;
 			border: 0;
 		}
 
+		.sm & {
+			border: 0;
+		}
+
 		.md & {
 			max-width: $column-width--md;
 			width: 250px;
@@ -113,6 +143,10 @@ $column-width--md: 235px;
 			border: 0;
 		}
 
+		.sm & {
+			border: 0;
+		}
+
 		.md & {
 			max-width: $column-width--md;
 			width: 249px;
@@ -125,6 +159,10 @@ $column-width--md: 235px;
 		border-left: 1px solid $grey-3;
 
 		.xs & {
+			display: none;
+		}
+
+		.sm & {
 			display: none;
 		}
 
@@ -158,10 +196,25 @@ $column-width--md: 235px;
 			overflow: hidden;
 		}
 
+		.sm & {
+			height: auto;
+			overflow: hidden;
+		}
+
 		tr {
 			height: 35px;
 
 			.xs & {
+				padding: $distance-sm;
+			    display: block;
+			    height: 100%;
+
+				&:first-child {
+			        border-top: 1px solid $grey-3;
+			    }
+			}
+
+			.sm & {
 				padding: $distance-sm;
 			    display: block;
 			    height: 100%;
