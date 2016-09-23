@@ -12,7 +12,7 @@ class PlaylistService {
 		this.domConstant = domConstant;
 		this.playerWidgetService = playerWidgetService;
 		this.snackbarService = snackbarService;
-		this.translate = $translate;
+		this.$translate = $translate;
 		this.musicProvider = musicProvider;
 		this.backendConstant = backendConstant;
 		this.playlistBackend = this.modelHelper.buildUrl(
@@ -89,7 +89,7 @@ class PlaylistService {
 			return;
 		}
 		if (!servicePlaylist) {
-			this.snackbarService.showErrorMessage(this.translate.instant('NO_PLAYLIST_IN_PROVIDER_SERVICE', {service: service}));
+			this.snackbarService.showErrorMessage(this.$translate.instant('NO_PLAYLIST_IN_PROVIDER_SERVICE', { service }));
 
 			return;
 		}

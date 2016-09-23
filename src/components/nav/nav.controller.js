@@ -1,19 +1,18 @@
 export default class NavController {
 	/* @ngInject */
 	constructor(musicProvider, $translate) {
+
+		this.$translate = $translate;
+		this.musicProvider = musicProvider;
 		this.selectedProviderName = '';
+		this._translateChosenMusicServiceLabel();
+		musicProvider.registerObserver(() => this._translateChosenMusicServiceLabel());
+	}
 
-		$translate('MUSIC_SERVICE' + (!!musicProvider.provider ? '_' + musicProvider.provider.name.toUpperCase() : '' )).then(
-			name => this.selectedProviderName = name,
-			id => this.selectedProviderName = id
+	_translateChosenMusicServiceLabel(){
+		this.$translate('CHOSEN_MUSIC_SERVICE' + (!!this.musicProvider.provider ? '_' + this.musicProvider.provider.name.toUpperCase() : '' )).then(
+			name => this.selectedProviderName = name
 		);
-
-		musicProvider.registerObserver(() => {
-			$translate('MUSIC_SERVICE' + (!!musicProvider.provider.name ? '_' + musicProvider.provider.name.toUpperCase() : '' )).then(
-				name => this.selectedProviderName = name,
-				id => this.selectedProviderName = id
-			);
-		});
 	}
 
 	showSearch($event, root) {

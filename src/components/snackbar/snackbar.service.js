@@ -8,25 +8,21 @@ class SnackbarService extends Observable {
 		super();
 		this.messagesQueue = [];
 	}
-	showSuccessMessage(msg){
-		this.messagesQueue.push({text: msg, type: 'SUCCESS'});
-		this.notifyObservers();
+	showSuccessMessage(text){
+		this._showMessage(text, 'SUCCESS');
 	}
-	showInfoMessage(msg){
-		this.messagesQueue.push({text: msg, type: 'INFO'});
-		this.notifyObservers();
+	showInfoMessage(text){
+		this._showMessage(text, 'INFO');
 	}
-	showErrorMessage(msg){
-		this.messagesQueue.push({text: msg, type: 'ERROR'});
+	showErrorMessage(text){
+		this._showMessage(text, 'ERROR');
+	}
+	_showMessage(text, type) {
+		this.messagesQueue.push({ text, type });
 		this.notifyObservers();
 	}
 	pickQueuedMessage(){
-		if(this.messagesQueue.length == 0){
-			return null;
-		}
-		else{
-			return this.messagesQueue.shift();
-		}
+		return this.messagesQueue.length ? this.messagesQueue.shift() : null;
 	}
 }
 
