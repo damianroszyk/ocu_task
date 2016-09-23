@@ -3,7 +3,6 @@
             class="player-track-list__item"
             ng-repeat="track in $ctrl.tracks track by $index">
 			<div ng-click="$ctrl.onTrackTitleClick({index: $index, track: track})">
-				{{$index}}
 				<div class="player-track-list__title">
 					{{track.title}}
 				</div>
