@@ -12,9 +12,6 @@ export default class PlaylistController {
 		this.snackbarService = snackbarService;
 		this.$timeout = $timeout;
 		snackbarService.registerObserver(this.checkServiceMessagesQueue.bind(this));
-		this.hideOldest = this.hideOldest.bind(this);
-		this.removeMessage = this.removeMessage.bind(this);
-		this.fadeInMessage = this.fadeInMessage.bind(this);
 	}
 	checkServiceMessagesQueue(){
 
