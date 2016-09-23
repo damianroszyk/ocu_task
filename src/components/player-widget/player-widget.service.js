@@ -4,13 +4,15 @@ import Observable from 'abstract/observable';
 
 class PlayerWidgetService extends Observable {
 	/* @ngInject */
-	constructor($window, dispatcherService, playerConstant, musicProvider, thirdPartyConstant) {
+	constructor($window, $translate, dispatcherService, playerConstant, musicProvider, thirdPartyConstant, snackbarService) {
 		super();
 		this.$window = $window;
+		this.$translate = $translate;
 		this.dispatcherService = dispatcherService;
 		this.playerConstant = playerConstant;
 		this.musicProvider = musicProvider;
 		this.thirdPartyConstant = thirdPartyConstant;
+		this.snackbarService = snackbarService;
 		this._player = {};
 		this._popup = false;
 	}
@@ -56,8 +58,9 @@ class PlayerWidgetService extends Observable {
 			return;
 		}
 		if (!providerPlaylist) {
-			//@TODO: handle not found 3rd party playlist here
-			console.error(`No playlist found in ${provider}`);
+			this.snackbarService.showErrorMessage(
+				this.$translate.instant('NO_PLAYLIST_IN_PROVIDER_SERVICE', { service })
+			);
 			return;
 		}
 		this.destroy();
