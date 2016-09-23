@@ -2,7 +2,7 @@ import angular from 'angular';
 import app from 'app';
 
 /* @ngInject */
-let clickOutside = $parse => {
+let isLoaded = $parse => {
 	return {
 		restrict: 'A',
 		link: (scope, element, attrs) => {
@@ -16,5 +16,5 @@ let clickOutside = $parse => {
 
 export default angular
 	.module(app)
-	.directive('isLoaded', clickOutside)
+	.directive('isLoaded', isLoaded)
 	.name;

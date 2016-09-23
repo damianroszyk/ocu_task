@@ -4,15 +4,13 @@ import app from 'app';
 
 class PlaylistService {
 	/* @ngInject */
-	constructor($http, $q, deezer, backendConstant, musicProvider, domConstant, modelHelper, playerWidgetService, snackbarService, $translate) {
+	constructor($http, $q, deezer, backendConstant, musicProvider, domConstant, modelHelper, playerWidgetService) {
 		this.$http = $http;
 		this.$q = $q;
 		this.deezer = deezer;
 		this.modelHelper = modelHelper;
 		this.domConstant = domConstant;
 		this.playerWidgetService = playerWidgetService;
-		this.snackbarService = snackbarService;
-		this.$translate = $translate;
 		this.musicProvider = musicProvider;
 		this.backendConstant = backendConstant;
 		this.playlistBackend = this.modelHelper.buildUrl(
@@ -78,30 +76,6 @@ class PlaylistService {
 	}
 	_normalizeServicePlaylist(service, response) {
 		return response;
-	}
-	showPlayer(playlist) {
-		let service = this.musicProvider.provider.name;
-		let servicePlaylist = _.find(playlist.external_playlists, {
-			source: service
-		});
-		if (service === 'apple') {
-			window.open(playlist.apple_music_link || 'https://itunes.apple.com/us/curator/digster/id1018903101');
-			return;
-		}
-		if (!servicePlaylist) {
-			this.snackbarService.showErrorMessage(this.$translate.instant('NO_PLAYLIST_IN_PROVIDER_SERVICE', { service }));
-
-			return;
-		}
-		this.playerWidgetService.destroy();
-		this.playerWidgetService.player = {
-			service,
-			servicePlaylistId: servicePlaylist.service_playlist_id,
-			serviceUserId: servicePlaylist.service_user_id,
-			localPlaylistId: playlist.id,
-			show: true
-		};
-		this.playerWidgetService.notify();
 	}
 }
 

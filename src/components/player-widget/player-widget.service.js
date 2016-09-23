@@ -4,8 +4,15 @@ import Observable from 'abstract/observable';
 
 class PlayerWidgetService extends Observable {
 	/* @ngInject */
-	constructor() {
+	constructor($window, $translate, dispatcherService, playerConstant, musicProvider, thirdPartyConstant, snackbarService) {
 		super();
+		this.$window = $window;
+		this.$translate = $translate;
+		this.dispatcherService = dispatcherService;
+		this.playerConstant = playerConstant;
+		this.musicProvider = musicProvider;
+		this.thirdPartyConstant = thirdPartyConstant;
+		this.snackbarService = snackbarService;
 		this._player = {};
 		this._popup = false;
 	}
@@ -27,6 +34,44 @@ class PlayerWidgetService extends Observable {
 	destroy() {
 		this._player = {};
 		return this;
+	}
+	launch(playlist) {
+		if (!this.musicProvider.isSet()) {
+			this.musicProvider.openModal(() => this.launch(playlist));
+		}
+		if (this.popup) {
+			this.dispatcherService.dispatchNative(
+				this.playerConstant.playLocalPlaylistEvent, { playlist }
+			);
+		} else {
+			this._createPlayer(playlist);
+			this.dispatcherService.listenNative(
+				this.playerConstant.popupClosedEvent, () => this.popup = false
+			);
+		}
+	}
+	_createPlayer(playlist) {
+		let provider = this.musicProvider.provider.name;
+		let providerPlaylist = _.find(playlist.external_playlists, { source: provider });
+		if (provider === 'apple') {
+			this.$window.open(playlist.apple_music_link || this.thirdPartyConstant.digsterAppleMusicAccount);
+			return;
+		}
+		if (!providerPlaylist) {
+			this.snackbarService.showErrorMessage(
+				this.$translate.instant('NO_PLAYLIST_IN_PROVIDER_SERVICE', { service })
+			);
+			return;
+		}
+		this.destroy();
+		this.player = {
+			service: provider,
+			servicePlaylistId: providerPlaylist.service_playlist_id,
+			serviceUserId: providerPlaylist.service_user_id,
+			localPlaylistId: playlist.id,
+			show: true
+		};
+		this.notify();
 	}
 }
 
