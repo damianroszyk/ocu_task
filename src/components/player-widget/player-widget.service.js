@@ -59,7 +59,7 @@ class PlayerWidgetService extends Observable {
 		}
 		if (!providerPlaylist) {
 			this.snackbarService.showErrorMessage(
-				this.$translate.instant('NO_PLAYLIST_IN_PROVIDER_SERVICE', { service })
+				this.$translate.instant('NO_PLAYLIST_IN_PROVIDER_SERVICE', { service: provider })
 			);
 			return;
 		}
