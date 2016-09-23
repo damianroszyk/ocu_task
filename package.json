@@ -50,17 +50,19 @@
     "yargs": "^4.7.1"
   },
   "scripts": {
-    "build": "node ./node_modules/webpack/bin/webpack",
-    "build:dev": "node ./node_modules/webpack/bin/webpack --env dev",
-    "build:qa": "node ./node_modules/webpack/bin/webpack --env qa",
-    "build:stg": "node ./node_modules/webpack/bin/webpack --env stg",
+    "prebuild": "npm install",
+    "build": "node ./node_modules/webpack/bin/webpack --progress --colors",
+    "build:dev": "npm run build -- --env dev",
+    "build:qa": "npm run build -- --env qa",
+    "build:stg": "npm run build -- --env stg",
+    "build:prod": "npm run build -- --env prod",
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server --env dev",
-	"start:hot": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server --hot --inline --env dev",
+    "start:hot": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server --hot --inline --env dev",
     "lint": "node ./node_modules/eslint/bin/eslint --config ./.eslintrc src/ --ext .js",
-    "pree2e-ci": "node ./node_modules/protractor/bin/webdriver-manager update",
-    "pree2e-dev": "node ./node_modules/protractor/bin/webdriver-manager update",
-    "e2e-ci": "node ./node_modules/protractor/bin/protractor ./e2e/protractor.conf.ci.js",
-    "e2e-dev": "node ./node_modules/protractor/bin/protractor ./e2e/protractor.conf.dev.js"
+    "pree2e:ci": "node ./node_modules/protractor/bin/webdriver-manager update",
+    "pree2e:dev": "node ./node_modules/protractor/bin/webdriver-manager update",
+    "e2e:ci": "node ./node_modules/protractor/bin/protractor ./e2e/protractor.conf.ci.js",
+    "e2e:dev": "node ./node_modules/protractor/bin/protractor ./e2e/protractor.conf.dev.js"
   },
   "repository": {
     "type": "git",

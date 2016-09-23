@@ -168,6 +168,7 @@ category-tile {
 		height: $category-tile-control-radius--md;
 		top: 15px;
 		right: 15px;
+		border-radius: $distance-md;
 	}
 
 	.category-tile__subcategories & {

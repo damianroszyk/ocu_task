@@ -125,6 +125,11 @@ $playlist-header-height--md: 240px;
 	@include position-absolute(auto, 0, 0, auto);
 	padding: 0 8 * $distance-md $distance-sm $distance-md;
 
+	.md & {
+		top: 128px;
+		padding-right: $distance-md;
+	}
+
 	.xs & {
 		width: 100%;
 		padding: 15px 10px;

@@ -5,7 +5,7 @@ $cookies-message-banner-height: 50px;
 
 .cookies-message {
 	@include position-fixed(0, 0, auto, 0);
-	height: $cookies-message-banner-height;
+	height: auto;
 	line-height: $cookies-message-banner-height;
 	z-index: $z-index-5;
 	background: $opacity-6;
@@ -20,7 +20,7 @@ $cookies-message-banner-height: 50px;
 .cookies-message__control {
 	line-height: normal;
 	cursor: pointer;
-	background: $grey-3;
+	background-color: $grey-3;
 	width: $cookies-message-banner-height / 2;
 	height: $cookies-message-banner-height / 2;
 	border-radius: 50%;
@@ -28,4 +28,16 @@ $cookies-message-banner-height: 50px;
 	margin-left: $distance-sm;
 	text-align: center;
 	outline: none;
+
+	.xs & {
+		border-radius: 25px;
+	}
+
+	.sm & {
+		border-radius: 25px;
+	}
+
+	.md & {
+		border-radius: 25px;
+	}
 }

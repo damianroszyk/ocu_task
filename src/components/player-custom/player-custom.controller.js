@@ -1,3 +1,6 @@
+import angular from 'angular';
+import _ from 'lodash';
+
 import PlayerController from 'abstract/player';
 
 export default class PlayerCustomController extends PlayerController {
@@ -20,7 +23,7 @@ export default class PlayerCustomController extends PlayerController {
 			this.deezer
 				.getPlaylist(parseInt(this.servicePlaylistId, 10))
 				.then(playlist => {
-					this.tracks = playlist.tracks.data;
+					this.tracks = _.filter(playlist.tracks.data, track => track.readable);
 				});
 			return this.popup ? this.runPlayerInPopup() : this.runPlayerInWhitelabel();
 		});

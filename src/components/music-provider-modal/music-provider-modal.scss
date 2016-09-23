@@ -7,38 +7,49 @@ $provider-modal-width--xs: 100%;
 $provider-modal-height--xs: auto;
 
 .music-provider-modal {
+	@include flex-middle();
+	animation: fade-in .5s;
 	height: 100%;
 	width: 100%;
 	top: 0;
 	position: fixed;
-	transform-style: preserve-3d;
-	z-index: $z-index-1;
+	z-index: $z-index-5;
+
+	&.ng-hide-add {
+		animation: fade-out .5s;
+	}
 }
 
 .provider-modal__backdrop {
 	@include position-absolute(0, 0, 0, 0);
+	animation: fade-in .5s;
 	background: $opacity-5;
+
+	&.ng-hide-add {
+		animation: fade-out .5s;
+	}
 }
 
 .provider-modal {
+	animation: fade-in .3s;
 	font-size: initial;
 	background-color: $grey-7;
-    z-index: $z-index-5;
+    z-index: $z-index-6;
 	height: $provider-modal-height;
 	width: $provider-modal-width;
 	line-height: initial;
+	position: relative;
+	overflow: hidden;
 	font-weight: 400;
 	padding: $distance-md $distance-lg $distance-lg;
 	box-sizing: border-box;
-	position: relative;
-	top: auto;
-	transform: translateY(100%);
-	left: auto;
 	margin: 0 auto;
 
+	&.ng-hide-add {
+		animation: fade-out .5s;
+	}
+
 	.xs & {
-		top: 56px;
-		left: auto;
 		width: $provider-modal-width--xs;
 	    height: $provider-modal-height--xs;
 		padding: 6%;
