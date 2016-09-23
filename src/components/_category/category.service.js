@@ -54,7 +54,7 @@ class CategoryService {
 		let stateParams = {};
 		category.parents = this._traverseCategories(stateParams, category.parents, 0);
 		let nestingLevel = Object.keys(stateParams).length + 1;
-		stateParams[`l${nestingLevel}`] = _.kebabCase(category.name);
+		stateParams[`l${nestingLevel}`] = category.slug;
 		category.children = this._traverseCategories(stateParams, category.children, nestingLevel);
 		return category;
 	}
@@ -64,7 +64,7 @@ class CategoryService {
 			category.parents = this._traverseCategories(stateParams, category.parents, 0);
 			stateParams = _.mapKeys(stateParams, (value, key) => `l${key}`);
 			let nestingLevel = Object.keys(stateParams).length + 1;
-			stateParams[`l${nestingLevel}`] = _.kebabCase(category.name);
+			stateParams[`l${nestingLevel}`] = category.slug;
 			stateParams.categoryId = category.id;
 			category.stateParams = stateParams;
 		});
@@ -82,7 +82,7 @@ class CategoryService {
 		return categories;
 	}
 	_addCategoryStateParams(stateParams, category, nestingLevel) {
-		stateParams[nestingLevel] = _.kebabCase(category.name);
+		stateParams[nestingLevel] = category.slug;
 		category.stateParams = _.mapValues(stateParams, (key, index) => parseInt(index, 10) <= nestingLevel ? key : '');
 		category.stateParams = _.mapKeys(category.stateParams, (value, key) => `l${key}`);
 		category.stateParams.categoryId = category.id;
