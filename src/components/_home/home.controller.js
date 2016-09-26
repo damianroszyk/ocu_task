@@ -26,8 +26,12 @@ export default class HomeController {
 		);
 	}
 	_fillPromoSlot(featured) {
-		let featuredCategory = _.find(this.featuredCategories, { featured });
-		let featuredPlaylist = _.find(this.featuredPlaylists, { featured });
+		let featuredCategory = _.find(this.featuredCategories, {
+			featured
+		});
+		let featuredPlaylist = _.find(this.featuredPlaylists, {
+			featured
+		});
 		if (featuredCategory) {
 			featuredCategory.type = 'category';
 			this._setPromoSlotItemImage(featuredCategory, featured);
@@ -35,7 +39,9 @@ export default class HomeController {
 		} else if (featuredPlaylist) {
 			let playlistId = featuredPlaylist.id;
 			featuredPlaylist.type = 'playlist';
-			featuredPlaylist.stateParams = { slug: featuredPlaylist.slug };
+			featuredPlaylist.stateParams = {
+				slug: featuredPlaylist.slug
+			};
 			featuredPlaylist.image = featuredPlaylist.image || this.domConstant.defaultCategoryTileImage;
 			this._setPromoSlotItemImage(featuredPlaylist, featured);
 			this[`featuredItem${featured}`] = featuredPlaylist;
@@ -43,11 +49,21 @@ export default class HomeController {
 	}
 	_setPromoSlotItemImage(item, featured) {
 		switch (featured) {
-			case '1': item.image = item.rectangleImage; break;
-			case '2': item.image = item.skyscraperImage; break;
-			case '7': item.image = item.rectangleImage; break;
-			case '8': item.image = item.skyscraperImage; break;
-			default : item.image = item.coverImage; break;
+		case '1':
+			item.image = item.rectangleImage;
+			break;
+		case '2':
+			item.image = item.skyscraperImage;
+			break;
+		case '7':
+			item.image = item.rectangleImage;
+			break;
+		case '8':
+			item.image = item.skyscraperImage;
+			break;
+		default:
+			item.image = item.coverImage;
+			break;
 		}
 	}
 }
