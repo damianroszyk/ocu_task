@@ -55,6 +55,11 @@
 	    column-count: 2;
 	}
 
+	.sm & {
+		column-width: 200px;
+	    column-count: 3;
+	}
+
 	.md & {
 		max-width: 768px;
 	    box-sizing: border-box;
@@ -104,6 +109,11 @@
 		font-size: 21px;
 	}
 
+	.sm & {
+		font-size: 21px;
+		line-height: 30px;
+	}
+
 	.md & {
 		font-size: 24px;
 	}
@@ -114,6 +124,10 @@
     float: left;
 
 	.xs & {
+		width: 100%;
+	}
+
+	.sm & {
 		width: 100%;
 	}
 }

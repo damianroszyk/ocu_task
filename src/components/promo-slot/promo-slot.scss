@@ -83,8 +83,13 @@ $promo-slot-height--vertical--md: 385px;
 	}
 }
 
-.promo-slot--recommended div {
+.promo-slot--recommended > div {
 	border-bottom: 5px solid $yellow;
+
+	.sm & {
+		height: 24.25vw;
+		border-width: 0.75vw;
+	}
 }
 
 .promo-slot__image {

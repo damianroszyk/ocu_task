@@ -46,6 +46,15 @@
 .tags-list {
 	display: inline;
 	padding-left: 0;
+
+	.playlist-tiles--horizontal & {
+		.sm & {
+			margin: 0;
+			overflow: hidden;
+			display: block;
+			height: 26px;
+		}
+	}
 }
 
 .tags-list__item {

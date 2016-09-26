@@ -41,10 +41,8 @@ category-tile {
 		border-bottom: $category-tile-border-height--xs solid $yellow;
 	}
 
-	.xs .home &:nth-child(2n + 1),
 	.xs .category &:nth-child(2n),
-	.xs .home &:nth-child(3),
-	.xs .home &:nth-child(2) {
+	.xs .home &:nth-child(2n) {
 		margin-right: 0;
 	}
 
