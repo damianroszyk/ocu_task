@@ -4,8 +4,8 @@
         'category-tiles--horizontal': $ctrl.layout === 'horizontal'
     }">
 	<promo-slot
-		ng-if="$ctrl.featuredCategory1"
 		layout="vertical"
+		ng-if="$root.$state.is('home')"
 		featured-item="$ctrl.featuredCategory1">
 	</promo-slot>
     <category-tile

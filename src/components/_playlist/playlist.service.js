@@ -71,35 +71,14 @@ class PlaylistService {
 			angular.forEach(playlist.external_playlists, externalPlaylist => {
 				playlist[externalPlaylist.source] = externalPlaylist;
 			});
+			angular.forEach(playlist.images, playlistImage => {
+				playlist[`${playlistImage.type}Image`] = playlistImage.url;
+			});
 		});
 		return playlists;
 	}
 	_normalizeServicePlaylist(service, response) {
 		return response;
-	}
-	showPlayer(playlist) {
-		let service = this.musicProvider.provider.name;
-		let servicePlaylist = _.find(playlist.external_playlists, {
-			source: service
-		});
-		if (service === 'apple') {
-			window.open(playlist.apple_music_link || 'https://itunes.apple.com/us/curator/digster/id1018903101');
-			return;
-		}
-		if (!servicePlaylist) {
-			//@TODO: handle not found 3rd party playlist here
-			console.log(`No playlist in ${service}`);
-			return;
-		}
-		this.playerWidgetService.destroy();
-		this.playerWidgetService.player = {
-			service,
-			servicePlaylistId: servicePlaylist.service_playlist_id,
-			serviceUserId: servicePlaylist.service_user_id,
-			localPlaylistId: playlist.id,
-			show: true
-		};
-		this.playerWidgetService.notify();
 	}
 }
 

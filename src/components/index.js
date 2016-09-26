@@ -20,6 +20,7 @@ import './playlist-tiles/';
 import './promo-slot/';
 import './search-tile/';
 import './search-form/';
+import './snackbar/';
 import './tag-cloud/';
 import './track-list/';
 

@@ -5,7 +5,7 @@ export default class CategoryTileController {
 	constructor($translate, $sce, dispatcherService, domConstant, playlistService) {
 		this.dispatcherService = dispatcherService;
 		this.playlistService = playlistService;
-		this.category.image = this.category.image || domConstant.defaultCategoryTileImage;
+		this.category.coverImage = this.category.coverImage || domConstant.defaultCategoryTileImage;
 		this.listenToCollapseEvent();
 		this.$translate = $translate;
 		this.$sce = $sce;

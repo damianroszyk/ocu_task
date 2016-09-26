@@ -142,6 +142,7 @@ playlist-tile {
 
 .playlist-tile-meta {
 	@include position-absolute(auto, 0, 0, 0);
+	cursor: pointer;
 	display: block;
 	min-height: 165px;
     overflow: hidden;
