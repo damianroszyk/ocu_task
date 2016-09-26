@@ -15,6 +15,10 @@
 		width: 100%;
 	}
 
+	.sm & {
+		top: calc(41px + 1vw);
+	}
+
 	.md & {
 		top: 70px;
 	}
@@ -31,14 +35,19 @@
 	width: 56px;
 	background: $grey-7;
 
-	.md & {
-		width: 46px;
-		height: 25px;
-	}
-
 	.xs & {
 		width: 38px;
 		height: 20px;
+	}
+
+	.sm & {
+		width: 41px;
+		height: 1vw;
+	}
+
+	.md & {
+		width: 46px;
+		height: 25px;
 	}
 }
 

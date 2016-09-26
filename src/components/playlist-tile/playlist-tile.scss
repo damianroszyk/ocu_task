@@ -429,6 +429,7 @@ playlist-tile {
 	.playlist-tiles--horizontal & {
 		.sm & {
 			bottom: 0;
+			position: absolute;
 		}
 	}
 }

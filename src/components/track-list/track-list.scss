@@ -222,6 +222,10 @@ $column-width--md: 235px;
 				&:first-child {
 			        border-top: 1px solid $grey-3;
 			    }
+
+				&:last-child {
+			        border-bottom: 1px solid $grey-3;
+			    }
 			}
 		}
 
