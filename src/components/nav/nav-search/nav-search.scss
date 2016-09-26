@@ -3,8 +3,7 @@
 
 .nav-search-form__button{
 	border: none;
-	position: absolute;
-	right: -12px;
+	background-color: transparent;
 	outline: none;
 }
 
@@ -12,13 +11,17 @@
 	width: 378px;
 	padding: 0;
 	border-right: 0;
-	height: 56px;
-	border: 3px solid #feea0d;
+	height: 40px;
+	border: none;
 	font-size: 21px;
 	box-sizing: border-box;
 	vertical-align: top;
 	outline: none;
 	background-color: $yellow;
+	font-weight: 100;
+	border-left: 1px solid $black;
+	padding: 0 0 0 10px;
+	margin: 8px 0 8px -4px;
 
 	@include placeholder() {
 		color: $black;

@@ -5,8 +5,7 @@ const LOWER_PROMO_ENDS = 6;
 
 export default class HomeController {
 	/* @ngInject */
-	constructor(breadcrumbService, metatagsService, domConstant) {
-		breadcrumbService.breadcrumb = [];
+	constructor(metatagsService, domConstant) {
 		this.domConstant = domConstant;
 		this._fillPromoSlots();
 		metatagsService

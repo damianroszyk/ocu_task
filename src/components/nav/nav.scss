@@ -117,9 +117,8 @@ $nav-margin-width--md: 4px;
 	}
 }
 
-.nav-breadcrumb {
-	width: calc(100% - #{$my-service-dropdown-width + 2 * $nav-height + 3 * $nav-margin-width});
-	padding-left: $distance-lg;
+.nav-searchbar {
+	width: calc(100% - #{$my-service-dropdown-width + 1 * $nav-height + 2 * $nav-margin-width});
 	box-sizing: border-box;
 
 	.xs & {

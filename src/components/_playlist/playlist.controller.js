@@ -2,8 +2,7 @@ import _ from 'lodash';
 
 export default class PlaylistController {
 	/* @ngInject */
-	constructor(breadcrumbService, metatagsService, domConstant) {
-		breadcrumbService.buildPlaylistBreadcrumb(this.localPlaylist);
+	constructor(metatagsService, domConstant) {
 		metatagsService
 			.clearMetatags()
 			.appendMetatag(`og:image`, this.localPlaylist.image || domConstant.defaultBrandImage)
