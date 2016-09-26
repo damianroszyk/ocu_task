@@ -15,9 +15,17 @@
 
 .home__featured {
 	@include clearfix();
-	padding-bottom: $distance-sm;
+	padding-bottom: $distance-md;
+
+	promo-slot:last-child .promo-slot--horizontal {
+		margin-right: 0;
+	}
 
 	.md & {
+		padding-bottom: 16px;
+	}
+
+	.xs & {
 		padding-bottom: 0;
 	}
 }

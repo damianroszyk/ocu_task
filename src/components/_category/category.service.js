@@ -62,6 +62,7 @@ class CategoryService {
 		angular.forEach(categories, category => {
 			let stateParams = {};
 			category.parents = this._traverseCategories(stateParams, category.parents, 0);
+			this._normalizeImages(category);
 			stateParams = _.mapKeys(stateParams, (value, key) => `l${key}`);
 			let nestingLevel = Object.keys(stateParams).length + 1;
 			stateParams[`l${nestingLevel}`] = category.slug;
@@ -75,6 +76,7 @@ class CategoryService {
 		categories = _.values(categories);
 		for (let i = 0; i < categories.length; i++) {
 			this._addCategoryStateParams(stateParams, categories[i], nestingLevel);
+			this._normalizeImages(categories[i]);
 			if (categories[i].children && categories[i].children.length) {
 				this._traverseCategories(stateParams, categories[i].children, nestingLevel);
 			}
@@ -96,6 +98,11 @@ class CategoryService {
 			target.push(categories[i]);
 			delete categories[i].children;
 		}
+	}
+	_normalizeImages(category) {
+		angular.forEach(category.images, categoryImage => {
+			category[`${categoryImage.type}Image`] = categoryImage.url;
+		});
 	}
 }
 

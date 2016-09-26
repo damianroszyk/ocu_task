@@ -71,6 +71,9 @@ class PlaylistService {
 			angular.forEach(playlist.external_playlists, externalPlaylist => {
 				playlist[externalPlaylist.source] = externalPlaylist;
 			});
+			angular.forEach(playlist.images, playlistImage => {
+				playlist[`${playlistImage.type}Image`] = playlistImage.url;
+			});
 		});
 		return playlists;
 	}
