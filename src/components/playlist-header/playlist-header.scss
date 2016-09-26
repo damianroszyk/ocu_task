@@ -75,16 +75,6 @@ $playlist-header-height--md: 240px;
 	}
 }
 
-.playlist-header__social-icons {
-	float: right;
-
-	.xs & {
-		float: none;
-		bottom: 6px;
-		position: absolute;
-	}
-}
-
 .playlist-header__follow-button--desktop {
 	.xs & {
 		display: none;
