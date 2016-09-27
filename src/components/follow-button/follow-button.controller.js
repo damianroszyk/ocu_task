@@ -1,11 +1,13 @@
 export default class FollowButtonController {
 	/* @ngInject */
-	constructor($scope, $state, Analytics, musicProvider, spotify, deezer) {
+	constructor($scope, $state, Analytics, musicProvider, spotify, deezer, snackbarService, $translate) {
 		this.$state = $state;
 		this.musicProvider = musicProvider;
 		this.Analytics = Analytics;
 		this.spotify = spotify;
 		this.deezer = deezer;
+		this.snackbarService = snackbarService;
+		this.$translate = $translate;
 		musicProvider.registerObserver(() => this._unsetFollowedPlaylist());
 	}
 	onFollowClick() {
@@ -15,10 +17,23 @@ export default class FollowButtonController {
 	_followPlaylist() {
 		if (!this.musicProvider.isSet()) {
 			this.musicProvider.openModal(this._followPlaylist.bind(this));
-		} else if (this.musicProvider.isSpotify()) {
-			this._followPlaylistOnSpotify();
-		} else if (this.musicProvider.isDeezer()) {
-			this._followPlaylistOnDeezer();
+		}
+		else{
+
+			let provider = this.musicProvider.provider.name;
+			let providerPlaylist = _.find(this.playlist.external_playlists, { source: provider });
+			if (!providerPlaylist) {
+				this.snackbarService.showErrorMessage(
+					this.$translate.instant('CANT_FOLLOW_PLAYLIST_WHEN_ITS_NOT_IN_PROVIDER_SERVICE')
+				);
+				return;
+			}
+
+			if (this.musicProvider.isSpotify()) {
+				this._followPlaylistOnSpotify();
+			} else if (this.musicProvider.isDeezer()) {
+				this._followPlaylistOnDeezer();
+			}
 		}
 	}
 	_unsetFollowedPlaylist() {
