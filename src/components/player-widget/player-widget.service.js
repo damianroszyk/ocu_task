@@ -58,11 +58,8 @@ class PlayerWidgetService extends Observable {
 			return;
 		}
 		if (!providerPlaylist) {
-
-			let providerName = provider.charAt(0).toUpperCase() + provider.slice(1);
-
 			this.messagePopupService.showMessage(
-				this.$translate.instant('NO_PLAYLIST_IN_PROVIDER_SERVICE', { service: providerName })
+				this.$translate.instant('NO_PLAYLIST_IN_PROVIDER_SERVICE', { service: _.capitalize(provider) })
 			);
 			return;
 		}
