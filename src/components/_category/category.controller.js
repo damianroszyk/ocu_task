@@ -1,7 +1,6 @@
 export default class CategoryController {
 	/* @ngInject */
-	constructor(breadcrumbService, metatagsService, domConstant) {
-		breadcrumbService.buildCategoryBreadcrumb(this.category);
+	constructor(metatagsService, domConstant) {
 		metatagsService
 			.clearMetatags()
 			.appendMetatag(`og:image`, this.category.category.image || domConstant.defaultBrandImage)
