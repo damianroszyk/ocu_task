@@ -5,7 +5,8 @@ import template from 'text!./search-results.html';
 import controller from './search-results.controller.js';
 
 let bindings = {
-	results: '<'
+	results: '<',
+	featuredPlaylists: '<'
 };
 
 export default angular
