@@ -8,6 +8,10 @@
 		margin-top: $distance-sm;
 	}
 
+	.sm & {
+		margin-top: 1vw;
+	}
+
 	.md & {
 		margin-top: 24px;
 	}
@@ -19,6 +23,10 @@
 
 	promo-slot:last-child .promo-slot--horizontal {
 		margin-right: 0;
+	}
+
+	.sm & {
+		padding-bottom: 1vw;
 	}
 
 	.md & {

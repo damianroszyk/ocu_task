@@ -3,19 +3,24 @@
 
 $category-tile-width: 275px;
 $category-tile-height: 275px;
+$category-tile-width--sm: 24.25vw;
+$category-tile-height--sm: 24.25vw;
 $category-tile-width--md: 180px;
 $category-tile-height--md: 180px;
 
 $category-tile-border-height: 5px;
 $category-tile-border-height--xs: 3px;
+$category-tile-border-height--sm: .75vw;
 
 $category-tile-height--featured: 2 * $category-tile-height + $distance-md;
 $category-tile-offset: 24px;
 $category-tile-offset--xs: 10px;
+$category-tile-offset--sm: 1vw;
 $category-tile-offset--md: 16px;
 
 $category-tile-control-radius: 45px;
 $category-tile-control-radius--xs: 25px;
+$category-tile-control-radius--sm: 30px;
 $category-tile-control-radius--md: 35px;
 
 category-tile {
@@ -36,11 +41,18 @@ category-tile {
 		border-bottom: $category-tile-border-height--xs solid $yellow;
 	}
 
-	.xs .home &:nth-child(2n + 1),
 	.xs .category &:nth-child(2n),
 	.xs .home &:nth-child(3),
-	.xs .home &:nth-child(2) {
+	.xs .home &:nth-child(2),
+	.xs .home &:nth-child(2n + 1) {
 		margin-right: 0;
+	}
+
+	.sm & {
+		width: $category-tile-width--sm;
+	    height: $category-tile-height--sm;
+		margin: 0 $category-tile-offset--sm $category-tile-offset--sm 0;
+		border-bottom: $category-tile-border-height--sm solid $yellow;
 	}
 
 	.md & {
@@ -77,6 +89,10 @@ category-tile {
 		@include position-absolute(auto, $distance-sm, $distance-sm, 13px);
 	}
 
+	.sm & {
+		@include position-absolute(auto, $distance-sm, $distance-sm, $distance-sm);
+	}
+
 	.md & {
 		@include position-absolute(auto, 15px, 15px, 15px);
 	}
@@ -86,12 +102,17 @@ category-tile {
 	max-width: $distance-lg;
 	max-height: $distance-lg;
 
-	.md & {
+	.xs & {
 		max-width: 35px;
 		max-height: 35px;
 	}
 
-	.xs & {
+	.sm & {
+		max-width: 30px;
+		max-height: 30px;
+	}
+
+	.md & {
 		max-width: 35px;
 		max-height: 35px;
 	}
@@ -103,6 +124,10 @@ category-tile {
 	word-wrap: break-word;
 
 	.xs & {
+		font-size: 21px;
+	}
+
+	.sm & {
 		font-size: 21px;
 	}
 
@@ -129,6 +154,13 @@ category-tile {
 		width: $category-tile-control-radius--xs;
 		height: $category-tile-control-radius--xs;
 		border: 1px solid $white;
+	}
+
+	.sm & {
+		width: $category-tile-control-radius--sm;
+		height: $category-tile-control-radius--sm;
+		top: 10px;
+		right: 10px;
 	}
 
 	.md & {

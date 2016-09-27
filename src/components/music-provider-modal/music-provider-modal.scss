@@ -6,6 +6,9 @@ $provider-modal-height: 300px;
 $provider-modal-width--xs: 100%;
 $provider-modal-height--xs: auto;
 
+$provider-modal-width--sm: 100%;
+$provider-modal-height--sm: 100%;
+
 .music-provider-modal {
 	@include flex-middle();
 	animation: fade-in .5s;
@@ -53,6 +56,13 @@ $provider-modal-height--xs: auto;
 		width: $provider-modal-width--xs;
 	    height: $provider-modal-height--xs;
 		padding: 6%;
+		padding-bottom: 100px;
+	}
+
+	.sm & {
+		width: $provider-modal-width--sm;
+	    height: $provider-modal-height--sm;
+		padding: 4%;
 		padding-bottom: 100px;
 	}
 }

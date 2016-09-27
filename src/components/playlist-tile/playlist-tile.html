@@ -39,13 +39,15 @@
 		</follow-button>
 	</figcaption>
 	<div class="playlist-tile__tags-wrapper">
-		<playlist-tags
-			tags="$ctrl.playlist.categories">
-		</playlist-tags>
-		<span class="playlist-tile__tracks">
-			<span translate="{{::'NUMBER_OF_TRACKS'}}"></span>:
-			<strong>{{::$ctrl.playlist.tracks.length}}</strong>
-		</span>
+		<div class="playlist-tile__tags-inner-wrapper">
+			<playlist-tags
+				tags="$ctrl.playlist.categories">
+			</playlist-tags>
+			<span class="playlist-tile__tracks">
+				<span translate="{{::'NUMBER_OF_TRACKS'}}"></span>:
+				<strong>{{::$ctrl.playlist.tracks.length}}</strong>
+			</span>
+		</div>
 	</div>
 	<div class="clear-both"></div>
 </div>

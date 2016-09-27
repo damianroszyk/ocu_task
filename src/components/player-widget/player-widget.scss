@@ -1,9 +1,11 @@
+@import '../../shared/styles/variables';
 $player-widget-offset: 440px;
 
 .player-widget {
 	position: absolute;
 	top: $player-widget-offset;
 	right: 0;
+	z-index: $z-index-6;
 
 	&.sticky {
 		position: fixed;
