@@ -291,7 +291,7 @@ playlist-tile {
 		}
 
 		.md & {
-			height: 58px;
+			height: 52px;
 		}
 	}
 }
@@ -460,7 +460,10 @@ play-button {
 	background: none;
 	transition: background .2s ease;
 
-	.playlist-tiles--horizontal .playlist-tile__image-wrapper:hover & {
+	.playlist-tiles--horizontal .playlist-tile__image-wrapper:hover &,
+	.xs .playlist-tiles--horizontal &,
+	.sm .playlist-tiles--horizontal &,
+	.md .playlist-tiles--horizontal & {
 		bottom: 0;
 		height: auto;
 		background: $opacity-3;
@@ -474,7 +477,10 @@ play-button {
 	transition: opacity .2s ease;
 
 	.playlist-tile--expanded &,
-	.playlist-tiles--horizontal & {
+	.playlist-tiles--horizontal &,
+	.xs .playlist-tiles--horizontal &,
+	.sm .playlist-tiles--horizontal &,
+	.md .playlist-tiles--horizontal & {
 		opacity: 1;
 	}
 }
