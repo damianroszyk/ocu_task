@@ -10,4 +10,12 @@ $player-widget-offset: 440px;
 	&.sticky {
 		position: fixed;
 	}
+
+	.sm & {
+		top: 150px;
+	}
+
+	.xs & {
+		top: 115px;
+	}
 }
