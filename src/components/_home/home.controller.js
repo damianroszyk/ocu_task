@@ -65,5 +65,7 @@ export default class HomeController {
 			item.image = item.coverImage;
 			break;
 		}
+		// fallback
+		item.image = item.image || item.coverImage || this.domConstant.defaultCategoryTileImage;
 	}
 }
