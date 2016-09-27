@@ -144,9 +144,8 @@ $nav-margin-width--sm: 4px;
 	}
 }
 
-.nav-breadcrumb {
-	width: calc(100% - #{$my-service-dropdown-width + 4 * $nav-height + 5 * $nav-margin-width});
-	padding-left: $distance-lg;
+.nav-searchbar {
+	width: calc(100% - #{$my-service-dropdown-width + 1 * $nav-height + 2 * $nav-margin-width});
 	box-sizing: border-box;
 
 	.xs & {

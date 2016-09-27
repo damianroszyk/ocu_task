@@ -28,51 +28,9 @@
 			{{$ctrl.selectedProviderName}}
 		</p>
     </div>
-    <div class="nav__item nav-breadcrumb text--lg">
-        <breadcrumb></breadcrumb>
+    <div class="nav__item nav-searchbar text--lg">
+		<nav-search></nav-search>
     </div>
-    <div class="nav__item nav__item__right">
-        <div
-			class="nav-button"
-			ui-sref="tags"
-			ng-class="{
-				'nav-button--active': $root.$state.is('tags')
-			}">
-			<span ng-class="{
-				'icon-tags--full-width': !$root.$state.is('tags'),
-				'icon-tags--active--full-width': $root.$state.is('tags')
-			}">
-			</span>
-        </div>
-    </div>
-    <div class="nav__item nav__item__right">
-        <div
-			class="nav-button"
-			ui-sref="home"
-			ng-class="{
-				'nav-button--active': $root.$state.is('home')
-			}">
-			<span ng-class="{
-				'icon-tiles--full-width': !$root.$state.is('home'),
-				'icon-tiles--active--full-width': $root.$state.is('home')
-			}">
-			</span>
-        </div>
-    </div>
-	<div
-		class="nav__item nav__item__right"
-		ng-class="{
-			'nav__item--search-clicked': $ctrl.showSearchDropdown
-		}">
-		<div
-			class="nav-button"
-			ng-click="$ctrl.showSearch($event)">
-			<span ng-class="{
-				'icon-search--full-width': !$ctrl.showSearchDropdown ,
-				'icon-search--active--full-width': $ctrl.showSearchDropdown
-			}"></span>
-		</div>
-	</div>
     <categories-dropdown is-shown="showCategories"></categories-dropdown>
 	<search-dropdown is-shown="$ctrl.showSearchDropdown"></search-dropdown>
 	<music-provider-dropdown is-shown="showMusicService"></music-provider-dropdown>
