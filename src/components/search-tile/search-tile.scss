@@ -15,22 +15,6 @@ $search-tile-height--md: 180px;
 	background-size: cover;
 	position: relative;
 
-	background-color: $black;
-	color: $white;
-	text-align: center;
-
-	h3{
-		font-size: 35px;
-		margin-bottom: 0;
-	}
-
-	h4{
-		font-size: 25px;
-		font-weight: 100;
-		margin-top: -12px;
-		letter-spacing: 2px;
-	}
-
 	.xs & {
 		width: 100%;
 		height: 50vw;
