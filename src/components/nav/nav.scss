@@ -5,12 +5,15 @@
 
 $nav-height: 56px;
 $my-service-dropdown-width: 224px;
+$my-service-dropdown-width--sm: 170px;
 $my-service-dropdown-width--md: 184px;
 $nav-margin-width: 5px;
 $nav-height--xs: 36px;
 $nav-margin-width--xs: 3px;
 $nav-height--md: 46px;
 $nav-margin-width--md: 4px;
+$nav-height--sm: 41px;
+$nav-margin-width--sm: 4px;
 
 .nav {
     height: $nav-height;
@@ -24,6 +27,12 @@ $nav-margin-width--md: 4px;
 		height: $nav-height--xs;
 		margin-top: -$nav-height--xs;
 		line-height: $nav-height--xs;
+	}
+
+	.sm & {
+		height: $nav-height--sm;
+		margin-top: -$nav-height--sm;
+		line-height: $nav-height--sm;
 	}
 
 	.md & {
@@ -48,6 +57,15 @@ $nav-margin-width--md: 4px;
 	.xs & {
 		height: $nav-height--xs;
 		margin-left: $nav-margin-width--xs;
+
+		&:first-child {
+	        margin-left: 0;
+	    }
+	}
+
+	.sm & {
+		height: $nav-height--sm;
+		margin-left: $nav-margin-width--sm;
 
 		&:first-child {
 	        margin-left: 0;
@@ -79,6 +97,11 @@ $nav-margin-width--md: 4px;
 	    width: $nav-height--xs;
 	}
 
+	.sm & {
+		height: $nav-height--sm;
+	    width: $nav-height--sm;
+	}
+
 	.md & {
 		height: $nav-height--md;
 	    width: $nav-height--md;
@@ -108,8 +131,12 @@ $nav-margin-width--md: 4px;
 	cursor: pointer;
 
 	.xs & {
-		width: calc(100% - #{4 * $nav-height--xs + 4 * $nav-margin-width--xs});
+		width: 110px;
 		text-align: center;
+	}
+
+	.sm & {
+		width: $my-service-dropdown-width--sm;
 	}
 
 	.md & {
@@ -117,17 +144,20 @@ $nav-margin-width--md: 4px;
 	}
 }
 
-.nav-breadcrumb {
-	width: calc(100% - #{$my-service-dropdown-width + 4 * $nav-height + 5 * $nav-margin-width});
-	padding-left: $distance-lg;
+.nav-searchbar {
+	width: calc(100% - #{$my-service-dropdown-width + 1 * $nav-height + 2 * $nav-margin-width});
 	box-sizing: border-box;
 
 	.xs & {
-		display: none;
+		width: calc(100% - 152px);
+	}
+
+	.sm & {
+		width: calc(100% - #{$my-service-dropdown-width--sm + 1 * $nav-height--sm + 2 * $nav-margin-width--sm});
 	}
 
 	.md & {
-		width: calc(100% - #{$my-service-dropdown-width--md + 4 * $nav-height--md + 5 * $nav-margin-width--md});
+		width: calc(100% - #{$my-service-dropdown-width--md + 1 * $nav-height--md + 2 * $nav-margin-width--md});
 	}
 }
 

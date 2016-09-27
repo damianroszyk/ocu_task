@@ -3,6 +3,8 @@
 
 $search-tile-width: 574px;
 $search-tile-height: 275px;
+$search-tile-width--sm: 49.5%;
+$search-tile-height--sm: 24vw;
 $search-tile-width--md: 376px;
 $search-tile-height--md: 180px;
 
@@ -18,6 +20,12 @@ $search-tile-height--md: 180px;
 	.xs & {
 		width: 100%;
 		height: 50vw;
+		margin-bottom: 0;
+	}
+
+	.sm & {
+		width: $search-tile-width--sm;
+		height: $search-tile-height--sm;
 		margin-bottom: 0;
 	}
 

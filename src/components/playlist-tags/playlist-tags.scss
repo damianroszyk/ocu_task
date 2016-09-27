@@ -19,6 +19,11 @@
 		.xs & {
 			margin: $distance-md 0 12px;
 		}
+
+		.md & {
+			width: 100%;
+			margin: 0;
+		}
 	}
 }
 
@@ -41,10 +46,19 @@
 .tags-list {
 	display: inline;
 	padding-left: 0;
+
+	.playlist-tiles--horizontal & {
+		.sm & {
+			margin: 0;
+			overflow: hidden;
+			display: block;
+			height: 26px;
+		}
+	}
 }
 
 .tags-list__item {
-	/*cursor: pointer;*/
+	cursor: pointer;
 	list-style: none;
 	display: inline-block;
 	background-color: $grey-7;
@@ -55,10 +69,10 @@
 	transition: all .2s ease;
 	margin-bottom: 8px;
 
-	/*&:hover {
+	&:hover {
 		background-color: $yellow;
 		color: $black;
-	}*/
+	}
 
 	.playlist-tiles--horizontal & {
 		&:first-child {

@@ -3,11 +3,15 @@
 
 $promo-slot-width--horizontal: 574px;
 $promo-slot-height--horizontal: 275px;
+$promo-slot-width--horizontal--sm: 49.5vw;
+$promo-slot-height--horizontal--sm: 24vw;
 $promo-slot-width--horizontal--md: 376px;
 $promo-slot-height--horizontal--md: 180px;
 
 $promo-slot-width--vertical: 275px;
 $promo-slot-height--vertical: 583px;
+$promo-slot-width--vertical--sm: 24.25vw;
+$promo-slot-height--vertical--sm: 50.7vw;
 $promo-slot-width--vertical--md: 180px;
 $promo-slot-height--vertical--md: 385px;
 
@@ -40,6 +44,12 @@ $promo-slot-height--vertical--md: 385px;
 		margin-bottom: $distance-sm;
 	}
 
+	.sm & {
+		width: $promo-slot-width--horizontal--sm;
+		height: $promo-slot-height--horizontal--sm;
+		margin-right: 1vw;
+	}
+
 	.md & {
 		width: $promo-slot-width--horizontal--md;
 		height: $promo-slot-height--horizontal--md;
@@ -60,6 +70,12 @@ $promo-slot-height--vertical--md: 385px;
 	    height: calc(100vw + 15px);
 	}
 
+	.sm & {
+		width: $promo-slot-width--vertical--sm;
+		height: $promo-slot-height--vertical--sm;
+		margin: 0 1vw 1vw 0;
+	}
+
 	.md & {
 		width: $promo-slot-width--vertical--md;
 		height: $promo-slot-height--vertical--md;
@@ -67,8 +83,13 @@ $promo-slot-height--vertical--md: 385px;
 	}
 }
 
-.promo-slot--recommended div {
+.promo-slot--recommended > div {
 	border-bottom: 5px solid $yellow;
+
+	.sm & {
+		height: 24.25vw;
+		border-width: 0.75vw;
+	}
 }
 
 .promo-slot__image {

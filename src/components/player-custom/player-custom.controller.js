@@ -1,3 +1,6 @@
+import angular from 'angular';
+import _ from 'lodash';
+
 import PlayerController from 'abstract/player';
 
 export default class PlayerCustomController extends PlayerController {
@@ -20,7 +23,7 @@ export default class PlayerCustomController extends PlayerController {
 			this.deezer
 				.getPlaylist(parseInt(this.servicePlaylistId, 10))
 				.then(playlist => {
-					this.tracks = playlist.tracks.data;
+					this.tracks = _.filter(playlist.tracks.data, track => track.readable);
 				});
 			return this.popup ? this.runPlayerInPopup() : this.runPlayerInWhitelabel();
 		});
@@ -159,6 +162,7 @@ export default class PlayerCustomController extends PlayerController {
 		this.playerWidgetService.popup = 'deezer';
 		this.$window.open(url, '_blank', attrs);
 		this.close();
+		this.$timeout(() => this.pause(), 2000);
 	}
 	toggle() {
 		this.isPlayerMinified = !this.isPlayerMinified;
@@ -169,7 +173,7 @@ export default class PlayerCustomController extends PlayerController {
 	close() {
 		this.isPlayerMinified = false;
 		this.isMaximized = false;
-		this.$timeout(() => this.pause(), 3000);
+		this.pause();
 		this.playerWidgetService.destroy().notify();
 	}
 	handlePlayLocalPlaylistEvent(event) {

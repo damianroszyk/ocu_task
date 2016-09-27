@@ -1,0 +1,56 @@
+@import '../../../shared/styles/variables';
+@import '../../../shared/styles/mixins';
+
+.nav-search-form__button{
+	border: none;
+	background-color: transparent;
+	outline: none;
+}
+
+.nav-search-form__input{
+	width: 378px;
+	padding: 0;
+	border-right: 0;
+	height: 40px;
+	line-height: 40px;
+	border: none;
+	font-size: 21px;
+	box-sizing: border-box;
+	vertical-align: top;
+	outline: none;
+	background-color: $yellow;
+	font-weight: 100;
+	border-left: 1px solid $black;
+	padding: 0 0 0 10px;
+	margin: 8px 0 8px -4px;
+
+	@include placeholder() {
+		color: $black;
+		opacity: 1;
+	}
+
+	&:-webkit-autofill {
+		-webkit-box-shadow: 0 0 0 1000px $yellow inset !important;
+	}
+
+	.xs & {
+		height: 26px;
+		line-height: 26px;
+		margin: 5px 0 5px -4px;
+		width: calc(100% - 40px);
+		padding-left: 2px;
+		font-size: 16px;
+	}
+
+	.sm & {
+		height: 30px;
+		line-height: 30px;
+		margin: 5.5px 0 5.5px -4px;
+		width: calc(100% - 50px);
+	}
+
+	.md & {
+		height: 30px;
+		line-height: 30px;
+	}
+}

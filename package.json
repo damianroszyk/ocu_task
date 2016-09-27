@@ -1,6 +1,6 @@
 {
   "name": "pitched-whitepage-web",
-  "version": "0.0.1",
+  "version": "0.5.0",
   "description": "Pitched Web Application",
   "main": "src/index.js",
   "dependencies": {
@@ -54,7 +54,7 @@
     "build": "node ./node_modules/webpack/bin/webpack --progress --colors",
     "build:dev": "npm run build -- --env dev",
     "build:qa": "npm run build -- --env qa",
-    "build:stg": "npm run build -- --env stg",
+    "build:stage": "npm run build -- --env stage",
     "build:prod": "npm run build -- --env prod",
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server --env dev",
     "start:hot": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server --hot --inline --env dev",

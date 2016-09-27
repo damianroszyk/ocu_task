@@ -5,6 +5,8 @@ $search-dropdown-width: 574px;
 $search-dropdown-height: 190px;
 $search-dropdown-width--xs: 100%;
 $search-dropdown-height--xs: 130px;
+$search-dropdown-width--sm: 60%;
+$search-dropdown-height--sm: 130px;
 $search-dropdown-width--md: 376px;
 $search-dropdown-height--md: 150px;
 
@@ -29,6 +31,12 @@ $search-dropdown-height--md: 150px;
 	    height: $search-dropdown-height--xs;
 	}
 
+	.sm & {
+		top: calc(41px + 1vw);
+		width: $search-dropdown-width--sm;
+	    height: $search-dropdown-height--sm;
+	}
+
 	.md & {
 		top: 70px;
 		width: $search-dropdown-width--md;
@@ -47,16 +55,22 @@ $search-dropdown-height--md: 150px;
 	width: 56px;
 	background: $grey-7;
 
-	.md & {
-		width: 46px;
-		height: 25px;
-		right: 101px;
-	}
-
 	.xs & {
 		width: 36px;
 		height: 20px;
 		right: 78px;
+	}
+
+	.sm & {
+		width: 41px;
+		height: 1vw;
+		right: 90px;
+	}
+
+	.md & {
+		width: 46px;
+		height: 25px;
+		right: 101px;
 	}
 }
 
@@ -69,5 +83,10 @@ $search-dropdown-height--md: 150px;
 
 	.xs & {
 		font-size: 24px;
+	}
+
+	.sm & {
+		font-size: 27px;
+		padding-left: 5%;
 	}
 }

@@ -1,5 +1,6 @@
 <div class="search-results container">
-	<h1 class="search-results__title">
+	<h1
+		class="search-results__title">
 		<span translate="{{::'SEARCH_RESULTS_FOR'}}"></span>:
 		<span class="search-results__searched">{{$root.$state.params.query}}</span>
 	</h1>
@@ -31,7 +32,18 @@
 	</div>
 	<div class="clear-both"></div>
 	<playlist-tiles
+		ng-if="$ctrl.results.length"
 		layout="'horizontal'"
         playlists="$ctrl.results">
     </playlist-tiles>
+	<div ng-if="!$ctrl.results.length">
+		<p
+			class="search-results__empty text--lg text--semibold"
+			translate="{{::'SEARCH_RESULTS_EMPTY'}}">
+		</p>
+		<playlist-tiles
+			playlists="$ctrl.promoPlaylists">
+		</playlist-tiles>
+	</div>
+
 </div>

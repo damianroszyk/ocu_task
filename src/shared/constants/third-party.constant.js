@@ -3,15 +3,16 @@ import app from 'app';
 
 const THIRD_PARTY_CONSTANT = {
 	providers: [{
+		name : 'spotify',
+		logo : '/shared/images/icons/spotify-icon--black.png'
+	}, {
 		name : 'apple',
 		logo : '/shared/images/icons/apple-icon--black.png'
 	}, {
 		name : 'deezer',
 		logo : '/shared/images/icons/deezer-icon--black.png'
-	}, {
-		name : 'spotify',
-		logo : '/shared/images/icons/spotify-icon--black.png'
 	}],
+	digsterAppleMusicAccount: 'https://itunes.apple.com/us/curator/digster/id1018903101',
 	digsterTracker1GA: '<% digsterTracker1GA %>',
 	digsterTracker2GA: '<% digsterTracker2GA %>',
 	authWindowWidth: 450,

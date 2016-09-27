@@ -13,21 +13,10 @@ export default class PlaylistHeaderController {
 		this.musicProvider = musicProvider;
 	}
 	onPlayButtonClick() {
-		if (!this.musicProvider.isSet()) {
-			this.musicProvider.openModal(this.onPlayButtonClick.bind(this));
-		}
-		if (this.playerWidgetService.popup) {
-			this.dispatcherService.dispatchNative(this.playerConstant.playLocalPlaylistEvent, {
-				playlist: this.playlist
-			});
-		} else {
-			this.playlistService.showPlayer(this.playlist);
-			this.dispatcherService.listenNative(this.playerConstant.popupClosedEvent, () => {
-				this.playerWidgetService.popup = false;
-			});
-		}
+		this.playerWidgetService.launch(this.playlist);
 	}
 	playlistDescription() {
-		return this.cmsPlaylistDescription ? this.cmsPlaylistDescription : this.defaultPlaylistDescription;
+		return this.cmsPlaylistDescription ?
+			this.cmsPlaylistDescription : this.defaultPlaylistDescription;
 	}
 }

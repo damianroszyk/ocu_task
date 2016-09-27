@@ -9,6 +9,10 @@ body {
 	.md & {
 		width: 768px;
 	}
+
+	.sm & {
+		width: 100%;
+	}
 }
 
 .relative-container {

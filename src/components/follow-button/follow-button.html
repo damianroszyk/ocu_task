@@ -1,6 +1,6 @@
 <button
 	class="btn-circled follow-button"
-	ng-click="$ctrl.onFollowClick()"
+	ng-click="$ctrl.onFollowClick(); $event.stopPropagation()"
 	ng-disabled="$ctrl.followed"
 	type="button">
 	<span ng-hide="$ctrl.followed">

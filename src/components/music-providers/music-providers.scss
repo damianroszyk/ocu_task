@@ -37,6 +37,15 @@ $service-provider-margin: 30px;
 			margin-right: 0;
 		}
 	}
+
+	.sm & {
+		width: 28vw;
+		margin-right: 4vw;
+
+		&:nth-child(3n) {
+			margin-right: 0;
+		}
+	}
 }
 
 .music-providers__provider--disabled {

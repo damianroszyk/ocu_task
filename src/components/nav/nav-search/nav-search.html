@@ -1,0 +1,24 @@
+<div class="nav-search-form-wrapper">
+	<form
+		class="nav-search-form"
+		name="nav-search-form">
+
+			<button
+					class="nav-search-form__button"
+					type="submit"
+					name="button"
+					ng-disabled="!$ctrl.query"
+					ui-sref="searchResults({query: $ctrl.query})">
+					<div class="nav-button">
+						<span class="icon-search--full-width"></span>
+					</div>
+			</button>
+
+			<input
+				class="nav-search-form__input"
+				type="text"
+				name="search"
+				placeholder="{{'SEARCH_FORM_INPUT' | translate}}"
+				ng-model="$ctrl.query">
+	</form>
+</div>

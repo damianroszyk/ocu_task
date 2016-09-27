@@ -8,12 +8,12 @@
 		'category-tile--left': $parent.$index >= 6 && ($parent.$index - 2) % 4 === 0
     }">
 	<div class="category-tile__image">
-		<img ng-src="{{::$ctrl.category.image}}" />
+		<img ng-src="{{::$ctrl.category.coverImage}}" />
 	</div>
     <div class="category-tile-meta">
 		<img
 			class="category-tile__icon"
-			ng-src="{{::$ctrl.category.icon}}" />
+			ng-src="{{::$ctrl.category.iconImage}}" />
 		<h4 class="category-tile__title text--xl text--normal">
 	        {{::$ctrl.category.name}}
 		</h4>

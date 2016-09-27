@@ -2,6 +2,8 @@
 @import '../../shared/styles/mixins';
 
 $playlist-header-height: 275px;
+$playlist-header-height--xs: 50vw;
+$playlist-header-height--sm: 40vw;
 $playlist-header-height--md: 240px;
 
 .playlist-header {
@@ -11,11 +13,17 @@ $playlist-header-height--md: 240px;
 	position: relative;
 
 	.xs & {
-		height: 50vw;
+		height: $playlist-header-height--xs;
+		margin-top: $distance-md;
 	}
 
 	.play-button-overlay {
 		cursor: pointer;
+	}
+
+	.sm & {
+		margin-top: 1vw;
+		height: $playlist-header-height--sm;
 	}
 
 	.md & {
@@ -35,6 +43,10 @@ $playlist-header-height--md: 240px;
 		width: 50%;
 	}
 
+	.sm & {
+		width: 40vw;
+	}
+
 	.md & {
 		width: $playlist-header-height--md;
 	}
@@ -45,6 +57,10 @@ $playlist-header-height--md: 240px;
 	float: left;
 	width: calc(100% - #{$playlist-header-height});
 	box-sizing: border-box;
+
+	.sm & {
+		width: calc(100% - #{$playlist-header-height--sm});
+	}
 
 	.md & {
 		width: calc(100% - #{$playlist-header-height--md});
@@ -73,15 +89,11 @@ $playlist-header-height--md: 240px;
 	.xs & {
 		font-size: 14px;
 	}
-}
 
-.playlist-header__social-icons {
-	float: right;
-
-	.xs & {
-		float: none;
-		bottom: 6px;
-		position: absolute;
+	.sm & {
+		font-size: 18px;
+		height: 28px;
+		overflow: hidden;
 	}
 }
 
@@ -104,6 +116,11 @@ $playlist-header-height--md: 240px;
 	@include position-absolute(auto, 0, 0, auto);
 	padding: 0 8 * $distance-md $distance-sm $distance-md;
 
+	.md & {
+		top: 128px;
+		padding-right: $distance-md;
+	}
+
 	.xs & {
 		width: 100%;
 		padding: 15px 10px;
@@ -112,6 +129,17 @@ $playlist-header-height--md: 240px;
 		p {
 			margin-top: 0;
 		}
+	}
+
+	.sm & {
+		padding: 0 $distance-md;
+		max-height: 90px;
+	    overflow: hidden;
+	    margin-bottom: 10px;
+	}
+
+	.md & {
+		padding: 0 $distance-md;
 	}
 }
 
