@@ -4,7 +4,7 @@ import Observable from 'abstract/observable';
 
 class PlayerWidgetService extends Observable {
 	/* @ngInject */
-	constructor($window, $translate, dispatcherService, playerConstant, musicProvider, thirdPartyConstant, snackbarService) {
+	constructor($window, $translate, dispatcherService, playerConstant, musicProvider, thirdPartyConstant, messagePopupService) {
 		super();
 		this.$window = $window;
 		this.$translate = $translate;
@@ -12,7 +12,7 @@ class PlayerWidgetService extends Observable {
 		this.playerConstant = playerConstant;
 		this.musicProvider = musicProvider;
 		this.thirdPartyConstant = thirdPartyConstant;
-		this.snackbarService = snackbarService;
+		this.messagePopupService = messagePopupService;
 		this._player = {};
 		this._popup = false;
 	}
@@ -58,8 +58,11 @@ class PlayerWidgetService extends Observable {
 			return;
 		}
 		if (!providerPlaylist) {
-			this.snackbarService.showErrorMessage(
-				this.$translate.instant('NO_PLAYLIST_IN_PROVIDER_SERVICE', { service: provider })
+
+			let providerName = provider.charAt(0).toUpperCase() + provider.slice(1);
+
+			this.messagePopupService.showMessage(
+				this.$translate.instant('NO_PLAYLIST_IN_PROVIDER_SERVICE', { service: providerName })
 			);
 			return;
 		}
