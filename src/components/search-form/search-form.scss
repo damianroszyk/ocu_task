@@ -19,14 +19,8 @@ $search-form-height--xs: 30px;
 	text-align: center;
 	font-size: 0;
 
-	.xs & {
-		bottom: $distance-md;
-	}
-
-	.sm & {
-		bottom: $distance-md;
-	}
-
+	.xs &,
+	.sm &,
 	.md & {
 		bottom: $distance-md;
 	}
@@ -36,10 +30,7 @@ $search-form-height--xs: 30px;
 	position: relative;
 	display: inline-block;
 
-	.xs & {
-		width: 90%;
-	}
-
+	.xs &,
 	.sm & {
 		width: 90%;
 	}

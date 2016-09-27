@@ -30,10 +30,7 @@
 	text-transform: none;
 	font-weight: 400;
 
-	.sm & {
-		display: block;
-	}
-
+	.sm &,
 	.md & {
 		display: block;
 	}
