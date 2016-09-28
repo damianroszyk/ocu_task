@@ -21,6 +21,7 @@ import './promo-slot/';
 import './search-tile/';
 import './search-form/';
 import './snackbar/';
+import './message-popup/';
 import './tag-cloud/';
 import './track-list/';
 

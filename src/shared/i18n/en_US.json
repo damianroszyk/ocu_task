@@ -19,7 +19,7 @@
 	"SEARCH_RESULTS_FOR": "search results for",
 	"SEARCH_RESULTS_EMPTY": "Sorry, no results were found. Try listening to one of our playlists below:",
 	"PLAYLIST_NO_DESCRIPTION": "No description",
-	"NO_PLAYLIST_IN_PROVIDER_SERVICE": "No playlist in {{service}}.",
+	"NO_PLAYLIST_IN_PROVIDER_SERVICE": "This playlist is currently unavailable on {{service}}.",
 	"FIND_PLAYLISTS": "find playlists",
 	"SEE_ALL_PLAYLISTS_BUTTON": "See all {{categoryName}} playlists",
 	"SELECT_MUSIC": "Select your preferred streaming app",
