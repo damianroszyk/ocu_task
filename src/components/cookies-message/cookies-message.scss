@@ -10,6 +10,7 @@ $cookies-message-banner-height: 50px;
 	z-index: $z-index-5;
 	background: $opacity-6;
 	text-align: center;
+	padding: 0 5px;
 }
 
 .cookies-message__text {
@@ -29,14 +30,8 @@ $cookies-message-banner-height: 50px;
 	text-align: center;
 	outline: none;
 
-	.xs & {
-		border-radius: 25px;
-	}
-
-	.sm & {
-		border-radius: 25px;
-	}
-
+	.xs &,
+	.sm &,
 	.md & {
 		border-radius: 25px;
 	}
