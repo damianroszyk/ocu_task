@@ -1,12 +1,12 @@
 export default class FollowButtonController {
 	/* @ngInject */
-	constructor($scope, $state, Analytics, musicProvider, spotify, deezer, snackbarService, $translate) {
+	constructor($scope, $state, Analytics, musicProvider, spotify, deezer, messagePopupService, $translate) {
 		this.$state = $state;
 		this.musicProvider = musicProvider;
 		this.Analytics = Analytics;
 		this.spotify = spotify;
 		this.deezer = deezer;
-		this.snackbarService = snackbarService;
+		this.messagePopupService = messagePopupService;
 		this.$translate = $translate;
 		musicProvider.registerObserver(() => this._unsetFollowedPlaylist());
 	}
@@ -23,7 +23,7 @@ export default class FollowButtonController {
 			let provider = this.musicProvider.provider.name;
 			let providerPlaylist = _.find(this.playlist.external_playlists, { source: provider });
 			if (!providerPlaylist) {
-				this.snackbarService.showErrorMessage(
+				this.messagePopupService.showMessage(
 					this.$translate.instant('CANT_FOLLOW_PLAYLIST_WHEN_ITS_NOT_IN_PROVIDER_SERVICE')
 				);
 				return;
