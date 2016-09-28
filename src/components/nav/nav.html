@@ -1,4 +1,8 @@
-<div class="nav container text--semibold">
+<div
+	class="nav container text--semibold"
+	ng-class="{
+		'nav--provider-selected': $ctrl.poviderIsSet
+	}">
     <div
 		class="nav__item"
 		ng-class="{

@@ -5,6 +5,7 @@
 
 $nav-height: 56px;
 $my-service-dropdown-width: 224px;
+$my-service-dropdown-width--xs: 158px;
 $my-service-dropdown-width--sm: 170px;
 $my-service-dropdown-width--md: 184px;
 $nav-margin-width: 5px;
@@ -132,7 +133,7 @@ $nav-margin-width--sm: 4px;
 	overflow: hidden;
 
 	.xs & {
-		width: 110px;
+		width: $my-service-dropdown-width--xs;
 		text-align: center;
 	}
 
@@ -143,6 +144,12 @@ $nav-margin-width--sm: 4px;
 	.md & {
 		width: $my-service-dropdown-width--md;
 	}
+
+	.nav--provider-selected & {
+		.xs & {
+			width: 110px;
+		}
+	}
 }
 
 .nav-searchbar {
@@ -150,7 +157,7 @@ $nav-margin-width--sm: 4px;
 	box-sizing: border-box;
 
 	.xs & {
-		width: calc(100% - 152px);
+		width: calc(100% - 200px);
 	}
 
 	.sm & {
@@ -159,6 +166,18 @@ $nav-margin-width--sm: 4px;
 
 	.md & {
 		width: calc(100% - #{$my-service-dropdown-width--md + 1 * $nav-height--md + 2 * $nav-margin-width--md});
+	}
+
+	.nav--provider-selected & {
+		.xs & {
+			width: calc(100% - 152px);
+		}
+	}
+}
+
+.nav-searchbar--wide {
+	.xs & {
+		width: calc(100% - 152px);
 	}
 }
 
@@ -182,4 +201,8 @@ $nav-margin-width--sm: 4px;
 
 .my-service-dropdown__title {
 	margin: 0;
+
+	.xs & {
+		font-size: 15px;
+	}
 }
