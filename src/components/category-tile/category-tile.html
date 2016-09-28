@@ -8,11 +8,14 @@
 		'category-tile--left': $parent.$index >= 6 && ($parent.$index - 2) % 4 === 0
     }">
 	<div class="category-tile__image">
-		<img ng-src="{{::$ctrl.category.coverImage}}" />
+		<img
+			ng-src="{{::$ctrl.category.coverImage}}"
+			fallback-image="$ctrl.fallbackImage"/>
 	</div>
     <div class="category-tile-meta">
 		<img
 			class="category-tile__icon"
+			fallback-image
 			ng-src="{{::$ctrl.category.iconImage}}" />
 		<h4 class="category-tile__title text--xl text--normal">
 	        {{::$ctrl.category.name}}
