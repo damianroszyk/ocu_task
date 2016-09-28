@@ -1,4 +1,6 @@
 export default class PromoSlotController {
 	/* @ngInject */
-	constructor() {}
+	constructor(domConstant) {
+		this.fallbackImage = domConstant.defaultCategoryTileImage;
+	}
 }

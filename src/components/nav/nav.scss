@@ -131,7 +131,7 @@ $nav-margin-width--sm: 4px;
 	cursor: pointer;
 
 	.xs & {
-		width: calc(100% - #{4 * $nav-height--xs + 4 * $nav-margin-width--xs});
+		width: 110px;
 		text-align: center;
 	}
 
@@ -149,15 +149,15 @@ $nav-margin-width--sm: 4px;
 	box-sizing: border-box;
 
 	.xs & {
-		display: none;
+		width: calc(100% - 152px);
 	}
 
 	.sm & {
-		width: calc(100% - #{$my-service-dropdown-width--sm + 4 * $nav-height--sm + 5 * $nav-margin-width--sm});
+		width: calc(100% - #{$my-service-dropdown-width--sm + 1 * $nav-height--sm + 2 * $nav-margin-width--sm});
 	}
 
 	.md & {
-		width: calc(100% - #{$my-service-dropdown-width--md + 4 * $nav-height--md + 5 * $nav-margin-width--md});
+		width: calc(100% - #{$my-service-dropdown-width--md + 1 * $nav-height--md + 2 * $nav-margin-width--md});
 	}
 }
 
