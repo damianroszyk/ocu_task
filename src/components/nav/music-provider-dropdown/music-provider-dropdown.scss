@@ -73,11 +73,11 @@ $music-provider-dropdown-height--xs: auto;
 		width: 185px;
 		height: 24px;
 	}
-}
 
-.music-provider-dropdown__connector--provider-selected {
-	.xs & {
-		width: 110px;
+	.nav--provider-selected & {
+		.xs & {
+			width: 110px;
+		}
 	}
 }
 
@@ -91,5 +91,6 @@ $music-provider-dropdown-height--xs: auto;
 
 	.xs & {
 		padding-right: 30px;
+		font-size: 27px;
 	}
 }

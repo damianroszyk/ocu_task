@@ -1,4 +1,8 @@
-<div class="nav container text--semibold">
+<div
+	class="nav container text--semibold"
+	ng-class="{
+		'nav--provider-selected': $ctrl.poviderIsSet
+	}">
     <div
 		class="nav__item"
 		ng-class="{
@@ -21,19 +25,14 @@
 		$event.stopPropagation(); $ctrl.showSearchDropdown = false;
 		showCategories = false"
 		ng-class="{
-			'my-service-dropdown--clicked': showMusicService,
-			'my-service-dropdown--provider-selected': $ctrl.poviderIsSet
+			'my-service-dropdown--clicked': showMusicService
 		}">
 		<p
 			class="my-service-dropdown__title">
 			{{$ctrl.selectedProviderName}}
 		</p>
     </div>
-    <div
-		class="nav__item nav-searchbar text--lg"
-		ng-class="{
-			'nav-searchbar--wide': $ctrl.poviderIsSet
-		}">
+    <div class="nav__item nav-searchbar text--lg">
 		<nav-search></nav-search>
     </div>
     <categories-dropdown is-shown="showCategories"></categories-dropdown>

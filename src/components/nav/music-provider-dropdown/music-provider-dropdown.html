@@ -2,12 +2,7 @@
 	class="music-provider-dropdown animated"
 	click-outside="$ctrl.closeDropdown()"
 	ng-show="$ctrl.isShown">
-	<div
-		class="music-provider-dropdown__connector"
-		ng-class="{
-			'music-provider-dropdown__connector--provider-selected': $ctrl.poviderIsSet
-		}">
-	</div>
+	<div class="music-provider-dropdown__connector"></div>
 	<p
 		class="music-provider-dropdown__title text--xl"
 		translate="{{::'SELECT_MUSIC'}}">

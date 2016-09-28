@@ -143,11 +143,11 @@ $nav-margin-width--sm: 4px;
 	.md & {
 		width: $my-service-dropdown-width--md;
 	}
-}
 
-.my-service-dropdown--provider-selected {
-	.xs & {
-		width: 110px;
+	.nav--provider-selected & {
+		.xs & {
+			width: 110px;
+		}
 	}
 }
 
@@ -165,6 +165,12 @@ $nav-margin-width--sm: 4px;
 
 	.md & {
 		width: calc(100% - #{$my-service-dropdown-width--md + 1 * $nav-height--md + 2 * $nav-margin-width--md});
+	}
+
+	.nav--provider-selected & {
+		.xs & {
+			width: calc(100% - 152px);
+		}
 	}
 }
 
