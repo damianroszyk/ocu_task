@@ -6,7 +6,6 @@ let focusable = ($timeout) => {
 	return {
 		restrict: 'A',
 		link: (scope, element) => {
-			console.log('element', element);
 			$timeout(() => element[0].focus());
 		}
 	};

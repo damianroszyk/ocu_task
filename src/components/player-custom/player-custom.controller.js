@@ -162,7 +162,7 @@ export default class PlayerCustomController extends PlayerController {
 		this.playerWidgetService.popup = 'deezer';
 		this.$window.open(url, '_blank', attrs);
 		this.close();
-		this.$timeout(() => this.pause(), 2000);
+		this.$timeout(() => this.pause(), 3000);
 	}
 	toggle() {
 		this.isPlayerMinified = !this.isPlayerMinified;
