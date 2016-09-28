@@ -129,6 +129,7 @@ $nav-margin-width--sm: 4px;
 	width: $my-service-dropdown-width;
 	text-align: center;
 	cursor: pointer;
+	overflow: hidden;
 
 	.xs & {
 		width: 110px;
