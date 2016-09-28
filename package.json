@@ -1,6 +1,6 @@
 {
   "name": "pitched-whitepage-web",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Pitched Web Application",
   "main": "src/index.js",
   "dependencies": {
