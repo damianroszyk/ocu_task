@@ -5,8 +5,7 @@ import template from 'text!./music-provider-dropdown.html';
 import controller from './music-provider-dropdown.controller';
 
 let bindings = {
-	isShown: '=',
-	providerIsSet: '='
+	isShown: '='
 };
 
 export default angular
