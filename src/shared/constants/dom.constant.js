@@ -8,9 +8,9 @@ const DOM_CONSTANT = {
 		sm: 480,
 		xs: 0
 	},
-	defaultHeaderBackgroundImage: '/shared/images/images/lorde_header.jpg',
+	defaultHeaderBackgroundImage: '/shared/images/images/digster_lady_gaga_desktop.jpg',
 	defaultSearchTileImage: '/shared/images/images/search-tile_image.jpg',
-	defaultBrandImage: '/shared/images/images/digster_logo.png',
+	defaultBrandImage: '/shared/images/images/digster_logo_black.png',
 	defaultCategoryTileImage: 'shared/images/default_artist_cover.png'
 };
 
