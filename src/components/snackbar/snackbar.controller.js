@@ -1,6 +1,6 @@
 
 
-export default class PlaylistController {
+export default class SnackbarController {
 	/* @ngInject */
 	constructor($timeout, snackbarService, snackbarConstant) {
 		this.maxShownMessages = snackbarConstant.maxShownMessages;

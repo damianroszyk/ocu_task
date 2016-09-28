@@ -1,0 +1,6 @@
+<div class="message-popup__overlay" ng-show="$ctrl.message.text" ng-class="[!!$ctrl.message.text ? 'shown' : '']">
+	<div class="message-popup" ng-show="$ctrl.message.text">
+		<div class="message-popup__content">{{$ctrl.message.text}}</div>
+		<span class="message-popup__close-button icon-close-white--rounded" ng-click="$ctrl.closePopup()"></span>
+	</div>
+</div>
