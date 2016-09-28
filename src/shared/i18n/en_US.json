@@ -21,7 +21,6 @@
 	"PLAYLIST_NO_DESCRIPTION": "No description",
 	"NO_PLAYLIST_IN_PROVIDER_SERVICE": "This playlist is currently unavailable on {{service}}.",
 	"FIND_PLAYLISTS": "find playlists",
-	"SEE_ALL_PLAYLISTS_BUTTON": "See all {{categoryName}} playlists",
 	"SELECT_MUSIC": "Select your preferred streaming app",
 	"NUMBER_OF_TRACKS": "Number of tracks"
 }
