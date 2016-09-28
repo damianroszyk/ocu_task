@@ -2,7 +2,8 @@
     <div class="playlist-header__column-left">
         <img
             class="playlist-header__thumbnail"
-            ng-src="{{::$ctrl.playlist.image || $ctrl.defaultPlaylistTileImage}}"
+			fallback-image="$ctrl.defaultPlaylistTileImage"
+            ng-src="{{::$ctrl.playlist.coverImage || $ctrl.defaultPlaylistTileImage}}"
             alt="Playlist thumbnail"/>
 		<div
 			class="play-button-overlay"
