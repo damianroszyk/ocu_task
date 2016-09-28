@@ -29,8 +29,11 @@ export default class CategoryTileController {
 			this._getCategoryTopPlaylists();
 		}
 	}
+	collapseCategoryPlaylists() {
+		this.category.expanded = false;
+	}
 	_getCategoryTopPlaylists() {
-		this.subcategoriesAreLoaded = false;
+		this.playlistsAreLoaded = false;
 		this.playlistService
 			.getTopCategoryPlaylists(this.category.id)
 			.then(playlists => {
