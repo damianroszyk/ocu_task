@@ -6,9 +6,9 @@ $header-height--md: 280px;
 $header-height--sm: 150px;
 $header-brand-size: 300px;
 $header-height--xs: 115px;
-$header-brand-size--xs: 79px;
-$header-brand-size--sm: 100px;
-$header-brand-size--md: 200px;
+$header-brand-size--xs: 32px;
+$header-brand-size--sm: 41px;
+$header-brand-size--md: 82px;
 
 .header {
 	height: $header-height;
@@ -34,10 +34,12 @@ $header-brand-size--md: 200px;
 
 	.xs & {
 		height: $header-height--xs;
+		background-image: $headerBackgroundImageMobile !important;
 	}
 
 	.sm & {
 		height: $header-height--sm;
+		background-image: $headerBackgroundImageMobile !important;
 	}
 
 	.md & {
@@ -46,25 +48,25 @@ $header-brand-size--md: 200px;
 }
 
 .header__brand-image {
-	@include position-absolute(50px, auto, auto, 0);
+	@include position-absolute(20px, auto, auto, 61px);
 	cursor: pointer;
 
 	.xs & {
-		@include position-absolute(0, auto, auto, 0);
+		@include position-absolute(24px, auto, auto, 61px);
 		height: $header-brand-size--xs;
 	}
 
 	.sm & {
-		@include position-absolute(0, auto, auto, 0);
+		@include position-absolute(34px, auto, auto, 61px);
 		height: $header-brand-size--sm;
 	}
 
 	.md & {
-		@include position-absolute(50px, auto, auto, calc(50% - 384px));
+		@include position-absolute(107px, auto, auto, calc(50% - 323px));
 		height: $header-brand-size--md;
 	}
 
 	.xl & {
-		@include position-absolute(50px, auto, auto, calc(50% - 585px));
+		@include position-absolute(140px, auto, auto, calc(50% - 524px));
 	}
 }

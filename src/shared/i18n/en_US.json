@@ -1,5 +1,5 @@
 {
-	"COOKIES_MESSAGE": "This website uses cookies to improve your experience. By continuing to use this site you are agreeing to this.",
+	"COOKIES_MESSAGE": "This website uses cookies to improve your experience. By\u00A0continuing to use this site you are agreeing to this.",
 	"FOOTER_COPYRIGHT": "© Copyright 2016 Universal Music Group.",
 	"HEADER_CONTENT": "Header",
 	"PLAYLIST_HEADLINE": "Playlist",
@@ -19,8 +19,10 @@
 	"SEARCH_RESULTS_FOR": "search results for",
 	"SEARCH_RESULTS_EMPTY": "Sorry, no results were found. Try listening to one of our playlists below:",
 	"PLAYLIST_NO_DESCRIPTION": "No description",
-	"NO_PLAYLIST_IN_PROVIDER_SERVICE": "No playlist in {{service}}.",
+	"NO_PLAYLIST_IN_PROVIDER_SERVICE": "This playlist is currently unavailable on {{service}}.",
+	"CANT_FOLLOW_PLAYLIST_WHEN_ITS_NOT_IN_PROVIDER_SERVICE": "You cannot follow playlists unavailable on selected music service.",
 	"FIND_PLAYLISTS": "find playlists",
+	"SEE_ALL_PLAYLISTS_BUTTON": "See all {{categoryName}} playlists",
 	"SELECT_MUSIC": "Select your preferred streaming app",
 	"NUMBER_OF_TRACKS": "Number of tracks"
 }
