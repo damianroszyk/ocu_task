@@ -60,8 +60,9 @@
 		<button
 			ng-show="$ctrl.playlistsAreLoaded"
 			class="btn-circled subcategories__control"
-			ui-sref="category($ctrl.category.stateParams)">
-			See all {{::$ctrl.category.name}} playlists
+			ui-sref="category($ctrl.category.stateParams)"
+			translate="{{::'SEE_ALL_PLAYLISTS_BUTTON'}}"
+			translate-values='{ categoryName: $ctrl.category.name}'>
 		</button>
     </div>
 </div>
