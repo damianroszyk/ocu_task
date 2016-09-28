@@ -299,6 +299,7 @@ playlist-tile {
 .playlist-tile-description__content {
 	margin: 0;
 	overflow: hidden;
+	word-wrap: break-word;
 	transition: font-weight .2s linear;
 	padding-bottom: $distance-sm;
 	font-weight: 600;
