@@ -21,17 +21,25 @@
 		$event.stopPropagation(); $ctrl.showSearchDropdown = false;
 		showCategories = false"
 		ng-class="{
-			'my-service-dropdown--clicked': showMusicService
+			'my-service-dropdown--clicked': showMusicService,
+			'my-service-dropdown--provider-selected': $ctrl.poviderIsSet
 		}">
 		<p
 			class="my-service-dropdown__title">
 			{{$ctrl.selectedProviderName}}
 		</p>
     </div>
-    <div class="nav__item nav-searchbar text--lg">
+    <div
+		class="nav__item nav-searchbar text--lg"
+		ng-class="{
+			'nav-searchbar--wide': $ctrl.poviderIsSet
+		}">
 		<nav-search></nav-search>
     </div>
     <categories-dropdown is-shown="showCategories"></categories-dropdown>
 	<search-dropdown is-shown="$ctrl.showSearchDropdown"></search-dropdown>
-	<music-provider-dropdown is-shown="showMusicService"></music-provider-dropdown>
+	<music-provider-dropdown
+		is-shown="showMusicService"
+		provider-is-set="$ctrl.poviderIsSet">
+	</music-provider-dropdown>
 </div>

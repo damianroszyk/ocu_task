@@ -21,7 +21,7 @@ $music-provider-dropdown-height--xs: auto;
 	box-sizing: border-box;
 
 	.xs & {
-		top: 56px;
+		top: 46px;
 		left: auto;
 		width: $music-provider-dropdown-width--xs;
 	    height: $music-provider-dropdown-height--xs;
@@ -57,9 +57,9 @@ $music-provider-dropdown-height--xs: auto;
 	background: $grey-7;
 
 	.xs & {
-		left: 37px;
-		width: calc(100% - 154px);
-		height: 20px;
+		left: 39px;
+		width: 158px;
+		height: 10px;
 	}
 
 	.sm & {
@@ -72,6 +72,12 @@ $music-provider-dropdown-height--xs: auto;
 		left: 50px;
 		width: 185px;
 		height: 24px;
+	}
+}
+
+.music-provider-dropdown__connector--provider-selected {
+	.xs & {
+		width: 110px;
 	}
 }
 

@@ -7,6 +7,9 @@ export default class NavController {
 		this.selectedProviderName = '';
 		this._translateChosenMusicServiceLabel();
 		musicProvider.registerObserver(() => this._translateChosenMusicServiceLabel());
+		if (musicProvider.isSet()) {
+			this.poviderIsSet = true;
+		}
 	}
 
 	_translateChosenMusicServiceLabel(){
