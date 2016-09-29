@@ -2,11 +2,7 @@
 	class="header"
 	ng-if="!$root.$state.is('spotifyPlayer') && !$root.$state.is('customPlayer')">
 	<cookies-message></cookies-message>
-	<div
-		class="header__background-image"
-		ng-if="$ctrl.backgroundImage"
-		style="background-image: url('{{::$ctrl.backgroundImage}}')">
-	</div>
+	<div class="header__background-image"></div>
 	<img
 		class="header__brand-image"
 		ui-sref="home"

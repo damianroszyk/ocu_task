@@ -26,7 +26,9 @@ let responsive = ($window, domConstant, responsiveService) => {
 
 			let throttler = () => _.throttle(appendResponsiveClass, THROTTLER_THRESHOLD);
 
-			angular.element($window).bind('resize', throttler());
+			angular.element($window)
+				.bind('resize', appendResponsiveClass)
+				.bind('orientationchange', appendResponsiveClass);
 			appendResponsiveClass();
 		}
 	};
