@@ -9,6 +9,7 @@
     "angular-google-analytics": "^1.1.7",
     "angular-load": "^0.4.1",
     "angular-loading-bar": "^0.9.0",
+    "angular-touch": "^1.5.3",
     "angular-translate": "^2.11.0",
     "angular-translate-loader-static-files": "^2.11.0",
     "angular-ui-bootstrap": "^2.0.2",
