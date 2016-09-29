@@ -171,9 +171,11 @@ export default class PlayerCustomController extends PlayerController {
 	}
 	toggle() {
 		this.isPlayerMinified = !this.isPlayerMinified;
+		this.isMaximized = false;
 	}
 	maximize() {
 		this.isMaximized = !this.isMaximized;
+		this.isPlayerMinified = false;
 	}
 	close() {
 		this.isPlayerMinified = false;
