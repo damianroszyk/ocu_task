@@ -1,6 +1,6 @@
 export default class FooterController {
 	/* @ngInject */
 	constructor(domConstant) {
-		this.brandImage = this.brandImage || domConstant.defaultBrandImage;
+		this.brandImage = this.brandImage || domConstant.footerBrandImage;
 	}
 }

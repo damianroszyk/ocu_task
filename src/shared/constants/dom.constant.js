@@ -11,6 +11,7 @@ const DOM_CONSTANT = {
 	defaultHeaderBackgroundImage: '/shared/images/images/digster_lady_gaga_desktop.jpg',
 	defaultSearchTileImage: '/shared/images/images/search-tile_image.jpg',
 	defaultBrandImage: '/shared/images/images/digster_logo_black.png',
+	footerBrandImage: '/shared/images/images/digster_logo.png',
 	defaultCategoryTileImage: 'shared/images/default_artist_cover.png'
 };
 
