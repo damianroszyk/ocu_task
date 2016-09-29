@@ -18,7 +18,7 @@ const THIRD_PARTY_CONSTANT = {
 	authWindowWidth: 450,
 	authWindowHeight: 730,
 	deezerRedirectUri: `${window.location.origin}/channel-deezer.html`,
-	deezerSdkUrl: 'https://e-cdns-files.dzcdn.net/js/min/dz.js',
+	deezerSdkUrl: 'http://cdn-files.deezer.com/js/min/dz.js',
 	deezerAppId: '<% deezerAppId %>',
 	deezerScopes: ['basic_access', 'email', 'manage_library'],
 	spotifyApiUrl: 'https://api.spotify.com/v1',

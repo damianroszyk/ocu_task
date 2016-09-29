@@ -74,6 +74,7 @@ class DeezerService {
 			appId: this.thirdPartyConstant.deezerAppId,
 			channelUrl: this.thirdPartyConstant.deezerRedirectUri,
 			player: {
+				container: 'dz-player',
 				onload: this._handleDeezerPlayerIsLoaded.bind(this)
 			}
 		});
