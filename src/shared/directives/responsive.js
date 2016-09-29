@@ -9,7 +9,7 @@ let responsive = ($window, domConstant, responsiveService) => {
 		link: (scope, element) => {
 
 			const RESPONSIVE_CLASSES = Object.keys(domConstant.mediaBreakpoints).join(' ');
-			const THROTTLER_THRESHOLD = 500;
+			const THROTTLER_THRESHOLD = 0;
 
 			let clearResponsiveClass = () => element.removeClass(RESPONSIVE_CLASSES);
 
