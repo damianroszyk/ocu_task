@@ -8,6 +8,7 @@ let hasAnchors = ($window, $timeout) => {
 		link: (scope, element) => {
 			let handleAnchorClick = (event) => {
 				$window.location.href = angular.element(event.target).attr('href');
+				event.stopPropagation();
 			};
 
 			let registerAnchorListeners = () => {
