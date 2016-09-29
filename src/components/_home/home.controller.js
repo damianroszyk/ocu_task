@@ -58,7 +58,7 @@ export default class HomeController {
 			item.image = item.rectangleImage;
 			break;
 		case '8':
-			item.image = item.skyscraperImage;
+			item.image = item.rectangleImage;
 			break;
 		default:
 			item.image = item.coverImage;
