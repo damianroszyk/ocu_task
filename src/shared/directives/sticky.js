@@ -11,7 +11,7 @@ let sticky = ($window, domConstant, responsiveService) => {
 		restrict: 'A',
 		scope: {
 			enabled: '=sticky',
-			threshold: '=stickyThreshold',
+			threshold: '<stickyThreshold',
 		},
 		link: (scope, element) => {
 
