@@ -19,14 +19,19 @@ export default class PlayerCustomController extends PlayerController {
 		this.track = {};
 	}
 	$onInit() {
-		this.deezer.deferredPlayer.promise.then(() => {
-			this.deezer
+		if(this.deezer.dz.player){
+			return this.popup ? this.runPlayerInPopup() : this.runPlayerInWhitelabel();
+		}
+		else{
+			this.deezer.deferredPlayer.promise.then(() => {
+				this.deezer
 				.getPlaylist(parseInt(this.servicePlaylistId, 10))
 				.then(playlist => {
 					this.tracks = _.filter(playlist.tracks.data, track => track.readable);
 				});
 			return this.popup ? this.runPlayerInPopup() : this.runPlayerInWhitelabel();
-		});
+			});
+		}
 	}
 	$onChanges(changedBindings) {
 		if (changedBindings.servicePlaylistId) {
