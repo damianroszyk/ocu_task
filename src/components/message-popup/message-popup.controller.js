@@ -2,18 +2,18 @@
 
 export default class MessagePopupController {
 	/* @ngInject */
-	constructor($scope, messagePopupService) {
+	constructor(messagePopupService) {
 		this.message = {};
-		this.$scope = $scope;
+		this.isShown = false;
 		this.messagePopupService = messagePopupService;
 		messagePopupService.registerObserver(this.showPopup.bind(this));
 	}
 	showPopup(){
 		this.message = this.messagePopupService.message;
-		$scope.apply();
+		this.isShown = true;
 	}
 	closePopup(){
+		this.isShown = false;
 		this.message = {};
-		$scope.apply();
 	}
 }
