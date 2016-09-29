@@ -7,8 +7,10 @@ export default class NavController {
 		this.selectedProviderName = '';
 		this._translateChosenMusicServiceLabel();
 		this._checkMusicProvider();
-		musicProvider.registerObserver(() => this._translateChosenMusicServiceLabel());
-		musicProvider.registerObserver(() => this._checkMusicProvider());
+		musicProvider.registerObserver(() => {
+			this._translateChosenMusicServiceLabel();
+			this._checkMusicProvider();
+		});
 	}
 
 	_checkMusicProvider() {
