@@ -9,6 +9,7 @@ const DOM_CONSTANT = {
 		xs: 0
 	},
 	defaultHeaderBackgroundImage: '/shared/images/images/digster_lady_gaga_desktop.jpg',
+	defaultHeaderBackgroundImageMobile: '/shared/images/images/digster_lady_gaga_mobile.jpg',
 	defaultSearchTileImage: '/shared/images/images/search-tile_image.jpg',
 	defaultBrandImage: '/shared/images/images/digster_logo_black.png',
 	footerBrandImage: '/shared/images/images/digster_logo.png',

@@ -141,9 +141,9 @@ export default class PlayerCustomController extends PlayerController {
 			this.track.completed = completedTime;
 		}
 	}
-	playTrackOfPlaylist(index) {
+	playTrackOfPlaylist(index, track) {
 		this.isPlayingTrack = true;
-		this.deezer.dz.player.playPlaylist(parseInt(this.servicePlaylistId, 10), true, index);
+		this.deezer.dz.player.playTracks([track.id]);
 	}
 	showPopup() {
 		let url = [

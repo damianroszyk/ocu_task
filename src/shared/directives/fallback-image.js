@@ -17,7 +17,7 @@ let fallbackImage = () => {
 					element.remove();
 				}
 				scope.$apply();
-			}
+			};
 
 			element[0].addEventListener('error', _handleImageError);
 		}

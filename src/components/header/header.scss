@@ -31,15 +31,18 @@ $header-brand-size--md: 82px;
 .header__background-image {
 	height: $header-height;
 	background-position: center;
+	background-image: url('../../shared/images/images/digster_lady_gaga_desktop.jpg');
 
 	.xs & {
 		height: $header-height--xs;
-		background-image: $headerBackgroundImageMobile !important;
+		background-image: url('../../shared/images/images/digster_lady_gaga_mobile.jpg');
+		background-position: 50% 20%;
+	    background-size: cover;
 	}
 
 	.sm & {
 		height: $header-height--sm;
-		background-image: $headerBackgroundImageMobile !important;
+		background-image: url('../../shared/images/images/digster_lady_gaga_mobile.jpg');
 	}
 
 	.md & {
