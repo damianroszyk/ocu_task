@@ -1,5 +1,6 @@
 import './click-outside';
 import './is-loaded';
+import './has-anchors';
 import './metatags';
 import './focusable';
 import './fallback-image';
