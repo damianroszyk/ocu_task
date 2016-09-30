@@ -79,6 +79,10 @@ category-tile {
 	> img {
 		height: 100%;
 	}
+
+	.sm & img {
+		height: 24.25vw;
+	}
 }
 
 .category-tile-meta {
