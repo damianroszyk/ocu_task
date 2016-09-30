@@ -1,4 +1,3 @@
-import './category-id.service';
 import './deezer.service';
 import './spotify.service';
 import './dispatcher.service';

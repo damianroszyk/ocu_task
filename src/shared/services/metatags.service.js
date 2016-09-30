@@ -16,7 +16,7 @@ class MetatagsService extends Observable {
 		return this;
 	}
 	appendMetatags(metatags) {
-		this._tags = metatags;
+		this._tags = angular.copy(metatags);
 		super.notifyObservers(this._tags);
 		return this;
 	}
@@ -27,7 +27,6 @@ class MetatagsService extends Observable {
 	}
 	getTags() {
 		return this._tags;
-		return this;
 	}
 }
 

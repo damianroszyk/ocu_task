@@ -3,9 +3,9 @@ export default class CategoryController {
 	constructor(metatagsService, domConstant) {
 		metatagsService
 			.clearMetatags()
+			.appendMetatags(domConstant.defaultMetatags)
 			.appendMetatag(`og:image`, this.category.category.image || domConstant.defaultBrandImage)
 			.appendMetatag(`og:title`, `${this.category.category.name} - Digster`)
-			.appendMetatag(`og:description`, `${this.category.category.name}`)
-			.appendMetatag(`description`, `${this.category.category.name}`, 'name');
+			.appendMetatag(`og:description`, `${this.category.category.name}`);
 	}
 }

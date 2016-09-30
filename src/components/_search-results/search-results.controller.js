@@ -18,10 +18,10 @@ export default class SearchResultsController {
 		});
 		metatagsService
 			.clearMetatags()
+			.appendMetatags(domConstant.defaultMetatags)
 			.appendMetatag(`og:image`, domConstant.defaultBrandImage)
 			.appendMetatag(`og:title`, `${$state.params.query} - Search - Digster`)
-			.appendMetatag(`og:description`, `Digster search: ${$state.params.query}`)
-			.appendMetatag(`description`, `Digster search: ${$state.params.query}`, 'name');
+			.appendMetatag(`og:description`, `Digster search: ${$state.params.query}`);
 		this._fillPromoSlots();
 	}
 	setSortingParam(option) {

@@ -5,9 +5,9 @@ export default class PlaylistController {
 	constructor(metatagsService, domConstant) {
 		metatagsService
 			.clearMetatags()
-			.appendMetatag(`og:image`, this.localPlaylist.image || domConstant.defaultBrandImage)
+			.appendMetatags(domConstant.defaultMetatags)
+			.appendMetatag(`og:image`, this.localPlaylist.coverImage || domConstant.defaultBrandImage)
 			.appendMetatag(`og:title`, `${this.localPlaylist.name} - Playlist - Digster`)
-			.appendMetatag(`og:description`, `${this.localPlaylist.description}`)
-			.appendMetatag(`description`, `${this.localPlaylist.description}`, 'name');
+			.appendMetatag(`og:description`, `${this.localPlaylist.description}`);
 	}
 }

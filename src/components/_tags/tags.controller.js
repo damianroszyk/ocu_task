@@ -3,9 +3,9 @@ export default class TagsController {
 	constructor(metatagsService, domConstant) {
 		metatagsService
 			.clearMetatags()
+			.appendMetatags(domConstant.defaultMetatags)
 			.appendMetatag(`og:image`, domConstant.defaultBrandImage)
 			.appendMetatag(`og:title`, `Digster tags`)
-			.appendMetatag(`og:description`, `Digster tags`)
-			.appendMetatag(`description`, `Digster tags`, 'name');
+			.appendMetatag(`og:description`, `Digster tags`);
 	}
 }
