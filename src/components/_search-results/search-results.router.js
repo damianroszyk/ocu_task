@@ -12,7 +12,6 @@ const SEARCH_RESULTS_ROUTER = {
 				results="$resolve.search"
 				featured-playlists="$resolve.featuredPlaylists">
 			</search-results>`,
-		pageTitle: `Search Results`,
 		resolve: { search, featuredPlaylists }
 	}
 };

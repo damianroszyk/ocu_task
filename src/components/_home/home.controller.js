@@ -5,15 +5,16 @@ const LOWER_PLAYLISTS_PROMO_ENDS = 6;
 
 export default class HomeController {
 	/* @ngInject */
-	constructor(metatagsService, domConstant) {
+	constructor(metatagsService, pageTitleService, domConstant) {
 		this.domConstant = domConstant;
 		this._fillPromoSlots();
+		pageTitleService.title = `${domConstant.defaultBrand} - ${domConstant.defaultStapline}`;
 		metatagsService
 			.clearMetatags()
 			.appendMetatags(domConstant.defaultMetatags)
-			.appendMetatag(`og:image`, domConstant.defaultBrandImage)
-			.appendMetatag(`og:title`, `Digster`)
-			.appendMetatag(`og:description`, `Digster homepage`);
+			.appendMetatag(`og:image`, `${domConstant.defaultBrandImage}`)
+			.appendMetatag(`og:title`, `${domConstant.defaultBrand} - ${domConstant.defaultStapline}`)
+			.appendMetatag(`og:description`, `${domConstant.defaultBrand} - ${domConstant.defaultStapline}`);
 	}
 	_fillPromoSlots() {
 		this._fillPromoSlot('1');

@@ -19,7 +19,6 @@ const CATEGORY_ROUTER = {
 			l3: { squash },
 			l4: { squash }
 		},
-		pageTitle: `Category`,
 		resolve: { category, categoryPlaylists }
 	}
 };

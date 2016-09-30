@@ -13,7 +13,6 @@ const HOME_ROUTER = {
 				featured-categories="$resolve.featuredCategories"
 				featured-playlists="$resolve.featuredPlaylists">
 			</home>`,
-		pageTitle: `Home`,
 		resolve: { categories, featuredCategories, featuredPlaylists }
 	}
 };

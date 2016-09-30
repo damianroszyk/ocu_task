@@ -13,6 +13,8 @@ const DOM_CONSTANT = {
 		key: 'description',
 		content: `Search for Digster.fm playlists on Spotify, Apple Music and Deezer.`
 	}],
+	defaultBrand: 'Digster',
+	defaultStapline: 'Playlists For All',
 	defaultHeaderBackgroundImage: '/shared/images/images/digster_lady_gaga_desktop.jpg',
 	defaultHeaderBackgroundImageMobile: '/shared/images/images/digster_lady_gaga_mobile.jpg',
 	defaultSearchTileImage: '/shared/images/images/search-tile_image.jpg',

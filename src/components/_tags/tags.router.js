@@ -10,7 +10,6 @@ const TAGS_ROUTER = {
 			<tags
 				tags="$resolve.flatCategories">
 			</tags>`,
-		pageTitle: `Tags`,
 		resolve: { flatCategories }
 	}
 };

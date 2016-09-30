@@ -10,7 +10,6 @@ const PLAYLIST_ROUTER = {
 			<playlist
 				local-playlist="$resolve.localPlaylist.data">
 			</playlist>`,
-		pageTitle: `Playlist`,
 		resolve: { localPlaylist }
 	}
 };

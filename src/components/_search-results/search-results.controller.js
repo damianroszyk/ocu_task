@@ -5,7 +5,7 @@ const PLAYLISTS_PROMO_ENDS = 6;
 
 export default class SearchResultsController {
 	/* @ngInject */
-	constructor($state, playlistService, metatagsService, domConstant) {
+	constructor($state, playlistService, metatagsService, pageTitleService, domConstant) {
 		this.$state = $state;
 		this.playlistService = playlistService;
 		this.order = this.$state.params.order;
@@ -16,12 +16,13 @@ export default class SearchResultsController {
 		this.chosenSortingOption = _.find(this.sortOptions, {
 			value: this.$state.params.order
 		});
+		pageTitleService.title = `${$state.params.query} - Search - ${domConstant.defaultBrand}`;
 		metatagsService
 			.clearMetatags()
 			.appendMetatags(domConstant.defaultMetatags)
 			.appendMetatag(`og:image`, domConstant.defaultBrandImage)
-			.appendMetatag(`og:title`, `${$state.params.query} - Search - Digster`)
-			.appendMetatag(`og:description`, `Digster search: ${$state.params.query}`);
+			.appendMetatag(`og:title`, `${$state.params.query} - Search - ${domConstant.defaultBrand}`)
+			.appendMetatag(`og:description`, `${domConstant.defaultBrand} search: ${$state.params.query}`);
 		this._fillPromoSlots();
 	}
 	setSortingParam(option) {

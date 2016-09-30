@@ -3,6 +3,7 @@ import './spotify.service';
 import './dispatcher.service';
 import './dom-helper.service';
 import './metatags.service';
+import './page-title.service';
 import './model-helper.service';
 import './music-provider.service';
 import './responsive.service';
