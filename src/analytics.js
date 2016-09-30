@@ -8,10 +8,6 @@ let analytics = (AnalyticsProvider, thirdPartyConstant) => {
 		tracker: thirdPartyConstant.digsterTracker1GA,
 		trackEvent: true,
 		name: 'digsterTracker1'
-	}, {
-		tracker: thirdPartyConstant.digsterTracker2GA,
-		trackEvent: true,
-		name: 'digsterTracker2'
 	}]);
 };
 
