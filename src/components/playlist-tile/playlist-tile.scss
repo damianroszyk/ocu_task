@@ -227,33 +227,6 @@ playlist-tile {
 	}
 }
 
-.playlist-tile-meta__dash {
-	float: left;
-	margin-left: $distance-sm;
-
-	.playlist-tiles--horizontal & {
-		display: none;
-	}
-
-	.xs &,
-	.sm &,
-	.md & {
-		display: none;
-	}
-}
-
-.playlist-tile-meta__dash--xs {
-	float: left;
-	margin-left: $distance-sm;
-	display: none;
-
-	.xs &,
-	.sm &,
-	.md & {
-		display: block;
-	}
-}
-
 .playlist-tile-meta__content {
 	padding: 0 $distance-sm 0 ($distance-md + $distance-sm);
 
@@ -291,7 +264,7 @@ playlist-tile {
 
 	.playlist-tiles--horizontal & {
 		height: $distance-lg;
-		
+
 		.xs & {
 			height: 120px;
 		}
