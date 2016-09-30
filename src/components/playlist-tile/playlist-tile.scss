@@ -125,10 +125,14 @@ playlist-tile {
 			width: 30vw;
 			height: 30vw;
 		}
+
+		.xs & {
+			height: 50vw;
+		}
     }
 
 	.xs & {
-		height: 50vw;
+		height: calc(50vw - 5px);
 	}
 
 	.sm & {
@@ -266,6 +270,7 @@ playlist-tile {
 
 .playlist-tile-description {
 	height: $distance-md;
+	overflow: hidden;
 	max-height: 200px;
 	word-break: break-word;
 	transition: height .2s ease;
@@ -285,6 +290,8 @@ playlist-tile {
 	}
 
 	.playlist-tiles--horizontal & {
+		height: $distance-lg;
+		
 		.xs & {
 			height: 120px;
 		}
@@ -453,7 +460,6 @@ playlist-tile {
 }
 
 play-button {
-	@include flex-middle();
 	@include position-absolute(0, 0, auto, 0);
 	height: 0;
 	overflow: hidden;
@@ -461,16 +467,42 @@ play-button {
 	transition: background .2s ease;
 
 	.playlist-tiles--horizontal .playlist-tile__image-wrapper:hover &,
-	.xs .playlist-tiles--horizontal &,
-	.sm .playlist-tiles--horizontal &,
-	.md .playlist-tiles--horizontal & {
+	.xs &,
+	.sm &,
+	.md & {
 		bottom: 0;
 		height: auto;
 		background: $opacity-3;
+		display: block;
+	}
+
+	.xs & {
+		height: calc(50vw - 5px);
+	}
+
+	.sm & {
+		height: $playlist-tile-width--sm;
+	}
+
+	.md & {
+		height: $playlist-tile-width--md;
+	}
+
+	.xs .playlist-tiles--horizontal & {
+		height: auto;
+	}
+
+	.sm .playlist-tiles--horizontal & {
+		height: auto;
+	}
+
+	.md .playlist-tiles--horizontal & {
+		height: 200px;
 	}
 }
 
 .play-button__icon {
+	@include absolute-middle();
 	width: 45px;
 	height: 45px;
 	opacity: 0;
@@ -478,9 +510,15 @@ play-button {
 
 	.playlist-tile--expanded &,
 	.playlist-tiles--horizontal &,
-	.xs .playlist-tiles--horizontal &,
-	.sm .playlist-tiles--horizontal &,
-	.md .playlist-tiles--horizontal & {
+	.xs &,
+	.sm &,
+	.md & {
 		opacity: 1;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: -22.5px;
+		margin-top: -22.5px;
 	}
+
 }
