@@ -176,3 +176,21 @@ $lg-icon: 50px;
 		background-size: 80%;
 	}
 }
+
+.icon-close__wrapper {
+	@include position-absolute(0, 0, auto, auto);
+	height: 65px;
+	width: 65px;
+	z-index: $z-index-1;
+
+	.xs &,
+	.sm & {
+		height: 55px;
+		width: 55px;
+	}
+
+	.md & {
+		height: 60px;
+		width: 60px;
+	}
+}

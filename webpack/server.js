@@ -6,7 +6,7 @@ module.exports = {
 	proxy: {
 		'/v1/*': {
 			target: {
-				host: 'pitchedse-stage.us-east-1.elasticbeanstalk.com',
+				host: 'api-dev.pitched.apps.miquido.com',
 				protocol: 'http:',
 				port: 80
 			},

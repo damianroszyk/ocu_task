@@ -7,10 +7,13 @@
 		class="music-provider-dropdown__title text--xl"
 		translate="{{::'SELECT_MUSIC'}}">
 	</p>
-	<span
-		class="icon-close-white--rounded"
+	<div
+		class="icon-close__wrapper"
 		ng-click="$ctrl.closeDropdown()">
-	</span>
+		<span class="icon-close-white--rounded">
+
+		</span>
+	</div>
 	<music-providers
 		ng-if="$ctrl.isShown"
 		on-save="$ctrl.closeDropdown()">

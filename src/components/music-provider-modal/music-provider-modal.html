@@ -10,10 +10,13 @@
 			class="provider-modal__title text--xl"
 			translate="{{::'SELECT_MUSIC'}}">
 		</p>
-		<span
-			class="icon-close-white--rounded"
+		<div
+			class="icon-close__wrapper"
 			ng-click="$ctrl.closeModal()">
-		</span>
+			<span class="icon-close-white--rounded">
+
+			</span>
+		</div>
 		<music-providers
 			ng-if="$ctrl.isOpened"
 			on-save="$ctrl.onSave()">

@@ -4,10 +4,13 @@
 	click-outside="$ctrl.closeDropdown()">
 	<div class="categories-dropdown__connector"></div>
     <div class="categories-dropdown">
-		<span
-			class="icon-close-white--rounded"
+		<div
+			class="icon-close__wrapper"
 			ng-click="$ctrl.closeDropdown()">
-		</span>
+			<span class="icon-close-white--rounded">
+
+			</span>
+		</div>
         <ul class="categories-dropdown__list">
             <li
                 class="categories-list__item"
