@@ -3,6 +3,7 @@
 
 $sm-icon: 30px;
 $md-icon: 40px;
+$md-icon--xs: 33px;
 $lg-icon: 50px;
 
 @mixin icon($size, $url) {
@@ -27,6 +28,11 @@ $lg-icon: 50px;
 
 .icon-twitter {
 	@include icon($md-icon, '/shared/images/icons/twitter-icon.png');
+
+	.xs & {
+		width: $md-icon--xs;
+		height: $md-icon--xs;
+	}
 }
 
 .icon-twitter--blue-background {
@@ -36,6 +42,11 @@ $lg-icon: 50px;
 
 .icon-facebook {
 	@include icon($md-icon, '/shared/images/icons/facebook-icon.png');
+
+	.xs & {
+		width: $md-icon--xs;
+		height: $md-icon--xs;
+	}
 }
 
 .icon-facebook--blue-background {
@@ -54,18 +65,54 @@ $lg-icon: 50px;
 
 .icon-spotify {
 	@include icon($md-icon, '/shared/images/icons/spotify-icon.png');
+
+	.xs & {
+		width: $md-icon--xs;
+		height: $md-icon--xs;
+	}
 }
 
 .icon-spotify--black {
 	@include icon($md-icon, '/shared/images/icons/spotify-icon--black.png');
 }
 
-.icon-email {
-	@include icon($md-icon, '/shared/images/icons/email-icon.png');
+.icon-instagram {
+	@include icon($md-icon, '/shared/images/icons/instagram-icon--white.png');
+
+	.xs & {
+		width: $md-icon--xs;
+		height: $md-icon--xs;
+	}
 }
+
+.icon-email {
+	@include icon($md-icon, '/shared/images/icons/email-icon--white.png');
+	width: 44px;
+
+	.xs & {
+		width: 37px;
+		height: $md-icon--xs;
+	}
+}
+
 
 .icon-apple {
 	@include icon($md-icon, '/shared/images/icons/apple-icon.png');
+    background-position: 50% 46%;
+
+	.xs & {
+		width: $md-icon--xs;
+		height: $md-icon--xs;
+	}
+}
+
+.icon-deezer {
+	@include icon($md-icon, '/shared/images/icons/deezer-icon--white.png');
+
+	.xs & {
+		width: $md-icon--xs;
+		height: $md-icon--xs;
+	}
 }
 
 .icon-hamburger {
