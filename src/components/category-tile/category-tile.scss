@@ -201,6 +201,24 @@ category-tile {
 	background-image: url('/shared/images/icons/close-black.png');
 }
 
+.category-tile__control-wrapper {
+	@include position-absolute(0, 0, auto, auto);
+	height: 70px;
+	width: 70px;
+	z-index: $z-index-1;
+
+	.xs &,
+	.md & {
+		height: 60px;
+		width: 60px;
+	}
+
+	.sm & {
+		height: 55px;
+		width: 55px;
+	}
+}
+
 .category-tile__subcategories {
     @include position-absolute(0, 0, auto, auto);
 	animation: fade-in .3s;

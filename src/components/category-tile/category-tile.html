@@ -21,19 +21,25 @@
 	        {{::$ctrl.category.name}}
 		</h4>
     </div>
-    <button
-        class="category-tile__control category-tile__control--plus-white"
-        ng-if="::$ctrl.category.hasPlaylists"
-        ng-click="$ctrl.toggleCategoryExpand(false, $event)">
-    </button>
+	<div
+		class="category-tile__control-wrapper"
+		ng-if="::$ctrl.category.hasPlaylists"
+		ng-click="$ctrl.toggleCategoryExpand(false, $event)">
+		<button class="category-tile__control category-tile__control--plus-white">
+
+	    </button>
+	</div>
     <div
         class="category-tile__subcategories animated"
 		click-outside="$ctrl.collapseCategoryPlaylists()"
         ng-show="$ctrl.category.expanded">
-		<button
-	        class="category-tile__control category-tile__control--close-black"
-	        ng-click="$ctrl.toggleCategoryExpand(true, $event)">
-	    </button>
+		<div
+			class="category-tile__control-wrapper"
+			ng-click="$ctrl.toggleCategoryExpand(true, $event)">
+			<button class="category-tile__control category-tile__control--close-black">
+
+		    </button>
+		</div>
 		<h5 class="subcategories-tile__title">
 			<strong>
 				Top {{$ctrl.category.playlists.length}}
