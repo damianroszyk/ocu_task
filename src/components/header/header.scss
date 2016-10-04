@@ -6,8 +6,8 @@ $header-height--md: 280px;
 $header-height--sm: 150px;
 $header-brand-size: 300px;
 $header-height--xs: 115px;
-$header-brand-size--xs: 32px;
-$header-brand-size--sm: 41px;
+$header-brand-size--xs: 45px;
+$header-brand-size--sm: 55px;
 $header-brand-size--md: 82px;
 
 .header {
@@ -55,12 +55,12 @@ $header-brand-size--md: 82px;
 	cursor: pointer;
 
 	.xs & {
-		@include position-absolute(24px, auto, auto, 61px);
+		@include position-absolute(20px, auto, auto, 45px);
 		height: $header-brand-size--xs;
 	}
 
 	.sm & {
-		@include position-absolute(34px, auto, auto, 61px);
+		@include position-absolute(30px, auto, auto, 55px);
 		height: $header-brand-size--sm;
 	}
 
