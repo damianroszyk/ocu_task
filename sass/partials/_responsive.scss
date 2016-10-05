@@ -46,9 +46,9 @@
     }
 
     &.active .logo a{
-		background:url('../img/svg/logo.svg') 0 0 no-repeat;   
+		background:url('../img/svg/logo.svg') 0 0 no-repeat;
     }
-} 
+}
 
 .touch nav.nav_box .logo a,
 .ie9 nav.nav_box .logo a{
@@ -70,10 +70,10 @@
 
 	.careers_arrow{
 		 @include rotate(0deg);
-		
+
 		path{
-			fill:$dark_color;	
-		}	
+			fill:$dark_color;
+		}
 	}
 }
 
@@ -84,7 +84,7 @@
 
 .touch footer .content .social a:hover{
 	border-color:#c0c6cc;
-	
+
 	path{
 		fill:#c0c6cc;
 	}
@@ -94,19 +94,19 @@
 	display:none;
 }
 
-.touch .careers .careers_info a.careers_print::after, 
-.touch .careers .careers_info a.careers_apply::after, 
-.touch .careers .careers_info a.careers_fb::after, 
+.touch .careers .careers_info a.careers_print::after,
+.touch .careers .careers_info a.careers_apply::after,
+.touch .careers .careers_info a.careers_fb::after,
 .touch .careers .careers_info a.careers_twitter::after{
 	display:none;
 }
 
-.touch .careers .careers_info a.careers_print:hover, 
-.touch .careers .careers_info a.careers_apply:hover, 
-.touch .careers .careers_info a.careers_fb:hover, 
+.touch .careers .careers_info a.careers_print:hover,
+.touch .careers .careers_info a.careers_apply:hover,
+.touch .careers .careers_info a.careers_fb:hover,
 .touch .careers .careers_info a.careers_twitter:hover{
 	color: inherit;
-	
+
 	svg path{
 		fill:inherit;
 	}
@@ -114,7 +114,7 @@
 
 .touch .careers .careers_info a.careers_fb:hover{
 	color: #3c599b;
-	
+
 	svg path{
 		fill:#3c599b;
 	}
@@ -122,7 +122,7 @@
 
 .touch .careers .careers_info a.careers_twitter:hover{
 	color: #5eaade;
-	
+
 	svg path{
 		fill:#5eaade;
 	}
@@ -156,7 +156,7 @@
 	}
 
 	.headerImg#intro2 .second_header{
-		top: 50%;	
+		top: 50%;
 	}
 
 
@@ -172,12 +172,12 @@
 			.desc{
 				width:340px;
 				left:50px;
-				margin:0;	
+				margin:0;
 				z-index: 10;
 
 				p{
 					margin: 10px 0 30px 0;
-				}	
+				}
 			}
 
 			.plexicon_box{
@@ -199,7 +199,7 @@
 				}
 			}
 
-			&.samsung_case img.samsung_box_tv{ 
+			&.samsung_case img.samsung_box_tv{
 				width:500px;
 				height:auto;
 			}
@@ -236,14 +236,14 @@
 
 	.about .r50 .text{
 		font-size: 30px;
-		padding: 20px;	
+		padding: 20px;
 		left: 0;
 		top:130px;
 
 	}
 
 	.contact .contact_details .city{
-		
+
 	}
 
 	.contact a.switch_map .map_arrow{
@@ -291,11 +291,11 @@
 	    }
 
 	    &.active .logo a{
-			background:url('../img/svg/logo.svg') 0 0 no-repeat;   
+			background:url('../img/svg/logo.svg') 0 0 no-repeat;
 	    }
-	} 
+	}
 
-	.headerImg#intro1 .first_header br, 
+	.headerImg#intro1 .first_header br,
 	.loading-screen .first_header br{
 		display: none;
 	}
@@ -345,7 +345,7 @@
 
 	 	svg{
 	 		right: 16px;
-			top: 14px;	
+			top: 14px;
 	 	}
 	 }
 
@@ -358,7 +358,7 @@
 
 			&.design svg, &.delivery svg{
 				float:right;
-			} 
+			}
 		}
 
 		.service_item svg{
@@ -372,7 +372,7 @@
 		p{
 			padding:0 50px 0 0;
 		}
-	} 
+	}
 
 	.work{
 
@@ -402,7 +402,7 @@
 				}
 
 				&.sara_box_image{
-					float:right;	
+					float:right;
 				}
 			}
 
@@ -445,11 +445,11 @@
 
 		 	svg{
 		 		right: 16px;
-				top: 14px;	
+				top: 14px;
 		 	}
 		 }
 
-	} 
+	}
 
 	.clients{
 
@@ -473,7 +473,7 @@
 			height: auto;
 		}
 
-	} 
+	}
 
 	.about{
 		.content{
@@ -489,9 +489,9 @@
 		}
 		.r50 .text{
 			font-size: 25px;
-			top: 80px;	
+			top: 80px;
 		}
-	} 
+	}
 
 	.careers{
 
@@ -508,7 +508,7 @@
 		}
 
 		.careers_item.st-open > a .content{
-			padding: 30px 20px 20px 20px;	
+			padding: 30px 20px 20px 20px;
 		}
 
 		ul.careers_list > li > a .careers_icon{
@@ -523,7 +523,7 @@
 			width:160px;
 		}
 
-	} 
+	}
 
 	.contact{
 
@@ -540,7 +540,7 @@
 		}
 
 		.contact_details .city{
-			
+
 		}
 
 		.contact_details .city div span{
@@ -561,6 +561,24 @@
 		}
 
 	}
+
+	footer {
+		.content{
+			padding: 50px 25px 30px 25px;
+			p.copyright{
+				padding:40px 0 0 0;
+			}
+			.social,
+			a.mma{
+				top:30px;
+			}
+			.goodfirms {
+				top:25px;
+			}
+		}
+	}
+
+
 }
 
 /* Small Devices, Tablets */
@@ -593,21 +611,21 @@
 	.headerImg#intro1 .first_header h1, .loading-screen .first_header h1{
 		font-size: 70px;
 		line-height: 74px;
-		letter-spacing: 2px;	
+		letter-spacing: 2px;
 	}
 
 	.headerImg#intro2 .second_header h2{
 		font-size: 54px;
-		line-height: 64px;	
-		letter-spacing: 2px;	
+		line-height: 64px;
+		letter-spacing: 2px;
 	}
 
 	h3,
-	.work .bg_work h2, 
+	.work .bg_work h2,
 	.work .bg_work h3,
-	.clients .content h3, 
+	.clients .content h3,
 	.about h3,
-	.contact .content h3, 
+	.contact .content h3,
 	{
 		width:auto;
 		padding-right: 40px;
@@ -755,19 +773,6 @@
 		width:auto;
 	}
 
-	footer .content{
-		padding: 50px 25px 30px 25px;
-	}
-
-	footer .content p.copyright{
-		padding:40px 0 0 0;
-	}
-
-	footer .content .social,
-	footer .content a.mma{
-		top:30px;
-	}
-
 	.contact a.switch_map
 	{
 		position:relative;
@@ -800,7 +805,7 @@
 
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
 
 	// header#intro{
@@ -835,7 +840,7 @@
 		h2{
 			font-size: 39px;
 			line-height: 39px;
-			letter-spacing: 0px;	
+			letter-spacing: 0px;
 		}
 
 		h3{
@@ -853,8 +858,8 @@
 		display: none;
 	}
 
-	.services .content, 
-	.services .careers .careers_info, 
+	.services .content,
+	.services .careers .careers_info,
 	.careers .services .careers_info{
 		padding: 30px 15px 0 15px;
 	}
@@ -871,18 +876,18 @@
 	}
 
 	h3,
-	.work .bg_work h2, 
+	.work .bg_work h2,
 	.work .bg_work h3,
-	.clients .content h3, 
+	.clients .content h3,
 	.about h3,
-	.contact .content h3, 
+	.contact .content h3,
 	{
 		width:auto;
 		padding-right: 20px;
 	}
 
-	.work .content, 
-	.work .careers .careers_info, 
+	.work .content,
+	.work .careers .careers_info,
 	.careers .work .careers_info{
 		padding: 60px 15px 0 15px;
 	}
@@ -896,7 +901,7 @@
 	}
 
 	.services h3{
-		border-bottom:2px solid $line_color;	
+		border-bottom:2px solid $line_color;
 	}
 
 	.services_wrapper .service_item{
@@ -927,7 +932,7 @@
 		padding:40px 15px 0 15px;
 
 		h3{
-			padding:0 0 20px 0;	
+			padding:0 0 20px 0;
 		}
 
 		ul.logos li{
@@ -975,7 +980,7 @@
 
 	.careers .careers_info a.careers_print,
 	.careers .careers_info a.careers_apply,
-	.careers .careers_info a.careers_fb, 
+	.careers .careers_info a.careers_fb,
 	.careers .careers_info a.careers_twitter{
 		width: 180px;
 		float: none;
@@ -1001,10 +1006,10 @@
 			font-size: 16px;
 			font-weight: 600;
 		}
-	} 
+	}
 
 	.contact .content{
-		padding: 40px 15px;	
+		padding: 40px 15px;
 
 		h3{
 			padding-bottom:0;
@@ -1040,31 +1045,39 @@
 		padding: 15px;
 	}
 
-	footer .content .social,
-	footer .content a.mma{
-		top: 0;
-		position: relative;
+	footer {
+		.content {
+			text-align: center;
+			.social {
+				display: inline-block;
+				position: relative;
+				top: 0;
+				left: 0;
+				a {
+					margin-right: 5px;
+				}
+			}
+			p.copyright {
+				padding: 20px 0;
+			}
+			a.mma {
+				position: relative;
+				top: auto;
+				right: auto;
+				margin: auto;
+			}
+			.goodfirms {
+				display:inline-block;
+				position:relative;
+				top:auto;
+				right:auto;
+				padding-top: 20px;
+			}
+		}
 	}
-
-	footer .content .social {
-		left: 0;
-	}
-
-	footer .content p.copyright {
-		padding: 20px 0;
-	}
-
-	footer .content a.mma {
-		right: 0;
-    left: 0;
-    margin: auto;
-	}
-
-
-
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (max-width : 320px) {
-	
+
 }

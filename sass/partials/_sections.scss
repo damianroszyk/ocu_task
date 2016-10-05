@@ -21,7 +21,7 @@
 .services_wrapper{
 	@include clearfix;
 
-	
+
 	.service_item{
 		@include clearfix;
 		float:left;
@@ -50,7 +50,7 @@
 			width:140px;
 			height:140px;
 			margin:20px;
-			display: none;	
+			display: none;
 		}
 
 		iframe, svg{
@@ -86,11 +86,11 @@
 			color:$light_font_color;
 			max-width:490px;
 			position:relative;
-			z-index: 10;	
+			z-index: 10;
 		}
 
 		hr{
-			background:$light_font_color;	
+			background:$light_font_color;
 		}
 
 		.bg_diagonal{
@@ -102,7 +102,7 @@
 			background:$dark_color;
 			z-index: 0;
 			@include skew(-25deg,0deg);
-		}	
+		}
 	}
 
 	.content{
@@ -120,7 +120,7 @@
 			height:16px;
 			position: absolute;
 			right: 22px;
-			top: 16px;	
+			top: 16px;
 		}
 
 		&:hover svg{
@@ -131,24 +131,24 @@
 
 	.plexicon_box, .sara_box{
 		a.main_btn:hover{
-		
+
 		color:$dark_color;
 
 			svg{
 				fill:$dark_color;
 			}
-		}	
+		}
 	}
 
 	.audit_box{
 		a.main_btn:hover{
-		
+
 		color:#f9671e;
 
 			svg{
 				fill:#f9671e;
 			}
-		}	
+		}
 	}
 
 	.case_item{
@@ -190,7 +190,7 @@
 			}
 
 			&.sara_box{
-				margin-left:100px;	
+				margin-left:100px;
 			}
 
 			&.byod{
@@ -213,7 +213,7 @@
 				display: block;
 				width:659px;
 				height:511px;
-			}			
+			}
 		}
 
 		.samsung_box{
@@ -321,7 +321,7 @@
 			padding:0;
 		}
 	}
-	
+
 }
 
 
@@ -329,7 +329,7 @@
 
 	.bg_clients{
 		background:$darker_color;
-		position:relative;	
+		position:relative;
 	}
 
 	.content {
@@ -341,19 +341,19 @@
 
 		h3{
 			color:$light_font_color;
-			width:700px;	
-			padding:0 0 60px 0;	
+			width:700px;
+			padding:0 0 60px 0;
 		}
 
 		hr{
-			background:$light_font_color;	
+			background:$light_font_color;
 		}
 	}
 
 	ul.logos{
 		margin:0 0 20px -40px;
 		width:1200px;
-		
+
 		li{
 			display: inline-block;
 			width:19%;
@@ -383,7 +383,7 @@
 			font-weight: 600;
 			color: #b6bbbf;
 		}
-		
+
 		li{
 			display: block;
 			float: left;
@@ -512,7 +512,7 @@
 		@include clearfix;
 		pointer: cursor;
 
-	
+
 		.careers_icon{
 			float:left;
 			width:48px;
@@ -531,7 +531,7 @@
 			margin:20px 0 0 0;
 			@include transition(all 0.3s ease-in-out);
 		}
-	
+
 
 		h4, p{
 			margin:0;
@@ -552,10 +552,10 @@
 			.careers_arrow{
 				 @include rotate(90deg);
 
-				
+
 				path{
-					fill:#ffffff;	
-				}	
+					fill:#ffffff;
+				}
 			}
 		}
 
@@ -573,12 +573,12 @@
 		}
 
 		.careers_arrow{
-			@include rotate(90deg);	
-			
+			@include rotate(90deg);
+
 			path{
 				fill:$dark_color;
-				
-			}	
+
+			}
 		}
 	}
 
@@ -595,12 +595,12 @@
 		}
 
 		.careers_arrow{
-			@include rotate(-90deg);	
-			
+			@include rotate(-90deg);
+
 			path{
 				fill:$dark_color;
-				
-			}	
+
+			}
 		}
 	}
 
@@ -658,7 +658,7 @@
 
 		.col_right{
 			float:left;
-			width:65%;	
+			width:65%;
 		}
 
 		.col_bottom{
@@ -672,9 +672,9 @@
 			}
 		}
 
-		a.careers_print, 
+		a.careers_print,
 		a.careers_apply,
-		a.careers_fb, 
+		a.careers_fb,
 		a.careers_twitter{
 			@extend .dark_btn;
 
@@ -721,7 +721,7 @@
 			&::after{
 				background:#3c599b;
 			}
-		} 
+		}
 
 		a.careers_twitter{
 			color:#5eaade;
@@ -741,7 +741,7 @@
 			&::after{
 				background:#5eaade;
 			}
-		} 
+		}
 	}
 
 }
@@ -765,7 +765,7 @@
 
 	.bg_contact{
 		background:$dark_color;
-		position:relative;	
+		position:relative;
 	}
 
 	.content{
@@ -777,12 +777,12 @@
 
 		h3{
 			color:$light_font_color;
-			width:700px;	
-			padding:0 0 90px 0;	
+			width:700px;
+			padding:0 0 90px 0;
 		}
 
 		hr{
-			background:$light_font_color;	
+			background:$light_font_color;
 		}
 	}
 
@@ -792,12 +792,12 @@
 		height:200px;
 
 		.map_content{
-			padding:40px 25px;	
+			padding:40px 25px;
 		}
 
 		.city{
 			@include clearfix;
-		
+
 			div{
 				float:left;
 				width:25%;
@@ -830,11 +830,11 @@
 				a{
 					color:$light_font_color;
 					padding:0 0 3px 0;
-					border-bottom:2px solid #505255;	
+					border-bottom:2px solid #505255;
 
 					&:hover{
 						color:$white_font_color;
-						border-bottom:2px solid $primary_color;	
+						border-bottom:2px solid $primary_color;
 					}
 				}
 			}
@@ -852,7 +852,7 @@
 	}
 
 	a.switch_map {
-		background: #2b2f33; 
+		background: #2b2f33;
 		border-left: 10px solid $darker_color;
 		border-top: 10px solid $darker_color;
 		display:block;
@@ -865,7 +865,7 @@
 		color: #999;
 
 		&:last-child {
-			border-right: 10px solid $darker_color;		
+			border-right: 10px solid $darker_color;
 		}
 
 		&.warsaw {
@@ -912,7 +912,7 @@
 			}
 
 			.map_arrow{
-				@include rotate(90deg);	
+				@include rotate(90deg);
 			}
 		}
 
@@ -931,7 +931,7 @@
 			right:20px;
 			top:48%;
 			@include transition(all 0.3s ease-in-out);
-			@include rotate(0deg);	
+			@include rotate(0deg);
 
 			path{
 				fill:#ffffff;
@@ -942,18 +942,18 @@
 			background:darken($primary_color, 10%);
 
 			.map_arrow{
-				@include rotate(90deg);	
+				@include rotate(90deg);
 			}
-			
+
 		}
 	}
 
 	a.switch_map.red{
 		background:$secondary_color;
-		
+
 		&:hover{
 			background:darken($secondary_color, 10%);
-		}	
+		}
 	}
 }
 
@@ -970,7 +970,7 @@
 footer{
 	background:#fff;
 	position:relative;
-	
+
 	.content{
 		padding:50px 25px;
 		position:relative;
@@ -988,7 +988,7 @@ footer{
 		a.mma{
 			position:absolute;
 			top:50px;
-			right:25px;
+			right:210px;
 			display:block;
 			background:url('../img/ic_mma.png') 0 0 no-repeat;
 			width:88px;
@@ -999,6 +999,13 @@ footer{
 				background:url('../img/ic_mma_hover.png') 0 0 no-repeat;
 				background-size:88px;
 			}
+		}
+
+		.goodfirms {
+			position:absolute;
+			top:45px;
+			right:25px;
+			display:block;
 		}
 
 		.social{
@@ -1022,7 +1029,7 @@ footer{
 				svg{
 					width:16px;
 					height:16px;
-					
+
 
 					path{
 						@include transition(all 0s ease-in-out);
@@ -1100,4 +1107,3 @@ footer{
 	display:block;
 	@include opacity (1);
 }
-
