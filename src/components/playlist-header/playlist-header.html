@@ -26,9 +26,18 @@
 				playlist="$ctrl.playlist">
 			</follow-button>
 			<div class="playlist-header__social-icons">
-				<span class="icon-twitter--blue-background"></span>
-				<span class="icon-facebook--blue-background"></span>
-				<span class="icon-pinterest--blue-background"></span>
+				<span
+					class="icon-twitter--blue-background"
+					ng-click="$ctrl.sharePlaylist('twitter')">
+				</span>
+				<span
+					class="icon-facebook--blue-background"
+					ng-click="$ctrl.sharePlaylist('facebook')">
+				</span>
+				<span
+					class="icon-pinterest--blue-background"
+					ng-click="$ctrl.sharePlaylist('pinterest')">					
+				</span>
 			</div>
 		</div>
     </div>
