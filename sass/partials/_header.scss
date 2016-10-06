@@ -145,7 +145,7 @@ nav{
                 display: block;
                 margin-bottom:-7px;
                 font-weight: 600;
-                @include transition(padding 0.3s ease-out);
+                @include transition(all 0.2s ease-out);
                 // @include transition(none);
                 // @include transition(padding .3s ease-out);
 
