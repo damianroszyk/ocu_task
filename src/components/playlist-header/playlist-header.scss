@@ -80,6 +80,7 @@ $playlist-header-height--md: 240px;
 
 .playlist-header__info {
 	float: left;
+	width: 100%;
 }
 
 .playlist-header__title {
@@ -94,6 +95,16 @@ $playlist-header-height--md: 240px;
 		font-size: 18px;
 		height: 28px;
 		overflow: hidden;
+	}
+
+	.md & {
+		font-size: 24px;
+		height: 27px;
+		overflow: hidden;
+	}
+
+	.xl & {
+		width: 700px;
 	}
 }
 
@@ -146,5 +157,24 @@ $playlist-header-height--md: 240px;
 
 	.md & {
 		margin-bottom: 5px;
+	}
+}
+
+.playlist-header__social-icons {
+	float: right;
+
+	.xs &,
+	.sm & {
+		float: none;
+		bottom: 6px;
+		position: absolute;
+	}
+
+	.md & {
+		@include position-absolute(55px, 20px, auto, auto);
+	}
+
+	.xl & {
+		@include position-absolute(20px, 20px, auto, auto);
 	}
 }

@@ -56,6 +56,11 @@ $lg-icon: 50px;
 
 .icon-pinterest {
 	@include icon($md-icon, '/shared/images/icons/pinterest-icon.png');
+
+	.xs & {
+		width: $md-icon--xs;
+		height: $md-icon--xs;
+	}
 }
 
 .icon-pinterest--blue-background {
