@@ -22,7 +22,7 @@ export default class PlaylistHeaderController {
 			this.cmsPlaylistDescription : this.defaultPlaylistDescription;
 	}
 	sharePlaylist(socialMedia) {
-		let playlistUrl = 'http://www.digster.fm/playlist/the-drop';
+		let playlistUrl = this.$location.absUrl();
 		let escapedPlaylistUrl = escape(playlistUrl);
 		let message = escape(`Listen to ${this.playlist.name} playlist on Digster - ${playlistUrl}`);
 		let playlistCover = escape(this.playlist.images[0].url);

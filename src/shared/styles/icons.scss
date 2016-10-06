@@ -38,6 +38,8 @@ $lg-icon: 50px;
 .icon-twitter--blue-background {
 	@extend .icon-twitter;
 	@include icon-background($blue);
+
+	cursor: pointer;
 }
 
 .icon-facebook {
@@ -52,6 +54,8 @@ $lg-icon: 50px;
 .icon-facebook--blue-background {
 	@extend .icon-facebook;
 	@include icon-background($blue);
+
+	cursor: pointer;
 }
 
 .icon-pinterest {
@@ -66,6 +70,8 @@ $lg-icon: 50px;
 .icon-pinterest--blue-background {
 	@extend .icon-pinterest;
 	@include icon-background($blue);
+
+	cursor: pointer;
 }
 
 .icon-spotify {
