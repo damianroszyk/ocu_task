@@ -23,7 +23,7 @@ export default class PlayerCustomController extends PlayerController {
 			this.deezer
 			.getPlaylist(parseInt(this.servicePlaylistId, 10))
 			.then(playlist => this.tracks = playlist.tracks.data);
-		return this.popup ? this.runPlayerInPopup() : this.runPlayerInWhitelabel();
+			return this.popup ? this.runPlayerInPopup() : this.runPlayerInWhitelabel();
 		});
 	}
 	$onChanges(changedBindings) {

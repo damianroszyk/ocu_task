@@ -4,7 +4,7 @@ import Observable from 'abstract/observable';
 
 class PlayerWidgetService extends Observable {
 	/* @ngInject */
-	constructor($window, $translate, dispatcherService, playerConstant, musicProvider, thirdPartyConstant, messagePopupService) {
+	constructor($window, $translate, dispatcherService, playerConstant, musicProvider, thirdPartyConstant, messagePopupService, deezer) {
 		super();
 		this.$window = $window;
 		this.$translate = $translate;
@@ -15,6 +15,7 @@ class PlayerWidgetService extends Observable {
 		this.messagePopupService = messagePopupService;
 		this._player = {};
 		this._popup = false;
+		this.deezer = deezer;
 	}
 	set player(player) {
 		this._player = player;
@@ -40,7 +41,8 @@ class PlayerWidgetService extends Observable {
 			navigator.userAgent.match(/iPhone/i) ||
 			navigator.userAgent.match(/iPod/i) ||
 			navigator.userAgent.match(/BlackBerry/i) ||
-			navigator.userAgent.match(/Windows Phone/i)) && window.innerWidth < 767
+			navigator.userAgent.match(/Windows Phone/i)) &&
+			window.innerWidth < 767
 		) {
 			return true;
 		} else {
@@ -50,6 +52,10 @@ class PlayerWidgetService extends Observable {
 	launch(playlist) {
 		if (!this.musicProvider.isSet()) {
 			this.musicProvider.openModal(() => this.launch(playlist));
+		}
+		if (this.musicProvider.isDeezer() && !this.deezer.isAuthorized) {
+			this.deezer.isAuthorized = false;
+			return this.deezer.authorizeIfNeccessary().then(() => this.launch(playlist));
 		}
 		if (this.popup) {
 			this.dispatcherService.dispatchNative(
