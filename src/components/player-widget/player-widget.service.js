@@ -4,7 +4,7 @@ import Observable from 'abstract/observable';
 
 class PlayerWidgetService extends Observable {
 	/* @ngInject */
-	constructor($window, $translate, dispatcherService, playerConstant, musicProvider, thirdPartyConstant, messagePopupService, deezer) {
+	constructor($timeout, $window, $translate, dispatcherService, playerConstant, musicProvider, thirdPartyConstant, messagePopupService, deezer) {
 		super();
 		this.$window = $window;
 		this.$translate = $translate;
@@ -16,6 +16,7 @@ class PlayerWidgetService extends Observable {
 		this._player = {};
 		this._popup = false;
 		this.deezer = deezer;
+		this.$timeout = $timeout;
 	}
 	set player(player) {
 		this._player = player;
@@ -55,7 +56,9 @@ class PlayerWidgetService extends Observable {
 		}
 		if (this.musicProvider.isDeezer() && !this.deezer.isAuthorized) {
 			this.deezer.isAuthorized = false;
-			return this.deezer.authorizeIfNeccessary().then(() => this.launch(playlist));
+			return this.deezer.authorizeIfNeccessary().then(() => {
+				this.$timeout(() => this.launch(playlist), 1500);
+			});
 		}
 		if (this.popup) {
 			this.dispatcherService.dispatchNative(
