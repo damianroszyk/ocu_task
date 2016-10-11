@@ -231,6 +231,12 @@ playlist-tile {
 
 	.playlist-tiles--horizontal & {
 		padding-left: 0;
+
+		.xs &,
+		.sm &,
+		.md & {
+			padding-left: 0;
+		}
 	}
 
 	.xs &,
