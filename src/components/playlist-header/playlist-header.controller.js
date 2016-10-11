@@ -1,3 +1,7 @@
+const TWITTER_SHARE_URL = 'https://twitter.com/intent/tweet?text=';
+const FACEBOOK_SHARE_URL = 'https://www.facebook.com/sharer/sharer.php?u=';
+const PINTEREST_SHARE_URL = 'https://pinterest.com/pin/create/button/?url=';
+
 export default class PlaylistHeaderController {
 	/* @ngInject */
 	constructor($translate, $sce, domConstant, playerWidgetService, dispatcherService,
@@ -27,13 +31,13 @@ export default class PlaylistHeaderController {
 		let message = escape(`Listen to ${this.playlist.name} playlist on Digster - ${playlistUrl}`);
 		let playlistCover = escape(this.playlist.images[0].url);
 		if (socialMedia === 'twitter') {
-			this.$window.open(`https://twitter.com/home?status=${message}`);
+			this.$window.open(`${TWITTER_SHARE_URL}${message}`);
 		}
 		if (socialMedia === 'facebook') {
-			this.$window.open(`https://www.facebook.com/sharer/sharer.php?u=${escapedPlaylistUrl}`);
+			this.$window.open(`${FACEBOOK_SHARE_URL}${escapedPlaylistUrl}`);
 		}
 		if (socialMedia === 'pinterest') {
-			this.$window.open(`https://pinterest.com/pin/create/button/?url=${escapedPlaylistUrl}&media=${playlistCover}&description=${message}`);
+			this.$window.open(`${PINTEREST_SHARE_URL}${escapedPlaylistUrl}&media=${playlistCover}&description=${message}`);
 		}
 	}
 }
