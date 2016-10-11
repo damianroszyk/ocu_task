@@ -155,7 +155,6 @@ playlist-tile {
 	padding-top: $distance-sm;
 
 	.xs & {
-		padding-bottom: $distance-md;
 		position: relative;
 		height: auto;
 	}
@@ -232,6 +231,12 @@ playlist-tile {
 
 	.playlist-tiles--horizontal & {
 		padding-left: 0;
+
+		.xs &,
+		.sm &,
+		.md & {
+			padding-left: 0;
+		}
 	}
 
 	.xs &,
@@ -259,7 +264,7 @@ playlist-tile {
 	}
 
 	.md & {
-		height: 88px;
+		height: 85px;
 	}
 
 	.playlist-tiles--horizontal & {
@@ -269,6 +274,7 @@ playlist-tile {
 			height: 120px;
 		}
 
+		.sm &,
 		.md & {
 			height: 52px;
 		}
@@ -325,16 +331,8 @@ playlist-tile {
 	margin-left: 3 * $distance-sm;
 	margin-bottom: $distance-md;
 
-	.xs & {
-		font-size: 24px;
-		width: 35vw;
-		height: 45px;
-		border-radius: 23px;
-		margin-bottom: 0;
-		display: block;
-		margin-left: $distance-md;
-	}
-
+	.xs &,
+	.sm &,
 	.md & {
 		margin-left: $distance-md;
 	}

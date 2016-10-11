@@ -35,6 +35,18 @@ class PlayerWidgetService extends Observable {
 		this._player = {};
 		return this;
 	}
+	detectMobile() {
+		if ( (navigator.userAgent.match(/Android/i) ||
+			navigator.userAgent.match(/iPhone/i) ||
+			navigator.userAgent.match(/iPod/i) ||
+			navigator.userAgent.match(/BlackBerry/i) ||
+			navigator.userAgent.match(/Windows Phone/i)) && window.innerWidth < 767
+		) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	launch(playlist) {
 		if (!this.musicProvider.isSet()) {
 			this.musicProvider.openModal(() => this.launch(playlist));
@@ -53,25 +65,36 @@ class PlayerWidgetService extends Observable {
 	_createPlayer(playlist) {
 		let provider = this.musicProvider.provider.name;
 		let providerPlaylist = _.find(playlist.external_playlists, { source: provider });
-		if (provider === 'apple') {
-			this.$window.open(playlist.apple_music_link || this.thirdPartyConstant.digsterAppleMusicAccount);
-			return;
+		if (this.detectMobile()) {
+			if (provider === 'spotify') {
+				this.$window.open(`spotify:user:${providerPlaylist.service_user_id}:playlist:${providerPlaylist.service_playlist_id}`);
+			} else if (provider === 'deezer') {
+				this.$window.open(`http://www.deezer.com/playlist/${providerPlaylist.service_playlist_id}`);
+			} else if (provider === 'apple') {
+				this.$window.open(playlist.apple_music_link || this.thirdPartyConstant.digsterAppleMusicAccount);
+				return;
+			}
+		} else {
+			if (provider === 'apple') {
+				this.$window.open(playlist.apple_music_link || this.thirdPartyConstant.digsterAppleMusicAccount);
+				return;
+			}
+			if (!providerPlaylist) {
+				this.messagePopupService.showMessage(
+					this.$translate.instant('NO_PLAYLIST_IN_PROVIDER_SERVICE', { service: _.capitalize(provider) })
+				);
+				return;
+			}
+			this.destroy();
+			this.player = {
+				service: provider,
+				servicePlaylistId: providerPlaylist.service_playlist_id,
+				serviceUserId: providerPlaylist.service_user_id,
+				localPlaylistId: playlist.id,
+				show: true
+			};
+			this.notify();
 		}
-		if (!providerPlaylist) {
-			this.messagePopupService.showMessage(
-				this.$translate.instant('NO_PLAYLIST_IN_PROVIDER_SERVICE', { service: _.capitalize(provider) })
-			);
-			return;
-		}
-		this.destroy();
-		this.player = {
-			service: provider,
-			servicePlaylistId: providerPlaylist.service_playlist_id,
-			serviceUserId: providerPlaylist.service_user_id,
-			localPlaylistId: playlist.id,
-			show: true
-		};
-		this.notify();
 	}
 }
 
