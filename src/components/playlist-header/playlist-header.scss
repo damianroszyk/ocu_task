@@ -93,8 +93,9 @@ $playlist-header-height--md: 240px;
 
 	.sm & {
 		font-size: 18px;
-		height: 28px;
+		height: 40px;
 		overflow: hidden;
+		margin-bottom: 0;
 	}
 
 	.md & {
@@ -146,6 +147,18 @@ $playlist-header-height--md: 240px;
 
 .playlist-header__thumbnail {
     height: 100%;
+}
+
+.playlist-header__caption {
+
+	.xs & {
+		font-size: 14px;
+		margin-top: 0;
+	}
+
+	.sm & {
+		margin-top: 0;
+	}
 }
 
 .playlist-header__caption--lowercase {
