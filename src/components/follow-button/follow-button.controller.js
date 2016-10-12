@@ -18,8 +18,7 @@ export default class FollowButtonController {
 		if (!this.musicProvider.isSet()) {
 			this.musicProvider.openModal(this._followPlaylist.bind(this));
 		}
-		else{
-
+		else {
 			let provider = this.musicProvider.provider.name;
 			let providerPlaylist = _.find(this.playlist.external_playlists, { source: provider });
 			if (!providerPlaylist) {

@@ -10,6 +10,7 @@ class DeezerService {
 		this.thirdPartyConstant = thirdPartyConstant;
 		this.deferredDeezerSdk = this.$q.defer();
 		this.deferredPlayer = this.$q.defer();
+		this.isAuthorized = false;
 	}
 	initialize() {
 		const DZ_ROOT = angular.element(`<div id="dz-root"></div>`);
@@ -41,6 +42,7 @@ class DeezerService {
 				}
 			});
 		});
+		deferredAuthorization.promise.then(() => this.isAuthorized = true);
 		return deferredAuthorization.promise;
 	}
 	_request(resource, method = false, params) {
