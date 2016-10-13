@@ -28,7 +28,7 @@ export default class PlaylistHeaderController {
 	sharePlaylist(socialMedia) {
 		let playlistUrl = this.$location.absUrl();
 		let escapedPlaylistUrl = escape(playlistUrl);
-		let message = escape(`Listen to ${this.playlist.name} playlist on Digster - ${playlistUrl}`);
+		let message = `Listen to ${this.playlist.name} playlist on Digster - ${playlistUrl}`;
 		let playlistCover = escape(this.playlist.images[0].url);
 		if (socialMedia === 'twitter') {
 			this.$window.open(`${TWITTER_SHARE_URL}${message}`);

@@ -8,7 +8,7 @@ class MessagePopupService extends Observable {
 		super();
 		this.message = {
 			text: ''
-		}
+		};
 	}
 	showMessage(text){
 		this.message = { text };
