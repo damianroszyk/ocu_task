@@ -73,7 +73,7 @@ export default class PlayerCustomController extends PlayerController {
 			this.track.albumId = newTrack.track.album.id;
 			this.track.title = newTrack.track.title;
 			this.track.duration = newTrack.track.duration - 0;
-			this.track.idx = newTrack.index;
+			this.track.idx = newTrack.index !== 0 ? newTrack.index : this.trackIndex;
 		});
 	}
 	_handlePlayerPositionChange(positionArray) {
@@ -142,6 +142,7 @@ export default class PlayerCustomController extends PlayerController {
 	}
 	playTrackOfPlaylist(index, track) {
 		this.isPlayingTrack = true;
+		this.trackIndex = index;
 		this.deezer.dz.player.playTracks([track.id]);
 	}
 	showPopup() {
