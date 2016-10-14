@@ -45,6 +45,18 @@ class DeezerService {
 		deferredAuthorization.promise.then(() => this.isAuthorized = true);
 		return deferredAuthorization.promise;
 	}
+
+	checkLoginStatus() {
+		this.deferredDeezerSdk.promise.then(() => {
+			this.dz.getLoginStatus(response => {
+				if (!response.authResponse) {
+					this.isAuthorized = false;
+				}
+			});
+		});
+	}
+
+
 	_request(resource, method = false, params) {
 		let deferredRequest = this.$q.defer();
 		this.deferredDeezerSdk.promise.then(() => {
