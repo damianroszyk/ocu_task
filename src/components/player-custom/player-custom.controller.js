@@ -51,12 +51,18 @@ export default class PlayerCustomController extends PlayerController {
 	initPlaylist() {
 		this.subscribePlayerEvents();
 		this.isPlayingTrack = true;
+		console.log("this.$state.params", this.$state.params);
 		if (this.trackIdx) {
 			this.deezer.dz.player.playPlaylist(
 				parseInt(this.servicePlaylistId, 10), true,
 				parseInt(this.trackIdx, 10),
 				parseInt(this.trackTime, 10)
 			);
+			this.$timeout(() => {
+				if (this.$state.params.shuffle) {
+					this.shuffle();
+				}
+			}, 3000);
 		} else {
 			this.deezer.dz.player.playPlaylist(parseInt(this.servicePlaylistId, 10), 0);
 		}
@@ -73,6 +79,7 @@ export default class PlayerCustomController extends PlayerController {
 			this.track.title = newTrack.track.title;
 			this.track.duration = newTrack.track.duration - 0;
 			this.track.idx = newTrack.index === 0 && this.trackIndex ? this.trackIndex : newTrack.index;
+			this.szachy = this.szufla;
 		});
 	}
 	_handlePlayerPositionChange(positionArray) {
@@ -151,7 +158,8 @@ export default class PlayerCustomController extends PlayerController {
 			'deezer',
 			this.servicePlaylistId,
 			this.track.idx,
-			this.track.completed
+			this.track.completed,
+			'shuffle'
 		].join('/');
 		let attrs = [
 			`width=${this.playerConstant.popupSize.width}`,
