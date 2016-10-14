@@ -57,7 +57,10 @@ class PlayerWidgetService extends Observable {
 		if (this.musicProvider.isDeezer() && !this.deezer.isAuthorized) {
 			this.deezer.isAuthorized = false;
 			return this.deezer.authorizeIfNeccessary().then(() => {
-				this.$timeout(() => this.launch(playlist), 1500);
+				this.$timeout(() => {
+					this.launch(playlist);
+					this.deezer.checkLoginStatus();
+				}, 1500);
 			});
 		}
 		if (this.popup) {
