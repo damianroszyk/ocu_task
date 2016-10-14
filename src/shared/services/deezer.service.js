@@ -56,7 +56,6 @@ class DeezerService {
 		});
 	}
 
-
 	_request(resource, method = false, params) {
 		let deferredRequest = this.$q.defer();
 		this.deferredDeezerSdk.promise.then(() => {

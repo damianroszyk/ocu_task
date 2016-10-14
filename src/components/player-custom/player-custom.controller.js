@@ -67,13 +67,12 @@ export default class PlayerCustomController extends PlayerController {
 	}
 	_handleCurrentTrackChange(newTrack) {
 		this.$scope.$apply(() => {
-			console.log("newTrack", newTrack);
 			this.track.artist = newTrack.track.artist.name;
 			this.track.album = newTrack.track.album.title;
 			this.track.albumId = newTrack.track.album.id;
 			this.track.title = newTrack.track.title;
 			this.track.duration = newTrack.track.duration - 0;
-			this.track.idx = newTrack.index !== 0 ? newTrack.index : this.trackIndex;
+			this.track.idx = newTrack.index === 0 && this.trackIndex ? this.trackIndex : newTrack.index;
 		});
 	}
 	_handlePlayerPositionChange(positionArray) {
