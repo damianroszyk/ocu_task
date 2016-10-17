@@ -744,23 +744,16 @@
 		padding: 10px 0 20px 0;
 	}
 
-	.careers .careers_info .col_left{
+	.careers .careers_info .col_left,
+	.careers .careers_info .col_right{
 		@include clearfix;
 		width:90%;
-		padding:0 0 25px 0;
+		padding:0 0 0 0;
 		float:inherit;
-	}
-
-	.careers .careers_info .col_right{
-		display: none;
 	}
 
 	.careers_info .mobile_hide{
 		display: none;
-	}
-
-	.careers .careers_info p{
-		margin:0;
 	}
 
 	.contact a.switch_map{
