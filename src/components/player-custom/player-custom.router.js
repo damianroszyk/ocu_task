@@ -3,7 +3,7 @@ import app from 'app';
 
 const CUSTOM_PLAYER_ROUTER = {
 	playerState: {
-		url: '^/player/:localPlaylistId/deezer/:servicePlaylistId/:trackIdx/:trackTime',
+		url: '^/player/:localPlaylistId/deezer/:servicePlaylistId/:trackIdx/:trackTime/:shuffle/:repeat',
 		template: `
 			<player-custom
 				popup="true"
