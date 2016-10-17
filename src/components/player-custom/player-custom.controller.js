@@ -57,6 +57,14 @@ export default class PlayerCustomController extends PlayerController {
 				parseInt(this.trackIdx, 10),
 				parseInt(this.trackTime, 10)
 			);
+			this.$timeout(() => {
+				if (this.$state.params.shuffle === 'true') {
+					this.shuffle();
+				}
+				if (this.$state.params.repeat === 'true') {
+					this.repeat();
+				}
+			}, 3000);
 		} else {
 			this.deezer.dz.player.playPlaylist(parseInt(this.servicePlaylistId, 10), 0);
 		}
@@ -151,7 +159,9 @@ export default class PlayerCustomController extends PlayerController {
 			'deezer',
 			this.servicePlaylistId,
 			this.track.idx,
-			this.track.completed
+			this.track.completed,
+			this.isShuffling,
+			this.isRepeating
 		].join('/');
 		let attrs = [
 			`width=${this.playerConstant.popupSize.width}`,
