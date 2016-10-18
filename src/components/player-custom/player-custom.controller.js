@@ -64,7 +64,11 @@ export default class PlayerCustomController extends PlayerController {
 				if (this.$state.params.repeat === 'true') {
 					this.repeat();
 				}
-			}, 3000);
+				if(this.$state.params.volume) {
+					this.setStartVolume(this.$state.params.volume);
+					this.volume = this.$state.params.volume;
+				}
+			}, 2000);
 		} else {
 			this.deezer.dz.player.playPlaylist(parseInt(this.servicePlaylistId, 10), 0);
 		}
@@ -126,8 +130,11 @@ export default class PlayerCustomController extends PlayerController {
 		if (event.which === 1) {
 			let percent = (event.offsetX / event.currentTarget.clientWidth) * 100;
 			this.deezer.dz.player.setVolume(percent);
-			this.volume = percent;
+			this.volume = Math.round(percent);
 		}
+	}
+	setStartVolume(level) {
+		this.deezer.dz.player.setVolume(level);
 	}
 	setPercent(event) {
 		if (event.which === 1) {
@@ -161,7 +168,8 @@ export default class PlayerCustomController extends PlayerController {
 			this.track.idx,
 			this.track.completed,
 			this.isShuffling,
-			this.isRepeating
+			this.isRepeating,
+			this.volume
 		].join('/');
 		let attrs = [
 			`width=${this.playerConstant.popupSize.width}`,
