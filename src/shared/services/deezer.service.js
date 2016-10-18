@@ -3,7 +3,7 @@ import app from 'app';
 
 class DeezerService {
 	/* @ngInject */
-	constructor($q, angularLoad, dispatcherService, thirdPartyConstant) {
+	constructor($q, angularLoad, dispatcherService, thirdPartyConstant, messagePopupService, $translate) {
 		this.$q = $q;
 		this.angularLoad = angularLoad;
 		this.dispatcherService = dispatcherService;
@@ -11,6 +11,8 @@ class DeezerService {
 		this.deferredDeezerSdk = this.$q.defer();
 		this.deferredPlayer = this.$q.defer();
 		this.isAuthorized = false;
+		this.messagePopupService = messagePopupService;
+		this.$translate = $translate;
 	}
 	initialize() {
 		const DZ_ROOT = angular.element(`<div id="dz-root"></div>`);
@@ -82,6 +84,13 @@ class DeezerService {
 		return this._request(`/user/${this.dz.user_id}/playlists`, 'POST', params);
 	}
 	_handleDeezerSdkScript() {
+
+		if(!swfobject.getFlashPlayerVersion() || !swfobject.getFlashPlayerVersion().major){
+			this.messagePopupService.showMessage(
+				this.$translate.instant('NO_FLASH_PLUGIN')
+			);
+		}
+
 		this.dz = window.DZ;
 		this.dz.init({
 			appId: this.thirdPartyConstant.deezerAppId,
