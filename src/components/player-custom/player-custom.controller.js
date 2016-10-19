@@ -70,6 +70,9 @@ export default class PlayerCustomController extends PlayerController {
 				}
 			}, 2000);
 		} else {
+			this.deezer.dz.player.setShuffle(false);
+			this.deezer.dz.player.setRepeat(false);
+			this.deezer.dz.player.setVolume(100);
 			this.deezer.dz.player.playPlaylist(parseInt(this.servicePlaylistId, 10), 0);
 		}
 	}
