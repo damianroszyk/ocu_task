@@ -4,7 +4,7 @@ import Observable from 'abstract/observable';
 
 class PlayerWidgetService extends Observable {
 	/* @ngInject */
-	constructor($timeout, $window, $translate, dispatcherService, playerConstant, musicProvider, thirdPartyConstant, messagePopupService, deezer) {
+	constructor($timeout, $window, $translate, dispatcherService, playerConstant, musicProvider, mobileHelper, thirdPartyConstant, messagePopupService, deezer) {
 		super();
 		this.$window = $window;
 		this.$translate = $translate;
@@ -16,6 +16,7 @@ class PlayerWidgetService extends Observable {
 		this._player = {};
 		this._popup = false;
 		this.deezer = deezer;
+		this.mobileHelper = mobileHelper;
 		this.$timeout = $timeout;
 	}
 	set player(player) {
@@ -36,19 +37,6 @@ class PlayerWidgetService extends Observable {
 	destroy() {
 		this._player = {};
 		return this;
-	}
-	detectMobile() {
-		if ( (navigator.userAgent.match(/Android/i) ||
-			navigator.userAgent.match(/iPhone/i) ||
-			navigator.userAgent.match(/iPod/i) ||
-			navigator.userAgent.match(/BlackBerry/i) ||
-			navigator.userAgent.match(/Windows Phone/i)) &&
-			window.innerWidth < 767
-		) {
-			return true;
-		} else {
-			return false;
-		}
 	}
 	launch(playlist) {
 		if (!this.musicProvider.isSet()) {
@@ -77,7 +65,7 @@ class PlayerWidgetService extends Observable {
 	_createPlayer(playlist) {
 		let provider = this.musicProvider.provider.name;
 		let providerPlaylist = _.find(playlist.external_playlists, { source: provider });
-		if (this.detectMobile()) {
+		if (this.mobileHelper.detectMobile()) {
 			if (provider === 'spotify') {
 				this.$window.open(`spotify:user:${providerPlaylist.service_user_id}:playlist:${providerPlaylist.service_playlist_id}`);
 			} else if (provider === 'deezer') {
