@@ -57,16 +57,16 @@ export default class PlayerCustomController extends PlayerController {
 				parseInt(this.trackIdx, 10),
 				parseInt(this.trackTime, 10)
 			);
+			if(this.$state.params.volume) {
+				this.setStartVolume(this.$state.params.volume);
+				this.volume = this.$state.params.volume;
+			}
 			this.$timeout(() => {
 				if (this.$state.params.shuffle === 'true') {
 					this.shuffle();
 				}
 				if (this.$state.params.repeat === 'true') {
 					this.repeat();
-				}
-				if(this.$state.params.volume) {
-					this.setStartVolume(this.$state.params.volume);
-					this.volume = this.$state.params.volume;
 				}
 			}, 2000);
 		} else {
