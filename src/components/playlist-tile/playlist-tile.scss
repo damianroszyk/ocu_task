@@ -207,6 +207,9 @@ playlist-tile {
 		font-size: 16px;
 		margin-bottom: ($distance-sm / 2);
 		margin-left: $distance-sm;
+		white-space: normal;
+		text-overflow: normal;
+		max-height: 36px;
 	}
 
 	.sm & {
@@ -271,7 +274,7 @@ playlist-tile {
 		height: $distance-lg;
 
 		.xs & {
-			height: 120px;
+			height: 103px;
 		}
 
 		.sm &,

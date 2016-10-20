@@ -5,6 +5,7 @@ import './dom-helper.service';
 import './metatags.service';
 import './page-title.service';
 import './model-helper.service';
+import './mobile-helper.service';
 import './music-provider.service';
 import './responsive.service';
 import './storage.service';

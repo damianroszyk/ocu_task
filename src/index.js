@@ -7,6 +7,9 @@ import './analytics';
 import './run';
 import './bootstrap';
 
+import swfobject from 'swfobject';
+window.swfobject = swfobject;
+
 import './shared/constants';
 import './shared/interceptors';
 import './shared/filters';
