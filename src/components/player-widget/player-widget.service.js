@@ -4,7 +4,8 @@ import Observable from 'abstract/observable';
 
 class PlayerWidgetService extends Observable {
 	/* @ngInject */
-	constructor($timeout, $window, $translate, dispatcherService, playerConstant, musicProvider, mobileHelper, thirdPartyConstant, messagePopupService, deezer) {
+	constructor($timeout, $window, $translate, dispatcherService, playerConstant,
+		musicProvider, mobileHelper, thirdPartyConstant, messagePopupService, deezer, Analytics) {
 		super();
 		this.$window = $window;
 		this.$translate = $translate;
@@ -18,6 +19,7 @@ class PlayerWidgetService extends Observable {
 		this.deezer = deezer;
 		this.mobileHelper = mobileHelper;
 		this.$timeout = $timeout;
+		this.Analytics = Analytics;
 	}
 	set player(player) {
 		this._player = player;
@@ -41,25 +43,27 @@ class PlayerWidgetService extends Observable {
 	launch(playlist) {
 		if (!this.musicProvider.isSet()) {
 			this.musicProvider.openModal(() => this.launch(playlist));
-		}
-		if (this.musicProvider.isDeezer() && !this.deezer.isAuthorized) {
-			this.deezer.isAuthorized = false;
-			return this.deezer.authorizeIfNeccessary().then(() => {
-				this.$timeout(() => {
-					this.launch(playlist);
-					this.deezer.checkLoginStatus();
-				}, 1500);
-			});
-		}
-		if (this.popup) {
-			this.dispatcherService.dispatchNative(
-				this.playerConstant.playLocalPlaylistEvent, { playlist }
-			);
 		} else {
-			this._createPlayer(playlist);
-			this.dispatcherService.listenNative(
-				this.playerConstant.popupClosedEvent, () => this.popup = false
-			);
+			this.Analytics.trackEvent('Playlist', 'Play', playlist.name, this.musicProvider.isSet());
+			if (this.musicProvider.isDeezer() && !this.deezer.isAuthorized) {
+				this.deezer.isAuthorized = false;
+				return this.deezer.authorizeIfNeccessary().then(() => {
+					this.$timeout(() => {
+						this.launch(playlist);
+						this.deezer.checkLoginStatus();
+					}, 1500);
+				});
+			}
+			if (this.popup) {
+				this.dispatcherService.dispatchNative(
+					this.playerConstant.playLocalPlaylistEvent, { playlist }
+				);
+			} else {
+				this._createPlayer(playlist);
+				this.dispatcherService.listenNative(
+					this.playerConstant.popupClosedEvent, () => this.popup = false
+				);
+			}
 		}
 	}
 	_createPlayer(playlist) {
