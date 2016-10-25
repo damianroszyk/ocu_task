@@ -22,7 +22,9 @@ export default class PlayerCustomController extends PlayerController {
 		this.deezer.deferredPlayer.promise.then(() => {
 			this.deezer
 			.getPlaylist(parseInt(this.servicePlaylistId, 10))
-			.then(playlist => this.tracks = playlist.tracks.data);
+			.then(playlist => {
+				this.$timeout(() => this.tracks = playlist.tracks.data, 1000);
+			});
 			return this.popup ? this.runPlayerInPopup() : this.runPlayerInWhitelabel();
 		});
 	}

@@ -7,7 +7,6 @@
             alt="Playlist thumbnail"/>
 		<div
 			class="play-button-overlay"
-			ga-track-event="['Playlist', 'Play', $ctrl.playlist.name]"
 			ng-click="$ctrl.onPlayButtonClick($ctrl.playlist); $event.stopPropagation()">
 		</div>
     </div>
@@ -36,7 +35,7 @@
 				</span>
 				<span
 					class="icon-pinterest--blue-background"
-					ng-click="$ctrl.sharePlaylist('pinterest')">					
+					ng-click="$ctrl.sharePlaylist('pinterest')">
 				</span>
 			</div>
 		</div>
