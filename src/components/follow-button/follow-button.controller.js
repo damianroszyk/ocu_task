@@ -11,7 +11,6 @@ export default class FollowButtonController {
 		musicProvider.registerObserver(() => this._unsetFollowedPlaylist());
 	}
 	onFollowClick() {
-		this.Analytics.trackEvent(this.$state.current.name, 'Follow', this.playlist.name);
 		this._followPlaylist();
 	}
 	_followPlaylist() {
@@ -19,7 +18,7 @@ export default class FollowButtonController {
 			this.musicProvider.openModal(this._followPlaylist.bind(this));
 		}
 		else {
-			// this.Analytics.trackEvent(this.$state.current.name, 'Follow', this.playlist.name, this.musicProvider.isSet());
+			this.Analytics.trackEvent(this.$state.current.name, `Follow - ${this.musicProvider.isSet()}`, this.playlist.name);
 			let provider = this.musicProvider.provider.name;
 			let providerPlaylist = _.find(this.playlist.external_playlists, { source: provider });
 			if (!providerPlaylist) {

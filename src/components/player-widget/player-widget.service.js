@@ -44,7 +44,7 @@ class PlayerWidgetService extends Observable {
 		if (!this.musicProvider.isSet()) {
 			this.musicProvider.openModal(() => this.launch(playlist));
 		} else {
-			this.Analytics.trackEvent('Playlist', 'Play', playlist.name, this.musicProvider.isSet());
+			this.Analytics.trackEvent('Playlist', `Play - ${this.musicProvider.isSet()}`, playlist.name);
 			if (this.musicProvider.isDeezer() && !this.deezer.isAuthorized) {
 				this.deezer.isAuthorized = false;
 				return this.deezer.authorizeIfNeccessary().then(() => {
