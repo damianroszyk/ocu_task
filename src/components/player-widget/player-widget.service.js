@@ -4,10 +4,11 @@ import Observable from 'abstract/observable';
 
 class PlayerWidgetService extends Observable {
 	/* @ngInject */
-	constructor($timeout, $window, $translate, dispatcherService, playerConstant,
+	constructor($state, $timeout, $window, $translate, dispatcherService, playerConstant,
 		musicProvider, mobileHelper, thirdPartyConstant, messagePopupService, deezer, Analytics) {
 		super();
 		this.$window = $window;
+		this.$state = $state;
 		this.$translate = $translate;
 		this.dispatcherService = dispatcherService;
 		this.playerConstant = playerConstant;
@@ -44,7 +45,7 @@ class PlayerWidgetService extends Observable {
 		if (!this.musicProvider.isSet()) {
 			this.musicProvider.openModal(() => this.launch(playlist));
 		} else {
-			this.Analytics.trackEvent('Playlist', `Play - ${this.musicProvider.isSet()}`, playlist.name);
+			this.Analytics.trackEvent(this.$state.current.name, `Play - ${this.musicProvider.isSet()}`, playlist.name);
 			if (this.musicProvider.isDeezer() && !this.deezer.isAuthorized) {
 				this.deezer.isAuthorized = false;
 				return this.deezer.authorizeIfNeccessary().then(() => {
