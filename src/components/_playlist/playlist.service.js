@@ -66,7 +66,7 @@ class PlaylistService {
 			.then(response => this._normalizeLocalPlaylists(response.data));
 	}
 	_normalizeLocalPlaylists(playlists) {
-		playlists = _.values(playlists);
+		playlists = _.values((playlists.data || playlists.results) ? (playlists.data ? playlists.data : playlists.results) : playlists);
 		angular.forEach(playlists, playlist => {
 			angular.forEach(playlist.external_playlists, externalPlaylist => {
 				playlist[externalPlaylist.source] = externalPlaylist;
