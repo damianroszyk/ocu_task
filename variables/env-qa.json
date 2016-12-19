@@ -1,5 +1,5 @@
 {
-	"apiVersion": "'https://api-dev.pitched.apps.miquido.com/v1'",
+	"apiVersion": "'http://api-dev.pitched.apps.miquido.com/v1'",
 	"spotifyClientId": "'222743e2fa6e403cbcdbd330f15ddb45'",
 	"deezerAppId": 211202,
 	"digsterTracker1GA": "'UA-83012337-3'",
