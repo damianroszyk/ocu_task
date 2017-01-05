@@ -6,12 +6,14 @@ const PROVIDER_KEY = 'chosenProvider';
 
 class MusicProviderService extends Observable {
 	/* @ngInject */
-	constructor(storage, thirdPartyConstant) {
+	constructor(storage, thirdPartyConstant, dispatcherService) {
 		super();
 		this.storage = storage;
+		this.dispatcherService = dispatcherService;
 		this._provider = storage.getStorageProperty(PROVIDER_KEY);
 	}
 	set provider(provider) {
+		this.dispatcherService.dispatch('musicProviderChange', provider);
 		this._provider = provider;
 		this.storage.setStorageProperty(PROVIDER_KEY, provider);
 		this.notifyObservers(this._provider);

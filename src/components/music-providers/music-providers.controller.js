@@ -2,13 +2,15 @@ import _ from 'lodash';
 
 export default class MusicProviders {
 	/* @ngInject */
-	constructor(thirdPartyConstant, playerConstant, musicProvider, dispatcherService, playerWidgetService) {
+	constructor(thirdPartyConstant, playerConstant, musicProvider, dispatcherService, playerWidgetService, deezer, napsterService) {
 		this.providers = angular.copy(thirdPartyConstant.providers);
 		this.playerConstant = playerConstant;
 		this.musicProvider = musicProvider;
 		this.dispatcherService = dispatcherService;
 		this.chosenProvider = musicProvider.provider;
 		this.playerWidgetService = playerWidgetService;
+		this.deezer = deezer;
+		this.napsterService = napsterService;
 		this._getChosenProvider();
 	}
 	_getChosenProvider() {
@@ -29,5 +31,7 @@ export default class MusicProviders {
 		this.playerWidgetService.destroy().notify();
 		this.dispatcherService.dispatchNative(this.playerConstant.musicProviderUpdatedEvent);
 		this.onSave();
+		selectedProvider.name === 'deezer' ? this.deezer.initialize() : '';
+		selectedProvider.name === 'napster' ? this.napsterService.authorize() : '';
 	}
 }
