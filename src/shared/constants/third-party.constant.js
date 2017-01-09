@@ -29,8 +29,8 @@ const THIRD_PARTY_CONSTANT = {
 	spotifyScopes: ['user-read-email', 'playlist-modify-public', 'playlist-modify-private'],
 	spotifyRedirectUrl: `${window.location.origin}/channel-spotify.html`,
 	spotifyClientId: '<% spotifyClientId %>',
-	napsterApiKey: 'YWQ4NzEyZjItMDhhNC00YWUyLTgxNDctNTMyNDkzNjFkMmM3', //TODO param
-	napsterApiSecret: 'OTc5NDlhODctMzk5MC00Y2FmLTk0ZDgtMWY0ODU1ODM3ZDVk', //TODO param
+	napsterApiKey: '<% napsterApiKey %>',
+	napsterApiSecret: '<% napsterApiSecret %>',
 	napsterApiUrl: 'https://api.napster.com',
 	napsterRedirectUrl: `${window.location.origin}/channel-napster.html`
 };

@@ -2,7 +2,7 @@ import angular from 'angular';
 import app from 'app';
 
 /* @ngInject */
-let run = ($rootScope, $state, Analytics, deezer, domHelper, storage, dispatcherService) => {
+let run = ($rootScope, $state, Analytics, deezer, domHelper, storage) => {
 	$rootScope.$state = $state;
 	$rootScope.$on('$stateChangeSuccess', domHelper.scrollTop);
 	let chosenProvider = storage.getStorageProperty('chosenProvider');
