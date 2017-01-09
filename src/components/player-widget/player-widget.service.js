@@ -71,7 +71,7 @@ class PlayerWidgetService extends Observable {
 	}
 	_createPlayer(playlist) {
 		let provider = this.musicProvider.provider.name;
-		let providerPlaylist = true; //_.find(playlist.external_playlists, { source: provider });
+		let providerPlaylist = {service_playlist_id: 'pp.225974698'}; //_.find(playlist.external_playlists, { source: provider });
 		if (this.mobileHelper.detectMobile()) {
 			if (provider === 'spotify') {
 				this.$window.open(`spotify:user:${providerPlaylist.service_user_id}:playlist:${providerPlaylist.service_playlist_id}`);

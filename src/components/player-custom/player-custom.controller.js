@@ -6,7 +6,7 @@ import PlayerController from 'abstract/player';
 export default class PlayerCustomController extends PlayerController {
 	/* @ngInject */
 	constructor(deezer, $scope, $state, $window, $timeout, dispatcherService, playlistService,
-		playerWidgetService, playerConstant, musicProvider) {
+		playerWidgetService, playerConstant, musicProvider, napsterService) {
 		super($window, $state, dispatcherService, playerConstant);
 		this.$scope = $scope;
 		this.$state = $state;
@@ -19,21 +19,32 @@ export default class PlayerCustomController extends PlayerController {
 		this.playerConstant = playerConstant;
 		this.track = {};
 		this.musicProvider = musicProvider;
+		this.napsterService = napsterService;
 	}
 	$onInit() {
 		if (this.musicProvider.isNapster()) {
 			console.log('napster');
+			this.napsterService
+				.getPlaylistDetails(this.servicePlaylistId).then(response => {
+					this.napsterPlaylistDetails = response.data.playlists[0];
+				});
+			this.napsterService
+				.getPlaylistTracks(this.servicePlaylistId).then(response => {
+					console.log("response", response.data);
+					this.napsterPlaylistTracks = response.data;
+					this.tracks = response.data.tracks;
+				});
 		} else if (this.musicProvider.isDeezer()) {
 			console.log('deezer');
-		}
-		this.deezer.deferredPlayer.promise.then(() => {
-			this.deezer
-			.getPlaylist(parseInt(this.servicePlaylistId, 10))
-			.then(playlist => {
-				this.$timeout(() => this.tracks = playlist.tracks.data, 1000);
+			this.deezer.deferredPlayer.promise.then(() => {
+				this.deezer
+				.getPlaylist(parseInt(this.servicePlaylistId, 10))
+				.then(playlist => {
+					this.$timeout(() => this.tracks = playlist.tracks.data, 1000);
+				});
+				return this.popup ? this.runPlayerInPopup() : this.runPlayerInWhitelabel();
 			});
-			return this.popup ? this.runPlayerInPopup() : this.runPlayerInWhitelabel();
-		});
+		}
 	}
 	$onChanges(changedBindings) {
 		if (changedBindings.servicePlaylistId) {

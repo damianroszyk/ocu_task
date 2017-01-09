@@ -3,11 +3,12 @@ import app from 'app';
 
 class NapsterService {
 	/* @ngInject */
-	constructor($q, thirdPartyConstant, $http, storage) {
+	constructor($q, thirdPartyConstant, $http, storage, modelHelper) {
 		this.$q = $q;
 		this.thirdPartyConstant = thirdPartyConstant;
 		this.$http = $http;
 		this.storage = storage;
+		this.modelHelper = modelHelper;
 	}
 
 	authorize() {
@@ -75,6 +76,40 @@ class NapsterService {
 				this.storage.setStorageProperty('napster', response.data);
 				return response.data;
 			});
+	}
+
+	getPlaylistDetails(playlistId) {
+		let deferredRequest = this.$q.defer();
+		let headers = {
+			apikey: this.thirdPartyConstant.napsterApiKey
+		};
+		let url = this.modelHelper.buildUrl(
+			this.thirdPartyConstant.napsterApiUrl, this.thirdPartyConstant.napsterApiVersion,
+			'playlists', playlistId
+		);
+
+		this.$http
+			.get(url, { headers })
+			.then(response => deferredRequest.resolve(response));
+
+		return deferredRequest.promise;
+	}
+
+	getPlaylistTracks(playlistId) {
+		let deferredRequest = this.$q.defer();
+		let headers = {
+			apikey: this.thirdPartyConstant.napsterApiKey
+		};
+		let url = this.modelHelper.buildUrl(
+			this.thirdPartyConstant.napsterApiUrl, this.thirdPartyConstant.napsterApiVersion,
+			'playlists', playlistId, 'tracks?limit=200'
+		);
+
+		this.$http
+			.get(url, { headers })
+			.then(response => deferredRequest.resolve(response));
+
+		return deferredRequest.promise;
 	}
 }
 
