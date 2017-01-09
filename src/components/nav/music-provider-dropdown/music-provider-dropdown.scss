@@ -3,7 +3,7 @@
 
 $music-provider-dropdown-width: 680px;
 $music-provider-dropdown-width--md: 768px;
-$music-provider-dropdown-height: 300px;
+$music-provider-dropdown-height: 410px;
 $music-provider-dropdown-width--xs: 100%;
 $music-provider-dropdown-height--xs: auto;
 
@@ -26,7 +26,7 @@ $music-provider-dropdown-height--xs: auto;
 		width: $music-provider-dropdown-width--xs;
 	    height: $music-provider-dropdown-height--xs;
 		padding: 6%;
-		padding-bottom: 100px;
+		padding-bottom: 80px;
 	}
 
 	.sm & {
@@ -35,7 +35,7 @@ $music-provider-dropdown-height--xs: auto;
 		width: $music-provider-dropdown-width--xs;
 	    height: $music-provider-dropdown-height--xs;
 		padding: 4%;
-		padding-bottom: 100px;
+		padding-bottom: 80px;
 	}
 
 	.md & {

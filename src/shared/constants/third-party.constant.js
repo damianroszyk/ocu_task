@@ -11,6 +11,9 @@ const THIRD_PARTY_CONSTANT = {
 	}, {
 		name : 'deezer',
 		logo : '/shared/images/icons/deezer-icon--black.png'
+	}, {
+		name: 'napster',
+		logo: '/shared/images/icons/napster-logo.png'
 	}],
 	digsterAppleMusicAccount: 'https://itunes.apple.com/us/curator/digster/id1018903101',
 	digsterTracker1GA: '<% digsterTracker1GA %>',
@@ -25,7 +28,11 @@ const THIRD_PARTY_CONSTANT = {
 	spotifyAuthUrl: 'https://accounts.spotify.com/authorize',
 	spotifyScopes: ['user-read-email', 'playlist-modify-public', 'playlist-modify-private'],
 	spotifyRedirectUrl: `${window.location.origin}/channel-spotify.html`,
-	spotifyClientId: '<% spotifyClientId %>'
+	spotifyClientId: '<% spotifyClientId %>',
+	napsterApiKey: '<% napsterApiKey %>',
+	napsterApiSecret: '<% napsterApiSecret %>',
+	napsterApiUrl: 'https://api.napster.com',
+	napsterRedirectUrl: `${window.location.origin}/channel-napster.html`
 };
 
 export default angular

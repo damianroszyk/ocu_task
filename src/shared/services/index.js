@@ -9,3 +9,4 @@ import './mobile-helper.service';
 import './music-provider.service';
 import './responsive.service';
 import './storage.service';
+import './napster.service';
