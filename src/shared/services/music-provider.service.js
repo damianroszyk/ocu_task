@@ -30,6 +30,9 @@ class MusicProviderService extends Observable {
 	isDeezer() {
 		return this._provider && this._provider.name === 'deezer';
 	}
+	isNapster() {
+		return this._provider && this._provider.name === 'napster';
+	}
 	registerModalHandler(modalHandler) {
 		this.modalHandler = modalHandler;
 	}

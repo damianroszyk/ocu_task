@@ -8,7 +8,7 @@
 	}"
 	ng-if="$ctrl.player.show">
 	<player-custom
-		ng-if="$ctrl.player.service === 'deezer'"
+		ng-if="$ctrl.player.service === 'deezer' || $ctrl.player.service === 'napster'"
 		popup="false"
 		player-shown="$ctrl.player.show"
 		service-playlist-id="$ctrl.player.servicePlaylistId"

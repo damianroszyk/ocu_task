@@ -5,7 +5,8 @@ import PlayerController from 'abstract/player';
 
 export default class PlayerCustomController extends PlayerController {
 	/* @ngInject */
-	constructor(deezer, $scope, $state, $window, $timeout, dispatcherService, playlistService, playerWidgetService, playerConstant) {
+	constructor(deezer, $scope, $state, $window, $timeout, dispatcherService, playlistService,
+		playerWidgetService, playerConstant, musicProvider) {
 		super($window, $state, dispatcherService, playerConstant);
 		this.$scope = $scope;
 		this.$state = $state;
@@ -17,8 +18,14 @@ export default class PlayerCustomController extends PlayerController {
 		this.playerWidgetService = playerWidgetService;
 		this.playerConstant = playerConstant;
 		this.track = {};
+		this.musicProvider = musicProvider;
 	}
 	$onInit() {
+		if (this.musicProvider.isNapster()) {
+			console.log('napster');
+		} else if (this.musicProvider.isDeezer()) {
+			console.log('deezer');
+		}
 		this.deezer.deferredPlayer.promise.then(() => {
 			this.deezer
 			.getPlaylist(parseInt(this.servicePlaylistId, 10))
@@ -201,6 +208,7 @@ export default class PlayerCustomController extends PlayerController {
 		this.playerWidgetService.destroy().notify();
 	}
 	handlePlayLocalPlaylistEvent(event) {
+		console.log('zzz');
 		if (event.detail && event.detail.playlist) {
 			this.localPlaylistId = event.detail.playlist.id;
 			this.servicePlaylistId = event.detail.playlist.deezer.service_playlist_id;

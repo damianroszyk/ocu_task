@@ -54,6 +54,8 @@ class PlayerWidgetService extends Observable {
 						this.deezer.checkLoginStatus();
 					}, 1500);
 				});
+			} else if (this.musicProvider.isNapster()) {
+
 			}
 			if (this.popup) {
 				this.dispatcherService.dispatchNative(
@@ -69,7 +71,7 @@ class PlayerWidgetService extends Observable {
 	}
 	_createPlayer(playlist) {
 		let provider = this.musicProvider.provider.name;
-		let providerPlaylist = _.find(playlist.external_playlists, { source: provider });
+		let providerPlaylist = true; //_.find(playlist.external_playlists, { source: provider });
 		if (this.mobileHelper.detectMobile()) {
 			if (provider === 'spotify') {
 				this.$window.open(`spotify:user:${providerPlaylist.service_user_id}:playlist:${providerPlaylist.service_playlist_id}`);
