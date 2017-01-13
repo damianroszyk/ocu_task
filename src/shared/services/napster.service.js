@@ -175,6 +175,25 @@ class NapsterService {
 		};
 		return playlist;
 	}
+
+	initNapsterPlayer(track) {
+		let tokens = this.storage.getStorageProperty('napster');
+		Rhapsody.init({
+			consumerKey: this.thirdPartyConstant.napsterApiKey
+		});
+
+		Rhapsody.player.on('ready', function(e) {
+			Rhapsody.member.set({
+				accessToken: tokens.access_token,
+				refreshToken: tokens.refresh_token
+			});
+			Rhapsody.player.play(track.id);
+		});
+
+		Rhapsody.player.on('playevent', function(e) {
+			console.log(e.data);
+		});
+	}
 }
 
 export default angular

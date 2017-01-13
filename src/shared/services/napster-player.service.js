@@ -12,6 +12,7 @@ class NapsterPlayerService {
 	next(track) {
 		//napsterSDK
 		// Rhapsody.player.play(track.id);
+		Rhapsody.player.play(track.id);
 		console.log("track", track, this.playlistAlbums);
 		if (!this.playlistAlbums[track.album.albumId]) {
 			this.napsterService
@@ -24,6 +25,14 @@ class NapsterPlayerService {
 		} else {
 			this.dispatcherService.dispatch('albumImageChange', this.playlistAlbums[track.album.albumId]);
 		}
+	}
+
+	pause() {
+		Rhapsody.player.pause();
+	}
+
+	play(track) {
+		Rhapsody.player.play(track.id);
 	}
 }
 

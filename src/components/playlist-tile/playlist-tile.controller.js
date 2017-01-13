@@ -19,7 +19,7 @@ export default class PlaylistTileController {
 			created_at: '2016-09-22 13:57:35',
 			id: 90,
 			playlist_id: 24,
-			service_playlist_id: 'pp.225974698',
+			service_playlist_id: 'pp.223691673',
 			service_user_id: '594680711',
 			source: 'napster',
 			updated_at: '2016-09-22 13:57:35'
