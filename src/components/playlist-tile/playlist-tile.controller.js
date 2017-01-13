@@ -13,6 +13,17 @@ export default class PlaylistTileController {
 		this.playlistDescriptionHTML = this.$sce.trustAsHtml(description);
 	}
 	launchPlayer() {
+		console.log("this.playlist", this.playlist);
+		this.playlist.external_playlists.push({
+			brand: 4,
+			created_at: '2016-09-22 13:57:35',
+			id: 90,
+			playlist_id: 24,
+			service_playlist_id: 'pp.225974698',
+			service_user_id: '594680711',
+			source: 'napster',
+			updated_at: '2016-09-22 13:57:35'
+		});
 		this.playerWidgetService.launch(this.playlist);
 	}
 }

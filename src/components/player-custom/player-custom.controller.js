@@ -6,7 +6,8 @@ import PlayerController from 'abstract/player';
 export default class PlayerCustomController extends PlayerController {
 	/* @ngInject */
 	constructor(deezer, $scope, $state, $window, $timeout, dispatcherService, playlistService,
-		playerWidgetService, playerConstant, musicProvider, napsterService) {
+		playerWidgetService, playerConstant, musicProvider, napsterService,
+		napsterPlayerService, deezerPlayerService) {
 		super($window, $state, dispatcherService, playerConstant);
 		this.$scope = $scope;
 		this.$state = $state;
@@ -20,30 +21,25 @@ export default class PlayerCustomController extends PlayerController {
 		this.track = {};
 		this.musicProvider = musicProvider;
 		this.napsterService = napsterService;
+		this.napsterPlayerService = napsterPlayerService;
+		this.deezerPlayerService = deezerPlayerService;
+		console.log("serviceTracks", this.servicePlaylistTracks);
+
+		this.dispatcherService.listen('albumImageChange', (event, response) => {
+			console.log("image", response);
+			this.track.albumImageUrl = response;
+		});
+
+		this.currentPlayerService = this.musicProvider.isNapster() ?
+			this.napsterPlayerService : this.deezerPlayerService;
 	}
 	$onInit() {
 		if (this.musicProvider.isNapster()) {
 			console.log('napster');
-			this.napsterService
-				.getPlaylistDetails(this.servicePlaylistId).then(response => {
-					this.napsterPlaylistDetails = response.data.playlists[0];
-				});
-			this.napsterService
-				.getPlaylistTracks(this.servicePlaylistId).then(response => {
-					console.log("response", response.data);
-					this.napsterPlaylistTracks = response.data;
-					this.tracks = response.data.tracks;
-				});
+			return this.popup ? this.runPlayerInPopup() : this.runPlayerInWhitelabel();
 		} else if (this.musicProvider.isDeezer()) {
 			console.log('deezer');
-			this.deezer.deferredPlayer.promise.then(() => {
-				this.deezer
-				.getPlaylist(parseInt(this.servicePlaylistId, 10))
-				.then(playlist => {
-					this.$timeout(() => this.tracks = playlist.tracks.data, 1000);
-				});
-				return this.popup ? this.runPlayerInPopup() : this.runPlayerInWhitelabel();
-			});
+			return this.popup ? this.runPlayerInPopup() : this.runPlayerInWhitelabel();
 		}
 	}
 	$onChanges(changedBindings) {
@@ -66,7 +62,9 @@ export default class PlayerCustomController extends PlayerController {
 	runPlayerInWhitelabel() {
 		this.playlist = true;
 		this.tracks = this.playerWidgetService.tracks;
-		this.initPlaylist();
+		if (this.musicProvider.isDeezer()) {
+			this.initPlaylist();
+		}
 	}
 	initPlaylist() {
 		this.subscribePlayerEvents();
@@ -102,6 +100,7 @@ export default class PlayerCustomController extends PlayerController {
 	}
 	_handleCurrentTrackChange(newTrack) {
 		this.$scope.$apply(() => {
+			this.albumImageUrl = newTrack.track.album.cover;
 			this.track.artist = newTrack.track.artist.name;
 			this.track.album = newTrack.track.album.title;
 			this.track.albumId = newTrack.track.album.id;
@@ -126,9 +125,19 @@ export default class PlayerCustomController extends PlayerController {
 		this.isPlayingTrack = false;
 		this.deezer.dz.player.pause();
 	}
-	next() {
+
+	getNextTrack() {
+
+	}
+
+	next(track) {
+		console.log("track", track);
+		console.log("this.track", this.track);
 		this.isPlayingTrack = true;
-		this.deezer.dz.player.next();
+		this.currentPlayerService.next(this.track);
+
+		//TODO get album cover link from Napster: getAlbumImages()
+		// save image link in global images object this.ablumImages.{albumName} = getAlbumImages();
 	}
 	prev() {
 		this.isPlayingTrack = true;
@@ -180,7 +189,8 @@ export default class PlayerCustomController extends PlayerController {
 	playTrackOfPlaylist(index, track) {
 		this.isPlayingTrack = true;
 		this.trackIndex = index;
-		this.deezer.dz.player.playTracks([track.id]);
+		//@TODO this.deezer.dz.player.playTracks([track.id]);
+
 	}
 	showPopup() {
 		let url = [
@@ -219,7 +229,6 @@ export default class PlayerCustomController extends PlayerController {
 		this.playerWidgetService.destroy().notify();
 	}
 	handlePlayLocalPlaylistEvent(event) {
-		console.log('zzz');
 		if (event.detail && event.detail.playlist) {
 			this.localPlaylistId = event.detail.playlist.id;
 			this.servicePlaylistId = event.detail.playlist.deezer.service_playlist_id;

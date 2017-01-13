@@ -90,7 +90,7 @@ class NapsterService {
 
 		this.$http
 			.get(url, { headers })
-			.then(response => deferredRequest.resolve(response));
+			.then(response => deferredRequest.resolve(response.data.playlists[0]));
 
 		return deferredRequest.promise;
 	}
@@ -107,9 +107,73 @@ class NapsterService {
 
 		this.$http
 			.get(url, { headers })
-			.then(response => deferredRequest.resolve(response));
+			.then(response => deferredRequest.resolve(response.data.tracks));
 
 		return deferredRequest.promise;
+	}
+
+	getPlaylist(playlistId) {
+		let tracks = this.getPlaylistTracks(playlistId);
+
+		let details = this.getPlaylistDetails(playlistId);
+
+		return this.$q.all([tracks, details]);
+	}
+
+	getAlbumImages(albumId) {
+		let deferredRequest = this.$q.defer();
+		let headers = {
+			apikey: this.thirdPartyConstant.napsterApiKey
+		};
+
+		let url = this.modelHelper.buildUrl(
+			this.thirdPartyConstant.napsterApiUrl, this.thirdPartyConstant.napsterApiVersion,
+			'albums', albumId, 'images'
+		);
+
+		this.$http
+			.get(url, { headers })
+			.then(response => {
+				return deferredRequest.resolve(response.data.images);
+			});
+
+		return deferredRequest.promise;
+	}
+
+	processTracks(tracks) {
+		for (var i = 0; i < tracks.length; i++) {
+			tracks[i] = {
+				id: tracks[i].id,
+				title: tracks[i].name,
+				album: {
+					name: tracks[i].albumName,
+					albumId: tracks[i].albumId
+				},
+				artist: {
+					name: tracks[i].artistName
+				},
+				length: tracks[i].playbackSeconds
+			};
+		}
+		return tracks;
+	}
+
+	processAlbumImages(imagesList) {
+		let mediumSizeImage;
+		for (var i = 0; i < imagesList.length; i++) {
+			if (imagesList[i].height === 170) {
+				mediumSizeImage = imagesList[i].url;
+			}
+		}
+		return mediumSizeImage;
+	}
+
+	processDetails(playlist) {
+		playlist = {
+			description: playlist.description,
+
+		};
+		return playlist;
 	}
 }
 
