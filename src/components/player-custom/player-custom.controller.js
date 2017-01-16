@@ -23,16 +23,13 @@ export default class PlayerCustomController extends PlayerController {
 		this.napsterService = napsterService;
 		this.napsterPlayerService = napsterPlayerService;
 		this.deezerPlayerService = deezerPlayerService;
-		console.log("serviceTracks", this.servicePlaylistTracks);
 		this.currentTrack = this.servicePlaylistTracks[0];
-		this.track.id = this.currentTrack.id;
-		this.track.duration = this.currentTrack.duration;
-		this.track.artist = this.currentTrack.artist;
-		this.track.album = this.currentTrack.album;
-		this.track.albumId = this.currentTrack.albumId;
-		this.track.title = this.currentTrack.title;
-		this.track.duration = this.currentTrack.duration - 0;
 
+		this.currentPlayerService = this.musicProvider.isNapster() ?
+			this.napsterPlayerService : this.deezerPlayerService;
+	}
+
+	$onInit() {
 		this.dispatcherService.listen('albumImageChange', (event, response) => {
 			this.track.albumImageUrl = response;
 		});
@@ -75,12 +72,14 @@ export default class PlayerCustomController extends PlayerController {
 			});
 		});
 
-		this.currentPlayerService = this.musicProvider.isNapster() ?
-			this.napsterPlayerService : this.deezerPlayerService;
-	}
-
-	$onInit() {
 		this.isPlayingTrack = true;
+		this.track.id = this.currentTrack.id;
+		this.track.duration = this.currentTrack.duration;
+		this.track.artist = this.currentTrack.artist;
+		this.track.album = this.currentTrack.album;
+		this.track.albumId = this.currentTrack.albumId;
+		this.track.title = this.currentTrack.title;
+		this.track.duration = this.currentTrack.duration - 0;
 		return this.popup ? this.runPlayerInPopup() : this.runPlayerInWhitelabel();
 	}
 
@@ -189,7 +188,7 @@ export default class PlayerCustomController extends PlayerController {
 	setPercent(event) {
 		if (event.which === 1) {
 			let percent = (event.offsetX / event.currentTarget.clientWidth);
-			this.currentPlayerService.seek(percent, this.currentTrack);
+			this.currentPlayerService.seek(percent, this.track);
 			let completedTime = Math.floor(this.track.duration * percent);
 			this.percent = percent * 100;
 			this.track.completed = completedTime;
