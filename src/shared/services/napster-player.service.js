@@ -3,21 +3,59 @@ import app from 'app';
 
 class NapsterPlayerService {
 	/* @ngInject */
-	constructor(napsterService, dispatcherService) {
+	constructor(napsterService, dispatcherService, storage, thirdPartyConstant) {
 		this.napsterService = napsterService;
 		this.dispatcherService = dispatcherService;
+		this.storage = storage;
+		this.thirdPartyConstant = thirdPartyConstant;
 		this.playlistAlbums = {};
+	}
+
+	initPlaylist(playlist) {
+		let service = this;
+		let tokens = this.storage.getStorageProperty('napster');
+		Rhapsody.init({
+			consumerKey: this.thirdPartyConstant.napsterApiKey
+		});
+
+		Rhapsody.player.on('ready', function(e) {
+			Rhapsody.member.set({
+				accessToken: tokens.access_token,
+				refreshToken: tokens.refresh_token
+			});
+			service.napsterService.getAlbumImages(playlist.track.album.albumId)
+				.then(response => {
+					let trackImage = service.napsterService.processAlbumImages(response);
+					service.dispatcherService.dispatch('albumImageChange', trackImage);
+				});
+			Rhapsody.player.play(playlist.track.id);
+			service.notifyAboutNewTrack(playlist.track);
+		});
+
+		this.subscribePlayerEvents();
+	}
+
+	subscribePlayerEvents() {
+		let service = this;
+		Rhapsody.player.on('playtimer', function(position) {
+			service._handlePlayerPositionChange(position.data);
+		});
+	}
+
+	_handlePlayerPositionChange(position) {
+		let percent = (position.currentTime == 0 ? 0 : (position.currentTime / position.totalTime) * 100);
+		let completedTime = Math.floor(position.currentTime);
+		this.dispatcherService.dispatch('trackPositionChange', { percent, completedTime });
 	}
 
 	next(track) {
 		Rhapsody.player.play(track.id);
-		this.notifyAboutNewCover(track);
 		this.notifyAboutNewTrack(track);
 	}
 
 	prev(track) {
 		Rhapsody.player.play(track.id);
-		this.notifyAboutNewCover(track);
+		this.notifyAboutNewTrack(track);
 	}
 
 	notifyAboutNewCover(track) {
@@ -35,13 +73,14 @@ class NapsterPlayerService {
 	}
 
 	notifyAboutNewTrack(newTrack) {
+		this.notifyAboutNewCover(newTrack);
 		let track = {};
-		console.log("newTrack", newTrack);
-		track.artist = newTrack.track.artist.name;
-		track.album = newTrack.track.album.title;
-		track.albumId = newTrack.track.album.id;
-		track.title = newTrack.track.title;
-		track.duration = newTrack.track.duration - 0;
+		track.id = newTrack.id;
+		track.artist = newTrack.artist.name;
+		track.album = newTrack.album.name;
+		track.albumId = newTrack.album.albumId;
+		track.title = newTrack.title;
+		track.duration = newTrack.duration - 0;
 		track.idx = newTrack.index === 0 && this.trackIndex ? this.trackIndex : newTrack.index;
 		this.dispatcherService.dispatch('currentTrackChange', track);
 	}
@@ -56,6 +95,7 @@ class NapsterPlayerService {
 
 	playTrack(track) {
 		this.play(track);
+		this.notifyAboutNewTrack(track);
 	}
 
 	mute(isMuted) {

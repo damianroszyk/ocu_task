@@ -176,66 +176,6 @@ class NapsterService {
 		};
 		return playlist;
 	}
-
-	initNapsterPlayer(track) {
-		let service = this;
-		let tokens = this.storage.getStorageProperty('napster');
-		Rhapsody.init({
-			consumerKey: this.thirdPartyConstant.napsterApiKey
-		});
-
-		Rhapsody.player.on('ready', function(e) {
-			Rhapsody.member.set({
-				accessToken: tokens.access_token,
-				refreshToken: tokens.refresh_token
-			});
-			service.getAlbumImages(track.album.albumId)
-				.then(response => {
-					let trackImage = service.processAlbumImages(response);
-					service.dispatcherService.dispatch('albumImageChange', trackImage);
-				});
-			Rhapsody.player.play(track.id);
-		});
-
-		this.subscribePlayerEvents();
-
-		Rhapsody.player.on('playevent', function(e) {
-			console.log(e.data);
-		});
-	}
-
-	subscribePlayerEvents() {
-		let service = this;
-		Rhapsody.player.on('playtimer', function(position) {
-			console.log('time', position.data);
-			service._handlePlayerPositionChange(position.data);
-		});
-		// Rhapsody.player.on('playevent', function(event) {
-		// 	console.log('play', event.data);
-		// 	if (event.data.code === 'PlayStarted') {
-		// 		service._handleCurrentTrackChange(event.data.id);
-		// 	}
-		// });
-	}
-
-	_handleCurrentTrackChange(newTrack) {
-		// let track = {};
-		// console.log("newTrack", newTrack);
-		// track.artist = newTrack.track.artist.name;
-		// track.album = newTrack.track.album.title;
-		// track.albumId = newTrack.track.album.id;
-		// track.title = newTrack.track.title;
-		// track.duration = newTrack.track.duration - 0;
-		// track.idx = newTrack.index === 0 && this.trackIndex ? this.trackIndex : newTrack.index;
-		this.dispatcherService.dispatch('currentTrackChange', newTrack);
-		// this.dispatcherService.dispatch('albumImageChange', `https://api.deezer.com/album/${track.albumId}/image`);
-	}
-
-	_handlePlayerPositionChange(position) {
-		let percent = (position.currentTime == 0 ? 0 : (position.currentTime / position.totalTime) * 100);
-		let completedTime = Math.floor(position.currentTime);
-		this.dispatcherService.dispatch('trackPositionChange', { percent, completedTime });
-	}
 }
 
 export default angular

@@ -25,26 +25,42 @@ export default class PlayerCustomController extends PlayerController {
 		this.deezerPlayerService = deezerPlayerService;
 		console.log("serviceTracks", this.servicePlaylistTracks);
 		this.currentTrack = this.servicePlaylistTracks[0];
+		this.track.id = this.currentTrack.id;
+		this.track.duration = this.currentTrack.duration;
+		this.track.artist = this.currentTrack.artist;
+		this.track.album = this.currentTrack.album;
+		this.track.albumId = this.currentTrack.albumId;
+		this.track.title = this.currentTrack.title;
+		this.track.duration = this.currentTrack.duration - 0;
 
 		this.dispatcherService.listen('albumImageChange', (event, response) => {
 			this.track.albumImageUrl = response;
 		});
 
 		this.dispatcherService.listen('currentTrackChange', (event, track) => {
-			console.log("trackListen", track);
-			this.$scope.$apply(() => {
-				this.track.albumImageUrl = `https://api.deezer.com/album/${track.albumId}/image`;
-				this.track.artist = track.artist;
+			if (this.musicProvider.isDeezer()) {
+				this.$scope.$apply(() => {
+					this.track.albumImageUrl = `https://api.deezer.com/album/${track.albumId}/image`;
+					this.track.id = track.id;
+					this.track.artist.name = track.artist;
+					this.track.album = track.album;
+					this.track.albumId = track.albumId;
+					this.track.title = track.title;
+					this.track.duration = track.duration - 0;
+					this.track.idx = track.index === 0 && this.trackIndex ? this.trackIndex : track.index;
+				});
+			} else if (this.musicProvider.isNapster()) {
+				this.track.id = track.id;
+				this.track.artist.name = track.artist;
 				this.track.album = track.album;
 				this.track.albumId = track.albumId;
 				this.track.title = track.title;
 				this.track.duration = track.duration - 0;
 				this.track.idx = track.index === 0 && this.trackIndex ? this.trackIndex : track.index;
-			});
+			}
 		});
 
 		this.dispatcherService.listen('trackPositionChange', (event, trackPosition) => {
-			console.log("trackPosition", trackPosition);
 			this.$scope.$apply(() => {
 				this.percent = trackPosition.percent;
 				this.track.completed = trackPosition.completedTime;
@@ -54,25 +70,18 @@ export default class PlayerCustomController extends PlayerController {
 		this.dispatcherService.listen('initialTrackSetting', (event, settings) => {
 			this.$scope.$apply(() => {
 				this.volume = settings.volume;
-				setting.shuffle ? this.shuffle() : '';
-				setting.repeat ? this.repeat() : '';
+				settings.shuffle ? this.shuffle() : '';
+				settings.repeat ? this.repeat() : '';
 			});
 		});
 
 		this.currentPlayerService = this.musicProvider.isNapster() ?
 			this.napsterPlayerService : this.deezerPlayerService;
 	}
-	
+
 	$onInit() {
-		if (this.musicProvider.isNapster()) {
-			console.log('napster');
-			this.napsterService.initNapsterPlayer(this.currentTrack);
-			this.isPlayingTrack = true;
-			return this.popup ? this.runPlayerInPopup() : this.runPlayerInWhitelabel();
-		} else if (this.musicProvider.isDeezer()) {
-			console.log('deezer');
-			return this.popup ? this.runPlayerInPopup() : this.runPlayerInWhitelabel();
-		}
+		this.isPlayingTrack = true;
+		return this.popup ? this.runPlayerInPopup() : this.runPlayerInWhitelabel();
 	}
 
 	$onChanges(changedBindings) {
@@ -98,14 +107,13 @@ export default class PlayerCustomController extends PlayerController {
 	runPlayerInWhitelabel() {
 		this.playlist = true;
 		this.tracks = this.playerWidgetService.tracks;
-		if (this.musicProvider.isDeezer()) {
-			this.initPlaylist();
-		}
+		this.initPlaylist();
 	}
 
 	initPlaylist() {
 		this.isPlayingTrack = true;
 		this.currentPlayerService.initPlaylist({
+			track: this.track,
 			trackIdx: this.trackIdx,
 			servicePlaylistId: this.servicePlaylistId,
 			trackTime: this.trackTime
@@ -114,7 +122,7 @@ export default class PlayerCustomController extends PlayerController {
 
 	play() {
 		this.isPlayingTrack = true;
-		this.currentPlayerService.play(this.currentTrack);
+		this.currentPlayerService.play(this.track);
 	}
 
 	pause() {
@@ -124,8 +132,8 @@ export default class PlayerCustomController extends PlayerController {
 
 	getNextTrack() {
 		for (var i = 0; i < this.servicePlaylistTracks.length; i++) {
-			if (this.servicePlaylistTracks[i].id === this.currentTrack.id) {
-				this.currentTrack = this.servicePlaylistTracks[i + 1];
+			if (this.servicePlaylistTracks[i].id === this.track.id) {
+				this.track = this.servicePlaylistTracks[i + 1];
 				// @TODO case: last track
 				break;
 			}
@@ -134,15 +142,14 @@ export default class PlayerCustomController extends PlayerController {
 
 	next() {
 		this.getNextTrack();
-		console.log("this.track", this.track);
 		this.isPlayingTrack = true;
-		this.currentPlayerService.next(this.currentTrack);
+		this.currentPlayerService.next(this.track);
 	}
 
 	getPrevTrack() {
 		for (var i = 0; i < this.servicePlaylistTracks.length; i++) {
-			if (this.servicePlaylistTracks[i].id === this.currentTrack.id) {
-				this.currentTrack = this.servicePlaylistTracks[i - 1];
+			if (this.servicePlaylistTracks[i].id === this.track.id) {
+				this.track = this.servicePlaylistTracks[i - 1];
 				// @TODO case: first track
 				break;
 			}
@@ -152,8 +159,7 @@ export default class PlayerCustomController extends PlayerController {
 	prev() {
 		this.getPrevTrack();
 		this.isPlayingTrack = true;
-		this.currentPlayerService.prev(this.currentTrack);
-		// this.deezer.dz.player.prev();
+		this.currentPlayerService.prev(this.track);
 	}
 	shuffle() {
 		this.deezer.dz.player.setShuffle(!this.isShuffling);
@@ -201,7 +207,7 @@ export default class PlayerCustomController extends PlayerController {
 	playTrackOfPlaylist(index, track) {
 		this.isPlayingTrack = true;
 		this.trackIndex = index;
-		this.currentPlayerService.playTrack(track);
+		this.currentPlayerService.playTrack(track, index, this.servicePlaylistId);
 	}
 	showPopup() {
 		let url = [

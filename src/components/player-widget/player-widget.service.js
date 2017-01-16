@@ -45,7 +45,6 @@ class PlayerWidgetService extends Observable {
 		return this;
 	}
 	launch(playlist) {
-		console.log("playlist", playlist);
 		if (!this.musicProvider.isSet()) {
 			this.musicProvider.openModal(() => this.launch(playlist));
 		} else {
@@ -99,26 +98,9 @@ class PlayerWidgetService extends Observable {
 			this.destroy();
 			// Fetch playlist data from exteranal provider
 			if (providerPlaylist.source === 'napster') {
-				// this.napsterService
-				// 	.getPlaylistTracks(providerPlaylist.service_playlist_id)
-				// 	.then(response => {
-						// this.napsterService.processTracks(response);
-						// console.log("response", response);
-						// providerPlaylist.tracks = response;
-						// this.player = {
-						// 	service: provider,
-						// 	servicePlaylistId: providerPlaylist.service_playlist_id,
-						// 	serviceUserId: providerPlaylist.service_user_id,
-						// 	localPlaylistId: playlist.id,
-						// 	servicePlaylistTracks: providerPlaylist.tracks,
-						// 	show: true
-						// };
-						// this.notify();
-				// 	});
 				this.napsterService
 					.getPlaylist(providerPlaylist.service_playlist_id)
 					.then(response => {
-						console.log("coolResponse", response);
 						providerPlaylist.tracks = this.napsterService.processTracks(response[0]);
 						this.player = {
 							service: provider,
@@ -135,7 +117,6 @@ class PlayerWidgetService extends Observable {
 					this.deezer
 					.getPlaylist(providerPlaylist.service_playlist_id)
 					.then(playlist => {
-						console.log("deezerplaylist", playlist);
 						this.$timeout(() => this.tracks = playlist.tracks.data, 1000);
 						providerPlaylist.tracks = this.deezerPlayerService.processTracks(playlist.tracks.data);
 						this.player = {

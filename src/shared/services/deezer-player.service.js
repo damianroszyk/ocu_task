@@ -11,7 +11,6 @@ class DeezerPlayerService {
 
 	next(track) {
 		this.deezer.dz.player.next();
-		// this.dispatcherService.dispatch('albumImageChange', `https://api.deezer.com/album/${track.albumId}/image`);
 	}
 
 	prev(track) {
@@ -43,7 +42,6 @@ class DeezerPlayerService {
 	}
 	_handleCurrentTrackChange(newTrack) {
 		let track = {};
-		console.log("newTrack", newTrack);
 		track.artist = newTrack.track.artist.name;
 		track.album = newTrack.track.album.title;
 		track.albumId = newTrack.track.album.id;
@@ -51,7 +49,6 @@ class DeezerPlayerService {
 		track.duration = newTrack.track.duration - 0;
 		track.idx = newTrack.index === 0 && this.trackIndex ? this.trackIndex : newTrack.index;
 		this.dispatcherService.dispatch('currentTrackChange', track);
-		// this.dispatcherService.dispatch('albumImageChange', `https://api.deezer.com/album/${track.albumId}/image`);
 	}
 	_handlePlayerPositionChange(positionArray) {
 		let percent = (positionArray[1] == 0 ? 0 : (positionArray[0] / positionArray[1]) * 100);
@@ -73,11 +70,9 @@ class DeezerPlayerService {
 			}
 			this.$timeout(() => {
 				if (this.$state.params.shuffle === 'true') {
-					// this.shuffle();
 					let shuffle = true;
 				}
 				if (this.$state.params.repeat === 'true') {
-					// this.repeat();
 					let repeat = true;
 				}
 				this.dispatcherService.dispatch('initialTrackSetting', { volume, shuffle, repeat });
@@ -114,8 +109,11 @@ class DeezerPlayerService {
 		this.deezer.dz.player.seek(percent * 100);
 	}
 
-	playTrack(track) {
-		this.deezer.dz.player.playTracks([track.id]);
+	playTrack(track, index, playlist) {
+		this.deezer.dz.player.playPlaylist(
+			parseInt(playlist, 10), true,
+			parseInt(index, 10), 0
+		);
 	}
 }
 
