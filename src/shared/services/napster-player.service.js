@@ -10,10 +10,17 @@ class NapsterPlayerService {
 	}
 
 	next(track) {
-		//napsterSDK
-		// Rhapsody.player.play(track.id);
 		Rhapsody.player.play(track.id);
-		console.log("track", track, this.playlistAlbums);
+		this.notifyAboutNewCover(track);
+		this.notifyAboutNewTrack(track);
+	}
+
+	prev(track) {
+		Rhapsody.player.play(track.id);
+		this.notifyAboutNewCover(track);
+	}
+
+	notifyAboutNewCover(track) {
 		if (!this.playlistAlbums[track.album.albumId]) {
 			this.napsterService
 				.getAlbumImages(track.album.albumId)
@@ -27,12 +34,43 @@ class NapsterPlayerService {
 		}
 	}
 
+	notifyAboutNewTrack(newTrack) {
+		let track = {};
+		console.log("newTrack", newTrack);
+		track.artist = newTrack.track.artist.name;
+		track.album = newTrack.track.album.title;
+		track.albumId = newTrack.track.album.id;
+		track.title = newTrack.track.title;
+		track.duration = newTrack.track.duration - 0;
+		track.idx = newTrack.index === 0 && this.trackIndex ? this.trackIndex : newTrack.index;
+		this.dispatcherService.dispatch('currentTrackChange', track);
+	}
+
 	pause() {
 		Rhapsody.player.pause();
 	}
 
 	play(track) {
 		Rhapsody.player.play(track.id);
+	}
+
+	playTrack(track) {
+		this.play(track);
+	}
+
+	mute(isMuted) {
+		// @TODO case: current volume is not 100%
+		isMuted === true ? Rhapsody.player.setVolume(1) : Rhapsody.player.setVolume(0);
+	}
+
+	setVolume(percent) {
+		let volume = percent / 100;
+		Rhapsody.player.setVolume(volume);
+	}
+
+	seek(percent, track) {
+		let seekTo = track.duration * percent;
+		Rhapsody.player.seek(seekTo);
 	}
 }
 

@@ -14,6 +14,10 @@ class DeezerPlayerService {
 		// this.dispatcherService.dispatch('albumImageChange', `https://api.deezer.com/album/${track.albumId}/image`);
 	}
 
+	prev(track) {
+		this.deezer.dz.player.prev();
+	}
+
 	processTracks(tracks) {
 		for (var i = 0; i < tracks.length; i++) {
 			tracks[i] = {
@@ -27,7 +31,7 @@ class DeezerPlayerService {
 				artist: {
 					name: tracks[i].artist.name
 				},
-				length: tracks[i].duration
+				duration: tracks[i].duration
 			};
 		}
 		return tracks;
@@ -96,6 +100,22 @@ class DeezerPlayerService {
 
 	play() {
 		this.deezer.dz.player.play();
+	}
+
+	mute(isMuted) {
+		this.deezer.dz.player.setMute(!isMuted);
+	}
+
+	setVolume(percent) {
+		this.deezer.dz.player.setVolume(percent);
+	}
+
+	seek(percent) {
+		this.deezer.dz.player.seek(percent * 100);
+	}
+
+	playTrack(track) {
+		this.deezer.dz.player.playTracks([track.id]);
 	}
 }
 

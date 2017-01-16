@@ -27,9 +27,7 @@ export default class PlayerCustomController extends PlayerController {
 		this.currentTrack = this.servicePlaylistTracks[0];
 
 		this.dispatcherService.listen('albumImageChange', (event, response) => {
-			this.$scope.$apply(() => {
-				this.track.albumImageUrl = response;
-			});
+			this.track.albumImageUrl = response;
 		});
 
 		this.dispatcherService.listen('currentTrackChange', (event, track) => {
@@ -41,7 +39,7 @@ export default class PlayerCustomController extends PlayerController {
 				this.track.albumId = track.albumId;
 				this.track.title = track.title;
 				this.track.duration = track.duration - 0;
-				this.track.idx = newTrack.index === 0 && this.trackIndex ? this.trackIndex : track.index;
+				this.track.idx = track.index === 0 && this.trackIndex ? this.trackIndex : track.index;
 			});
 		});
 
@@ -64,6 +62,7 @@ export default class PlayerCustomController extends PlayerController {
 		this.currentPlayerService = this.musicProvider.isNapster() ?
 			this.napsterPlayerService : this.deezerPlayerService;
 	}
+	
 	$onInit() {
 		if (this.musicProvider.isNapster()) {
 			console.log('napster');
@@ -75,14 +74,17 @@ export default class PlayerCustomController extends PlayerController {
 			return this.popup ? this.runPlayerInPopup() : this.runPlayerInWhitelabel();
 		}
 	}
+
 	$onChanges(changedBindings) {
 		if (changedBindings.servicePlaylistId) {
 			this.$onInit();
 		}
 	}
+
 	runPlayerInPopup() {
 		this.playLocalPlaylist(this.localPlaylistId);
 	}
+
 	playLocalPlaylist(localPlaylistId) {
 		this.playlistService
 			.getPlaylist(this.localPlaylistId)
@@ -92,6 +94,7 @@ export default class PlayerCustomController extends PlayerController {
 				this.initPlaylist();
 			});
 	}
+
 	runPlayerInWhitelabel() {
 		this.playlist = true;
 		this.tracks = this.playerWidgetService.tracks;
@@ -99,6 +102,7 @@ export default class PlayerCustomController extends PlayerController {
 			this.initPlaylist();
 		}
 	}
+
 	initPlaylist() {
 		this.isPlayingTrack = true;
 		this.currentPlayerService.initPlaylist({
@@ -106,59 +110,13 @@ export default class PlayerCustomController extends PlayerController {
 			servicePlaylistId: this.servicePlaylistId,
 			trackTime: this.trackTime
 		});
-		// this.deezerPlayerService.subscribePlayerEvents();
-		// if (this.trackIdx) {
-		// 	this.deezer.dz.player.playPlaylist(
-		// 		parseInt(this.servicePlaylistId, 10), true,
-		// 		parseInt(this.trackIdx, 10),
-		// 		parseInt(this.trackTime, 10)
-		// 	);
-		// 	if(this.$state.params.volume) {
-		// 		this.setStartVolume(this.$state.params.volume);
-		// 		this.volume = this.$state.params.volume;
-		// 	}
-		// 	this.$timeout(() => {
-		// 		if (this.$state.params.shuffle === 'true') {
-		// 			this.shuffle();
-		// 		}
-		// 		if (this.$state.params.repeat === 'true') {
-		// 			this.repeat();
-		// 		}
-		// 	}, 2000);
-		// } else {
-		// 	this.deezer.dz.player.setShuffle(false);
-		// 	this.deezer.dz.player.setRepeat(false);
-		// 	this.setStartVolume(this.volume || 100);
-		// 	this.deezer.dz.player.playPlaylist(parseInt(this.servicePlaylistId, 10), 0);
-		// }
 	}
-	// subscribePlayerEvents() {
-	// 	this.deezer.dz.Event.subscribe('current_track', this._handleCurrentTrackChange.bind(this));
-	// 	this.deezer.dz.Event.subscribe('player_position', this._handlePlayerPositionChange.bind(this));
-	// }
-	// _handleCurrentTrackChange(newTrack) {
-	// 	this.$scope.$apply(() => {
-	// 		this.albumImageUrl = newTrack.track.album.cover;
-	// 		this.track.artist = newTrack.track.artist.name;
-	// 		this.track.album = newTrack.track.album.title;
-	// 		this.track.albumId = newTrack.track.album.id;
-	// 		this.track.title = newTrack.track.title;
-	// 		this.track.duration = newTrack.track.duration - 0;
-	// 		this.track.idx = newTrack.index === 0 && this.trackIndex ? this.trackIndex : newTrack.index;
-	// 	});
-	// }
-	// _handlePlayerPositionChange(positionArray) {
-	// 	let percent = (positionArray[1] == 0 ? 0 : (positionArray[0] / positionArray[1]) * 100);
-	// 	let completedTime = Math.floor(positionArray[0]);
-	// 	this.$scope.$apply(() => {
-	// 		this.percent = percent;
-	// 		this.track.completed = completedTime;
-	// 	});
-	// }
+
 	play() {
 		this.isPlayingTrack = true;
 		this.currentPlayerService.play(this.currentTrack);
 	}
+
 	pause() {
 		this.isPlayingTrack = false;
 		this.currentPlayerService.pause();
@@ -168,25 +126,34 @@ export default class PlayerCustomController extends PlayerController {
 		for (var i = 0; i < this.servicePlaylistTracks.length; i++) {
 			if (this.servicePlaylistTracks[i].id === this.currentTrack.id) {
 				this.currentTrack = this.servicePlaylistTracks[i + 1];
+				// @TODO case: last track
 				break;
 			}
 		}
 	}
 
-	next(track) {
+	next() {
 		this.getNextTrack();
-		console.log("track", track);
 		console.log("this.track", this.track);
 		this.isPlayingTrack = true;
-		// this.currentPlayerService.next(this.track);
 		this.currentPlayerService.next(this.currentTrack);
-
-		//TODO get album cover link from Napster: getAlbumImages()
-		// save image link in global images object this.ablumImages.{albumName} = getAlbumImages();
 	}
+
+	getPrevTrack() {
+		for (var i = 0; i < this.servicePlaylistTracks.length; i++) {
+			if (this.servicePlaylistTracks[i].id === this.currentTrack.id) {
+				this.currentTrack = this.servicePlaylistTracks[i - 1];
+				// @TODO case: first track
+				break;
+			}
+		}
+	}
+
 	prev() {
+		this.getPrevTrack();
 		this.isPlayingTrack = true;
-		this.deezer.dz.player.prev();
+		this.currentPlayerService.prev(this.currentTrack);
+		// this.deezer.dz.player.prev();
 	}
 	shuffle() {
 		this.deezer.dz.player.setShuffle(!this.isShuffling);
@@ -200,14 +167,14 @@ export default class PlayerCustomController extends PlayerController {
 		this.isRepeating = !this.isRepeating;
 	}
 	mute() {
-		this.deezer.dz.player.setMute(!this.isMuted);
+		this.currentPlayerService.mute(this.isMuted);
 		this.isMuted = !this.isMuted;
 	}
 	setVolume(event) {
 		if (event.which === 1) {
 			let percent = (event.offsetX / event.currentTarget.clientWidth) * 100;
-			this.deezer.dz.player.setVolume(percent);
 			this.volume = Math.round(percent);
+			this.currentPlayerService.setVolume(this.volume);
 		}
 	}
 	setStartVolume(level) {
@@ -216,7 +183,7 @@ export default class PlayerCustomController extends PlayerController {
 	setPercent(event) {
 		if (event.which === 1) {
 			let percent = (event.offsetX / event.currentTarget.clientWidth);
-			this.deezer.dz.player.seek(percent * 100);
+			this.currentPlayerService.seek(percent, this.currentTrack);
 			let completedTime = Math.floor(this.track.duration * percent);
 			this.percent = percent * 100;
 			this.track.completed = completedTime;
@@ -234,8 +201,7 @@ export default class PlayerCustomController extends PlayerController {
 	playTrackOfPlaylist(index, track) {
 		this.isPlayingTrack = true;
 		this.trackIndex = index;
-		//@TODO this.deezer.dz.player.playTracks([track.id]);
-
+		this.currentPlayerService.playTrack(track);
 	}
 	showPopup() {
 		let url = [
