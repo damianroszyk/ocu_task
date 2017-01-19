@@ -11,6 +11,7 @@ class NapsterService {
 		this.modelHelper = modelHelper;
 		this.dispatcherService = dispatcherService;
 		this.albumCoverSize = 170;
+		this.playlistTracksLimit = 200;
 	}
 
 	authorize() {
@@ -99,12 +100,13 @@ class NapsterService {
 
 	getPlaylistTracks(playlistId) {
 		let deferredRequest = this.$q.defer();
+		let tracksLimit = 'tracks?limit=' + this.playlistTracksLimit;
 		let headers = {
 			apikey: this.thirdPartyConstant.napsterApiKey
 		};
 		let url = this.modelHelper.buildUrl(
 			this.thirdPartyConstant.napsterApiUrl, this.thirdPartyConstant.napsterApiVersion,
-			'playlists', playlistId, 'tracks?limit=200'
+			'playlists', playlistId, tracksLimit
 		);
 
 		this.$http
