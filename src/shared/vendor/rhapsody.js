@@ -38,8 +38,8 @@
 		};
 	};
 
-	var ACCESS_TOKEN_KEY = 'ZWZmYWNjYzQtYTljNy00N2IwLWJkMjUtNTgxZDZlOGMzMzNj',
-		REFRESH_TOKEN_KEY = '15651b08-3ecb-4ce0-bed2-8bab63836034';
+	var ACCESS_TOKEN_KEY = 'rhapsody.member.accessToken',
+		REFRESH_TOKEN_KEY = 'rhapsody.member.refreshToken';
 
 	var Member = function(obj) {
 		for (var k in obj) {
@@ -290,9 +290,9 @@
 					win.contentWindow.postMessage({
 						method: method,
 						args: Rhapsody.util.jsonClean(args || {})
-					}, "*");
+					}, '*');
 				}
-			}
+			};
 		},
 		on: function(eventName, callback) {
 			window.addEventListener(eventName, callback);
