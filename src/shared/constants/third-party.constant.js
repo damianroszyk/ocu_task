@@ -32,6 +32,7 @@ const THIRD_PARTY_CONSTANT = {
 	napsterApiKey: '<% napsterApiKey %>',
 	napsterApiSecret: '<% napsterApiSecret %>',
 	napsterApiUrl: 'https://api.napster.com',
+	napsterApiVersion: 'v2.1',
 	napsterRedirectUrl: `${window.location.origin}/channel-napster.html`
 };
 
