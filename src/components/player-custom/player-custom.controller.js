@@ -72,6 +72,10 @@ export default class PlayerCustomController extends PlayerController {
 			});
 		});
 
+		this.dispatcherService.listen('playNextTrack', (event, data) => {
+			this.next();
+		});
+
 		this.isPlayingTrack = true;
 		this.track.id = this.currentTrack.id;
 		this.track.duration = this.currentTrack.duration;
@@ -132,8 +136,11 @@ export default class PlayerCustomController extends PlayerController {
 	getNextTrack() {
 		for (var i = 0; i < this.servicePlaylistTracks.length; i++) {
 			if (this.servicePlaylistTracks[i].id === this.track.id) {
+				if (i === this.servicePlaylistTracks.length - 1) {
+					this.track = this.servicePlaylistTracks[0];
+					break;
+				}
 				this.track = this.servicePlaylistTracks[i + 1];
-				// @TODO case: last track
 				break;
 			}
 		}
@@ -148,8 +155,11 @@ export default class PlayerCustomController extends PlayerController {
 	getPrevTrack() {
 		for (var i = 0; i < this.servicePlaylistTracks.length; i++) {
 			if (this.servicePlaylistTracks[i].id === this.track.id) {
+				if (i === 0) {
+					this.track = this.servicePlaylistTracks[this.servicePlaylistTracks.length - 1];
+					break;
+				}
 				this.track = this.servicePlaylistTracks[i - 1];
-				// @TODO case: first track
 				break;
 			}
 		}
@@ -160,19 +170,17 @@ export default class PlayerCustomController extends PlayerController {
 		this.isPlayingTrack = true;
 		this.currentPlayerService.prev(this.track);
 	}
+
 	shuffle() {
-		this.deezer.dz.player.setShuffle(!this.isShuffling);
+		this.currentPlayerService.shuffle(!this.isShuffling, this.servicePlaylistTracks);
 		this.isShuffling = !this.isShuffling;
 	}
 	repeat() {
-		let repeat = this.isRepeating ?
-			this.playerConstant.deezerRepeatingDictionary.noRepeat :
-			this.playerConstant.deezerRepeatingDictionary.repeatTrack;
-		this.deezer.dz.player.setRepeat(repeat);
+		this.currentPlayerService.repeat(this.isRepeating);
 		this.isRepeating = !this.isRepeating;
 	}
 	mute() {
-		this.currentPlayerService.mute(this.isMuted);
+		this.currentPlayerService.mute(this.isMuted, this.volume);
 		this.isMuted = !this.isMuted;
 	}
 	setVolume(event) {
@@ -209,6 +217,7 @@ export default class PlayerCustomController extends PlayerController {
 		this.currentPlayerService.playTrack(track, index, this.servicePlaylistId);
 	}
 	showPopup() {
+		let service = this.musicProvider.isDeezer() ? 'deezer' : 'napster';
 		let url = [
 			'/player',
 			this.localPlaylistId,
@@ -225,7 +234,7 @@ export default class PlayerCustomController extends PlayerController {
 			`height=${this.playerConstant.popupSize.height}`,
 			`menubar=no`, `status=no`, `titlebar=no`, `toolbar=no`, `directories=no`
 		].join(',');
-		this.playerWidgetService.popup = 'deezer';
+		this.playerWidgetService.popup = service;
 		this.$window.open(url, '_blank', attrs);
 		this.close();
 		this.$timeout(() => this.pause(), 3000);

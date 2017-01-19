@@ -3,10 +3,11 @@ import app from 'app';
 
 class DeezerPlayerService {
 	/* @ngInject */
-	constructor(deezer, dispatcherService, $state) {
+	constructor(deezer, dispatcherService, $state, playerConstant) {
 		this.deezer = deezer;
 		this.dispatcherService = dispatcherService;
 		this.$state = $state;
+		this.playerConstant = playerConstant;
 	}
 
 	next(track) {
@@ -114,6 +115,17 @@ class DeezerPlayerService {
 			parseInt(playlist, 10), true,
 			parseInt(index, 10), 0
 		);
+	}
+
+	repeat(isRepeating) {
+		let repeat = isRepeating ?
+			this.playerConstant.deezerRepeatingDictionary.noRepeat :
+			this.playerConstant.deezerRepeatingDictionary.repeatTrack;
+		this.deezer.dz.player.setRepeat(repeat);
+	}
+
+	shuffle(isShuffling) {
+		this.deezer.dz.player.setShuffle(isShuffling);
 	}
 }
 

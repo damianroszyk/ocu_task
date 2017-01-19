@@ -40,6 +40,18 @@ class NapsterPlayerService {
 		Rhapsody.player.on('playtimer', function(position) {
 			service._handlePlayerPositionChange(position.data);
 		});
+		Rhapsody.player.on('playevent', function(event) {
+			if (event.data.code === 'PlayComplete') {
+				if (service.isRepeating) {
+					service.play(event.data);
+				} else if (service.isShuffling){
+					let randomIndex = Math.floor(Math.random() * service.tracks.length);
+					service.playTrack(service.tracks[randomIndex]);
+				} else {
+					service.dispatcherService.dispatch('playNextTrack', '');
+				}
+			}
+		});
 	}
 
 	_handlePlayerPositionChange(position) {
@@ -98,9 +110,9 @@ class NapsterPlayerService {
 		this.notifyAboutNewTrack(track);
 	}
 
-	mute(isMuted) {
-		// @TODO case: current volume is not 100%
-		isMuted === true ? Rhapsody.player.setVolume(1) : Rhapsody.player.setVolume(0);
+	mute(isMuted, volume) {
+		volume = volume / 100;
+		isMuted === true ? Rhapsody.player.setVolume(volume) : Rhapsody.player.setVolume(0);
 	}
 
 	setVolume(percent) {
@@ -111,6 +123,15 @@ class NapsterPlayerService {
 	seek(percent, track) {
 		let seekTo = track.duration * percent;
 		Rhapsody.player.seek(seekTo);
+	}
+
+	repeat(isRepeating) {
+		this.isRepeating = !this.isRepeating;
+	}
+
+	shuffle(isShuffling, tracks) {
+		this.tracks = tracks;
+		this.isShuffling = !this.isShuffling;
 	}
 }
 

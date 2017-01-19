@@ -10,6 +10,7 @@ class NapsterService {
 		this.storage = storage;
 		this.modelHelper = modelHelper;
 		this.dispatcherService = dispatcherService;
+		this.albumCoverSize = 170;
 	}
 
 	authorize() {
@@ -162,7 +163,7 @@ class NapsterService {
 	processAlbumImages(imagesList) {
 		let mediumSizeImage;
 		for (var i = 0; i < imagesList.length; i++) {
-			if (imagesList[i].height === 170) {
+			if (imagesList[i].height === this.albumCoverSize) {
 				mediumSizeImage = imagesList[i].url;
 			}
 		}
