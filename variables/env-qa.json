@@ -1,5 +1,5 @@
 {
-	"apiVersion": "'https://api-dev.pitched.apps.miquido.com/v1'",
+	"apiVersion": "'https://api-dev.pitched.apps.miquido.com/v2'",
 	"spotifyClientId": "'222743e2fa6e403cbcdbd330f15ddb45'",
 	"deezerAppId": 211202,
 	"napsterApiKey": "'OTlhYTBhMmUtZDBhNi00MDBlLTlkYTgtNzNjOGI0NTBmMDVm'",
