@@ -3,7 +3,7 @@ import app from 'app';
 
 const BACKEND_CONSTANT = {
 	apiVersion: '<% apiVersion %>',
-	clientBrand: 1
+	playsite: '<% playsite %>'
 };
 
 export default angular
