@@ -26,6 +26,7 @@ export default class HomeController {
 		);
 	}
 	_fillPromoSlot(featured) {
+		featured = parseInt(featured);
 		let featuredCategory = _.find(this.featuredCategories, {
 			featured
 		});
