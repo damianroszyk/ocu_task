@@ -40,7 +40,7 @@ class PlaylistService {
 	}
 	getFeaturedPlaylists() {
 		let url = this.modelHelper.buildUrl(this.playlistBackend, 'list');
-		let headers = { featured: 1, published: 1};
+		let headers = { featured: 1, published: 1, playlistBrand: this.backendConstant.playlistBrand };
 		return this.$http
 			.get(url, { headers })
 			.then(response => this._normalizeLocalPlaylists(response.data));
