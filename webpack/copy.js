@@ -8,6 +8,9 @@ module.exports = [{
 	from: 'src/channel-deezer.html',
 	to: 'channel-deezer.html'
 }, {
+	from: 'src/channel-napster.html',
+	to: 'channel-napster.html'
+}, {
 	from: 'src/googlea39f6d64221bf734.html',
 	to: 'googlea39f6d64221bf734.html'
 }, {

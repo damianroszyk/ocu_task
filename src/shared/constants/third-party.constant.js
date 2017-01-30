@@ -25,7 +25,12 @@ const THIRD_PARTY_CONSTANT = {
 	spotifyAuthUrl: 'https://accounts.spotify.com/authorize',
 	spotifyScopes: ['user-read-email', 'playlist-modify-public', 'playlist-modify-private'],
 	spotifyRedirectUrl: `${window.location.origin}/channel-spotify.html`,
-	spotifyClientId: '<% spotifyClientId %>'
+	spotifyClientId: '<% spotifyClientId %>',
+	napsterApiKey: '<% napsterApiKey %>',
+	napsterApiSecret: '<% napsterApiSecret %>',
+	napsterApiUrl: 'https://api.napster.com',
+	napsterApiVersion: 'v2.1',
+	napsterRedirectUrl: `${window.location.origin}/channel-napster.html`
 };
 
 export default angular

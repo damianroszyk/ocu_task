@@ -15,5 +15,6 @@ import './shared/interceptors';
 import './shared/filters';
 import './shared/services';
 import './shared/directives';
+import './shared/vendor';
 
 import './components/';

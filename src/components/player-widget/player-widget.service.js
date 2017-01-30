@@ -5,7 +5,8 @@ import Observable from 'abstract/observable';
 class PlayerWidgetService extends Observable {
 	/* @ngInject */
 	constructor($state, $timeout, $window, $translate, dispatcherService, playerConstant,
-		musicProvider, mobileHelper, thirdPartyConstant, messagePopupService, deezer, Analytics) {
+		musicProvider, mobileHelper, thirdPartyConstant, messagePopupService, deezer, Analytics,
+		napsterService, deezerPlayerService) {
 		super();
 		this.$window = $window;
 		this.$state = $state;
@@ -21,6 +22,8 @@ class PlayerWidgetService extends Observable {
 		this.mobileHelper = mobileHelper;
 		this.$timeout = $timeout;
 		this.Analytics = Analytics;
+		this.napsterService = napsterService;
+		this.deezerPlayerService = deezerPlayerService;
 	}
 	set player(player) {
 		this._player = player;
@@ -54,6 +57,8 @@ class PlayerWidgetService extends Observable {
 						this.deezer.checkLoginStatus();
 					}, 1500);
 				});
+			} else if (this.musicProvider.isNapster()) {
+
 			}
 			if (this.popup) {
 				this.dispatcherService.dispatchNative(
@@ -91,14 +96,41 @@ class PlayerWidgetService extends Observable {
 				return;
 			}
 			this.destroy();
-			this.player = {
-				service: provider,
-				servicePlaylistId: providerPlaylist.service_playlist_id,
-				serviceUserId: providerPlaylist.service_user_id,
-				localPlaylistId: playlist.id,
-				show: true
-			};
-			this.notify();
+			// Fetch playlist data from exteranal provider
+			if (providerPlaylist.source === 'napster') {
+				this.napsterService
+					.getPlaylist(providerPlaylist.service_playlist_id)
+					.then(response => {
+						providerPlaylist.tracks = this.napsterService.processTracks(response[0]);
+						this.player = {
+							service: provider,
+							servicePlaylistId: providerPlaylist.service_playlist_id,
+							serviceUserId: providerPlaylist.service_user_id,
+							localPlaylistId: playlist.id,
+							servicePlaylistTracks: providerPlaylist.tracks,
+							show: true
+						};
+						this.notify();
+					});
+			} else {
+				this.deezer.deferredPlayer.promise.then(() => {
+					this.deezer
+					.getPlaylist(providerPlaylist.service_playlist_id)
+					.then(playlist => {
+						this.$timeout(() => this.tracks = playlist.tracks.data, 1000);
+						providerPlaylist.tracks = this.deezerPlayerService.processTracks(playlist.tracks.data);
+						this.player = {
+							service: provider,
+							servicePlaylistId: providerPlaylist.service_playlist_id,
+							serviceUserId: providerPlaylist.service_user_id,
+							localPlaylistId: playlist.id,
+							servicePlaylistTracks: providerPlaylist.tracks,
+							show: true
+						};
+						this.notify();
+					});
+				});
+			}
 		}
 	}
 }

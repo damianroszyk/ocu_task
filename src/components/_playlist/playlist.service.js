@@ -32,7 +32,7 @@ class PlaylistService {
 			.then(response => this._normalizeLocalPlaylists(response.data));
 	}
 	getCategoryPlaylists(categoryId) {
-		let headers = { published: 1 };
+		let headers = { published: 1, slug: true };
 		let url = this.modelHelper.buildUrl(this.categoryBackend, categoryId, 'playlists');
 		return this.$http
 			.get(url, { headers })
@@ -46,8 +46,9 @@ class PlaylistService {
 			.then(response => this._normalizeLocalPlaylists(response.data));
 	}
 	getPlaylist(playlistId) {
+		let headers = { slug: true };
 		let url = this.modelHelper.buildUrl(this.playlistBackend, playlistId);
-		return this.$http.get(url).then(response => {
+		return this.$http.get(url, { headers }).then(response => {
 			response.data = this._normalizeLocalPlaylists([response.data])[0];
 			return response;
 		});
@@ -66,7 +67,7 @@ class PlaylistService {
 			.then(response => this._normalizeLocalPlaylists(response.data));
 	}
 	_normalizeLocalPlaylists(playlists) {
-		playlists = _.values(playlists);
+		playlists = _.values((playlists.data || playlists.results) ? (playlists.data ? playlists.data : playlists.results) : playlists);
 		angular.forEach(playlists, playlist => {
 			angular.forEach(playlist.external_playlists, externalPlaylist => {
 				playlist[externalPlaylist.source] = externalPlaylist;

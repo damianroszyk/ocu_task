@@ -1,4 +1,5 @@
 import './deezer.service';
+import './deezer-player.service';
 import './spotify.service';
 import './dispatcher.service';
 import './dom-helper.service';
@@ -9,3 +10,5 @@ import './mobile-helper.service';
 import './music-provider.service';
 import './responsive.service';
 import './storage.service';
+import './napster.service';
+import './napster-player.service';

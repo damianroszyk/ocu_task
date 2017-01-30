@@ -3,7 +3,7 @@ import app from 'app';
 
 const BACKEND_CONSTANT = {
 	apiVersion: '<% apiVersion %>',
-	clientBrand: 4
+	clientBrand: 1
 };
 
 export default angular

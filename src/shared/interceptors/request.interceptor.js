@@ -4,8 +4,8 @@ import app from 'app';
 /* @ngInject */
 let requestInterceptorFactory = (backendConstant) => {
 	let request = config => {
-		if (config.url.indexOf('api.spotify') < 0) {
-			config.headers.brand = backendConstant.clientBrand;
+		if (config.url.indexOf('api.spotify') < 0 && config.url.indexOf('api.napster') < 0) {
+			config.headers.playsite = backendConstant.clientBrand;
 		}
 		return config;
 	};

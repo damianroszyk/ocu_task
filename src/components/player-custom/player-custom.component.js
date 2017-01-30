@@ -11,7 +11,8 @@ let bindings = {
 	trackIdx: '<',
 	trackTime: '<',
 	localPlaylistId: '<',
-	servicePlaylistId: '<'
+	servicePlaylistId: '<',
+	servicePlaylistTracks: '<'
 };
 
 export default angular

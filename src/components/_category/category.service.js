@@ -33,9 +33,10 @@ class CategoryService {
 			});
 	}
 	getCategory(categoryId) {
+		let headers = { slug: true };
 		let url = this.modelHelper.buildUrl(this.categoryBackend, 'single', categoryId);
 		return this.$http
-			.get(url)
+			.get(url, { headers })
 			.then(response => this._buildCategoryParams(response.data));
 	}
 	getFeaturedCategories() {
