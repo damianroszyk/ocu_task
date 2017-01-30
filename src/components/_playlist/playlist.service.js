@@ -17,7 +17,7 @@ class PlaylistService {
 			backendConstant.apiVersion, 'playlist'
 		);
 		this.searchBackend = this.modelHelper.buildUrl(
-			backendConstant.apiVersion, 'search', backendConstant.playsite
+			backendConstant.apiVersion, 'playlists', 'search'
 		);
 		this.categoryBackend = this.modelHelper.buildUrl(
 			backendConstant.apiVersion, 'category'
