@@ -58,7 +58,7 @@
     "build:qa": "npm run build -- --env qa",
     "build:stage": "npm run build -- --env stage",
 	"build:prod": "npm run build -- --env prod",
-	"build:prodnew": "npm run build -- --env prod-new",
+	"build:prod-new": "npm run build -- --env prod-new",
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server --env dev",
     "start:hot": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server --hot --inline --env dev",
     "lint": "node ./node_modules/eslint/bin/eslint --config ./.eslintrc src/ --ext .js",
