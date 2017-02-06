@@ -1,5 +1,5 @@
 {
-	"apiVersion": "'http://pitchedse-prod.us-east-1.elasticbeanstalk.com/v1'",
+	"apiVersion": "'http://pitchedse-prod-new.us-east-1.elasticbeanstalk.com/v1'",
 	"spotifyClientId": "'7c59511b354d4aefaffb095121ee2782'",
 	"deezerAppId": 190522,
 	"napsterApiKey": "'YWQ4NzEyZjItMDhhNC00YWUyLTgxNDctNTMyNDkzNjFkMmM3'",
