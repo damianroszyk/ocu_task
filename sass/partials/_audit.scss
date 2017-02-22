@@ -1,0 +1,686 @@
+.audit{
+	a.case_prev, 
+	a.case_next{
+		color:#fff;
+		position:relative;
+		padding:0 0 0 40px;
+		font-weight: 400;
+		font-size:17px;
+		line-height: 17px;
+		display: block;
+		position:absolute;
+		top: 15px;
+		left:0;
+		text-align:left;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		@include opacity(.6);
+
+		svg{
+			width:22px;
+			height:42px;
+			position:absolute;
+			top:-4px;
+			left:0;
+
+			path{
+				fill:#fff;
+			}
+		}
+
+		span{
+			display: block;
+			font-weight: 600;
+		}
+
+		&:hover{
+			@include opacity(1);
+		}
+	}
+
+	a.case_next{
+		right:0;
+		left:auto;
+		padding:0 40px 0 0;
+		text-align:right;
+
+		svg{
+			@include rotate(180deg);
+			left:auto;
+			right:0;
+		}
+	}
+
+	section{
+		position:relative;
+	}
+	
+	h2{
+		font-weight: 600;
+		font-size:24px;
+		text-transform: uppercase;
+		color:$dark_font_color;
+	}
+
+	p{
+		color:$dark_font_color;
+		font-size:20px;
+		line-height: 32px;
+		font-weight: 300;
+	}
+
+	hr{
+		background:#f9671e;
+	}
+
+	hr.separator{
+		background:#e5e5e5;
+		margin:90px 0;
+	}
+
+	.content{
+		padding:0px 25px;
+	}
+
+	.loading-screen{
+	    background: url('../img/bg_loading_audit.jpg') center top no-repeat #000;
+	    background-size: cover;
+	    background-attachment: fixed;   
+	}
+
+	.loading-screen{
+		margin:0;
+		top:0;
+		left:0;
+
+		.content{
+			height:100%;
+			padding:170px 25px 20px 25px;
+		}
+
+		h2{
+			font-weight: 600;
+			font-size:40px;
+			color:#fff;
+			text-align:center;
+		}
+
+
+		img.intro_icon{
+			width:200px;
+			height:150px;
+			display: block;
+			margin:0 auto 20px auto;
+		}
+	}
+
+	.case_intro{
+		height:600px;
+		background:#000;
+
+		.content{
+			padding:170px 25px 20px 25px;
+			position:relative;
+			z-index: 1;
+			text-align: center;
+		}
+
+		a.case_prev,
+		a.case_next{
+			position:absolute;
+			color:#ffffff;
+			top:50%;
+			left:25px;
+
+			svg path{
+				fill:#ffffff;
+			}
+		}
+
+		a.case_next{
+			right:25px;	
+			left:auto;
+		}
+
+		img.intro_icon{
+			width:200px;
+			height:150px;
+			display: block;
+			margin:0 auto 20px auto;
+		}
+
+
+		p{
+			color:#fff;
+			text-align:center;
+			font-size:24px;
+			line-height: 32px;
+			padding:0;
+			font-weight: 300;
+			letter-spacing: 1px;
+			max-width: 570px;
+			margin: 0 auto;
+		}
+
+		h2{
+			font-weight: 600;
+			font-size:40px;
+			color:#fff;
+			text-align:center;
+		}
+
+		hr{
+			background:#ffffff;
+			display: inline-block;
+			margin:20px 0;
+		}
+		
+	    .bg_case{
+	        background:url('../img/audit/bg_audit.jpg') center top no-repeat #000;
+	        background-attachment: fixed;
+	        background-size: cover;
+	        width: 100%;
+	        position:fixed;
+	        top:0;
+	        left:0;
+	        height:100%;
+	        z-index: 0;
+	        overflow: hidden;
+	    }
+	}
+
+
+	.case_info{
+		background:#2b2f33;
+		z-index: 5;
+		position: relative;
+
+		.content{
+			padding:90px 25px;
+		}
+
+		h2{
+			color:$white_font_color;
+			text-transform: inherit;
+			letter-spacing: 1px;
+		}
+
+		p{
+			color:#abacad;
+		}
+
+		.summary{
+			width:51%;
+			float:left;
+			padding:0 60px 0 0;
+
+		}
+
+		.scope{
+			width:27%;
+			float:left;
+			padding:0 0 0 10px;
+
+			p{
+				margin:10px 0 20px 0;
+				padding-bottom:20px;
+				font-size:18px;
+				line-height:28px;
+				border-bottom:3px solid #333638;
+				width:210px;
+			}
+			
+			h4{
+				font-weight: 600;
+				font-size:20px;
+				line-height: 34px;
+				margin:0;
+				padding:0;
+				color:$white_font_color;
+			}
+
+			a{
+				margin-top:10px;
+				position:relative;
+				width: 210px;
+				text-align:left;
+				padding: 15px 26px;
+				z-index: 2;
+
+				svg{
+					@include transition(all 1s ease-out);
+					fill:#ffffff;
+					width: 16px;
+					height:16px;
+					position: absolute;
+					right: 18px;
+					top: 16px;
+
+					&.apple{
+						width:20px;
+						height:20px;
+						top:14px;
+						right:16px;
+					}
+				}
+
+				&:hover{
+					color:$dark_font_color;
+				}
+
+				&:hover svg{
+					fill:$dark_font_color;
+				}
+			}
+		}
+
+		.deliverables{
+			width:22%;
+			float:left;
+			padding:0 0 0 10px;
+
+			p{
+				margin:10px 0 20px 0;
+				font-size:18px;
+				line-height:28px;
+			}
+
+			h4{
+				font-weight: 600;
+				font-size:20px;
+				line-height: 34px;
+				margin:0;
+				padding:0;
+				color:$white_font_color;
+			}
+
+			ul{
+				margin:10px 0 0 0;
+
+				li{
+					color:#abacad;
+					font-weight: 300;
+					margin:0 0 10px 0;
+					position:relative;
+					padding:0 0 0 40px;
+
+
+					span{
+						width:20px;
+						height:20px;
+						position:absolute;
+						top:3px;
+						left:0;
+					}
+				}
+			}
+		}	
+	}
+
+	.case_details{
+		background:#373b40;
+		z-index: 5;
+		position: relative;
+
+		.content{
+			padding:70px 25px;
+		}
+
+		h3{
+			color:$white_font_color;
+			padding:0 0 20px 0;
+		}
+
+		p{
+			margin:10px 0 20px 0;
+			font-size:18px;
+			line-height:28px;
+			color:#aeafb1;
+		}
+
+		.left{
+			width:55%;
+			float:left;
+			padding:0 60px 0 0;			
+		}
+
+		.right{
+			width:45%;
+			float:right;
+			padding:0px 0 0 10px;	
+		}
+	}
+
+	.case_about{
+		text-align:center;
+
+		.content{
+			padding:90px 25px 0 25px;
+		}
+
+		h2{
+			font-size:40px;
+			text-align:center;
+		}	
+
+		hr{
+			display: inline-block;	
+
+		}
+
+		p{
+			text-align:center;
+			padding:0 180px;
+			font-size:24px;
+			line-height: 36px;
+		}
+
+	}
+
+	.case_logotype{
+
+		.content>div{
+			@include clearfix;		
+		}
+		
+
+		.title{
+			float:left;
+			width:50%;
+			padding:0 130px 0 0;
+
+			p{
+				margin:0;
+			}
+		}
+
+		.image{
+			@include clearfix;	
+			margin-top:20px;
+
+			float:right;
+			width:50%;
+
+			div{
+				float:left;
+				width:50%;
+				text-align:center;
+
+
+				img{
+					max-width: 200px;
+				}
+
+
+				h4{
+					text-transform: uppercase;
+					color:$dark_font_color;
+					font-size:18px;
+					font-weight: 600;
+					margin:10px 0;
+				}
+			}
+		}
+	}
+
+	.case_colors{
+		@extend .case_logotype;	
+
+		.title{
+			float:right;
+			padding:0 110px 0 25px;
+		}
+
+		.image{
+			float:left;	
+			margin-top:0;
+
+			li{
+				width:70px;
+				height:70px;
+				display: inline-block;
+				margin:5px;
+				text-align:center;
+				padding-top:20px;
+				@include border-radius(35px);
+
+				span{
+					font-size:12px;
+					color:#ffffff;
+					font-weight: 400;
+					text-transform: uppercase;
+					opacity: 0;
+					@include transition(all 0.3s ease-out);
+				}
+
+				&:hover span{
+					opacity: 1;	
+				}
+
+				&.color1{ background:#ff5e3a; }
+				&.color2{ background:#f9671e; }
+				&.color3{ background:#ffa800; }
+				&.color4{ background:#ffcd02; }
+				&.color5{ background:#222c34; }
+				&.color6{ background:#6b767f; }
+				&.color7{ background:#929fa8; }
+				&.color8{ background:#b0b9c0; }
+				&.color9{ background:#dddedf; }
+				&.color10{ background:#33bc00; }
+				&.color11{ background:#94cd26; }
+				&.color12{ background:#ff1a38; }
+
+
+			}
+		}
+	}
+
+
+	.case_typo{
+		@extend .case_logotype;
+
+		.image{
+			margin:40px 0 -3px 0;
+
+			img{
+				max-width: 550px;
+			}
+		}
+
+		hr.separator{
+			margin:0 0 90px 0;
+		}	
+	}
+
+	.case_notification{
+		@extend .case_colors;	
+
+		.image{
+			text-align: center;
+			padding-top:50px;
+		}
+	}
+
+
+	.case_icons{
+		@extend .case_logotype;	
+	}
+
+
+	.case_controls{
+		@extend .case_colors;
+
+		 .image{
+		 	margin-bottom: -5px;
+
+		 	img{
+		 		max-width: 500px;
+		 	}
+		 }
+			
+	}
+
+	.case_dev_title{
+		@extend .case_about;
+		
+		 background:url('../img/audit/bg_dev.jpg') center top no-repeat;
+		 background-size:cover;
+		 height:500px;
+
+		 h2,p{
+		 	color:$white_font_color;
+		 }
+
+		
+
+		 .content{
+		 	padding:160px 80px 0 80px;
+		 }
+	}
+
+	.case_sprint{
+		@extend .case_colors;	
+
+		.content{
+			padding:90px 25px 0 25px;
+		}
+	}
+
+
+	.case_stats{
+		@extend .case_logotype;	
+
+		.content{
+			padding:0 25px 90px 25px;
+		}
+
+		.image{
+			@include clearfix;
+		}
+		
+		.image>div{
+			width:33%;
+			float:left;
+			text-align: center;
+			padding:70px 30px 0 30px;
+
+			p{
+				color:$dark_font_color;
+				font-size:16px;
+				line-height: 18px;
+				text-transform: uppercase;
+				font-weight: 600;
+			}
+
+			p.number{
+				color:#f9671e;
+				font-size: 40px;
+				margin:20px 0;
+				display: block;
+				line-height: 40px;
+				font-weight: 400;
+			}
+		}	
+	}
+
+
+	.case_backend{
+		background:url('../img/audit/bg_code2.jpg') center top no-repeat #2b2f33;
+		background-size:contain;
+		
+
+		.content{
+			padding:140px 25px;
+		}	
+
+		h2{
+			color:$white_font_color;	
+			font-size: 40px;
+			line-height: 50px;
+		}
+
+		.pros{
+			float:left;
+			display: block;
+			width:33%;
+			padding:20px 20px 60px 0;
+
+			.number{
+				color:#808285;
+				font-weight: 500;
+				padding:0 0 15px 0;
+				font-style: italic;
+			}
+
+			h4{
+				letter-spacing: 0;
+				margin: 0 0 10px 0;
+				color:$white_font_color;
+			}
+
+			p{
+				color:#aeafb1;
+				font-size:18px;
+			}
+		}
+
+		.image{
+			@include clearfix;
+
+			width:1120px;
+			margin:0 auto;
+			
+			img{
+				float:left;
+				display: block;
+
+				&.app{
+					margin:80px 0 0 0;
+					max-width:360px;
+				}
+
+				&.arrows{
+					max-width: 40px;
+					margin:185px -30px 0 40px;
+					position:relative;
+					z-index: 10;
+				}
+
+				&.backend{
+					max-width:700px;
+				}
+			}
+		}
+	}
+
+	.case_contact{
+		background:#373b40;
+		text-align:center;
+		padding: 50px 25px;
+
+		.content{
+			padding:0;
+			position: relative;
+		}
+
+		a.main_btn{
+			font-weight: 400;
+			font-size: 22px;
+			line-height: 24px;
+			text-transform: uppercase;
+			padding:20px 60px;
+			z-index: 2;
+
+			&:hover{
+
+				color:$dark_font_color;
+			}
+		}
+	}
+
+
+	footer .content{
+		padding:50px 25px;
+	}
+
+}

@@ -1,0 +1,471 @@
+/*  Touch devices conditions */
+
+
+	.touch .sara .case_intro .bg_case,
+	.touch .sara .loading-screen,
+	.ie7 .sara .case_intro .bg_case,
+	.ie7 .sara .loading-screen,
+	.ie9 .sara .case_intro .bg_case,
+	.ie9 .sara .loading-screen{
+	 	position: absolute;
+	 	background-attachment: scroll;
+	 	height:100%;
+	 }
+
+	 .touch .sara .more_info .recipes .image .video_wrapper,
+	 .ie9 .sara .more_info .recipes .image .video_wrapper,
+	 .ie11 .sara .more_info .recipes .image .video_wrapper,
+	 .touch .sara .more_info .mobile .image .video_wrapper,
+	 .ie9 .sara .more_info .mobile .image .video_wrapper,
+	 .ie11 .sara .more_info .mobile .image .video_wrapper{
+		display: none;
+	 }
+
+	 .touch .sara .more_info .recipes .image img,
+	 .ie9 .sara .more_info .recipes .image img,
+	 .ie11 .sara .more_info .recipes .image img,
+	 .touch .sara .more_info .mobile .image img,
+	 .ie9 .sara .more_info .mobile .image img,
+	 .ie11 .sara .more_info .mobile .image img{
+	 	display: block;
+	 }
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+	.sara{
+
+		.desktop_menu{
+			.content{
+				padding: 0px 25px;
+			}
+		}
+		
+		.content{
+			padding:0;
+		}
+
+		.icons, .more_info .recipes, .feature{
+
+			.text {
+				float:left;
+				width:50%;
+				padding:10px 60px 0 0;
+			}	
+
+			.image img{
+				width:100%;
+			}
+		} 
+
+
+		.navigation, .more_info .mobile{
+
+			.text {
+				float: right;
+				width: 50%;
+				padding: 0px 0px 0 25px;
+			}	
+
+			.image img{
+				width:100%;
+			}
+		} 
+
+		.navigation	.image img{
+			width:45%;
+			margin:0 4% 0 0;
+
+			&.first{
+				margin:0 4% 0 0;	
+			}
+		}
+
+		.more_info .recipes .image,
+		.more_info .mobile .image{
+			padding:0 20px 0 20px;
+		}
+
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	
+	.sara{
+
+		p{
+			font-size: 18px;
+			line-height: 26px;
+		}
+
+		h2{
+			font-size:32px;
+		}
+
+		hr.separator{
+			margin:60px 0;
+		}
+
+		.case_intro a.case_prev, 
+		.case_intro a.case_next{
+			display: none;
+		}
+
+		.case_info .summary{
+			width:100%;
+			float:none;
+			padding:0 60px 40px 0;
+		}
+
+		.case_info .scope,
+		.case_info .deliverables{
+			width:50%;
+			padding:0 60px 0 0;
+		}
+
+		.case_details .right{
+			padding:0;
+		}
+
+		.branding .graphics img{
+			margin:20px 0;
+		}
+
+		.video iframe{
+			width:100%;
+			left:0;
+			margin:0;
+		}
+
+		.icons .text, 
+		.more_info .recipes .text,
+		.feature .text{
+			padding: 0px 20px 0 0;
+		}
+
+		.icons .image,
+		.feature .image,
+		.navigation .image,
+		.more_info .recipes .image,
+		.more_info .mobile .image{
+			padding: 70px 0 0 0;
+		}
+
+		.case_contact a.main_btn{
+			padding: 16px 40px;
+			font-size:20px;
+		}	
+
+	} 
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+	.sara{
+
+		.case_intro p{
+			font-size:26px;
+			line-height: 34px;
+		}
+
+		.case_info .scope,
+		.case_info .deliverables{
+			padding:0;
+		}
+
+		.case_info .deliverables{
+			padding:0 0 0 20px;
+		}
+		
+		.case_details .left{
+			padding:0 40px 0 0;
+		}
+
+		.branding h4{
+			font-size:20px;
+			line-height: 28px;
+		}
+
+		.branding .graphics{
+		 	margin:40px 0 0 0;
+		}
+
+		.branding .graphics img{
+			width:32%
+		}
+
+		.branding{
+			padding:60px 25px;
+		}
+
+		.more_info{
+			padding:60px 25px;
+		}
+
+		.case_screens{
+			padding:60px 0;
+		}
+
+		.video iframe{
+			height:480px;
+		}
+
+		.video .bg.open_video{
+			height:480px;
+		}
+	
+
+		.icons .text, 
+		.feature .text,
+		.more_info .recipes .text,
+		.navigation .text, 
+		.more_info .mobile .text{
+			width:100%;
+			padding:0;
+			float: none;
+		}
+
+		.icons .image, 
+		.feature .image,
+		.navigation .image, 
+		.more_info .recipes .image, 
+		.more_info .mobile .image{
+			width:100%;
+			padding:40px 40px 0 40px;
+			max-width: 580px;
+			margin:0 auto;
+			float:none;
+		}
+
+		footer .content{
+			padding:30px 25px;
+
+			p.copyright{
+		 		text-align:left;
+		 		padding: 50px 0 0 0;
+		 	}
+		}
+	}
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+
+	.sara{
+
+		h2{
+			font-size: 28px;
+			line-height: 32px;
+		}
+
+		h4{
+			font-size: 18px;
+			line-height: 24px;
+		}
+
+		hr.separator {
+			margin: 30px 0;
+		}
+
+		.case_intro{
+			height:580px;
+		}
+
+		.case_intro .content,
+		.loading-screen .content{
+			padding:100px 5px 20px 5px;
+
+			img.intro_icon{
+				margin: 0 auto;
+			}
+		}
+
+		.case_intro p {
+			font-size: 22px;
+			line-height: 26px;
+			width:auto;
+
+			span{
+				font-size: 18px;
+			}
+		}
+
+		.case_info{
+
+			.content{
+				padding:40px 25px;
+			}
+
+			.summary{
+				padding:0 0 30px 0;
+			}
+
+			.scope{
+				width:100%;
+
+				a{
+					width:100%;
+				}
+			}
+
+			.deliverables{
+				width:100%;
+				padding:30px 0 0 0;
+			}
+		}
+
+		.case_details{
+
+			.content{
+				padding:40px 25px;
+			}
+
+			.left{
+				width:100%;
+				float:none;
+				padding:0 0 30px 0;
+			}
+
+			.right{
+				width:100%;
+				float:none;
+			}
+		}
+
+		 .branding{
+		 	padding:40px 25px;
+
+		 	h2{
+		 		text-align:left;
+		 	}
+
+		 	h4{
+		 		text-align:left;
+				font-size: 18px;
+				line-height: 24px;
+			}
+
+			hr.main{
+				margin: 22px 0;
+			}
+
+			.graphics{
+				margin:20px 0 0 0;
+			}
+
+			.graphics img {
+				width: 140px;
+				display: block;
+				margin: 0 auto 20px auto;
+			}
+		 }
+
+		 .icons .image, 
+		 .feature .image,
+		 .navigation .image, 
+		 .more_info .recipes .image, 
+		 .more_info .mobile .image{
+		 	padding:10px 0;
+		 }
+
+		 .video{
+
+		 	.bg{
+		 		height:220px;
+
+		 		&.hover,
+		 		&.open_video{
+		 			height: 220px;
+		 		}
+		 	}
+
+		 	a{
+		 		width:100px;
+		 		margin-left:-50px;
+		 		height: 74px;
+
+		 		img{
+		 			width:100%;
+		 		}
+		 	}
+
+		 	iframe{
+		 		height:220px;
+		 	}
+		 }
+
+		 .more_info{
+		 	padding:40px 25px;
+		 }
+
+		 .case_screens{
+		 	padding:40px 0;
+
+		 	
+		 	.content{
+		 		height: 610px;
+		 		width:308px;
+		 	}
+
+		 	img.ipad_frames{
+		 		top:100px;
+		 	}
+
+		 	.swiper-container{
+		 		top:156px;
+		 	}
+
+		 	.swiper-pagination-switch{
+		 		width: 20px;
+				height: 20px;
+				border-radius: 10px;
+				margin-right: 12px;
+		 	}
+		 }
+
+		 .case_contact{
+		 	padding: 40px 25px 20px 25px;
+
+		 	.content{
+		 		height: 140px;
+		 	}
+
+		 	a.case_prev, 
+		 	a.case_next{
+		 		top:85px;
+		 	}
+
+		 	a.case_prev{
+		 		padding:0 0 0 30px;
+		 	}
+
+		 	a.case_next{
+		 		padding:0 30px 0 0;
+		 	}
+
+		 	a.main_btn{
+		 		width:100%;
+		 	}
+		 }
+
+		 footer .content{
+		 	padding:30px 25px;
+
+		 	.social a{
+		 		margin:0 8px 0 0;
+		 	}
+
+		 	p.copyright{
+		 		padding:60px 0 0 0;
+		 	}
+		 }
+	}
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+	
+}

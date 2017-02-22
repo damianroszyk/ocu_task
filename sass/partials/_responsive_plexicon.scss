@@ -1,0 +1,928 @@
+/*  Touch devices conditions */
+
+
+	.touch .plexicon .plexicon_intro .bg_case,
+	.touch .plexicon .loading-screen,
+	.ie7 .plexicon .plexicon_intro .bg_case,
+	.ie7 .plexicon .loading-screen,
+	.ie9 .plexicon .plexicon_intro .bg_case,
+	.ie9 .plexicon .loading-screen{
+	 	position: absolute;
+	 	background-attachment: scroll;
+	 	height:100%;
+	 }
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+	.plexicon{
+
+		.case_details .left{
+			padding:0;
+		}
+
+		.case_about .content{
+			padding: 120px 0px;
+		}
+
+		.case_concept{
+
+			// .content{
+			// 	padding:80px 25px 20px 25px;
+			// }
+
+			.title{
+				width:330px;
+				padding-right: 10px;
+			}
+
+			.sketch{
+				width:600px;
+				float:right;
+				position:relative;
+				margin:0;
+				right:inherit;
+				background-size:100%;
+				height: 440px;
+
+				.swiper-wrapper{
+					margin:0;
+				}
+
+				img{
+					width:65%;
+					margin:90px 0 0 0;
+				}
+			}
+		}
+
+		// .case_concept .sketch{
+		// 	margin:-30px 0 0 0;
+		// 	position: absolute;
+		// 	right: -140px;
+
+		// 	img{
+		// 		margin-left:-120px;
+		// 	}
+		// }
+
+		.case_ux .bg_ux{
+			background-size: 100%;
+			width:760px;
+			bottom:11px;
+			margin-left: -220px;
+		}
+
+		.case_design .phone_1{
+			right:25px;
+		}
+
+		.case_design .phone_2{
+			right: 190px;
+		}
+
+		.icon_box h4{
+			font-size:20px;
+			line-height: 20px;
+		}
+
+		.case_tech .icon_box .tech_icon{
+			padding:0 20px 0 0;
+
+			&::last-child{
+				padding:0;
+			}
+		}
+
+		.case_frame{
+			height:auto;
+
+			.content .title{
+				width:50%;
+				padding: 0 20px 0 50px;
+			}
+
+			.bg_frame_left{
+				width:50%;
+				height: 100%;
+			}
+
+			.img_frame{
+				width: 110%;
+			}
+		} 
+
+		.case_pack .bg_frame_right{
+			background-position:-100px 0;
+		}
+	} 
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+	.plexicon {
+
+		p{
+			font-size: 18px;
+			line-height: 26px;
+		}
+
+		.case_about hr{
+			margin:20px auto;
+		}
+
+		h2 {
+			font-size: 28px;
+			line-height: 30px;
+		}
+
+		.case_logo,
+		.loading-screen .content .case_logo {
+			width: 230px;
+			height: 115px;
+			margin: 60px auto 40px auto;
+			display: block;
+		}
+
+		.plexicon_intro{
+			height:740px;
+
+			a.case_prev, 
+			a.case_next{
+				display: none;
+			}
+
+			.summary{
+				width:100%;
+				float:none;
+				padding:0 60px 10px 0;
+			}
+
+			.scope,
+			.deliverables{
+				width:50%;
+				padding:0 60px 0 0;
+			}
+
+			.bg_case{
+				background: url("../img/plexicon/bg_plexicon_mobile.jpg") center top no-repeat #000;
+				background-size: cover;
+			}
+		}
+
+
+		.case_details{
+			.content{
+				padding: 40px 25px;
+			}
+
+			p{
+				margin: 0px 0 20px 0;
+				font-size: 16px;
+				line-height: 24px;
+			}
+		}
+
+		.case_about{
+
+			.content{
+				padding: 60px 0px;
+			}
+
+			hr{
+				margin:20px auto;
+			}
+
+			.images{
+				width:100%;
+				padding:0 25px;
+
+				.left{
+					width:66%;
+
+					img{
+						width:50%;
+
+						&:first-child{
+							width:100%;
+						}
+					}
+				}
+
+				.right{
+					width:33%;
+
+					img{
+						width:100%;
+					}
+				}
+			}
+
+		} 
+
+		.case_concept{
+
+			.content{
+				padding:80px 25px 20px 25px;
+			}
+
+			.title{
+				width:40%;
+				padding-right: 30px;
+			}
+
+			.sketch{
+				width:60%;
+				float:left;
+				position:relative;
+				margin:0;
+				right:inherit;
+				background-size:100%;
+				height: 370px;
+
+				.swiper-wrapper{
+					margin:0;
+				}
+
+				img{
+					width:65%;
+					margin:75px 0 0 0;
+				}
+			}
+		}
+
+		.case_flowmap{
+			.content{
+				padding:80px 25px;
+			}
+
+			img{
+				width:90%;
+				margin: -90px auto 0 auto;
+			}
+		}
+
+		.case_ux{
+			.content{
+				padding:80px 25px;
+			}
+			height:560px;
+
+			.bg_ux {
+				background-size: 608px;
+				height: 600px;
+				bottom: 23px;
+				margin-left: -253px;
+			}
+		}
+
+
+		.case_design{
+			.content{
+				padding:0 25px 60px 25px;
+			}
+
+			.title{
+				margin: 0 0 67px 0;
+				width: 350px;
+			}
+
+			.phone_1{
+				width: 235px;
+				top:0px;
+			}
+
+			.phone_2{
+				width: 220px;
+				top: 35px;
+				right:160px;
+			}
+
+			.icon_box{
+				margin-top: 60px;
+			}
+
+			.icon_box h4{
+				font-size: 18px;
+				line-height: 20px;
+				margin: 20px 0 0 0;
+
+				&.typo_text{
+					margin: 20px 0 0 20px;
+				}
+
+			}
+
+			.design_icon img{
+				width:90%;
+			}
+		}
+
+		.case_tech{
+			.content{
+				padding:60px 25px 60px 25px;
+			}
+
+			.icon_box .tech_icon{
+				width:100%;
+				float: inherit;
+				@include clearfix;
+				
+				
+				img{
+					float:left;
+					margin: 50px 60px 50px 20px;
+				}
+
+				h3{
+					padding: 40px 0 0 0;
+					line-height: 30px;
+				}
+
+				p{
+					font-size: 18px;
+					line-height: 26px;
+				}	
+			}
+		}
+
+		.case_frame{
+
+			.content{
+				padding:60px 25px;
+			}
+
+		}
+
+		.case_pack{
+			height:auto;
+
+			.content{
+				padding:60px 25px;
+			}
+
+			.title{
+				width:50%;
+				padding: 0 50px 0 20px;
+
+			}
+
+			.bg_frame_right{
+				background-position:0;
+				bottom:0;
+				height:auto;
+				width:50%;
+			}
+
+		}
+
+		.case_contact a.main_btn{
+			padding: 16px 40px;
+			font-size:20px;
+		}
+	}
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	.plexicon{
+
+		h2{
+			font-size: 24px;
+			line-height: 26px;
+			text-align: center;
+		}
+
+		hr{
+			margin: 24px auto;
+		}
+
+		.case_logo,
+		.loading-screen .content .case_logo {
+			margin:0 auto 40px auto;
+		}
+
+		.content{
+			padding:60px 0;
+		}
+	
+		.plexicon_intro{
+			height:690px;
+
+			.summary{
+				padding: 0 20px 10px 0;
+			}
+
+			.scope,
+			.deliverables{
+				padding:0;
+			}
+
+			.deliverables{
+				padding:0 0 0 20px;
+			}
+
+
+			.bg_case{
+				position:absolute;
+			}
+		}
+
+		.case_details .right{
+			padding: 10px 0 0 30px;
+		}
+
+		.case_about p{
+			padding:10px;
+			text-align: center;
+			max-width: 500px;
+			margin:0 auto;
+		}
+
+		.case_concept{
+			.content{
+				padding: 60px 25px 60px 25px;
+			}
+
+			.title{
+				width: 100%;
+				padding: 0 0 40px 0;	
+			}
+
+			.sketch{
+				width: 500px;
+				margin: auto;
+				float: none;
+			}
+
+			p{
+				text-align: center;
+				max-width: 500px;
+				margin:0 auto;
+			}
+
+			.swiper-pagination-switch{
+				width: 20px;
+				height: 20px;
+				margin: 0 7px;
+			}
+		} 
+
+		.case_flowmap{
+
+			h2{
+				text-align: left;
+			}
+			hr{
+				margin:24px 0;
+			}
+
+			.flow{
+				margin:-50px auto 0 auto;
+			}
+		}
+
+
+		.case_ux{
+			height: 773px;
+
+			.bg_ux{
+				background-size: 608px;
+				height: 600px;
+				bottom: auto;
+				margin-left: -403px;
+				top: 150px;
+			}
+
+			p{
+				text-align: center;
+				max-width: 500px;
+				margin:0 auto;
+			}
+		}
+
+
+		.case_design{
+
+
+			 .title{
+			 	width:100%;
+			 	margin: 0 0 315px 0;
+				height: 247px;
+			 }
+
+			 p{
+				text-align: center;
+				max-width: 500px;
+				margin:0 auto;
+			}
+
+			.phone_1 {
+				top: 240px;
+				right: 115px;
+			}
+
+			 .phone_2{
+			 	top:275px;
+			 	right:250px;
+			 }
+
+			 .icon_box h4{
+			 	font-size: 14px;
+				line-height: 16px;
+			 }
+		}
+
+		.case_tech_space h2{
+			padding:25px;
+		}
+
+		.case_tech{
+
+			.icon_box {
+
+				.tech_icon{
+
+					&>div{
+						width:70%;
+						float:left;
+						display: block;
+						padding:0 0 0 50px;
+					}
+
+					h3{
+						padding: 40px 0 0 0;
+						line-height: 24px;
+						font-size: 24px;
+					}
+
+					hr{
+						margin:24px 0;
+					}
+
+					img{
+						float:left;
+						margin:40px 0;
+						width: 30%;
+					}
+				}
+
+			}
+
+		}
+
+		.case_frame .content .title,
+		.case_pack .content .title{
+			width: 100%;
+			padding: 350px 20px 0 20px;
+
+			 p{
+				text-align: center;
+				max-width: 500px;
+				margin:0 auto;
+			}
+		}
+
+		.case_frame .bg_frame_left,
+		.case_pack .bg_frame_right{
+			width: 100%;
+			overflow: hidden;
+			height: 340px;
+		}
+
+		footer .content{
+			padding:30px 25px;
+
+			p.copyright{
+		 		text-align:left;
+		 		padding: 50px 0 0 0;
+		 	}
+		}
+
+
+
+	}
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+
+	.plexicon{
+
+
+		.content{
+			text-align: center;
+		}
+
+		hr{
+			text-align: center;
+			margin:20px auto;
+		}
+
+		h2 {
+			text-align: center;
+			font-size: 28px;
+			line-height: 30px;
+		}
+
+		p{
+			text-align: center;
+			font-size:16px;
+			line-height: 24px;
+		}
+
+		.case_logo,
+		.loading-screen .content .case_logo {
+			height:100px;
+			width:180px;
+		}
+
+		.case_about p{
+			padding:10px 40px;
+		}
+
+		.plexicon_intro{
+			height: auto;
+
+			hr{
+				text-align:left;
+				margin:20px 0;
+			}
+
+			.content{
+				padding:120px 15px 40px 15px;
+			}
+
+			.summary{
+				padding:0 0 10px 0;
+			}
+
+			.scope{
+				width:100%;
+
+				p{
+					width:auto;
+					margin:0;
+					padding:0;
+					border:none;
+				}
+
+				a{
+					width:100%;
+				}
+			}
+
+			.deliverables{
+				width:100%;
+				padding:30px 0 0 0;
+			}
+
+			.bg_case{
+				height: 900px;
+			}
+		}
+
+		.case_details{
+			.content{
+				padding: 30px 15px;			
+			}
+
+			.left, .right{				
+				width:100%;
+				float:none;
+				padding:0;
+
+				p{
+					text-align:left;	
+				}
+			}
+		}
+
+		 .case_about{
+
+
+			.images{
+				padding:0 15px;
+
+				.left{
+					width:100%;
+					overflow:hidden;
+
+					img{
+						width:105%;
+
+						&:first-child{
+							width:200%;
+						}
+					}
+		 		} 
+
+		 		.right{
+		 			display: none;
+		 		}	
+			}
+	 	} 
+
+	 	.case_concept{
+
+	 		.content{
+	 			padding: 30px 15px;
+	 		}
+
+	 		.title{
+	 			padding:0 0 20px 0;
+	 		}
+
+	 		.sketch{
+	 			width: 280px;
+				margin: 0 auto;
+				height: 240px;
+
+				img{
+					margin:44px 0 0 0;
+				}
+	 		}
+	 	}
+
+	 	.case_flowmap{
+	 		.content{
+	 			padding: 30px 15px;
+	 		}
+
+	 		.flow{
+	 			width:100%;
+	 			margin-top:0;
+	 		}
+	 	}
+
+	 	.case_ux{
+	 		height: 590px;
+	 		overflow:hidden;
+
+	 		.content{
+	 			padding: 30px 15px;
+	 		}
+
+	 		p{
+	 			width:100%;
+	 		}
+
+	 		.bg_ux {
+				background-size: 374px;
+				margin-left: -403px;
+				top: -10px;
+			}
+
+			.bg_grey{
+				bottom: -41px;
+			}
+	 	}
+
+	 	.case_design{
+	 		.content{
+	 			padding: 30px 15px;
+	 		}
+
+	 		.title{
+	 			width: 100%;
+	 			margin: 0 0 355px 0;
+	 		}
+
+	 		.phone_1{
+	 			top:310px;
+	 			right: 15px;
+	 		}
+	 		.phone_2{
+	 			top:345px;
+	 			right: auto;
+	 			left:15px
+	 		}
+
+	 		.icon_box{
+	 			margin-top:40px;
+
+	 			.design_icon{
+	 				width:50%;
+	 				margin:0 0 30px 0;
+
+	 				h4{
+	 					text-align: center;
+	 				}
+
+	 				img{
+	 					width: 80%;
+						margin: 0 auto;
+						display: block;
+	 				}
+	 			}
+	 		}
+	 	}
+
+	 	.case_tech_space h2{
+	 		padding:15px;
+	 	}
+
+	 	.case_tech{
+	 		.content{
+	 			padding: 30px 15px;
+	 		}
+
+	 		.icon_box .tech_icon{
+
+	 			& > div{
+	 				width: 100%;
+					float: none;
+					display: block;
+					padding: 0;
+	 			}
+
+	 			hr{
+	 				margin:24px auto;
+	 			}
+
+	 			img {
+					float: none;
+					width: 200px;
+					display: block;
+					margin: 0 auto;
+				}
+
+				h3 {
+					padding: 20px 0 0 0;
+					text-align: center;
+				}
+
+				p {
+					padding: 0 0 40px 0;
+				}
+		
+	 		}
+	 	}
+
+	 	.case_frame, .case_pack{
+	 		.content{
+	 			padding: 30px 15px;
+	 		}	
+	 	}
+
+		.case_frame .content .title,
+		.case_pack .content .title{
+			width: 100%;
+			padding: 240px 0px 0 0px;
+		}
+
+		.case_frame .bg_frame_left,
+		.case_pack .bg_frame_right{
+			width: 100%;
+			overflow: hidden;
+			height: 240px;
+		}
+
+		 .case_contact{
+		 	padding: 40px 25px 20px 25px;
+
+		 	.content{
+		 		height: 140px;
+		 	}
+
+		 	a.case_prev, 
+		 	a.case_next{
+		 		top:85px;
+		 	}
+
+		 	a.case_prev{
+		 		padding:0 0 0 30px;
+		 	}
+
+		 	a.case_next{
+		 		padding:0 30px 0 0;
+		 	}
+
+		 	a.main_btn{
+		 		width:100%;
+		 	}
+		 }
+
+		 footer .content{
+		 	padding:30px 25px;
+
+		 	.social a{
+		 		margin:0 8px 0 0;
+		 	}
+
+		 	p.copyright{
+		 		padding:60px 0 0 0;
+		 	}
+		 }
+
+
+	}
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+	
+}

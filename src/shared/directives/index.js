@@ -1,9 +1,0 @@
-import './click-outside';
-import './is-loaded';
-import './has-anchors';
-import './metatags';
-import './focusable';
-import './fallback-image';
-import './page-title';
-import './responsive';
-import './sticky';

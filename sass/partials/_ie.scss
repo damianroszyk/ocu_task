@@ -1,0 +1,164 @@
+.ie7{
+
+	.ie7_error{
+		display:block;
+		background:#000;
+		width:100%;
+		height: 100%;
+		position:fixed;
+		top:0;
+		left:0;
+		bottom:0;
+		right:0;
+		margin:0;
+		padding:0;
+		z-index: 110;
+
+		h2{
+			text-align: center;
+			padding:100px;
+			color:#fff;
+			font-size:40px;
+			line-height: 62px;
+		}
+	}
+
+	.mobile_menu,
+	.desktop_menu,
+	#intro,
+	.main,
+	.loading-screen{
+		display: none;
+	}
+}
+
+.ie9{
+
+	.desktop_menu{
+		display: none;
+	}
+
+	.mobile_menu{
+		display: block;
+		position:absolute;
+
+		.logo a{
+			margin: 15px 0 20px 0;
+		}
+
+
+		 // a.toggle_menu{
+		 // 	display: none;
+	
+		 // }
+	}
+
+	.mobile_menu{ 
+	    ul{
+	        @include translate(0,-100%);
+	    }
+
+	    &.active ul{
+	        @include translate(0,0);  
+	        visibility: visible;
+	    }
+
+	}
+
+	// .plexicon .case_concept .pagination{
+	// 	display: none;
+	// }
+
+	.headerImg#intro1{
+		position: absolute;
+	 	background-attachment: scroll;
+	}
+
+	.header_list{
+		position:absolute;
+	}
+
+	.headerImg#intro1 .first_header,
+	.loading-screen .first_header{
+		@include translate(0,-50%);
+		top:50%;
+	}
+
+	.work .case_item{
+		padding:0;
+	}
+
+
+	.work .case_item .desc{
+		padding: 60px 20px 60px 20px;
+		@include translate(0,-50%);
+		top:50%;
+	}
+
+	.work .case_item.samsung_case img.samsung_box_tv{
+		@include translate(0,-50%);	
+		top:50%;
+	}
+
+	.sara .video a{
+		@include translate(0,-50%);		
+	}
+
+	a.more{
+		display: none;
+	}
+
+
+	.audit .case_intro .bg_case,
+	.audit .loading-screen,
+	.plexicon .plexicon_intro .bg_case,
+	.plexicon .loading-screen{
+		position: absolute;
+	 	background-attachment: scroll;
+	 	height:100%;
+	}
+
+	.loading-screen,
+	.loading .loading-screen,
+	.audit.loading .loading-screen,
+	.plexicon.loading .loading-screen{
+		display: none !important;
+		@include opacity(0);
+	}
+
+	.plexicon .case_frame .img_frame{
+		@include translate(0,-50%);		
+	}
+
+	.maps{
+		display: none;
+	}
+
+}
+
+.ie11{
+	.mobile_menu,
+	.audit .mobile_menu,
+	.plexicon .mobile_menu,
+	.sara .mobile_menu{
+		position:absolute;
+	}	
+}
+
+@media only screen and (max-width : 768px) {
+	.ie11 .audit .case_intro .bg_case,
+	.ie11 .audit .loading-screen,
+	.ie11 .plexicon .plexicon_intro .bg_case,
+	.ie11 .plexicon .loading-screen,
+	.ie11 .sara .case_intro .bg_case,
+	.ie11 .sara .loading-screen{
+	 	position: absolute;
+	 	background-attachment: scroll;
+	 	height:100%;
+	 }
+
+	.ie9 .work .case_item .desc{
+		@include translate(0,0);
+		top:0;
+	}
+}
