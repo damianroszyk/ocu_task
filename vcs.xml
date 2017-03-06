@@ -30,6 +30,10 @@
           <option name="url" value="git@github.com:sitepoint-editors/face-detection-nodejs.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="git@github.com:johnpapa/angular2-tour-of-heroes.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="$USER_HOME$/WebstormProjects" />
