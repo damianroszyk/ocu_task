@@ -1,0 +1,11 @@
+<app-card>
+  <div class="top" *ngIf="auth.authenticated">
+    <img class="top__image" src="../../assets/oculyze_brew_logo.png" alt="" (click)="toHome()">
+
+    <div class="top__user">
+      <p *ngIf="user">Logged in as: <strong>{{user.first_name}} {{user.last_name}}</strong></p>
+      <a (click)="logout($event)">Log out</a>
+    </div>
+  </div>
+</app-card>
+

@@ -2,16 +2,15 @@ import { Injectable } from '@angular/core';
 import {CanActivate, Router} from '@angular/router';
 
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class LoginGuard implements CanActivate {
   constructor(private router: Router) {}
 
   canActivate(): boolean {
     if (localStorage.getItem('access_token')) {
-      return true;
+      this.router.navigate(['/home']);
+      return false;
     }
 
-    // If not, they redirect them to the login page
-    this.router.navigate(['/login']);
-    return false;
+    return true;
   }
 }
