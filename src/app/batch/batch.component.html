@@ -1,0 +1,16 @@
+<app-card>
+  <div class="batch row">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <app-batch-info [info]="batch"></app-batch-info>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <app-batch-circles [info]="batch"></app-batch-circles>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <p>COMMENT <br />{{batch.desc}}</p>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-2">
+      <button class="btn btn-primary" routerLink="/batch/{{batch.id}}">view details</button>
+    </div>
+  </div>
+</app-card>

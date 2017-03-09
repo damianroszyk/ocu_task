@@ -1,0 +1,23 @@
+<app-card>
+  <div class="batch row" *ngIf="batch">
+
+    <div class="col-xs-12">
+      <h2>Viewing measurement: {{batch.name}}</h2>
+      <button class="btn btn-primary" (click)="goHome()">Go back</button>
+    </div>
+    <br /><br />
+
+    <div class="col-xs-3">
+      <app-batch-info [info]="batch"></app-batch-info>
+    </div>
+    <div class="col-xs-4">
+      <app-batch-circles [info]="batch"></app-batch-circles>
+    </div>
+    <div class="col-xs-12 col-lg-5">
+      <google-chart [data]="chartOptions"></google-chart>
+    </div>
+    <div class="col-xs-12">
+      <p>COMMENT <br />{{batch.desc}}</p>
+    </div>
+  </div>
+</app-card>

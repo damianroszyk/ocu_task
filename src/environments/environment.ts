@@ -5,6 +5,7 @@
 
 export const environment = {
   production: false,
+  apiUrl: 'https://srv.oculyze.de/services',
   clientId: 'JSe0ztzXnpzy6toLRU6dFH7LqrySfocmXPsQc6qR',
   clientSecret: 'u4J4y2rr4id87k3lK0ko9ETz7g724fUynV73bte5QxjOkcqmDvwmzl7jEceD'
 };
